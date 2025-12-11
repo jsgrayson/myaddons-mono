@@ -1,0 +1,13 @@
+<nav class="nav nav-pills nav-fill mb-4 p-2 rounded"
+    style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 215, 0, 0.2);">
+    <a class="nav-link {{ 'active bg-warning text-dark' if request.path == '/' else 'text-light' }}"
+        href="/">Dashboard</a>
+    <a class="nav-link {{ 'active bg-warning text-dark' if request.path == '/markets' else 'text-light' }}"
+        href="/markets">Markets</a>
+    <a class="nav-link {{ 'active bg-warning text-dark' if request.path == '/predictions' else 'text-light' }}"
+        href="/predictions">AI Predictions</a>
+    <a class="nav-link {{ 'active bg-warning text-dark' if request.path == '/alerts' else 'text-light' }}"
+        href="/alerts">Alerts</a>
+    <a class="nav-link {{ 'active bg-warning text-dark' if request.path == '/settings' else 'text-light' }}"
+        href="/settings">Settings</a>
+</nav>

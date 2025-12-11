@@ -1,0 +1,1520 @@
+{
+  "Alchemy": {
+    "profession": "Alchemy",
+    "total_recipes": 79,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 79,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Gift of Arthas",
+                "materials": [],
+                "estimated_cost": 0,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Shadow Oil",
+                "materials": [],
+                "estimated_cost": 0,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Transmute: Air to Fire",
+                "materials": [
+                  {
+                    "item_id": 7082,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Transmute: Earth to Life",
+                "materials": [
+                  {
+                    "item_id": 7076,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Transmute: Earth to Water",
+                "materials": [
+                  {
+                    "item_id": 7076,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Transmute: Fire to Earth",
+                "materials": [
+                  {
+                    "item_id": 7078,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Transmute: Iron to Gold",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Transmute: Mithril to Truesilver",
+                "materials": [
+                  {
+                    "item_id": 3860,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Blackmouth Oil",
+                "materials": [
+                  {
+                    "item_id": 6358,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Elixir of Detect Undead",
+                "materials": [
+                  {
+                    "item_id": 8831,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3371,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Fire Oil",
+                "materials": [
+                  {
+                    "item_id": 6359,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Lesser Healing Potion",
+                "materials": [
+                  {
+                    "item_id": 118,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2450,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Rage Potion",
+                "materials": [
+                  {
+                    "item_id": 5635,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Stonescale Oil",
+                "materials": [
+                  {
+                    "item_id": 13422,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Arcane Elixir",
+                "materials": [
+                  {
+                    "item_id": 8839,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3821,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3371,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Blacksmithing": {
+    "profession": "Blacksmithing",
+    "total_recipes": 197,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 197,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Coarse Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Heavy Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2838,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Iron Buckle",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Rough Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Solid Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 7912,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Coarse Grinding Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Coarse Weightstone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2592,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Dense Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 12365,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Heavy Weightstone",
+                "materials": [
+                  {
+                    "item_id": 2838,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2592,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Rough Grinding Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Rough Weightstone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2589,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Solid Weightstone",
+                "materials": [
+                  {
+                    "item_id": 7912,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4306,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Heavy Grinding Stone",
+                "materials": [
+                  {
+                    "item_id": 2838,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Copper Chain Pants",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 4
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Enchanting": {
+    "profession": "Enchanting",
+    "total_recipes": 89,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 89,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Minor Agility",
+                "materials": [
+                  {
+                    "item_id": 16202,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Minor Health",
+                "materials": [
+                  {
+                    "item_id": 10940,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Minor Health",
+                "materials": [
+                  {
+                    "item_id": 10940,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Strength",
+                "materials": [
+                  {
+                    "item_id": 16204,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Greater Magic Wand",
+                "materials": [
+                  {
+                    "item_id": 4470,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 10939,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Lesser Magic Wand",
+                "materials": [
+                  {
+                    "item_id": 4470,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 10938,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Agility",
+                "materials": [
+                  {
+                    "item_id": 16203,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Intellect",
+                "materials": [
+                  {
+                    "item_id": 16203,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Lesser Agility",
+                "materials": [
+                  {
+                    "item_id": 16203,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Lesser Intellect",
+                "materials": [
+                  {
+                    "item_id": 10938,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Lesser Intellect",
+                "materials": [
+                  {
+                    "item_id": 16202,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Lesser Mana",
+                "materials": [
+                  {
+                    "item_id": 10939,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 10938,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Lesser Stamina",
+                "materials": [
+                  {
+                    "item_id": 16204,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Lesser Strength",
+                "materials": [
+                  {
+                    "item_id": 16204,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Lesser Versatility",
+                "materials": [
+                  {
+                    "item_id": 16202,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Engineering": {
+    "profession": "Engineering",
+    "total_recipes": 100,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 100,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Mechanical Squirrel Box",
+                "materials": [],
+                "estimated_cost": 0,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Target Dummy",
+                "materials": [],
+                "estimated_cost": 0,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Coarse Blasting Powder",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Gold Power Core",
+                "materials": [
+                  {
+                    "item_id": 3577,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Handful of Copper Bolts",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Heavy Blasting Powder",
+                "materials": [
+                  {
+                    "item_id": 2838,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Rough Blasting Powder",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Silver Contact",
+                "materials": [
+                  {
+                    "item_id": 2842,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Bronze Tube",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Coarse Dynamite",
+                "materials": [
+                  {
+                    "item_id": 4364,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2589,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Flame Deflector",
+                "materials": [
+                  {
+                    "item_id": 4375,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4402,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Ice Deflector",
+                "materials": [
+                  {
+                    "item_id": 4375,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3829,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Iron Strut",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Rough Dynamite",
+                "materials": [
+                  {
+                    "item_id": 4357,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2589,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Small Seaforium Charge",
+                "materials": [
+                  {
+                    "item_id": 4364,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Leatherworking": {
+    "profession": "Leatherworking",
+    "total_recipes": 122,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 122,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Light Armor Kit",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Cured Light Hide",
+                "materials": [
+                  {
+                    "item_id": 783,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4289,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Cured Medium Hide",
+                "materials": [
+                  {
+                    "item_id": 4232,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4289,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Cured Thick Hide",
+                "materials": [
+                  {
+                    "item_id": 8169,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 8150,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Handstitched Leather Boots",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Handstitched Leather Cloak",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Light Leather",
+                "materials": [
+                  {
+                    "item_id": 2934,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Cured Heavy Hide",
+                "materials": [
+                  {
+                    "item_id": 4235,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4289,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Handstitched Leather Vest",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 3
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Dark Leather Belt",
+                "materials": [
+                  {
+                    "item_id": 4246,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4233,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2321,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 4340,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Embossed Leather Gloves",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 3
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Handstitched Leather Bracers",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Handstitched Leather Pants",
+                "materials": [
+                  {
+                    "item_id": 2318,
+                    "quantity": 4
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Hillman's Leather Vest",
+                "materials": [
+                  {
+                    "item_id": 4243,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4231,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Medium Armor Kit",
+                "materials": [
+                  {
+                    "item_id": 2319,
+                    "quantity": 4
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 25,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Tailoring": {
+    "profession": "Tailoring",
+    "total_recipes": 144,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 144,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Bolt of Linen Cloth",
+                "materials": [
+                  {
+                    "item_id": 2589,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Brown Linen Shirt",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Brown Linen Vest",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Linen Belt",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Linen Cloak",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Simple Linen Pants",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Woolen Cape",
+                "materials": [
+                  {
+                    "item_id": 2997,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2321,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 10,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Bolt of Woolen Cloth",
+                "materials": [
+                  {
+                    "item_id": 2592,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Bright Yellow Shirt",
+                "materials": [
+                  {
+                    "item_id": 4305,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 4341,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2321,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Brown Linen Pants",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Heavy Linen Gloves",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Orange Mageweave Shirt",
+                "materials": [
+                  {
+                    "item_id": 4339,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 6261,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 8343,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "White Bandit Mask",
+                "materials": [
+                  {
+                    "item_id": 4339,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2324,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 8343,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "White Linen Shirt",
+                "materials": [
+                  {
+                    "item_id": 2996,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2320,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 2324,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 15,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Black Mageweave Gloves",
+                "materials": [
+                  {
+                    "item_id": 4339,
+                    "quantity": 2
+                  },
+                  {
+                    "item_id": 8343,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 20,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Cooking": {
+    "profession": "Cooking",
+    "total_recipes": 58,
+    "expansions": [
+      {
+        "expansion": "Classic",
+        "level_range": "1-60",
+        "total_recipes": 58,
+        "recommended_path": [
+          {
+            "phase": "Early (Start of expansion)",
+            "recipes": [
+              {
+                "name": "Redridge Goulash",
+                "materials": [],
+                "estimated_cost": 0,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Barbecued Buzzard Wing",
+                "materials": [
+                  {
+                    "item_id": 3404,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Beer Basted Boar Ribs",
+                "materials": [
+                  {
+                    "item_id": 2886,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Big Bear Steak",
+                "materials": [
+                  {
+                    "item_id": 3730,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Blood Sausage",
+                "materials": [
+                  {
+                    "item_id": 3173,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Mid (Midway through expansion)",
+            "recipes": [
+              {
+                "name": "Brilliant Smallfish",
+                "materials": [
+                  {
+                    "item_id": 6291,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Bristle Whisker Catfish",
+                "materials": [
+                  {
+                    "item_id": 6308,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Charred Wolf Meat",
+                "materials": [
+                  {
+                    "item_id": 2672,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Cooked Crab Claw",
+                "materials": [
+                  {
+                    "item_id": 2675,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              },
+              {
+                "name": "Coyote Steak",
+                "materials": [
+                  {
+                    "item_id": 2673,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "10-15"
+              }
+            ]
+          },
+          {
+            "phase": "Late (End of expansion)",
+            "recipes": [
+              {
+                "name": "Crab Cake",
+                "materials": [
+                  {
+                    "item_id": 2674,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Crispy Lizard Tail",
+                "materials": [
+                  {
+                    "item_id": 5470,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Crocolisk Gumbo",
+                "materials": [
+                  {
+                    "item_id": 3667,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Crocolisk Steak",
+                "materials": [
+                  {
+                    "item_id": 2924,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "5-10"
+              },
+              {
+                "name": "Curiously Tasty Omelet",
+                "materials": [
+                  {
+                    "item_id": 3685,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 5,
+                "approx_crafts": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

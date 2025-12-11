@@ -1,0 +1,99 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Frame name="HolocronFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
+        <Size x="800" y="500"/>
+        <Anchors><Anchor point="CENTER"/></Anchors>
+        <Layers>
+            <Layer level="OVERLAY" textureSubLevel="1">
+                <Texture name="$parentPortrait" parentKey="portrait" file="Interface\Icons\inv_datacron_01">
+                    <Size x="60" y="60"/>
+                    <Anchors><Anchor point="TOPLEFT" x="-5" y="5"/></Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            
+            <Frame name="$parentSidebar" parentKey="Sidebar" inherits="InsetFrameTemplate">
+                <Size x="160" y="0"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="4" y="-60"/>
+                    <Anchor point="BOTTOMLEFT" x="4" y="26"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="OVERLAY"><FontString inherits="GameFontNormalSmall" text="SUITE APPS"><Anchors><Anchor point="TOP" x="0" y="-10"/></Anchors></FontString></Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentLaunchPet" parentKey="LaunchPet" inherits="UIPanelButtonTemplate" text="Petweaver">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" x="0" y="-30"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["PETWEAVER"]("");</OnClick></Scripts>
+                    </Button>
+                    <Button name="$parentLaunchSkill" parentKey="LaunchSkill" inherits="UIPanelButtonTemplate" text="Skillweaver">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" relativeKey="$parent.LaunchPet" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["SKILLWEAVER"]("");</OnClick></Scripts>
+                    </Button>
+                    <Button name="$parentLaunchGoblin" parentKey="LaunchGoblin" inherits="UIPanelButtonTemplate" text="Goblin">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" relativeKey="$parent.LaunchSkill" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["GOBLIN"]("");</OnClick></Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentContent" parentKey="Content" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.Sidebar" relativePoint="TOPRIGHT" x="5" y="0"/>
+                    <Anchor point="BOTTOMRIGHT" x="-6" y="26"/>
+                </Anchors>
+                <Frames>
+                    
+                    <Frame name="$parentHeader" parentKey="Header">
+                        <Size x="0" y="40"/>
+                        <Anchors><Anchor point="TOPLEFT"/><Anchor point="TOPRIGHT"/></Anchors>
+                        <Layers>
+                            <Layer level="ARTWORK">
+                                <FontString inherits="GameFontNormal" text="Viewing Data For:"><Anchors><Anchor point="LEFT" x="20" y="0"/></Anchors></FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentCharSelect" parentKey="CharSelect" inherits="UIDropDownMenuTemplate">
+                                <Anchors><Anchor point="LEFT" x="140" y="-2"/></Anchors>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+                    <Frame name="$parentData" parentKey="Data">
+                        <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Header" relativePoint="BOTTOMLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                        <Layers>
+                            <Layer level="ARTWORK">
+                                <FontString parentKey="NameText" inherits="GameFontNormalHuge" text="Character Name">
+                                    <Anchors><Anchor point="TOPLEFT" x="20" y="-20"/></Anchors>
+                                </FontString>
+                                <FontString parentKey="LevelText" inherits="GameFontHighlightLarge" text="Level 70">
+                                    <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.NameText" relativePoint="BOTTOMLEFT" x="0" y="-5"/></Anchors>
+                                </FontString>
+                                <FontString parentKey="GoldText" inherits="GameFontHighlightLarge" text="Gold: 0g">
+                                    <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.LevelText" relativePoint="BOTTOMLEFT" x="0" y="-15"/></Anchors>
+                                </FontString>
+                                <FontString parentKey="LocationText" inherits="GameFontHighlightLarge" text="Location: Unknown">
+                                    <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.GoldText" relativePoint="BOTTOMLEFT" x="0" y="-15"/></Anchors>
+                                </FontString>
+                                <FontString parentKey="LastSeenText" inherits="GameFontDisable" text="Last Seen: Now">
+                                    <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.LocationText" relativePoint="BOTTOMLEFT" x="0" y="-15"/></Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>self:RegisterForDrag("LeftButton"); HolocronFrameTitleText:SetText("|cff00ccffHolocron|r Data Hub"); </OnLoad>
+            <OnDragStart>self:StartMoving();</OnDragStart>
+            <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>

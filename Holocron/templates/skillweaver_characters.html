@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}SkillWeaver - Characters{% endblock %}
+
+{% block content %}
+{% include "skillweaver_nav.html" %}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="text-white"><i class="fas fa-users me-2"></i>Character Roster</h1>
+        <p class="text-muted">Manage your characters and sync status.</p>
+    </div>
+</div>
+
+<div class="row" id="char-list">
+    <!-- Populated by JS -->
+</div>
+
+<script>
+    fetch('/api/characters')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('char-list');
+            data.characters.forEach(c => {
+                const card = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark text-white border-secondary h-100">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-primary">${c.name}</h3>
+                                    <p class="text-muted">${c.spec} ${c.class}</p>
+                                    <div class="d-flex justify-content-around mb-3">
+                                        <span class="badge bg-secondary">iLvl ${c.ilvl}</span>
+                                        <span class="badge bg-success">${c.dps.toLocaleString()} DPS</span>
+                                    </div>
+                                    <button class="btn btn-outline-primary w-100">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                container.innerHTML += card;
+            });
+        });
+</script>
+{% endblock %}

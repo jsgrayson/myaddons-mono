@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SimC Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+        }
+
+        select,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #results {
+            margin-top: 20px;
+            border: 1px solid #444;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SimC Integration Test</h1>
+
+    <div>
+        <select id="simc-profile-select">
+            <option value="">Loading profiles...</option>
+        </select>
+        <button id="run-sim-btn">Run Simulation</button>
+    </div>
+
+    <div id="results">
+        <h3>Results</h3>
+        <p>DPS: <span id="sim-dps">-</span></p>
+        <p>Iterations: <span id="sim-iters">-</span></p>
+        <p>Time: <span id="sim-time">-</span></p>
+        <div id="sim-spinner" style="display:none;">Running...</div>
+    </div>
+
+    <script>
+        console.log("Test Page Loaded");
+
+        const profileSelect = document.getElementById('simc-profile-select');
+        const runBtn = document.getElementById('run-sim-btn');
+        const dpsDisplay = document.getElementById('sim-dps');
+        const itersDisplay = document.getElementById('sim-iters');
+        const timeDisplay = document.getElementById('sim-time');
+        const spinner = document.getElementById('sim-spinner');
+
+        // Load Profiles
+        fetch('/api/profiles')
+            .then(res => res.json())
+            .then(data => {
+                console.log("Profiles:", data);
+                profileSelect.innerHTML = '<option value="">Select Profile</option>';
+                data.forEach(p => {
+                    const opt = document.createElement('option');
+                    opt.value = p.profile_id;
+                    opt.textContent = `${p.profile_name} (ID: ${p.profile_id})`;
+                    profileSelect.appendChild(opt);
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                profileSelect.innerHTML = '<option>Error loading profiles</option>';
+            });
+
+        // Run Sim
+        runBtn.addEventListener('click', () => {
+            const profileId = profileSelect.value;
+            if (!profileId) return alert("Select a profile");
+
+            spinner.style.display = 'block';
+            dpsDisplay.textContent = '...';
+
+            fetch(`/api/simc/run_id/${profileId}`)
+                .then(res => res.json())
+                .then(data => {
+                    spinner.style.display = 'none';
+                    if (data.error) return alert(data.error);
+
+                    dpsDisplay.textContent = data.dps;
+                    itersDisplay.textContent = data.iterations;
+                    timeDisplay.textContent = data.sim_length;
+                })
+                .catch(err => {
+                    spinner.style.display = 'none';
+                    alert("Error: " + err);
+                });
+        });
+    </script>
+</body>
+
+</html>

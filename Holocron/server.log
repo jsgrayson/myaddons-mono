@@ -1,0 +1,43 @@
+DEBUG: Starting server.py...
+✓ Loaded 10 activities, 2 owned items
+✓ Mock Graph built: 8 zones
+✓ Loaded 8 knowledge sources
+✓ Loaded 12 collectibles, 5 owned
+✓ Loaded 4 items, 2 recipes
+❌ Error loading codex data: 'description'
+✓ Loaded mock Vault progress
+✓ Loaded 4 tracked events
+DataStore_Containers.json not found. Using mock data.
+✓ Mock Graph built: 8 zones
+Loading Holocron modules...
+✓ Mock Graph built: 8 zones
+SavedInstances.json not found. Using mock player data.
+Loading real reputation data...
+Parsing /Applications/World of Warcraft/_retail_/WTF/Account/NIGHTHWK77/SavedVariables/DataStore_Reputations.lua...
+✓ Loaded 2 factions from real data
+Loading real collection data...
+Could not find SavedVariables. Falling back to mock data.
+✓ Loaded 12 collectibles, 5 owned
+✓ Loaded 10 activities, 2 owned items
+✓ Loaded 8 knowledge sources
+✓ Loaded 4 items, 2 recipes
+❌ Error loading codex data: 'description'
+✓ Loaded mock Vault progress
+✓ Loaded 4 tracked events
+✓ All modules loaded
+Loading real reputation data...
+Parsing /Applications/World of Warcraft/_retail_/WTF/Account/NIGHTHWK77/SavedVariables/DataStore_Reputations.lua...
+✓ Loaded 2 factions from real data
+Loading TSM pricing data...
+✓ TSM Brain loaded: 5 item prices
+✓ Loaded 4 items, 2 recipes
+✓ Warden loaded: 677,000g across 3 characters
+Starting Holocron Server on port 5005...
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5005
+ * Running on http://10.6.0.2:5005
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [03/Dec/2025 09:38:12] "GET /api/navigator/activities HTTP/1.1" 200 -

@@ -1,0 +1,429 @@
+{% extends "base.html" %}
+
+{% block title %}GoblinStack - WoW Gold AI{% endblock %}
+
+{% block content %}
+{% include "goblinstack_nav.html" %}
+
+<!-- Hero Header -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">💰 GoblinStack AI</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-brain me-2"></i>Machine learning-powered gold making intelligence
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Key Metrics -->
+<div class="row mb-4">
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-coins me-2"></i>Total Gold</h6>
+                <h2 class="mb-0 text-white fw-bold" id="total-gold">0</h2>
+                <small class="text-success">+12.5% this week</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-chart-line me-2"></i>Active Auctions</h6>
+                <h2 class="mb-0 text-white fw-bold" id="active-auctions">0</h2>
+                <small class="text-info">15 pending</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-robot me-2"></i>AI Confidence</h6>
+                <h2 class="mb-0 text-white fw-bold">87%</h2>
+                <small class="text-warning">High accuracy</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-bolt me-2"></i>Flips Today</h6>
+                <h2 class="mb-0 text-white fw-bold" id="flips-today">0</h2>
+                <small class="text-danger">23 opportunities</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI Recommendations -->
+<div class="row mb-4">
+    <div class="col-md-8 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-lightbulb me-2"></i>AI Recommendations
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    {% for rec in recommendations %}
+                    <div class="list-group-item bg-transparent text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong class="text-white">{{ rec.name }}</strong>
+                                <p class="mb-0 text-light small">{{ rec.desc }}</p>
+                            </div>
+                            <span
+                                class="badge bg-{{ rec.color }}{% if rec.color != 'success' %} text-dark{% endif %}">+{{
+                                rec.roi }}% ROI</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-bell me-2"></i>Price Alerts
+            </div>
+            <div class="card-body">
+                {% for alert in alerts %}
+                <div class="alert alert-{{ alert.type }} mb-2{% if alert.type == 'warning' %} text-dark{% endif %}">
+                    <strong>{% if alert.type == 'success' %}✅{% elif alert.type == 'warning' %}⚠️{% else %}🚨{% endif %}
+                        {{ alert.title }}</strong><br>
+                    <small>{{ alert.message }}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profession Guides Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-scroll me-2"></i>Intelligent Profession Guides</span>
+                <div class="d-flex gap-2">
+                    <select id="guide-character" class="form-select form-select-sm bg-secondary text-white border-0"
+                        style="width: 150px;">
+                        <option value="" selected disabled>Select Character</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <select id="guide-profession" class="form-select form-select-sm bg-secondary text-white border-0"
+                        style="width: 150px;">
+                        <option value="" selected disabled>Select Profession</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <button id="load-guide-btn" class="btn btn-sm btn-primary">
+                        <i class="fas fa-sync-alt me-1"></i> Load
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs mb-3" id="profTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="leveling-tab" data-bs-toggle="tab"
+                            data-bs-target="#leveling" type="button" role="tab">
+                            <i class="fas fa-arrow-up me-2"></i>Dynamic Leveling
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs"
+                            type="button" role="tab">
+                            <i class="fas fa-tree me-2"></i>Spec Recommendations
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="crafts-tab" data-bs-toggle="tab" data-bs-target="#crafts"
+                            type="button" role="tab">
+                            <i class="fas fa-hammer me-2"></i>Smart Crafts
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="profTabsContent">
+                    <!-- Leveling Guide Tab -->
+                    <div class="tab-pane fade show active" id="leveling" role="tabpanel">
+                        <div id="leveling-content" class="text-center py-4 text-muted">
+                            <i class="fas fa-info-circle me-2"></i>Select a character and profession to generate a
+                            dynamic guide.
+                        </div>
+                    </div>
+
+                    <!-- Spec Recommendations Tab -->
+                    <div class="tab-pane fade" id="specs" role="tabpanel">
+                        <div id="specs-content" class="text-center py-4 text-muted">
+                            <i class="fas fa-info-circle me-2"></i>Select a character and profession to see spec advice.
+                        </div>
+                    </div>
+
+                    <!-- Smart Crafts Tab -->
+                    <div class="tab-pane fade" id="crafts" role="tabpanel">
+                        <div id="crafts-content" class="text-center py-4 text-muted">
+                            <i class="fas fa-info-circle me-2"></i>Select a character and profession to see profitable
+                            crafts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Market Trends Chart -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-chart-area me-2"></i>Market Trends (7 Days)
+            </div>
+            <div class="card-body">
+                <canvas id="trendChart" height="80"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ... (existing chart code) ...
+
+        // Profession Guide Logic
+        const charSelect = document.getElementById('guide-character');
+        const profSelect = document.getElementById('guide-profession');
+        const loadBtn = document.getElementById('load-guide-btn');
+
+        // Mock data for dropdowns (Replace with API call later)
+        const characters = ['Vaxo', 'Slaythe', 'Vacco', 'Bronha'];
+        const professions = ['Alchemy', 'Blacksmithing', 'Enchanting', 'Engineering', 'Herbalism', 'Inscription', 'Jewelcrafting', 'Leatherworking', 'Mining', 'Skinning', 'Tailoring'];
+
+        characters.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            charSelect.appendChild(opt);
+        });
+
+        professions.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p;
+            opt.textContent = p;
+            profSelect.appendChild(opt);
+        });
+
+        loadBtn.addEventListener('click', () => {
+            const char = charSelect.value;
+            const prof = profSelect.value;
+
+            if (!char || !prof) {
+                alert('Please select both a character and a profession.');
+                return;
+            }
+
+            loadLevelingGuide(char, prof);
+            loadSpecGuide(char, prof);
+            loadSmartCrafts(char, prof);
+        });
+
+        function loadLevelingGuide(char, prof) {
+            const container = document.getElementById('leveling-content');
+            container.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p>Calculating cheapest path...</p></div>';
+
+            fetch(`/api/profession/guide/${char}/${prof}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                        return;
+                    }
+
+                    let html = `<div class="d-flex justify-content-between mb-3">
+                        <h5>${data.profession} (${data.current_skill} &rarr; ${data.target_skill})</h5>
+                        <span class="badge bg-success">Est. Cost: ${data.estimated_cost.toLocaleString()}g</span>
+                    </div>`;
+
+                    if (data.steps.length === 0) {
+                        html += '<div class="alert alert-success">You are already at max skill!</div>';
+                    } else {
+                        html += '<div class="table-responsive"><table class="table table-dark table-striped table-hover"><thead><tr><th>Skill</th><th>Recipe</th><th>Mats</th><th>Cost/Craft</th><th>Count</th></tr></thead><tbody>';
+
+                        data.steps.forEach(step => {
+                            let matsHtml = '';
+                            for (const [mat, qty] of Object.entries(step.materials)) {
+                                matsHtml += `<div>${qty}x ${mat}</div>`;
+                            }
+
+                            html += `<tr>
+                                <td>${step.min_skill}-${step.target_skill}</td>
+                                <td class="fw-bold text-warning">${step.recipe}</td>
+                                <td class="small">${matsHtml}</td>
+                                <td>${step.cost_per_craft.toLocaleString()}g</td>
+                                <td>${step.craft_count}</td>
+                            </tr>`;
+                        });
+                        html += '</tbody></table></div>';
+                    }
+                    container.innerHTML = html;
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="alert alert-danger">Failed to load guide: ${err}</div>`;
+                });
+        }
+
+        function loadSpecGuide(char, prof) {
+            const container = document.getElementById('specs-content');
+            container.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p>Analyzing specs...</p></div>';
+
+            fetch(`/api/profession/specs/${char}/${prof}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                        return;
+                    }
+
+                    let html = '';
+
+                    // Warnings
+                    if (data.warnings && data.warnings.length > 0) {
+                        html += '<div class="alert alert-warning mb-3"><strong><i class="fas fa-exclamation-triangle me-2"></i>Optimization Warning:</strong><ul class="mb-0">';
+                        data.warnings.forEach(w => html += `<li>${w}</li>`);
+                        html += '</ul></div>';
+                    }
+
+                    // Recommendations
+                    if (data.recommendations) {
+                        html += '<h5>Recommended Investments</h5><div class="list-group">';
+                        data.recommendations.forEach(rec => {
+                            html += `<div class="list-group-item bg-transparent text-white border-secondary">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 text-info">${rec.node_name}</h6>
+                                    <small class="text-muted">Priority: ${rec.priority}</small>
+                                </div>
+                                <p class="mb-1 small">${rec.reason}</p>
+                            </div>`;
+                        });
+                        html += '</div>';
+                    }
+
+                    container.innerHTML = html || '<div class="alert alert-info">No specific spec recommendations at this time.</div>';
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="alert alert-danger">Failed to load specs: ${err}</div>`;
+                });
+        }
+
+        function loadSmartCrafts(char, prof) {
+            const container = document.getElementById('crafts-content');
+            container.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p>Finding profitable crafts...</p></div>';
+
+            fetch(`/api/profession/intelligent/${char}/${prof}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                        return;
+                    }
+
+                    if (data.length === 0) {
+                        container.innerHTML = '<div class="alert alert-info">No profitable crafts found based on current market data.</div>';
+                        return;
+                    }
+
+                    let html = '<div class="row">';
+                    data.forEach(craft => {
+                        html += `<div class="col-md-6 mb-3">
+                            <div class="card bg-dark border-secondary">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="card-title text-warning mb-1">${craft.recipe_name}</h6>
+                                            <small class="text-muted">Score: ${craft.score.toFixed(1)}</small>
+                                        </div>
+                                        <span class="badge bg-success">+${craft.profit.toLocaleString()}g</span>
+                                    </div>
+                                    <div class="mt-2 small">
+                                        <div class="d-flex justify-content-between"><span>Cost:</span> <span>${craft.cost.toLocaleString()}g</span></div>
+                                        <div class="d-flex justify-content-between"><span>Value:</span> <span>${craft.value.toLocaleString()}g</span></div>
+                                        <div class="d-flex justify-content-between text-info"><span>GPH:</span> <span>${craft.gold_per_hour.toLocaleString()}g/hr</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+                    html += '</div>';
+                    container.innerHTML = html;
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="alert alert-danger">Failed to load crafts: ${err}</div>`;
+                });
+        }
+
+        fetch('/api/goblin/history?days=7')
+            .then(response => response.json())
+            .then(data => {
+                if (!data || data.length === 0) return;
+
+                // Update Key Metrics from latest snapshot
+                const latest = data[data.length - 1];
+                document.getElementById('total-gold').textContent = latest.total_gold.toLocaleString() + 'g';
+                document.getElementById('active-auctions').textContent = latest.active_auctions;
+                document.getElementById('flips-today').textContent = latest.flips_today;
+
+                // Prepare Chart Data
+                const labels = data.map(d => {
+                    const date = new Date(d.timestamp);
+                    return date.toLocaleDateString('en-US', { weekday: 'short' });
+                });
+                const values = data.map(d => d.total_gold);
+
+                // Render Chart
+                const ctx = document.getElementById('trendChart');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Portfolio Value (Gold)',
+                            data: values,
+                            borderColor: '#ffd700',
+                            backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { labels: { color: '#e0e0e0' } },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return context.parsed.y.toLocaleString() + 'g';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: { color: '#e0e0e0' },
+                                grid: { color: '#333' }
+                            },
+                            x: {
+                                ticks: { color: '#e0e0e0' },
+                                grid: { color: '#333' }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading history:', error));
+    });
+</script>
+{% endblock %}

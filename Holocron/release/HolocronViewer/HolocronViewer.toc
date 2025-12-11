@@ -1,0 +1,16 @@
+## Interface: 120000
+## Title: Holocron Viewer
+## Notes: Displays inventory data from the Holocron external database.
+## Author: JGrayson
+## Version: 1.0
+## SavedVariables: HolocronViewerDB
+## OptionalDeps: DataStore
+
+Holocron_Index.lua
+HolocronViewer.lua
+
+# Modules
+Modules\Dashboard.lua
+Modules\Goblin.lua
+Modules\System.lua
+Modules/Search.lua

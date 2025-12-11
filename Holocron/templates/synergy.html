@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/holocron_theme.css') }}">
+
+<script>
+    document.body.classList.add('ethereal-mode');
+</script>
+
+<div class="ethereal-container">
+    <div class="row mb-5 text-center">
+        <div class="col-12">
+            <h1 class="display-3 ethereal-header">Grand Unification</h1>
+            <p class="lead ethereal-lead">Converging Holocron, Goblin, and DeepPockets data streams.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Economy of Scale -->
+        <div class="col-md-4">
+            <div class="glass-panel">
+                <div class="glass-header">
+                    <i class="bi bi-piggy-bank"></i> Economy of Scale
+                </div>
+                <div class="card-body">
+                    <p class="text-white-50 mb-3">Check stock before buying from AH.</p>
+                    <div class="input-group mb-4">
+                        <input type="text" class="glass-input w-100 mb-2" placeholder="Item ID (e.g. 198765)"
+                            id="economyInput" value="198765">
+                        <button class="btn-ethereal w-100" type="button" onclick="checkEconomy()">Check Stock</button>
+                    </div>
+                    <div id="economyResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Per Cast -->
+        <div class="col-md-4">
+            <div class="glass-panel">
+                <div class="glass-header text-danger" style="color: #ff6b6b;">
+                    <i class="bi bi-graph-down"></i> Cost-Per-Cast
+                </div>
+                <div class="card-body">
+                    <p class="text-white-50 mb-3">Analyze consumable expenses.</p>
+                    <button class="btn-ethereal btn-ethereal-danger w-100 mb-3" onclick="checkCost()">Analyze Raid
+                        Night</button>
+                    <div id="costResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Zookeeper -->
+        <div class="col-md-4">
+            <div class="glass-panel">
+                <div class="glass-header text-success" style="color: #51cf66;">
+                    <i class="bi bi-box-seam"></i> The Zookeeper
+                </div>
+                <div class="card-body">
+                    <p class="text-white-50 mb-3">Manage duplicate pets.</p>
+                    <button class="btn-ethereal w-100 mb-3" onclick="runZookeeper()" style="border-color: #51cf66;">Find
+                        Duplicates</button>
+                    <div id="zooResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function checkEconomy() {
+        const itemId = document.getElementById('economyInput').value;
+        const resultsDiv = document.getElementById('economyResults');
+        resultsDiv.innerHTML = '<div class="spinner-border text-info" role="status"></div>';
+
+        try {
+            const response = await fetch(`/api/synergy/economy_check?item_id=${itemId}`);
+            const data = await response.json();
+
+            let html = '';
+            if (data.action === "USE_STOCK") {
+                html = `
+            <div class="alert-glass">
+                <strong style="color: #ff6b6b;">STOP!</strong> Do not buy.
+                <br>You have <strong>${data.stock_count}</strong> in stock.
+                <br>Savings: <span style="color: var(--ethereal-accent);">${data.potential_savings}g</span>
+            </div>
+            <ul class="list-unstyled mt-3">`;
+                data.locations.forEach(loc => {
+                    html += `<li class="list-glass-item">${loc.character} (${loc.container}): ${loc.count}</li>`;
+                });
+                html += '</ul>';
+            } else {
+                html = `<div class="alert-glass">Stock empty. Safe to buy from AH.</div>`;
+            }
+            resultsDiv.innerHTML = html;
+        } catch (error) {
+            resultsDiv.innerHTML = `<div style="color: #ff6b6b;">Error: ${error.message}</div>`;
+        }
+    }
+
+    async function checkCost() {
+        const resultsDiv = document.getElementById('costResults');
+        resultsDiv.innerHTML = '<div class="spinner-border text-danger" role="status"></div>';
+
+        try {
+            const response = await fetch('/api/synergy/consumable_cost');
+            const data = await response.json();
+
+            let html = `<h5 class="text-white mt-2">Total: <span style="color: #ff6b6b;">${data.total_cost}g</span></h5>`;
+            html += '<ul class="list-unstyled mt-2">';
+            data.breakdown.forEach(item => {
+                html += `
+            <li class="list-glass-item d-flex justify-content-between">
+                <span>${item.name} (x${item.count})</span>
+                <span>${item.total}g</span>
+            </li>`;
+            });
+            html += '</ul>';
+            resultsDiv.innerHTML = html;
+        } catch (error) {
+            resultsDiv.innerHTML = `<div style="color: #ff6b6b;">Error: ${error.message}</div>`;
+        }
+    }
+
+    async function runZookeeper() {
+        const resultsDiv = document.getElementById('zooResults');
+        resultsDiv.innerHTML = '<div class="spinner-border text-success" role="status"></div>';
+
+        try {
+            const response = await fetch('/api/synergy/zookeeper', { method: 'POST' });
+            const data = await response.json();
+
+            if (data.total_duplicates_found === 0) {
+                resultsDiv.innerHTML = '<div class="alert-glass">No duplicates found.</div>';
+                return;
+            }
+
+            let html = `<div class="alert-glass">Found ${data.total_duplicates_found} duplicates!</div>`;
+            html += '<ul class="list-unstyled mt-2">';
+            data.tasks.forEach(task => {
+                html += `
+            <li class="list-glass-item">
+                <i class="bi bi-envelope"></i> Mail <strong>${task.pet_name}</strong>
+                <br><small class="text-muted">${task.from} <i class="bi bi-arrow-right"></i> ${task.to}</small>
+            </li>`;
+            });
+            html += '</ul>';
+            resultsDiv.innerHTML = html;
+        } catch (error) {
+            resultsDiv.innerHTML = `<div style="color: #ff6b6b;">Error: ${error.message}</div>`;
+        }
+    }
+
+    window.addEventListener('beforeunload', function () {
+        document.body.classList.remove('ethereal-mode');
+    });
+</script>
+{% endblock %}

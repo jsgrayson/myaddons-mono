@@ -1,0 +1,163 @@
+{
+  "raids": {
+    "Nerub-ar Palace": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-ulgrax-the-devourer-strategy-guide",
+          "display_name": "Ulgrax the Devourer",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-the-bloodbound-horror-strategy-guide",
+          "display_name": "The Bloodbound Horror",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-sikran-captain-of-the-sureki-strategy-guide",
+          "display_name": "Sikran",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-rashanan-strategy-guide",
+          "display_name": "Rasha'nan",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-broodtwister-ovinax-strategy-guide",
+          "display_name": "Broodtwister Ovi'nax",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-nexus-princess-kyveza-strategy-guide",
+          "display_name": "Nexus-Princess Ky'veza",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-the-silken-court-strategy-guide",
+          "display_name": "The Silken Court",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/nerub-ar-palace-queen-ansurek-strategy-guide",
+          "display_name": "Queen Ansurek",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        }
+      ],
+      "slug": "nerub-ar-palace"
+    }
+  },
+  "dungeons": {
+    "Ara-Kara, City of Echoes": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/ara-kara-avanoxx-strategy-guide",
+          "display_name": "Avanoxx",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/ara-kara-anubzekt-strategy-guide",
+          "display_name": "Anub'zekt",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/ara-kara-kikatal-the-harvester-strategy-guide",
+          "display_name": "Ki'katal the Harvester",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        }
+      ],
+      "slug": "ara-kara"
+    },
+    "City of Threads": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/city-of-threads-orator-krixvizk-strategy-guide",
+          "display_name": "Orator Krix'vizk",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/city-of-threads-fangs-of-the-queen-strategy-guide",
+          "display_name": "Fangs of the Queen",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/city-of-threads-the-coaglamation-strategy-guide",
+          "display_name": "The Coaglamation",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/city-of-threads-izo-the-grand-splicer-strategy-guide",
+          "display_name": "Izo, the Grand Splicer",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        }
+      ],
+      "slug": "city-of-threads"
+    },
+    "The Stonevault": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-stonevault-edna-strategy-guide",
+          "display_name": "E.D.N.A",
+          "instance": "The Stonevault",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-stonevault-skarmorak-strategy-guide",
+          "display_name": "Skarmorak",
+          "instance": "The Stonevault",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-stonevault-master-machinists-strategy-guide",
+          "display_name": "Master Machinists",
+          "instance": "The Stonevault",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-stonevault-void-speaker-eirich-strategy-guide",
+          "display_name": "Void Speaker Eirich",
+          "instance": "The Stonevault",
+          "category": "dungeons"
+        }
+      ],
+      "slug": "the-stonevault"
+    },
+    "The Dawnbreaker": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-dawnbreaker-speaker-shadowcrown-strategy-guide",
+          "display_name": "Speaker Shadowcrown",
+          "instance": "The Dawnbreaker",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-dawnbreaker-anubikkaj-strategy-guide",
+          "display_name": "Anub'ikkaj",
+          "instance": "The Dawnbreaker",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.icy-veins.com/wow/the-dawnbreaker-rashanan-strategy-guide",
+          "display_name": "Rasha'nan",
+          "instance": "The Dawnbreaker",
+          "category": "dungeons"
+        }
+      ],
+      "slug": "the-dawnbreaker"
+    }
+  }
+}

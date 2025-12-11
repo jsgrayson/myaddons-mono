@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Header -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="hero-header p-5 text-center">
+            <h1 class="display-3 fw-bold mb-3 hero-title">🗺️ Project Pathfinder</h1>
+            <p class="lead hero-subtitle mb-0">
+                <i class="fas fa-route me-2"></i>Intelligent instance routing & travel optimization
+            </p>
+            <div class="animated-border mt-4"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Travel Matrix -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white">Travel Matrix (Cooldown Status)</div>
+            <div class="card-body p-0">
+                <table class="table table-dark table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Character</th>
+                            <th>Zone</th>
+                            <th>Hearthstone</th>
+                            <th>Dalaran HS</th>
+                            <th>Garrison HS</th>
+                            <th>Wormhole</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for char in matrix %}
+                        <tr>
+                            <td>{{ char.name }}</td>
+                            <td>{{ char.zone }}</td>
+                            <td>
+                                {% if char.hs_ready %}
+                                <span class="badge bg-success">Ready</span>
+                                {% else %}
+                                <span class="badge bg-danger">{{ char.hs_cd }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if char.dalaran_ready %}
+                                <span class="badge bg-success">Ready</span>
+                                {% else %}
+                                <span class="badge bg-danger">{{ char.dalaran_cd }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if char.garrison_ready %}
+                                <span class="badge bg-success">Ready</span>
+                                {% else %}
+                                <span class="badge bg-danger">{{ char.garrison_cd }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if char.wormhole_ready %}
+                                <span class="badge bg-success">Ready</span>
+                                {% else %}
+                                <span class="badge bg-danger">{{ char.wormhole_cd }}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Route Planner -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">Route Planner</div>
+            <div class="card-body">
+                <form id="routeForm">
+                    <div class="mb-3">
+                        <label for="sourceZone" class="form-label">From</label>
+                        <select class="form-select" id="sourceZone">
+                            <option value="84">Stormwind</option>
+                            <option value="1670">Oribos</option>
+                            <option value="125">Dalaran (Northrend)</option>
+                            <option value="2112">Valdrakken</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destZone" class="form-label">To</label>
+                        <select class="form-select" id="destZone">
+                            <option value="84">Stormwind</option>
+                            <option value="1670">Oribos</option>
+                            <option value="125">Dalaran (Northrend)</option>
+                            <option value="2112">Valdrakken</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calculateRoute()">Calculate Fastest
+                        Route</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-info text-dark">Itinerary</div>
+            <div class="card-body" id="itineraryResult">
+                <p class="text-muted">Select zones to calculate route.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function calculateRoute() {
+        const source = document.getElementById('sourceZone').value;
+        const target = document.getElementById('destZone').value;
+
+        const response = await fetch(`/api/distance?from=${source}&to=${target}`);
+        const data = await response.json();
+
+        const resultDiv = document.getElementById('itineraryResult');
+
+        if (response.ok) {
+            let html = `<h5>Total Time: ${data.travel_time_formatted}</h5>`;
+            html += '<ul class="list-group">';
+            data.path.forEach((step, index) => {
+                html += `<li class="list-group-item">${index + 1}. ${step}</li>`;
+            });
+            html += '</ul>';
+            resultDiv.innerHTML = html;
+        } else {
+            resultDiv.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    }
+</script>
+{% endblock %}

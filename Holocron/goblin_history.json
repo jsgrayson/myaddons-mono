@@ -1,0 +1,50 @@
+[
+    {
+        "timestamp": "2025-11-22T22:37:18.873101",
+        "total_gold": 1270321,
+        "active_auctions": 49,
+        "flips_today": 9
+    },
+    {
+        "timestamp": "2025-11-23T22:37:18.873101",
+        "total_gold": 1258062,
+        "active_auctions": 50,
+        "flips_today": 11
+    },
+    {
+        "timestamp": "2025-11-24T22:37:18.873101",
+        "total_gold": 1248614,
+        "active_auctions": 46,
+        "flips_today": 13
+    },
+    {
+        "timestamp": "2025-11-25T22:37:18.873101",
+        "total_gold": 1240630,
+        "active_auctions": 45,
+        "flips_today": 8
+    },
+    {
+        "timestamp": "2025-11-26T22:37:18.873101",
+        "total_gold": 1226789,
+        "active_auctions": 42,
+        "flips_today": 9
+    },
+    {
+        "timestamp": "2025-11-27T22:37:18.873101",
+        "total_gold": 1218926,
+        "active_auctions": 48,
+        "flips_today": 10
+    },
+    {
+        "timestamp": "2025-11-28T22:37:18.873101",
+        "total_gold": 1208075,
+        "active_auctions": 42,
+        "flips_today": 13
+    },
+    {
+        "timestamp": "2025-11-29T22:37:18.873183",
+        "total_gold": 1281971,
+        "active_auctions": 46,
+        "flips_today": 16
+    }
+]

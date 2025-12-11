@@ -1,0 +1,9 @@
+## Interface: 100200
+## Title: |cff00ccffHolocron|r
+## Notes: The Central Data Hub & Suite Launcher
+## Author: You
+## Version: 0.1.0 Alpha
+## SavedVariables: HolocronDB
+
+Holocron.xml
+Holocron.lua

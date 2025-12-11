@@ -1,0 +1,14 @@
+<nav class="nav nav-pills nav-fill mb-4 p-2 rounded"
+    style="background: rgba(0,0,0,0.2); border: 1px solid rgba(163, 53, 238, 0.2);">
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/' else 'text-light' }}" href="/">Dashboard</a>
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/talents' else 'text-light' }}"
+        href="/talents">Talents</a>
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/gear' else 'text-light' }}" href="/gear">Gear
+        Optimizer</a>
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/rotations' else 'text-light' }}"
+        href="/rotations">Rotations</a>
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/characters' else 'text-light' }}"
+        href="/characters">Characters</a>
+    <a class="nav-link {{ 'active bg-primary' if request.path == '/settings' else 'text-light' }}"
+        href="/settings">Settings</a>
+</nav>

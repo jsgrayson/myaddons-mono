@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holocron Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Rajdhani', 'sans-serif'],
+                        warcraft: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        background: '#020617',
+                        surface: '#0f172a',
+                        // WoW Semantic Colors
+                        azeroth: {
+                            gold: '#ffd100',
+                            goldDim: '#c69b00',
+                            dark: '#0a0a12',
+                            panel: 'rgba(13, 16, 24, 0.9)',
+                        },
+                        rarity: {
+                            common: '#ffffff',
+                            uncommon: '#1eff00',
+                            rare: '#0070dd',
+                            epic: '#a335ee',
+                            legendary: '#ff8000',
+                            artifact: '#e6cc80',
+                            death: '#C41F3B',
+                        },
+                        resource: {
+                            health: '#11da11',
+                            mana: '#2e91cf',
+                            rage: '#c41e3a',
+                            energy: '#fff569',
+                        }
+                    },
+                    boxShadow: {
+                        'glow-gold': '0 0 15px rgba(255, 209, 0, 0.3)',
+                        'glow-blue': '0 0 15px rgba(0, 112, 221, 0.4)',
+                        'glow-purple': '0 0 20px rgba(163, 53, 238, 0.35)',
+                        'titan-glow': '0 0 30px rgba(0, 112, 221, 0.15)',
+                        'bevel': 'inset 1px 1px 0 rgba(255, 255, 255, 0.1), inset -1px -1px 0 rgba(0, 0, 0, 0.5)',
+                        'inset': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.6)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'twinkle': 'twinkle 4s ease-in-out infinite',
+                        'swing': 'swing 2s ease-in-out infinite',
+                        'spin-slow': 'spin 15s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        twinkle: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' },
+                        },
+                        swing: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(5deg)' },
+                            '75%': { transform: 'rotate(-5deg)' },
+                        }
+                    },
+                    backgroundImage: {
+                        'metal-gradient': 'linear-gradient(180deg, rgba(30,35,45,1) 0%, rgba(20,25,35,1) 100%)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            /* Deep Space & Titan Grid */
+            background-image:
+                /* Hex/Grid Pattern */
+                repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0, 112, 221, 0.05) 50px),
+                repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0, 112, 221, 0.05) 50px),
+                /* Nebulae */
+                radial-gradient(circle at 50% 0%, rgba(163, 53, 238, 0.15) 0%, transparent 70%),
+                radial-gradient(circle at 0% 100%, rgba(0, 112, 221, 0.1) 0%, transparent 60%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        /* Noise Texture */
+        .bg-noise {
+            position: relative;
+        }
+
+        .bg-noise::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* WoW UI Glass - Titan Panel style */
+        .wow-panel {
+            background: rgba(13, 16, 24, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(0, 0, 0, 0.8),
+                0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        /* Item Tooltip Style Card */
+        .wow-card {
+            background: linear-gradient(180deg, rgba(20, 22, 30, 0.95) 0%, rgba(10, 12, 18, 0.98) 100%);
+            border: 1px solid #333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .wow-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border: 1px solid #1a1a1a;
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            border-color: #f8b700;
+        }
+
+        .text-shadow {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+        }
+
+        .text-shadow-glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .bar-gloss {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 100%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 209, 0, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+</body>
+
+</html>

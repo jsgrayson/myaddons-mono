@@ -1,0 +1,220 @@
+============================================================
+BLIZZARD API RECIPE IMPORT
+============================================================
+
+🔍 Fetching profession list...
+✅ Found 8 crafting professions
+
+📖 Engineering (ID: 202)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Engineering / Zandalari Engineering
+    ✅ Imported 147 recipes from Kul Tiran Engineering / Zandalari Engineering
+  📚 Legion Engineering
+    ✅ Imported 66 recipes from Legion Engineering
+  📚 Draenor Engineering
+    ✅ Imported 35 recipes from Draenor Engineering
+  📚 Pandaria Engineering
+    ✅ Imported 46 recipes from Pandaria Engineering
+  📚 Cataclysm Engineering
+    ✅ Imported 36 recipes from Cataclysm Engineering
+  📚 Northrend Engineering
+    ✅ Imported 48 recipes from Northrend Engineering
+  📚 Outland Engineering
+    ✅ Imported 73 recipes from Outland Engineering
+  📚 Classic Engineering
+    ✅ Imported 161 recipes from Classic Engineering
+  📚 Shadowlands Engineering
+    ✅ Imported 32 recipes from Shadowlands Engineering
+  📚 Dragon Isles Engineering
+    ✅ Imported 113 recipes from Dragon Isles Engineering
+  📚 Khaz Algar Engineering
+    ✅ Imported 77 recipes from Khaz Algar Engineering
+
+📖 Blacksmithing (ID: 164)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Blacksmithing / Zandalari Blacksmithing
+    ✅ Imported 201 recipes from Kul Tiran Blacksmithing / Zandalari Blacksmithing
+  📚 Legion Blacksmithing
+    ✅ Imported 66 recipes from Legion Blacksmithing
+  📚 Draenor Blacksmithing
+    ✅ Imported 33 recipes from Draenor Blacksmithing
+  📚 Pandaria Blacksmithing
+    ✅ Imported 191 recipes from Pandaria Blacksmithing
+  📚 Cataclysm Blacksmithing
+    ✅ Imported 94 recipes from Cataclysm Blacksmithing
+  📚 Northrend Blacksmithing
+    ✅ Imported 130 recipes from Northrend Blacksmithing
+  📚 Outland Blacksmithing
+    ✅ Imported 131 recipes from Outland Blacksmithing
+  📚 Classic Blacksmithing
+    ✅ Imported 303 recipes from Classic Blacksmithing
+  📚 Shadowlands Blacksmithing
+    ✅ Imported 74 recipes from Shadowlands Blacksmithing
+  📚 Dragon Isles Blacksmithing
+    ✅ Imported 121 recipes from Dragon Isles Blacksmithing
+  📚 Khaz Algar Blacksmithing
+    ✅ Imported 89 recipes from Khaz Algar Blacksmithing
+
+📖 Enchanting (ID: 333)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Enchanting / Zandalari Enchanting
+    ✅ Imported 114 recipes from Kul Tiran Enchanting / Zandalari Enchanting
+  📚 Legion Enchanting
+    ✅ Imported 85 recipes from Legion Enchanting
+  📚 Draenor Enchanting
+    ✅ Imported 38 recipes from Draenor Enchanting
+  📚 Pandaria Enchanting
+    ✅ Imported 37 recipes from Pandaria Enchanting
+  📚 Cataclysm Enchanting
+    ✅ Imported 53 recipes from Cataclysm Enchanting
+  📚 Northrend Enchanting
+    ✅ Imported 68 recipes from Northrend Enchanting
+  📚 Outland Enchanting
+    ✅ Imported 65 recipes from Outland Enchanting
+  📚 Classic Enchanting
+    ✅ Imported 139 recipes from Classic Enchanting
+  📚 Shadowlands Enchanting
+    ✅ Imported 44 recipes from Shadowlands Enchanting
+  📚 Dragon Isles Enchanting
+    ✅ Imported 88 recipes from Dragon Isles Enchanting
+  📚 Khaz Algar Enchanting
+    ✅ Imported 90 recipes from Khaz Algar Enchanting
+
+📖 Tailoring (ID: 197)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Tailoring / Zandalari Tailoring
+    ✅ Imported 143 recipes from Kul Tiran Tailoring / Zandalari Tailoring
+  📚 Legion Tailoring
+    ✅ Imported 86 recipes from Legion Tailoring
+  📚 Draenor Tailoring
+    ✅ Imported 35 recipes from Draenor Tailoring
+  📚 Pandaria Tailoring
+    ✅ Imported 133 recipes from Pandaria Tailoring
+  📚 Cataclysm Tailoring
+    ✅ Imported 73 recipes from Cataclysm Tailoring
+  📚 Northrend Tailoring
+    ✅ Imported 100 recipes from Northrend Tailoring
+  📚 Outland Tailoring
+    ✅ Imported 97 recipes from Outland Tailoring
+  📚 Classic Tailoring
+    ✅ Imported 268 recipes from Classic Tailoring
+  📚 Shadowlands Tailoring
+    ✅ Imported 69 recipes from Shadowlands Tailoring
+  📚 Dragon Isles Tailoring
+    ✅ Imported 118 recipes from Dragon Isles Tailoring
+  📚 Khaz Algar Tailoring
+    ✅ Imported 81 recipes from Khaz Algar Tailoring
+
+📖 Inscription (ID: 773)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Inscription / Zandalari Inscription
+    ✅ Imported 116 recipes from Kul Tiran Inscription / Zandalari Inscription
+  📚 Legion Inscription
+    ✅ Imported 151 recipes from Legion Inscription
+  📚 Draenor Inscription
+    ✅ Imported 29 recipes from Draenor Inscription
+  📚 Pandaria Inscription
+    ✅ Imported 41 recipes from Pandaria Inscription
+  📚 Cataclysm Inscription
+    ✅ Imported 39 recipes from Cataclysm Inscription
+  📚 Northrend Inscription
+    ✅ Imported 30 recipes from Northrend Inscription
+  📚 Outland Inscription
+    ✅ Imported 12 recipes from Outland Inscription
+  📚 Classic Inscription
+    ✅ Imported 95 recipes from Classic Inscription
+  📚 Shadowlands Inscription
+    ✅ Imported 48 recipes from Shadowlands Inscription
+  📚 Dragon Isles Inscription
+    ✅ Imported 135 recipes from Dragon Isles Inscription
+  📚 Khaz Algar Inscription
+    ✅ Imported 74 recipes from Khaz Algar Inscription
+
+📖 Leatherworking (ID: 165)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Leatherworking / Zandalari Leatherworking
+    ✅ Imported 228 recipes from Kul Tiran Leatherworking / Zandalari Leatherworking
+  📚 Legion Leatherworking
+    ✅ Imported 118 recipes from Legion Leatherworking
+  📚 Draenor Leatherworking
+    ✅ Imported 42 recipes from Draenor Leatherworking
+  📚 Pandaria Leatherworking
+    ✅ Imported 256 recipes from Pandaria Leatherworking
+  📚 Cataclysm Leatherworking
+    ✅ Imported 99 recipes from Cataclysm Leatherworking
+  📚 Northrend Leatherworking
+    ✅ Imported 160 recipes from Northrend Leatherworking
+  📚 Outland Leatherworking
+    ✅ Imported 139 recipes from Outland Leatherworking
+  📚 Classic Leatherworking
+    ✅ Imported 296 recipes from Classic Leatherworking
+  📚 Shadowlands Leatherworking
+    ✅ Imported 118 recipes from Shadowlands Leatherworking
+  📚 Dragon Isles Leatherworking
+    ✅ Imported 161 recipes from Dragon Isles Leatherworking
+  📚 Khaz Algar Leatherworking
+    ✅ Imported 89 recipes from Khaz Algar Leatherworking
+
+📖 Alchemy (ID: 171)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Alchemy / Zandalari Alchemy
+    ✅ Imported 148 recipes from Kul Tiran Alchemy / Zandalari Alchemy
+  📚 Legion Alchemy
+    ✅ Imported 84 recipes from Legion Alchemy
+  📚 Draenor Alchemy
+    ✅ Imported 54 recipes from Draenor Alchemy
+  📚 Pandaria Alchemy
+    ✅ Imported 35 recipes from Pandaria Alchemy
+  📚 Cataclysm Alchemy
+    ✅ Imported 45 recipes from Cataclysm Alchemy
+  📚 Northrend Alchemy
+    ✅ Imported 67 recipes from Northrend Alchemy
+  📚 Outland Alchemy
+    ✅ Imported 70 recipes from Outland Alchemy
+  📚 Classic Alchemy
+    ✅ Imported 114 recipes from Classic Alchemy
+  📚 Shadowlands Alchemy
+    ✅ Imported 52 recipes from Shadowlands Alchemy
+  📚 Dragon Isles Alchemy
+    ✅ Imported 66 recipes from Dragon Isles Alchemy
+  📚 Khaz Algar Alchemy
+    ✅ Imported 51 recipes from Khaz Algar Alchemy
+
+📖 Jewelcrafting (ID: 755)
+  Found 11 skill tiers (expansions)
+  📚 Kul Tiran Jewelcrafting / Zandalari Jewelcrafting
+    ✅ Imported 79 recipes from Kul Tiran Jewelcrafting / Zandalari Jewelcrafting
+  📚 Legion Jewelcrafting
+    ✅ Imported 111 recipes from Legion Jewelcrafting
+  📚 Draenor Jewelcrafting
+    ✅ Imported 36 recipes from Draenor Jewelcrafting
+  📚 Pandaria Jewelcrafting
+    ✅ Imported 198 recipes from Pandaria Jewelcrafting
+  📚 Cataclysm Jewelcrafting
+    ✅ Imported 225 recipes from Cataclysm Jewelcrafting
+  📚 Northrend Jewelcrafting
+    ✅ Imported 216 recipes from Northrend Jewelcrafting
+  📚 Outland Jewelcrafting
+    ✅ Imported 156 recipes from Outland Jewelcrafting
+  📚 Classic Jewelcrafting
+    ✅ Imported 80 recipes from Classic Jewelcrafting
+  📚 Shadowlands Jewelcrafting
+    ✅ Imported 56 recipes from Shadowlands Jewelcrafting
+  📚 Dragon Isles Jewelcrafting
+    ✅ Imported 98 recipes from Dragon Isles Jewelcrafting
+  📚 Khaz Algar Jewelcrafting
+    ✅ Imported 66 recipes from Khaz Algar Jewelcrafting
+
+✅ Imported 8874 recipes from Blizzard API
+
+📊 Recipe Summary:
+--------------------------------------------------
+  Alchemy              -  786 recipes
+  Leatherworking       - 1706 recipes
+  Inscription          -  770 recipes
+  Enchanting           -  821 recipes
+  Jewelcrafting        - 1321 recipes
+  Tailoring            - 1203 recipes
+  Blacksmithing        - 1433 recipes
+  Engineering          -  834 recipes
+--------------------------------------------------

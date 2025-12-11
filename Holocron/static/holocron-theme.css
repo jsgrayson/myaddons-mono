@@ -1,0 +1,281 @@
+
+/* =========================================
+   HOLOCRON THEME - WORLD OF WARCRAFT SUITE
+   ========================================= */
+
+:root {
+    /* Item Quality Colors */
+    --wow-poor: #9d9d9d;
+    --wow-common: #ffffff;
+    --wow-uncommon: #1eff00;
+    --wow-rare: #0070dd;
+    --wow-epic: #a335ee;
+    --wow-legendary: #ff8000;
+    --wow-artifact: #e6cc80;
+    --wow-heirloom: #00ccff;
+    --wow-gold: #ffd700;
+
+    /* System Colors */
+    --bg-dark-deep: #050510;
+    --bg-dark-mid: #0a0e27;
+    --bg-panel: rgba(20, 20, 35, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --neon-blue: #00f3ff;
+}
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+
+body {
+    background: linear-gradient(135deg, var(--bg-dark-deep) 0%, var(--bg-dark-mid) 100%);
+    background-attachment: fixed;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark-deep);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--wow-rare), var(--wow-epic));
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--wow-legendary);
+}
+
+/* =========================================
+   BOOTSTRAP OVERRIDES
+   ========================================= */
+
+/* Navbar - Glassy & Techy */
+.navbar {
+    background: rgba(10, 14, 39, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--wow-rare);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.nav-link {
+    color: #b8b8d1 !important;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--wow-common) !important;
+    text-shadow: 0 0 8px var(--wow-rare);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: var(--wow-legendary);
+    box-shadow: 0 0 10px var(--wow-legendary);
+}
+
+/* Cards - The Core UI Element */
+.card {
+    background: var(--bg-panel);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 1.25rem;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #0056b3, var(--wow-rare));
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 112, 221, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 112, 221, 0.6);
+    transform: scale(1.02);
+}
+
+.btn-outline-warning {
+    color: var(--wow-gold);
+    border-color: var(--wow-gold);
+}
+
+.btn-outline-warning:hover {
+    background-color: var(--wow-gold);
+    color: #000;
+    box-shadow: 0 0 15px var(--wow-gold);
+}
+
+/* Tables */
+.table-dark {
+    --bs-table-bg: transparent;
+    color: #e0e0e0;
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+td {
+    vertical-align: middle;
+}
+
+/* Forms */
+.form-control, .form-select {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+}
+.form-control:focus, .form-select:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: var(--wow-rare);
+    box-shadow: 0 0 10px rgba(0, 112, 221, 0.3);
+    color: #fff;
+}
+
+/* =========================================
+   CUSTOM COMPONENTS (From your HTML)
+   ========================================= */
+
+/* Hero Header */
+.hero-header {
+    background: linear-gradient(135deg, rgba(163, 53, 238, 0.1) 0%, rgba(0, 112, 221, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #b8b8d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    color: var(--wow-legendary);
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Animated Gradient Border (Under Hero Headers) */
+.animated-border {
+    height: 4px;
+    width: 200px;
+    margin: 1.5rem auto 0;
+    background: linear-gradient(90deg, var(--wow-rare), var(--wow-epic), var(--wow-legendary), var(--wow-rare));
+    background-size: 300% 100%;
+    animation: gradientMove 4s ease infinite;
+    border-radius: 2px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Widget Cards (Dashboard) */
+.widget-card {
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+.widget-card:hover {
+    border-left: 3px solid var(--wow-legendary);
+}
+
+/* Badges */
+.badge {
+    padding: 0.5em 0.8em;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.bg-success { background-color: #10b981 !important; }
+.bg-warning { background-color: #f59e0b !important; }
+.bg-danger { background-color: #ef4444 !important; }
+.bg-info { background-color: #3b82f6 !important; }
+
+/* Progress Bars */
+.progress {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-bar {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Text Utilities */
+.text-wow-gold { color: var(--wow-gold) !important; }
+.text-wow-epic { color: var(--wow-epic) !important; }
+.text-wow-rare { color: var(--wow-rare) !important; }
+
+/* Animations */
+.animate__pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Chart Canvas Overrides */
+canvas {
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}

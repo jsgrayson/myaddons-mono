@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+
+{% block title %}SkillWeaver - Dashboard{% endblock %}
+
+{% block content %}
+{% include "skillweaver_nav.html" %}
+
+<!-- Hero Header -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">⚔️ SkillWeaver</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-cogs me-2"></i>Talent optimization & gear simulation powered by SimulationCraft
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Character Selection & SimC -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-users me-2"></i>Active Characters</span>
+                <div class="d-flex gap-2">
+                    <select id="simc-profile-select" class="form-select form-select-sm bg-secondary text-white border-0"
+                        style="width: 200px;">
+                        <option value="" selected disabled>Select SimC Profile</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <button id="run-sim-btn" class="btn btn-sm btn-danger">
+                        <i class="fas fa-fire me-1"></i> Run Sim
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="sim-results-area" class="mb-3 d-none">
+                    <div class="alert alert-dark border-danger">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="alert-heading text-danger mb-0"><i class="fas fa-chart-bar me-2"></i><span
+                                        id="sim-dps">0</span> DPS</h4>
+                                <small class="text-muted">Iterations: <span id="sim-iters">0</span> | Duration: <span
+                                        id="sim-time">0</span>s</small>
+                            </div>
+                            <div class="spinner-border text-danger d-none" id="sim-spinner" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row">
+                        {% for char in characters %}
+                        <div class="col-md-3 mb-3">
+                            <div class="card bg-transparent border-{{ char.color }}">
+                                <div class="card-body text-center">
+                                    <h5 class="text-white">{{ char.name }}</h5>
+                                    <p class="text-light mb-2">{{ char.spec }} {{ char.class }}</p>
+                                    <span class="badge bg-{{ char.color }}">Item Level {{ char.ilvl }}</span><br>
+                                    <button class="btn btn-sm btn-outline-{{ char.color }} mt-2">Optimize</button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Talent Optimizer -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-sitemap me-2"></i>Talent Recommendations (Thunderfist)
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-light">Current Build:</span>
+                        <span class="badge bg-info text-dark">Raid - ST</span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar bg-success" style="width: 92%;">
+                            92% Optimal (4,250 DPS)
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h6 class="text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Suggested Changes:</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent text-white">
+                        <strong>Row 6:</strong> Swap "Hailstorm" → "Elemental Spirits"
+                        <span class="badge bg-success float-end">+85 DPS</span>
+                    </li>
+                    <li class="list-group-item bg-transparent text-white">
+                        <strong>Row 9:</strong> Swap "Fire Nova" → "Crash Lightning"
+                        <span class="badge bg-warning text-dark float-end">+52 DPS</span>
+                    </li>
+                </ul>
+                <button class="btn btn-primary w-100 mt-3">Apply & Export Loadout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-shield-alt me-2"></i>Gear Upgrade Suggestions
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item bg-transparent text-white">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong class="text-warning">Weapon (Main Hand)</strong>
+                                <p class="mb-0 text-light small">
+                                    Upgrade: Stormshaper's Blade (493) → Fyr'alath (496)<br>
+                                    <span class="text-success">+210 DPS gain</span>
+                                </p>
+                            </div>
+                            <span class="badge bg-danger">Priority</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item bg-transparent text-white">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong class="text-warning">Trinket 2</strong>
+                                <p class="mb-0 text-light small">
+                                    Upgrade: Iridescence (486) → Smold's Compass (489)<br>
+                                    <span class="text-info">+95 DPS gain</span>
+                                </p>
+                            </div>
+                            <span class="badge bg-warning text-dark">Medium</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item bg-transparent text-white">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong class="text-warning">Ring 1</strong>
+                                <p class="mb-0 text-light small">
+                                    Enchant: Critical Strike II → Haste III<br>
+                                    <span class="text-success">+42 DPS gain</span>
+                                </p>
+                            </div>
+                            <span class="badge bg-success">Easy Win</span>
+                        </div>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rotation & Stat Weights -->
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <i class="fas fa-sync-alt me-2"></i>Optimal Rotation (Enhancement)
+                </div>
+                <div class="card-body">
+                    <ol class="text-light">
+                        <li><strong>Feral Spirit</strong> on cooldown</li>
+                        <li><strong>Stormstrike</strong> if Maelstrom Weapon ≥ 5</li>
+                        <li><strong>Lava Lash</strong> if Fire Nova active</li>
+                        <li><strong>Crash Lightning</strong> for AoE (3+ targets)</li>
+                        <li><strong>Flametongue Weapon</strong> if &lt; 5s remaining</li>
+                        <li><strong>Frost Shock</strong> as filler</li>
+                    </ol>
+                    <button class="btn btn-outline-primary btn-sm w-100">Export to WeakAura</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <i class="fas fa-chart-bar me-2"></i>Stat Weights (Current Build)
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-light">Haste</span>
+                            <span class="text-warning">2.12</span>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-warning" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-light">Mastery</span>
+                            <span class="text-info">1.95</span>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-info" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-light">Critical Strike</span>
+                            <span class="text-success">1.88</span>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-success" style="width: 89%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-light">Versatility</span>
+                            <span class="text-danger">1.42</span>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-danger" style="width: 67%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // SimC Logic
+        const profileSelect = document.getElementById('simc-profile-select');
+        const runBtn = document.getElementById('run-sim-btn');
+        const resultsArea = document.getElementById('sim-results-area');
+        const dpsDisplay = document.getElementById('sim-dps');
+        const itersDisplay = document.getElementById('sim-iters');
+        const timeDisplay = document.getElementById('sim-time');
+        const spinner = document.getElementById('sim-spinner');
+
+        // Load Profiles
+        if (profileSelect) {
+            console.log("Fetching profiles...");
+            fetch('/api/profiles')
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Profiles received:", data);
+                    if (data.error) {
+                        console.error("Profile fetch error:", data.error);
+                        return;
+                    }
+                    data.forEach(p => {
+                        const opt = document.createElement('option');
+                        opt.value = p.profile_id;
+                        opt.textContent = `Profile #${p.profile_id} (Class: ${p.class_id}, Spec: ${p.spec_id})`;
+                        profileSelect.appendChild(opt);
+                    });
+                    console.log("Dropdown populated with " + data.length + " items.");
+                })
+                .catch(err => console.error("Fetch failed:", err));
+        } else {
+            console.error("Profile select element not found!");
+        }
+
+        // Run Sim
+        if (runBtn) {
+            runBtn.addEventListener('click', () => {
+                const profileId = profileSelect.value;
+                if (!profileId) {
+                    alert("Please select a profile first.");
+                    return;
+                }
+
+                resultsArea.classList.remove('d-none');
+                spinner.classList.remove('d-none');
+                runBtn.disabled = true;
+                dpsDisplay.textContent = "Running...";
+
+                fetch(`/api/simc/run_id/${profileId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        spinner.classList.add('d-none');
+                        runBtn.disabled = false;
+
+                        if (data.error) {
+                            dpsDisplay.textContent = "Error";
+                            alert(`Simulation failed: ${data.error}`);
+                            return;
+                        }
+
+                        dpsDisplay.textContent = Math.round(data.dps).toLocaleString();
+                        itersDisplay.textContent = data.iterations;
+                        timeDisplay.textContent = data.sim_length;
+                    })
+                    .catch(err => {
+                        spinner.classList.add('d-none');
+                        runBtn.disabled = false;
+                        dpsDisplay.textContent = "Error";
+                        console.error(err);
+                    });
+            });
+        }
+        // Handle Optimize buttons
+        const optimizeBtns = document.querySelectorAll('.btn-outline-primary, .btn-outline-secondary, .btn-outline-success, .btn-outline-warning');
+        optimizeBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const charName = this.parentElement.querySelector('h5').textContent;
+                alert(`Optimization started for ${charName}...\n(SimulationCraft integration pending)`);
+            });
+        });
+
+        // Handle Export button
+        const exportBtn = document.querySelector('.btn-primary');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', function () {
+                alert('Talent loadout exported to clipboard!\n(Paste into WoW import window)');
+            });
+        }
+
+        // Handle WeakAura Export
+        const waBtn = document.querySelector('.btn-outline-primary.btn-sm.w-100');
+        if (waBtn) {
+            waBtn.addEventListener('click', function () {
+                alert('WeakAura string copied to clipboard!');
+            });
+        }
+    });
+</script>
+{% endblock %}

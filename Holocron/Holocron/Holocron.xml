@@ -1,0 +1,110 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Button name="HolocronCharRowTemplate" virtual="true">
+        <Size x="560" y="20"/>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT"><Size x="150" y="20"/><Anchors><Anchor point="LEFT" x="5" y="0"/></Anchors></FontString>
+                <FontString parentKey="Level" inherits="GameFontHighlight" justifyH="CENTER"><Size x="50" y="20"/><Anchors><Anchor point="LEFT" relativeKey="$parent.Name" relativePoint="RIGHT" x="5" y="0"/></Anchors></FontString>
+                <FontString parentKey="Zone" inherits="GameFontHighlight" justifyH="LEFT"><Size x="150" y="20"/><Anchors><Anchor point="LEFT" relativeKey="$parent.Level" relativePoint="RIGHT" x="5" y="0"/></Anchors></FontString>
+                <FontString parentKey="Gold" inherits="GameFontNormal" justifyH="RIGHT"><Size x="120" y="20"/><Anchors><Anchor point="RIGHT" x="-5" y="0"/></Anchors></FontString>
+            </Layer>
+        </Layers>
+        <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+    </Button>
+
+    <Frame name="HolocronFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
+        <Size x="800" y="500"/>
+        <Anchors><Anchor point="CENTER"/></Anchors>
+        <Layers>
+            <Layer level="OVERLAY" textureSubLevel="1">
+                <Texture name="$parentPortrait" parentKey="portrait" file="Interface\Icons\inv_datacron_01">
+                    <Size x="60" y="60"/>
+                    <Anchors><Anchor point="TOPLEFT" x="-5" y="5"/></Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            
+            <Frame name="$parentSidebar" parentKey="Sidebar" inherits="InsetFrameTemplate">
+                <Size x="160" y="0"/>
+                <Anchors><Anchor point="TOPLEFT" x="4" y="-60"/><Anchor point="BOTTOMLEFT" x="4" y="26"/></Anchors>
+                <Layers><Layer level="OVERLAY"><FontString inherits="GameFontNormalSmall" text="SUITE APPS"><Anchors><Anchor point="TOP" x="0" y="-10"/></Anchors></FontString></Layer></Layers>
+                <Frames>
+                    <Button name="$parentLaunchPet" parentKey="LaunchPet" inherits="UIPanelButtonTemplate" text="Petweaver">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" x="0" y="-30"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["PETWEAVER"]("");</OnClick></Scripts>
+                    </Button>
+                    <Button name="$parentLaunchSkill" parentKey="LaunchSkill" inherits="UIPanelButtonTemplate" text="Skillweaver">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" relativeKey="$parent.LaunchPet" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["SKILLWEAVER"]("");</OnClick></Scripts>
+                    </Button>
+                    <Button name="$parentLaunchGoblin" parentKey="LaunchGoblin" inherits="UIPanelButtonTemplate" text="Goblin">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" relativeKey="$parent.LaunchSkill" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["GOBLIN"]("");</OnClick></Scripts>
+                    </Button>
+                    <Button name="$parentLaunchDP" parentKey="LaunchDP" inherits="UIPanelButtonTemplate" text="Deep Pockets">
+                        <Size x="140" y="30"/>
+                        <Anchors><Anchor point="TOP" relativeKey="$parent.LaunchGoblin" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        <Scripts><OnClick>SlashCmdList["DEEPPOCKETS"]("");</OnClick></Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentContent" parentKey="Content" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.Sidebar" relativePoint="TOPRIGHT" x="5" y="0"/>
+                    <Anchor point="BOTTOMRIGHT" x="-6" y="26"/>
+                </Anchors>
+                <Frames>
+                    
+                    <Frame name="$parentHeader" parentKey="Header">
+                        <Size x="0" y="30"/>
+                        <Anchors><Anchor point="TOPLEFT"/><Anchor point="TOPRIGHT"/></Anchors>
+                        <Layers>
+                            <Layer level="ARTWORK">
+                                <FontString inherits="GameFontNormal" text="Name"><Anchors><Anchor point="LEFT" x="10" y="0"/></Anchors></FontString>
+                                <FontString inherits="GameFontNormal" text="Lvl"><Anchors><Anchor point="LEFT" x="160" y="0"/></Anchors></FontString>
+                                <FontString inherits="GameFontNormal" text="Location"><Anchors><Anchor point="LEFT" x="220" y="0"/></Anchors></FontString>
+                                <FontString inherits="GameFontNormal" text="Wealth"><Anchors><Anchor point="RIGHT" x="-40" y="0"/></Anchors></FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+                    <ScrollFrame name="$parentScroll" parentKey="Scroll" inherits="HybridScrollFrameTemplate">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeKey="$parent.Header" relativePoint="BOTTOMLEFT" x="0" y="-5"/>
+                            <Anchor point="BOTTOMRIGHT" x="-6" y="30"/> </Anchors>
+                        <Frames>
+                            <Slider name="$parentScrollBar" parentKey="scrollBar" inherits="HybridScrollBarTemplate">
+                                <Anchors><Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-15"/><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="0" y="15"/></Anchors>
+                            </Slider>
+                        </Frames>
+                    </ScrollFrame>
+                    
+                    <Frame name="$parentFooter" parentKey="Footer">
+                        <Size x="0" y="30"/>
+                        <Anchors><Anchor point="BOTTOMLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                        <Layers>
+                            <Layer level="OVERLAY">
+                                <FontString parentKey="TotalGold" inherits="GameFontHighlightLarge" text="Total Account Wealth: 0g">
+                                    <Anchors><Anchor point="RIGHT" x="-20" y="5"/></Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>self:RegisterForDrag("LeftButton"); HolocronFrameTitleText:SetText("|cff00ccffHolocron|r Data Hub"); </OnLoad>
+            <OnDragStart>self:StartMoving();</OnDragStart>
+            <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>

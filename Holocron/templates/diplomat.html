@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Header -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="hero-header p-5 text-center">
+            <h1 class="display-3 fw-bold mb-3 hero-title">🎖️ The Diplomat</h1>
+            <p class="lead hero-subtitle mb-0">
+                <i class="fas fa-handshake me-2"></i>Reputation tracking & world quest optimization
+            </p>
+            <div class="animated-border mt-4"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Reputation Matrix -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">Reputation Matrix (Account Wide)</div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover mb-0 text-center">
+                        <thead>
+                            <tr>
+                                <th class="text-start ps-3">Character</th>
+                                {% for col in matrix.columns %}
+                                <th>{{ col.name }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in matrix.rows %}
+                            <tr>
+                                <td class="text-start ps-3">
+                                    <strong class="text-{{ row.character.class|lower }}">{{ row.character.name
+                                        }}</strong>
+                                    <br><small class="text-muted">{{ row.character.realm }}</small>
+                                </td>
+                                {% for standing in row.standings %}
+                                <td>
+                                    {% if standing.is_max %}
+                                    <span class="badge bg-success">Renown {{ standing.renown }}</span>
+                                    {% elif standing.renown > 0 %}
+                                    <span class="badge bg-info">Renown {{ standing.renown }}</span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">-</span>
+                                    {% endif %}
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paragon Meter -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white">Paragon Meter (Warband)</div>
+            <div class="card-body">
+                {% for faction in factions %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <strong>{{ faction.name }}</strong>
+                        <span>{{ faction.current }} / {{ faction.max }}</span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar {% if faction.is_close %}bg-warning text-dark progress-bar-striped progress-bar-animated{% else %}bg-info{% endif %}"
+                            role="progressbar" style="width: {{ faction.percent }}%;"
+                            aria-valuenow="{{ faction.percent }}" aria-valuemin="0" aria-valuemax="100">
+                            {{ faction.percent }}%
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reputation Sniper -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">Reputation Sniper (Recommended Actions)</div>
+            <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Quest</th>
+                            <th>Reward</th>
+                            <th>Efficiency</th>
+                            <th>Assigned To</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for job in sniper %}
+                        <tr>
+                            <td>{{ job.zone }}</td>
+                            <td>{{ job.quest }}</td>
+                            <td><span class="badge bg-primary">{{ job.reward }}</span></td>
+                            <td>{{ job.efficiency }}</td>
+                            <td><strong>{{ job.assigned_char }}</strong></td>
+                            <td><button class="btn btn-sm btn-outline-success">Track</button></td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="text-center">No high-efficiency jobs found. Relax!</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

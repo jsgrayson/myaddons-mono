@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-4 text-primary">The Navigator 2.0</h1>
+        <p class="lead text-muted">Dynamic Quest Routing & Travel Entertainment.</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Route Optimizer -->
+    <div class="col-md-6">
+        <div class="card bg-dark border-primary mb-4">
+            <div class="card-header border-primary text-primary">
+                <i class="bi bi-map"></i> Route Optimizer
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Current Zone</label>
+                    <select class="form-select bg-dark text-white" id="startZone">
+                        <option value="84">Stormwind</option>
+                        <option value="1670">Oribos</option>
+                        <option value="1978">Dragon Isles</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Destinations (Zone IDs)</label>
+                    <input type="text" class="form-control bg-dark text-white" id="destinations"
+                        value="2022, 2023, 2024">
+                    <small class="text-muted">Comma separated</small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Active Quest IDs (for Bank Check)</label>
+                    <input type="text" class="form-control bg-dark text-white" id="quests" value="123, 456">
+                </div>
+                <button class="btn btn-primary w-100" onclick="optimizeRoute()">Calculate Optimal Path</button>
+            </div>
+        </div>
+
+        <div id="routeResults"></div>
+    </div>
+
+    <!-- The Commute Overlay -->
+    <div class="col-md-6">
+        <div class="card bg-dark border-info">
+            <div class="card-header border-info text-info">
+                <i class="bi bi-airplane"></i> The Commute (Overlay Mode)
+            </div>
+            <div class="card-body text-center">
+                <div id="commuteStatus" class="mb-4">
+                    <h2 class="display-6">Ready for Departure</h2>
+                    <p class="text-muted">Waiting for route...</p>
+                </div>
+
+                <div class="ratio ratio-16x9 mb-3">
+                    <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?si=rel=0" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+
+                <button class="btn btn-outline-info btn-sm" onclick="toggleOverlay()">Pop Out Overlay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function optimizeRoute() {
+        const startZone = parseInt(document.getElementById('startZone').value);
+        const dests = document.getElementById('destinations').value.split(',').map(Number);
+        const quests = document.getElementById('quests').value.split(',').map(Number);
+
+        const resultsDiv = document.getElementById('routeResults');
+        resultsDiv.innerHTML = '<div class="spinner-border text-primary" role="status"></div>';
+
+        try {
+            const response = await fetch('/api/navigator/optimize', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    current_zone: startZone,
+                    destinations: dests,
+                    quests: quests
+                })
+            });
+            const data = await response.json();
+
+            if (!data.route.success) {
+                resultsDiv.innerHTML = `<div class="alert alert-danger">${data.route.error}</div>`;
+                return;
+            }
+
+            // Update Commute Status
+            document.getElementById('commuteStatus').innerHTML = `
+            <h2 class="display-6 text-success">En Route: ${data.route.route_order[1] || 'Destination'}</h2>
+            <p class="text-white">ETA: ${data.route.total_time}s</p>
+        `;
+
+            let html = '';
+
+            if (data.bank_stops_added) {
+                html += `<div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i> <strong>Bank Stop Added!</strong> You have quest items stashed away.</div>`;
+            }
+
+            html += '<ul class="list-group">';
+            let stepNum = 1;
+            data.route.segments.forEach(seg => {
+                html += `
+            <li class="list-group-item bg-dark text-white border-secondary">
+                <div class="d-flex justify-content-between">
+                    <span><strong>${stepNum}. ${seg.from}</strong> <i class="bi bi-arrow-right"></i> <strong>${seg.to}</strong></span>
+                    <span class="badge bg-primary">${seg.method}</span>
+                </div>
+                <small class="text-muted">Travel Time: ${seg.time}s</small>
+            </li>
+            `;
+                stepNum++;
+            });
+            html += '</ul>';
+
+            resultsDiv.innerHTML = html;
+
+        } catch (error) {
+            resultsDiv.innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
+        }
+    }
+
+    function toggleOverlay() {
+        alert("In a real app, this would open a minimal 'Always On Top' window for the second monitor.");
+    }
+</script>
+{% endblock %}

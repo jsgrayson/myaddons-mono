@@ -1,0 +1,150 @@
+{
+    "instances": [
+        {
+            "name": "Manaforge Omega",
+            "id": 10001,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=manaforge-omega"
+        },
+        {
+            "name": "Liberation of Undermine",
+            "id": 10002,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=liberation-of-undermine"
+        },
+        {
+            "name": "Blackrock Depths",
+            "id": 10003,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=blackrock-depths"
+        },
+        {
+            "name": "Wastes of K'aresh",
+            "id": 10004,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=wastes-of-karesh"
+        },
+        {
+            "name": "The Glassed Expanse",
+            "id": 10005,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=the-glassed-expanse"
+        },
+        {
+            "name": "Nerub-ar Palace",
+            "id": 1293,
+            "type": "Raid",
+            "url": "https://www.wowhead.com/zone=nerub-ar-palace"
+        },
+        {
+            "name": "Operation: Floodgate",
+            "id": 10006,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=operation-floodgate"
+        },
+        {
+            "name": "Eco-Dome Al'dani",
+            "id": 10007,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=eco-dome-aldani"
+        },
+        {
+            "name": "Ara-Kara, City of Echoes",
+            "id": 2624,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=ara-kara-city-of-echoes"
+        },
+        {
+            "name": "City of Threads",
+            "id": 2627,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=city-of-threads"
+        },
+        {
+            "name": "The Stonevault",
+            "id": 2631,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=the-stonevault"
+        },
+        {
+            "name": "The Dawnbreaker",
+            "id": 2635,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=the-dawnbreaker"
+        },
+        {
+            "name": "Cinderbrew Meadery",
+            "id": 2640,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=cinderbrew-meadery"
+        },
+        {
+            "name": "Darkflame Cleft",
+            "id": 2645,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=darkflame-cleft"
+        },
+        {
+            "name": "Priory of the Sacred Flame",
+            "id": 2650,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=priory-of-the-sacred-flame"
+        },
+        {
+            "name": "The Rookery",
+            "id": 2655,
+            "type": "Dungeon",
+            "url": "https://www.wowhead.com/zone=the-rookery"
+        }
+    ],
+    "encounters": [
+        {
+            "name": "Kordac, the Dormant Protector",
+            "id": 2620,
+            "npc_id": 221084,
+            "type": "World Boss",
+            "instance": "Isle of Dorn",
+            "guide_url": "https://www.wowhead.com/npc=221084"
+        },
+        {
+            "name": "Aggregation of Horrors",
+            "id": 2621,
+            "npc_id": 221224,
+            "type": "World Boss",
+            "instance": "Ringing Deeps",
+            "guide_url": "https://www.wowhead.com/npc=221224"
+        },
+        {
+            "name": "Shurrai, Atrocity of the Undersea",
+            "id": 2622,
+            "npc_id": 221196,
+            "type": "World Boss",
+            "instance": "Hallowfall",
+            "guide_url": "https://www.wowhead.com/npc=221196"
+        },
+        {
+            "name": "Orta, the Broken Mountain",
+            "id": 2623,
+            "npc_id": 221251,
+            "type": "World Boss",
+            "instance": "Azj-Kahet",
+            "guide_url": "https://www.wowhead.com/npc=221251"
+        },
+        {
+            "name": "The Gobfather",
+            "id": 2659,
+            "npc_id": 228000,
+            "type": "World Boss",
+            "instance": "Undermine",
+            "guide_url": "https://www.wowhead.com/npc=228000"
+        },
+        {
+            "name": "Reshanor, The Untethered",
+            "id": 2660,
+            "npc_id": 230000,
+            "type": "World Boss",
+            "instance": "K'aresh",
+            "guide_url": "https://www.wowhead.com/npc=230000"
+        }
+    ]
+}

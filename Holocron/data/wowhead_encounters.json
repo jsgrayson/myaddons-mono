@@ -1,0 +1,123 @@
+{
+  "raids": {
+    "Nerub-ar Palace": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/ulgrax-the-devourer",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/ulgrax-the-devourer",
+          "display_name": "Ulgrax the Devourer",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/bloodbound-horror",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/bloodbound-horror",
+          "display_name": "The Bloodbound Horror",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/sikran",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/sikran",
+          "display_name": "Sikran",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/rashanan",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/rashanan",
+          "display_name": "Rasha'nan",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/broodtwister-ovinax",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/broodtwister-ovinax",
+          "display_name": "Broodtwister Ovi'nax",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/nexus-princess-kyveza",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/nexus-princess-kyveza",
+          "display_name": "Nexus-Princess Ky'veza",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/silken-court",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/silken-court",
+          "display_name": "The Silken Court",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/raids/nerub-ar-palace/queen-ansurek",
+          "url": "https://www.wowhead.com/guide/raids/nerub-ar-palace/queen-ansurek",
+          "display_name": "Queen Ansurek",
+          "instance": "Nerub-ar Palace",
+          "category": "raids"
+        }
+      ]
+    }
+  },
+  "dungeons": {
+    "Ara-Kara, City of Echoes": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/avanoxx",
+          "url": "https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/avanoxx",
+          "display_name": "Avanoxx",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/anubzekt",
+          "url": "https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/anubzekt",
+          "display_name": "Anub'zekt",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/kikatal-the-harvester",
+          "url": "https://www.wowhead.com/guide/dungeons/ara-kara-city-of-echoes/kikatal-the-harvester",
+          "display_name": "Ki'katal the Harvester",
+          "instance": "Ara-Kara, City of Echoes",
+          "category": "dungeons"
+        }
+      ]
+    },
+    "City of Threads": {
+      "bosses": [
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/city-of-threads/orator-krixvizk",
+          "url": "https://www.wowhead.com/guide/dungeons/city-of-threads/orator-krixvizk",
+          "display_name": "Orator Krix'vizk",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/city-of-threads/fangs-of-the-queen",
+          "url": "https://www.wowhead.com/guide/dungeons/city-of-threads/fangs-of-the-queen",
+          "display_name": "Fangs of the Queen",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/city-of-threads/coaglamation",
+          "url": "https://www.wowhead.com/guide/dungeons/city-of-threads/coaglamation",
+          "display_name": "The Coaglamation",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        },
+        {
+          "error": "404 Client Error: Not Found for url: https://www.wowhead.com/guide/dungeons/city-of-threads/izo",
+          "url": "https://www.wowhead.com/guide/dungeons/city-of-threads/izo",
+          "display_name": "Izo, the Grand Splicer",
+          "instance": "City of Threads",
+          "category": "dungeons"
+        }
+      ]
+    }
+  }
+}

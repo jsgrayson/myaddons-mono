@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}GoblinStack - AI Predictions{% endblock %}
+
+{% block content %}
+{% include "goblinstack_nav.html" %}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-white"><i class="fas fa-crystal-ball me-2"></i>AI Market Predictions</h1>
+            <p class="text-muted">Machine learning forecasts for high-volume items.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Current Price</th>
+                                <th>Predicted Price</th>
+                                <th>Confidence</th>
+                                <th>Timeframe</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="predictions-table">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    fetch('/api/predictions')
+        .then(res => res.json())
+        .then(data => {
+            const tbody = document.getElementById('predictions-table');
+            data.predictions.forEach(p => {
+                const row = `
+                        <tr>
+                            <td>${p.item}</td>
+                            <td>${p.current}g</td>
+                            <td class="text-success fw-bold">${p.predicted}g</td>
+                            <td>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-info" style="width: ${p.confidence}%">${p.confidence}%</div>
+                                </div>
+                            </td>
+                            <td>${p.timeframe}</td>
+                            <td><button class="btn btn-sm btn-outline-success">Track</button></td>
+                        </tr>
+                    `;
+                tbody.innerHTML += row;
+            });
+        });
+</script>
+{% endblock %}
