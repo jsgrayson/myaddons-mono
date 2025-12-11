@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}DeepPockets - Smart Inventory{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card bg-dark text-white border-primary">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="card-title text-primary mb-0">
+                        <i class="fas fa-box-open me-2"></i>DeepPockets
+                    </h1>
+                    <p class="text-muted mb-0">Account-Wide Inventory Manager</p>
+                </div>
+                <div class="text-end">
+                    <span class="badge bg-success">{{ total_items }} Unique Items</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="nav nav-tabs mb-4" id="inventoryTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="search-tab" data-bs-toggle="tab" data-bs-target="#search" type="button"
+            role="tab">Global Search</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="remote-tab" data-bs-toggle="tab" data-bs-target="#remote" type="button"
+            role="tab">Remote Stash</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="incinerator-tab" data-bs-toggle="tab" data-bs-target="#incinerator" type="button"
+            role="tab">The Incinerator</button>
+    </li>
+</ul>
+
+<div class="tab-content" id="inventoryTabContent">
+    <!-- Global Search -->
+    <div class="tab-pane fade show active" id="search" role="tabpanel">
+        <div class="card bg-dark text-white">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" id="searchInput" class="form-control bg-dark text-white"
+                        placeholder="Search for item...">
+                    <button class="btn btn-primary" type="button" onclick="searchInventory()">Search</button>
+                </div>
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remote Stash -->
+    <div class="tab-pane fade" id="remote" role="tabpanel">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <h5 class="mb-0">Items on Alts (Not on Main)</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Showing high-value items located on characters other than your current main.</p>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Count</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="remoteTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Incinerator -->
+    <div class="tab-pane fade" id="incinerator" role="tabpanel">
+        <div class="card bg-dark text-white">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 text-danger"><i class="fas fa-fire me-2"></i>The Incinerator</h5>
+                <button class="btn btn-outline-danger btn-sm" onclick="runIncinerator()">Analyze Bags</button>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Identify low-value items cluttering your inventory.</p>
+                <div id="incineratorResults"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function searchInventory() {
+        const query = document.getElementById('searchInput').value;
+        // For MVP, we search by ID if numeric, or name if string (requires name DB)
+        // Assuming ID for now or exact match
+        // Actually, let's just hit the search endpoint
+
+        // TODO: Implement full text search endpoint
+        alert("Search not fully implemented yet. Try ID lookup via API.");
+    }
+
+    async function loadRemoteStash() {
+        // Fetch items on alts
+        const response = await fetch('/api/deeppockets/remote?main=MainMage'); // Hardcoded main for now
+        const data = await response.json();
+
+        const tbody = document.getElementById('remoteTableBody');
+        tbody.innerHTML = '';
+
+        data.items.forEach(item => {
+            const row = `
+            <tr>
+                <td>${item.name || 'Item #' + item.item_id}</td>
+                <td>${item.count}</td>
+                <td><span class="badge bg-info">${item.character}</span> (${item.container})</td>
+                <td><button class="btn btn-sm btn-outline-warning" onclick="requestMail(${item.item_id}, '${item.character}')">Request Mail</button></td>
+            </tr>
+        `;
+            tbody.innerHTML += row;
+        });
+    }
+
+    // Load remote stash on tab click
+    document.getElementById('remote-tab').addEventListener('shown.bs.tab', loadRemoteStash);
+
+    async function runIncinerator() {
+        const resultsDiv = document.getElementById('incineratorResults');
+        resultsDiv.innerHTML = '<div class="text-center"><div class="spinner-border text-danger" role="status"></div><p>Analyzing value density...</p></div>';
+
+        // Mock bag data for demonstration if we can't get real bag data from client
+        // In a real app, the addon would upload the bag contents.
+        // Here we'll send a mix of high and low value items.
+        const mockBag = [
+            { "item_id": 191380, "count": 20, "slot": 1 }, // Potion (High Value)
+            { "item_id": 12345, "count": 1, "slot": 2 },   // Grey Rock (Low Value)
+            { "item_id": 200111, "count": 5, "slot": 3 },  // Resonant Crystal (Medium Value)
+            { "item_id": 198765, "count": 10, "slot": 4 }  // Draconium Ore (Medium Value)
+        ];
+
+        try {
+            const response = await fetch('/api/deeppockets/incinerate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items: mockBag })
+            });
+            const data = await response.json();
+
+            let html = '<ul class="list-group list-group-flush">';
+            data.candidates.forEach(item => {
+                const isTrash = item.slot_value < 1.0; // Threshold: 1g
+                const badgeClass = isTrash ? 'bg-danger' : 'bg-success';
+                const badgeText = isTrash ? 'TRASH' : 'KEEP';
+
+                html += `
+                <li class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center border-secondary">
+                    <div>
+                        <span class="badge ${badgeClass} me-2">${badgeText}</span>
+                        Item #${item.item_id} (x${item.count})
+                    </div>
+                    <div class="text-end">
+                        <small class="text-muted">${item.unit_price}g/unit</small><br>
+                        <strong>${item.slot_value.toFixed(2)}g</strong>
+                    </div>
+                </li>
+                `;
+            });
+            html += '</ul>';
+            resultsDiv.innerHTML = html;
+
+        } catch (error) {
+            resultsDiv.innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
+        }
+    }
+</script>
+{% endblock %}

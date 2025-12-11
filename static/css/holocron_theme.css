@@ -1,0 +1,163 @@
+/* Holocron Theme - Ethereal Nexus Vibe */
+:root {
+    --ethereal-bg: #0f1020;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --nebula-1: #6600cc;
+    --nebula-2: #00ccff;
+    --ethereal-text: #e0e0e0;
+    --ethereal-accent: #00f2ff;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+body.ethereal-mode {
+    background: var(--ethereal-bg);
+    color: var(--ethereal-text);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+body.ethereal-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(102, 0, 204, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(0, 204, 255, 0.2), transparent 50%);
+    z-index: -1;
+    animation: nebula-drift 20s infinite alternate ease-in-out;
+}
+
+@keyframes nebula-drift {
+    0% {
+        transform: translate(-10%, -10%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.ethereal-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Typography */
+.ethereal-header {
+    font-weight: 200;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff, var(--ethereal-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.ethereal-lead {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* Glass Panels */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 242, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-header {
+    font-size: 1.1rem;
+    color: var(--ethereal-accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+
+.glass-header i {
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px var(--ethereal-accent));
+}
+
+/* Inputs & Buttons */
+.glass-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    width: 60%;
+    transition: all 0.3s;
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--ethereal-accent);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.btn-ethereal {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-ethereal:hover {
+    background: var(--ethereal-accent);
+    color: #000;
+    box-shadow: 0 0 15px var(--ethereal-accent);
+}
+
+.btn-ethereal-danger {
+    border-color: rgba(255, 50, 50, 0.3);
+}
+
+.btn-ethereal-danger:hover {
+    background: #ff3333;
+    box-shadow: 0 0 15px #ff3333;
+}
+
+/* Results Area */
+#economyResults,
+#costResults,
+#zooResults {
+    margin-top: 1rem;
+}
+
+.alert-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--ethereal-accent);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.list-glass-item {
+    background: transparent;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}

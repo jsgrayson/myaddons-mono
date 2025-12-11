@@ -1,0 +1,72 @@
+[
+  {
+    "event_id": 1,
+    "event_type": "class_change",
+    "item_impacts": [
+      {
+        "price_change_pct": 250.0,
+        "peak_time_hours": 48.0
+      },
+      {
+        "price_change_pct": 180.0,
+        "peak_time_hours": 36.0
+      }
+    ]
+  },
+  {
+    "event_id": 2,
+    "event_type": "raid",
+    "item_impacts": [
+      {
+        "price_change_pct": 150.0,
+        "peak_time_hours": 12.0
+      },
+      {
+        "price_change_pct": 120.0,
+        "peak_time_hours": 24.0
+      }
+    ]
+  },
+  {
+    "event_id": 3,
+    "event_type": "patch",
+    "item_impacts": [
+      {
+        "price_change_pct": 300.0,
+        "peak_time_hours": 72.0
+      },
+      {
+        "price_change_pct": 200.0,
+        "peak_time_hours": 48.0
+      }
+    ]
+  },
+  {
+    "event_id": 4,
+    "event_type": "holiday",
+    "item_impacts": [
+      {
+        "price_change_pct": 50.0,
+        "peak_time_hours": 6.0
+      },
+      {
+        "price_change_pct": 40.0,
+        "peak_time_hours": 12.0
+      }
+    ]
+  },
+  {
+    "event_id": 5,
+    "event_type": "profession",
+    "item_impacts": [
+      {
+        "price_change_pct": 400.0,
+        "peak_time_hours": 24.0
+      },
+      {
+        "price_change_pct": 350.0,
+        "peak_time_hours": 12.0
+      }
+    ]
+  }
+]

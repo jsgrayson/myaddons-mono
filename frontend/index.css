@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@config "./tailwind.config.ts";
+
+:root {
+    --glass-blur: 16px;
+}
+
+body {
+    @apply bg-black text-white;
+    background-image: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #000000 70%);
+    background-attachment: fixed;
+}
+
+/* --- Core Glass Utilities --- */
+
+
+/* --- Theme: Arcane (Dashboard) --- */
+/* Deep Violet & Cyan Aesthetics */
+.theme-arcane {
+    --color-primary: #00d2ff;
+    /* Cyan */
+    --color-secondary: #9d00ff;
+    /* Violet */
+    --bg-gradient-from: #130f26;
+    --bg-gradient-to: #000000;
+}
+
+.glass-panel-arcane {
+    @apply backdrop-blur-xl border transition-all duration-300 rounded-xl;
+    background: linear-gradient(145deg, rgba(19, 15, 38, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-color: rgba(0, 210, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(157, 0, 255, 0.05);
+}
+
+.glass-panel-arcane:hover {
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15),
+        inset 0 0 20px rgba(157, 0, 255, 0.1);
+}
+
+.text-glow-arcane {
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.border-glow-arcane {
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* --- Theme: Industrial (DeepPockets) --- */
+/* Amber & Dark Grey Aesthetics */
+.theme-industrial {
+    --color-primary: #ff8000;
+    /* Amber */
+    --color-secondary: #333333;
+    /* Dark Grey */
+}
+
+.glass-panel-industrial {
+    @apply backdrop-blur-xl border transition-all duration-300 rounded-none;
+    /* Industrial look often sharper */
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%);
+    border: 1px solid rgba(255, 128, 0, 0.2);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Theme: Cyber (Goblin) --- */
+/* Neon Green & Matrix Black */
+.theme-cyber {
+    --color-primary: #00ff41;
+    /* Neon Green */
+}
+
+/* --- Typography --- */
+.font-warcraft-title {
+    font-family: 'Beaufort', serif;
+    /* Placeholder for Warcraft font */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* --- Animations --- */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.animate-float-up {
+    animation: float-up linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.clip-path-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}

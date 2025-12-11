@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/codex">The Codex</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ encounter.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card border-warning">
+                <div class="card-header bg-warning text-dark">
+                    <h2 class="mb-0">{{ encounter.name }}</h2>
+                </div>
+                <div class="card-body bg-dark text-white">
+                    <p class="lead">{{ encounter.description }}</p>
+                    {% if encounter.guide_url %}
+                    <a href="{{ encounter.guide_url }}" target="_blank" class="btn btn-outline-warning">
+                        <i class="fas fa-external-link-alt"></i> View Full Guide on Wowhead
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="encounterTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="abilities-tab" data-bs-toggle="tab" data-bs-target="#abilities"
+                type="button" role="tab">Abilities</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="loot-tab" data-bs-toggle="tab" data-bs-target="#loot" type="button"
+                role="tab">Loot Table</button>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-3" id="encounterTabsContent">
+        <!-- Abilities Tab -->
+        <div class="tab-pane fade show active" id="abilities" role="tabpanel">
+            <div class="row">
+                {% for ability in encounter.abilities %}
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-secondary">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">{{ ability.name }}</h5>
+                            <span class="badge 
+                                {% if ability.role == 'TANK' %}bg-primary
+                                {% elif ability.role == 'HEALER' %}bg-success
+                                {% else %}bg-danger{% endif %}">
+                                {{ ability.role }}
+                            </span>
+                        </div>
+                        <div class="card-body bg-dark text-white">
+                            <p class="card-text">{{ ability.description }}</p>
+                            {% if ability.importance == 'Critical' %}
+                            <div class="alert alert-danger mb-0 py-1"><i class="fas fa-exclamation-triangle"></i>
+                                Critical Mechanic</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Loot Tab -->
+        <div class="tab-pane fade" id="loot" role="tabpanel">
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Slot</th>
+                            <th>Type</th>
+                            <th>ilvl</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in encounter.loot %}
+                        <tr>
+                            <td class="text-warning fw-bold">{{ item.name }}</td>
+                            <td>{{ item.slot }}</td>
+                            <td>{{ item.type }}</td>
+                            <td>{{ item.item_level }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

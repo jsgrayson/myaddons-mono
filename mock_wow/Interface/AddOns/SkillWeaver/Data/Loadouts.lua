@@ -1,0 +1,12 @@
+SkillWeaverDB = SkillWeaverDB or {}
+SkillWeaverDB.Loadouts = {
+    [577] = {
+        ["Raid"] = "BEkAAAAAAAAAAAAAAAAAAAAAAQCJhkIkkk0IJtkkkAAAAAAASLJpQikkkWSLJhAAAAAA",
+        ["MythicPlus"] = "BEkAAAAAAAAAAAAAAAAAAAAAAQCJhkIkkk0IJtkkkAAAAAAASLJpQikkkWSLJhAAAAAA",
+        ["PvP"] = "BEkAAAAAAAAAAAAAAAAAAAAAAQCJhkIkkk0IJtkkkAAAAAAASLJpQikkkWSLJhAAAAAA",
+    },
+    [257] = {
+        ["Raid"] = "BAQAAAAAAAAAAAAAAAAAAAAAA0k0SjIJRjkkk0IJtkkkAAAAAAASLJpQikkkWSLJhAAAAAA",
+        ["MythicPlus"] = "BAQAAAAAAAAAAAAAAAAAAAAAA0k0SjIJRjkkk0IJtkkkAAAAAAASLJpQikkkWSLJhAAAAAA",
+    },
+}

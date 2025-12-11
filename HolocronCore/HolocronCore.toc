@@ -1,0 +1,7 @@
+## Interface: 110002
+## Title: Holocron Core
+## Notes: Shared library and media for the Holocron Suite
+## Author: jsgrayson
+## Version: 1.0.0
+
+SharedMedia.lua

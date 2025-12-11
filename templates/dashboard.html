@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}Holocron Dashboard{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card bg-dark text-white border-primary">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="card-title text-primary mb-0">
+                        <i class="fas fa-cube me-2"></i>Holocron Dashboard
+                    </h1>
+                    <p class="text-muted mb-0">Unified Command Center</p>
+                </div>
+                <div class="text-end">
+                    <h4 class="mb-0 text-white">{{ summary.timestamp }}</h4>
+                    <span class="badge bg-success">System Online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- The Arbiter -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary widget-card"
+            onclick="window.location.href='/arbiter'">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-balance-scale me-2 text-primary"></i>The Arbiter</h5>
+                <span class="badge bg-primary">Live</span>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="text-muted">Performance</span>
+                    <span class="badge bg-success" id="arbiter-perf">--%</span>
+                </div>
+                <div class="progress mb-3" style="height: 6px;">
+                    <div class="progress-bar bg-success" id="arbiter-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <p class="text-center mb-0 text-muted">Mistakes: <span class="text-danger fw-bold"
+                        id="arbiter-mistakes">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DeepPockets -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary widget-card"
+            onclick="window.location.href='/deeppockets'">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-box-open me-2 text-warning"></i>DeepPockets</h5>
+                <span class="badge bg-warning text-dark">Inventory</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.utility.transmog }}</h5>
+                <p class="text-muted text-center mb-3">Mog Items</p>
+                <a href="/deeppockets" class="btn btn-outline-warning w-100">Manage Bags</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pathfinder -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-map me-2 text-info"></i>Pathfinder</h5>
+                <span class="badge bg-success">Ready</span>
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-3">{{ summary.modules.pathfinder.nodes }} Nodes</h2>
+                <p class="text-muted text-center">Graph Routing Engine Active</p>
+                <a href="/pathfinder" class="btn btn-outline-info w-100">Open Map</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diplomat (Paragon Meter) -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-handshake me-2 text-warning"></i>Paragon Meter</h5>
+                <span class="badge bg-warning text-dark">{{ summary.modules.paragon_opportunities|length }}
+                    Opportunities</span>
+            </div>
+            <div class="card-body">
+                {% if summary.modules.paragon_opportunities %}
+                {% for opp in summary.modules.paragon_opportunities[:3] %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                        <span>{{ opp.faction_name }}</span>
+                        <span class="text-warning">{{ opp.percent }}%</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ opp.percent }}%"></div>
+                    </div>
+                    <small class="text-muted">{{ opp.remaining }} rep to go</small>
+                </div>
+                {% endfor %}
+                <a href="/diplomat" class="btn btn-outline-warning w-100 mt-2">View All</a>
+                {% else %}
+                <div class="text-center py-4">
+                    <i class="fas fa-check-circle fa-3x text-muted mb-3"></i>
+                    <p class="text-muted">No Paragon opportunities nearby.</p>
+                    <a href="/diplomat" class="btn btn-outline-secondary w-100">Check Factions</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigator -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-compass me-2 text-success"></i>Navigator</h5>
+                <span class="badge bg-primary">Top Pick</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.navigator.top_activity }}</h5>
+                <p class="text-muted text-center mb-3">Score: {{ summary.modules.navigator.score }}</p>
+                <a href="/navigator" class="btn btn-outline-success w-100">Find Activities</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Knowledge -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-book me-2 text-primary"></i>Knowledge</h5>
+                <span class="badge bg-info">{{ summary.modules.knowledge.reset_in }}</span>
+            </div>
+            <div class="card-body">
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar bg-primary" role="progressbar"
+                        style="width: {{ summary.modules.knowledge.weekly_progress }}%">
+                        {{ summary.modules.knowledge.weekly_progress }}%
+                    </div>
+                </div>
+                <p class="text-center mb-3">{{ summary.modules.knowledge.points_earned }} Points Earned</p>
+                <a href="/knowledge" class="btn btn-outline-primary w-100">Weekly Checklist</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Utility -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-tools me-2 text-secondary"></i>Utility</h5>
+                <span class="badge bg-secondary">{{ summary.modules.utility.overall_percent }}% Done</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.utility.mounts }} Mounts</h5>
+                <p class="text-muted text-center mb-3">{{ summary.modules.utility.missing_easy }} Easy Targets</p>
+                <a href="/utility" class="btn btn-outline-secondary w-100">Track Collection</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goblin -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-coins me-2 text-warning"></i>Goblin Brain</h5>
+                <span class="badge bg-success">+{{ summary.modules.goblin.profit }}g</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.goblin.top_craft }}</h5>
+                <p class="text-muted text-center mb-3">{{ summary.modules.goblin.sniper_hits }} Sniper Hits</p>
+                <a href="/goblin" class="btn btn-outline-warning w-100">Market Analysis</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Codex -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-scroll me-2 text-danger"></i>The Codex</h5>
+                <span class="badge bg-danger">Raid</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.codex.current_raid }}</h5>
+                <p class="text-muted text-center mb-3">{{ summary.modules.codex.bosses }} Bosses Loaded</p>
+                <a href="/codex" class="btn btn-outline-danger w-100">Encounter Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vault -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-dungeon me-2 text-white"></i>Vault</h5>
+                <span class="badge bg-success">{{ summary.modules.vault.unlocked }} Unlocked</span>
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">Max Reward: {{ summary.modules.vault.max_ilvl }} ilvl</h5>
+                <p class="text-muted text-center mb-3">Great Vault Status</p>
+                <a href="/vault" class="btn btn-outline-light w-100">View Grid</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scout -->
+    <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-bell me-2 text-danger"></i>The Scout</h5>
+                {% if summary.modules.scout.critical > 0 %}
+                <span class="badge bg-danger animate__animated animate__pulse animate__infinite">{{
+                    summary.modules.scout.critical }} Critical</span>
+                {% else %}
+                <span class="badge bg-success">Quiet</span>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <h5 class="text-center mb-1">{{ summary.modules.scout.active_alerts }} Active Alerts</h5>
+                <p class="text-muted text-center mb-3">Next: {{ summary.modules.scout.next_alert }}</p>
+                <a href="/scout" class="btn btn-outline-danger w-100">View Alerts</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+/* GOBLIN ENGINEERING FALLBACK THEME */
+
+/* 1. The Hazard Stripe Background */
+.goblin-hazard-bg {
+  background-color: #2a2a2a;
+  /* Dark iron base */
+  background-image: repeating-linear-gradient(45deg,
+      #111 0px,
+      #111 20px,
+      #eeb211 20px,
+      /* Goblin Yellow */
+      #eeb211 40px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. The "Chunky" Panel Container */
+.goblin-panel {
+  background: #1a1a1a;
+  border: 8px solid #4a4a4a;
+  /* Thick Iron Border */
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 20px #000,
+    /* Inner shadow for depth */
+    0 0 15px #39ff14;
+  /* Radioactive Green Glow */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  /* The 3-Column Layout */
+  gap: 15px;
+  max-width: 95vw;
+  height: 85vh;
+}
+
+/* 3. The "Glass" Screens */
+.goblin-screen {
+  background-color: #050505;
+  border: 4px inset #333;
+  color: #39ff14;
+  /* Phosphor Green Text */
+  font-family: 'Courier New', monospace;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 4. The Scanline Trick (CSS Only) */
+.goblin-screen::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  /* Tight scanlines */
+  z-index: 2;
+  pointer-events: none;
+}

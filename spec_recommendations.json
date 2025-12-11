@@ -1,0 +1,154 @@
+{
+  "Vaxo_Alchemy": {
+    "character": "Vaxo",
+    "profession": "Alchemy",
+    "total_knowledge_spent": 25,
+    "current_specializations": {
+      "Potion Mastery": 15,
+      "Phial Cauldrons": 10,
+      "Alchemical Theory": 0
+    },
+    "recommendations": [
+      {
+        "spec": "Phial Cauldrons",
+        "current_points": 10,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 15,
+          "bonus": "Unlock cauldron recipes"
+        },
+        "profit_rating": 9,
+        "market_demand": "Very High",
+        "recommendation_score": 91,
+        "reason": "You've already invested 10 points | Only 5 points to unlock: Unlock cauldron recipes | High profit potential (Very High demand)",
+        "is_current_path": true
+      },
+      {
+        "spec": "Potion Mastery",
+        "current_points": 15,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 30,
+          "bonus": "Double potion proc chance"
+        },
+        "profit_rating": 8,
+        "market_demand": "High",
+        "recommendation_score": 82,
+        "reason": "You've already invested 15 points | Only 15 points to unlock: Double potion proc chance | High profit potential (High demand)",
+        "is_current_path": true
+      },
+      {
+        "spec": "Alchemical Theory",
+        "current_points": 0,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 10,
+          "bonus": "Longer transmute cooldowns"
+        },
+        "profit_rating": 7,
+        "market_demand": "Medium",
+        "recommendation_score": 28,
+        "reason": "Only 10 points to unlock: Longer transmute cooldowns",
+        "is_current_path": false
+      }
+    ],
+    "warning": null,
+    "summary": {
+      "action": "Invest next points in Phial Cauldrons",
+      "reason": "You've already invested 10 points | Only 5 points to unlock: Unlock cauldron recipes | High profit potential (Very High demand)",
+      "expected_benefit": "Unlock cauldron recipes"
+    }
+  },
+  "Vacco_Inscription": {
+    "character": "Vacco",
+    "profession": "Inscription",
+    "total_knowledge_spent": 25,
+    "current_specializations": {
+      "Potion Mastery": 15,
+      "Phial Cauldrons": 10,
+      "Alchemical Theory": 0
+    },
+    "recommendations": [
+      {
+        "spec": "Archiving",
+        "current_points": 0,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 10,
+          "bonus": "Better contract quality"
+        },
+        "profit_rating": 8,
+        "market_demand": "High",
+        "recommendation_score": 32,
+        "reason": "Only 10 points to unlock: Better contract quality | High profit potential (High demand)",
+        "is_current_path": false
+      },
+      {
+        "spec": "Rune Mastery",
+        "current_points": 0,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 5,
+          "bonus": "Better rune quality"
+        },
+        "profit_rating": 6,
+        "market_demand": "Medium",
+        "recommendation_score": 29,
+        "reason": "Only 5 points to unlock: Better rune quality",
+        "is_current_path": false
+      }
+    ],
+    "warning": null,
+    "summary": {
+      "action": "Invest next points in Archiving",
+      "reason": "Only 10 points to unlock: Better contract quality | High profit potential (High demand)",
+      "expected_benefit": "Better contract quality"
+    }
+  },
+  "Slaythe_Blacksmithing": {
+    "character": "Slaythe",
+    "profession": "Blacksmithing",
+    "total_knowledge_spent": 25,
+    "current_specializations": {
+      "Potion Mastery": 15,
+      "Phial Cauldrons": 10,
+      "Alchemical Theory": 0
+    },
+    "recommendations": [
+      {
+        "spec": "Weaponsmithing",
+        "current_points": 0,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 10,
+          "bonus": "Better weapon quality"
+        },
+        "profit_rating": 9,
+        "market_demand": "High",
+        "recommendation_score": 36,
+        "reason": "Only 10 points to unlock: Better weapon quality | High profit potential (High demand)",
+        "is_current_path": false
+      },
+      {
+        "spec": "Armorsmithing",
+        "current_points": 0,
+        "max_points": 30,
+        "next_bonus": {
+          "points": 10,
+          "bonus": "Better armor quality"
+        },
+        "profit_rating": 7,
+        "market_demand": "Medium",
+        "recommendation_score": 28,
+        "reason": "Only 10 points to unlock: Better armor quality",
+        "is_current_path": false
+      }
+    ],
+    "warning": null,
+    "summary": {
+      "action": "Invest next points in Weaponsmithing",
+      "reason": "Only 10 points to unlock: Better weapon quality | High profit potential (High demand)",
+      "expected_benefit": "Better weapon quality"
+    }
+  }
+}

@@ -1,0 +1,203 @@
+/* GoblinStack Theme - Rustwater Industrial Vibe */
+:root {
+    --rust-primary: #c06030;
+    /* Rust Orange */
+    --rust-secondary: #4a5d23;
+    /* Sludge Green */
+    --rust-accent: #ffcc00;
+    /* Hazard Yellow */
+    --rust-bg: #1a1a1a;
+    /* Oil Black */
+    --rust-panel: #2b2b2b;
+    /* Iron Grey */
+    --rust-border: #5a4a42;
+    /* Oxidized Iron */
+    --rust-text: #e0e0e0;
+    --font-heading: 'Courier New', Courier, monospace;
+    /* Industrial monospace */
+}
+
+body.goblin-mode {
+    background: var(--rust-bg);
+    color: var(--rust-text);
+    font-family: 'Segoe UI', sans-serif;
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(74, 93, 35, 0.1) 0%, transparent 25%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 2px, transparent 2px, transparent 10px);
+}
+
+/* Industrial Container */
+.rustwater-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 4px solid var(--rust-panel);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+/* "Bolts" in corners */
+.rustwater-container::before,
+.rustwater-container::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #444;
+    border: 1px solid #222;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rustwater-container::before {
+    top: 10px;
+    left: 10px;
+}
+
+.rustwater-container::after {
+    top: 10px;
+    right: 10px;
+}
+
+/* Typography */
+.hero-title {
+    font-family: var(--font-heading);
+    color: var(--rust-primary);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000;
+    letter-spacing: 2px;
+    border-bottom: 3px solid var(--rust-border);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.hero-subtitle {
+    color: var(--rust-accent);
+    font-family: var(--font-heading);
+}
+
+/* Panels */
+.rust-panel {
+    background: var(--rust-panel);
+    border: 2px solid var(--rust-border);
+    border-radius: 4px;
+    /* Slight rounding but mostly boxy */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.rust-panel-header {
+    background: linear-gradient(to right, #333, var(--rust-panel));
+    color: var(--rust-accent);
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid var(--rust-border);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hazard Stripe Alert */
+.alert-hazard {
+    background: repeating-linear-gradient(45deg,
+            #333,
+            #333 10px,
+            #443300 10px,
+            #443300 20px);
+    border: 2px solid var(--rust-accent);
+    color: var(--rust-accent);
+    padding: 1rem;
+    font-family: var(--font-heading);
+    text-shadow: 1px 1px 0 #000;
+    margin-bottom: 1rem;
+}
+
+/* Bubbling Acid Progress Bar */
+.acid-progress-container {
+    background: #111;
+    border: 1px solid #444;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.acid-progress-bar {
+    background: var(--rust-secondary);
+    /* Sludge Green */
+    height: 100%;
+    width: 0%;
+    position: relative;
+    box-shadow: 0 0 10px var(--rust-secondary);
+    transition: width 0.5s ease-out;
+}
+
+.acid-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    animation: bubbling 2s linear infinite;
+}
+
+@keyframes bubbling {
+    0% {
+        background-position: 0 0, 5px 5px;
+    }
+
+    100% {
+        background-position: 0 -10px, 5px -5px;
+    }
+}
+
+/* Buttons */
+.btn-rust {
+    background: linear-gradient(to bottom, #555, #333);
+    border: 1px solid #222;
+    color: var(--rust-accent);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1), 2px 2px 5px #000;
+    transition: all 0.1s;
+}
+
+.btn-rust:hover {
+    background: linear-gradient(to bottom, #666, #444);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-rust:active {
+    background: #222;
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 5px #000;
+}
+
+/* Table */
+.table-rust {
+    color: var(--rust-text);
+    border-color: var(--rust-border);
+}
+
+.table-rust thead th {
+    border-bottom: 2px solid var(--rust-primary);
+    color: var(--rust-primary);
+    font-family: var(--font-heading);
+}
+
+.table-rust td {
+    vertical-align: middle;
+}

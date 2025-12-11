@@ -1,0 +1,1246 @@
+{
+  "Bronha": {
+    "character": "Bronha",
+    "professions": [
+      {
+        "profession": "Blacksmithing",
+        "current_skill": 45,
+        "max_skill": 100,
+        "points_needed": 55,
+        "recommended_path": [
+          {
+            "skill_range": "45-55",
+            "recipes": [
+              {
+                "name": "Rough Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Pants",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 4
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "55-65",
+            "recipes": [
+              {
+                "name": "Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Coarse Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "65-100",
+            "recipes": [
+              {
+                "name": "Runed Copper Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Breastplate",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 12
+                  },
+                  {
+                    "item_id": 1210,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 150,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Leggings",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Cuirass",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 7
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profession": "Mining",
+        "current_skill": 62,
+        "max_skill": 100,
+        "points_needed": 38,
+        "recommended_path": [
+          {
+            "skill_range": "62-72",
+            "recipes": [
+              {
+                "name": "Smelt Silver",
+                "materials": [
+                  {
+                    "item_id": 2775,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Bronze",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3576,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Gold",
+                "materials": [
+                  {
+                    "item_id": 2776,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "72-82",
+            "recipes": [
+              {
+                "name": "Smelt Iron",
+                "materials": [
+                  {
+                    "item_id": 2772,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Tin",
+                "materials": [
+                  {
+                    "item_id": 2771,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Steel",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3857,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "82-100",
+            "recipes": [
+              {
+                "name": "Smelt Copper",
+                "materials": [
+                  {
+                    "item_id": 2770,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Truesilver",
+                "materials": [
+                  {
+                    "item_id": 7911,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Mithril",
+                "materials": [
+                  {
+                    "item_id": 3858,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Dark Iron",
+                "materials": [
+                  {
+                    "item_id": 11370,
+                    "quantity": 8
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Slaythe": {
+    "character": "Slaythe",
+    "professions": [
+      {
+        "profession": "Blacksmithing",
+        "current_skill": 45,
+        "max_skill": 100,
+        "points_needed": 55,
+        "recommended_path": [
+          {
+            "skill_range": "45-55",
+            "recipes": [
+              {
+                "name": "Rough Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Pants",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 4
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "55-65",
+            "recipes": [
+              {
+                "name": "Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Coarse Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "65-100",
+            "recipes": [
+              {
+                "name": "Runed Copper Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Breastplate",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 12
+                  },
+                  {
+                    "item_id": 1210,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 150,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Leggings",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Cuirass",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 7
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profession": "Mining",
+        "current_skill": 62,
+        "max_skill": 100,
+        "points_needed": 38,
+        "recommended_path": [
+          {
+            "skill_range": "62-72",
+            "recipes": [
+              {
+                "name": "Smelt Silver",
+                "materials": [
+                  {
+                    "item_id": 2775,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Bronze",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3576,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Gold",
+                "materials": [
+                  {
+                    "item_id": 2776,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "72-82",
+            "recipes": [
+              {
+                "name": "Smelt Iron",
+                "materials": [
+                  {
+                    "item_id": 2772,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Tin",
+                "materials": [
+                  {
+                    "item_id": 2771,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Steel",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3857,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "82-100",
+            "recipes": [
+              {
+                "name": "Smelt Copper",
+                "materials": [
+                  {
+                    "item_id": 2770,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Truesilver",
+                "materials": [
+                  {
+                    "item_id": 7911,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Mithril",
+                "materials": [
+                  {
+                    "item_id": 3858,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Dark Iron",
+                "materials": [
+                  {
+                    "item_id": 11370,
+                    "quantity": 8
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Vacco": {
+    "character": "Vacco",
+    "professions": [
+      {
+        "profession": "Blacksmithing",
+        "current_skill": 45,
+        "max_skill": 100,
+        "points_needed": 55,
+        "recommended_path": [
+          {
+            "skill_range": "45-55",
+            "recipes": [
+              {
+                "name": "Rough Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Pants",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 4
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "55-65",
+            "recipes": [
+              {
+                "name": "Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Coarse Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "65-100",
+            "recipes": [
+              {
+                "name": "Runed Copper Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Breastplate",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 12
+                  },
+                  {
+                    "item_id": 1210,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 150,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Leggings",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Cuirass",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 7
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profession": "Mining",
+        "current_skill": 62,
+        "max_skill": 100,
+        "points_needed": 38,
+        "recommended_path": [
+          {
+            "skill_range": "62-72",
+            "recipes": [
+              {
+                "name": "Smelt Silver",
+                "materials": [
+                  {
+                    "item_id": 2775,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Bronze",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3576,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Gold",
+                "materials": [
+                  {
+                    "item_id": 2776,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "72-82",
+            "recipes": [
+              {
+                "name": "Smelt Iron",
+                "materials": [
+                  {
+                    "item_id": 2772,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Tin",
+                "materials": [
+                  {
+                    "item_id": 2771,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Steel",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3857,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "82-100",
+            "recipes": [
+              {
+                "name": "Smelt Copper",
+                "materials": [
+                  {
+                    "item_id": 2770,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Truesilver",
+                "materials": [
+                  {
+                    "item_id": 7911,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Mithril",
+                "materials": [
+                  {
+                    "item_id": 3858,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Dark Iron",
+                "materials": [
+                  {
+                    "item_id": 11370,
+                    "quantity": 8
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Vaxo": {
+    "character": "Vaxo",
+    "professions": [
+      {
+        "profession": "Blacksmithing",
+        "current_skill": 45,
+        "max_skill": 100,
+        "points_needed": 55,
+        "recommended_path": [
+          {
+            "skill_range": "45-55",
+            "recipes": [
+              {
+                "name": "Rough Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2835,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Copper Chain Pants",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 4
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "55-65",
+            "recipes": [
+              {
+                "name": "Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Bracers",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 3
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Coarse Sharpening Stone",
+                "materials": [
+                  {
+                    "item_id": 2836,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "65-100",
+            "recipes": [
+              {
+                "name": "Runed Copper Belt",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 10
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Runed Copper Breastplate",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 12
+                  },
+                  {
+                    "item_id": 1210,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3470,
+                    "quantity": 2
+                  }
+                ],
+                "estimated_cost": 150,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Leggings",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 6
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Rough Bronze Cuirass",
+                "materials": [
+                  {
+                    "item_id": 2841,
+                    "quantity": 7
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profession": "Mining",
+        "current_skill": 62,
+        "max_skill": 100,
+        "points_needed": 38,
+        "recommended_path": [
+          {
+            "skill_range": "62-72",
+            "recipes": [
+              {
+                "name": "Smelt Silver",
+                "materials": [
+                  {
+                    "item_id": 2775,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Bronze",
+                "materials": [
+                  {
+                    "item_id": 2840,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3576,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Gold",
+                "materials": [
+                  {
+                    "item_id": 2776,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "72-82",
+            "recipes": [
+              {
+                "name": "Smelt Iron",
+                "materials": [
+                  {
+                    "item_id": 2772,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Tin",
+                "materials": [
+                  {
+                    "item_id": 2771,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Steel",
+                "materials": [
+                  {
+                    "item_id": 3575,
+                    "quantity": 1
+                  },
+                  {
+                    "item_id": 3857,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 100,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          },
+          {
+            "skill_range": "82-100",
+            "recipes": [
+              {
+                "name": "Smelt Copper",
+                "materials": [
+                  {
+                    "item_id": 2770,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Truesilver",
+                "materials": [
+                  {
+                    "item_id": 7911,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Mithril",
+                "materials": [
+                  {
+                    "item_id": 3858,
+                    "quantity": 1
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              },
+              {
+                "name": "Smelt Dark Iron",
+                "materials": [
+                  {
+                    "item_id": 11370,
+                    "quantity": 8
+                  }
+                ],
+                "estimated_cost": 50,
+                "crafts_needed": "5-10",
+                "skill_points": "5-10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

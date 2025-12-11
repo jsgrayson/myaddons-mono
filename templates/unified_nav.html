@@ -1,0 +1,90 @@
+<!-- Unified Navigation Component for All Apps -->
+<nav class="navbar navbar-expand-lg navbar-dark mb-4"
+    style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-bottom: 2px solid var(--wow-epic, #a335ee);">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/" style="color: var(--wow-legendary, #ff8000);">
+            <i class="fas fa-scroll me-2"></i>{{ app_name }}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                {% block nav_items %}
+                <!-- App-specific navigation items go here -->
+                {% endblock %}
+            </ul>
+
+            <!-- App Switcher -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="appSwitcher" role="button"
+                        data-bs-toggle="dropdown" style="color: var(--wow-rare, #0070dd);">
+                        <i class="fas fa-th me-1"></i>Apps
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                        style="background: #1a1a2e; border: 1px solid var(--wow-epic, #a335ee);">
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5001" target="_blank" style="color: #fff;">
+                                <i class="fas fa-database me-2"
+                                    style="color: var(--wow-legendary, #ff8000);"></i>Holocron
+                            </a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5002" target="_blank" style="color: #fff;">
+                                <i class="fas fa-paw me-2" style="color: var(--wow-rare, #0070dd);"></i>PetWeaver
+                            </a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:3000" target="_blank" style="color: #fff;">
+                                <i class="fas fa-magic me-2" style="color: var(--wow-epic, #a335ee);"></i>SkillWeaver
+                            </a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5004" target="_blank" style="color: #fff;">
+                                <i class="fas fa-coins me-2" style="color: var(--wow-gold, #ffd700);"></i>GoblinStack
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- System Status Indicator -->
+                <li class="nav-item">
+                    <span class="nav-link" id="systemStatus">
+                        <i class="fas fa-circle text-success" style="font-size: 0.6em;"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Auto-check system status
+    async function checkSystemStatus() {
+        const apps = [
+            { url: 'http://127.0.0.1:5001/health', name: 'Holocron' },
+            { url: 'http://127.0.0.1:5002/api/status', name: 'PetWeaver' },
+            { url: 'http://127.0.0.1:3000/api/status', name: 'SkillWeaver' },
+            { url: 'http://127.0.0.1:5004/', name: 'GoblinStack' }
+        ];
+
+        let allHealthy = true;
+        for (const app of apps) {
+            try {
+                const response = await fetch(app.url, { method: 'GET', mode: 'no-cors' });
+                // no-cors mode means we can't read the response, but fetch succeeding means server is up
+            } catch (e) {
+                allHealthy = false;
+                console.warn(`${app.name} may be down`);
+            }
+        }
+
+        const indicator = document.getElementById('systemStatus');
+        if (indicator) {
+            if (allHealthy) {
+                indicator.innerHTML = '<i class="fas fa-circle text-success" style="font-size: 0.6em;" title="All systems operational"></i>';
+            } else {
+                indicator.innerHTML = '<i class="fas fa-circle text-warning" style="font-size: 0.6em;" title="Some systems may be offline"></i>';
+            }
+        }
+    }
+
+    // Check on page load and every 30 seconds
+    if (document.getElementById('systemStatus')) {
+        checkSystemStatus();
+        setInterval(checkSystemStatus, 30000);
+    }
+</script>

@@ -1,0 +1,164 @@
+# Holocron Sample Data - For Testing Without Database
+# This provides fallback data when PostgreSQL is not available
+
+{
+    "characters": [
+        {
+            "guid": "0x0000000012345678",
+            "name": "Zephyrmage",
+            "realm": "Area 52",
+            "class": "Mage",
+            "level": 80,
+            "gold": 450000
+        },
+        {
+            "guid": "0x0000000087654321",
+            "name": "Thornheal",
+            "realm": "Area 52",
+            "class": "Druid",
+            "level": 80,
+            "gold": 280000
+        },
+        {
+            "guid": "0x00000000ABCDEF01",
+            "name": "Grimtank",
+            "realm": "Area 52",
+            "class": "Warrior",
+            "level": 70,
+            "gold": 125000
+        }
+    ],
+    "completed_quests": {
+        "0x0000000012345678": [
+            47137,
+            47139,
+            46247,
+            47476,
+            47477
+        ],
+        "0x0000000087654321": [
+            47137,
+            47139
+        ],
+        "0x00000000ABCDEF01": [
+            47137
+        ]
+    },
+    "campaigns": [
+        {
+            "campaign_id": 1,
+            "name": "Breaching the Tomb",
+            "ordered_quest_ids": [
+                47137,
+                47139,
+                46247,
+                47476,
+                47477
+            ]
+        },
+        {
+            "campaign_id": 2,
+            "name": "The War Within Campaign",
+            "ordered_quest_ids": [
+                78900,
+                78905,
+                78910,
+                78915
+            ]
+        }
+    ],
+    "zones": [
+        {
+            "zone_id": 1,
+            "name": "Valdrakken",
+            "expansion": "Dragonflight"
+        },
+        {
+            "zone_id": 2,
+            "name": "Oribos",
+            "expansion": "Shadowlands"
+        },
+        {
+            "zone_id": 3,
+            "name": "Dornogal",
+            "expansion": "The War Within"
+        },
+        {
+            "zone_id": 4,
+            "name": "Dalaran",
+            "expansion": "Legion"
+        }
+    ],
+    "travel_routes": [
+        {
+            "from": 1,
+            "to": 4,
+            "method": "Portal",
+            "time_seconds": 15
+        },
+        {
+            "from": 2,
+            "to": 1,
+            "method": "Portal",
+            "time_seconds": 20
+        },
+        {
+            "from": 3,
+            "to": 1,
+            "method": "Portal",
+            "time_seconds": 12
+        }
+    ],
+    "factions": [
+        {
+            "faction_id": 2600,
+            "name": "Council of Dornogal",
+            "current_standing": 8500,
+            "paragon_threshold": 10000,
+            "expansion": "The War Within"
+        },
+        {
+            "faction_id": 2601,
+            "name": "The Severed Threads",
+            "current_standing": 4200,
+            "paragon_threshold": 10000,
+            "expansion": "The War Within"
+        },
+        {
+            "faction_id": 2564,
+            "name": "Maruuk Centaur",
+            "current_standing": 12500,
+            "paragon_threshold": 10000,
+            "expansion": "Dragonflight"
+        }
+    ],
+    "inventory_items": [
+        {
+            "item_id": 190451,
+            "name": "Spark of Ingenuity",
+            "count": 15,
+            "character": "Zephyrmage",
+            "market_value": 5000
+        },
+        {
+            "item_id": 171285,
+            "name": "Eternal Crystal",
+            "count": 47,
+            "character": "Zephyrmage",
+            "market_value": 850
+        },
+        {
+            "item_id": 171833,
+            "name": "Elethium Ore",
+            "count": 234,
+            "character": "Thornheal",
+            "market_value": 425
+        }
+    ],
+    "pets": {
+        "total_unique": 1428,
+        "total_collected": 4312,
+        "max_level_25": 892,
+        "rare_quality": 1124
+    }
+}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}SkillWeaver - Gear Optimizer{% endblock %}
+
+{% block content %}
+{% include "skillweaver_nav.html" %}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="text-white"><i class="fas fa-shield-alt me-2"></i>Gear Optimizer</h1>
+        <p class="text-muted">SimulationCraft-powered gear comparison and upgrade finder.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card bg-dark text-white">
+            <div class="card-header">Top Upgrades</div>
+            <div class="card-body">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Slot</th>
+                            <th>Current Item</th>
+                            <th>Upgrade Item</th>
+                            <th>Source</th>
+                            <th>DPS Gain</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Main Hand</td>
+                            <td class="text-muted">Stormshaper's Blade (493)</td>
+                            <td class="text-warning">Fyr'alath (496)</td>
+                            <td>Raid: Fyrakk</td>
+                            <td class="text-success">+2,100</td>
+                            <td><span class="badge bg-danger">BiS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Trinket 1</td>
+                            <td class="text-muted">Pip's Emerald Friendship (483)</td>
+                            <td class="text-warning">Augury of the Primal Flame (489)</td>
+                            <td>Raid: Smolderon</td>
+                            <td class="text-success">+950</td>
+                            <td><span class="badge bg-warning text-dark">High</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

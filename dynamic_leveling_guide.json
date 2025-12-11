@@ -1,0 +1,99 @@
+{
+  "character": "Vaxo",
+  "profession": "Alchemy",
+  "current_skill": 45,
+  "target_skill": 100,
+  "points_needed": 55,
+  "leveling_path": [
+    {
+      "skill_range": "45-65",
+      "recommended_recipes": [
+        {
+          "recipe": "Icy Mana Potion",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Shadow Oil",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Gift of Arthas",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        }
+      ]
+    },
+    {
+      "skill_range": "65-85",
+      "recommended_recipes": [
+        {
+          "recipe": "Icy Mana Potion",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Shadow Oil",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Gift of Arthas",
+          "cost_per_craft": 0,
+          "crafts_needed": 28,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        }
+      ]
+    },
+    {
+      "skill_range": "85-100",
+      "recommended_recipes": [
+        {
+          "recipe": "Icy Mana Potion",
+          "cost_per_craft": 0,
+          "crafts_needed": 21,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Shadow Oil",
+          "cost_per_craft": 0,
+          "crafts_needed": 21,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        },
+        {
+          "recipe": "Gift of Arthas",
+          "cost_per_craft": 0,
+          "crafts_needed": 21,
+          "total_cost": 0,
+          "materials_per_craft": [],
+          "price_updated": "2025-12-02 10:59"
+        }
+      ]
+    }
+  ],
+  "total_estimated_cost": 0,
+  "price_snapshot": "2025-12-02 10:59",
+  "note": "Prices update daily - re-run for cheapest path"
+}

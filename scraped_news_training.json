@@ -1,0 +1,75 @@
+[
+  {
+    "source": "mmochampion",
+    "title": "Recent Blue Posts",
+    "date": "2025-12-01T19:24:13.464971",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Recent Forum Posts",
+    "date": "2025-12-01T19:24:13.464999",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Housing Development Notes: Blood Elf and Night Elf Exteriors Available in Midnight",
+    "date": "2025-12-01T19:24:13.465005",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Patch 11.2.7 The Warning Launch Trailer",
+    "date": "2025-12-01T19:24:13.465011",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Professions Unpacked: Craft Housing Decor with Reagents from Every Era",
+    "date": "2025-12-01T19:24:13.465015",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Achievement Unlocked: Decorating Your Azeroth Home",
+    "date": "2025-12-01T19:24:13.465019",
+    "event_type": "general"
+  },
+  {
+    "source": "mmochampion",
+    "title": "Patch 11.2.7 The Warning Content Update Notes",
+    "date": "2025-12-01T19:24:13.465023",
+    "event_type": "general"
+  },
+  {
+    "source": "historical",
+    "title": "Fire Mage Buffed in Hotfix",
+    "date": "2024-08-15T10:00:00",
+    "event_type": "class_change",
+    "affected_items": [
+      210814,
+      211515
+    ]
+  },
+  {
+    "source": "historical",
+    "title": "Mythic+ Season 1 Begins",
+    "date": "2024-09-01T09:00:00",
+    "event_type": "raid",
+    "affected_items": [
+      210814,
+      210815,
+      210816
+    ]
+  },
+  {
+    "source": "historical",
+    "title": "Alchemy Profession Changes in 11.0.5",
+    "date": "2024-10-15T14:00:00",
+    "event_type": "profession",
+    "affected_items": [
+      210814,
+      210815
+    ]
+  }
+]

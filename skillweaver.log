@@ -1,0 +1,14 @@
+DEBUG: SkillWeaver Base Dir: /Users/jgrayson/Documents/holocron
+DEBUG: SkillWeaver Template Dir: /Users/jgrayson/Documents/holocron/templates
+DEBUG: SkillWeaver Static Dir: /Users/jgrayson/Documents/holocron/../static
+🚀 Starting SkillWeaver on http://127.0.0.1:5003
+ * Serving Flask app 'skillweaver_server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.6.0.2:5003
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [02/Dec/2025 12:58:53] "GET /test_simc HTTP/1.1" 200 -
+127.0.0.1 - - [02/Dec/2025 12:58:53] "GET /api/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [02/Dec/2025 12:58:57] "GET /api/simc/run_id/33 HTTP/1.1" 200 -

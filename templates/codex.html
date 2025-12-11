@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Header -->
+<div class="row mb-5">
+  <div class="col-md-12">
+    <div class="hero-header p-5 text-center">
+      <h1 class="display-3 fw-bold mb-3 hero-title">📜 The Codex</h1>
+      <p class="lead hero-subtitle mb-0">
+        <i class="fas fa-map-marked-alt me-2"></i>Campaign progress tracking & quest dependency solver
+      </p>
+      <div class="animated-border mt-4"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-8">
+    <div class="row">
+      {% for campaign in campaigns %}
+      <div class="col-md-6 mb-3">
+        <div class="card h-100">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <span>{{ campaign.name }}</span>
+            <span class="badge bg-primary">{{ campaign.progress }}%</span>
+          </div>
+          <div class="card-body">
+            <div class="progress mb-3" style="height: 18px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width: {{ campaign.progress }}%;"
+                aria-valuenow="{{ campaign.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="small text-info mb-0">{{ campaign.status }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-12">
+        <div class="alert alert-secondary">No campaigns found.</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-header bg-dark text-white">Blocker Breaker</div>
+      <div class="card-body">
+        <p class="small text-muted">Trace the missing prerequisite for any quest.</p>
+        <div class="input-group mb-2">
+          <input id="blockerInput" type="text" class="form-control"
+            placeholder="Quest ID or Name (e.g., Unlock Mechagon)">
+        </div>
+        <div class="input-group mb-3">
+          <input id="completedInput" type="text" class="form-control"
+            placeholder="Completed quest IDs (comma separated, optional)">
+        </div>
+        <button class="btn btn-primary w-100 mb-2" id="blockerButton" onclick="solveBlocker()">Solve</button>
+        <div id="blockerResult" class="small text-muted">Awaiting query...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header bg-secondary text-white">Universal Matrix</div>
+  <div class="table-responsive">
+    <table class="table table-dark table-hover mb-0 align-middle">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 220px;">Character</th>
+          {% for camp in campaign_columns %}
+          <th scope="col">{{ camp.name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in matrix %}
+        <tr>
+          <td>
+            <div class="fw-bold">{{ row.character.name }}</div>
+            <div class="text-muted small">{{ row.character.realm }}</div>
+            <div class="text-muted small">{{ row.character.class }}</div>
+          </td>
+          {% for status in row.campaigns %}
+          {% set badge = "secondary" %}
+          {% if status.state == "done" %}
+          {% set badge = "success" %}
+          {% elif status.state == "locked" %}
+          {% set badge = "danger" %}
+          {% elif status.state == "in_progress" %}
+          {% set badge = "warning" %}
+          {% endif %}
+          <td>
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="badge bg-{{ badge }}">{{ status.step_label }}</span>
+              <span class="small text-muted">{{ status.percent }}%</span>
+            </div>
+            <div
+              class="small {% if status.state == 'locked' %}text-danger{% elif status.state == 'done' %}text-success{% else %}text-info{% endif %}">
+              {{ status.status_text }}
+            </div>
+          </td>
+          {% endfor %}
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="{{ 1 + campaign_columns|length }}" class="text-center text-muted">No character data available.
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function solveBlocker() {
+    const quest = document.getElementById('blockerInput').value.trim();
+    const completed = document.getElementById('completedInput').value.trim();
+    const resultEl = document.getElementById('blockerResult');
+    const button = document.getElementById('blockerButton');
+
+    if (!quest) {
+      resultEl.textContent = 'Please enter a quest name or ID.';
+      return;
+    }
+
+    button.disabled = true;
+    resultEl.textContent = 'Solving...';
+
+    const params = new URLSearchParams();
+    params.append('quest', quest);
+    if (completed) { params.append('completed', completed); }
+
+    fetch(`/api/codex/blocker?${params.toString()}`)
+      .then(resp => resp.json().then(data => ({ status: resp.status, body: data })))
+      .then(({ status, body }) => {
+        if (status >= 400) {
+          resultEl.textContent = body.error || 'Unable to resolve blocker.';
+          resultEl.classList.add('text-danger');
+        } else {
+          resultEl.classList.remove('text-danger');
+          resultEl.textContent = body.message || 'No blocker detected.';
+        }
+      })
+      .catch(() => {
+        resultEl.textContent = 'Request failed.';
+        resultEl.classList.add('text-danger');
+      })
+      .finally(() => {
+        button.disabled = false;
+      });
+  }
+</script>
+{% endblock %}

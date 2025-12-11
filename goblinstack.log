@@ -1,0 +1,8 @@
+DEBUG: GoblinStack Base Dir: /Users/jgrayson/Documents/holocron/templates
+DEBUG: GoblinStack Static Dir: /Users/jgrayson/Documents/holocron/static
+✓ Loaded 4 items, 2 recipes
+🚀 Starting GoblinStack AI on http://127.0.0.1:5004
+INFO:     Started server process [60791]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5004 (Press CTRL+C to quit)

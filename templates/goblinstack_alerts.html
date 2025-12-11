@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}GoblinStack - Alerts{% endblock %}
+
+{% block content %}
+{% include "goblinstack_nav.html" %}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-white"><i class="fas fa-bell me-2"></i>Price Alerts</h1>
+            <p class="text-muted">Real-time notifications for market movements.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-header">Recent Alerts</div>
+                <div class="card-body" id="alerts-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white">
+                <div class="card-header">Create Alert</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Item Name</label>
+                            <input type="text" class="form-control bg-secondary text-white"
+                                placeholder="e.g. Draconium Ore">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Condition</label>
+                            <select class="form-select bg-secondary text-white">
+                                <option>Price Below</option>
+                                <option>Price Above</option>
+                                <option>Quantity Below</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Value</label>
+                            <input type="number" class="form-control bg-secondary text-white" placeholder="Gold amount">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Set Alert</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    fetch('/api/alerts')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('alerts-container');
+            data.alerts.forEach(a => {
+                const alertDiv = `
+                        <div class="alert alert-${a.type} mb-3">
+                            <div class="d-flex justify-content-between">
+                                <strong>${a.title}</strong>
+                                <small>${a.time}</small>
+                            </div>
+                            <p class="mb-0">${a.message}</p>
+                        </div>
+                    `;
+                container.innerHTML += alertDiv;
+            });
+        });
+</script>
+{% endblock %}

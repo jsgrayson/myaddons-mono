@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holocron Command Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/holocron-theme.css">
+  <link rel="manifest" href="/static/manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register("/static/sw.js");
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --wow-gold: #ffd700;
+      --wow-epic: #a335ee;
+      --wow-rare: #0070dd;
+      --wow-uncommon: #1eff00;
+      --wow-legendary: #ff8000;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+      background-attachment: fixed;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, rgba(15, 15, 35, 0.95) 0%, rgba(30, 30, 50, 0.95) 100%);
+      border-bottom: 2px solid var(--wow-epic);
+      box-shadow: 0 4px 15px rgba(163, 53, 238, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--wow-gold) !important;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      color: var(--wow-legendary) !important;
+      text-shadow: 0 0 20px rgba(255, 128, 0, 0.8);
+    }
+
+    .nav-link {
+      color: #b8b8d1 !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--wow-rare) !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--wow-rare);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(30, 30, 46, 0.9) 0%, rgba(25, 25, 40, 0.9) 100%);
+      border: 1px solid rgba(163, 53, 238, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(163, 53, 238, 0.5);
+      border-color: rgba(163, 53, 238, 0.6);
+    }
+
+    .card-header {
+      background: linear-gradient(90deg, rgba(163, 53, 238, 0.3) 0%, rgba(0, 112, 221, 0.3) 100%);
+      border-bottom: 1px solid rgba(163, 53, 238, 0.4);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .form-control {
+      background-color: rgba(44, 44, 60, 0.8);
+      border: 1px solid rgba(163, 53, 238, 0.3);
+      color: #fff;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background-color: rgba(44, 44, 60, 0.9);
+      color: #fff;
+      border-color: var(--wow-epic);
+      box-shadow: 0 0 15px rgba(163, 53, 238, 0.4);
+    }
+
+    .badge {
+      padding: 0.5em 0.75em;
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .bg-success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    }
+
+    .bg-warning {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    }
+
+    .bg-danger {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    }
+
+    .bg-info {
+      background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+    }
+
+    .bg-primary {
+      background: linear-gradient(135deg, var(--wow-rare) 0%, #0559b8 100%) !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--wow-gold);
+      text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    }
+
+    .display-5 {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .lead {
+      color: #b8b8d1;
+      font-size: 1.1rem;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a2e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--wow-epic) 0%, var(--wow-rare) 100%);
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--wow-legendary) 0%, var(--wow-epic) 100%);
+    }
+
+    /* Animations */
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba(163, 53, 238, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(163, 53, 238, 0.8);
+      }
+    }
+
+    .glow-epic {
+      animation: pulse-glow 2s infinite;
+    }
+
+    /* Clickable widget cards */
+    .widget-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .widget-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(163, 53, 238, 0.6);
+    }
+
+    /* Premium Hero Section */
+    .hero-header {
+      background: linear-gradient(135deg, rgba(163, 53, 238, 0.15) 0%, rgba(0, 112, 221, 0.15) 100%);
+      border: 1px solid rgba(163, 53, 238, 0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+    }
+
+    .hero-title {
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+        0 0 60px rgba(255, 215, 0, 0.4),
+        0 4px 10px rgba(0, 0, 0, 0.8);
+      animation: title-glow 2s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes title-glow {
+      from {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.8);
+      }
+
+      to {
+        text-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 215, 0, 0.6), 0 4px 15px rgba(0, 0, 0, 0.9);
+      }
+    }
+
+    .hero-subtitle {
+      color: #d4d4d4;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .animated-border {
+      height: 3px;
+      width: 150px;
+      margin: 0 auto;
+      background: linear-gradient(90deg, transparent, var(--wow-epic), var(--wow-rare), var(--wow-epic), transparent);
+      background-size: 200% 100%;
+      animation: border-flow 3s linear infinite;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(163, 53, 238, 0.8);
+    }
+
+    @keyframes border-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 200% 0%;
+      }
+    }
+
+    /* Enhanced Card Effects */
+    .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+      transition: left 0.5s;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    /* Icon Backgrounds for Widgets */
+    .widget-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .widget-icon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      filter: blur(10px);
+      opacity: 0.5;
+    }
+
+    .widget-icon i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon-pet {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    .icon-campaign {
+      background: linear-gradient(135deg, #0070dd 0%, #0559b8 100%);
+      box-shadow: 0 4px 20px rgba(0, 112, 221, 0.4);
+    }
+
+    .icon-gold {
+      background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .icon-rep {
+      background: linear-gradient(135deg, #a335ee 0%, #7c2bad 100%);
+      box-shadow: 0 4px 20px rgba(163, 53, 238, 0.4);
+    }
+
+    /* Number Counter Animation */
+    .metric-number {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffffff 0%, #b8b8d1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Progress Ring */
+    .progress-ring {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+    }
+
+    .progress-ring circle {
+      transition: stroke-dashoffset 0.5s ease;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    /* Card Headers with Gradient */
+    .card-header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(163, 53, 238, 0.1) 0%, rgba(0, 112, 221, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card-header:hover::before {
+      opacity: 1;
+    }
+
+    /* Badge Enhancements */
+    .badge {
+      font-size: 0.85rem;
+      padding: 0.5em 1em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* List Items */
+    .list-group-item {
+      border: none !important;
+      transition: all 0.3s ease;
+      border-radius: 8px !important;
+      margin-bottom: 0.5rem;
+    }
+
+    .list-group-item:hover {
+      background-color: rgba(163, 53, 238, 0.1) !important;
+      transform: translateX(5px);
+    }
+
+    /* Button Enhancements */
+    .btn-outline-primary {
+      border: 2px solid var(--wow-rare);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-outline-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(0, 112, 221, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-outline-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-outline-primary:hover {
+      border-color: var(--wow-epic);
+      box-shadow: 0 0 20px rgba(163, 53, 238, 0.5);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5005/">Holocron</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/search">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/liquidation">Liquidation</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/navigator">Navigator</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/pathfinder">Pathfinder</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/codex">Codex</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/diplomat">Diplomat</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5005/deeppockets">DeepPockets</a></li>
+        </ul>
+        <!-- App Switcher -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="appSwitcher" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" style="color: var(--wow-rare);">
+              <i class="fas fa-th me-1"></i>Apps
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" style="background: #1a1a2e; border: 1px solid var(--wow-epic);">
+              <li>
+                <h6 class="dropdown-header text-light">Switch Application</h6>
+              </li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:5005/petweaver" target="_blank" style="color: #fff;">
+                  <i class="fas fa-paw me-2" style="color: var(--wow-rare);"></i>PetWeaver
+                </a></li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:5003" target="_blank" style="color: #fff;">
+                  <i class="fas fa-magic me-2" style="color: var(--wow-epic);"></i>SkillWeaver
+                </a></li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:5004" target="_blank" style="color: #fff;">
+                  <i class="fas fa-coins me-2" style="color: var(--wow-gold);"></i>GoblinStack
+                </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

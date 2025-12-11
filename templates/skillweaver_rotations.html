@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}SkillWeaver - Rotations{% endblock %}
+
+{% block content %}
+{% include "skillweaver_nav.html" %}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="text-white"><i class="fas fa-sync-alt me-2"></i>Rotation Analysis</h1>
+        <p class="text-muted">Optimal ability priority lists and cooldown management.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card bg-dark text-white mb-4">
+            <div class="card-header">Single Target Priority</div>
+            <div class="card-body">
+                <ol class="list-group list-group-numbered list-group-flush">
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Primordial Wave</strong>
+                        on cooldown</li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Lightning Bolt</strong>
+                        with 10 stacks of Maelstrom</li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Feral Spirit</strong>
+                    </li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Lava Lash</strong></li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Stormstrike</strong></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card bg-dark text-white mb-4">
+            <div class="card-header">AoE Priority (3+ Targets)</div>
+            <div class="card-body">
+                <ol class="list-group list-group-numbered list-group-flush">
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Primordial Wave</strong>
+                        on cooldown</li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Chain Lightning</strong>
+                        with 10 stacks of Maelstrom</li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Crash Lightning</strong>
+                        to maintain buff</li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Sundering</strong></li>
+                    <li class="list-group-item bg-transparent text-white">Cast <strong>Fire Nova</strong> if
+                        Flame Shock active</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
