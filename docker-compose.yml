@@ -1,0 +1,95 @@
+version: "3.9"
+
+services:
+
+  # ------------------------------
+  # Goblin Backend API (FastAPI)
+  # ------------------------------
+  goblin-backend:
+    build: ./backend
+    container_name: goblin-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENV_FILE=.env
+    volumes:
+      - ./backend:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  # ------------------------------
+  # Warden Agent
+  # ------------------------------
+  goblin-warden:
+    build: ./agents/warden
+    container_name: goblin-warden
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/warden:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  # ------------------------------
+  # TSM Brain Agent
+  # ------------------------------
+  goblin-tsm-brain:
+    build: ./agents/tsm_brain
+    container_name: goblin-tsm-brain
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/tsm_brain:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  # ------------------------------
+  # Bank Runner Agent
+  # ------------------------------
+  goblin-bank-runner:
+    build: ./agents/bank_runner
+    container_name: goblin-bank-runner
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/bank_runner:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  # ------------------------------
+  # Auction House Runner Agent
+  # ------------------------------
+  goblin-ah-runner:
+    build: ./agents/ah_runner
+    container_name: goblin-ah-runner
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/ah_runner:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  # ------------------------------
+  # ML Worker (Training/Predict)
+  # ------------------------------
+  goblin-ml:
+    build:
+      context: .
+      dockerfile: ml/pipeline/Dockerfile
+    container_name: goblin-ml
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./ml:/app/ml
+      - ./backend:/app/backend
+      - ./data:/data
+    command: python -m ml.pipeline.scheduler
+    restart: unless-stopped
+
+# ------------------------------
+# Global Volumes
+# ------------------------------
+volumes:
+  goblin-data:
+

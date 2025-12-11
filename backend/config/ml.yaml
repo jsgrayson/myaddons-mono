@@ -1,0 +1,5 @@
+ml:
+  model_path: /opt/goblin/models/tsm_predictor.pkl
+  retrain_interval_hours: 24
+  prediction_interval_minutes: 15
+  max_training_history_days: 30

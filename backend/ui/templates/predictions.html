@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h3 mb-0 text-gray-800">AI Market Predictions</h1>
+            <p class="text-muted">Godlike forecasts for the next 24 hours to 30 days.</p>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Filter Predictions</h6>
+                </div>
+                <div class="card-body">
+                    <form class="form-inline">
+                        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search Item...">
+                        <select class="form-control mb-2 mr-sm-2">
+                            <option>All Categories</option>
+                            <option>Herbs</option>
+                            <option>Ore</option>
+                            <option>Consumables</option>
+                        </select>
+                        <select class="form-control mb-2 mr-sm-2">
+                            <option>Next 24 Hours</option>
+                            <option>Next 7 Days</option>
+                            <option>Next 30 Days</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mb-2">Update View</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Predictions Grid -->
+    <div class="row">
+        <!-- Prediction Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Strong Buy Signal (92% Confidence)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Draconic Augment Rune</div>
+                            <div class="mt-2">
+                                <span class="text-sm">Current: <span class="text-warning">1,200g</span></span>
+                                <span class="text-sm ml-2">Predicted: <span class="text-success">1,850g</span></span>
+                            </div>
+                            <div class="mt-2 text-xs text-muted">
+                                Reason: Raid Reset + Low Supply
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-arrow-up fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bearish Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Sell Warning (88% Confidence)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Khaz Algar Ore</div>
+                            <div class="mt-2">
+                                <span class="text-sm">Current: <span class="text-success">45g</span></span>
+                                <span class="text-sm ml-2">Predicted: <span class="text-danger">28g</span></span>
+                            </div>
+                            <div class="mt-2 text-xs text-muted">
+                                Reason: Market Saturation Detected
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-arrow-down fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Chart -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Price Forecast Visualization</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="predictionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Mock Chart
+    var ctx = document.getElementById("predictionChart");
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Now", "+4h", "+8h", "+12h", "+16h", "+20h", "+24h"],
+            datasets: [{
+                label: "Predicted Price",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: [1200, 1250, 1300, 1450, 1600, 1750, 1850],
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: { padding: { left: 10, right: 25, top: 25, bottom: 0 } },
+            scales: {
+                xAxes: [{ gridLines: { display: false, drawBorder: false } }],
+                yAxes: [{ ticks: { maxTicksLimit: 5, padding: 10 } }],
+            },
+            legend: { display: false },
+        }
+    });
+</script>
+{% endblock %}

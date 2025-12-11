@@ -1,0 +1,20 @@
+agents:
+  warden:
+    enabled: true
+    restart_on_crash: true
+
+  tsm_brain:
+    enabled: true
+    restart_on_crash: true
+
+  ah_runner:
+    enabled: true
+    restart_on_crash: true
+
+  bank_runner:
+    enabled: false
+    restart_on_crash: true
+
+  ml_worker:
+    enabled: true
+    restart_on_crash: true

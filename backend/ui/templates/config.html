@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Config Editor - Goblin AI</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="logo">🧙 Goblin AI</h1>
+      <ul class="nav-links">
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/groups">AI Groups</a></li>
+        <li><a href="/crafting">Crafting</a></li>
+        <li><a href="/characters">Characters</a></li>
+        <li><a href="/config" class="active">Config</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container main-content">
+    <div class="section">
+      <div class="section-header">
+        <h2>⚙️ Configuration Editor</h2>
+        <button class="btn-primary" onclick="saveAllConfigs()">Save All Changes</button>
+      </div>
+
+      <div style="display: grid; gap: 2rem;">
+        <!-- Blizzard API Config -->
+        <div>
+          <h3 style="margin-bottom: 1rem;">Blizzard API Settings</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div>
+              <label>Client ID</label>
+              <input type="text" id="blizzard_client_id" placeholder="Your Blizzard API Client ID">
+            </div>
+            <div>
+              <label>Client Secret</label>
+              <input type="password" id="blizzard_client_secret" placeholder="Your Blizzard API Client Secret">
+              <button class="btn-secondary" style="margin-top: 0.5rem;" onclick="testBlizzardAPI()">Test
+                Connection</button>
+            </div>
+            <div>
+              <label>Region</label>
+              <select id="blizzard_region">
+                <option value="us">US</option>
+                <option value="eu">EU</option>
+                <option value="kr">KR</option>
+                <option value="tw">TW</option>
+              </select>
+            </div>
+            <div>
+              <label>Realm Slug (e.g., "dalaran")</label>
+              <input type="text" id="realm_slug" placeholder="dalaran">
+            </div>
+          </div>
+        </div>
+
+        <!-- Discord Notifications -->
+        <div>
+          <h3 style="margin-bottom: 1rem;">Discord Notifications</h3>
+          <div>
+            <label>Webhook URL</label>
+            <input type="text" id="discord_webhook" placeholder="https://discord.com/api/webhooks/...">
+            <button class="btn-secondary" style="margin-top: 0.5rem;" onclick="testDiscord()">Send Test Message</button>
+          </div>
+        </div>
+
+        <!-- Scheduling -->
+        <div>
+          <h3 style="margin-bottom: 1rem;">Automation Schedule</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div>
+              <label>Data Ingestion Frequency (minutes)</label>
+              <input type="number" id="ingest_frequency" value="60" min="15" max="1440">
+              <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">How often to scan AH data (default:
+                60 min)</p>
+            </div>
+            <div>
+              <label>Model Retrain Time (24-hour format, e.g., "03:00")</label>
+              <input type="text" id="retrain_time" value="03:00" pattern="[0-2][0-9]:[0-5][0-9]">
+              <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Daily time to retrain ML models</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML Model Parameters -->
+        <div>
+          <h3 style="margin-bottom: 1rem;">ML Model Parameters</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div>
+              <label>Opportunity Threshold (%)</label>
+              <input type="number" id="opportunity_threshold" value="20" min="5" max="100" step="5">
+              <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Minimum predicted profit % to flag
+                as opportunity</p>
+            </div>
+            <div>
+              <label>Min Confidence Score (0-1)</label>
+              <input type="number" id="min_confidence" value="0.7" min="0" max="1" step="0.05">
+              <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Minimum ML confidence to show
+                predictions</p>
+            </div>
+            <div>
+              <label>Random Forest Trees</label>
+              <input type="number" id="rf_n_estimators" value="200" min="50" max="500" step="50">
+            </div>
+          </div>
+        </div>
+
+        <!-- Backup/Restore -->
+        <div>
+          <h3 style="margin-bottom: 1rem;">Backup & Restore</h3>
+          <div style="display: flex; gap: 1rem;">
+            <button class="btn-secondary" onclick="backupConfigs()">📥 Backup Configs</button>
+            <button class="btn-secondary" onclick="document.getElementById('restore-file').click()">📤 Restore from
+              Backup</button>
+            <input type="file" id="restore-file" accept=".json" style="display: none;" onchange="restoreConfigs(event)">
+          </div>
+        </div>
+      </div>
+
+      <div id="config-status" style="margin-top: 2rem;"></div>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = window.location.origin;
+
+    // Load current config
+    async function loadConfig() {
+      try {
+        const response = await fetch(`${API_BASE}/api/config`);
+        const config = await response.json();
+
+        // Populate fields
+        if (config.blizzard) {
+          document.getElementById('blizzard_region').value = config.blizzard.region || 'us';
+          document.getElementById('realm_slug').value = config.blizzard.realm_slug || '';
+        }
+
+        if (config.secrets) {
+          // Don't show full secrets, just placeholder
+          if (config.secrets.BLIZZARD_CLIENT_ID) {
+            document.getElementById('blizzard_client_id').placeholder = '••••••••';
+          }
+        }
+
+        // Other configs...
+
+      } catch (error) {
+        console.error('Error loading config:', error);
+      }
+    }
+
+    async function saveAllConfigs() {
+      const config = {
+        blizzard: {
+          client_id: document.getElementById('blizzard_client_id').value,
+          client_secret: document.getElementById('blizzard_client_secret').value,
+          region: document.getElementById('blizzard_region').value,
+          realm_slug: document.getElementById('realm_slug').value
+        },
+        discord: {
+          webhook_url: document.getElementById('discord_webhook').value
+        },
+        scheduling: {
+          ingest_frequency: parseInt(document.getElementById('ingest_frequency').value),
+          retrain_time: document.getElementById('retrain_time').value
+        },
+        ml: {
+          opportunity_threshold: parseFloat(document.getElementById('opportunity_threshold').value) / 100,
+          min_confidence: parseFloat(document.getElementById('min_confidence').value),
+          rf_n_estimators: parseInt(document.getElementById('rf_n_estimators').value)
+        }
+      };
+
+      try {
+        const response = await fetch(`${API_BASE}/api/config`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(config)
+        });
+
+        if (response.ok) {
+          showStatus('✅ Configuration saved successfully!', 'success');
+        } else {
+          showStatus('❌ Failed to save configuration', 'error');
+        }
+      } catch (error) {
+        showStatus('❌ Error: ' + error.message, 'error');
+      }
+    }
+
+    async function testBlizzardAPI() {
+      showStatus('Testing Blizzard API connection...', 'info');
+
+      try {
+        const response = await fetch(`${API_BASE}/api/config/test/blizzard`);
+        const result = await response.json();
+
+        if (result.success) {
+          showStatus('✅ Blizzard API connection successful!', 'success');
+        } else {
+          showStatus('❌ Blizzard API test failed: ' + result.error, 'error');
+        }
+      } catch (error) {
+        showStatus('❌ Error testing API: ' + error.message, 'error');
+      }
+    }
+
+    async function testDiscord() {
+      showStatus('Sending test Discord message...', 'info');
+
+      try {
+        const response = await fetch(`${API_BASE}/api/config/test/discord`);
+        const result = await response.json();
+
+        if (result.success) {
+          showStatus('✅ Discord test message sent!', 'success');
+        } else {
+          showStatus('❌ Discord test failed: ' + result.error, 'error');
+        }
+      } catch (error) {
+        showStatus('❌ Error: ' + error.message, 'error');
+      }
+    }
+
+    async function backupConfigs() {
+      try {
+        const response = await fetch(`${API_BASE}/api/config/backup`);
+        const blob = await response.blob();
+
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `goblin-config-backup-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+
+        showStatus('✅ Config backup downloaded', 'success');
+      } catch (error) {
+        showStatus('❌ Backup failed: ' + error.message, 'error');
+      }
+    }
+
+    async function restoreConfigs(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await fetch(`${API_BASE}/api/config/restore`, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          showStatus('✅ Config restored! Reloading...', 'success');
+          setTimeout(() => location.reload(), 2000);
+        } else {
+          showStatus('❌ Restore failed', 'error');
+        }
+      } catch (error) {
+        showStatus('❌ Error: ' + error.message, 'error');
+      }
+    }
+
+    function showStatus(message, type) {
+      const statusDiv = document.getElementById('config-status');
+      const alertClass = type === 'success' ? 'alert-buy' : (type === 'error' ? 'alert-sell' : 'alert-hold');
+
+      statusDiv.innerHTML = `<div class="alert ${alertClass}">${message}</div>`;
+
+      setTimeout(() => {
+        statusDiv.innerHTML = '';
+      }, 5000);
+    }
+
+    // Load on page load
+    document.addEventListener('DOMContentLoaded', loadConfig);
+  </script>
+</body>
+
+</html>

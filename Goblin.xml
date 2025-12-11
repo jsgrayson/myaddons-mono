@@ -1,0 +1,117 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Button name="GoblinNavButtonTemplate" virtual="true">
+        <Size x="190" y="30"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="Bg" file="Interface\Buttons\UI-Listbox-Highlight2"><Color r="0.72" g="0.45" b="0.20" a="0.2"/></Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture parentKey="Icon"><Size x="20" y="20"/><Anchors><Anchor point="LEFT" x="10" y="0"/></Anchors></Texture>
+                <FontString parentKey="Label" inherits="GameFontNormal" justifyH="LEFT"><Anchors><Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="10" y="0"/></Anchors></FontString>
+            </Layer>
+        </Layers>
+        <HighlightTexture file="Interface\Buttons\UI-Listbox-Highlight2" alphaMode="ADD"/>
+        <Scripts><OnClick>Goblin_NavClick(self);</OnClick></Scripts>
+    </Button>
+    
+    <Button name="GoblinAuctionRowTemplate" virtual="true">
+        <Size x="600" y="20"/>
+        <Layers>
+            <Layer level="ARTWORK">
+                <Texture parentKey="Icon"><Size x="18" y="18"/><Anchors><Anchor point="LEFT" x="5" y="0"/></Anchors></Texture>
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT"><Size x="200" y="20"/><Anchors><Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="5" y="0"/></Anchors></FontString>
+                <FontString parentKey="Qty" inherits="GameFontHighlight" justifyH="RIGHT"><Size x="50" y="20"/><Anchors><Anchor point="LEFT" relativeKey="$parent.Name" relativePoint="RIGHT" x="5" y="0"/></Anchors></FontString>
+                <FontString parentKey="Price" inherits="GameFontHighlight" justifyH="RIGHT"><Size x="150" y="20"/><Anchors><Anchor point="RIGHT" x="-5" y="0"/></Anchors></FontString>
+            </Layer>
+        </Layers>
+        <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+    </Button>
+
+    <Frame name="GoblinFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
+        <Size x="900" y="600"/>
+        <Anchors><Anchor point="CENTER"/></Anchors>
+        <Layers>
+            <Layer level="OVERLAY" textureSubLevel="1">
+                <Texture name="$parentPortrait" parentKey="portrait" file="Interface\Icons\inv_misc_coin_02"><Size x="60" y="60"/><Anchors><Anchor point="TOPLEFT" x="-5" y="5"/></Anchors></Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentSidebar" parentKey="Sidebar" inherits="InsetFrameTemplate">
+                <Size x="200" y="0"/>
+                <Anchors><Anchor point="TOPLEFT" x="4" y="-60"/><Anchor point="BOTTOMLEFT" x="4" y="26"/></Anchors>
+                <Frames>
+                    <Button name="$parentNav1" parentKey="Nav1" inherits="GoblinNavButtonTemplate" id="1"><Anchors><Anchor point="TOPLEFT" x="5" y="-5"/></Anchors></Button>
+                    <Button name="$parentNav2" parentKey="Nav2" inherits="GoblinNavButtonTemplate" id="2"><Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Nav1" relativePoint="BOTTOMLEFT" x="0" y="-2"/></Anchors></Button>
+                    <Button name="$parentNav3" parentKey="Nav3" inherits="GoblinNavButtonTemplate" id="3"><Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Nav2" relativePoint="BOTTOMLEFT" x="0" y="-2"/></Anchors></Button>
+                    <Button name="$parentNav4" parentKey="Nav4" inherits="GoblinNavButtonTemplate" id="4"><Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Nav3" relativePoint="BOTTOMLEFT" x="0" y="-2"/></Anchors></Button>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentContent" parentKey="Content" inherits="InsetFrameTemplate">
+                <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Sidebar" relativePoint="TOPRIGHT" x="5" y="0"/><Anchor point="BOTTOMRIGHT" x="-6" y="26"/></Anchors>
+                <Frames>
+                    
+                    <Frame name="$parentDashboard" parentKey="Dashboard">
+                        <Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                        <Frames>
+                            <Frame name="$parentGoldCard" parentKey="GoldCard" inherits="BackdropTemplate">
+                                <Size x="300" y="100"/>
+                                <Anchors><Anchor point="TOPLEFT" x="20" y="-20"/></Anchors>
+                                <KeyValues><KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/></KeyValues>
+                                <Layers>
+                                    <Layer level="ARTWORK">
+                                        <FontString parentKey="Title" inherits="GameFontNormalHuge" text="Total Wealth"><Color r="0.72" g="0.45" b="0.20"/><Anchors><Anchor point="TOP" x="0" y="-15"/></Anchors></FontString>
+                                        <FontString parentKey="Value" inherits="GameFontHighlightHuge" text="0g 0s 0c"><Anchors><Anchor point="CENTER" x="0" y="-5"/></Anchors></FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                            <ScrollFrame name="$parentLedgerScroll" parentKey="LedgerScroll" inherits="UIPanelScrollFrameTemplate">
+                                <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.GoldCard" relativePoint="BOTTOMLEFT" x="0" y="-20"/><Anchor point="BOTTOMRIGHT" x="-30" y="20"/></Anchors>
+                                <ScrollChild>
+                                    <Frame name="$parentChild" parentKey="Child">
+                                        <Size x="600" y="400"/>
+                                        <Layers><Layer level="ARTWORK"><FontString parentKey="LogText" inherits="GameFontHighlight" justifyH="LEFT" text=""><Anchors><Anchor point="TOPLEFT"/></Anchors></FontString></Layer></Layers>
+                                    </Frame>
+                                </ScrollChild>
+                            </ScrollFrame>
+                        </Frames>
+                    </Frame>
+
+                    <Frame name="$parentAuctioning" parentKey="Auctioning" hidden="true">
+                        <Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                        <Frames>
+                            <Button name="$parentScanButton" parentKey="ScanButton" inherits="UIPanelButtonTemplate" text="Run Post Scan">
+                                <Size x="200" y="40"/>
+                                <Anchors><Anchor point="TOPLEFT" x="20" y="-20"/></Anchors>
+                            </Button>
+                            
+                            <Frame name="$parentHeader" parentKey="Header">
+                                <Size x="0" y="25"/>
+                                <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.ScanButton" relativePoint="BOTTOMLEFT" x="0" y="-10"/><Anchor point="RIGHT" x="-10" y="0"/></Anchors>
+                                <Layers>
+                                    <Layer level="ARTWORK">
+                                        <FontString inherits="GameFontNormal" text="Item to Post"><Anchors><Anchor point="LEFT" x="30" y="0"/></Anchors></FontString>
+                                        <FontString inherits="GameFontNormal" text="Market Value"><Anchors><Anchor point="RIGHT" x="-30" y="0"/></Anchors></FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+
+                            <ScrollFrame name="$parentListScroll" parentKey="ListScroll" inherits="HybridScrollFrameTemplate">
+                                <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Header" relativePoint="BOTTOMLEFT" x="0" y="-5"/><Anchor point="BOTTOMRIGHT" x="-30" y="5"/></Anchors>
+                                <Frames><Slider name="$parentScrollBar" parentKey="scrollBar" inherits="HybridScrollBarTemplate"><Anchors><Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-15"/><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="0" y="15"/></Anchors></Slider></Frames>
+                            </ScrollFrame>
+                        </Frames>
+                    </Frame>
+
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>self:RegisterForDrag("LeftButton"); GoblinFrameTitleText:SetText("|cffb87333Goblin|r Economy Engine");</OnLoad>
+            <OnDragStart>self:StartMoving();</OnDragStart>
+            <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>

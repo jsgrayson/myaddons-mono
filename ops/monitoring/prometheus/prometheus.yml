@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+
+  # Docker Metrics
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['localhost:9323']
+
+  # Node (Host) Metrics
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+
+  # Goblin Backend Health Metrics
+  - job_name: 'goblin-backend'
+    metrics_path: /status/metrics
+    static_configs:
+      - targets: ['localhost:8001']

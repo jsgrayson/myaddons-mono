@@ -1,0 +1,117 @@
+.gx-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+}
+
+.gx-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.gx-page-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gx-page-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: #a3e635;
+  margin: 0;
+}
+
+.gx-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fef9c3;
+  margin: 0;
+}
+
+.gx-page-subtitle {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.gx-page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gx-btn {
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.gx-btn-primary {
+  background: linear-gradient(135deg, #22c55e, #eab308);
+  color: #022c22;
+  border-color: rgba(250, 204, 21, 0.9);
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.65),
+    0 0 26px rgba(234, 179, 8, 0.6);
+}
+
+.gx-btn-ghost {
+  background: rgba(15, 23, 42, 0.98);
+  color: #e5e7eb;
+  border-color: rgba(75, 85, 99, 0.8);
+}
+
+.gx-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.gx-card {
+  border-radius: 14px;
+  padding: 14px 16px;
+  background:
+    linear-gradient(135deg, rgba(6, 12, 15, 0.96), rgba(9, 13, 18, 0.94)),
+    radial-gradient(circle at 0% 0%, rgba(34, 197, 94, 0.24), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(234, 179, 8, 0.24), transparent 60%);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+.gx-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fef9c3;
+  margin: 0 0 2px;
+}
+
+.gx-card-subtitle {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin: 0 0 6px;
+}
+
+.gx-card-placeholder {
+  margin-top: 6px;
+  min-height: 100px;
+  border-radius: 10px;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.gx-card-wide {
+  grid-column: 1 / -1;
+}

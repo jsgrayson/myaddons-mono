@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-11-19T15:44:32.566214",
+  "news_items_analyzed": 1,
+  "predictions": [
+    {
+      "category": "Paladin Holy gear",
+      "prediction": "price_spike",
+      "confidence": 0.75,
+      "expected_change": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "reason": "Paladin holy buffed - higher demand expected"
+    },
+    {
+      "category": "Paladin Protection gear",
+      "prediction": "price_spike",
+      "confidence": 0.75,
+      "expected_change": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "reason": "Paladin protection buffed - higher demand expected"
+    },
+    {
+      "category": "Warrior Holy gear",
+      "prediction": "price_spike",
+      "confidence": 0.75,
+      "expected_change": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "reason": "Warrior holy buffed - higher demand expected"
+    },
+    {
+      "category": "Warrior Protection gear",
+      "prediction": "price_spike",
+      "confidence": 0.75,
+      "expected_change": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "reason": "Warrior protection buffed - higher demand expected"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "BUY",
+      "category": "Paladin Holy gear",
+      "timing": "NOW (before patch)",
+      "expected_roi": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "confidence": 0.75,
+      "strategy": "Buy Paladin Holy gear at current prices, hold until patch release, sell at peak"
+    },
+    {
+      "action": "BUY",
+      "category": "Paladin Protection gear",
+      "timing": "NOW (before patch)",
+      "expected_roi": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "confidence": 0.75,
+      "strategy": "Buy Paladin Protection gear at current prices, hold until patch release, sell at peak"
+    },
+    {
+      "action": "BUY",
+      "category": "Warrior Holy gear",
+      "timing": "NOW (before patch)",
+      "expected_roi": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "confidence": 0.75,
+      "strategy": "Buy Warrior Holy gear at current prices, hold until patch release, sell at peak"
+    },
+    {
+      "action": "BUY",
+      "category": "Warrior Protection gear",
+      "timing": "NOW (before patch)",
+      "expected_roi": "+150% to +200%",
+      "timeline": "2-3 weeks after patch release",
+      "confidence": 0.75,
+      "strategy": "Buy Warrior Protection gear at current prices, hold until patch release, sell at peak"
+    }
+  ],
+  "summary": {
+    "buy_opportunities": 4,
+    "sell_warnings": 0
+  }
+}

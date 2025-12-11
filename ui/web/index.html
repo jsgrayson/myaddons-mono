@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goblin Control Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600&display=swap');
+
+    :root {
+      --ink: #15171f;
+      --muted: #5f6470;
+      --panel: #ffffff;
+      --edge: #e5dfd4;
+      --bg: #f6f1e6;
+      --accent: #f26b1d;
+      --accent-2: #1f6f74;
+      --accent-3: #f1c453;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.14);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', 'Manrope', sans-serif;
+      background: radial-gradient(circle at 18% 20%, rgba(241, 196, 83, 0.28), transparent 45%),
+                  radial-gradient(circle at 82% 8%, rgba(31, 111, 116, 0.16), transparent 35%),
+                  linear-gradient(135deg, #fdfaf5 0%, #f3ece0 100%);
+      color: var(--ink);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .background-accent {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 60% 70%, rgba(242, 107, 29, 0.08), transparent 45%);
+      z-index: 0;
+    }
+
+    .layout {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1f6f74, #184f52);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(21, 23, 31, 0.05);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .pill strong { color: var(--ink); }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot.green { background: #37b26c; }
+    .dot.amber { background: #f1c453; }
+    .dot.teal { background: #1f6f74; }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    button.primary {
+      background: linear-gradient(120deg, #f26b1d, #f49b25);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    button.ghost {
+      background: rgba(21, 23, 31, 0.05);
+      color: var(--ink);
+      border: 1px solid rgba(21, 23, 31, 0.07);
+    }
+
+    button:hover { transform: translateY(-1px); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: 38px;
+      letter-spacing: -0.02em;
+      margin: 8px 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .hero-card, .card {
+      background: var(--panel);
+      border: 1px solid var(--edge);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--edge);
+      margin: 8px 0;
+    }
+
+    .stat {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat small { color: var(--muted); }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .bar {
+      flex: 1;
+      height: 8px;
+      background: linear-gradient(90deg, rgba(31, 111, 116, 0.2), rgba(242, 107, 29, 0.35));
+      border-radius: 999px;
+      position: relative;
+    }
+
+    .bar::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #f26b1d;
+      box-shadow: 0 4px 12px rgba(242, 107, 29, 0.3);
+    }
+
+    .pill-capsule {
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: rgba(31, 111, 116, 0.08);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0 8px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .list-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px dashed var(--edge);
+      background: rgba(21, 23, 31, 0.02);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: rgba(242, 107, 29, 0.12);
+      color: #9f3d00;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .progress {
+      position: relative;
+      height: 8px;
+      background: rgba(31, 111, 116, 0.15);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      position: absolute;
+      inset: 0;
+      width: var(--value);
+      background: linear-gradient(90deg, #1f6f74, #27a0a6);
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      header, .hero {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+      header { align-items: flex-start; }
+      h1 { font-size: 32px; }
+      .stat { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-accent"></div>
+  <div class="layout">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div>
+          <div style="font-size: 14px; color: var(--muted);">Goblin Control</div>
+          <div style="font-size: 18px;">Web Command Deck</div>
+        </div>
+      </div>
+      <div class="actions">
+        <span class="pill"><span class="dot green"></span><strong>Backend</strong> live</span>
+        <span class="pill"><span class="dot amber"></span>Next sync <strong id="sync-time">soon</strong></span>
+        <button class="ghost" type="button">Open logs</button>
+        <button class="primary" type="button">Start session</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Goblin ui skeleton</div>
+        <h1>Command center for <span class="accent">agents</span> and goldmaking experiments.</h1>
+        <p class="lead">Stage the systems overview, trigger the agents, monitor AH scans, and surface ML predictions without wiring yet. Drop real data or API calls once the backend is ready.</p>
+        <div class="actions" style="margin-bottom: 12px;">
+          <button class="primary" type="button">Run TSM Brain</button>
+          <button class="ghost" type="button">Schedule AH sweep</button>
+        </div>
+        <div class="badge-row">
+          <span class="pill"><span class="dot green"></span>Session ready</span>
+          <span class="pill"><span class="dot teal"></span>AH feed connected</span>
+          <span class="pill"><span class="dot amber"></span>2 tasks queued</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="label"><span class="dot teal"></span>Session health</div>
+        <div class="stat">
+          <div>
+            <h3>4 agents</h3>
+            <small>Ready to dispatch</small>
+          </div>
+          <div>
+            <h3>12m</h3>
+            <small>Since last sync</small>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="pill-capsule">AH Sweep</div>
+            <div class="bar"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="pill-capsule">TSM Brain</div>
+            <div class="bar" style="opacity: 0.65;"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="pill-capsule">Automation</div>
+            <div class="bar" style="opacity: 0.4;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <div class="label"><span class="dot teal"></span>Overview</div>
+      <div class="actions">
+        <button class="ghost" type="button">Refresh</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>System snapshot</h3>
+        <p>High-level health for Goblin services.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span><strong>Orchestrator</strong><br><small style="color: var(--muted);">Routing requests</small></span>
+            <span class="tag">live</span>
+          </div>
+          <div class="list-row">
+            <span><strong>Market data</strong><br><small style="color: var(--muted);">Latest AH pull</small></span>
+            <span class="tag" style="background: rgba(31, 111, 116, 0.12); color: #0d4c50;">cached</span>
+          </div>
+          <div class="list-row">
+            <span><strong>TSM Brain</strong><br><small style="color: var(--muted);">Pipeline warm</small></span>
+            <span class="tag" style="background: rgba(241, 196, 83, 0.14); color: #815f00;">warming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Agent control</h3>
+        <p>Stub controls for dispatching the agents.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span>Market watcher</span>
+            <button class="ghost" type="button">Activate</button>
+          </div>
+          <div class="list-row">
+            <span>Scanning automation</span>
+            <button class="ghost" type="button">Arm script</button>
+          </div>
+          <div class="list-row">
+            <span>Sell-side strategy</span>
+            <button class="ghost" type="button">Simulate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>TSM Brain preview</h3>
+        <p>Surface the ML model state before wiring real scores.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span>Predictions</span>
+            <div class="progress" aria-label="Predictions ready">
+              <span style="--value: 72%;"></span>
+            </div>
+          </div>
+          <div class="list-row">
+            <span>Confidence</span>
+            <div class="progress" aria-label="Confidence bar">
+              <span style="--value: 58%; background: linear-gradient(90deg, #f26b1d, #f1c453);"></span>
+            </div>
+          </div>
+          <div class="list-row">
+            <span>Feature set</span>
+            <div class="progress" aria-label="Feature set coverage">
+              <span style="--value: 84%; background: linear-gradient(90deg, #1f6f74, #27a0a6);"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AH scanning board</h3>
+        <p>Queue and status for auctions sweeps.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span><strong>Daily sweep</strong><br><small style="color: var(--muted);">Timeboxed routine</small></span>
+            <span class="pill-capsule">08:00</span>
+          </div>
+          <div class="list-row">
+            <span><strong>High-value alerting</strong><br><small style="color: var(--muted);">Alerts still stubbed</small></span>
+            <span class="pill-capsule" style="background: rgba(242, 107, 29, 0.1);">ready</span>
+          </div>
+          <div class="list-row">
+            <span><strong>Market parity</strong><br><small style="color: var(--muted);">Horde vs Alliance</small></span>
+            <span class="pill-capsule" style="background: rgba(241, 196, 83, 0.12);">pending</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Upcoming tasks</h3>
+        <p>Lightweight queue for automation chores.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span>Sync characters</span>
+            <span class="tag">due</span>
+          </div>
+          <div class="list-row">
+            <span>Retrain pricing model</span>
+            <span class="tag" style="background: rgba(31, 111, 116, 0.12); color: #0d4c50;">next</span>
+          </div>
+          <div class="list-row">
+            <span>Dispatch courier agent</span>
+            <span class="tag" style="background: rgba(241, 196, 83, 0.14); color: #815f00;">queued</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Notes & wiring</h3>
+        <p>Add hooks or connect to your backend endpoints.</p>
+        <div class="list" style="margin-top: 16px;">
+          <div class="list-row">
+            <span>API base</span>
+            <code style="background: rgba(21, 23, 31, 0.05); padding: 6px 8px; border-radius: 8px;">http://localhost:8001</code>
+          </div>
+          <div class="list-row">
+            <span>Actions</span>
+            <span class="tag">POST /run_tsm_brain</span>
+          </div>
+          <div class="list-row">
+            <span>TODO</span>
+            <span class="tag" style="background: rgba(31, 111, 116, 0.12); color: #0d4c50;">Wire fetch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Skeleton only—drop in real data and API calls when services are ready.
+    </footer>
+  </div>
+
+  <script>
+    const syncEl = document.getElementById('sync-time');
+    if (syncEl) {
+      const now = new Date();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      syncEl.textContent = `${now.getHours()}:${minutes}`;
+    }
+  </script>
+</body>
+</html>

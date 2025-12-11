@@ -1,0 +1,178 @@
+version: "3.9"
+
+# ------------------------------
+# WoW Suite: Goblin + SkillWeaver
+# Unified deployment for gold-making AI and character optimization
+# ------------------------------
+
+services:
+
+  # ------------------------------
+  # Shared Database
+  # ------------------------------
+  postgres:
+    image: postgres:16
+    container_name: wowsuite-db
+    environment:
+      POSTGRES_DB: wowsuite
+      POSTGRES_USER: wowuser
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: wowsuite-redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # ------------------------------
+  # Goblin Backend (Existing)
+  # ------------------------------
+  goblin-backend:
+    build: ./backend
+    container_name: goblin-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENV_FILE=.env
+      - DATABASE_URL=postgresql://wowuser:${DB_PASSWORD:-changeme}@postgres/wowsuite
+      - REDIS_URL=redis://redis:6379
+    env_file:
+      - ./backend/config/secrets.env  # Contains BLIZZARD_CLIENT_ID/SECRET
+    volumes:
+      - ./backend:/app
+      - ./data:/data
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  # ------------------------------
+  # SkillWeaver Backend (New)
+  # ------------------------------
+  skillweaver-api:
+    build: ./skillweaver-api
+    container_name: skillweaver-api
+    ports:
+      - "8002:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql://wowuser:${DB_PASSWORD:-changeme}@postgres/wowsuite
+      - REDIS_URL=redis://redis:6379
+      - GOBLIN_API_URL=http://goblin-backend:8001
+      # Reuse Goblin's Blizzard credentials
+      - BLIZZARD_CLIENT_ID=${BLIZZARD_CLIENT_ID}
+      - BLIZZARD_CLIENT_SECRET=${BLIZZARD_CLIENT_SECRET}
+    volumes:
+      - ./skillweaver-api:/app
+      - ./data:/data  # Share character data with Goblin
+    depends_on:
+      - postgres
+      - redis
+      - goblin-backend
+    restart: unless-stopped
+
+  # ------------------------------
+  # SkillWeaver Frontend (New)
+  # ------------------------------
+  skillweaver-web:
+    build: ./skillweaver-web
+    container_name: skillweaver-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8002
+      - NEXT_PUBLIC_GOBLIN_API_URL=http://localhost:8001
+    depends_on:
+      - skillweaver-api
+    restart: unless-stopped
+
+  # ------------------------------
+  # Goblin Agents (Existing)
+  # ------------------------------
+  goblin-warden:
+    build: ./agents/warden
+    container_name: goblin-warden
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/warden:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  goblin-tsm-brain:
+    build: ./agents/tsm_brain
+    container_name: goblin-tsm-brain
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/tsm_brain:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  goblin-bank-runner:
+    build: ./agents/bank_runner
+    container_name: goblin-bank-runner
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/bank_runner:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  goblin-ah-runner:
+    build: ./agents/ah_runner
+    container_name: goblin-ah-runner
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/ah_runner:/app
+      - ./data:/data
+    restart: unless-stopped
+
+  goblin-ml:
+    build:
+      context: .
+      dockerfile: ml/pipeline/Dockerfile
+    container_name: goblin-ml
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./ml:/app/ml
+      - ./backend:/app/backend
+      - ./data:/data
+    command: python -m ml.pipeline.scheduler
+    restart: unless-stopped
+
+  # ------------------------------
+  # Nginx Reverse Proxy
+  # ------------------------------
+  nginx:
+    image: nginx:alpine
+    container_name: wowsuite-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - skillweaver-web
+      - goblin-backend
+      - skillweaver-api
+    restart: unless-stopped
+
+# ------------------------------
+# Volumes
+# ------------------------------
+volumes:
+  postgres_data:
+  redis_data:

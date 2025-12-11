@@ -1,0 +1,99 @@
+
+Goblin Project – Summary & Structure (Up to This Point)
+
+Overview:
+Goblin is an automation, intelligence, and orchestration platform designed to unify multiple agents, ML prediction systems, operational scripts, and user interfaces into a single cohesive “superproject.” It is intended to run either on macOS, Proxmox, Raspberry Pi, or server‑grade hardware.
+
+Core Goals:
+- Provide a backend API built with FastAPI.
+- Support multiple autonomous agents: TSM Brain, Warden, AH Runner, Gmail Archiver, etc.
+- Include ML prediction pipelines for WoW market analysis, trends, and self‑learning.
+- Include DevOps scripts to deploy, back up, maintain, or restore the system.
+- Allow for future mobile and web UI control panels.
+
+Backend Structure (Current):
+backend/
+  ├── main.py — FastAPI entrypoint, router assembly.
+  ├── metrics.py — Prometheus metrics.
+  ├── ui/
+  │     ├── router.py — UI routes / index pages.
+  │     ├── logs_router.py — Logs retrieval.
+  │     ├── config_router.py — Configuration endpoints.
+  │     ├── actions_router.py — Agent action endpoints.
+  │     ├── status_api.py — System status endpoints.
+  │     ├── static/ — Static assets (CSS, JS).
+  │     ├── templates/ — HTML templates.
+  ├── agents/
+  │     ├── warden/ — System monitoring and health.
+  │     ├── tsm_brain/ — TSM operation logic.
+  │     ├── bank_runner/ — Bank character automation.
+  │     ├── gmail_archiver/ — Email processing.
+  │     ├── ml_worker/ — ML task processing.
+  │     ├── common/ — Shared agent utilities.
+  │
+  ├── ml/
+        ├── pipeline/ — Data processing pipelines.
+        ├── models/ — Saved ML models.
+        ├── data/ — Training and inference data.
+
+Dependencies (requirements.txt):
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+requests
+pandas
+numpy
+scikit-learn
+schedule
+loguru
+
+High‑Level Functional Areas:
+1. Backend API
+   - Central control hub for all Goblin agents.
+   - Exposes endpoints for tasks, agent operations, logs, and status.
+
+2. Agents System
+   - Modular, swappable, independently running workers.
+   - Each agent handles a specific domain: markets, mail, crafting, backups, monitoring.
+
+3. ML Intelligence Layer
+   - ✅ **Data Ingestion**: Blizzard API client fetching real auction data (43.9k records).
+   - ✅ **Preprocessing**: Feature engineering (MA, volatility, price changes).
+   - ✅ **Training**: Random Forest Regressor for price prediction.
+   - ✅ **Predictions**: Identifies 782+ profitable flip opportunities.
+   - Data flows: Raw CSVs → Preprocessed data → Trained model → Opportunity JSON.
+
+4. Ops & Deployment
+   - Scripts to create project structure, VM setup, backups.
+   - Integrates with GitHub (SSH set up).
+   - Supports macOS + Proxmox environments.
+   - ✅ Docker-ready for containerized deployment.
+
+5. UI & External Tools
+   - Minimal UI stubs.
+   - Future mobile app or web dashboard.
+   - Logging viewer and config controls.
+
+Current Milestones Completed:
+- Repo initialized on local machine.
+- Structure planning done.
+- SSH keys created + GitHub wired up.
+- Backend routers drafted (including actions and status).
+- Multi-agent architecture implemented (Warden, TSM Brain, Bank Runner, Gmail Archiver).
+- ✅ **ML Pipeline Implemented**:
+    - Blizzard API integration for real auction data.
+    - Preprocessing with feature engineering.
+    - Random Forest model training (RMSE: 118M copper).
+    - Prediction system generating flip opportunities.
+- ✅ **Docker Configuration**: Ready for Proxmox deployment.
+- Deployment workflow (tar/zip scripts) created.
+
+Next Steps:
+- Deploy to Proxmox server using docker-compose.
+- Set up hourly data ingestion cron job.
+- Configure Discord webhook for opportunity alerts.
+- Build agent interaction logic for automated trading.
+- Expand UI for monitoring and manual interventions.
+
+This file represents the summarized understanding of the project to date.

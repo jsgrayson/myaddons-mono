@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoblinStack - Market Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/holocron-theme.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="color: var(--wow-gold); font-weight: bold;">💰 Goblin</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/markets">Markets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/predictions">AI Predictions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:5001" target="_blank"
+                            style="color: var(--wow-rare);">Holocron ↗</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="hero-header">
+                    <h1 class="hero-title">📊 Live Market Analysis</h1>
+                    <p class="hero-subtitle"><i class="fas fa-chart-line me-2"></i>Real-time auction house data & trends
+                    </p>
+                    <div class="animated-border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fas fa-fire me-2"></i>Trending Items (Last 24h)
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-dark table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Current Price</th>
+                                    <th>24h Change</th>
+                                    <th>Volume</th>
+                                    <th>Velocity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong class="text-warning">Eternal Crystal</strong></td>
+                                    <td>850g</td>
+                                    <td><span class="text-danger">-15.2% ▼</span></td>
+                                    <td>1,250</td>
+                                    <td><span class="badge bg-success">High</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Buy</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-warning">Elethium Ore</strong></td>
+                                    <td>425g</td>
+                                    <td><span class="text-success">+8.5% ▲</span></td>
+                                    <td>3,400</td>
+                                    <td><span class="badge bg-warning text-dark">Medium</span></td>
+                                    <td><button class="btn btn-sm btn-danger">Sell</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-warning">Shadowghast Ingot</strong></td>
+                                    <td>1,200g</td>
+                                    <td><span class="text-danger">-2.1% ▼</span></td>
+                                    <td>890</td>
+                                    <td><span class="badge bg-danger">Low</span></td>
+                                    <td><button class="btn btn-sm btn-secondary">Watch</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-warning">Heavy Callous Hide</strong></td>
+                                    <td>65g</td>
+                                    <td><span class="text-success">+22.7% ▲</span></td>
+                                    <td>5,600</td>
+                                    <td><span class="badge bg-success">High</span></td>
+                                    <td><button class="btn btn-sm btn-danger">Sell</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-warning">Umbral Aether</strong></td>
+                                    <td>480g</td>
+                                    <td><span class="text-danger">-9.3% ▼</span></td>
+                                    <td>2,100</td>
+                                    <td><span class="badge bg-warning text-dark">Medium</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Buy</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fas fa-bolt me-2"></i>Flash Deals (Limited Time)
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <strong>🔥 HOT:</strong> Marrowroot below vendor price!<br>
+                            <small>Buy: 12g | Sell to vendor: 18g | Instant 50% profit</small><br>
+                            <button class="btn btn-sm btn-success mt-2">Snipe Now</button>
+                        </div>
+                        <div class="alert alert-warning text-dark">
+                            <strong>⚡ Quick Flip:</strong> Enchant Eternal Strength III<br>
+                            <small>Craft cost: 850g | Sell price: 1,100g | Margin: 29.4%</small><br>
+                            <button class="btn btn-sm btn-warning mt-2">Craft & Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fas fa-history me-2"></i>Recent Transactions
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent text-white">
+                                <strong>Bought:</strong> 20x Eternal Crystal @ 850g
+                                <span class="badge bg-success float-end">2m ago</span>
+                            </li>
+                            <li class="list-group-item bg-transparent text-white">
+                                <strong>Sold:</strong> 50x Heavy Callous Hide @ 68g
+                                <span class="badge bg-info text-dark float-end">15m ago</span>
+                            </li>
+                            <li class="list-group-item bg-transparent text-white">
+                                <strong>Bought:</strong> 100x Marrowroot @ 11g
+                                <span class="badge bg-success float-end">1h ago</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
