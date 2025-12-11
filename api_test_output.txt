@@ -1,0 +1,32 @@
+⚠️  Token expired, need to re-authenticate
+User token invalid/expired. Attempting Client Credentials flow...
+--- Testing ID 37 (From Addon.Species) ---
+Requesting: /data/wow/pet/37 (NS: static-us)
+Status: 404
+Error: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+
+--- Testing ID 872 (From Addon.RivalInfo) ---
+Requesting: /data/wow/pet/872 (NS: static-us)
+Status: 404
+Error: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+
+--- Testing Creature ID 872 ---
+Requesting: /data/wow/creature/872 (NS: static-us)
+Status: 404
+Error: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+
+--- Testing Ability ID 3 ---
+Requesting: /data/wow/pet-ability/3 (NS: static-us)
+Status: 404
+Error: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+
+--- Testing ID 675 (Potential Species ID) ---
+Requesting: /data/wow/pet/675 (NS: static-us)
+Status: 200
+Name: {'en_US': 'Stormwind Rat', 'es_MX': 'Rata de Ventormenta', 'pt_BR': 'Rato de Ventobravo', 'de_DE': 'Ratte von Sturmwind', 'en_GB': 'Stormwind Rat', 'es_ES': 'Rata de Ventormenta', 'fr_FR': 'Rat de Hurlevent', 'it_IT': 'Ratto di Roccavento', 'ru_RU': 'Штормградская крыса', 'ko_KR': '스톰윈드 쥐', 'zh_TW': '暴風城老鼠', 'zh_CN': '暴风城老鼠'}
+
+--- Testing Pet Index ---
+Requesting: /data/wow/pet/index (NS: static-us)
+Status: 200
+Found 2036 pets in index
+Sample: [{'key': {'href': 'https://us.api.blizzard.com/data/wow/pet/283?namespace=static-11.2.5_63286-us'}, 'name': {'en_US': 'Guild Herald', 'es_MX': 'Heraldo de hermandad', 'pt_BR': 'Arauto da Guilda', 'de_DE': 'Gildenherold', 'en_GB': 'Guild Herald', 'es_ES': 'Heraldo de hermandad', 'fr_FR': 'Héraut de guilde', 'it_IT': 'Alfiere di Gilda', 'ru_RU': 'Гильдейский глашатай', 'ko_KR': '길드 전령', 'zh_TW': '公會信使', 'zh_CN': '公会使者'}, 'id': 283}, {'key': {'href': 'https://us.api.blizzard.com/data/wow/pet/475?namespace=static-11.2.5_63286-us'}, 'name': {'en_US': 'Giraffe Calf', 'es_MX': 'Cría de jirafa', 'pt_BR': 'Girafinha', 'de_DE': 'Giraffenkalb', 'en_GB': 'Giraffe Calf', 'es_ES': 'Cría de jirafa', 'fr_FR': 'Bébé girafe', 'it_IT': 'Piccola Giraffa', 'ru_RU': 'Детеныш жирафа', 'ko_KR': '새끼 기린', 'zh_TW': '小長頸鹿', 'zh_CN': '斑纹长颈鹿'}, 'id': 475}, {'key': {'href': 'https://us.api.blizzard.com/data/wow/pet/445?namespace=static-11.2.5_63286-us'}, 'name': {'en_US': 'Tiny Twister', 'es_MX': 'Remolino diminuto', 'pt_BR': 'Pequeno Ciclone', 'de_DE': 'Winziger Wirbelsturm', 'en_GB': 'Tiny Twister', 'es_ES': 'Remolino diminuto', 'fr_FR': 'Minuscule tornade', 'it_IT': 'Piccolo Tornado', 'ru_RU': 'Минисмерч', 'ko_KR': '작은 회오리', 'zh_TW': '小龍捲風', 'zh_CN': '小旋风'}, 'id': 445}]

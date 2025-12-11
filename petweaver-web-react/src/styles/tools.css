@@ -1,0 +1,64 @@
+.tools-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+}
+
+.tools-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tools-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+}
+
+@media (max-width: 900px) {
+  .tools-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.tools-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tools-card-body {
+  margin-top: 8px;
+}
+
+/* Scrollable log-ish area */
+.tools-log {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(30, 64, 175, 0.65);
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.78rem;
+}
+
+.tools-log-empty {
+  text-align: center;
+  color: #6b7280;
+}
+
+.tools-placeholder {
+  margin-top: 10px;
+  min-height: 120px;
+  border-radius: 12px;
+  border: 1px dashed rgba(148, 163, 184, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.6);
+}

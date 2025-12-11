@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Best XP Encounters - PetWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">⚡ Fast XP Encounters</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-bolt me-2"></i>Maximize your leveling efficiency with these top-rated encounters
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body p-0">
+                <div id="xp-list" class="list-group list-group-flush">
+                    <div class="text-center py-5">
+                        <i class="fas fa-spinner fa-spin fa-2x text-muted mb-3"></i>
+                        <p class="text-muted">Loading XP encounters...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Fetch XP encounters from API
+    fetch('/api/xp-encounters')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('xp-list');
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-5 text-muted">
+                        <i class="fas fa-info-circle me-2"></i>No XP encounters found.
+                    </div>
+                `;
+                return;
+            }
+            container.innerHTML = data.map(enc => `
+                <div class="list-group-item bg-dark border-secondary text-white p-4 hover-bg-black transition-all">
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="text-center" style="min-width: 80px;">
+                            <div class="display-6 fw-bold text-success">${enc.xp_score}</div>
+                            <div class="small text-muted text-uppercase">XP Score</div>
+                        </div>
+                        <div class="vr bg-secondary opacity-25"></div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <h4 class="mb-0 text-white">${enc.encounter}</h4>
+                                <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25">
+                                    <i class="fas fa-stopwatch me-1"></i>${enc.speed}
+                                </span>
+                                <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">
+                                    <i class="fas fa-paw me-1"></i>Carry: ${enc.carry_slot}
+                                </span>
+                            </div>
+                            <div class="text-muted">
+                                <i class="fas fa-map-marker-alt me-1"></i>${enc.expansion} <span class="mx-2">•</span> ${enc.category}
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+                            <button class="btn btn-outline-light rounded-circle" title="View Strategy">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        })
+        .catch(err => {
+            console.error('Failed to load XP encounters', err);
+            document.getElementById('xp-list').innerHTML = `
+                <div class="text-center py-5 text-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Error loading data.
+                </div>
+            `;
+        });
+</script>
+<style>
+    .hover-bg-black:hover {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .transition-all {
+        transition: all 0.2s ease;
+    }
+</style>
+{% endblock %}

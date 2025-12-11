@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <defs>
+    <radialGradient id="grad_critter_3" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#C9C67A" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#C9C67A" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#050509" stop-opacity="1" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="#050509" />
+  <circle cx="256" cy="260" r="220" fill="url(#grad_critter_3)" />
+  <circle cx="221" cy="199" r="8" fill="#f39c37" fill-opacity="0.75" />
+  <circle cx="343" cy="371" r="6" fill="#ffcc66" fill-opacity="0.7" />
+  <circle cx="227" cy="349" r="5" fill="#6ccfff" fill-opacity="0.6" />
+  <text x="256" y="470" text-anchor="middle" fill="#f5f5f5" font-size="26" font-family="system-ui">
+    Critter Pet 3
+  </text>
+</svg>

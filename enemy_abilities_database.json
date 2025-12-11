@@ -1,0 +1,3947 @@
+{
+  "generated": "2025-11-26",
+  "total_encounters": 204,
+  "encounters": {
+    "Rock Collector": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1589/Rock_Collector",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "218": 12
+      }
+    },
+    "Robot Rumble": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1590/Robot_Rumble",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "491": {
+          "frequency": 36,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 18
+      }
+    },
+    "The Power of Friendship": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1592/The_Power_of_Friendship",
+      "total_variations": 9,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "152": 9
+      }
+    },
+    "Major Malfunction": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1593/Major_Malfunction",
+      "total_variations": 4590,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "779": 4590
+      }
+    },
+    "Miniature Army": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1595/Miniature_Army",
+      "total_variations": 64,
+      "enemy_abilities": {
+        "231": {
+          "frequency": 128,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "!enemy.aura(Swarm of Flies:231).exists"
+          ]
+        },
+        "311": {
+          "frequency": 128,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "458": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Wind-Up:458).exists & enemy.hp>1000"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "232": 64
+      }
+    },
+    "The Thing from the Swamp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp",
+      "total_variations": 16,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 32,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Ziriak": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1598/Ziriak",
+      "total_variations": 8,
+      "enemy_abilities": {
+        "242": {
+          "frequency": 16,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1963": 8
+      }
+    },
+    "One Hungry Worm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm",
+      "total_variations": 96,
+      "enemy_abilities": {
+        "340": {
+          "frequency": 192,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists & self.speed.fast"
+          ]
+        },
+        "271": {
+          "frequency": 192,
+          "most_common_name": "Glowing Toxin",
+          "example_conditions": [
+            "!enemy.aura(Glowing Toxin:271).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "270": 96
+      }
+    },
+    "To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1526/To_a_Land_Down_Under",
+      "total_variations": 80,
+      "enemy_abilities": {
+        "446": {
+          "frequency": 320,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "round=3 & !enemy.aura(Corrosion:446).exists",
+            "enemy.aura(Corrosion:446).exists & round=3"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1954": 80
+      }
+    },
+    "Are They Not Beautiful?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1527/Are_They_Not_Beautiful",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "536": 27
+      }
+    },
+    "Delver Mardei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1528/Delver_Mardei",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "500": {
+          "frequency": 36,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            " enemy.aura(Flame Breath:500).exists "
+          ]
+        },
+        "3568": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.is(Dustie:3568) ",
+            " enemy.is(Dustie:3568) "
+          ]
+        },
+        "245": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp>1665 & self.aura(Dragonkin:245).exists ",
+            " enemy.hp>1110 & !self.aura(Dragonkin:245).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "602": 18
+      }
+    },
+    "Do You Even Train?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1529/Do_You_Even_Train",
+      "total_variations": 18,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "2214": 18
+      }
+    },
+    "The Terrible Three": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1367/The_Terrible_Three",
+      "total_variations": 18,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "447": 18
+      }
+    },
+    "Sharp as Flint": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1497/Sharp_as_Flint",
+      "total_variations": 125,
+      "enemy_abilities": {
+        "1065": {
+          "frequency": 125,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).hp<=1811 & !enemy.ability(Digest Brains:1065).usable"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "2237": 125
+      }
+    },
+    "Two and Two Together": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1369/Two_and_Two_Together",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "602": 12
+      }
+    },
+    "Paws of Thunder": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1499/Paws_of_Thunder",
+      "total_variations": 45,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "2349": 45
+      }
+    },
+    "Lyver": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1500/Lyver",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 4
+      }
+    },
+    "The Grand Master": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1372/The_Grand_Master",
+      "total_variations": 64,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "624": 64
+      }
+    },
+    "Mini Manafiend Melee": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1373/Mini_Manafiend_Melee",
+      "total_variations": 28,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1015": 28
+      }
+    },
+    "A New Vocation": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1501/A_New_Vocation",
+      "total_variations": 60,
+      "enemy_abilities": {
+        "311": {
+          "frequency": 120,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "341": {
+          "frequency": 240,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Enok the Stinky": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1502/Enok_the_Stinky",
+      "total_variations": 6,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "You Have to Start Somewhere": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1375/You_Have_to_Start_Somewhere",
+      "total_variations": 720,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "593": 720
+      }
+    },
+    "The Oldest Dragonfly": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1376/The_Oldest_Dragonfly",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "460": 27
+      }
+    },
+    "They're Full of Stars!": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1503/They're_Full_of_Stars!",
+      "total_variations": 8,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "282": 8
+      }
+    },
+    "Vortex - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1506/Vortex_-_Legendary",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 72,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 36
+      }
+    },
+    "Vortex - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1507/Vortex_-_Epic",
+      "total_variations": 24,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 48,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Vortex - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1508/Vortex_-_Rare",
+      "total_variations": 9,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 18,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "652": 9
+      }
+    },
+    "Storm-Touched Skitterer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1522/Storm-Touched_Skitterer",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 4,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        },
+        "542": {
+          "frequency": 4,
+          "most_common_name": "flock",
+          "example_conditions": [
+            " !enemy.aura(flock:542).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "919": 2
+      }
+    },
+    "Wildfire - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1510/Wildfire_-_Legendary",
+      "total_variations": 125,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "460": 125
+      }
+    },
+    "Wildfire - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1511/Wildfire_-_Epic",
+      "total_variations": 477,
+      "enemy_abilities": {
+        "491": {
+          "frequency": 954,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 954,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Storm-Touched Slyvern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1523/Storm-Touched_Slyvern",
+      "total_variations": 63,
+      "enemy_abilities": {
+        "177": {
+          "frequency": 126,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "516": {
+          "frequency": 126,
+          "most_common_name": "Weakened Defenses",
+          "example_conditions": [
+            "!enemy.aura(Weakened Defenses:516).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Tremblor - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1514/Tremblor_-_Legendary",
+      "total_variations": 32,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "592": 32
+      }
+    },
+    "Tremblor - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1515/Tremblor_-_Epic",
+      "total_variations": 48,
+      "enemy_abilities": {
+        "491": {
+          "frequency": 96,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 96,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Storm-Touched Ohuna": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1524/Storm-Touched_Ohuna",
+      "total_variations": 6,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "218": 6
+      }
+    },
+    "Flow - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1518/Flow_-_Legendary",
+      "total_variations": 80,
+      "enemy_abilities": {
+        "500": {
+          "frequency": 160,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "807": {
+          "frequency": 160,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        },
+        "491": {
+          "frequency": 160,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Flow - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1519/Flow_-_Epic",
+      "total_variations": 72,
+      "enemy_abilities": {
+        "807": {
+          "frequency": 144,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        },
+        "491": {
+          "frequency": 144,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "1067": {
+          "frequency": 8,
+          "most_common_name": "Forboding Curse",
+          "example_conditions": [
+            "!enemy.aura(Forboding Curse:1067).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Humanoid Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists",
+            "!enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Dragonkin Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1534",
+      "total_variations": 30,
+      "enemy_abilities": {
+        "1111": {
+          "frequency": 180,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy(#3).active & enemy.hp<529 & enemy.aura(Tough n' Cuddly:1111).exists",
+            "enemy(#3).active & !enemy.aura(Tough n' Cuddly:1111).exists",
+            "enemy(#3).active & enemy.hp<823 & enemy.aura(Tough n' Cuddly:1111).exists & self.aura(Dragonkin:245).exists"
+          ]
+        },
+        "245": {
+          "frequency": 30,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.hp<823 & enemy.aura(Tough n' Cuddly:1111).exists & self.aura(Dragonkin:245).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Flying Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1538",
+      "total_variations": 75,
+      "enemy_abilities": {
+        "3558": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Murrey:3558) & enemy.round!~1,3 ",
+            " enemy.is(Murrey:3558) "
+          ]
+        },
+        "3559": {
+          "frequency": 75,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Clawz:3559) & self.aura(Pumped Up:296).exists "
+          ]
+        },
+        "296": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp<400 & !self.aura(Pumped Up:296).exists ",
+            " enemy.is(Clawz:3559) & self.aura(Pumped Up:296).exists "
+          ]
+        },
+        "1112": {
+          "frequency": 75,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Tough n' Cuddly:1112).duration<2 "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1238": 75
+      }
+    },
+    "Critter Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1546",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "1014": {
+          "frequency": 72,
+          "most_common_name": "Blinded",
+          "example_conditions": [
+            "enemy.aura(Blinded:1014).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Magic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1550",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "3558": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(#2).dead & !enemy(Murrey:3558).played ",
+            " enemy.is(Murrey:3558) "
+          ]
+        },
+        "1111": {
+          "frequency": 144,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            " enemy.aura(Tough n' Cuddly:1111).duration=1 & self.speed.fast ",
+            " enemy.aura(Tough n' Cuddly:1111).duration=2 & self.speed.slow "
+          ]
+        },
+        "1112": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Tough n' Cuddly:1112).usable ",
+            " enemy.ability(Tough n' Cuddly:1112).duration=4 "
+          ]
+        },
+        "3560": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Bassalt:3560) "
+          ]
+        },
+        "3559": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.is(Clawz:3559) ",
+            " enemy.is(Clawz:3559) & self(#2).dead "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "218": 36
+      }
+    },
+    "Elemental Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1554",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "3558": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Murrey:3558).active "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "486": 36
+      }
+    },
+    "Beast Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1558",
+      "total_variations": 32,
+      "enemy_abilities": {
+        "3558": {
+          "frequency": 32,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Murrey:3558).hp<1242 "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "536": 32
+      }
+    },
+    "Aquatic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1562",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "231": {
+          "frequency": 54,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "enemy.aura(Swarm of Flies:231).duration=5"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "568": 27
+      }
+    },
+    "Mechanical Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1566",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "635": {
+          "frequency": 54,
+          "most_common_name": "Minefield",
+          "example_conditions": [
+            "enemy.aura(Minefield:635).duration=7"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Explorer BezzertQuest: To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530/To_a_Land_Down_Under",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists",
+            "!enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "ShinmuraQuest: Are They Not Beautiful?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1531/Are_They_Not_Beautiful",
+      "total_variations": 24,
+      "enemy_abilities": {
+        "179": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Conflagrate:179).duration=4"
+          ]
+        },
+        "415": {
+          "frequency": 48,
+          "most_common_name": "Frost Shock",
+          "example_conditions": [
+            "!enemy.aura(Frost Shock:415).exists & enemy(#1).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Delver MardeiQuest: Delver Mardei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1532/Delver_Mardei",
+      "total_variations": 4,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "453": 4
+      }
+    },
+    "Trainer OrloggQuest: Do You Even Train?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1533/Do_You_Even_Train",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "3572": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Lifft:3572).aura(Underwater:830).exists"
+          ]
+        },
+        "830": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Lifft:3572).aura(Underwater:830).exists"
+          ]
+        },
+        "3571": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        },
+        "3573": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        },
+        "3130": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "490": 36
+      }
+    },
+    "Illidari Masters: Sissix": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/346/Illidari_Masters:_Sissix",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "296": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Pumped Up:296).exists & enemy.hpp=100"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "230": 12
+      }
+    },
+    "Illidari Masters: Madam Viciosa": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/347/Illidari_Masters:_Madam_Viciosa",
+      "total_variations": 180,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "369": 180
+      }
+    },
+    "Fight Night: AmaliaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/145/Fight_Night:_Amalia",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "1355": {
+          "frequency": 8,
+          "most_common_name": "Puppies of the Flame",
+          "example_conditions": [
+            "enemy.aura(Puppies of the Flame:1355).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "779": 4
+      }
+    },
+    "Fight Night: Bodhi SunwayverFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/146/Fight_Night:_Bodhi_Sunwayver",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1025": 27
+      }
+    },
+    "Fight Night: Sir GalvestonFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/148/Fight_Night:_Sir_Galveston",
+      "total_variations": 9,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "769": 9
+      }
+    },
+    "Fight Night: Tiffany NelsonFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/151/Fight_Night:_Tiffany_Nelson",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "536": 12
+      }
+    },
+    "Dazed and Confused and Adorable": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/155/Dazed_and_Confused_and_Adorable",
+      "total_variations": 48,
+      "enemy_abilities": {
+        "839": {
+          "frequency": 96,
+          "most_common_name": "Leaping",
+          "example_conditions": [
+            " enemy.aura(Leaping:839).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Training with the NightwatchersFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/156/Training_with_the_Nightwatchers",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1025": 27
+      }
+    },
+    "The Wine's Gone Bad": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/157/The_Wine's_Gone_Bad",
+      "total_variations": 175,
+      "enemy_abilities": {
+        "217": {
+          "frequency": 350,
+          "most_common_name": "Curse of Doom",
+          "example_conditions": [
+            "!enemy.aura(Curse of Doom:217).exists"
+          ]
+        },
+        "918": {
+          "frequency": 350,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "757": 175
+      }
+    },
+    "Help a Whelp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/158/Help_a_Whelp",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "456": 27
+      }
+    },
+    "Training with DurianFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/160/Training_with_Durian",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "245": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Dragonkin:245).exists & enemy(#2).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Only Pets Can Prevent Forest Fires": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/161/Only_Pets_Can_Prevent_Forest_Fires",
+      "total_variations": 150,
+      "enemy_abilities": {
+        "392": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Extra Plating:392).duration=2"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "118": 150
+      }
+    },
+    "Meet The Maw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/162/Meet_The_Maw",
+      "total_variations": 8,
+      "enemy_abilities": {
+        "2238": {
+          "frequency": 16,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "500": {
+          "frequency": 16,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Stand Up to Bullies": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/163/Stand_Up_to_Bullies",
+      "total_variations": 4,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "919": 4
+      }
+    },
+    "Training with BreddaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/167/Training_with_Bredda",
+      "total_variations": 392,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 784,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "208": 392
+      }
+    },
+    "Tiny Poacher, Tiny AnimalsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/168/Tiny_Poacher,_Tiny_Animals",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#3).active & enemy.aura(Stunned:927).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 18
+      }
+    },
+    "Wildlife Protection Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/169/Wildlife_Protection_Force",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "2238": {
+          "frequency": 40,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "446": {
+          "frequency": 40,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "enemy.aura(Corrosion:446).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "It's Illid... Wait.": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/170/It's_Illid..._Wait.",
+      "total_variations": 36,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1123": 36
+      }
+    },
+    "Snail Fight!Family Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/171/Snail_Fight!",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "830": {
+          "frequency": 4,
+          "most_common_name": "Underwater",
+          "example_conditions": [
+            "enemy.aura(Underwater:830).exists"
+          ]
+        },
+        "543": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!self.aura(Prowl:543).exists & enemy.hpp<100 & !enemy(#2).active"
+          ]
+        },
+        "376": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Headbutt:376).usable"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1016": 2
+      }
+    },
+    "All Howl, No Bite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/174/All_Howl,_No_Bite",
+      "total_variations": 4,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1123": 4
+      }
+    },
+    "Jarrun's LadderFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/175/Jarrun's_Ladder",
+      "total_variations": 8,
+      "enemy_abilities": {
+        "242": {
+          "frequency": 32,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1954": 8
+      }
+    },
+    "Oh, Ominitron": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/176/Oh,_Ominitron",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "2257": {
+          "frequency": 54,
+          "most_common_name": "Corrupted Touch",
+          "example_conditions": [
+            "!enemy.aura(Corrupted Touch:2257).exists"
+          ]
+        },
+        "2256": {
+          "frequency": 54,
+          "most_common_name": "Corrupted Ground",
+          "example_conditions": [
+            "!enemy.aura(Corrupted Ground:2256).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "794": 27
+      }
+    },
+    "My Beast's BiddingFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/177/My_Beast's_Bidding",
+      "total_variations": 6,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "589": 6
+      }
+    },
+    "All Pets Go to Heaven": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/178/All_Pets_Go_to_Heaven",
+      "total_variations": 162,
+      "enemy_abilities": {
+        "218": {
+          "frequency": 162,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(bigdot:218).usable "
+          ]
+        },
+        "231": {
+          "frequency": 324,
+          "most_common_name": "frogdot",
+          "example_conditions": [
+            " !enemy.aura(frogdot:231).exists "
+          ]
+        },
+        "242": {
+          "frequency": 324,
+          "most_common_name": "undead",
+          "example_conditions": [
+            " enemy.aura(undead:242).exists "
+          ]
+        },
+        "368": {
+          "frequency": 324,
+          "most_common_name": "snaildot",
+          "example_conditions": [
+            " !enemy.aura(snaildot:368).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "934": 162
+      }
+    },
+    "Beasts of Burden:": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Beasts_of_Burden",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "639": {
+          "frequency": 4,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "enemy.aura(Toxic Smoke:639).duration!=2"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 2
+      }
+    },
+    "Andurs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Andurs",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "639": {
+          "frequency": 4,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "enemy.aura(Toxic Smoke:639).duration!=2"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 2
+      }
+    },
+    "The Master of PetsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/181/The_Master_of_Pets",
+      "total_variations": 18,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "2430": 18
+      }
+    },
+    "Clear the Catacombs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/182/Clear_the_Catacombs",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "204": 27
+      }
+    },
+    "ChoppedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/183/Chopped",
+      "total_variations": 8,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 16,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "FlummoxedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/184/Flummoxed",
+      "total_variations": 60,
+      "enemy_abilities": {
+        "271": {
+          "frequency": 120,
+          "most_common_name": "Glowing Toxin",
+          "example_conditions": [
+            "!enemy.aura(Glowing Toxin:271).exists"
+          ]
+        },
+        "742": {
+          "frequency": 120,
+          "most_common_name": "Creeping Fungus",
+          "example_conditions": [
+            "!enemy.aura(Creeping Fungus:742).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1015": 60
+      }
+    },
+    "Mana Tap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/186/Mana_Tap",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "311": {
+          "frequency": 8,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "2238": {
+          "frequency": 8,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "443": {
+          "frequency": 8,
+          "most_common_name": "Prismatic Barrier",
+          "example_conditions": [
+            "enemy.aura(Prismatic Barrier:443).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Nicki Tinytech": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25093",
+      "total_variations": 288,
+      "enemy_abilities": {
+        "415": {
+          "frequency": 576,
+          "most_common_name": "Frostschock",
+          "example_conditions": [
+            "!enemy.aura(Frostschock:415).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "418": 288
+      }
+    },
+    "Burning Pandaren Spirit": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25085",
+      "total_variations": 640,
+      "enemy_abilities": {
+        "242": {
+          "frequency": 640,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(#1).aura(Undead:242).exists & !enemy(#1).dead "
+          ]
+        },
+        "542": {
+          "frequency": 1280,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Nitun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/78/Nitun",
+      "total_variations": 28,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 28,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 4,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "enemy.aura(Rabies:807).duration<3"
+          ]
+        },
+        "658": {
+          "frequency": 2,
+          "most_common_name": "Plagued Blood",
+          "example_conditions": [
+            " !enemy.aura(Plagued Blood:658).exists "
+          ]
+        },
+        "213": {
+          "frequency": 2,
+          "most_common_name": "Death and Decay",
+          "example_conditions": [
+            " !enemy.aura(Death and Decay:213).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "652": 15,
+        "218": 13,
+        "919": 13,
+        "581": 11,
+        "1758": 2,
+        "518": 2,
+        "1773": 2,
+        "384": 2,
+        "242": 1,
+        "207": 1
+      }
+    },
+    "The Terrible Three (Humanoid)": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25080",
+      "total_variations": 672,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "772": 672
+      }
+    },
+    "Gloamwing": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25077",
+      "total_variations": 144,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "786": 144
+      }
+    },
+    "Klutz's Battle Monkey": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/458/Klutz's_Battle_Monkey",
+      "total_variations": 21,
+      "enemy_abilities": {
+        "306": {
+          "frequency": 2,
+          "most_common_name": "Heridas expuestas",
+          "example_conditions": [
+            "!enemy.aura(Heridas expuestas:306).exists"
+          ]
+        },
+        "542": {
+          "frequency": 2,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists & enemy.hpp>25 "
+          ]
+        },
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast"
+          ]
+        },
+        "458": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#1).active & self.aura(Wind-Up:458).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1025": 4,
+        "2237": 3,
+        "792": 2,
+        "1960": 2,
+        "644": 2,
+        "305": 1,
+        "389": 1,
+        "455": 1,
+        "204": 1,
+        "779": 1
+      }
+    },
+    "Klutz's Battle Bird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/460/Klutz's_Battle_Bird",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "440": 20,
+        "595": 11,
+        "421": 11,
+        "1085": 3,
+        "1025": 3,
+        "456": 2,
+        "752": 2,
+        "1015": 2,
+        "282": 2,
+        "2237": 1
+      }
+    },
+    "Klutz's Battle Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/456/Klutz's_Battle_Rat",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "341": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast",
+            " enemy.aura(liftedoff:341).exists "
+          ]
+        },
+        "918": {
+          "frequency": 4,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 2,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "803": 3,
+        "110": 2,
+        "2237": 2,
+        "1025": 2,
+        "453": 1,
+        "490": 1,
+        "406": 1,
+        "919": 1,
+        "345": 1,
+        "533": 1
+      }
+    },
+    "\"Captain\" Klutz": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/452/\"Captain\"_Klutz",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "807": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists",
+            "!enemy.aura(Rabia:807).exists"
+          ]
+        },
+        "918": {
+          "frequency": 4,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        },
+        "2112": {
+          "frequency": 2,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "652": 5,
+        "919": 3,
+        "581": 2,
+        "2298": 1,
+        "1093": 1,
+        "218": 1,
+        "666": 1,
+        "163": 1,
+        "282": 1,
+        "460": 1
+      }
+    },
+    "Foe Reaper 50": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/438/Foe_Reaper_50",
+      "total_variations": 21,
+      "enemy_abilities": {
+        "177": {
+          "frequency": 2,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "502": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(#1).aura(Lanzallamas:502).exists",
+            " !enemy.aura(Flamethrower:502).exists "
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "297": 2,
+        "282": 2,
+        "564": 1,
+        "922": 1,
+        "508": 1,
+        "506": 1,
+        "420": 1,
+        "2512": 1,
+        "414": 1,
+        "739": 1
+      }
+    },
+    "Angry Geode": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/444/Angry_Geode",
+      "total_variations": 21,
+      "enemy_abilities": {
+        "435": {
+          "frequency": 22,
+          "most_common_name": "Stoneskin",
+          "example_conditions": [
+            "enemy.aura(Stoneskin:435).duration>4",
+            "enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable"
+          ]
+        },
+        "569": {
+          "frequency": 10,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable"
+          ]
+        },
+        "242": {
+          "frequency": 2,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "491": {
+          "frequency": 6,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "934": 2,
+        "634": 1,
+        "282": 1,
+        "204": 1,
+        "779": 1,
+        "179": 1,
+        "2237": 1,
+        "803": 1,
+        "501": 1,
+        "1025": 1
+      }
+    },
+    "here": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/14013/Deebs,_Tyri_and_Puzzle",
+      "total_variations": 59,
+      "enemy_abilities": {
+        "1394": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "1400": {
+          "frequency": 11,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            "enemy(Deebs:1400).hp>=500",
+            "enemy(Deebs:1400).active & enemy.hp.full"
+          ]
+        },
+        "1401": {
+          "frequency": 13,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            "enemy(Tyri:1401).active & self.hp<325",
+            "enemy(Tyri:1401).dead"
+          ]
+        },
+        "1402": {
+          "frequency": 15,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).hp <= 374 & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "242": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            "!self.aura(Undead:242).exists & enemy.round>3 & enemy(#3).active",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "1125": {
+          "frequency": 8,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).hp <= 374 & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            "enemy.hp<=500 & enemy.ability(Portal:1125).usable"
+          ]
+        },
+        "311": {
+          "frequency": 30,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            "enemy(#3).active & enemy.aura(Dodge:311).exists",
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).aura(Dodge:311).exists "
+          ]
+        },
+        "1122": {
+          "frequency": 10,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Greedy:1122).exists & enemy.hp>650"
+          ]
+        },
+        "256": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Call Darkness:256).usable"
+          ]
+        },
+        "1387": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable"
+          ]
+        },
+        "458": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable"
+          ]
+        },
+        "312": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable",
+            "enemy(#3).ability(Dodge:312).usable & enemy(#3).active & self(#1).active & self.speed.slow"
+          ]
+        },
+        "927": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Bet\u00e4ubt:927).exists",
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "779": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).hp<=532 & self.ability(Thunderbolt:779).usable"
+          ]
+        },
+        "2238": {
+          "frequency": 2,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "500": {
+          "frequency": 4,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "446": {
+          "frequency": 4,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "!enemy.aura(Corrosion:446).exists & enemy.hpp>90",
+            "enemy.aura(Corrosion:446).exists"
+          ]
+        },
+        "2420": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Accursed Hexxer:2420).hpp<70 & !enemy(Puzzle:1402).aura(Dodge:311).exists"
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "enemy.aura(Rabies:807).exists & !enemy(#1).active"
+          ]
+        },
+        "1725": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#2).aura(Howl:1725).exists"
+          ]
+        },
+        "257": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & weather(Darkness:257).duration<2",
+            "self(#2).aura(Stunned:174).exists & weather(Darkness:257) & !enemy(#2).dead"
+          ]
+        },
+        "174": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(#2).aura(Stunned:174).exists & weather(Darkness:257) & !enemy(#2).dead"
+          ]
+        },
+        "185": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Reckless Strike:185).exists & enemy(#3).active & enemy.hpp<26"
+          ]
+        },
+        "601": {
+          "frequency": 2,
+          "most_common_name": "Time Bomb",
+          "example_conditions": [
+            "enemy.aura(Time Bomb:601).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "447": 21,
+        "1954": 13,
+        "2356": 11,
+        "593": 11,
+        "1055": 10,
+        "1056": 10,
+        "459": 9,
+        "282": 8,
+        "115": 8,
+        "779": 7
+      }
+    },
+    "https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast",
+      "total_variations": 3120,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "366": 3120
+      }
+    },
+    "Crystalsnap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1199/Crystalsnap",
+      "total_variations": 6,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Digallo": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1200/Digallo",
+      "total_variations": 2,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1087": 2
+      }
+    },
+    "Kostos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1201/Kostos",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "786": 12
+      }
+    },
+    "Gelatinous": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1202/Gelatinous",
+      "total_variations": 7220,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "460": 7220
+      }
+    },
+    "Glurp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1203/Glurp",
+      "total_variations": 60,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 120,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "2112": {
+          "frequency": 120,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 60
+      }
+    },
+    "Sewer Creeper": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1204/Sewer_Creeper",
+      "total_variations": 100,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 100,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(#1).aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "The Countess": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1205/The_Countess",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "3074": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(The Countess:3074).aura(Blistering Cold:785).duration>2",
+            "!enemy(The Countess:3074).aura(Black Claw:918).exists",
+            "enemy(The Countess:3074).hp.full"
+          ]
+        },
+        "785": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(The Countess:3074).aura(Blistering Cold:785).duration>2"
+          ]
+        },
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(The Countess:3074).aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 12
+      }
+    },
+    "Briarpaw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1206/Briarpaw",
+      "total_variations": 24,
+      "enemy_abilities": {
+        "311": {
+          "frequency": 144,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            " !enemy.aura(Dodge:311).exists ",
+            " enemy.aura(Dodge:311).exists "
+          ]
+        },
+        "2422": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Quick Dodge:2422).usable & !self.aura(Decoy:333).exists & round>4 "
+          ]
+        },
+        "333": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Quick Dodge:2422).usable & !self.aura(Decoy:333).exists & round>4 "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "777": 24
+      }
+    },
+    "Chittermaw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1207/Chittermaw",
+      "total_variations": 7220,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "270": 7220
+      }
+    },
+    "Mistwing": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1208/Mistwing",
+      "total_variations": 6,
+      "enemy_abilities": {
+        "2112": {
+          "frequency": 12,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 6
+      }
+    },
+    "Tiny Madness": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1146/Tiny_Madness",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Brain Tickling": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1147/Brain_Tickling",
+      "total_variations": 45,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 90,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        },
+        "542": {
+          "frequency": 90,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).duration<2 "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "581": 45
+      }
+    },
+    "Living Statues Are Tough": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1148/Living_Statues_Are_Tough",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 4,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Flight of the Vil'thik": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1149/Flight_of_the_Vil'thik",
+      "total_variations": 2,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1087": 2
+      }
+    },
+    "Retinus the Seeker": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1151/Retinus_the_Seeker",
+      "total_variations": 16,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 32,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 16
+      }
+    },
+    "I Am The One Who Whispers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1152/I_Am_The_One_Who_Whispers",
+      "total_variations": 24,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 48,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "581": 24
+      }
+    },
+    "Dune Buggy": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1153/Dune_Buggy",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 24,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Watch Where You Step": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1154/Watch_Where_You_Step",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 40,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).duration<2"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/699/That's_a_Big_Carcass",
+      "total_variations": 100,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 200,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/700/Strange_Looking_Dogs",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "831": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active "
+          ]
+        },
+        "2332": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active "
+          ]
+        },
+        "231": {
+          "frequency": 72,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            " !enemy.aura(Swarm of Flies:231).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "459": 36
+      }
+    },
+    "Not So Bad Down Here": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/701/Not_So_Bad_Down_Here",
+      "total_variations": 27,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "208": 27
+      }
+    },
+    "Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/704/Captured_Evil",
+      "total_variations": 9,
+      "enemy_abilities": {
+        "500": {
+          "frequency": 18,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1954": 9
+      }
+    },
+    "Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/705/Sea_Creatures_Are_Weird_",
+      "total_variations": 6,
+      "enemy_abilities": {
+        "457": {
+          "frequency": 6,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(#1).active & !enemy.ability(Sweep:457).usable "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/711/Night_Horrors",
+      "total_variations": 9,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 18,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/712/Crab_People",
+      "total_variations": 30,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 120,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Small Beginnings": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/715/Small_Beginnings",
+      "total_variations": 52,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "536": 52
+      }
+    },
+    "Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/720/Marshdwellers",
+      "total_variations": 64,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 128,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "542": 64
+      }
+    },
+    "Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/722/Pack_Leader",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "501": 4
+      }
+    },
+    "Keeyo's Champions of Vol'dun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/724/Keeyo's_Champions_of_Vol'dun",
+      "total_variations": 9,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1080": 9
+      }
+    },
+    "Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/725/Desert_Survivors",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "512": {
+          "frequency": 16,
+          "most_common_name": "Whirlpool",
+          "example_conditions": [
+            "enemy.aura(Whirlpool:512).duration=1",
+            "enemy.aura(Whirlpool:512).exists & enemy(#3).active"
+          ]
+        },
+        "340": {
+          "frequency": 8,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "513": 4
+      }
+    },
+    "What Do You Mean, Mind Controlling Plants?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/726/What_Do_You_Mean,_Mind_Controlling_Plants",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "218": 18
+      }
+    },
+    "Snakes on a Terrace": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/727/Snakes_on_a_Terrace",
+      "total_variations": 637,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1681": 637
+      }
+    },
+    "Ezra Grimm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1116/Ezra_Grimm",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "1048": {
+          "frequency": 24,
+          "most_common_name": "Blinding Poison",
+          "example_conditions": [
+            "self(#2).active & enemy(#3).active & enemy.hpp=100 & enemy.aura(Blinding Poison:1048).exists"
+          ]
+        },
+        "918": {
+          "frequency": 24,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 12
+      }
+    },
+    "Mining Monkey": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/448/Mining_Monkey",
+      "total_variations": 540,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "2237": 540
+      }
+    },
+    "Cookie's Leftovers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/464/Cookie's_Leftovers",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "491": {
+          "frequency": 36,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "786": 18
+      }
+    },
+    "Dos-Ryga": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/69/Dos-Ryga",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "208": 12
+      }
+    },
+    "Kafi": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/70/Kafi",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "282": 12
+      }
+    },
+    "Ti'un the Wanderer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/71/Ti'un_the_Wanderer",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "No-No": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/72/No-No",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "830": {
+          "frequency": 108,
+          "most_common_name": "Underwater",
+          "example_conditions": [
+            "self(#2).active & enemy.aura(Underwater:830).exists",
+            "enemy.aura(Underwater:830).exists"
+          ]
+        },
+        "326": {
+          "frequency": 36,
+          "most_common_name": "Beaver Dam",
+          "example_conditions": [
+            "enemy.aura(Beaver Dam:326).exists"
+          ]
+        },
+        "542": {
+          "frequency": 72,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "518": 18
+      }
+    },
+    "Gorespine": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/73/Gorespine",
+      "total_variations": 392,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "282": 392
+      }
+    },
+    "Skitterer Xi'a": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/74/Skitterer_Xi'a",
+      "total_variations": 4,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "515": 4
+      }
+    },
+    "Lucky Yi": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/76/Lucky_Yi",
+      "total_variations": 18,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "921": 18
+      }
+    },
+    "Ka'wi the Gorger": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/77/Ka'wi_the_Gorger",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Garra negra",
+          "example_conditions": [
+            "!enemy.aura(Garra negra:918).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "919": 18
+      }
+    },
+    "Ashlei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/16/Ashlei",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flammenatem",
+          "example_conditions": [
+            "enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active",
+            "enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists"
+          ]
+        },
+        "2238": {
+          "frequency": 8,
+          "most_common_name": "Messerkrallen",
+          "example_conditions": [
+            "enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active",
+            "enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1025": 2
+      }
+    },
+    "Cymre Brightblade": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/17/Cymre_Brightblade",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "466": 12
+      }
+    },
+    "Gargra": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/18/Gargra",
+      "total_variations": 12,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "901": 12
+      }
+    },
+    "Tarr the Terrible": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/20/Tarr_the_Terrible",
+      "total_variations": 8,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "447": 8
+      }
+    },
+    "Vesharr": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/21/Vesharr",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "244": {
+          "frequency": 24,
+          "most_common_name": "Mechanical",
+          "example_conditions": [
+            "enemy.aura(Mechanical:244).exists"
+          ]
+        },
+        "1420": {
+          "frequency": 24,
+          "most_common_name": "Flying Mark",
+          "example_conditions": [
+            "!enemy.aura(Flying Mark:1420).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Wrathion": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/38/Wrathion",
+      "total_variations": 576,
+      "enemy_abilities": {
+        "1299": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cindy:1299).active & enemy.round = 4"
+          ]
+        },
+        "1301": {
+          "frequency": 1152,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).aura(Shattered Defenses:542).exists",
+            "enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "623": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "242": {
+          "frequency": 1152,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "542": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "312": 576
+      }
+    },
+    "Chen Stormstout": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/39/Chen_Stormstout",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "353": {
+          "frequency": 24,
+          "most_common_name": "Barrel Ready",
+          "example_conditions": [
+            " enemy.aura(Barrel Ready:353).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Shademaster Kiryn": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/43/Shademaster_Kiryn",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "1286": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Et\u00e9:1286).active & !self(#3).played",
+            "enemy(Et\u00e9:1286).active & enemy.round =1",
+            "enemy(Et\u00e9:1286).active & !self.aura(Peau de pierre:435).exists "
+          ]
+        },
+        "1287": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Stormoen:1287).active"
+          ]
+        },
+        "1288": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Nairn:1288).active"
+          ]
+        },
+        "311": {
+          "frequency": 24,
+          "most_common_name": "Esquive",
+          "example_conditions": [
+            "enemy.aura(Esquive:311).exists"
+          ]
+        },
+        "543": {
+          "frequency": 48,
+          "most_common_name": "R\u00f4der",
+          "example_conditions": [
+            "enemy.aura(R\u00f4der:543).exists"
+          ]
+        },
+        "435": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Et\u00e9:1286).active & !self.aura(Peau de pierre:435).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "772": 12
+      }
+    },
+    "Wise Mari": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/41/Wise_Mari",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "986": {
+          "frequency": 8,
+          "most_common_name": "Make it Rain",
+          "example_conditions": [
+            " enemy.aura(Make it Rain:986).duration=1 "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Blingtron 4000": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/42/Blingtron_4000",
+      "total_variations": 656,
+      "enemy_abilities": {
+        "177": {
+          "frequency": 2624,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists",
+            "enemy.aura(Immolate:177).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Sully \"The Pickle\" McLeary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/45/Sully_\"The_Pickle\"_McLeary",
+      "total_variations": 2520,
+      "enemy_abilities": {
+        "231": {
+          "frequency": 5040,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            " !enemy.aura(Swarm of Flies:231).exists "
+          ]
+        },
+        "242": {
+          "frequency": 5040,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            " enemy.aura(Undead:242).exists "
+          ]
+        },
+        "340": {
+          "frequency": 5040,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            " enemy.aura(Underground:340).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Dr. Ion Goldbloom": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/46/Dr._Ion_Goldbloom",
+      "total_variations": 336,
+      "enemy_abilities": {
+        "341": {
+          "frequency": 672,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists"
+          ]
+        },
+        "1725": {
+          "frequency": 672,
+          "most_common_name": "Howl",
+          "example_conditions": [
+            "enemy.aura(Howl:1725).exists"
+          ]
+        },
+        "500": {
+          "frequency": 672,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "362": 336
+      }
+    },
+    "Lorewalker Cho": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/47/Lorewalker_Cho",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "658": {
+          "frequency": 72,
+          "most_common_name": "Plagued Blood",
+          "example_conditions": [
+            " !enemy.aura(Plagued Blood:658).exists "
+          ]
+        },
+        "213": {
+          "frequency": 72,
+          "most_common_name": "Death and Decay",
+          "example_conditions": [
+            " !enemy.aura(Death and Decay:213).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Zao, Calfling of Niuzao": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/52/Zao,_Calfling_of_Niuzao",
+      "total_variations": 28,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "167": 28
+      }
+    },
+    "another strategy": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/4924/Yula,_Broodling_of_Yulon",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "1317": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists"
+          ]
+        },
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "350": 2
+      }
+    },
+    "Human Resources": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "2233": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Fungus:2233).active"
+          ]
+        },
+        "2232": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Dragons Make Everything Better": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/759",
+      "total_variations": 48,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "589": 48
+      }
+    },
+    "Fun With Flying": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/789",
+      "total_variations": 20,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 40,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Critters With Huge Teeth": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/849",
+      "total_variations": 3,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "521": 3
+      }
+    },
+    "Magicians Secret": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/879",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "2232": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).hp>462"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "440": 18
+      }
+    },
+    "Hobbyist Aquarist": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/969",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 48,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists & enemy(#2).active",
+            "!enemy.aura(Black Claw:918).exists & enemy(#1).active"
+          ]
+        },
+        "542": {
+          "frequency": 24,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "919": 12
+      }
+    },
+    "Delia HanakoQuest: That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729/That's_a_Big_Carcass",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "2233": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Fungus:2233).active"
+          ]
+        },
+        "2232": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "BurlyQuest: Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/730/Strange_Looking_Dogs",
+      "total_variations": 80,
+      "enemy_abilities": {
+        "623": {
+          "frequency": 160,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "enemy.hpp = 100 & !enemy.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "242": {
+          "frequency": 160,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "!enemy.aura(Undead:242).exists & !weather(Blizzard:205)"
+          ]
+        },
+        "205": {
+          "frequency": 80,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Undead:242).exists & !weather(Blizzard:205)"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "624": 80
+      }
+    },
+    "KwintQuest: Not So Bad Down Here": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/731/Not_So_Bad_Down_Here",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "516": {
+          "frequency": 54,
+          "most_common_name": "Weakened Defenses",
+          "example_conditions": [
+            "enemy(#3).active & !enemy.aura(Weakened Defenses:516).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Leana DarkwindQuest: Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/734/Captured_Evil",
+      "total_variations": 30,
+      "enemy_abilities": {
+        "379": {
+          "frequency": 60,
+          "most_common_name": "Poisoned",
+          "example_conditions": [
+            "!enemy.aura(Poisoned:379).exists"
+          ]
+        },
+        "415": {
+          "frequency": 60,
+          "most_common_name": "Frost Shock",
+          "example_conditions": [
+            "!enemy.aura(Frost Shock:415).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Ellie VernQuest: Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/735/Sea_Creatures_Are_Weird_",
+      "total_variations": 60,
+      "enemy_abilities": {
+        "242": {
+          "frequency": 240,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "623": {
+          "frequency": 120,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "enemy.hpp>95 & !enemy.aura(Ice Tomb:623).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "624": 60
+      }
+    },
+    "Eddie FixitQuest: Automated Chaos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/736/Automated_Chaos",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "2204": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(\"Fixed\" Remote Control Rocket Chicken:2204).active "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "453": 2
+      }
+    },
+    "Michael SkarnQuest: What's the Buzz?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/739/What's_the_Buzz",
+      "total_variations": 8,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "490": 8
+      }
+    },
+    "Fizzie SparkwhistleQuest: Rogue Azerite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/740/Rogue_Azerite",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "2210": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Azerite Slime:2210).active"
+          ]
+        },
+        "2212": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Azerite Elemental:2212).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Dilbert McClintQuest: Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/741/Night_Horrors",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "1081": {
+          "frequency": 72,
+          "most_common_name": "Booby-Trapped Presents",
+          "example_conditions": [
+            "!enemy.aura(Booby-Trapped Presents:1081).exists"
+          ]
+        },
+        "2209": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Atherton:2209).aura(Underground:340).exists"
+          ]
+        },
+        "340": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Atherton:2209).aura(Underground:340).exists"
+          ]
+        },
+        "159": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1"
+          ]
+        },
+        "1049": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1"
+          ]
+        },
+        "2208": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Jennings:2208).active"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1080": 36
+      }
+    },
+    "Captain HermesQuest: Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/742/Crab_People",
+      "total_variations": 80,
+      "enemy_abilities": {
+        "623": {
+          "frequency": 160,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "!enemy.aura(Ice Tomb:623).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "624": 80
+      }
+    },
+    "Talia SparkbrowQuest: Add More to the Collection": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/744/Add_More_to_the_Collection",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "453": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Sandstorm:453).usable & self.speed.slow"
+          ]
+        },
+        "506": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Cocoon Strike:506).usable & self.speed.slow"
+          ]
+        },
+        "2366": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Whiplash:2366).aura(Silk Cocoon:505).exists"
+          ]
+        },
+        "505": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Whiplash:2366).aura(Silk Cocoon:505).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "ZujaiQuest: Small Beginnings": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/745/Small_Beginnings",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "233": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Frog Kiss:233).usable & !enemy.ability(Croak:932).usable"
+          ]
+        },
+        "932": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Frog Kiss:233).usable & !enemy.ability(Croak:932).usable"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "490": 36
+      }
+    },
+    "LozuQuest: Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/750/Marshdwellers",
+      "total_variations": 48,
+      "enemy_abilities": {
+        "506": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.ability(Cocoon Strike:506).usable"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Korval DarkbeardQuest: Accidental Dread": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/751/Accidental_Dread",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "542": {
+          "frequency": 72,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Grady PrettQuest: Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/752/Pack_Leader",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "641": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(#2).dead & !enemy(#2).aura(Egg Barrage:641).exists"
+          ]
+        },
+        "231": {
+          "frequency": 54,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "!enemy.aura(Swarm of Flies:231).exists"
+          ]
+        },
+        "242": {
+          "frequency": 54,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "204": 27
+      }
+    },
+    "KeeyoQuest: Keeyo's Champions of Vol'dun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/754/Keeyo's_Champions_of_Vol'dun",
+      "total_variations": 36,
+      "enemy_abilities": {
+        "2060": {
+          "frequency": 72,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "2346": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Tikka:2346).hp<1060"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "KusaQuest: Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/755/Desert_Survivors",
+      "total_variations": 2,
+      "enemy_abilities": {
+        "340": {
+          "frequency": 4,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "490": 2
+      }
+    },
+    "Deathly Dragonkin": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1225",
+      "total_variations": 96,
+      "enemy_abilities": {
+        "245": {
+          "frequency": 96,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp<1099 & self.aura(Dragonkin:245).exists "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "589": 96
+      }
+    },
+    "Flickering Fliers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1240",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "488": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast "
+          ]
+        },
+        "595": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "334": 4
+      }
+    },
+    "Unholy Undead": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1255",
+      "total_variations": 27,
+      "enemy_abilities": {
+        "2349": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Toxic Fumes:2349).usable & enemy.ability(Sludge Claw:2352).usable "
+          ]
+        },
+        "2352": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Toxic Fumes:2349).usable & enemy.ability(Sludge Claw:2352).usable "
+          ]
+        },
+        "488": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & self.speed.slow "
+          ]
+        },
+        "595": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & self.speed.slow "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "348": 27
+      }
+    },
+    "Creepy Critters": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1270",
+      "total_variations": 216,
+      "enemy_abilities": {
+        "368": {
+          "frequency": 864,
+          "most_common_name": "Acidic Goo",
+          "example_conditions": [
+            "enemy.aura(Acidic Goo:368).exists",
+            "enemy.hpp>50 & !enemy.aura(Acidic Goo:368).exists"
+          ]
+        },
+        "488": {
+          "frequency": 216,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Amplify Magic:488).usable & enemy.hp>420"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "518": 216
+      }
+    },
+    "Mummified Magics": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1285",
+      "total_variations": 6,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "440": 6
+      }
+    },
+    "Beast Busters": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1315",
+      "total_variations": 18,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "1063": 18
+      }
+    },
+    "Aquatic Apparitions": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1330",
+      "total_variations": 140,
+      "enemy_abilities": {
+        "571": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Horn Attack:571).usable "
+          ]
+        },
+        "487": {
+          "frequency": 560,
+          "most_common_name": "Amplify Magic",
+          "example_conditions": [
+            " enemy.aura(Amplify Magic:487).exists ",
+            " weather(Blizzard:205) & !enemy.aura(Amplify Magic:487).exists "
+          ]
+        },
+        "205": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " weather(Blizzard:205) & !enemy.aura(Amplify Magic:487).exists "
+          ]
+        },
+        "488": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & self.speed.slow "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "624": 140
+      }
+    },
+    "Macabre Mechanicals": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1345",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "2972": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Shelby:2972).active & enemy.hp <=618"
+          ]
+        },
+        "1387": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active",
+            "self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active"
+          ]
+        },
+        "2973": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active"
+          ]
+        },
+        "2974": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active"
+          ]
+        },
+        "639": {
+          "frequency": 36,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "!enemy.aura(Toxic Smoke:639).exists"
+          ]
+        },
+        "986": {
+          "frequency": 36,
+          "most_common_name": "Make it Rain",
+          "example_conditions": [
+            "!enemy.aura(Make it Rain:986).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "282": 18
+      }
+    },
+    "Caregiver MaximillianQuest: Mighty Minions of Maldraxxus": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1214/Mighty_Minions_of_Maldraxxus",
+      "total_variations": 64,
+      "enemy_abilities": {
+        "170": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Lift-Off:170).usable"
+          ]
+        },
+        "924": {
+          "frequency": 128,
+          "most_common_name": "Resilient",
+          "example_conditions": [
+            "enemy.aura(Resilient:924).duration=1"
+          ]
+        },
+        "159": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).usable & enemy(#2).hp>0 & enemy(#1).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Dundley StickyfingersQuest: Uncomfortably Undercover": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1216/Uncomfortably_Undercover",
+      "total_variations": 12,
+      "enemy_abilities": {
+        "2060": {
+          "frequency": 48,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "self.speed.fast & !enemy.aura(Dodge:2060).exists",
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).aura(Undead:242).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "SyllaQuest: Resilient Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1218/Resilient_Survivors",
+      "total_variations": 30,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "934": 30
+      }
+    },
+    "EyegorQuest: Eyegor's Special Friends": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1219/Eyegor's_Special_Friends",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "502": {
+          "frequency": 36,
+          "most_common_name": "Flamethrower",
+          "example_conditions": [
+            "!enemy.aura(Flamethrower:502).exists & self.aura(Toxic Wound:2112).exists"
+          ]
+        },
+        "2112": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Flamethrower:502).exists & self.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Addius the TormentorQuest: The Mind Games of Addius": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1220/The_Mind_Games_of_Addius",
+      "total_variations": 36,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "206": 36
+      }
+    },
+    "GlitterdustQuest: Natural Defenders": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1222/Natural_Defenders",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#2).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "507": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Moth Balls:507).usable"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1080": 18
+      }
+    },
+    "FarylQuest: Airborne Defense Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1223/Airborne_Defense_Force",
+      "total_variations": 48,
+      "enemy_abilities": {
+        "3005": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brite:3005).active"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "490": 48
+      }
+    },
+    "https://www.wow-petguide.com/Strategy/11028/Mega_Bite": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/11028/Mega_Bite",
+      "total_variations": 8,
+      "enemy_abilities": {
+        "2324": {
+          "frequency": 8,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Stachelpanzerschale:2324).usable "
+          ]
+        }
+      },
+      "top_player_counters": {
+        "208": 8
+      }
+    },
+    "Trainer Grrglin": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1359/Trainer_Grrglin",
+      "total_variations": 512,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "506": 512
+      }
+    },
+    "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Klick": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Lehrer_Grrglin",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Prototype Annoy-O-Tron": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1032/Prototype_Annoy-O-Tron",
+      "total_variations": 45,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "786": 45
+      }
+    },
+    "Living Sludge": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1034/Living_Sludge",
+      "total_variations": 24,
+      "enemy_abilities": {
+        "2060": {
+          "frequency": 48,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            " enemy.aura(Dodge:2060).exists "
+          ]
+        },
+        "242": {
+          "frequency": 48,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            " enemy.aura(Undead:242).exists "
+          ]
+        },
+        "2486": {
+          "frequency": 168,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.round=1 & !enemy(Cockroach:2486).active",
+            "enemy(#2).active & enemy.round=3 & enemy(Cockroach:2486).active",
+            "enemy(Cockroach:2486).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Living Napalm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1035/Living_Napalm",
+      "total_variations": 125,
+      "enemy_abilities": {
+        "2060": {
+          "frequency": 250,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 250,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "2486": {
+          "frequency": 125,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cockroach:2486).active"
+          ]
+        },
+        "368": {
+          "frequency": 250,
+          "most_common_name": "Acidic Goo",
+          "example_conditions": [
+            "!enemy.aura(Acidic Goo:368).exists"
+          ]
+        },
+        "446": {
+          "frequency": 500,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "!enemy.aura(Corrosion:446).exists",
+            "!enemy.aura(Corrosion:446).exists & self(#1).active"
+          ]
+        },
+        "177": {
+          "frequency": 500,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists",
+            "enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "781": {
+          "frequency": 250,
+          "most_common_name": "Creeping Ooze",
+          "example_conditions": [
+            "!enemy.aura(Creeping Ooze:781).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Living Permafrost": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1036/Living_Permafrost",
+      "total_variations": 810,
+      "enemy_abilities": {
+        "338": {
+          "frequency": 1620,
+          "most_common_name": "Webbed",
+          "example_conditions": [
+            "enemy.aura(Webbed:338).exists"
+          ]
+        },
+        "381": {
+          "frequency": 3240,
+          "most_common_name": "Brittle Webbing",
+          "example_conditions": [
+            "!enemy.aura(Brittle Webbing:381).exists",
+            "enemy.aura(Brittle Webbing:381).exists"
+          ]
+        }
+      },
+      "top_player_counters": {
+        "1087": 810
+      }
+    },
+    "Door Control Console": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1038/Door_Control_Console",
+      "total_variations": 1452,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "564": 1452
+      }
+    },
+    "Cockroach": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1040/Cockroach",
+      "total_variations": 18,
+      "enemy_abilities": {
+        "2060": {
+          "frequency": 36,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 36,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "2486": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cockroach:2486).active"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Bloated Leper Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1043/Bloated_Leper_Rat",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "512": {
+          "frequency": 8,
+          "most_common_name": "Whirlpool",
+          "example_conditions": [
+            "!enemy.aura(Whirlpool:512).exists"
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Gnomeregan Guard Mechanostrider": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1045/Gnomeregan_Guard_Mechanostrider",
+      "total_variations": 4,
+      "enemy_abilities": {
+        "242": {
+          "frequency": 8,
+          "most_common_name": "Untot",
+          "example_conditions": [
+            " enemy.aura(Untot:242).exists "
+          ]
+        }
+      },
+      "top_player_counters": {}
+    },
+    "Gnomeregan Guard Tiger": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1046/Gnomeregan_Guard_Tiger",
+      "total_variations": 2,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "206": 2
+      }
+    },
+    "Pulverizer Bot Mk 6001": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1049/Pulverizer_Bot_Mk_6001",
+      "total_variations": 900,
+      "enemy_abilities": {},
+      "top_player_counters": {
+        "362": 900
+      }
+    }
+  }
+}

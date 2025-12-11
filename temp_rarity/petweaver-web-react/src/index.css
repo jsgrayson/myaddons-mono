@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg-base text-slate-100 font-body;
+  background-image: theme('backgroundImage.ember-gradient');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* soft floating embers layer */
+.ember-particles {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(243, 156, 55, 0.4) 1px, transparent 0);
+  background-size: 3px 40px;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  animation: ember-drift 18s linear infinite;
+}
+
+.page-bg {
+  @apply rounded-2xl overflow-hidden relative;
+}
+
+.page-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.page-bg-inner {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes ember-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}

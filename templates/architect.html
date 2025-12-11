@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architect - PetWeaver</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            color: #e8eaed;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #b75cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #8b92a0;
+            font-size: 1.1rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(183, 92, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #b75cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: #8b92a0;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .graph-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .graph-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00d4ff 0%, #b75cff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .team-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(183, 92, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .team-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .weight-badge {
+            background: linear-gradient(135deg, #00d4ff 0%, #b75cff 100%);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pet-combo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .pet-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1f2e 0%, #2a2f3e 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .plus-icon {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        .pet-name {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #8b92a0;
+        }
+
+        .alternatives-btn {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .alternatives-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #e8eaed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🏗️ The Architect</h1>
+            <p class="subtitle">Graph-Based Synergy Engine • 11,474 Discovered Combos</p>
+        </header>
+
+        <div class="main-grid">
+            <!-- Left Column: Stats & Graph -->
+            <div>
+                <div class="card">
+                    <h2 class="section-title">Live Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">11,474</div>
+                            <div class="stat-label">Synergies</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">733</div>
+                            <div class="stat-label">Unique Pets</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0.95</div>
+                            <div class="stat-label">Top Weight</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">3x</div>
+                            <div class="stat-label">Faster</div>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Synergy Graph</h2>
+                    <div class="graph-container">
+                        <div class="graph-node" style="top: 20%; left: 15%;">Ikky</div>
+                        <div class="graph-node" style="top: 20%; left: 65%;">MPD</div>
+                        <div class="graph-node" style="top: 60%; left: 40%;">Val'kyr</div>
+                        <div class="graph-node" style="top: 50%; left: 80%;">Anub</div>
+                        <svg style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
+                            <line x1="20%" y1="25%" x2="70%" y2="25%" stroke="rgba(0,212,255,0.3)" stroke-width="2" />
+                            <line x1="20%" y1="25%" x2="45%" y2="65%" stroke="rgba(183,92,255,0.3)" stroke-width="2" />
+                            <line x1="70%" y1="25%" x2="85%" y2="55%" stroke="rgba(0,212,255,0.3)" stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Team Suggestions -->
+            <div>
+                <div class="card">
+                    <h2 class="section-title">Suggested Teams</h2>
+                    <div class="team-list">
+                        <!-- Team 1 -->
+                        <div class="team-card">
+                            <div class="team-header">
+                                <span class="team-title">Top Synergy Core</span>
+                                <span class="weight-badge">0.95</span>
+                            </div>
+                            <div class="pet-combo">
+                                <div class="pet-icon">🦅</div>
+                                <div class="pet-name">Ikky</div>
+                                <span class="plus-icon">+</span>
+                                <div class="pet-icon">🤖</div>
+                                <div class="pet-name">Mechanical Pandaren Dragonling</div>
+                            </div>
+                            <button class="alternatives-btn">View Alternatives ▼</button>
+                        </div>
+
+                        <!-- Team 2 -->
+                        <div class="team-card">
+                            <div class="team-header">
+                                <span class="team-title">Black Claw Burst</span>
+                                <span class="weight-badge">0.90</span>
+                            </div>
+                            <div class="pet-combo">
+                                <div class="pet-icon">🦖</div>
+                                <div class="pet-name">Zandalari Anklerender</div>
+                                <span class="plus-icon">+</span>
+                                <div class="pet-icon">🐉</div>
+                                <div class="pet-name">Chrominius</div>
+                            </div>
+                            <button class="alternatives-btn">View Alternatives ▼</button>
+                        </div>
+
+                        <!-- Team 3 -->
+                        <div class="team-card">
+                            <div class="team-header">
+                                <span class="team-title">Curse + Flock</span>
+                                <span class="weight-badge">0.88</span>
+                            </div>
+                            <div class="pet-combo">
+                                <div class="pet-icon">👻</div>
+                                <div class="pet-name">Unborn Val'kyr</div>
+                                <span class="plus-icon">+</span>
+                                <div class="pet-icon">🦅</div>
+                                <div class="pet-name">Ikky</div>
+                            </div>
+                            <button class="alternatives-btn">View Alternatives ▼</button>
+                        </div>
+
+                        <!-- Team 4 -->
+                        <div class="team-card">
+                            <div class="team-header">
+                                <span class="team-title">Weather Control</span>
+                                <span class="weight-badge">0.85</span>
+                            </div>
+                            <div class="pet-combo">
+                                <div class="pet-icon">⛄</div>
+                                <div class="pet-name">Tiny Snowman</div>
+                                <span class="plus-icon">+</span>
+                                <div class="pet-icon">🐻</div>
+                                <div class="pet-name">Kun-Lai Runt</div>
+                            </div>
+                            <button class="alternatives-btn">View Alternatives ▼</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+/* ======================================================================= */
+/*                          PETWEAVER MIDNIGHT THEME                       */
+/*   Global colors, panel styles, typography + animation primitives        */
+/* ======================================================================= */
+
+:root {
+  /* Core Midnight palette */
+  --mid-bg-deep: #020617;        /* near-black void */
+  --mid-bg-panel: #050816;       /* main panel body */
+  --mid-bg-panel-soft: #050b19;
+  --mid-arcane: #4ccbff;         /* cyan arcane */
+  --mid-arcane-soft: #8fe7ff;
+  --mid-void: #9c1eff;           /* void purple */
+  --mid-void-soft: #d158ff;
+  --mid-gold: #fbbf24;           /* sunwell accent */
+  --mid-gold-soft: #fde68a;
+
+  --mid-border-soft: rgba(148, 163, 184, 0.5);
+  --mid-border-strong: rgba(148, 163, 184, 0.8);
+
+  --mid-text-main: #e5e7eb;
+  --mid-text-soft: #cbd5e1;
+  --mid-text-muted: #9ca3af;
+  --mid-text-contrast: #f9fafb;
+
+  --mid-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.8);
+  --mid-radius-panel: 18px;
+  --mid-radius-card: 14px;
+  --mid-radius-pill: 999px;
+
+  /* Glow controls */
+  --mid-glow-arcane: 0 0 22px rgba(76, 203, 255, 0.45);
+  --mid-glow-void: 0 0 26px rgba(156, 30, 255, 0.5);
+  --mid-glow-gold: 0 0 22px rgba(251, 191, 36, 0.55);
+
+  /* Timing */
+  --mid-transition-fast: 120ms ease-out;
+  --mid-transition-med: 180ms ease-out;
+  --mid-transition-slow: 260ms ease-out;
+}
+
+/* ----------------------------------------------------------------------- */
+/* GLOBAL BODY                                                             */
+/* ----------------------------------------------------------------------- */
+
+body {
+  background-color: var(--mid-bg-deep);
+  color: var(--mid-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+/* Main app shell wrapper (if you have one) */
+.app-shell,
+.app-root {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.16), transparent 60%),
+    radial-gradient(circle at 50% -10%, rgba(148, 163, 255, 0.18), transparent 60%),
+    #020617;
+  color: var(--mid-text-main);
+}
+
+/* ----------------------------------------------------------------------- */
+/* GENERIC PAGE PANEL                                                      */
+/* ----------------------------------------------------------------------- */
+
+.page-panel {
+  position: relative;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px 24px 32px;
+
+  border-radius: var(--mid-radius-panel);
+  background:
+    linear-gradient(135deg, rgba(5, 8, 22, 0.96), rgba(9, 12, 30, 0.94)),
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.18), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.18), transparent 60%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: var(--mid-shadow-soft), 0 0 0 1px rgba(76, 203, 255, 0.06);
+
+  overflow: visible;
+}
+
+/* Soft inner highlight band */
+.page-panel::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.12), transparent 50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Generic page header shared across pages */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.page-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: var(--mid-text-muted);
+  margin: 0;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0f2fe;
+  margin: 0;
+}
+
+.page-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #c7d2fe;
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ----------------------------------------------------------------------- */
+/* GENERIC CARDS                                                           */
+/* ----------------------------------------------------------------------- */
+
+.card-midnight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 16px 18px;
+  border-radius: var(--mid-radius-card);
+  background:
+    linear-gradient(135deg, rgba(8, 11, 24, 0.96), rgba(4, 7, 18, 0.96)),
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.14), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.14), transparent 55%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(76, 203, 255, 0.08);
+
+  transition:
+    transform var(--mid-transition-med),
+    box-shadow var(--mid-transition-med),
+    border-color var(--mid-transition-med);
+}
+
+.card-midnight:hover {
+  transform: translateY(-2px);
+  border-color: rgba(156, 30, 255, 0.55);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(156, 30, 255, 0.25);
+}
+
+/* Titles inside cards */
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  margin: 0 0 4px;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--mid-text-soft);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------- */
+/* BUTTONS & TAGS                                                          */
+/* ----------------------------------------------------------------------- */
+
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--mid-radius-pill);
+
+  border: 1px solid rgba(156, 30, 255, 0.7);
+  background: linear-gradient(90deg, var(--mid-arcane), var(--mid-void));
+  color: #0b1020;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 0 18px rgba(156, 30, 255, 0.4),
+    0 0 1px rgba(255, 255, 255, 0.4);
+
+  cursor: pointer;
+  transition:
+    transform var(--mid-transition-fast),
+    box-shadow var(--mid-transition-fast),
+    filter var(--mid-transition-fast),
+    border-color var(--mid-transition-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 26px rgba(156, 30, 255, 0.6),
+    0 0 3px rgba(255, 255, 255, 0.75);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.96);
+}
+
+/* Ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--mid-radius-pill);
+
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--mid-text-soft);
+
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    background var(--mid-transition-fast),
+    border-color var(--mid-transition-fast),
+    color var(--mid-transition-fast);
+}
+
+.btn-ghost:hover {
+  background: rgba(30, 64, 175, 0.75);
+  border-color: rgba(129, 140, 248, 0.9);
+  color: #e0e7ff;
+}
+
+/* Small label tags */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--mid-radius-pill);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.7rem;
+  color: var(--mid-text-soft);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+/* ----------------------------------------------------------------------- */
+/* GENERIC STATES                                                          */
+/* ----------------------------------------------------------------------- */
+
+.state-banner {
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(8, 12, 24, 0.8);
+  color: var(--mid-text-soft);
+  font-size: 0.85rem;
+}
+
+.state-banner-error {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.4);
+  background: rgba(127, 29, 29, 0.55);
+}
+
+/* ----------------------------------------------------------------------- */
+/* MICRO ANIMATIONS                                                        */
+/* ----------------------------------------------------------------------- */
+
+@keyframes midPulseSoft {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+@keyframes midFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.pulse-soft {
+  animation: midPulseSoft 3.2s ease-in-out infinite;
+}
+
+.float-soft {
+  animation: midFloat 6s ease-in-out infinite;
+}
+
+/* ============================================================= */
+/* MIDNIGHT PAGE WRAPPER                                         */
+/* ============================================================= */
+
+.midnight-page-root {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  overflow: visible;
+}
+
+.midnight-page-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.midnight-page-inner {
+  position: relative;
+  z-index: 5;
+}
+
+/* Generic card style used by <Card> */
+.card-midnight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 16px 18px;
+  border-radius: var(--mid-radius-card);
+
+  background:
+    linear-gradient(135deg, rgba(8, 11, 24, 0.96), rgba(4, 7, 18, 0.96)),
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.14), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.14), transparent 55%);
+
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(76, 203, 255, 0.08);
+
+  transition:
+    transform var(--mid-transition-med),
+    box-shadow var(--mid-transition-med),
+    border-color var(--mid-transition-med);
+}
+
+.card-midnight:hover {
+  transform: translateY(-2px);
+  border-color: rgba(156, 30, 255, 0.55);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(156, 30, 255, 0.25);
+}
+
+/* Rarity pill base */
+.midnight-rarity-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.8rem;
+}

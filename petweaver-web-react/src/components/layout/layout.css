@@ -1,0 +1,110 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(76, 203, 255, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(156, 30, 255, 0.16), transparent 60%),
+    #020617;
+  color: #e5e7eb;
+}
+
+.app-sidebar {
+  width: 240px;
+  padding: 20px 16px;
+  background:
+    linear-gradient(180deg, rgba(3, 7, 18, 0.98), rgba(10, 15, 30, 0.98));
+  border-right: 1px solid rgba(30, 64, 175, 0.65);
+  box-shadow: 14px 0 35px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 3000;
+}
+
+.app-sidebar-header {
+  margin-bottom: 18px;
+}
+
+.app-sidebar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e7ff;
+}
+
+.app-sidebar-subtitle {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.app-nav-section-label {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #64748b;
+}
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.app-nav-secondary {
+  margin-top: 2px;
+}
+
+.app-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    background 120ms ease-out,
+    border-color 120ms ease-out,
+    color 120ms ease-out,
+    transform 120ms ease-out;
+}
+
+.app-nav-link-icon {
+  font-size: 0.9rem;
+}
+
+.app-nav-link:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(59, 130, 246, 0.8);
+  color: #e0f2fe;
+  transform: translateX(1px);
+}
+
+.app-nav-link-active {
+  background: linear-gradient(
+    90deg,
+    rgba(76, 203, 255, 0.26),
+    rgba(156, 30, 255, 0.32)
+  );
+  border-color: rgba(156, 30, 255, 0.8);
+  color: #f9fafb;
+  box-shadow: 0 0 16px rgba(156, 30, 255, 0.45);
+}
+
+.app-sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.app-sidebar-footnote strong {
+  color: #e0f2fe;
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px 20px;
+}

@@ -1,0 +1,7 @@
+## Interface: 100200
+## Title: Petweaver
+## Notes: A complete replacement for the Pet Journal, combining team management and scripting.
+## Author: You
+## Version: 0.1.0 Alpha
+Petweaver.xml
+Petweaver.lua

@@ -1,0 +1,96 @@
+.dashboard-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+}
+
+.dashboard-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Force the "Overview" card to span full width on larger screens */
+@media (min-width: 960px) {
+  .dashboard-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-body {
+  margin-top: 8px;
+}
+
+/* Metric layout */
+.dashboard-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.8);
+}
+
+.dashboard-metric-row:last-child {
+  border-bottom: none;
+}
+
+.dashboard-metric-label {
+  color: #9ca3af;
+}
+
+.dashboard-metric-value {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* Activity list placeholder */
+.dashboard-activity-list {
+  min-height: 80px;
+}
+
+.dashboard-activity-empty {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  color: #9ca3af;
+  font-size: 0.8rem;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+/* Summary grid */
+.dashboard-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.dashboard-summary-item {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.dashboard-summary-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.dashboard-summary-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0f2fe;
+}

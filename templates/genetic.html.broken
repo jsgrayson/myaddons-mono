@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetic Team Builder - PetWeaver</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .genetic-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .control-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .panel-section h3 {
+            color: var(--wow-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-primary);
+        }
+
+        .status-panel {
+            background: #1e1e1e;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--wow-gold), #ff8c00);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--wow-gold);
+        }
+
+        .fitness-score {
+            font-size: 2rem;
+            color: var(--success);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pet-list {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .pet-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 4px;
+            border: 1px solid #555;
+        }
+
+        .log-console {
+            background: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 1rem;
+            height: 200px;
+            overflow-y: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧬 Genetic Team Builder</h1>
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/strategies">Strategies</a>
+            <a href="/genetic" class="active">Genetic Builder</a>
+        </nav>
+    </header>
+
+    <div class="genetic-container">
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <h3>Target Configuration</h3>
+                <div class="form-group">
+                    <label>Target Encounter</label>
+                    <select id="target-encounter">
+                        <option value="squirt">Squirt (WoD Garrison)</option>
+                        <option value="dummy">Target Dummy (Test)</option>
+                        <option value="custom">Custom Team...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Constraints</label>
+                    <select id="constraints">
+                        <option value="none">No Constraints</option>
+                        <option value="owned">My Collection Only</option>
+                        <option value="leveling">Include 1 Leveling Pet</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h3>Evolution Parameters</h3>
+                <div class="form-group">
+                    <label>Population Size</label>
+                    <input type="number" id="pop-size" value="50" min="10" max="200">
+
+                    <label>Generations</label>
+                    <input type="number" id="generations" value="20" min="5" max="100">
+
+                    <label style="margin-top: 1rem;">
+                        <input type="checkbox" id="my-pets-only" checked>
+                        Use Only My Pets (recommended)
+                    </label>
+
+                    <label style="margin-top: 0.5rem;">Leveling Mode</label>
+                    <select id="leveling-mode">
+                        <option value="0">No Leveling (All Max Level)</option>
+                        <option value="1">1 Carry Slot</option>
+                        <option value="2">2 Carry Slots</option>
+                    </select>
+
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                        <button class="btn-secondary" style="flex: 1; font-size: 0.75rem;" onclick="setPreset('fast')">
+                            ⚡ Fast (20/10)
+                        </button>
+                        <button class="btn-secondary" style="flex: 1; font-size: 0.75rem;"
+                            onclick="setPreset('thorough')">
+                            🎯 Thorough (50/30)
+                        </button>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="startEvolution()">
+                        🚀 Start Evolution
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status Panel -->
+            <div class="status-panel" id="status-panel" style="display: none;">
+                <h2 id="status-text">Evolving Generation 1...</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div style="display: flex; justify-content: space-around; margin-top: 1rem;">
+                    <div>
+                        <div style="color: var(--text-muted);">Best Fitness</div>
+                        <div style="font-size: 1.5rem; color: var(--wow-gold);" id="best-fitness">0</div>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-muted);">Avg Fitness</div>
+                        <div style="font-size: 1.5rem;" id="avg-fitness">0</div>
+                    </div>
+                </div>
+                <div class="log-console" id="evolution-log"></div>
+                <button class="btn-primary" style="background: #dc2626; margin-top: 1rem;" onclick="stopEvolution()">
+                    ⏹ Stop
+                </button>
+            </div>
+
+            <!-- Results -->
+            <div id="results-area" style="display: none;">
+                <h3 style="color: var(--wow-gold); margin-bottom: 1rem;">🏆 Top Evolved Teams</h3>
+                <div class="results-grid" id="results-grid">
+                    <!-- Results injected here -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let currentLogOffset = 0;
+
+            function setPreset(type) {
+                if (type === 'fast') {
+                    document.getElementById('pop-size').value = 20;
+                    document.getElementById('generations').value = 10;
+                } else if (type === 'thorough') {
+                    document.getElementById('pop-size').value = 50;
+                    document.getElementById('generations').value = 30;
+                }
+            }
+
+            async function startEvolution() {
+                const target = document.getElementById('target-encounter').value;
+                const popSize = document.getElementById('pop-size').value;
+                const generations = document.getElementById('generations').value;
+                const myPetsOnly = document.getElementById('my-pets-only').checked;
+                const levelingMode = document.getElementById('leveling-mode').value;
+
+                // Assuming there's a 'config-panel' to hide, based on the instruction's diff.
+                // If 'config-panel' doesn't exist, this line might cause an error or do nothing.
+                // The original code did not have this line.
+                const configPanel = document.querySelector('.control-panel'); // Assuming control-panel is the config panel
+                if (configPanel) {
+                    configPanel.style.display = 'none';
+                }
+                document.getElementById('status-panel').style.display = 'block';
+                document.getElementById('results-area').style.display = 'none';
+                document.getElementById('evolution-log').innerHTML = '';
+                currentLogOffset = 0;
+
+                try {
+                    const response = await fetch('/api/genetic/start', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            target: target,
+                            pop_size: parseInt(popSize),
+                            generations: parseInt(generations),
+                            my_pets_only: myPetsOnly,
+                            leveling_mode: parseInt(levelingMode)
+                        })
+                    });
+
+                    const data = await response.json();
+                    if (data.message === 'Started') {
+                        isRunning = true;
+                        pollInterval = setInterval(pollStatus, 1000);
+                        log("Evolution started...");
+                    }
+                } catch (e) {
+                    log("Error starting: " + e.message);
+                }
+            }
+
+            async function pollStatus() {
+                if (!isRunning) return;
+
+                try {
+                    const response = await fetch(`/api/genetic/status?offset=${currentLogOffset}`);
+                    const data = await response.json();
+
+                    // Update UI
+                    document.getElementById('status-text').innerText =
+                        data.status === 'RUNNING' ? `Evolving Generation ${data.generation}/${data.max_generations}` : data.status;
+
+                    const progress = (data.generation / data.max_generations) * 100;
+                    document.getElementById('progress-bar').style.width = `${progress}%`;
+
+                    document.getElementById('best-fitness').innerText = Math.round(data.best_fitness || 0);
+                    document.getElementById('avg-fitness').innerText = Math.round(data.avg_fitness || 0);
+
+                    if (data.new_logs && data.new_logs.length > 0) {
+                        data.new_logs.forEach(msg => log(msg));
+                        currentLogOffset = data.log_offset;
+                    }
+
+                    if (data.status === 'COMPLETED') {
+                        isRunning = false;
+                        clearInterval(pollInterval);
+                        currentTeams = data.top_teams || [];
+                        showResults(currentTeams);
+                        log("Evolution Complete!");
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+
+            function showResults(teams) {
+                const grid = document.getElementById('results-grid');
+                grid.innerHTML = '';
+                document.getElementById('results-area').style.display = 'block';
+
+                teams.forEach((team, index) => {
+                    const html = `
+                    <div class="result-card">
+                        <div class="fitness-score">${Math.round(team.fitness)}</div>
+                        <h4>Rank #${index + 1}</h4>
+                        <div class="pet-list">
+                            ${team.pets.map(p => `<div class="pet-icon" title="${p.name || 'Species ' + p.species_id}"></div>`).join('')}
+                        </div>
+                        <div style="font-size: 0.9rem; color: #aaa; margin: 0.5rem 0;">
+                             ${team.pets.map(p => p.name || 'Species ' + p.species_id).join(', ')}
+                        </div>
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">
+                            <div>Win Rate: ${team.stats ? Math.round(team.stats.win_rate * 100) : 0}%</div>
+                            <div>Damage: ${team.stats ? Math.round(team.stats.avg_damage_pct * 100) : 0}%</div>
+                        </div>
+                        <button class="btn-primary" style="margin-top: 1rem; width: 100%; font-size: 0.8rem;" onclick="exportTeam(${index})">
+                            📋 Export to Rematch
+                        </button>
+                    </div>
+                `;
+                    grid.insertAdjacentHTML('beforeend', html);
+                });
+            }
+
+            function log(msg) {
+                const console = document.getElementById('evolution-log');
+                const line = document.createElement('div');
+                line.innerText = `> ${msg}`;
+                console.appendChild(line);
+                console.scrollTop = console.scrollHeight;
+            }
+
+            let currentTeams = [];
+
+            function exportTeam(index) {
+                const team = currentTeams[index];
+                if (!team) return;
+
+                // Build complete strategy export with enemy info
+                const targetEncounter = 'Squirt (WoD Garrison)'; // Will be dynamic from backend
+                const enemyTeam = 'Deebs | Tyri | Puzzle';
+
+                const teamLine = `team:${team.pets.map(p => p.species_id).join(',')}`;
+
+                // Build ability sequence for each pet
+                const strategyLines = team.pets.map((pet, petIndex) => {
+                    const petNum = petIndex + 1;
+                    const priority = pet.priority || [1, 2, 3];
+                    const abilities = pet.abilities || [1, 2, 3];
+
+                    const abilitySequence = priority.map(slot => {
+                        const abilityId = abilities[slot - 1] || slot;
+                        return `ability(${abilityId})`;
+                    }).join(' ');
+
+                    return `pet(${petNum}):${abilitySequence}`;
+                });
+
+                // Complete strategy export
+                const fullStrategy = [
+                    `========================================`,
+                    `EVOLVED STRATEGY FOR ${targetEncounter.toUpperCase()}`,
+                    `========================================`,
+                    ``,
+                    `Enemy Team: ${enemyTeam}`,
+                    ``,
+                    `Your Team: ${team.pets.map(p => p.name || 'Unknown').join(' | ')}`,
+                    `Fitness Score: ${Math.round(team.fitness)}`,
+                    `Win Rate: ${team.stats ? Math.round(team.stats.win_rate * 100) : 0}%`,
+                    `Avg Damage: ${team.stats ? Math.round(team.stats.avg_damage_pct * 100) : 0}%`,
+                    ``,
+                    `----------------------------------------`,
+                    `REMATCH IMPORT STRING:`,
+                    `----------------------------------------`,
+                    teamLine,
+                    ...strategyLines,
+                    ``,
+                    `Copy the lines above into Rematch addon!`
+                ].join('\\n');
+
+                // Copy to clipboard
+                navigator.clipboard.writeText(fullStrategy).then(() => {
+                    alert('✅ Complete strategy copied to clipboard!\\n\\nPaste into Rematch or share with friends.');
+                }).catch(err => {
+                    prompt('Copy this complete strategy:', fullStrategy);
+                });
+            }
+
+            async function stopEvolution() {
+                await fetch('/api/genetic/stop', { method: 'POST' });
+                isRunning = false;
+                clearInterval(pollInterval);
+                document.getElementById('status-text').innerText = "Stopped";
+            }
+        </script>
+</body>
+
+</html>

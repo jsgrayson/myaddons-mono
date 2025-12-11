@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Collection - PetWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">🐾 Pet Collection</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-search me-2"></i>Browse and filter your entire pet collection
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <!-- Search Bar -->
+                <div class="input-group mb-2">
+                    <span class="input-group-text bg-black text-light border-secondary"><i
+                            class="fas fa-search"></i></span>
+                    <input type="text" class="form-control bg-black text-light border-secondary" id="searchInput"
+                        placeholder="Search... e.g. 'level > 20 AND quality = 3' OR 'name contains Dragon'">
+                    <button class="btn btn-primary" onclick="applySearch()">
+                        <i class="fas fa-filter me-2"></i>Filter
+                    </button>
+                </div>
+                <div class="small text-muted">
+                    <i class="fas fa-info-circle me-1"></i>Supported: <code>AND</code>, <code>OR</code>,
+                    <code>NOT</code>, <code>&gt;</code>,
+                    <code>&lt;</code>, <code>=</code>, <code>!=</code>, <code>contains</code>.
+                    Fields: <code>name</code>, <code>level</code>, <code>quality</code>, <code>speed</code>,
+                    <code>power</code>, <code>health</code>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12 text-end text-muted">
+        Showing <span id="countDisplay" class="text-white fw-bold">0</span> pets
+    </div>
+</div>
+
+<!-- Pet Grid -->
+<div class="row g-4" id="petGrid">
+    <div class="col-12 text-center py-5">
+        <i class="fas fa-spinner fa-spin fa-2x text-muted mb-3"></i>
+        <p class="text-muted">Loading collection...</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let allPets = [];
+    const BREED_NAMES = {
+        3: "H/H", 4: "P/P", 5: "S/S", 6: "H/P", 7: "H/S", 8: "P/S", 9: "B/B", 10: "P/B", 11: "S/B", 12: "H/B"
+    };
+
+    const QUALITY_COLORS = {
+        0: '#9d9d9d', // Poor
+        1: '#ffffff', // Common
+        2: '#1eff00', // Uncommon
+        3: '#0070dd', // Rare
+        4: '#a335ee', // Epic
+        5: '#ff8000'  // Legendary
+    };
+
+    async function loadPets() {
+        try {
+            const res = await fetch('/api/collection/all');
+            allPets = await res.json();
+            renderPets(allPets);
+        } catch (e) {
+            document.getElementById('petGrid').innerHTML = '<div class="col-12 text-center text-danger py-5">Failed to load pets.</div>';
+        }
+    }
+
+    function renderPets(pets) {
+        const grid = document.getElementById('petGrid');
+        const countDisplay = document.getElementById('countDisplay');
+
+        grid.innerHTML = '';
+        countDisplay.innerText = pets.length;
+
+        if (pets.length === 0) {
+            grid.innerHTML = '<div class="col-12 text-center text-muted py-5">No pets found matching criteria.</div>';
+            return;
+        }
+
+        // Limit render to 100 for performance if list is huge
+        const displayPets = pets.slice(0, 100);
+
+        displayPets.forEach(pet => {
+            const breedName = BREED_NAMES[pet.stats?.breedId] || '?';
+            const qualityColor = QUALITY_COLORS[pet.quality] || '#ffffff';
+
+            const html = `
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 bg-dark border-secondary pet-card">
+                        <div class="card-body">
+                            <h6 class="card-title mb-2 text-truncate" style="color: ${qualityColor}" title="${pet.name}">
+                                ${pet.name}
+                            </h6>
+                            <div class="small text-muted mb-3 d-flex justify-content-between">
+                                <span>Lvl ${pet.level}</span>
+                                <span class="badge bg-secondary text-light">${breedName}</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-light">
+                                <span title="Health"><i class="fas fa-heart text-danger me-1"></i>${pet.stats?.health}</span>
+                                <span title="Power"><i class="fas fa-fist-raised text-warning me-1"></i>${pet.stats?.power}</span>
+                                <span title="Speed"><i class="fas fa-tachometer-alt text-info me-1"></i>${pet.stats?.speed}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += html;
+        });
+
+        if (pets.length > 100) {
+            grid.innerHTML += '<div class="col-12 text-center text-muted mt-4">Showing first 100 results...</div>';
+        }
+    }
+
+    // --- Dynamic Search Parser ---
+
+    function applySearch() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (!query) {
+            renderPets(allPets);
+            return;
+        }
+
+        try {
+            const filtered = allPets.filter(pet => evaluateQuery(pet, query));
+            renderPets(filtered);
+        } catch (e) {
+            console.error(e);
+            alert("Invalid search query!");
+        }
+    }
+
+    function evaluateQuery(pet, query) {
+        // 1. Normalize
+        let q = query.toLowerCase();
+
+        // 2. Replace operators
+        q = q.replace(/\s+and\s+/g, ' && ');
+        q = q.replace(/\s+or\s+/g, ' || ');
+        q = q.replace(/\s+not\s+/g, ' ! ');
+
+        // 3. Handle fields logic
+        const orBlocks = q.split(' || ');
+        return orBlocks.some(orBlock => {
+            const andBlocks = orBlock.split(' && ');
+            return andBlocks.every(condition => {
+                return evaluateCondition(pet, condition.trim());
+            });
+        });
+    }
+
+    function evaluateCondition(pet, condition) {
+        // Handle NOT
+        if (condition.startsWith('! ') || condition.startsWith('not ')) {
+            return !evaluateCondition(pet, condition.replace(/^(!|not)\s+/, ''));
+        }
+
+        // Parse: field op value
+        const parts = condition.match(/^(\w+)\s*(=|!=|>|<|>=|<=|contains)\s*(.+)$/);
+        if (!parts) return true;
+
+        const field = parts[1];
+        const op = parts[2];
+        let val = parts[3].replace(/['"]/g, ''); // Remove quotes
+
+        // Get pet value
+        let petVal;
+        if (field === 'name') petVal = pet.name.toLowerCase();
+        else if (field === 'level') petVal = pet.level;
+        else if (field === 'quality') petVal = pet.quality;
+        else if (['health', 'power', 'speed'].includes(field)) petVal = pet.stats?.[field] || 0;
+        else return false; // Unknown field
+
+        // Compare
+        if (field !== 'name') {
+            val = parseFloat(val);
+            petVal = parseFloat(petVal);
+        }
+
+        switch (op) {
+            case '=': return petVal == val;
+            case '!=': return petVal != val;
+            case '>': return petVal > val;
+            case '<': return petVal < val;
+            case '>=': return petVal >= val;
+            case '<=': return petVal <= val;
+            case 'contains': return String(petVal).includes(String(val));
+            default: return false;
+        }
+    }
+
+    // Init
+    loadPets();
+</script>
+{% endblock %}

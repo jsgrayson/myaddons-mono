@@ -1,0 +1,1779 @@
+{
+  "generated": "2025-11-26",
+  "analysis_source": "comprehensive_team_and_script_analysis",
+  "total_encounters": 253,
+  "encounters_with_scripts": 123,
+  "npc_scripts": {
+    "Rock Collector": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1589/Rock_Collector",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Rock Collector\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Robot Rumble": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1590/Robot_Rumble",
+      "total_variations": 18,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Robot Rumble\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Bleeding:491)  # Used 18 times\\nuse(Black Claw:918)  # Used 18 times"
+    },
+    "The Power of Friendship": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1592/The_Power_of_Friendship",
+      "total_variations": 9,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Power of Friendship\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Major Malfunction": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1593/Major_Malfunction",
+      "total_variations": 4590,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Major Malfunction\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Miniature Army": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1595/Miniature_Army",
+      "total_variations": 64,
+      "abilities_count": 2,
+      "inferences_count": 3,
+      "ai_script": "# Enemy AI: Miniature Army\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Dodge 64 times)\\n#   [100%] Important HP threshold at 1000 HP (>)\\n#   [100%] Important HP threshold at 700 HP (>)\\n\\n# Priority abilities (high usage)\\nuse(Swarm of Flies:231) [round=1]\\nuse(Dodge:311) [round=1]\\n\\n# HP-based abilities\\nuse(Swarm of Flies:231) [enemy.hp>1000]\\nuse(Swarm of Flies:231) [enemy.hp>700]\\n\\n# General rotation\\nuse(Swarm of Flies:231)  # Used 64 times\\nuse(Dodge:311)  # Used 64 times"
+    },
+    "The Thing from the Swamp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp",
+      "total_variations": 16,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Thing from the Swamp\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 16 times"
+    },
+    "Ziriak": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1598/Ziriak",
+      "total_variations": 8,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Ziriak\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [26%] Enemy has big hits (players use Undead (passive) 8 times)\\n\\n# General rotation\\nuse(Undead:242)  # Used 8 times"
+    },
+    "One Hungry Worm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm",
+      "total_variations": 96,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: One Hungry Worm\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is SLOW (players check self.speed.fast)\\n\\n# Priority abilities (high usage)\\nuse(Underground:340) [round=1]\\nuse(Glowing Toxin:271) [round=1]\\n\\n# General rotation\\nuse(Underground:340)  # Used 96 times\\nuse(Glowing Toxin:271)  # Used 96 times"
+    },
+    "To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1526/To_a_Land_Down_Under",
+      "total_variations": 80,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: To a Land Down Under\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Corrosion:446) [round=1]\\nuse(601).exists]\r\nuse(Reckless Strike:186) [round=1]\\n\\n# General rotation\\nuse(Corrosion:446)  # Used 160 times\\nuse(601).exists]\r\nuse(Reckless Strike:186)  # Used 80 times"
+    },
+    "Are They Not Beautiful?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1527/Are_They_Not_Beautiful",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Are They Not Beautiful?\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Delver Mardei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1528/Delver_Mardei",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Delver Mardei\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Important HP threshold at 1665 HP (>)\\n#   [90%] Important HP threshold at 1110 HP (>)\\n\\n# HP-based abilities\\nuse(Flame Breath:500) [enemy.hp>1665]\\nuse(Flame Breath:500) [enemy.hp>1110]\\n\\n# General rotation\\nuse(Flame Breath:500)  # Used 18 times"
+    },
+    "Do You Even Train?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1529/Do_You_Even_Train",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Do You Even Train?\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Swog the Elder": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1366/Swog_the_Elder",
+      "total_variations": 1,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Swog the Elder\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "The Terrible Three": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1367/The_Terrible_Three",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Terrible Three\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Sharp as Flint": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1497/Sharp_as_Flint",
+      "total_variations": 125,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Sharp as Flint\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Adinakon": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1498/Adinakon",
+      "total_variations": 5184,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Adinakon\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Two and Two Together": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1369/Two_and_Two_Together",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Two and Two Together\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Eye of the Stormling": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1370/Eye_of_the_Stormling",
+      "total_variations": 7220,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Eye of the Stormling\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Paws of Thunder": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1499/Paws_of_Thunder",
+      "total_variations": 45,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Paws of Thunder\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 733 HP (<)\\n\\n# HP-based abilities\\nuse(601).duration=1]\r\nif [enemy(#2).aura(927).exists]\r\nuse(Puncture Wound:1050) [enemy.hp<733]\\n\\n# General rotation\\nuse(601).duration=1]\r\nif [enemy(#2).aura(927).exists]\r\nuse(Puncture Wound:1050)  # Used 45 times"
+    },
+    "Lyver": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1500/Lyver",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Lyver\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 4 times"
+    },
+    "The Grand Master": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1372/The_Grand_Master",
+      "total_variations": 64,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Grand Master\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Mini Manafiend Melee": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1373/Mini_Manafiend_Melee",
+      "total_variations": 28,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Mini Manafiend Melee\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 531 HP (<)\\n\\n# HP-based abilities\\nuse(2238).exists]\r\nuse(Flame Breath:501) [enemy.hp<531]\\n\\n# General rotation\\nuse(2238).exists]\r\nuse(Flame Breath:501)  # Used 28 times"
+    },
+    "A New Vocation": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1501/A_New_Vocation",
+      "total_variations": 60,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: A New Vocation\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Dodge 60 times)\\n\\n# Priority abilities (high usage)\\nuse(Flying:341) [round=1]\\nuse(Dodge:311) [round=1]\\n\\n# General rotation\\nuse(Flying:341)  # Used 120 times\\nuse(Dodge:311)  # Used 60 times"
+    },
+    "Enok the Stinky": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1502/Enok_the_Stinky",
+      "total_variations": 6,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Enok the Stinky\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 6 times"
+    },
+    "You Have to Start Somewhere": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1375/You_Have_to_Start_Somewhere",
+      "total_variations": 720,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: You Have to Start Somewhere\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "The Oldest Dragonfly": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1376/The_Oldest_Dragonfly",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Oldest Dragonfly\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "They're Full of Stars!": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1503/They're_Full_of_Stars!",
+      "total_variations": 8,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: They're Full of Stars!\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [26%] Enemy has big hits (players use Undead (passive) 8 times)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Right Twice a Day": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1504/Right_Twice_a_Day",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Right Twice a Day\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Storm-Touched Swoglet": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1521/Storm-Touched_Swoglet",
+      "total_variations": 4275,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Storm-Touched Swoglet\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Vortex - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1506/Vortex_-_Legendary",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Vortex - Legendary\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 36 times"
+    },
+    "Vortex - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1507/Vortex_-_Epic",
+      "total_variations": 24,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Vortex - Epic\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 24 times"
+    },
+    "Vortex - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1508/Vortex_-_Rare",
+      "total_variations": 9,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Vortex - Rare\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(claw:918)  # Used 9 times"
+    },
+    "Storm-Touched Skitterer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1522/Storm-Touched_Skitterer",
+      "total_variations": 2,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Storm-Touched Skitterer\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(claw:918)  # Used 2 times\\nuse(flock:542)  # Used 2 times"
+    },
+    "Wildfire - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1510/Wildfire_-_Legendary",
+      "total_variations": 125,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Wildfire - Legendary\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Wildfire - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1511/Wildfire_-_Epic",
+      "total_variations": 477,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Wildfire - Epic\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 477 times)\\n\\n# Priority abilities (high usage)\\nuse(Bleeding:491) [round=1]\\nuse(Black Claw:918) [round=1]\\n\\n# General rotation\\nuse(Bleeding:491)  # Used 477 times\\nuse(Black Claw:918)  # Used 477 times"
+    },
+    "Wildfire - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1512/Wildfire_-_Rare",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Wildfire - Rare\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Storm-Touched Slyvern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1523/Storm-Touched_Slyvern",
+      "total_variations": 63,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Storm-Touched Slyvern\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Immolate:177) [round=1]\\nuse(Weakened Defenses:516) [round=1]\\n\\n# General rotation\\nuse(Immolate:177)  # Used 63 times\\nuse(Weakened Defenses:516)  # Used 63 times"
+    },
+    "Tremblor - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1514/Tremblor_-_Legendary",
+      "total_variations": 32,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Tremblor - Legendary\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Tremblor - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1515/Tremblor_-_Epic",
+      "total_variations": 48,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Tremblor - Epic\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is SLOW (players check self.speed.fast)\\n\\n# General rotation\\nuse(Bleeding:491)  # Used 48 times\\nuse(Black Claw:918)  # Used 48 times"
+    },
+    "Tremblor - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1516/Tremblor_-_Rare",
+      "total_variations": 60,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Tremblor - Rare\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Storm-Touched Ohuna": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1524/Storm-Touched_Ohuna",
+      "total_variations": 6,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Storm-Touched Ohuna\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(claw:918)  # Used 6 times"
+    },
+    "Flow - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1518/Flow_-_Legendary",
+      "total_variations": 80,
+      "abilities_count": 3,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Flow - Legendary\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Flame Breath:500) [round=1]\\nuse(Rabies:807) [round=1]\\n\\n# General rotation\\nuse(Flame Breath:500)  # Used 80 times\\nuse(Rabies:807)  # Used 80 times\\nuse(Bleeding:491)  # Used 80 times"
+    },
+    "Flow - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1519/Flow_-_Epic",
+      "total_variations": 72,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Flow - Epic\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Rabies:807) [round=1]\\nuse(Bleeding:491) [round=1]\\n\\n# General rotation\\nuse(Rabies:807)  # Used 72 times\\nuse(Bleeding:491)  # Used 72 times"
+    },
+    "Flow - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1520/Flow_-_Rare",
+      "total_variations": 60,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Flow - Rare\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Forboding Curse:1067)  # Used 4 times"
+    },
+    "Humanoid Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530",
+      "total_variations": 18,
+      "abilities_count": 3,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Humanoid Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Important HP threshold at 1246 HP (<)\\n\\n# HP-based abilities\\nuse(Tough n' Cuddly:1111) [enemy.hp<1246]\\n\\n# General rotation\\nuse(Tough n' Cuddly:1111)  # Used 36 times\\nuse(Stunned:927)  # Used 18 times\\nuse(Shattered Defenses:542)  # Used 18 times"
+    },
+    "Dragonkin Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1534",
+      "total_variations": 30,
+      "abilities_count": 1,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Dragonkin Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 823 HP (<)\\n#   [100%] Important HP threshold at 529 HP (<)\\n\\n# Priority abilities (high usage)\\nuse(Tough n' Cuddly:1111) [round=1]\\n\\n# HP-based abilities\\nuse(Tough n' Cuddly:1111) [enemy.hp<823]\\nuse(Tough n' Cuddly:1111) [enemy.hp<529]\\n\\n# General rotation\\nuse(Tough n' Cuddly:1111)  # Used 90 times"
+    },
+    "Flying Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1538",
+      "total_variations": 75,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Flying Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 400 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Critter Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1546",
+      "total_variations": 36,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Critter Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Tough n' Cuddly:1111)  # Used 36 times\\nuse(Blinded:1014)  # Used 36 times"
+    },
+    "Magic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1550",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Magic Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is SLOW (players check self.speed.fast)\\n\\n# Priority abilities (high usage)\\nuse(Tough n' Cuddly:1111) [round=1]\\n\\n# General rotation\\nuse(Tough n' Cuddly:1111)  # Used 72 times"
+    },
+    "Elemental Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1554",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Elemental Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Beast Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1558",
+      "total_variations": 32,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Beast Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Prowl 32 times)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Aquatic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1562",
+      "total_variations": 27,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Aquatic Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Swarm of Flies:231)  # Used 27 times"
+    },
+    "Mechanical Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1566",
+      "total_variations": 27,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Mechanical Battler of Zaralek Cavern\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Minefield:635)  # Used 27 times"
+    },
+    "Explorer BezzertQuest: To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530/To_a_Land_Down_Under",
+      "total_variations": 18,
+      "abilities_count": 3,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Explorer BezzertQuest: To a Land Down Under\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Important HP threshold at 1246 HP (<)\\n\\n# HP-based abilities\\nuse(Tough n' Cuddly:1111) [enemy.hp<1246]\\n\\n# General rotation\\nuse(Tough n' Cuddly:1111)  # Used 36 times\\nuse(Stunned:927)  # Used 18 times\\nuse(Shattered Defenses:542)  # Used 18 times"
+    },
+    "ShinmuraQuest: Are They Not Beautiful?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1531/Are_They_Not_Beautiful",
+      "total_variations": 24,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: ShinmuraQuest: Are They Not Beautiful?\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Frost Shock:415)  # Used 24 times"
+    },
+    "Delver MardeiQuest: Delver Mardei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1532/Delver_Mardei",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Delver MardeiQuest: Delver Mardei\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Trainer OrloggQuest: Do You Even Train?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1533/Do_You_Even_Train",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Trainer OrloggQuest: Do You Even Train?\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Decoy 36 times)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Illidari Masters: Sissix": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/346/Illidari_Masters:_Sissix",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Illidari Masters: Sissix\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Illidari Masters: Madam Viciosa": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/347/Illidari_Masters:_Madam_Viciosa",
+      "total_variations": 180,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Illidari Masters: Madam Viciosa\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Illidari Masters: Nameless Mystic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/348/Illidari_Masters:_Nameless_Mystic",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Illidari Masters: Nameless Mystic\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Important HP threshold at 618 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: AmaliaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/145/Fight_Night:_Amalia",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fight Night: AmaliaFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Puppies of the Flame:1355)  # Used 4 times"
+    },
+    "Fight Night: Bodhi SunwayverFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/146/Fight_Night:_Bodhi_Sunwayver",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Fight Night: Bodhi SunwayverFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 439 HP (<=)\\n#   [100%] Important HP threshold at 365 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: Heliosus": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/147/Fight_Night:_Heliosus",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fight Night: Heliosus\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: Sir GalvestonFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/148/Fight_Night:_Sir_Galveston",
+      "total_variations": 9,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Fight Night: Sir GalvestonFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [45%] Important HP threshold at 246 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: Rats!": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/149/Fight_Night:_Rats!",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fight Night: Rats!\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: Stitches Jr. Jr.": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/150/Fight_Night:_Stitches_Jr._Jr.",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fight Night: Stitches Jr. Jr.\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fight Night: Tiffany NelsonFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/151/Fight_Night:_Tiffany_Nelson",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fight Night: Tiffany NelsonFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Size Doesn't Matter": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/153/Size_Doesn't_Matter",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Size Doesn't Matter\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Dazed and Confused and Adorable": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/155/Dazed_and_Confused_and_Adorable",
+      "total_variations": 48,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Dazed and Confused and Adorable\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Leaping:839)  # Used 48 times"
+    },
+    "Training with the NightwatchersFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/156/Training_with_the_Nightwatchers",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Training with the NightwatchersFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "The Wine's Gone Bad": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/157/The_Wine's_Gone_Bad",
+      "total_variations": 175,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Wine's Gone Bad\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Curse of Doom:217) [round=1]\\nuse(Black Claw:918) [round=1]\\n\\n# General rotation\\nuse(Curse of Doom:217)  # Used 175 times\\nuse(Black Claw:918)  # Used 175 times"
+    },
+    "Help a Whelp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/158/Help_a_Whelp",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Help a Whelp\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Training with DurianFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/160/Training_with_Durian",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Training with DurianFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Only Pets Can Prevent Forest Fires": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/161/Only_Pets_Can_Prevent_Forest_Fires",
+      "total_variations": 150,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Only Pets Can Prevent Forest Fires\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Meet The Maw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/162/Meet_The_Maw",
+      "total_variations": 8,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Meet The Maw\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Razor Talons:2238)  # Used 8 times\\nuse(Flame Breath:500)  # Used 8 times"
+    },
+    "Stand Up to Bullies": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/163/Stand_Up_to_Bullies",
+      "total_variations": 4,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Stand Up to Bullies\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw).exists]\r\nuse(Flock:581)  # Used 4 times\\nuse(Black Claw).exists]\r\nuse(Metal Fist:384)  # Used 4 times"
+    },
+    "Dealing with SatyrsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/165/Dealing_with_Satyrs",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Dealing with SatyrsFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Enemy has big hits (players use Undead (passive) 6 times)\\n#   [30%] Important HP threshold at 561 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Training with BreddaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/167/Training_with_Bredda",
+      "total_variations": 392,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Training with BreddaFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Deflection 392 times)\\n\\n# Priority abilities (high usage)\\nuse(Shattered Defenses:542) [round=1]\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 392 times"
+    },
+    "Tiny Poacher, Tiny AnimalsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/168/Tiny_Poacher,_Tiny_Animals",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Tiny Poacher, Tiny AnimalsFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Stunned:927)  # Used 18 times"
+    },
+    "Wildlife Protection Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/169/Wildlife_Protection_Force",
+      "total_variations": 20,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Wildlife Protection Force\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Razor Talons:2238)  # Used 20 times\\nuse(Corrosion:446)  # Used 20 times"
+    },
+    "It's Illid... Wait.": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/170/It's_Illid..._Wait.",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: It's Illid... Wait.\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Snail Fight!Family Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/171/Snail_Fight!",
+      "total_variations": 2,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Snail Fight!Family Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [6%] Enemy has big hits (players use Prowl 2 times)\\n\\n# General rotation\\nuse(Underwater:830)  # Used 2 times"
+    },
+    "Rocko Needs a Shave": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/172/Rocko_Needs_a_Shave",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Rocko Needs a Shave\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "All Howl, No Bite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/174/All_Howl,_No_Bite",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: All Howl, No Bite\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Jarrun's LadderFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/175/Jarrun's_Ladder",
+      "total_variations": 8,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Jarrun's LadderFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [26%] Enemy has big hits (players use Undead (passive) 8 times)\\n\\n# General rotation\\nuse(Undead:242)  # Used 16 times"
+    },
+    "Oh, Ominitron": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/176/Oh,_Ominitron",
+      "total_variations": 27,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Oh, Ominitron\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Corrupted Touch:2257)  # Used 27 times\\nuse(Corrupted Ground:2256)  # Used 27 times"
+    },
+    "My Beast's BiddingFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/177/My_Beast's_Bidding",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: My Beast's BiddingFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [30%] Important HP threshold at 390 HP (<=)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "All Pets Go to Heaven": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/178/All_Pets_Go_to_Heaven",
+      "total_variations": 162,
+      "abilities_count": 3,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: All Pets Go to Heaven\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 162 times)\\n\\n# Priority abilities (high usage)\\nuse(frogdot:231) [round=1]\\nuse(undead:242) [round=1]\\n\\n# General rotation\\nuse(frogdot:231)  # Used 162 times\\nuse(undead:242)  # Used 162 times\\nuse(snaildot:368)  # Used 162 times"
+    },
+    "Beasts of Burden:": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Beasts_of_Burden",
+      "total_variations": 2,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Beasts of Burden:\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [10%] Important HP threshold at 620 HP (<=)\\n\\n# HP-based abilities\\nuse(Toxic Smoke:639) [enemy.hp<=620]\\n\\n# General rotation\\nuse(Toxic Smoke:639)  # Used 2 times"
+    },
+    "Andurs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Andurs",
+      "total_variations": 2,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Andurs\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [10%] Important HP threshold at 620 HP (<=)\\n\\n# HP-based abilities\\nuse(Toxic Smoke:639) [enemy.hp<=620]\\n\\n# General rotation\\nuse(Toxic Smoke:639)  # Used 2 times"
+    },
+    "Rydyr": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/338/Rydyr",
+      "total_variations": 1215,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Rydyr\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 1178 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "The Master of PetsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/181/The_Master_of_Pets",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Master of PetsFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Clear the Catacombs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/182/Clear_the_Catacombs",
+      "total_variations": 27,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Clear the Catacombs\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 706 HP (>)\\n\\n# HP-based abilities\\nuse(601).duration=2]\r\nuse(Spark:617) [enemy.hp>706]\\n\\n# General rotation\\nuse(601).duration=2]\r\nuse(Spark:617)  # Used 27 times"
+    },
+    "ChoppedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/183/Chopped",
+      "total_variations": 8,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: ChoppedFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 8 times"
+    },
+    "FlummoxedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/184/Flummoxed",
+      "total_variations": 60,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: FlummoxedFamily Familiar\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Glowing Toxin:271) [round=1]\\nuse(Creeping Fungus:742) [round=1]\\n\\n# General rotation\\nuse(Glowing Toxin:271)  # Used 60 times\\nuse(Creeping Fungus:742)  # Used 60 times"
+    },
+    "Threads of Fate": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/185/Threads_of_Fate",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Threads of Fate\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Important HP threshold at 555 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Mana Tap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/186/Mana_Tap",
+      "total_variations": 4,
+      "abilities_count": 4,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Mana Tap\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [13%] Enemy has big hits (players use Dodge 4 times)\\n#   [20%] Important HP threshold at 470 HP (<)\\n\\n# HP-based abilities\\nuse(Dodge:311) [enemy.hp<470]\\n\\n# General rotation\\nuse(Dodge:311)  # Used 4 times\\nuse(Flame Breath:500)  # Used 4 times\\nuse(Razor Talons:2238)  # Used 4 times\\nuse(Prismatic Barrier:443)  # Used 4 times"
+    },
+    "Next Squirt Day:": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1",
+      "total_variations": 72,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Next Squirt Day:\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 254 HP (<=)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Nicki Tinytech": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25093",
+      "total_variations": 288,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Nicki Tinytech\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Frostschock:415) [round=1]\\n\\n# General rotation\\nuse(Frostschock:415)  # Used 288 times"
+    },
+    "Burning Pandaren Spirit": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25085",
+      "total_variations": 640,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Burning Pandaren Spirit\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 640 times)\\n\\n# Priority abilities (high usage)\\nuse(Shattered Defenses:542) [round=1]\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 640 times"
+    },
+    "Nitun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/78/Nitun",
+      "total_variations": 28,
+      "abilities_count": 5,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Nitun\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [10%] Enemy has big hits (players use Undead (passive) 3 times)\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 14 times\\nuse(Shattered Defenses:542)  # Used 2 times\\nuse(Rabies:807)  # Used 1 times\\nuse(Plagued Blood:658)  # Used 1 times\\nuse(Death and Decay:213)  # Used 1 times"
+    },
+    "The Terrible Three (Humanoid)": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25080",
+      "total_variations": 672,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: The Terrible Three (Humanoid)\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is SLOW (players check self.speed.fast)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Gloamwing": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25077",
+      "total_variations": 144,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Gloamwing\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Klutz's Battle Monkey": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/458/Klutz's_Battle_Monkey",
+      "total_variations": 21,
+      "abilities_count": 3,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Klutz's Battle Monkey\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [5%] Important HP threshold at 618 HP (<)\\n#   [5%] Important HP threshold at 406 HP (<)\\n\\n# HP-based abilities\\nuse(Heridas expuestas:306) [enemy.hp<618]\\nuse(Heridas expuestas:306) [enemy.hp<406]\\n\\n# General rotation\\nuse(Heridas expuestas:306)  # Used 1 times\\nuse(Shattered Defenses:542)  # Used 1 times\\nuse(Flying:341)  # Used 1 times"
+    },
+    "Klutz's Battle Bird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/460/Klutz's_Battle_Bird",
+      "total_variations": 20,
+      "abilities_count": 1,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Klutz's Battle Bird\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [10%] Important HP threshold at 237 HP (>)\\n#   [5%] Important HP threshold at 284 HP (<)\\n\\n# HP-based abilities\\nuse(Flying:341) [enemy.hp>237]\\nuse(Flying:341) [enemy.hp<284]\\n\\n# General rotation\\nuse(Flying:341)  # Used 1 times"
+    },
+    "Klutz's Battle Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/456/Klutz's_Battle_Rat",
+      "total_variations": 20,
+      "abilities_count": 4,
+      "inferences_count": 4,
+      "ai_script": "# Enemy AI: Klutz's Battle Rat\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [5%] Enemy is SLOW (players check self.speed.fast)\\n#   [3%] Enemy has big hits (players use Prowl 1 times)\\n#   [50%] Important HP threshold at 618 HP (<)\\n#   [50%] Important HP threshold at 406 HP (<)\\n\\n# HP-based abilities\\nuse(Black Claw:918) [enemy.hp<618]\\nuse(Black Claw:918) [enemy.hp<406]\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 2 times\\nuse(liftedoff:341)  # Used 1 times\\nuse(Flying:341)  # Used 1 times\\nuse(Shattered Defenses:542)  # Used 1 times"
+    },
+    "\"Captain\" Klutz": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/452/\"Captain\"_Klutz",
+      "total_variations": 20,
+      "abilities_count": 5,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: \"Captain\" Klutz\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 2 times\\nuse(Rabia:807)  # Used 1 times\\nuse(918).exists]\\nuse(Flock:581)  # Used 1 times\\nuse(Rabies:807)  # Used 1 times\\nuse(Toxic Wound:2112)  # Used 1 times"
+    },
+    "Foe Reaper 50": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/438/Foe_Reaper_50",
+      "total_variations": 21,
+      "abilities_count": 3,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Foe Reaper 50\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Immolate:177)  # Used 1 times\\nuse(Flamethrower:502)  # Used 1 times\\nuse(Rabies:807)  # Used 1 times"
+    },
+    "Angry Geode": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/444/Angry_Geode",
+      "total_variations": 21,
+      "abilities_count": 3,
+      "inferences_count": 3,
+      "ai_script": "# Enemy AI: Angry Geode\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [3%] Enemy has big hits (players use Undead (passive) 1 times)\\n#   [5%] Important HP threshold at 618 HP (<)\\n#   [5%] Important HP threshold at 406 HP (<)\\n\\n# HP-based abilities\\nuse(Stoneskin:435) [enemy.hp<618]\\nuse(Stoneskin:435) [enemy.hp<406]\\n\\n# General rotation\\nuse(Stoneskin:435)  # Used 11 times\\nuse(Bleeding:491)  # Used 3 times\\nuse(Undead:242)  # Used 1 times"
+    },
+    "here": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/14013/Deebs,_Tyri_and_Puzzle",
+      "total_variations": 59,
+      "abilities_count": 8,
+      "inferences_count": 4,
+      "ai_script": "# Enemy AI: here\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [5%] Enemy is FAST (players check self.speed.slow)\\n#   [53%] Enemy has big hits (players use Dodge 16 times)\\n#   [50%] Important HP threshold at 650 HP (>)\\n#   [10%] Important HP threshold at 500 HP (<=)\\n\\n# HP-based abilities\\nuse(Dodge:311) [enemy.hp>650]\\nuse(Dodge:311) [enemy.hp<=500]\\n\\n# General rotation\\nuse(Dodge:311)  # Used 12 times\\nuse(Flame Breath:500)  # Used 2 times\\nuse(Corrosion:446)  # Used 2 times\\nuse(Bet\u00e4ubt:927)  # Used 1 times\\nuse(Razor Talons:2238)  # Used 1 times"
+    },
+    "https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast",
+      "total_variations": 3120,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Crystalsnap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1199/Crystalsnap",
+      "total_variations": 6,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Crystalsnap\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 6 times"
+    },
+    "Digallo": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1200/Digallo",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Digallo\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Kostos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1201/Kostos",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Kostos\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Gelatinous": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1202/Gelatinous",
+      "total_variations": 7220,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Gelatinous\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 148 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Glurp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1203/Glurp",
+      "total_variations": 60,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Glurp\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Black Claw:918) [round=1]\\nuse(Toxic Wound:2112) [round=1]\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 60 times\\nuse(Toxic Wound:2112)  # Used 60 times"
+    },
+    "Sewer Creeper": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1204/Sewer_Creeper",
+      "total_variations": 100,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Sewer Creeper\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "The Countess": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1205/The_Countess",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: The Countess\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Briarpaw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1206/Briarpaw",
+      "total_variations": 24,
+      "abilities_count": 1,
+      "inferences_count": 3,
+      "ai_script": "# Enemy AI: Briarpaw\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [80%] Enemy has big hits (players use Dodge 24 times)\\n#   [100%] Important HP threshold at 177 HP (<)\\n#   [100%] Important HP threshold at 185 HP (<)\\n\\n# Priority abilities (high usage)\\nuse(Dodge:311) [round=1]\\n\\n# HP-based abilities\\nuse(Dodge:311) [enemy.hp<177]\\nuse(Dodge:311) [enemy.hp<185]\\n\\n# General rotation\\nuse(Dodge:311)  # Used 72 times"
+    },
+    "Chittermaw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1207/Chittermaw",
+      "total_variations": 7220,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Chittermaw\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Mistwing": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1208/Mistwing",
+      "total_variations": 6,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Mistwing\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Enemy has big hits (players use Deflection 6 times)\\n\\n# General rotation\\nuse(Toxic Wound:2112)  # Used 6 times"
+    },
+    "Tiny Madness": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1146/Tiny_Madness",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Tiny Madness\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 4 times"
+    },
+    "Brain Tickling": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1147/Brain_Tickling",
+      "total_variations": 45,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Brain Tickling\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 45 times\\nuse(Shattered Defenses:542)  # Used 45 times"
+    },
+    "Living Statues Are Tough": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1148/Living_Statues_Are_Tough",
+      "total_variations": 2,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Living Statues Are Tough\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 2 times"
+    },
+    "Flight of the Vil'thik": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1149/Flight_of_the_Vil'thik",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Flight of the Vil'thik\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Retinus the Seeker": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1151/Retinus_the_Seeker",
+      "total_variations": 16,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Retinus the Seeker\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [80%] Important HP threshold at 610 HP (<)\\n\\n# HP-based abilities\\nuse(Black Claw:918) [enemy.hp<610]\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 16 times"
+    },
+    "I Am The One Who Whispers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1152/I_Am_The_One_Who_Whispers",
+      "total_variations": 24,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: I Am The One Who Whispers\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 24 times"
+    },
+    "Dune Buggy": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1153/Dune_Buggy",
+      "total_variations": 12,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Dune Buggy\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 12 times"
+    },
+    "Watch Where You Step": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1154/Watch_Where_You_Step",
+      "total_variations": 20,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Watch Where You Step\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 20 times"
+    },
+    "That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/699/That's_a_Big_Carcass",
+      "total_variations": 100,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: That's a Big Carcass\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Shattered Defenses:542) [round=1]\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 100 times"
+    },
+    "Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/700/Strange_Looking_Dogs",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Strange Looking Dogs\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Swarm of Flies:231)  # Used 36 times"
+    },
+    "Not So Bad Down Here": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/701/Not_So_Bad_Down_Here",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Not So Bad Down Here\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Unbreakable": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/702/Unbreakable",
+      "total_variations": 5202,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Unbreakable\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/704/Captured_Evil",
+      "total_variations": 9,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Captured Evil\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Flame Breath:500)  # Used 9 times"
+    },
+    "Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/705/Sea_Creatures_Are_Weird_",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Sea Creatures Are Weird\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Automated Chaos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/706/Automated_Chaos",
+      "total_variations": 9,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Automated Chaos\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "This Little Piggy Has Sharp Tusks": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/707/This_Little_Piggy_Has_Sharp_Tusks",
+      "total_variations": 3,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: This Little Piggy Has Sharp Tusks\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "What's the Buzz?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/709/What's_the_Buzz",
+      "total_variations": 3,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: What's the Buzz?\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Rogue Azerite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/710/Rogue_Azerite",
+      "total_variations": 80,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Rogue Azerite\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/711/Night_Horrors",
+      "total_variations": 9,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Night Horrors\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 9 times"
+    },
+    "Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/712/Crab_People",
+      "total_variations": 30,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Crab People\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Shattered Defenses:542) [round=1]\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 60 times"
+    },
+    "Add More to the Collection": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/714/Add_More_to_the_Collection",
+      "total_variations": 72,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Add More to the Collection\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Small Beginnings": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/715/Small_Beginnings",
+      "total_variations": 52,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Small Beginnings\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "You've Never Seen Jammer Upset": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/716/You've_Never_Seen_Jammer_Upset",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: You've Never Seen Jammer Upset\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Critters are Friends, Not Food": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/717/Critters_are_Friends,_Not_Food",
+      "total_variations": 9,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Critters are Friends, Not Food\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Crawg in the Bog": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/719/Crawg_in_the_Bog",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Crawg in the Bog\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/720/Marshdwellers",
+      "total_variations": 64,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Marshdwellers\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Shattered Defenses:542) [round=1]\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 64 times"
+    },
+    "Accidental Dread": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/721/Accidental_Dread",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Accidental Dread\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/722/Pack_Leader",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Pack Leader\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Flame Breath:500)  # Used 4 times"
+    },
+    "Keeyo's Champions of Vol'dun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/724/Keeyo's_Champions_of_Vol'dun",
+      "total_variations": 9,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Keeyo's Champions of Vol'dun\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/725/Desert_Survivors",
+      "total_variations": 4,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Desert Survivors\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Whirlpool:512)  # Used 8 times\\nuse(Underground:340)  # Used 4 times"
+    },
+    "What Do You Mean, Mind Controlling Plants?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/726/What_Do_You_Mean,_Mind_Controlling_Plants",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: What Do You Mean, Mind Controlling Plants?\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 18 times"
+    },
+    "Snakes on a Terrace": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/727/Snakes_on_a_Terrace",
+      "total_variations": 637,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Snakes on a Terrace\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Ezra Grimm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1116/Ezra_Grimm",
+      "total_variations": 12,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Ezra Grimm\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Important HP threshold at 335 HP (<)\\n\\n# HP-based abilities\\nuse(Blinding Poison:1048) [enemy.hp<335]\\n\\n# General rotation\\nuse(Blinding Poison:1048)  # Used 12 times\\nuse(Black Claw:918)  # Used 12 times"
+    },
+    "Unfortunate Defias": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/442/Unfortunate_Defias",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Unfortunate Defias\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Mining Monkey": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/448/Mining_Monkey",
+      "total_variations": 540,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Mining Monkey\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Cookie's Leftovers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/464/Cookie's_Leftovers",
+      "total_variations": 18,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Cookie's Leftovers\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Bleeding:491)  # Used 18 times\\nuse(Black Claw:918)  # Used 18 times"
+    },
+    "Dos-Ryga": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/69/Dos-Ryga",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Dos-Ryga\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [40%] Enemy has big hits (players use Undead (passive) 12 times)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Kafi": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/70/Kafi",
+      "total_variations": 12,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Kafi\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Important HP threshold at 700 HP (<)\\n\\n# HP-based abilities\\nuse(639).exists & enemy.hp<700]\r\nuse(282) [self(#1).active & round>2]\r\nuse(Toxic Smoke:640) [enemy.hp<700]\\n\\n# General rotation\\nuse(639).exists & enemy.hp<700]\r\nuse(282) [self(#1).active & round>2]\r\nuse(Toxic Smoke:640)  # Used 12 times\\nuse(639).exists]\r\nuse(Reflective Shield:1105)  # Used 12 times"
+    },
+    "Ti'un the Wanderer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/71/Ti'un_the_Wanderer",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Ti'un the Wanderer\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 4 times"
+    },
+    "No-No": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/72/No-No",
+      "total_variations": 18,
+      "abilities_count": 3,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: No-No\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Underwater:830) [round=1]\\n\\n# General rotation\\nuse(Underwater:830)  # Used 54 times\\nuse(Shattered Defenses:542)  # Used 36 times\\nuse(Beaver Dam:326)  # Used 18 times"
+    },
+    "Gorespine": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/73/Gorespine",
+      "total_variations": 392,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Gorespine\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 1250 HP (<=)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Skitterer Xi'a": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/74/Skitterer_Xi'a",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Skitterer Xi'a\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Greyhoof": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/75/Greyhoof",
+      "total_variations": 16,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Greyhoof\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [80%] Important HP threshold at 614 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Lucky Yi": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/76/Lucky_Yi",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Lucky Yi\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(918).exists]\r\nuse(Black Claw:919)  # Used 18 times"
+    },
+    "Ka'wi the Gorger": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/77/Ka'wi_the_Gorger",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Ka'wi the Gorger\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Garra negra:918)  # Used 18 times"
+    },
+    "https://www.wow-petguide.com/Strategy/11487/The_Mind_Games_of_Addius": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/11487/The_Mind_Games_of_Addius",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: https://www.wow-petguide.com/Strategy/11487/The_Mind_Games_of_Addius\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Ashlei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/16/Ashlei",
+      "total_variations": 2,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Ashlei\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Flammenatem:500)  # Used 4 times\\nuse(Messerkrallen:2238)  # Used 4 times"
+    },
+    "Cymre Brightblade": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/17/Cymre_Brightblade",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Cymre Brightblade\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Gargra": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/18/Gargra",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Gargra\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Taralune": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/19/Taralune",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Taralune\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Tarr the Terrible": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/20/Tarr_the_Terrible",
+      "total_variations": 8,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Tarr the Terrible\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Vesharr": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/21/Vesharr",
+      "total_variations": 12,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Vesharr\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Mechanical:244)  # Used 12 times\\nuse(Flying Mark:1420)  # Used 12 times"
+    },
+    "Taran Zhu": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/37/Taran_Zhu",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Taran Zhu\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Wrathion": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/38/Wrathion",
+      "total_variations": 576,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Wrathion\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 576 times)\\n\\n# Priority abilities (high usage)\\nuse(Undead:242) [round=1]\\n\\n# General rotation\\nuse(Undead:242)  # Used 576 times"
+    },
+    "Chen Stormstout": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/39/Chen_Stormstout",
+      "total_variations": 12,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Chen Stormstout\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Important HP threshold at 927 HP (<)\\n\\n# HP-based abilities\\nuse(Barrel Ready:353) [enemy.hp<927]\\n\\n# General rotation\\nuse(Barrel Ready:353)  # Used 12 times"
+    },
+    "Shademaster Kiryn": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/43/Shademaster_Kiryn",
+      "total_variations": 12,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Shademaster Kiryn\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [40%] Enemy has big hits (players use Dodge 12 times)\\n\\n# General rotation\\nuse(R\u00f4der:543)  # Used 24 times\\nuse(Esquive:311)  # Used 12 times"
+    },
+    "Wise Mari": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/41/Wise_Mari",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Wise Mari\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Make it Rain:986)  # Used 4 times"
+    },
+    "Blingtron 4000": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/42/Blingtron_4000",
+      "total_variations": 656,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Blingtron 4000\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Immolate:177) [round=1]\\n\\n# General rotation\\nuse(Immolate:177)  # Used 1312 times"
+    },
+    "Sully \"The Pickle\" McLeary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/45/Sully_\"The_Pickle\"_McLeary",
+      "total_variations": 2520,
+      "abilities_count": 3,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Sully \"The Pickle\" McLeary\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 2520 times)\\n\\n# Priority abilities (high usage)\\nuse(Swarm of Flies:231) [round=1]\\nuse(Undead:242) [round=1]\\n\\n# General rotation\\nuse(Swarm of Flies:231)  # Used 2520 times\\nuse(Undead:242)  # Used 2520 times\\nuse(Underground:340)  # Used 2520 times"
+    },
+    "Dr. Ion Goldbloom": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/46/Dr._Ion_Goldbloom",
+      "total_variations": 336,
+      "abilities_count": 3,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Dr. Ion Goldbloom\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Flying:341) [round=1]\\nuse(Howl:1725) [round=1]\\n\\n# General rotation\\nuse(Flying:341)  # Used 336 times\\nuse(Howl:1725)  # Used 336 times\\nuse(Flame Breath:500)  # Used 336 times"
+    },
+    "Lorewalker Cho": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/47/Lorewalker_Cho",
+      "total_variations": 36,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Lorewalker Cho\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Plagued Blood:658)  # Used 36 times\\nuse(Death and Decay:213)  # Used 36 times"
+    },
+    "Chi-Chi, Hatchling of Chi-Ji": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/51/Chi-Chi,_Hatchling_of_Chi-Ji",
+      "total_variations": 40460,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Chi-Chi, Hatchling of Chi-Ji\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Zao, Calfling of Niuzao": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/52/Zao,_Calfling_of_Niuzao",
+      "total_variations": 28,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Zao, Calfling of Niuzao\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Xu-Fu, Cub of Xuen": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/49/Xu-Fu,_Cub_of_Xuen",
+      "total_variations": 3042,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Xu-Fu, Cub of Xuen\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Yu'la, Broodling of Yu'lon": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/50/Yu'la,_Broodling_of_Yu'lon",
+      "total_variations": 13248,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Yu'la, Broodling of Yu'lon\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "another strategy": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/4924/Yula,_Broodling_of_Yulon",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: another strategy\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Human Resources": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Human Resources\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 227 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Dragons Make Everything Better": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/759",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Dragons Make Everything Better\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fun With Flying": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/789",
+      "total_variations": 20,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fun With Flying\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 20 times"
+    },
+    "Not Quite Dead Yet": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/819",
+      "total_variations": 40,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Not Quite Dead Yet\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Critters With Huge Teeth": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/849",
+      "total_variations": 3,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Critters With Huge Teeth\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [15%] Important HP threshold at 630 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Magicians Secret": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/879",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Magicians Secret\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Enemy is FAST (players check self.speed.slow)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Element of Success": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/909",
+      "total_variations": 392,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Element of Success\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Beast Mode": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/939",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Beast Mode\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Hobbyist Aquarist": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/969",
+      "total_variations": 12,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Hobbyist Aquarist\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 24 times\\nuse(Shattered Defenses:542)  # Used 12 times"
+    },
+    "Machine Learning": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/999",
+      "total_variations": 891,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Machine Learning\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Delia HanakoQuest: That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729/That's_a_Big_Carcass",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Delia HanakoQuest: That's a Big Carcass\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 227 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "BurlyQuest: Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/730/Strange_Looking_Dogs",
+      "total_variations": 80,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: BurlyQuest: Strange Looking Dogs\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 80 times)\\n\\n# Priority abilities (high usage)\\nuse(Ice Tomb:623) [round=1]\\nuse(Undead:242) [round=1]\\n\\n# General rotation\\nuse(Ice Tomb:623)  # Used 80 times\\nuse(Undead:242)  # Used 80 times"
+    },
+    "KwintQuest: Not So Bad Down Here": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/731/Not_So_Bad_Down_Here",
+      "total_variations": 27,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: KwintQuest: Not So Bad Down Here\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Weakened Defenses:516)  # Used 27 times"
+    },
+    "Leana DarkwindQuest: Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/734/Captured_Evil",
+      "total_variations": 30,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Leana DarkwindQuest: Captured Evil\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Poisoned:379)  # Used 30 times\\nuse(Frost Shock:415)  # Used 30 times"
+    },
+    "Ellie VernQuest: Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/735/Sea_Creatures_Are_Weird_",
+      "total_variations": 60,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Ellie VernQuest: Sea Creatures Are Weird\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 60 times)\\n\\n# Priority abilities (high usage)\\nuse(Undead:242) [round=1]\\nuse(Ice Tomb:623) [round=1]\\n\\n# General rotation\\nuse(Undead:242)  # Used 120 times\\nuse(Ice Tomb:623)  # Used 60 times"
+    },
+    "Eddie FixitQuest: Automated Chaos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/736/Automated_Chaos",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Eddie FixitQuest: Automated Chaos\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Michael SkarnQuest: What's the Buzz?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/739/What's_the_Buzz",
+      "total_variations": 8,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Michael SkarnQuest: What's the Buzz?\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Fizzie SparkwhistleQuest: Rogue Azerite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/740/Rogue_Azerite",
+      "total_variations": 12,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Fizzie SparkwhistleQuest: Rogue Azerite\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Dilbert McClintQuest: Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/741/Night_Horrors",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Dilbert McClintQuest: Night Horrors\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Booby-Trapped Presents:1081)  # Used 36 times"
+    },
+    "Captain HermesQuest: Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/742/Crab_People",
+      "total_variations": 80,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Captain HermesQuest: Crab People\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Ice Tomb:623) [round=1]\\n\\n# General rotation\\nuse(Ice Tomb:623)  # Used 80 times"
+    },
+    "Talia SparkbrowQuest: Add More to the Collection": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/744/Add_More_to_the_Collection",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Talia SparkbrowQuest: Add More to the Collection\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is SLOW (players check self.speed.fast)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "ZujaiQuest: Small Beginnings": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/745/Small_Beginnings",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: ZujaiQuest: Small Beginnings\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "KaragaQuest: Critters are Friends, Not Food": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/747/Critters_are_Friends,_Not_Food",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: KaragaQuest: Critters are Friends, Not Food\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [30%] Important HP threshold at 400 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "LozuQuest: Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/750/Marshdwellers",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: LozuQuest: Marshdwellers\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Korval DarkbeardQuest: Accidental Dread": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/751/Accidental_Dread",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Korval DarkbeardQuest: Accidental Dread\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Shattered Defenses:542)  # Used 36 times"
+    },
+    "Grady PrettQuest: Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/752/Pack_Leader",
+      "total_variations": 27,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Grady PrettQuest: Pack Leader\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Enemy has big hits (players use Undead (passive) 27 times)\\n\\n# General rotation\\nuse(Swarm of Flies:231)  # Used 27 times\\nuse(Undead:242)  # Used 27 times"
+    },
+    "KeeyoQuest: Keeyo's Champions of Vol'dun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/754/Keeyo's_Champions_of_Vol'dun",
+      "total_variations": 36,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: KeeyoQuest: Keeyo's Champions of Vol'dun\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Dodge:2060)  # Used 36 times"
+    },
+    "KusaQuest: Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/755/Desert_Survivors",
+      "total_variations": 2,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: KusaQuest: Desert Survivors\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Underground:340)  # Used 2 times"
+    },
+    "SizzikQuest: Snakes on a Terrace": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/757/Snakes_on_a_Terrace",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: SizzikQuest: Snakes on a Terrace\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Haunted Humanoids": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1210",
+      "total_variations": 64,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Haunted Humanoids\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Deathly Dragonkin": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1225",
+      "total_variations": 96,
+      "abilities_count": 0,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Deathly Dragonkin\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 1099 HP (<)\\n#   [100%] Important HP threshold at 733 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Flickering Fliers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1240",
+      "total_variations": 4,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Flickering Fliers\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Enemy is SLOW (players check self.speed.fast)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Unholy Undead": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1255",
+      "total_variations": 27,
+      "abilities_count": 0,
+      "inferences_count": 3,
+      "ai_script": "# Enemy AI: Unholy Undead\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is FAST (players check self.speed.slow)\\n#   [100%] Important HP threshold at 163 HP (<)\\n#   [100%] Important HP threshold at 497 HP (>)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Creepy Critters": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1270",
+      "total_variations": 216,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Creepy Critters\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 420 HP (>)\\n\\n# Priority abilities (high usage)\\nuse(Acidic Goo:368) [round=1]\\n\\n# HP-based abilities\\nuse(Acidic Goo:368) [enemy.hp>420]\\n\\n# General rotation\\nuse(Acidic Goo:368)  # Used 432 times"
+    },
+    "Mummified Magics": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1285",
+      "total_variations": 6,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Mummified Magics\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Eerie Elementals": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1300",
+      "total_variations": 30,
+      "abilities_count": 0,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Eerie Elementals\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Important HP threshold at 1362 HP (<)\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Beast Busters": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1315",
+      "total_variations": 18,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Beast Busters\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Aquatic Apparitions": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1330",
+      "total_variations": 140,
+      "abilities_count": 1,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Aquatic Apparitions\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy is FAST (players check self.speed.slow)\\n#   [100%] Important HP threshold at 211 HP (<)\\n\\n# Priority abilities (high usage)\\nuse(Amplify Magic:487) [round=1]\\n\\n# HP-based abilities\\nuse(Amplify Magic:487) [enemy.hp<211]\\n\\n# General rotation\\nuse(Amplify Magic:487)  # Used 280 times"
+    },
+    "Macabre Mechanicals": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1345",
+      "total_variations": 18,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Macabre Mechanicals\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [90%] Important HP threshold at 618 HP (<=)\\n\\n# HP-based abilities\\nuse(Toxic Smoke:639) [enemy.hp<=618]\\n\\n# General rotation\\nuse(Toxic Smoke:639)  # Used 18 times\\nuse(Make it Rain:986)  # Used 18 times"
+    },
+    "StratiosQuest: Cliffs of Bastion": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1210/Cliffs_of_Bastion",
+      "total_variations": 64,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: StratiosQuest: Cliffs of Bastion\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "ZollaQuest: Micro Defense Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1211/Micro_Defense_Force",
+      "total_variations": 64,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: ZollaQuest: Micro Defense Force\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "TheniaQuest: Thenia's Loyal Companions": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1212/Thenia's_Loyal_Companions",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: TheniaQuest: Thenia's Loyal Companions\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Caregiver MaximillianQuest: Mighty Minions of Maldraxxus": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1214/Mighty_Minions_of_Maldraxxus",
+      "total_variations": 64,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Caregiver MaximillianQuest: Mighty Minions of Maldraxxus\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Resilient:924) [round=1]\\n\\n# General rotation\\nuse(Resilient:924)  # Used 64 times"
+    },
+    "Dundley StickyfingersQuest: Uncomfortably Undercover": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1216/Uncomfortably_Undercover",
+      "total_variations": 12,
+      "abilities_count": 1,
+      "inferences_count": 2,
+      "ai_script": "# Enemy AI: Dundley StickyfingersQuest: Uncomfortably Undercover\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Enemy is SLOW (players check self.speed.fast)\\n#   [40%] Enemy has big hits (players use Undead (passive) 12 times)\\n\\n# General rotation\\nuse(Dodge:2060)  # Used 24 times"
+    },
+    "SyllaQuest: Resilient Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1218/Resilient_Survivors",
+      "total_variations": 30,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: SyllaQuest: Resilient Survivors\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "EyegorQuest: Eyegor's Special Friends": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1219/Eyegor's_Special_Friends",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: EyegorQuest: Eyegor's Special Friends\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Flamethrower:502)  # Used 18 times"
+    },
+    "Addius the TormentorQuest: The Mind Games of Addius": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1220/The_Mind_Games_of_Addius",
+      "total_variations": 36,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Addius the TormentorQuest: The Mind Games of Addius\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "GlitterdustQuest: Natural Defenders": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1222/Natural_Defenders",
+      "total_variations": 18,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: GlitterdustQuest: Natural Defenders\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Stunned:927)  # Used 18 times"
+    },
+    "FarylQuest: Airborne Defense Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1223/Airborne_Defense_Force",
+      "total_variations": 48,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: FarylQuest: Airborne Defense Force\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "https://www.wow-petguide.com/Strategy/11028/Mega_Bite": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/11028/Mega_Bite",
+      "total_variations": 8,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: https://www.wow-petguide.com/Strategy/11028/Mega_Bite\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Trainer Grrglin": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1359/Trainer_Grrglin",
+      "total_variations": 512,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Trainer Grrglin\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin",
+      "total_variations": 4,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Important HP threshold at 661 HP (>)\\n\\n# HP-based abilities\\nuse(Black Claw:918) [enemy.hp>661]\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 4 times\\nuse(Shattered Defenses:542)  # Used 4 times"
+    },
+    "Klick": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Lehrer_Grrglin",
+      "total_variations": 4,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Klick\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [20%] Important HP threshold at 661 HP (>)\\n\\n# HP-based abilities\\nuse(Black Claw:918) [enemy.hp>661]\\n\\n# General rotation\\nuse(Black Claw:918)  # Used 4 times\\nuse(Shattered Defenses:542)  # Used 4 times"
+    },
+    "Prototype Annoy-O-Tron": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1032/Prototype_Annoy-O-Tron",
+      "total_variations": 45,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Prototype Annoy-O-Tron\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Living Sludge": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1034/Living_Sludge",
+      "total_variations": 24,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Living Sludge\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [80%] Enemy has big hits (players use Undead (passive) 24 times)\\n\\n# General rotation\\nuse(Dodge:2060)  # Used 24 times\\nuse(Undead:242)  # Used 24 times"
+    },
+    "Living Napalm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1035/Living_Napalm",
+      "total_variations": 125,
+      "abilities_count": 6,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Living Napalm\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [100%] Enemy has big hits (players use Undead (passive) 125 times)\\n\\n# Priority abilities (high usage)\\nuse(Corrosion:446) [round=1]\\nuse(Immolate:177) [round=1]\\n\\n# General rotation\\nuse(Corrosion:446)  # Used 250 times\\nuse(Immolate:177)  # Used 250 times\\nuse(Dodge:2060)  # Used 125 times\\nuse(Undead:242)  # Used 125 times\\nuse(Acidic Goo:368)  # Used 125 times"
+    },
+    "Living Permafrost": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1036/Living_Permafrost",
+      "total_variations": 810,
+      "abilities_count": 2,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Living Permafrost\\n# Auto-generated from comprehensive analysis\\n\\n# Priority abilities (high usage)\\nuse(Brittle Webbing:381) [round=1]\\nuse(Webbed:338) [round=1]\\n\\n# General rotation\\nuse(Brittle Webbing:381)  # Used 1620 times\\nuse(Webbed:338)  # Used 810 times"
+    },
+    "Door Control Console": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1038/Door_Control_Console",
+      "total_variations": 1452,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Door Control Console\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Cockroach": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1040/Cockroach",
+      "total_variations": 18,
+      "abilities_count": 2,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Cockroach\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [60%] Enemy has big hits (players use Undead (passive) 18 times)\\n\\n# General rotation\\nuse(Dodge:2060)  # Used 18 times\\nuse(Undead:242)  # Used 18 times"
+    },
+    "Leper Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1041/Leper_Rat",
+      "total_variations": 210,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Leper Rat\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Bloated Leper Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1043/Bloated_Leper_Rat",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Bloated Leper Rat\\n# Auto-generated from comprehensive analysis\\n\\n# General rotation\\nuse(Whirlpool:512)  # Used 4 times"
+    },
+    "Gnomeregan Guard Mechanostrider": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1045/Gnomeregan_Guard_Mechanostrider",
+      "total_variations": 4,
+      "abilities_count": 1,
+      "inferences_count": 1,
+      "ai_script": "# Enemy AI: Gnomeregan Guard Mechanostrider\\n# Auto-generated from comprehensive analysis\\n\\n# Characteristics:\\n#   [13%] Enemy has big hits (players use Undead (passive) 4 times)\\n\\n# General rotation\\nuse(Untot:242)  # Used 4 times"
+    },
+    "Gnomeregan Guard Tiger": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1046/Gnomeregan_Guard_Tiger",
+      "total_variations": 2,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Gnomeregan Guard Tiger\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Gnomeregan Guard Wolf": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1047/Gnomeregan_Guard_Wolf",
+      "total_variations": 2340,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Gnomeregan Guard Wolf\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    },
+    "Pulverizer Bot Mk 6001": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1049/Pulverizer_Bot_Mk_6001",
+      "total_variations": 900,
+      "abilities_count": 0,
+      "inferences_count": 0,
+      "ai_script": "# Enemy AI: Pulverizer Bot Mk 6001\\n# Auto-generated from comprehensive analysis\\n\\n# No abilities detected from analysis\\n# This enemy may need manual scripting"
+    }
+  }
+}

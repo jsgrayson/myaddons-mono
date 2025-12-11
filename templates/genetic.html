@@ -1,0 +1,668 @@
+{% extends "base.html" %}
+
+{% block title %}Genetic Team Builder - PetWeaver{% endblock %}
+
+{% block head %}
+<style>
+    .genetic-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .control-panel {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .control-panel {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .panel-section h3 {
+        color: var(--wow-gold);
+        margin-bottom: 1rem;
+        font-family: 'Cinzel', serif;
+        border-bottom: 1px solid var(--glass-border);
+        padding-bottom: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid var(--glass-border);
+        border-radius: 6px;
+        color: var(--text-primary);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--wow-gold);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    .status-panel {
+        background: #1e1e1e;
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .progress-bar-container {
+        width: 100%;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin: 1rem 0;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--wow-gold), #ff8c00);
+        width: 0%;
+        transition: width 0.5s ease;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .result-card {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--glass-border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.2s;
+    }
+
+    .result-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--wow-gold);
+    }
+
+    .fitness-score {
+        font-size: 2rem;
+        color: var(--success);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .pet-icon {
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 4px;
+        border: 1px solid #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 2px black;
+    }
+
+    /* Family Colors */
+    .family-0 {
+        background: #a8a8a8;
+    }
+
+    /* Humanoid */
+    .family-1 {
+        background: #4caf50;
+    }
+
+    /* Dragonkin (Wait, map might be different) */
+    .family-2 {
+        background: #ffd700;
+        color: #000;
+    }
+
+    /* Flying */
+    .family-3 {
+        background: #9c27b0;
+    }
+
+    /* Undead */
+    .family-4 {
+        background: #795548;
+    }
+
+    /* Critter */
+    .family-5 {
+        background: #2196f3;
+    }
+
+    /* Magic */
+    .family-6 {
+        background: #ff5722;
+    }
+
+    /* Elemental */
+    .family-7 {
+        background: #8bc34a;
+        color: #000;
+    }
+
+    /* Beast */
+    .family-8 {
+        background: #00bcd4;
+    }
+
+    /* Aquatic */
+    .family-9 {
+        background: #607d8b;
+    }
+
+    /* Mechanical */
+
+    .log-console {
+        background: #000;
+        color: #0f0;
+        font-family: monospace;
+        padding: 1rem;
+        height: 200px;
+        overflow-y: auto;
+        border-radius: 8px;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">🧬 Genetic Team Builder</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-dna me-2"></i>Evolve the perfect team using genetic algorithms
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<div class="genetic-container">
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="panel-section">
+            <h3><i class="fas fa-crosshairs me-2"></i>Target Configuration</h3>
+            <div class="form-group">
+                <label>Target Encounter</label>
+                <div class="d-flex gap-2">
+                    <select id="target-encounter" onchange="updateTargetInfo()"
+                        class="form-select bg-dark text-white border-secondary">
+                        {% for id, data in encounters.items() %}
+                        <option value="{{ id }}">{{ data.name }}</option>
+                        {% endfor %}
+                        <option value="dummy">Target Dummy (Test)</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-info" onclick="fetchStrategy()"
+                        title="Fetch proven strategy">
+                        <i class="fas fa-scroll"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Target Info Display -->
+            <div id="target-info" class="mt-3 p-3 bg-dark rounded border border-secondary" style="display: none;">
+                <h4 class="text-muted mb-2 small text-uppercase fw-bold">Enemy Team</h4>
+                <div id="target-pets" class="d-flex gap-2 flex-wrap"></div>
+            </div>
+
+            <!-- Strategy Display -->
+            <div id="strategy-display" class="mt-3 p-3 bg-dark rounded border-start border-4 border-warning"
+                style="display: none;">
+                <h4 class="text-warning mb-2 small text-uppercase fw-bold">Proven Strategy</h4>
+                <div id="strategy-content" class="small text-muted font-monospace mb-2"
+                    style="max-height: 150px; overflow-y: auto;">
+                </div>
+                <button class="btn btn-sm btn-warning w-100" onclick="copyStrategy()">
+                    <i class="fas fa-copy me-2"></i>Copy Import String
+                </button>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>Constraints</label>
+                <select id="constraints" class="form-select bg-dark text-white border-secondary">
+                    <option value="none">No Constraints</option>
+                    <option value="owned">My Collection Only</option>
+                    <option value="leveling">Include 1 Leveling Pet</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <h3><i class="fas fa-cogs me-2"></i>Evolution Parameters</h3>
+            <div class="form-group">
+                <label>Population Size</label>
+                <input type="number" id="pop-size" value="50" min="10" max="200"
+                    class="form-control bg-dark text-white border-secondary">
+
+                <label class="mt-3">Generations</label>
+                <input type="number" id="generations" value="20" min="5" max="100"
+                    class="form-control bg-dark text-white border-secondary">
+
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" id="my-pets-only" checked>
+                    <label class="form-check-label text-white" for="my-pets-only">
+                        Use Only My Pets (recommended)
+                    </label>
+                </div>
+
+                <label class="mt-3">Leveling Mode</label>
+                <select id="leveling-mode" class="form-select bg-dark text-white border-secondary">
+                    <option value="0">No Leveling (All Max Level)</option>
+                    <option value="1">1 Carry Slot</option>
+                    <option value="2">2 Carry Slots</option>
+                </select>
+
+                <div class="d-flex gap-2 mt-3">
+                    <button type="button" class="btn btn-outline-secondary flex-grow-1 btn-sm"
+                        onclick="setPreset('fast')">
+                        <i class="fas fa-bolt me-1"></i>Fast (20/10)
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary flex-grow-1 btn-sm"
+                        onclick="setPreset('thorough')">
+                        <i class="fas fa-bullseye me-1"></i>Thorough (50/30)
+                    </button>
+                </div>
+                <button type="button" class="btn btn-primary w-100 mt-4" onclick="startEvolution()">
+                    <i class="fas fa-rocket me-2"></i>Start Evolution
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Status Panel -->
+    <div class="status-panel" id="status-panel" style="display: none;">
+        <h2 id="status-text" class="text-white">Evolving Generation 1...</h2>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <div class="text-muted small text-uppercase">Best Fitness</div>
+                <div class="fitness-score" id="best-fitness">0</div>
+            </div>
+            <div>
+                <div class="text-muted small text-uppercase">Avg Fitness</div>
+                <div class="display-6 text-white" id="avg-fitness">0</div>
+            </div>
+        </div>
+        <div class="log-console" id="evolution-log"></div>
+        <button type="button" class="btn btn-danger mt-3" onclick="stopEvolution()">
+            <i class="fas fa-stop me-2"></i>Stop
+        </button>
+    </div>
+
+    <!-- Results -->
+    <div id="results-area" style="display: none;">
+        <h3 class="text-warning mb-4 text-center"><i class="fas fa-trophy me-2"></i>Top Evolved Teams</h3>
+        <div class="results-grid" id="results-grid">
+            <!-- Results injected here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentLogOffset = 0;
+    let isRunning = false;
+    let pollInterval = null;
+
+    // Inject encounters data from backend
+    const allEncounters = {{ encounters | tojson | safe }};
+
+    function updateTargetInfo() {
+        const select = document.getElementById('target-encounter');
+        const targetId = select.value;
+        const infoDiv = document.getElementById('target-info');
+        const petsDiv = document.getElementById('target-pets');
+
+        if (targetId === 'dummy' || !allEncounters[targetId]) {
+            infoDiv.style.display = 'none';
+            return;
+        }
+
+        const encounter = allEncounters[targetId];
+        infoDiv.style.display = 'block';
+        petsDiv.innerHTML = '';
+
+        if (encounter.npc_pets) {
+            encounter.npc_pets.forEach(pet => {
+                // Map string family to ID if needed
+                const familyMap = {
+                    'Humanoid': 0, 'Dragonkin': 1, 'Flying': 2, 'Undead': 3, 'Critter': 4,
+                    'Magic': 5, 'Elemental': 6, 'Beast': 7, 'Aquatic': 8, 'Mechanical': 9
+                };
+                const famId = familyMap[pet.family] !== undefined ? familyMap[pet.family] : 7;
+                const initials = (pet.name || '??').substring(0, 2).toUpperCase();
+
+                const petHtml = `
+                    <div class="d-flex align-items-center gap-2 bg-black bg-opacity-50 p-1 rounded border border-secondary">
+                        <div class="pet-icon family-${famId}" title="${pet.family}">${initials}</div>
+                        <div class="small text-white pe-2">${pet.name}</div>
+                    </div>
+                `;
+                petsDiv.insertAdjacentHTML('beforeend', petHtml);
+            });
+        }
+    }
+
+    // Init on load
+    document.addEventListener('DOMContentLoaded', updateTargetInfo);
+
+    function setPreset(type) {
+        if (type === 'fast') {
+            document.getElementById('pop-size').value = 20;
+            document.getElementById('generations').value = 10;
+        } else if (type === 'thorough') {
+            document.getElementById('pop-size').value = 50;
+            document.getElementById('generations').value = 30;
+        }
+    }
+
+    async function startEvolution() {
+        const target = document.getElementById('target-encounter').value;
+        const popSize = document.getElementById('pop-size').value;
+        const generations = document.getElementById('generations').value;
+        const myPetsOnly = document.getElementById('my-pets-only').checked;
+        const levelingMode = document.getElementById('leveling-mode').value;
+
+        const configPanel = document.querySelector('.control-panel');
+        if (configPanel) {
+            configPanel.style.display = 'none';
+        }
+        document.getElementById('status-panel').style.display = 'block';
+        document.getElementById('results-area').style.display = 'none';
+        document.getElementById('evolution-log').innerHTML = '';
+        currentLogOffset = 0;
+
+        try {
+            const response = await fetch('/api/genetic/start', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    target: target,
+                    pop_size: parseInt(popSize),
+                    generations: parseInt(generations),
+                    my_pets_only: myPetsOnly,
+                    leveling_mode: parseInt(levelingMode)
+                })
+            });
+            const data = await response.json();
+
+            if (data.message === 'Started') {
+                isRunning = true;
+                pollInterval = setInterval(pollStatus, 1000);
+                log("Evolution started...");
+            } else {
+                log("Error from server: " + (data.error || data.message));
+            }
+        } catch (e) {
+            log("Error starting: " + e.message);
+        }
+    }
+
+    async function pollStatus() {
+        if (!isRunning) return;
+
+        try {
+            const response = await fetch(`/api/genetic/status?offset=${currentLogOffset}`);
+            const data = await response.json();
+
+            // Update UI
+            document.getElementById('status-text').innerText =
+                data.status === 'RUNNING' ? `Evolving Generation ${data.generation}/${data.max_generations}` : data.status;
+
+            const progress = (data.generation / data.max_generations) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            document.getElementById('best-fitness').innerText = Math.round(data.best_fitness || 0);
+            document.getElementById('avg-fitness').innerText = Math.round(data.avg_fitness || 0);
+
+            if (data.new_logs && data.new_logs.length > 0) {
+                data.new_logs.forEach(msg => log(msg));
+                currentLogOffset = data.log_offset;
+            }
+
+            if (data.status === 'COMPLETED') {
+                isRunning = false;
+                clearInterval(pollInterval);
+                currentTeams = data.top_teams || [];
+                showResults(currentTeams);
+                log("Evolution Complete!");
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    function showResults(teams) {
+        const grid = document.getElementById('results-grid');
+        grid.innerHTML = '';
+        document.getElementById('results-area').style.display = 'block';
+
+        teams.forEach((team, index) => {
+            // Build pet cards with ability details
+            const petCards = team.pets.map((p, petIdx) => {
+                const initials = (p.name || 'S' + p.species_id).substring(0, 2).toUpperCase();
+                const familyClass = 'family-' + (p.family_id || 0);
+
+                // Format abilities if available
+                let abilitiesHTML = '';
+                if (p.abilities && p.abilities.length > 0) {
+                    abilitiesHTML = p.abilities.map((ab, idx) => {
+                        const powerText = ab.power ? `⚔️${ab.power}` : '';
+                        const accuracyText = ab.accuracy ? `🎯${ab.accuracy}%` : '';
+                        const cooldownText = ab.cooldown ? `⏱${ab.cooldown}` : '';
+                        const stats = [powerText, accuracyText, cooldownText].filter(s => s).join(' ');
+                        return `<div class="small text-muted ms-2">
+                            ${idx + 1}. ${ab.name} <span class="text-secondary">(${stats})</span>
+                        </div>`;
+                    }).join('');
+                }
+
+                return `
+                    <div class="mb-2 p-2 bg-black bg-opacity-25 rounded border-start border-3 border-warning">
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <div class="pet-icon ${familyClass}" title="${p.name || 'Species ' + p.species_id}">${initials}</div>
+                            <div>
+                                <div class="fw-bold text-white small">${p.name || 'Species ' + p.species_id}</div>
+                                <div class="small text-muted">Level ${p.level || 25}</div>
+                            </div>
+                        </div>
+                        ${abilitiesHTML}
+                    </div>
+                `;
+            }).join('');
+
+            const html = `
+            <div class="result-card">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-white mb-0">Rank #${index + 1}</h4>
+                    <div class="fitness-score mb-0">${Math.round(team.fitness)}</div>
+                </div>
+                <div class="d-flex justify-content-between small text-muted mb-3">
+                    <div>Win Rate: ${team.stats ? Math.round(team.stats.win_rate * 100) : 0}%</div>
+                    <div>Damage: ${team.stats ? Math.round(team.stats.avg_damage_pct * 100) : 0}%</div>
+                </div>
+                ${petCards}
+                <button class="btn btn-primary w-100 mt-3 btn-sm" onclick="exportTeam(${index})">
+                    <i class="fas fa-file-export me-2"></i>Export to Rematch
+                </button>
+            </div>
+        `;
+            grid.insertAdjacentHTML('beforeend', html);
+        });
+
+        // Add Start Over button if not present
+        if (!document.getElementById('start-over-btn')) {
+            const btn = document.createElement('button');
+            btn.id = 'start-over-btn';
+            btn.className = 'btn btn-secondary w-100 mt-4';
+            btn.innerHTML = '<i class="fas fa-redo me-2"></i>Start Over';
+            btn.onclick = resetUI;
+            document.getElementById('results-area').appendChild(btn);
+        }
+    }
+
+    function resetUI() {
+        document.getElementById('results-area').style.display = 'none';
+        document.getElementById('status-panel').style.display = 'none';
+        const configPanel = document.querySelector('.control-panel');
+        if (configPanel) {
+            configPanel.style.display = 'grid';
+        }
+        // Clear previous results
+        document.getElementById('results-grid').innerHTML = '';
+        const startOverBtn = document.getElementById('start-over-btn');
+        if (startOverBtn) startOverBtn.remove();
+    }
+
+    function log(msg) {
+        const console = document.getElementById('evolution-log');
+        const line = document.createElement('div');
+        line.innerText = `> ${msg}`;
+        console.appendChild(line);
+        console.scrollTop = console.scrollHeight;
+    }
+
+    let currentTeams = [];
+
+    function exportTeam(index) {
+        const team = currentTeams[index];
+        if (!team) return;
+
+        // Build complete strategy export with enemy info
+        const targetEncounter = 'Squirt (WoD Garrison)'; // Will be dynamic from backend
+        const enemyTeam = 'Deebs | Tyri | Puzzle';
+
+        const teamLine = `team:${team.pets.map(p => p.species_id).join(',')}`;
+
+        // Build ability sequence for each pet
+        const strategyLines = team.pets.map((pet, petIndex) => {
+            const petNum = petIndex + 1;
+            const priority = pet.priority || [1, 2, 3];
+            const abilities = pet.abilities || [1, 2, 3];
+
+            const abilitySequence = priority.map(slot => {
+                const abilityId = abilities[slot - 1] || slot;
+                return `ability(${abilityId})`;
+            }).join(' ');
+
+            return `pet(${petNum}):${abilitySequence}`;
+        });
+
+        // Complete strategy export
+        const fullStrategy = [
+            `========================================`,
+            `EVOLVED STRATEGY FOR ${targetEncounter.toUpperCase()}`,
+            `========================================`,
+            ``,
+            `Enemy Team: ${enemyTeam}`,
+            ``,
+            `Your Team: ${team.pets.map(p => p.name || 'Unknown').join(' | ')}`,
+            `Fitness Score: ${Math.round(team.fitness)}`,
+            `Win Rate: ${team.stats ? Math.round(team.stats.win_rate * 100) : 0}%`,
+            `Avg Damage: ${team.stats ? Math.round(team.stats.avg_damage_pct * 100) : 0}%`,
+            ``,
+            `----------------------------------------`,
+            `REMATCH IMPORT STRING:`,
+            `----------------------------------------`,
+            teamLine,
+            ...strategyLines,
+            ``,
+            `Copy the lines above into Rematch addon!`
+        ].join('\\n');
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(fullStrategy).then(() => {
+            alert('✅ Complete strategy copied to clipboard!\\n\\nPaste into Rematch or share with friends.');
+        }).catch(err => {
+            prompt('Copy this complete strategy:', fullStrategy);
+        });
+    }
+
+    async function stopEvolution() {
+        await fetch('/api/genetic/stop', { method: 'POST' });
+        isRunning = false;
+        clearInterval(pollInterval);
+        document.getElementById('status-text').innerText = "Stopped";
+    }
+
+    async function fetchStrategy() {
+        const select = document.getElementById('target-encounter');
+        const targetId = select.value;
+        const targetName = select.options[select.selectedIndex].text;
+
+        if (targetId === 'dummy') {
+            alert('No strategy for dummy target.');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/strategy/fetch?npc_name=${encodeURIComponent(targetName)}`);
+            const data = await response.json();
+
+            if (data.found) {
+                const display = document.getElementById('strategy-display');
+                const content = document.getElementById('strategy-content');
+
+                // Store rematch string for copy
+                display.dataset.rematch = data.strategy.rematch_string;
+
+                content.innerText = `Strategy: ${data.strategy.strategy_name}\n\nScript:\n${data.strategy.script}`;
+                display.style.display = 'block';
+            } else {
+                alert('No strategy found for this encounter.');
+                document.getElementById('strategy-display').style.display = 'none';
+            }
+        } catch (e) {
+            console.error(e);
+            alert('Error fetching strategy.');
+        }
+    }
+
+    function copyStrategy() {
+        const display = document.getElementById('strategy-display');
+        const str = display.dataset.rematch;
+        if (str) {
+            navigator.clipboard.writeText(str).then(() => {
+                alert('Strategy import string copied!');
+            });
+        }
+    }
+</script>
+{% endblock %}

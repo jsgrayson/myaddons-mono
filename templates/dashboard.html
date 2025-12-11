@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}Progress Dashboard - PetWeaver{% endblock %}
+
+{% block head %}
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h2 class="text-white mb-4">Dashboard</h2>
+    </div>
+</div>
+
+<!-- Quick Stats -->
+<div class="row mb-4">
+    <div class="col-md-4 mb-3">
+        <div class="card widget-card h-100 border-success">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-check-circle me-2"></i>Ready Encounters</h6>
+                <h2 class="mb-0 text-success fw-bold" id="ready-count">0</h2>
+                <small class="text-muted">Can do now</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card widget-card h-100">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-database me-2"></i>Total Encounters</h6>
+                <h2 class="mb-0 text-white fw-bold" id="total-count">0</h2>
+                <small class="text-muted">In database</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card widget-card h-100">
+            <div class="card-body text-center">
+                <h6 class="text-light mb-2"><i class="fas fa-chart-pie me-2"></i>Completion Rate</h6>
+                <h2 class="mb-0 text-white fw-bold" id="completion-rate">0%</h2>
+                <small class="text-muted">Progress</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Collection Health Score -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-heartbeat me-2"></i>Collection Health Score
+            </div>
+            <div class="card-body">
+                <div id="health-score">
+                    <div class="text-center text-muted py-4">
+                        <i class="fas fa-spinner fa-spin me-2"></i>Analyzing collection...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-chart-bar me-2"></i>Ready by Expansion
+            </div>
+            <div class="card-body">
+                <canvas id="expansionChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-chart-pie me-2"></i>Ready by Category
+            </div>
+            <div class="card-body">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recommendations -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-bullseye me-2"></i>Recommended: Do These Next
+            </div>
+            <div class="card-body">
+                <div id="recommendations" class="list-group list-group-flush">
+                    <div class="text-center text-muted py-4">
+                        <i class="fas fa-spinner fa-spin me-2"></i>Loading recommendations...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let expansionChart, categoryChart;
+
+    function loadAnalytics() {
+        fetch('/api/analytics')
+            .then(res => res.json())
+            .then(data => {
+                // Update stats
+                document.getElementById('ready-count').innerText = data.readyEncounters;
+                document.getElementById('total-count').innerText = data.totalEncounters;
+                const rate = data.totalEncounters > 0 ?
+                    ((data.readyEncounters / data.totalEncounters) * 100).toFixed(1) : 0;
+                document.getElementById('completion-rate').innerText = rate + '%';
+
+                // Expansion Chart
+                const expCtx = document.getElementById('expansionChart').getContext('2d');
+                if (expansionChart) expansionChart.destroy();
+                expansionChart = new Chart(expCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(data.readyByExpansion),
+                        datasets: [{
+                            label: 'Ready Encounters',
+                            data: Object.values(data.readyByExpansion),
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: { beginAtZero: true, ticks: { color: '#e0e0e0' }, grid: { color: '#333' } },
+                            x: { ticks: { color: '#e0e0e0' }, grid: { color: '#333' } }
+                        },
+                        plugins: { legend: { labels: { color: '#e0e0e0' } } },
+                        onClick: (event, elements) => {
+                            if (elements.length > 0) {
+                                const index = elements[0].index;
+                                const expansion = Object.keys(data.readyByExpansion)[index];
+                                // Navigate to strategies page with expansion filter
+                                window.location.href = `/strategies?expansion=${encodeURIComponent(expansion)}`;
+                            }
+                        }
+                    }
+                });
+
+                // Category Chart
+                const catCtx = document.getElementById('categoryChart').getContext('2d');
+                if (categoryChart) categoryChart.destroy();
+                categoryChart = new Chart(catCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(data.readyByCategory),
+                        datasets: [{
+                            data: Object.values(data.readyByCategory),
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                            ],
+                            borderColor: '#222',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: { legend: { labels: { color: '#e0e0e0' } } },
+                        onClick: (event, elements) => {
+                            if (elements.length > 0) {
+                                const index = elements[0].index;
+                                const category = Object.keys(data.readyByCategory)[index];
+                                // Navigate to strategies page with category filter
+                                window.location.href = `/strategies?category=${encodeURIComponent(category)}`;
+                            }
+                        }
+                    }
+                });
+            });
+    }
+
+    function loadRecommendations() {
+        fetch('/api/recommendations')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('recommendations');
+                if (data.length === 0) {
+                    container.innerHTML = '<div class="text-muted text-center py-4">No recommendations available</div>';
+                    return;
+                }
+
+                container.innerHTML = data.map((rec, i) => `
+                    <div class="list-group-item bg-transparent text-white border-secondary">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary me-3">#${i + 1}</span>
+                                <div>
+                                    <strong class="text-white">${rec.name}</strong>
+                                    <div class="small text-muted">${rec.expansion} • ${rec.category}</div>
+                                </div>
+                            </div>
+                            <span class="badge bg-info text-dark">${rec.reason}</span>
+                        </div>
+                    </div>
+                `).join('');
+            });
+    }
+
+    function loadCollectionHealth() {
+        fetch('/api/analytics/collection-health')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('health-score');
+
+                // Get score color
+                let scoreColor = 'var(--error)';
+                if (data.overall_score >= 80) scoreColor = 'var(--success)';
+                else if (data.overall_score >= 60) scoreColor = 'var(--warning)';
+
+                // Build family coverage heatmap
+                const families = Object.entries(data.family_coverage).sort((a, b) => b[1].owned - a[1].owned);
+                const maxOwned = Math.max(...families.map(([_, f]) => f.owned));
+
+                container.innerHTML = `
+                    <div class="row align-items-center">
+                        <!-- Score Ring -->
+                        <div class="col-md-4 text-center">
+                            <div style="position: relative; width: 150px; height: 150px; margin: 0 auto;">
+                                <svg viewBox="0 0 100 100" style="transform: rotate(-90deg);">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="10"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="${scoreColor}" stroke-width="10" 
+                                            stroke-dasharray="${data.overall_score * 2.827}, 282.7" stroke-linecap="round"/>
+                                </svg>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: bold; color: ${scoreColor};">${data.overall_score}</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: -5px;">SCORE</div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="text-muted">Diversity: ${data.diversity_score}%</div>
+                                <div class="text-muted">Completeness: ${data.completeness_score}%</div>
+                                <div class="small text-muted mt-1">
+                                    ${data.total_owned} pets owned
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Family Coverage & Top Missing -->
+                        <div class="col-md-8">
+                            <h5 class="text-white mb-3">Pet Family Coverage</h5>
+                            <div class="row g-2 mb-4">
+                                ${families.map(([family, data]) => {
+                    const percentage = maxOwned > 0 ? (data.owned / maxOwned) * 100 : 0;
+                    return `
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div style="min-width: 80px; font-size: 0.85rem;" class="text-light">${family}</div>
+                                                <div class="flex-grow-1 progress" style="height: 8px; background: rgba(255,255,255,0.1);">
+                                                    <div class="progress-bar bg-primary" style="width: ${percentage}%;"></div>
+                                                </div>
+                                                <div style="min-width: 30px; font-size: 0.85rem;" class="text-end text-muted">${data.owned}</div>
+                                            </div>
+                                        </div>
+                                    `;
+                }).join('')}
+                            </div>
+                            
+                            ${data.missing_high_value.length > 0 ? `
+                                <h5 class="text-white mb-3">🎯 Top Missing Pets (High Value)</h5>
+                                <div class="d-flex flex-column gap-2">
+                                    ${data.missing_high_value.slice(0, 5).map(pet => `
+                                        <div class="d-flex justify-content-between align-items-center p-2 rounded" style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error);">
+                                            <span class="fw-bold text-light">${pet.name}</span>
+                                            <span class="text-danger small">Unlocks ${pet.unlocks} strategies</span>
+                                            <a href="${pet.warcraftpets_url}" target="_blank" class="text-info small text-decoration-underline">View</a>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(err => {
+                console.error('Error loading collection health:', err);
+                document.getElementById('health-score').innerHTML = '<div class="text-danger text-center">Failed to load health data</div>';
+            });
+    }
+
+    // Load all data on page load
+    loadCollectionHealth();
+    loadAnalytics();
+    loadRecommendations();
+</script>
+{% endblock %}

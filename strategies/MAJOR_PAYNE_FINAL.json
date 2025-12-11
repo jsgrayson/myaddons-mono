@@ -1,0 +1,181 @@
+{
+    "encounter_name": "Major Payne",
+    "encounter_id": "major_payne",
+    "verified": true,
+    "win_rate": "100%",
+    "method": "Sequential 1v1 Optimization",
+    "date": "2025-11-26",
+    "team": [
+        {
+            "slot": 1,
+            "species_id": 3272,
+            "species_name": "Pricklefury Hare",
+            "level": 25,
+            "quality": "Rare",
+            "breed": "Any",
+            "target_enemy": "Grizzle",
+            "abilities": [
+                {
+                    "slot": 1,
+                    "id": 119,
+                    "name": "Scratch"
+                },
+                {
+                    "slot": 2,
+                    "id": 312,
+                    "name": "Dodge"
+                },
+                {
+                    "slot": 3,
+                    "id": 159,
+                    "name": "Burrow"
+                }
+            ],
+            "ability_priority": [
+                2,
+                3,
+                1
+            ],
+            "notes": "Dodge (priority 5) goes first to block Rampage. Then Burrow for safety. Scratch to finish."
+        },
+        {
+            "slot": 2,
+            "species_id": 2648,
+            "species_name": "Chitterspine Skitterling",
+            "level": 25,
+            "quality": "Rare",
+            "breed": "Any",
+            "target_enemy": "Beakmaster",
+            "available_abilities": {
+                "slot1": [
+                    {
+                        "id": 2067,
+                        "name": "Pinch"
+                    },
+                    {
+                        "id": 1380,
+                        "name": "Shell Armor"
+                    }
+                ],
+                "slot2": [
+                    {
+                        "id": 564,
+                        "name": "Dive"
+                    },
+                    {
+                        "id": 626,
+                        "name": "Skitter"
+                    }
+                ],
+                "slot3": [
+                    {
+                        "id": 919,
+                        "name": "Black Claw"
+                    },
+                    {
+                        "id": 706,
+                        "name": "Swarm"
+                    }
+                ]
+            },
+            "selected_abilities": [
+                {
+                    "slot": 1,
+                    "id": 919,
+                    "name": "Black Claw",
+                    "choice_index": 4
+                },
+                {
+                    "slot": 2,
+                    "id": 564,
+                    "name": "Dive",
+                    "choice_index": 2
+                },
+                {
+                    "slot": 3,
+                    "id": 626,
+                    "name": "Skitter",
+                    "choice_index": 3
+                }
+            ],
+            "notes": "Black Claw for +144 flat damage buff, Dive for Aquatic damage vs Mechanical, Skitter for additional DPS."
+        },
+        {
+            "slot": 3,
+            "species_id": 2438,
+            "species_name": "Foulfeather",
+            "level": 25,
+            "quality": "Rare",
+            "breed": "Any",
+            "target_enemy": "Bloom",
+            "available_abilities": {
+                "slot1": [
+                    {
+                        "id": 117,
+                        "name": "Infected Claw"
+                    },
+                    {
+                        "id": 666,
+                        "name": "Rabid Strike"
+                    }
+                ],
+                "slot2": [
+                    {
+                        "id": 581,
+                        "name": "Flock"
+                    },
+                    {
+                        "id": 112,
+                        "name": "Peck"
+                    }
+                ],
+                "slot3": [
+                    {
+                        "id": 919,
+                        "name": "Black Claw"
+                    },
+                    {
+                        "id": 160,
+                        "name": "Consume"
+                    }
+                ]
+            },
+            "selected_abilities": [
+                {
+                    "slot": 1,
+                    "id": 919,
+                    "name": "Black Claw",
+                    "choice_index": 4
+                },
+                {
+                    "slot": 2,
+                    "id": 160,
+                    "name": "Consume",
+                    "choice_index": 5
+                },
+                {
+                    "slot": 3,
+                    "id": 112,
+                    "name": "Peck",
+                    "choice_index": 3
+                }
+            ],
+            "notes": "Black Claw for damage amp, Consume for Undead sustain, Peck for Flying damage vs Elemental."
+        }
+    ],
+    "rematch_format": {
+        "team_name": "Major Payne - Sequential Win",
+        "pets": [
+            "Pricklefury Hare :: 1:1 2:2 3:2",
+            "Chitterspine Skitterling :: 1:2 2:1 3:1",
+            "Foulfeather :: 1:2 2:2 3:1"
+        ]
+    },
+    "execution_summary": {
+        "total_generations": 2,
+        "slot1_locked": "Pre-set (Pricklefury Hare)",
+        "slot2_discovered": "Gen 1",
+        "slot3_discovered": "Gen 2",
+        "verification_runs": 3
+    }
+}

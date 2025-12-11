@@ -1,0 +1,41 @@
+==================================================
+MAJOR PAYNE - Winning Team (100% Verified)
+==================================================
+
+🐰 Slot 1: Pricklefury Hare (3272)
+   Abilities: Scratch / Dodge / Burrow
+   Selection: 1:1 2:2 3:2
+   → Defeats: Grizzle (BEAST)
+
+🦀 Slot 2: Chitterspine Skitterling (2648)  
+   Abilities: Black Claw / Dive / Skitter
+   Selection: 1:2 2:1 3:1
+   → Defeats: Beakmaster (MECHANICAL)
+
+🦅 Slot 3: Foulfeather (2438)
+   Abilities: Black Claw / Consume / Peck
+   Selection: 1:2 2:2 3:1
+   → Defeats: Bloom (ELEMENTAL)
+
+==================================================
+STRATEGY
+==================================================
+
+Slot 1 (Pricklefury Hare):
+1. Dodge (Priority 5 - goes first!)
+2. Burrow (invulnerable + delayed attack)
+3. Scratch (finish Grizzle)
+
+Slot 2 (Chitterspine Skitterling):
+- Black Claw first (adds +144 flat damage)
+- Dive/Skitter to finish Beakmaster
+
+Slot 3 (Foulfeather):
+- Black Claw first (damage amp)
+- Peck (Flying vs Elemental = strong)
+- Consume if needed (healing)
+
+==================================================
+CRITICAL: Dodge duration=2 fix applied!
+This ensures Dodge persists through end-of-turn.
+==================================================

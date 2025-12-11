@@ -1,0 +1,3657 @@
+[
+  {
+    "id": 64330,
+    "name": "Julia Stevens",
+    "model": 1691,
+    "map_id": 37,
+    "quest_id": 31693,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Slither",
+        "species_id": 872,
+        "level": 2,
+        "quality": 2,
+        "model": 2954
+      },
+      {
+        "name": "Fangs",
+        "species_id": 873,
+        "level": 2,
+        "quality": 2,
+        "model": 2958
+      }
+    ]
+  },
+  {
+    "id": 66126,
+    "name": "Zunta",
+    "model": 44805,
+    "map_id": 1,
+    "quest_id": 31818,
+    "gold": 19,
+    "team": [
+      {
+        "name": "Spike",
+        "species_id": 890,
+        "level": 2,
+        "quality": 2,
+        "model": 45563
+      },
+      {
+        "name": "Mumtar",
+        "species_id": 889,
+        "level": 2,
+        "quality": 2,
+        "model": 45564
+      }
+    ]
+  },
+  {
+    "id": 66135,
+    "name": "Dagra the Fierce",
+    "model": 44809,
+    "map_id": 10,
+    "quest_id": 31819,
+    "gold": 6,
+    "team": [
+      {
+        "name": "Longneck",
+        "species_id": 893,
+        "level": 3,
+        "quality": 2,
+        "model": 45895
+      },
+      {
+        "name": "Springtail",
+        "species_id": 892,
+        "level": 3,
+        "quality": 2,
+        "model": 45565
+      },
+      {
+        "name": "Ripper",
+        "species_id": 891,
+        "level": 3,
+        "quality": 2,
+        "model": 45567
+      }
+    ]
+  },
+  {
+    "id": 65648,
+    "name": "Old MacDonald",
+    "model": 44495,
+    "map_id": 52,
+    "quest_id": 31780,
+    "gold": 6,
+    "team": [
+      {
+        "name": "Foe Reaper 800",
+        "species_id": 876,
+        "level": 3,
+        "quality": 2,
+        "model": 45555
+      },
+      {
+        "name": "Clucks",
+        "species_id": 875,
+        "level": 3,
+        "quality": 2,
+        "model": 26184
+      },
+      {
+        "name": "Teensy",
+        "species_id": 874,
+        "level": 3,
+        "quality": 2,
+        "model": 1418
+      }
+    ]
+  },
+  {
+    "id": 66136,
+    "name": "Analynn",
+    "model": 44999,
+    "map_id": 63,
+    "quest_id": 31854,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Mister Pinch",
+        "species_id": 896,
+        "level": 5,
+        "quality": 2,
+        "model": 45568
+      },
+      {
+        "name": "Oozer",
+        "species_id": 895,
+        "level": 5,
+        "quality": 2,
+        "model": 36313
+      },
+      {
+        "name": "Flutterby",
+        "species_id": 894,
+        "level": 5,
+        "quality": 2,
+        "model": 45569
+      }
+    ]
+  },
+  {
+    "id": 65651,
+    "name": "Lindsay",
+    "model": 43517,
+    "map_id": 49,
+    "quest_id": 31781,
+    "gold": 10,
+    "team": [
+      {
+        "name": "Flufftail",
+        "species_id": 879,
+        "level": 5,
+        "quality": 2,
+        "model": 45557
+      },
+      {
+        "name": "Dipsy",
+        "species_id": 878,
+        "level": 5,
+        "quality": 2,
+        "model": 45556
+      },
+      {
+        "name": "Flipsy",
+        "species_id": 877,
+        "level": 5,
+        "quality": 2,
+        "model": 36342
+      }
+    ]
+  },
+  {
+    "id": 65655,
+    "name": "Eric Davidson",
+    "model": 44498,
+    "map_id": 47,
+    "quest_id": 31850,
+    "gold": 5,
+    "team": [
+      {
+        "name": "Webwinder",
+        "species_id": 882,
+        "level": 7,
+        "quality": 2,
+        "model": 40337
+      },
+      {
+        "name": "Blackfang",
+        "species_id": 881,
+        "level": 7,
+        "quality": 2,
+        "model": 43193
+      },
+      {
+        "name": "Darkwidow",
+        "species_id": 880,
+        "level": 7,
+        "quality": 2,
+        "model": 368
+      }
+    ]
+  },
+  {
+    "id": 66137,
+    "name": "Zonya the Sadist",
+    "model": 45006,
+    "map_id": 65,
+    "quest_id": 31862,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Constrictor",
+        "species_id": 899,
+        "level": 7,
+        "quality": 2,
+        "model": 1986
+      },
+      {
+        "name": "Odoron",
+        "species_id": 898,
+        "level": 7,
+        "quality": 2,
+        "model": 42670
+      },
+      {
+        "name": "Acidous",
+        "species_id": 897,
+        "level": 7,
+        "quality": 2,
+        "model": 45570
+      }
+    ]
+  },
+  {
+    "id": 66372,
+    "name": "Merda Stronghoof",
+    "model": 45034,
+    "map_id": 66,
+    "quest_id": 31872,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Bounder",
+        "species_id": 902,
+        "level": 9,
+        "quality": 2,
+        "model": 43221
+      },
+      {
+        "name": "Ambershell",
+        "species_id": 901,
+        "level": 9,
+        "quality": 2,
+        "model": 45573
+      },
+      {
+        "name": "Rockhide",
+        "species_id": 900,
+        "level": 9,
+        "quality": 2,
+        "model": 45572
+      }
+    ]
+  },
+  {
+    "id": 63194,
+    "name": "Steven Lisbane",
+    "model": 4438,
+    "map_id": 50,
+    "quest_id": 31852,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Moonstalker",
+        "species_id": 884,
+        "level": 9,
+        "quality": 2,
+        "model": 45639
+      },
+      {
+        "name": "Emeralda",
+        "species_id": 883,
+        "level": 9,
+        "quality": 2,
+        "model": 45559
+      },
+      {
+        "name": "Nanners",
+        "species_id": 885,
+        "level": 9,
+        "quality": 2,
+        "model": 29963
+      }
+    ]
+  },
+  {
+    "id": 65656,
+    "name": "Bill Buckler",
+    "model": 44500,
+    "map_id": 210,
+    "quest_id": 31851,
+    "gold": 6,
+    "team": [
+      {
+        "name": "Burgle",
+        "species_id": 888,
+        "level": 11,
+        "quality": 3,
+        "model": 45562
+      },
+      {
+        "name": "Eyegouger",
+        "species_id": 887,
+        "level": 11,
+        "quality": 3,
+        "model": 45560
+      },
+      {
+        "name": "Young Beaky",
+        "species_id": 886,
+        "level": 11,
+        "quality": 3,
+        "model": 45561
+      }
+    ]
+  },
+  {
+    "id": 66422,
+    "name": "Cassandra Kaboom",
+    "model": 45093,
+    "map_id": 199,
+    "quest_id": 31904,
+    "gold": 10,
+    "team": [
+      {
+        "name": "Gizmo",
+        "species_id": 909,
+        "level": 11,
+        "quality": 3,
+        "model": 45580
+      },
+      {
+        "name": "Cluckatron",
+        "species_id": 908,
+        "level": 11,
+        "quality": 3,
+        "model": 45579
+      },
+      {
+        "name": "Whirls",
+        "species_id": 907,
+        "level": 11,
+        "quality": 3,
+        "model": 45578
+      }
+    ]
+  },
+  {
+    "id": 66478,
+    "name": "David Kosse",
+    "model": 45186,
+    "map_id": 26,
+    "quest_id": 31910,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Subject 142",
+        "species_id": 933,
+        "level": 13,
+        "quality": 3,
+        "model": 45597
+      },
+      {
+        "name": "Corpsefeeder",
+        "species_id": 932,
+        "level": 13,
+        "quality": 3,
+        "model": 45595
+      },
+      {
+        "name": "Plop",
+        "species_id": 931,
+        "level": 13,
+        "quality": 3,
+        "model": 45594
+      }
+    ]
+  },
+  {
+    "id": 66352,
+    "name": "Traitor Gluk",
+    "model": 45025,
+    "map_id": 69,
+    "quest_id": 31871,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Glimmer",
+        "species_id": 906,
+        "level": 13,
+        "quality": 3,
+        "model": 45577
+      },
+      {
+        "name": "Rasp",
+        "species_id": 905,
+        "level": 13,
+        "quality": 3,
+        "model": 45574
+      },
+      {
+        "name": "Prancer",
+        "species_id": 904,
+        "level": 13,
+        "quality": 3,
+        "model": 45576
+      }
+    ]
+  },
+  {
+    "id": 66512,
+    "name": "Deiza Plaguehorn",
+    "model": 45206,
+    "map_id": 23,
+    "quest_id": 31911,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Carrion",
+        "species_id": 936,
+        "level": 14,
+        "quality": 3,
+        "model": 20265
+      },
+      {
+        "name": "Bleakspinner",
+        "species_id": 935,
+        "level": 14,
+        "quality": 3,
+        "model": 45598
+      },
+      {
+        "name": "Plaguebringer",
+        "species_id": 934,
+        "level": 14,
+        "quality": 3,
+        "model": 45599
+      }
+    ]
+  },
+  {
+    "id": 66436,
+    "name": "Grazzle the Great",
+    "model": 45105,
+    "map_id": 70,
+    "quest_id": 31905,
+    "gold": 8,
+    "team": [
+      {
+        "name": "Blaze",
+        "species_id": 913,
+        "level": 14,
+        "quality": 3,
+        "model": 30356
+      },
+      {
+        "name": "Flameclaw",
+        "species_id": 912,
+        "level": 14,
+        "quality": 3,
+        "model": 45582
+      },
+      {
+        "name": "Firetooth",
+        "species_id": 911,
+        "level": 14,
+        "quality": 3,
+        "model": 45581
+      }
+    ]
+  },
+  {
+    "id": 66452,
+    "name": "Kela Grimtotem",
+    "model": 45132,
+    "map_id": 64,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Indigon",
+        "species_id": 917,
+        "level": 15,
+        "quality": 3,
+        "model": 45584
+      },
+      {
+        "name": "Plague",
+        "species_id": 916,
+        "level": 15,
+        "quality": 3,
+        "model": 22175
+      },
+      {
+        "name": "Cho'guana",
+        "species_id": 915,
+        "level": 15,
+        "quality": 3,
+        "model": 45583
+      }
+    ]
+  },
+  {
+    "id": 66515,
+    "name": "Kortas Darkhammer",
+    "model": 45211,
+    "map_id": 32,
+    "quest_id": 31912,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Garnestrasz",
+        "species_id": 939,
+        "level": 15,
+        "quality": 3,
+        "model": 45602
+      },
+      {
+        "name": "Veridia",
+        "species_id": 938,
+        "level": 15,
+        "quality": 3,
+        "model": 45601
+      },
+      {
+        "name": "Obsidion",
+        "species_id": 937,
+        "level": 15,
+        "quality": 3,
+        "model": 45600
+      }
+    ]
+  },
+  {
+    "id": 66518,
+    "name": "Everessa",
+    "model": 45223,
+    "map_id": 51,
+    "quest_id": 31913,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Dampwing",
+        "species_id": 943,
+        "level": 16,
+        "quality": 3,
+        "model": 45603
+      },
+      {
+        "name": "Croaker",
+        "species_id": 942,
+        "level": 16,
+        "quality": 3,
+        "model": 21950
+      },
+      {
+        "name": "Anklor",
+        "species_id": 941,
+        "level": 16,
+        "quality": 3,
+        "model": 45606
+      }
+    ]
+  },
+  {
+    "id": 66442,
+    "name": "Zoltan",
+    "model": 45110,
+    "map_id": 77,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Hatewalker",
+        "species_id": 923,
+        "level": 16,
+        "quality": 3,
+        "model": 45586
+      },
+      {
+        "name": "Beamer",
+        "species_id": 922,
+        "level": 16,
+        "quality": 3,
+        "model": 45585
+      },
+      {
+        "name": "Ultramus",
+        "species_id": 921,
+        "level": 16,
+        "quality": 3,
+        "model": 45587
+      }
+    ]
+  },
+  {
+    "id": 66520,
+    "name": "Durin Darkhammer",
+    "model": 45224,
+    "map_id": 36,
+    "quest_id": 31914,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Comet",
+        "species_id": 946,
+        "level": 17,
+        "quality": 3,
+        "model": 44533
+      },
+      {
+        "name": "Ignious",
+        "species_id": 945,
+        "level": 17,
+        "quality": 3,
+        "model": 45611
+      },
+      {
+        "name": "Moltar",
+        "species_id": 944,
+        "level": 17,
+        "quality": 3,
+        "model": 45884
+      }
+    ]
+  },
+  {
+    "id": 66412,
+    "name": "Elena Flutterfly",
+    "model": 45078,
+    "map_id": 80,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Willow",
+        "species_id": 926,
+        "level": 17,
+        "quality": 3,
+        "model": 45589
+      },
+      {
+        "name": "Beacon",
+        "species_id": 925,
+        "level": 17,
+        "quality": 3,
+        "model": 45590
+      },
+      {
+        "name": "Lacewing",
+        "species_id": 924,
+        "level": 17,
+        "quality": 3,
+        "model": 39352
+      }
+    ]
+  },
+  {
+    "id": 66522,
+    "name": "Lydia Accoste",
+    "model": 45225,
+    "map_id": 42,
+    "quest_id": 31916,
+    "gold": 20,
+    "team": [
+      {
+        "name": "Jack",
+        "species_id": 949,
+        "level": 19,
+        "quality": 3,
+        "model": 21900
+      },
+      {
+        "name": "Bishibosh",
+        "species_id": 948,
+        "level": 19,
+        "quality": 3,
+        "model": 45613
+      },
+      {
+        "name": "Nightstalker",
+        "species_id": 947,
+        "level": 19,
+        "quality": 3,
+        "model": 45612
+      }
+    ]
+  },
+  {
+    "id": 66466,
+    "name": "Stone Cold Trixxy",
+    "model": 45164,
+    "map_id": 83,
+    "quest_id": 31909,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Tinygos",
+        "species_id": 929,
+        "level": 19,
+        "quality": 3,
+        "model": 45593
+      },
+      {
+        "name": "Frostmaw",
+        "species_id": 928,
+        "level": 19,
+        "quality": 3,
+        "model": 45637
+      },
+      {
+        "name": "Blizzy",
+        "species_id": 927,
+        "level": 19,
+        "quality": 3,
+        "model": 45591
+      }
+    ]
+  },
+  {
+    "id": 66550,
+    "name": "Nicki Tinytech",
+    "model": 45230,
+    "map_id": 100,
+    "quest_id": 31922,
+    "gold": 23,
+    "team": [
+      {
+        "name": "ED-005",
+        "species_id": 952,
+        "level": 20,
+        "quality": 3,
+        "model": 29279
+      },
+      {
+        "name": "Goliath",
+        "species_id": 951,
+        "level": 20,
+        "quality": 3,
+        "model": 32670
+      },
+      {
+        "name": "Sploder",
+        "species_id": 950,
+        "level": 20,
+        "quality": 3,
+        "model": 8189
+      }
+    ]
+  },
+  {
+    "id": 66551,
+    "name": "Ras'an",
+    "model": 45231,
+    "map_id": 102,
+    "quest_id": 31923,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Glitterfly",
+        "species_id": 955,
+        "level": 21,
+        "quality": 3,
+        "model": 45616
+      },
+      {
+        "name": "Tripod",
+        "species_id": 954,
+        "level": 21,
+        "quality": 3,
+        "model": 45615
+      },
+      {
+        "name": "Fungor",
+        "species_id": 953,
+        "level": 21,
+        "quality": 3,
+        "model": 45614
+      }
+    ]
+  },
+  {
+    "id": 66552,
+    "name": "Narrok",
+    "model": 45232,
+    "map_id": 107,
+    "quest_id": 31924,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Prince Wart",
+        "species_id": 958,
+        "level": 22,
+        "quality": 3,
+        "model": 5379
+      },
+      {
+        "name": "Dramaticus",
+        "species_id": 957,
+        "level": 22,
+        "quality": 3,
+        "model": 2838
+      },
+      {
+        "name": "Stompy",
+        "species_id": 956,
+        "level": 22,
+        "quality": 3,
+        "model": 45618
+      }
+    ]
+  },
+  {
+    "id": 66553,
+    "name": "Morulu The Elder",
+    "model": 21344,
+    "map_id": 111,
+    "quest_id": 31925,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Chomps",
+        "species_id": 961,
+        "level": 23,
+        "quality": 3,
+        "model": 45621
+      },
+      {
+        "name": "Gnasher",
+        "species_id": 960,
+        "level": 23,
+        "quality": 3,
+        "model": 45620
+      },
+      {
+        "name": "Cragmaw",
+        "species_id": 959,
+        "level": 23,
+        "quality": 3,
+        "model": 45619
+      }
+    ]
+  },
+  {
+    "id": 85420,
+    "name": "Carrotus Maximus",
+    "model": 58843,
+    "map_id": 582,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Carrotus Maximus",
+        "species_id": 1473,
+        "level": 20,
+        "quality": 4,
+        "model": 58843
+      }
+    ]
+  },
+  {
+    "id": 66557,
+    "name": "Bloodknight Antari",
+    "model": 45238,
+    "map_id": 104,
+    "quest_id": 31926,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Arcanus",
+        "species_id": 964,
+        "level": 24,
+        "quality": 4,
+        "model": 62384
+      },
+      {
+        "name": "Jadefire",
+        "species_id": 963,
+        "level": 24,
+        "quality": 4,
+        "model": 51621
+      },
+      {
+        "name": "Netherbite",
+        "species_id": 962,
+        "level": 24,
+        "quality": 4,
+        "model": 45622
+      }
+    ]
+  },
+  {
+    "id": 106423,
+    "name": "Allured Tadpole",
+    "model": 15396,
+    "map_id": 630,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Allured Tadpole",
+        "species_id": 1893,
+        "level": 25,
+        "quality": 4,
+        "model": 15396
+      },
+      {
+        "name": "Confused Tadpole",
+        "species_id": 1894,
+        "level": 25,
+        "quality": 4,
+        "model": 15395
+      },
+      {
+        "name": "Subjugated Tadpole",
+        "species_id": 1892,
+        "level": 25,
+        "quality": 4,
+        "model": 15394
+      }
+    ]
+  },
+  {
+    "id": 105318,
+    "name": "Ancient Catacomb Spider",
+    "model": 69092,
+    "map_id": 0,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Ancient Catacomb Spider",
+        "species_id": 1860,
+        "level": 25,
+        "quality": 4,
+        "model": 69092
+      },
+      {
+        "name": "Catacomb Bat",
+        "species_id": 1861,
+        "level": 25,
+        "quality": 4,
+        "model": 65547
+      },
+      {
+        "name": "Catacomb Snake",
+        "species_id": 1862,
+        "level": 25,
+        "quality": 4,
+        "model": 51277
+      }
+    ]
+  },
+  {
+    "id": 119342,
+    "name": "Angry Geode",
+    "model": 75279,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Angry Geode",
+        "species_id": 2027,
+        "level": 25,
+        "quality": 4,
+        "model": 75279
+      }
+    ]
+  },
+  {
+    "id": 162465,
+    "name": "Aqir Sandcrawler",
+    "model": 92904,
+    "map_id": 249,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Aqir Sandcrawler",
+        "species_id": 2856,
+        "level": 25,
+        "quality": 4,
+        "model": 92904
+      }
+    ]
+  },
+  {
+    "id": 87124,
+    "name": "Ashlei",
+    "model": 57849,
+    "map_id": 539,
+    "quest_id": 37203,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Pixiebell",
+        "species_id": 1547,
+        "level": 25,
+        "quality": 4,
+        "model": 60610
+      },
+      {
+        "name": "Doodle",
+        "species_id": 1548,
+        "level": 25,
+        "quality": 4,
+        "model": 58170
+      },
+      {
+        "name": "Tally",
+        "species_id": 1549,
+        "level": 25,
+        "quality": 4,
+        "model": 60609
+      }
+    ]
+  },
+  {
+    "id": 105389,
+    "name": "Baby Bjorn",
+    "model": 69118,
+    "map_id": 634,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Baby Bjorn",
+        "species_id": 1866,
+        "level": 25,
+        "quality": 4,
+        "model": 69118
+      }
+    ]
+  },
+  {
+    "id": 162470,
+    "name": "Baruk Stone Defender",
+    "model": 47859,
+    "map_id": 390,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Baruk Stone Defender",
+        "species_id": 2860,
+        "level": 25,
+        "quality": 4,
+        "model": 47859
+      }
+    ]
+  },
+  {
+    "id": 66635,
+    "name": "Beegle Blastfuse",
+    "model": 45259,
+    "map_id": 117,
+    "quest_id": 31931,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Dinner",
+        "species_id": 967,
+        "level": 25,
+        "quality": 4,
+        "model": 45626
+      },
+      {
+        "name": "Gobbles",
+        "species_id": 966,
+        "level": 25,
+        "quality": 4,
+        "model": 45625
+      },
+      {
+        "name": "Warble",
+        "species_id": 965,
+        "level": 25,
+        "quality": 4,
+        "model": 45624
+      }
+    ]
+  },
+  {
+    "id": 85682,
+    "name": "Blingtron 4999b",
+    "model": 59042,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Blingtron 4999b",
+        "species_id": 1504,
+        "level": 25,
+        "quality": 4,
+        "model": 59042
+      },
+      {
+        "name": "Protectron 022481",
+        "species_id": 1505,
+        "level": 25,
+        "quality": 4,
+        "model": 59108
+      },
+      {
+        "name": "Protectron 011803",
+        "species_id": 1506,
+        "level": 25,
+        "quality": 4,
+        "model": 59108
+      }
+    ]
+  },
+  {
+    "id": 105898,
+    "name": "Blottis",
+    "model": 69426,
+    "map_id": 630,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Blottis",
+        "species_id": 1883,
+        "level": 25,
+        "quality": 4,
+        "model": 69426
+      }
+    ]
+  },
+  {
+    "id": 162466,
+    "name": "Blotto",
+    "model": 92230,
+    "map_id": 249,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Blotto",
+        "species_id": 2857,
+        "level": 25,
+        "quality": 4,
+        "model": 92230
+      }
+    ]
+  },
+  {
+    "id": 66815,
+    "name": "Bordin Steadyfist",
+    "model": 45375,
+    "map_id": 71,
+    "quest_id": 31973,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Ruby",
+        "species_id": 985,
+        "level": 25,
+        "quality": 4,
+        "model": 36436
+      },
+      {
+        "name": "Crystallus",
+        "species_id": 984,
+        "level": 25,
+        "quality": 4,
+        "model": 45645
+      },
+      {
+        "name": "Fracture",
+        "species_id": 983,
+        "level": 25,
+        "quality": 4,
+        "model": 33293
+      }
+    ]
+  },
+  {
+    "id": 66819,
+    "name": "Brok",
+    "model": 45379,
+    "map_id": 71,
+    "quest_id": 31972,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Kali",
+        "species_id": 982,
+        "level": 25,
+        "quality": 4,
+        "model": 45644
+      },
+      {
+        "name": "Ashtail",
+        "species_id": 981,
+        "level": 25,
+        "quality": 4,
+        "model": 45643
+      },
+      {
+        "name": "Incinderous",
+        "species_id": 980,
+        "level": 25,
+        "quality": 4,
+        "model": 5990
+      }
+    ]
+  },
+  {
+    "id": 85561,
+    "name": "Brutus",
+    "model": 59169,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Brutus",
+        "species_id": 1479,
+        "level": 25,
+        "quality": 4,
+        "model": 59169
+      },
+      {
+        "name": "Rukus",
+        "species_id": 1482,
+        "level": 25,
+        "quality": 4,
+        "model": 59169
+      }
+    ]
+  },
+  {
+    "id": 105842,
+    "name": "Chromadon",
+    "model": 69327,
+    "map_id": 634,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Chromadon",
+        "species_id": 1882,
+        "level": 25,
+        "quality": 4,
+        "model": 69327
+      }
+    ]
+  },
+  {
+    "id": 115313,
+    "name": "Constellatius",
+    "model": 73747,
+    "map_id": 120,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Constellatius",
+        "species_id": 1973,
+        "level": 25,
+        "quality": 4,
+        "model": 73747
+      }
+    ]
+  },
+  {
+    "id": 115306,
+    "name": "Cosmos",
+    "model": 73745,
+    "map_id": 120,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Cosmos",
+        "species_id": 1972,
+        "level": 25,
+        "quality": 4,
+        "model": 73745
+      }
+    ]
+  },
+  {
+    "id": 79180,
+    "name": "Deebs",
+    "model": 10992,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Deebs",
+        "species_id": 1400,
+        "level": 25,
+        "quality": 4,
+        "model": 10992
+      },
+      {
+        "name": "Tyri",
+        "species_id": 1401,
+        "level": 25,
+        "quality": 4,
+        "model": 25900
+      },
+      {
+        "name": "Puzzle",
+        "species_id": 1402,
+        "level": 25,
+        "quality": 4,
+        "model": 51994
+      }
+    ]
+  },
+  {
+    "id": 116791,
+    "name": "Dreadcoil",
+    "model": 4317,
+    "map_id": 279,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Dreadcoil",
+        "species_id": 1992,
+        "level": 25,
+        "quality": 4,
+        "model": 4317
+      }
+    ]
+  },
+  {
+    "id": 79751,
+    "name": "Eleanor",
+    "model": 56118,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Eleanor",
+        "species_id": 1409,
+        "level": 25,
+        "quality": 4,
+        "model": 56118
+      }
+    ]
+  },
+  {
+    "id": 105353,
+    "name": "Font of Mana",
+    "model": 65713,
+    "map_id": 680,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Font of Mana",
+        "species_id": 1863,
+        "level": 25,
+        "quality": 4,
+        "model": 65713
+      },
+      {
+        "name": "Seed of Mana",
+        "species_id": 1864,
+        "level": 25,
+        "quality": 4,
+        "model": 65714
+      },
+      {
+        "name": "Essence of Mana",
+        "species_id": 1865,
+        "level": 25,
+        "quality": 4,
+        "model": 65717
+      }
+    ]
+  },
+  {
+    "id": 87122,
+    "name": "Gargra",
+    "model": 52211,
+    "map_id": 525,
+    "quest_id": 37205,
+    "gold": 20,
+    "team": [
+      {
+        "name": "Wolfus",
+        "species_id": 1550,
+        "level": 25,
+        "quality": 4,
+        "model": 60613
+      },
+      {
+        "name": "Fangra",
+        "species_id": 1552,
+        "level": 25,
+        "quality": 4,
+        "model": 60185
+      },
+      {
+        "name": "Wolfgar",
+        "species_id": 1553,
+        "level": 25,
+        "quality": 4,
+        "model": 60612
+      }
+    ]
+  },
+  {
+    "id": 85419,
+    "name": "Gnawface",
+    "model": 16143,
+    "map_id": 582,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Gnawface",
+        "species_id": 1472,
+        "level": 25,
+        "quality": 4,
+        "model": 16143
+      }
+    ]
+  },
+  {
+    "id": 85463,
+    "name": "Gorefu",
+    "model": 55961,
+    "map_id": 582,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Gorefu",
+        "species_id": 1474,
+        "level": 25,
+        "quality": 4,
+        "model": 55961
+      }
+    ]
+  },
+  {
+    "id": 66822,
+    "name": "Goz Banefury",
+    "model": 45380,
+    "map_id": 71,
+    "quest_id": 31974,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Twilight",
+        "species_id": 988,
+        "level": 25,
+        "quality": 4,
+        "model": 45646
+      },
+      {
+        "name": "Amythel",
+        "species_id": 987,
+        "level": 25,
+        "quality": 4,
+        "model": 19634
+      },
+      {
+        "name": "Helios",
+        "species_id": 986,
+        "level": 25,
+        "quality": 4,
+        "model": 67596
+      }
+    ]
+  },
+  {
+    "id": 116794,
+    "name": "Growing Ectoplasm",
+    "model": 74345,
+    "map_id": 279,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Growing Ectoplasm",
+        "species_id": 1995,
+        "level": 25,
+        "quality": 4,
+        "model": 74345
+      }
+    ]
+  },
+  {
+    "id": 85664,
+    "name": "Grubbles",
+    "model": 9905,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Grubbles",
+        "species_id": 1492,
+        "level": 25,
+        "quality": 4,
+        "model": 9905
+      },
+      {
+        "name": "Scrags",
+        "species_id": 1494,
+        "level": 25,
+        "quality": 4,
+        "model": 58615
+      },
+      {
+        "name": "Stings",
+        "species_id": 1493,
+        "level": 25,
+        "quality": 4,
+        "model": 58748
+      }
+    ]
+  },
+  {
+    "id": 66639,
+    "name": "Gutretch",
+    "model": 24992,
+    "map_id": 121,
+    "quest_id": 31934,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Cadavus",
+        "species_id": 976,
+        "level": 25,
+        "quality": 4,
+        "model": 37327
+      },
+      {
+        "name": "Fleshrender",
+        "species_id": 975,
+        "level": 25,
+        "quality": 4,
+        "model": 45635
+      },
+      {
+        "name": "Blight",
+        "species_id": 974,
+        "level": 25,
+        "quality": 4,
+        "model": 45634
+      }
+    ]
+  },
+  {
+    "id": 99742,
+    "name": "Heliosus",
+    "model": 66360,
+    "map_id": 627,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Heliosus",
+        "species_id": 1815,
+        "level": 25,
+        "quality": 4,
+        "model": 66360
+      }
+    ]
+  },
+  {
+    "id": 104782,
+    "name": "Hungry Icefang",
+    "model": 60076,
+    "map_id": 650,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Hungry Icefang",
+        "species_id": 1843,
+        "level": 25,
+        "quality": 4,
+        "model": 60076
+      }
+    ]
+  },
+  {
+    "id": 106525,
+    "name": "Hungry Owl",
+    "model": 69632,
+    "map_id": 630,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Hungry Owl",
+        "species_id": 1895,
+        "level": 25,
+        "quality": 4,
+        "model": 69632
+      },
+      {
+        "name": "Hungry Rat",
+        "species_id": 1896,
+        "level": 25,
+        "quality": 4,
+        "model": 27627
+      }
+    ]
+  },
+  {
+    "id": 85674,
+    "name": "Jahan",
+    "model": 53878,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Jahan",
+        "species_id": 1496,
+        "level": 25,
+        "quality": 4,
+        "model": 53878
+      },
+      {
+        "name": "Samm",
+        "species_id": 1497,
+        "level": 25,
+        "quality": 4,
+        "model": 58825
+      },
+      {
+        "name": "Archimedes",
+        "species_id": 1498,
+        "level": 25,
+        "quality": 4,
+        "model": 59034
+      }
+    ]
+  },
+  {
+    "id": 162468,
+    "name": "K'tiny the Mad",
+    "model": 92236,
+    "map_id": 390,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "K'tiny the Mad",
+        "species_id": 2858,
+        "level": 25,
+        "quality": 4,
+        "model": 92236
+      }
+    ]
+  },
+  {
+    "id": 85660,
+    "name": "King Floret",
+    "model": 59023,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "King Floret",
+        "species_id": 1487,
+        "level": 25,
+        "quality": 4,
+        "model": 59023
+      },
+      {
+        "name": "Queen Floret",
+        "species_id": 1488,
+        "level": 25,
+        "quality": 4,
+        "model": 59024
+      }
+    ]
+  },
+  {
+    "id": 119344,
+    "name": "Klutz's Battle Bird",
+    "model": 75844,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Klutz's Battle Bird",
+        "species_id": 2025,
+        "level": 25,
+        "quality": 4,
+        "model": 75844
+      }
+    ]
+  },
+  {
+    "id": 119345,
+    "name": "Klutz's Battle Monkey",
+    "model": 75843,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Klutz's Battle Monkey",
+        "species_id": 2024,
+        "level": 25,
+        "quality": 4,
+        "model": 75843
+      }
+    ]
+  },
+  {
+    "id": 119343,
+    "name": "Klutz's Battle Rat",
+    "model": 75866,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Klutz's Battle Rat",
+        "species_id": 2026,
+        "level": 25,
+        "quality": 4,
+        "model": 75866
+      }
+    ]
+  },
+  {
+    "id": 85662,
+    "name": "Kromli",
+    "model": 59025,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Kromli",
+        "species_id": 1489,
+        "level": 25,
+        "quality": 4,
+        "model": 59025
+      },
+      {
+        "name": "Gromli",
+        "species_id": 1490,
+        "level": 25,
+        "quality": 4,
+        "model": 59026
+      }
+    ]
+  },
+  {
+    "id": 105841,
+    "name": "Lil'idan",
+    "model": 69326,
+    "map_id": 650,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Lil'idan",
+        "species_id": 1881,
+        "level": 25,
+        "quality": 4,
+        "model": 69326
+      }
+    ]
+  },
+  {
+    "id": 66675,
+    "name": "Major Payne",
+    "model": 45283,
+    "map_id": 118,
+    "quest_id": 31935,
+    "gold": 28,
+    "team": [
+      {
+        "name": "Grizzle",
+        "species_id": 979,
+        "level": 25,
+        "quality": 4,
+        "model": 23947
+      },
+      {
+        "name": "Beakmaster X-225",
+        "species_id": 978,
+        "level": 25,
+        "quality": 4,
+        "model": 45636
+      },
+      {
+        "name": "Bloom",
+        "species_id": 977,
+        "level": 25,
+        "quality": 4,
+        "model": 19290
+      }
+    ]
+  },
+  {
+    "id": 85686,
+    "name": "Manos",
+    "model": 59044,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Manos",
+        "species_id": 1508,
+        "level": 25,
+        "quality": 4,
+        "model": 59044
+      },
+      {
+        "name": "Hanos",
+        "species_id": 1509,
+        "level": 25,
+        "quality": 4,
+        "model": 59112
+      },
+      {
+        "name": "Fatos",
+        "species_id": 1510,
+        "level": 25,
+        "quality": 4,
+        "model": 59111
+      }
+    ]
+  },
+  {
+    "id": 97690,
+    "name": "Master Tamer Flummox",
+    "model": 64476,
+    "map_id": 0,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Wyrmy Tunkins",
+        "species_id": 1887,
+        "level": 25,
+        "quality": 4,
+        "model": 69532
+      }
+    ]
+  },
+  {
+    "id": 105391,
+    "name": "Mini Musken",
+    "model": 69113,
+    "map_id": 634,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Mini Musken",
+        "species_id": 1867,
+        "level": 25,
+        "quality": 4,
+        "model": 69113
+      }
+    ]
+  },
+  {
+    "id": 119341,
+    "name": "Mining Monkey",
+    "model": 75851,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Mining Monkey",
+        "species_id": 2028,
+        "level": 25,
+        "quality": 4,
+        "model": 75851
+      }
+    ]
+  },
+  {
+    "id": 85656,
+    "name": "Mr. Terrible",
+    "model": 44655,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Mr. Terrible",
+        "species_id": 1483,
+        "level": 25,
+        "quality": 4,
+        "model": 44655
+      },
+      {
+        "name": "Carroteye",
+        "species_id": 1484,
+        "level": 25,
+        "quality": 4,
+        "model": 54848
+      },
+      {
+        "name": "Sloppus",
+        "species_id": 1485,
+        "level": 25,
+        "quality": 4,
+        "model": 54752
+      }
+    ]
+  },
+  {
+    "id": 66636,
+    "name": "Nearly Headless Jacob",
+    "model": 45260,
+    "map_id": 127,
+    "quest_id": 31932,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Spooky Strangler",
+        "species_id": 970,
+        "level": 25,
+        "quality": 4,
+        "model": 45630
+      },
+      {
+        "name": "Stitch",
+        "species_id": 969,
+        "level": 25,
+        "quality": 4,
+        "model": 45628
+      },
+      {
+        "name": "Mort",
+        "species_id": 968,
+        "level": 25,
+        "quality": 4,
+        "model": 45629
+      }
+    ]
+  },
+  {
+    "id": 66638,
+    "name": "Okrut Dragonwaste",
+    "model": 45261,
+    "map_id": 115,
+    "quest_id": 31933,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Drogar",
+        "species_id": 973,
+        "level": 25,
+        "quality": 4,
+        "model": 45631
+      },
+      {
+        "name": "Sleet",
+        "species_id": 972,
+        "level": 25,
+        "quality": 4,
+        "model": 45633
+      },
+      {
+        "name": "Rot",
+        "species_id": 971,
+        "level": 25,
+        "quality": 4,
+        "model": 45632
+      }
+    ]
+  },
+  {
+    "id": 116792,
+    "name": "Phyxia",
+    "model": 31631,
+    "map_id": 279,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Phyxia",
+        "species_id": 1993,
+        "level": 25,
+        "quality": 4,
+        "model": 31631
+      }
+    ]
+  },
+  {
+    "id": 85652,
+    "name": "Quintessence of Light",
+    "model": 59017,
+    "map_id": 0,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Quintessence of Light",
+        "species_id": 1480,
+        "level": 25,
+        "quality": 4,
+        "model": 59017
+      }
+    ]
+  },
+  {
+    "id": 162458,
+    "name": "Retinus the Seeker",
+    "model": 92438,
+    "map_id": 249,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Retinus the Seeker",
+        "species_id": 2854,
+        "level": 25,
+        "quality": 4,
+        "model": 92438
+      }
+    ]
+  },
+  {
+    "id": 85681,
+    "name": "Rockbiter",
+    "model": 59040,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Rockbiter",
+        "species_id": 1501,
+        "level": 25,
+        "quality": 4,
+        "model": 59040
+      },
+      {
+        "name": "Stonechewer",
+        "species_id": 1502,
+        "level": 25,
+        "quality": 4,
+        "model": 59027
+      },
+      {
+        "name": "Acidtooth",
+        "species_id": 1503,
+        "level": 25,
+        "quality": 4,
+        "model": 59039
+      }
+    ]
+  },
+  {
+    "id": 98572,
+    "name": "Rocko",
+    "model": 66308,
+    "map_id": 650,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Rocko",
+        "species_id": 1811,
+        "level": 25,
+        "quality": 4,
+        "model": 66308
+      }
+    ]
+  },
+  {
+    "id": 114064,
+    "name": "Snowfang",
+    "model": 73094,
+    "map_id": 276,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Snowfang",
+        "species_id": 1519,
+        "level": 25,
+        "quality": 4,
+        "model": 73094
+      }
+    ]
+  },
+  {
+    "id": 105241,
+    "name": "Splint Jr.",
+    "model": 69050,
+    "map_id": 627,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Splint Jr.",
+        "species_id": 1855,
+        "level": 25,
+        "quality": 4,
+        "model": 69050
+      }
+    ]
+  },
+  {
+    "id": 85685,
+    "name": "Stitches Jr.",
+    "model": 59109,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Stitches Jr.",
+        "species_id": 1507,
+        "level": 25,
+        "quality": 4,
+        "model": 59109
+      }
+    ]
+  },
+  {
+    "id": 105840,
+    "name": "Stitches Jr. Jr.",
+    "model": 59109,
+    "map_id": 627,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Stitches Jr. Jr.",
+        "species_id": 1880,
+        "level": 25,
+        "quality": 4,
+        "model": 59109
+      }
+    ]
+  },
+  {
+    "id": 87125,
+    "name": "Taralune",
+    "model": 52551,
+    "map_id": 535,
+    "quest_id": 37208,
+    "gold": 28,
+    "team": [
+      {
+        "name": "Serendipity",
+        "species_id": 1560,
+        "level": 25,
+        "quality": 4,
+        "model": 60618
+      },
+      {
+        "name": "Grace",
+        "species_id": 1561,
+        "level": 25,
+        "quality": 4,
+        "model": 51741
+      },
+      {
+        "name": "Atonement",
+        "species_id": 1562,
+        "level": 25,
+        "quality": 4,
+        "model": 51742
+      }
+    ]
+  },
+  {
+    "id": 87110,
+    "name": "Tarr the Terrible",
+    "model": 58481,
+    "map_id": 550,
+    "quest_id": 37206,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Gladiator Murkalot",
+        "species_id": 1555,
+        "level": 25,
+        "quality": 4,
+        "model": 51990
+      },
+      {
+        "name": "Gladiator Deathy",
+        "species_id": 1554,
+        "level": 25,
+        "quality": 4,
+        "model": 36896
+      },
+      {
+        "name": "Gladiator Murkimus",
+        "species_id": 1556,
+        "level": 25,
+        "quality": 4,
+        "model": 49081
+      }
+    ]
+  },
+  {
+    "id": 85659,
+    "name": "The Beakinator",
+    "model": 59022,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "The Beakinator",
+        "species_id": 1486,
+        "level": 25,
+        "quality": 4,
+        "model": 59022
+      }
+    ]
+  },
+  {
+    "id": 104992,
+    "name": "The Maw",
+    "model": 69051,
+    "map_id": 641,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "The Maw",
+        "species_id": 1849,
+        "level": 25,
+        "quality": 4,
+        "model": 69051
+      }
+    ]
+  },
+  {
+    "id": 105009,
+    "name": "Thistleleaf Bully",
+    "model": 70891,
+    "map_id": 641,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Thistleleaf Bully",
+        "species_id": 1850,
+        "level": 25,
+        "quality": 4,
+        "model": 70891
+      }
+    ]
+  },
+  {
+    "id": 85678,
+    "name": "Tirs",
+    "model": 59107,
+    "map_id": 590,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Tirs",
+        "species_id": 1500,
+        "level": 25,
+        "quality": 4,
+        "model": 59107
+      },
+      {
+        "name": "Fiero",
+        "species_id": 1499,
+        "level": 25,
+        "quality": 4,
+        "model": 59106
+      }
+    ]
+  },
+  {
+    "id": 162469,
+    "name": "Tormentius",
+    "model": 90739,
+    "map_id": 390,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Tormentius",
+        "species_id": 2859,
+        "level": 25,
+        "quality": 4,
+        "model": 90739
+      }
+    ]
+  },
+  {
+    "id": 119346,
+    "name": "Unfortunate Defias",
+    "model": 75280,
+    "map_id": 291,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Unfortunate Defias",
+        "species_id": 2023,
+        "level": 25,
+        "quality": 4,
+        "model": 75280
+      }
+    ]
+  },
+  {
+    "id": 87123,
+    "name": "Vesharr",
+    "model": 59550,
+    "map_id": 542,
+    "quest_id": 37207,
+    "gold": 25,
+    "team": [
+      {
+        "name": "Apexis Guardian",
+        "species_id": 1559,
+        "level": 25,
+        "quality": 4,
+        "model": 59577
+      },
+      {
+        "name": "The Great Kaliri",
+        "species_id": 1558,
+        "level": 25,
+        "quality": 4,
+        "model": 59602
+      },
+      {
+        "name": "Darkwing",
+        "species_id": 1557,
+        "level": 25,
+        "quality": 4,
+        "model": 53719
+      }
+    ]
+  },
+  {
+    "id": 162471,
+    "name": "Vil'thik Hatchling",
+    "model": 45274,
+    "map_id": 390,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Vil'thik Hatchling",
+        "species_id": 2861,
+        "level": 25,
+        "quality": 4,
+        "model": 45274
+      }
+    ]
+  },
+  {
+    "id": 116790,
+    "name": "Vilefang",
+    "model": 74344,
+    "map_id": 279,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Vilefang",
+        "species_id": 1991,
+        "level": 25,
+        "quality": 4,
+        "model": 74344
+      }
+    ]
+  },
+  {
+    "id": 106417,
+    "name": "Vinu",
+    "model": 69589,
+    "map_id": 630,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Vinu",
+        "species_id": 1891,
+        "level": 25,
+        "quality": 4,
+        "model": 69589
+      }
+    ]
+  },
+  {
+    "id": 162461,
+    "name": "Whispers",
+    "model": 92608,
+    "map_id": 249,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Whispers",
+        "species_id": 2855,
+        "level": 25,
+        "quality": 4,
+        "model": 92608
+      }
+    ]
+  },
+  {
+    "id": 66738,
+    "name": "Courageous Yon",
+    "model": 45326,
+    "map_id": 379,
+    "quest_id": 31956,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Piqua",
+        "species_id": 1003,
+        "level": 25,
+        "quality": 5,
+        "model": 30971
+      },
+      {
+        "name": "Lapin",
+        "species_id": 1002,
+        "level": 25,
+        "quality": 5,
+        "model": 23926
+      },
+      {
+        "name": "Bleat",
+        "species_id": 1001,
+        "level": 25,
+        "quality": 5,
+        "model": 45654
+      }
+    ]
+  },
+  {
+    "id": 66734,
+    "name": "Farmer Nishi",
+    "model": 45325,
+    "map_id": 376,
+    "quest_id": 31955,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Siren",
+        "species_id": 997,
+        "level": 25,
+        "quality": 5,
+        "model": 45651
+      },
+      {
+        "name": "Toothbreaker",
+        "species_id": 996,
+        "level": 25,
+        "quality": 5,
+        "model": 45652
+      },
+      {
+        "name": "Brood of Mothallus",
+        "species_id": 995,
+        "level": 25,
+        "quality": 5,
+        "model": 45099
+      }
+    ]
+  },
+  {
+    "id": 66730,
+    "name": "Hyuna of the Shrines",
+    "model": 45322,
+    "map_id": 371,
+    "quest_id": 31953,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Skyshaper",
+        "species_id": 994,
+        "level": 25,
+        "quality": 5,
+        "model": 45617
+      },
+      {
+        "name": "Fangor",
+        "species_id": 993,
+        "level": 25,
+        "quality": 5,
+        "model": 45649
+      },
+      {
+        "name": "Dor the Wall",
+        "species_id": 992,
+        "level": 25,
+        "quality": 5,
+        "model": 27677
+      }
+    ]
+  },
+  {
+    "id": 67370,
+    "name": "Jeremy Feasel",
+    "model": 46188,
+    "map_id": 408,
+    "quest_id": 32175,
+    "gold": 5,
+    "team": [
+      {
+        "name": "Judgment",
+        "species_id": 1065,
+        "level": 25,
+        "quality": 5,
+        "model": 46174
+      },
+      {
+        "name": "Honky-Tonk",
+        "species_id": 1067,
+        "level": 25,
+        "quality": 5,
+        "model": 46193
+      },
+      {
+        "name": "Fezwick",
+        "species_id": 1066,
+        "level": 25,
+        "quality": 5,
+        "model": 46192
+      }
+    ]
+  },
+  {
+    "id": 66733,
+    "name": "Mo'ruk",
+    "model": 45324,
+    "map_id": 418,
+    "quest_id": 31954,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Lightstalker",
+        "species_id": 1000,
+        "level": 25,
+        "quality": 5,
+        "model": 36955
+      },
+      {
+        "name": "Needleback",
+        "species_id": 999,
+        "level": 25,
+        "quality": 5,
+        "model": 45653
+      },
+      {
+        "name": "Woodcarver",
+        "species_id": 998,
+        "level": 25,
+        "quality": 5,
+        "model": 45080
+      }
+    ]
+  },
+  {
+    "id": 66824,
+    "name": "Obalis",
+    "model": 45381,
+    "map_id": 249,
+    "quest_id": 31971,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Pyth",
+        "species_id": 991,
+        "level": 25,
+        "quality": 5,
+        "model": 45648
+      },
+      {
+        "name": "Spring",
+        "species_id": 990,
+        "level": 25,
+        "quality": 5,
+        "model": 45647
+      },
+      {
+        "name": "Clatter",
+        "species_id": 989,
+        "level": 25,
+        "quality": 5,
+        "model": 34913
+      }
+    ]
+  },
+  {
+    "id": 66918,
+    "name": "Seeker Zusshi",
+    "model": 45504,
+    "map_id": 388,
+    "quest_id": 31991,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Diamond",
+        "species_id": 1006,
+        "level": 25,
+        "quality": 5,
+        "model": 45656
+      },
+      {
+        "name": "Mollus",
+        "species_id": 1005,
+        "level": 25,
+        "quality": 5,
+        "model": 32661
+      },
+      {
+        "name": "Skimmer",
+        "species_id": 1004,
+        "level": 25,
+        "quality": 5,
+        "model": 45655
+      }
+    ]
+  },
+  {
+    "id": 66739,
+    "name": "Wastewalker Shu",
+    "model": 45327,
+    "map_id": 422,
+    "quest_id": 31957,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Crusher",
+        "species_id": 1009,
+        "level": 25,
+        "quality": 5,
+        "model": 45657
+      },
+      {
+        "name": "Pounder",
+        "species_id": 1008,
+        "level": 25,
+        "quality": 5,
+        "model": 45658
+      },
+      {
+        "name": "Mutilator",
+        "species_id": 1007,
+        "level": 25,
+        "quality": 5,
+        "model": 40121
+      }
+    ]
+  },
+  {
+    "id": 66741,
+    "name": "Aki the Chosen",
+    "model": 45329,
+    "map_id": 390,
+    "quest_id": 31958,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Chirrup",
+        "species_id": 1012,
+        "level": 25,
+        "quality": 6,
+        "model": 43352
+      },
+      {
+        "name": "Stormlash",
+        "species_id": 1011,
+        "level": 25,
+        "quality": 6,
+        "model": 45661
+      },
+      {
+        "name": "Whiskers",
+        "species_id": 1010,
+        "level": 25,
+        "quality": 6,
+        "model": 45660
+      }
+    ]
+  },
+  {
+    "id": 94645,
+    "name": "Bleakclaw",
+    "model": 64133,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Bleakclaw",
+        "species_id": 1681,
+        "level": 25,
+        "quality": 6,
+        "model": 64133
+      }
+    ]
+  },
+  {
+    "id": 71933,
+    "name": "Blingtron 4000",
+    "model": 44567,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Lil' B",
+        "species_id": 1277,
+        "level": 25,
+        "quality": 6,
+        "model": 49289
+      },
+      {
+        "name": "Banks",
+        "species_id": 1279,
+        "level": 25,
+        "quality": 6,
+        "model": 21304
+      },
+      {
+        "name": "Au",
+        "species_id": 1278,
+        "level": 25,
+        "quality": 6,
+        "model": 49288
+      }
+    ]
+  },
+  {
+    "id": 68463,
+    "name": "Burning Pandaren Spirit",
+    "model": 42932,
+    "map_id": 388,
+    "quest_id": 32434,
+    "gold": 6,
+    "team": [
+      {
+        "name": "Pandaren Fire Spirit",
+        "species_id": 1139,
+        "level": 25,
+        "quality": 6,
+        "model": 39747
+      },
+      {
+        "name": "Glowy",
+        "species_id": 1131,
+        "level": 25,
+        "quality": 6,
+        "model": 42926
+      },
+      {
+        "name": "Crimson",
+        "species_id": 1130,
+        "level": 25,
+        "quality": 6,
+        "model": 14779
+      }
+    ]
+  },
+  {
+    "id": 94638,
+    "name": "Chaos Pup",
+    "model": 64123,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Chaos Pup",
+        "species_id": 1674,
+        "level": 25,
+        "quality": 6,
+        "model": 64123
+      }
+    ]
+  },
+  {
+    "id": 73030,
+    "name": "Chen Stormstout",
+    "model": 39698,
+    "map_id": 554,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Brewly",
+        "species_id": 1280,
+        "level": 25,
+        "quality": 6,
+        "model": 42430
+      },
+      {
+        "name": "Chirps",
+        "species_id": 1281,
+        "level": 25,
+        "quality": 6,
+        "model": 43127
+      },
+      {
+        "name": "Tonsa",
+        "species_id": 1282,
+        "level": 25,
+        "quality": 6,
+        "model": 49290
+      }
+    ]
+  },
+  {
+    "id": 72285,
+    "name": "Chi-Chi, Hatchling of Chi-Ji",
+    "model": 50743,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Chi-Chi, Hatchling of Chi-Ji",
+        "species_id": 1311,
+        "level": 25,
+        "quality": 6,
+        "model": 50743
+      }
+    ]
+  },
+  {
+    "id": 85519,
+    "name": "Christoph VonFeasel",
+    "model": 58931,
+    "map_id": 408,
+    "quest_id": 36471,
+    "gold": 25,
+    "team": [
+      {
+        "name": "Syd",
+        "species_id": 1477,
+        "level": 25,
+        "quality": 6,
+        "model": 47931
+      },
+      {
+        "name": "Mr. Pointy",
+        "species_id": 1476,
+        "level": 25,
+        "quality": 6,
+        "model": 48212
+      },
+      {
+        "name": "Otto",
+        "species_id": 1475,
+        "level": 25,
+        "quality": 6,
+        "model": 58933
+      }
+    ]
+  },
+  {
+    "id": 94637,
+    "name": "Corrupted Thundertail",
+    "model": 64118,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Corrupted Thundertail",
+        "species_id": 1673,
+        "level": 25,
+        "quality": 6,
+        "model": 64118
+      }
+    ]
+  },
+  {
+    "id": 94639,
+    "name": "Cursed Spirit",
+    "model": 64128,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Cursed Spirit",
+        "species_id": 1675,
+        "level": 25,
+        "quality": 6,
+        "model": 64128
+      }
+    ]
+  },
+  {
+    "id": 83837,
+    "name": "Cymre Brightblade",
+    "model": 57982,
+    "map_id": 543,
+    "quest_id": 37201,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Idol of Decay",
+        "species_id": 1443,
+        "level": 25,
+        "quality": 6,
+        "model": 38232
+      },
+      {
+        "name": "Wishbright Lantern",
+        "species_id": 1444,
+        "level": 25,
+        "quality": 6,
+        "model": 36902
+      },
+      {
+        "name": "Gyrexle, the Eternal Mechanic",
+        "species_id": 1424,
+        "level": 25,
+        "quality": 6,
+        "model": 36211
+      }
+    ]
+  },
+  {
+    "id": 94644,
+    "name": "Dark Gazer",
+    "model": 46582,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Dark Gazer",
+        "species_id": 1680,
+        "level": 25,
+        "quality": 6,
+        "model": 46582
+      }
+    ]
+  },
+  {
+    "id": 94650,
+    "name": "Defiled Earth",
+    "model": 64127,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Defiled Earth",
+        "species_id": 1686,
+        "level": 25,
+        "quality": 6,
+        "model": 64127
+      }
+    ]
+  },
+  {
+    "id": 94642,
+    "name": "Direflame",
+    "model": 64131,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Direflame",
+        "species_id": 1678,
+        "level": 25,
+        "quality": 6,
+        "model": 64131
+      }
+    ]
+  },
+  {
+    "id": 71438,
+    "name": "Doopy",
+    "model": 48877,
+    "map_id": 118,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Doopy",
+        "species_id": 1247,
+        "level": 25,
+        "quality": 6,
+        "model": 48877
+      }
+    ]
+  },
+  {
+    "id": 68564,
+    "name": "Dos-Ryga",
+    "model": 41372,
+    "map_id": 379,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Dos-Ryga",
+        "species_id": 1193,
+        "level": 25,
+        "quality": 6,
+        "model": 41372
+      }
+    ]
+  },
+  {
+    "id": 71934,
+    "name": "Dr. Ion Goldbloom",
+    "model": 47835,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Chaos",
+        "species_id": 1271,
+        "level": 25,
+        "quality": 6,
+        "model": 51712
+      },
+      {
+        "name": "Screamer",
+        "species_id": 1269,
+        "level": 25,
+        "quality": 6,
+        "model": 49282
+      },
+      {
+        "name": "Trike",
+        "species_id": 1268,
+        "level": 25,
+        "quality": 6,
+        "model": 48211
+      }
+    ]
+  },
+  {
+    "id": 94647,
+    "name": "Dreadwalker",
+    "model": 64135,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Dreadwalker",
+        "species_id": 1683,
+        "level": 25,
+        "quality": 6,
+        "model": 64135
+      }
+    ]
+  },
+  {
+    "id": 94640,
+    "name": "Felfly",
+    "model": 64129,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Felfly",
+        "species_id": 1676,
+        "level": 25,
+        "quality": 6,
+        "model": 64129
+      }
+    ]
+  },
+  {
+    "id": 94601,
+    "name": "Felsworn Sentry",
+    "model": 64112,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Felsworn Sentry",
+        "species_id": 1671,
+        "level": 25,
+        "quality": 6,
+        "model": 64112
+      }
+    ]
+  },
+  {
+    "id": 68462,
+    "name": "Flowing Pandaren Spirit",
+    "model": 40357,
+    "map_id": 422,
+    "quest_id": 32439,
+    "gold": 11,
+    "team": [
+      {
+        "name": "Pandaren Water Spirit",
+        "species_id": 1138,
+        "level": 25,
+        "quality": 6,
+        "model": 39741
+      },
+      {
+        "name": "Tiptoe",
+        "species_id": 1133,
+        "level": 25,
+        "quality": 6,
+        "model": 40002
+      },
+      {
+        "name": "Marley",
+        "species_id": 1132,
+        "level": 25,
+        "quality": 6,
+        "model": 46863
+      }
+    ]
+  },
+  {
+    "id": 68558,
+    "name": "Gorespine",
+    "model": 47740,
+    "map_id": 422,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Gorespine",
+        "species_id": 1187,
+        "level": 25,
+        "quality": 6,
+        "model": 47740
+      }
+    ]
+  },
+  {
+    "id": 68560,
+    "name": "Greyhoof",
+    "model": 47742,
+    "map_id": 376,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Greyhoof",
+        "species_id": 1189,
+        "level": 25,
+        "quality": 6,
+        "model": 47742
+      }
+    ]
+  },
+  {
+    "id": 68555,
+    "name": "Ka'wi the Gorger",
+    "model": 46862,
+    "map_id": 371,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Ka'wi the Gorger",
+        "species_id": 1129,
+        "level": 25,
+        "quality": 6,
+        "model": 46862
+      }
+    ]
+  },
+  {
+    "id": 73626,
+    "name": "Little Tommy Newcomer",
+    "model": 38420,
+    "map_id": 554,
+    "quest_id": 33222,
+    "gold": 23,
+    "team": [
+      {
+        "name": "Lil' Oondasta",
+        "species_id": 1339,
+        "level": 25,
+        "quality": 6,
+        "model": 51451
+      }
+    ]
+  },
+  {
+    "id": 71926,
+    "name": "Lorewalker Cho",
+    "model": 41918,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Wisdom",
+        "species_id": 1285,
+        "level": 25,
+        "quality": 6,
+        "model": 27563
+      },
+      {
+        "name": "Knowledge",
+        "species_id": 1283,
+        "level": 25,
+        "quality": 6,
+        "model": 43876
+      },
+      {
+        "name": "Patience",
+        "species_id": 1284,
+        "level": 25,
+        "quality": 6,
+        "model": 45960
+      }
+    ]
+  },
+  {
+    "id": 68561,
+    "name": "Lucky Yi",
+    "model": 42986,
+    "map_id": 376,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Lucky Yi",
+        "species_id": 1190,
+        "level": 25,
+        "quality": 6,
+        "model": 42986
+      }
+    ]
+  },
+  {
+    "id": 94643,
+    "name": "Mirecroak",
+    "model": 53776,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Mirecroak",
+        "species_id": 1679,
+        "level": 25,
+        "quality": 6,
+        "model": 53776
+      }
+    ]
+  },
+  {
+    "id": 94648,
+    "name": "Netherfist",
+    "model": 64136,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Netherfist",
+        "species_id": 1684,
+        "level": 25,
+        "quality": 6,
+        "model": 64136
+      }
+    ]
+  },
+  {
+    "id": 68565,
+    "name": "Nitun",
+    "model": 47745,
+    "map_id": 371,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Nitun",
+        "species_id": 1194,
+        "level": 25,
+        "quality": 6,
+        "model": 47745
+      }
+    ]
+  },
+  {
+    "id": 68559,
+    "name": "No-No",
+    "model": 47754,
+    "map_id": 390,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "No-No",
+        "species_id": 1188,
+        "level": 25,
+        "quality": 6,
+        "model": 47754
+      }
+    ]
+  },
+  {
+    "id": 71930,
+    "name": "Shademaster Kiryn",
+    "model": 39039,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Stormoen",
+        "species_id": 1287,
+        "level": 25,
+        "quality": 6,
+        "model": 46947
+      },
+      {
+        "name": "Summer",
+        "species_id": 1286,
+        "level": 25,
+        "quality": 6,
+        "model": 51599
+      },
+      {
+        "name": "Nairn",
+        "species_id": 1288,
+        "level": 25,
+        "quality": 6,
+        "model": 49299
+      }
+    ]
+  },
+  {
+    "id": 68566,
+    "name": "Skitterer Xi'a",
+    "model": 44096,
+    "map_id": 418,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Skitterer Xi'a",
+        "species_id": 1195,
+        "level": 25,
+        "quality": 6,
+        "model": 44096
+      }
+    ]
+  },
+  {
+    "id": 94649,
+    "name": "Skrillix",
+    "model": 62185,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Skrillix",
+        "species_id": 1685,
+        "level": 25,
+        "quality": 6,
+        "model": 62185
+      }
+    ]
+  },
+  {
+    "id": 94641,
+    "name": "Tainted Maulclaw",
+    "model": 64130,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Tainted Maulclaw",
+        "species_id": 1677,
+        "level": 25,
+        "quality": 6,
+        "model": 64130
+      }
+    ]
+  },
+  {
+    "id": 71931,
+    "name": "Taran Zhu",
+    "model": 45518,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Yen",
+        "species_id": 1295,
+        "level": 25,
+        "quality": 6,
+        "model": 30414
+      },
+      {
+        "name": "Li",
+        "species_id": 1293,
+        "level": 25,
+        "quality": 6,
+        "model": 30414
+      },
+      {
+        "name": "Bolo",
+        "species_id": 1292,
+        "level": 25,
+        "quality": 6,
+        "model": 30414
+      }
+    ]
+  },
+  {
+    "id": 68465,
+    "name": "Thundering Pandaren Spirit",
+    "model": 46808,
+    "map_id": 379,
+    "quest_id": 32441,
+    "gold": 24,
+    "team": [
+      {
+        "name": "Pandaren Earth Spirit",
+        "species_id": 1141,
+        "level": 25,
+        "quality": 6,
+        "model": 40079
+      },
+      {
+        "name": "Darnak the Tunneler",
+        "species_id": 1137,
+        "level": 25,
+        "quality": 6,
+        "model": 1418
+      },
+      {
+        "name": "Sludgy",
+        "species_id": 1134,
+        "level": 25,
+        "quality": 6,
+        "model": 42781
+      }
+    ]
+  },
+  {
+    "id": 68562,
+    "name": "Ti'un the Wanderer",
+    "model": 47743,
+    "map_id": 388,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Ti'un the Wanderer",
+        "species_id": 1191,
+        "level": 25,
+        "quality": 6,
+        "model": 47743
+      }
+    ]
+  },
+  {
+    "id": 94646,
+    "name": "Vile Blood of Draenor",
+    "model": 64134,
+    "map_id": 534,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Vile Blood of Draenor",
+        "species_id": 1682,
+        "level": 25,
+        "quality": 6,
+        "model": 64134
+      }
+    ]
+  },
+  {
+    "id": 68464,
+    "name": "Whispering Pandaren Spirit",
+    "model": 46807,
+    "map_id": 371,
+    "quest_id": 32440,
+    "gold": 8,
+    "team": [
+      {
+        "name": "Pandaren Air Spirit",
+        "species_id": 1140,
+        "level": 25,
+        "quality": 6,
+        "model": 41252
+      },
+      {
+        "name": "Dusty",
+        "species_id": 1135,
+        "level": 25,
+        "quality": 6,
+        "model": 20749
+      },
+      {
+        "name": "Whispertail",
+        "species_id": 1136,
+        "level": 25,
+        "quality": 6,
+        "model": 44445
+      }
+    ]
+  },
+  {
+    "id": 71932,
+    "name": "Wise Mari",
+    "model": 41125,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Spirus",
+        "species_id": 1298,
+        "level": 25,
+        "quality": 6,
+        "model": 45073
+      },
+      {
+        "name": "River",
+        "species_id": 1297,
+        "level": 25,
+        "quality": 6,
+        "model": 2069
+      },
+      {
+        "name": "Carpe Diem",
+        "species_id": 1296,
+        "level": 25,
+        "quality": 6,
+        "model": 42162
+      }
+    ]
+  },
+  {
+    "id": 73138,
+    "name": "Wrathion",
+    "model": 48888,
+    "map_id": 433,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Cindy",
+        "species_id": 1299,
+        "level": 25,
+        "quality": 6,
+        "model": 28456
+      },
+      {
+        "name": "Alex",
+        "species_id": 1301,
+        "level": 25,
+        "quality": 6,
+        "model": 6290
+      },
+      {
+        "name": "Dah'da",
+        "species_id": 1300,
+        "level": 25,
+        "quality": 6,
+        "model": 35338
+      }
+    ]
+  },
+  {
+    "id": 72009,
+    "name": "Xu-Fu, Cub of Xuen",
+    "model": 49262,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Xu-Fu, Cub of Xuen",
+        "species_id": 1267,
+        "level": 25,
+        "quality": 6,
+        "model": 49262
+      }
+    ]
+  },
+  {
+    "id": 72291,
+    "name": "Yu'la, Broodling of Yu'lon",
+    "model": 49263,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Yu'la, Broodling of Yu'lon",
+        "species_id": 1317,
+        "level": 25,
+        "quality": 6,
+        "model": 49263
+      }
+    ]
+  },
+  {
+    "id": 72290,
+    "name": "Zao, Calfling of Niuzao",
+    "model": 49430,
+    "map_id": 571,
+    "quest_id": 0,
+    "gold": 0,
+    "team": [
+      {
+        "name": "Zao, Calfling of Niuzao",
+        "species_id": 1319,
+        "level": 25,
+        "quality": 6,
+        "model": 49430
+      }
+    ]
+  }
+]

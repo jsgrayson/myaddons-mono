@@ -1,0 +1,15 @@
+[
+  {
+    "key": "next_squirt_day:",
+    "status": "SKIPPED",
+    "reason": "No pet data"
+  },
+  {
+    "key": "squirt",
+    "name": "Squirt (WoD Garrison)",
+    "status": "SOLVED",
+    "fitness": 11423.824924536439,
+    "team_string": "team:3348,424,-1",
+    "generations": 1001
+  }
+]

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Leveling Queue - PetWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">📈 Leveling Queue</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-arrow-up me-2"></i>Prioritized list of pets to level up
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Leveling Queue -->
+<div class="row">
+    <div class="col-md-12">
+        <div id="leveling-queue">
+            <div class="text-center py-5">
+                <i class="fas fa-spinner fa-spin fa-2x text-muted mb-3"></i>
+                <p class="text-muted">Analyzing leveling needs...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function loadLevelingQueue() {
+        fetch('/api/leveling/queue')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('leveling-queue');
+
+                if (data.length === 0) {
+                    container.innerHTML = `
+                        <div class="card bg-dark border-success">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                                <h2 class="text-success">All Set!</h2>
+                                <p class="text-white">All your pets are at the required level for your strategies.</p>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = data.map((pet, index) => `
+                    <div class="card mb-3 border-secondary">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-4 text-center" style="min-width: 60px;">
+                                    <h2 class="text-primary mb-0">#${index + 1}</h2>
+                                    <small class="text-muted">Priority</small>
+                                </div>
+                                
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h4 class="mb-0 text-white me-3">${pet.name}</h4>
+                                        ${pet.needs_level ?
+                        `<span class="badge bg-warning text-dark me-2">
+                                                Level ${pet.current_level} <i class="fas fa-arrow-right mx-1"></i> 25
+                                            </span>` : ''
+                    }
+                                        ${pet.needs_rarity ?
+                        `<span class="badge bg-success me-2">
+                                                Upgrade Rarity
+                                            </span>` : ''
+                    }
+                                        <span class="badge bg-info text-dark">
+                                            ${pet.priority} encounter(s)
+                                        </span>
+                                    </div>
+                                    
+                                    <div>
+                                        <small class="text-muted d-block mb-1">Unlocks strategies for:</small>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            ${pet.needed_for.slice(0, 4).map(enc =>
+                        `<span class="badge bg-secondary text-light">${enc}</span>`
+                    ).join('')}
+                                            ${pet.needed_for.length > 4 ?
+                        `<span class="badge bg-dark text-muted">+${pet.needed_for.length - 4} more</span>`
+                        : ''}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            });
+    }
+
+    // Load on page load
+    loadLevelingQueue();
+</script>
+{% endblock %}

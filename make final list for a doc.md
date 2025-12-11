@@ -1,0 +1,162 @@
+Here is the final **Master Design Document** for your project. It consolidates the "Golden Stack" architecture, the "Silent Assassin" workflow, and the legal "Deep Tech" modules into a single execution plan.  
+You can copy and paste this directly into your Google Drive.  
+---
+
+# **Project: "The Silent Assassin" Pet Battle Suite**
+
+## **1\. Executive Summary**
+
+Concept: A hybrid Addon \+ Desktop Engine system designed to automate World of Warcraft Pet Battles with 100% efficiency using legal API exploits.  
+The Goal: Navigate the world, manage teams, and win battles using a single physical keypress (Spacebar) with zero on-screen HUD.  
+Philosophy: "The User provides the muscle; The Machine provides the brain."  
+---
+
+## **2\. System Architecture ("The Golden Stack")**
+
+The system is split into three layers to bypass Lua limitations while remaining TOS-compliant.
+
+### **Layer 1: The Executioner (WoW Addon)**
+
+* **Role:** The dumb client. Handles input and renders navigation.  
+* **Tech:** Lua, SecureStateDriver, TomTom API, Rematch API.  
+* **Function:** Executes the "Master Key" logic and battle commands.
+
+### **Layer 2: The Brain (Desktop Agent)**
+
+* **Role:** The heavy lifter. Runs in the background.  
+* **Tech:** Rust/C++ (for speed), File Watcher.  
+* **Function:** Runs Genetic Algorithms for team building, solves strategies via Minimax, and manages the "Playlist."
+
+### **Layer 3: The War Room (Web Portal)**
+
+* **Role:** The dashboard.  
+* **Tech:** Localhost Web Server.  
+* **Function:** Visualizes the Collection, Market Data, and Route Planning.
+
+---
+
+## **3\. The Addon ("The Executioner")**
+
+### **A. The "Master Key" (Context-Aware Input)**
+
+One physical key (**Spacebar**) dynamically changes function based on game state using SecureStateDriver.
+
+* **State: Idle:** Targets the **Next Trainer** (from Playlist) \+ Sets TomTom Arrow.  
+* **State: Moving:** Triggers InteractWithTarget (CTM) to auto-run to the NPC.  
+* **State: Gossip:** Auto-selects "Let's Battle" (skips dialog).  
+* **State: Combat:** Fires the "Auto-Battle" script button (executes Solver's moves).  
+* **State: Post-Combat:** Casts Revive Battle Pets or uses a Bandage.
+
+### **B. Visuals: "The Black Box"**
+
+* **Zero HUD:** The game interface is hidden (Alt+Z).  
+* **Status Pixel:** A single 1x1 pixel in the screen corner provides feedback.  
+  * **Black:** Idle / Safe to press.  
+  * **Red:** STOP / Error (Bag full, Stuck, Out of Bandages).
+
+### **C. "The Breed Police" (Instant Filter)**
+
+* **Logic:** During wild pet battles, the addon checks C\_PetBattles.GetBreedQuality() on Turn 1\.  
+* **Action:**  
+  * If Quality \< Rare (Blue): **Auto-Forfeit** immediately.  
+  * If Quality \= Rare: **Continue Script** to capture.  
+* **Result:** Scans wild pets in \<1.5 seconds.
+
+---
+
+## **4\. Navigation: "The Smart Circuit"**
+
+### **A. The Playlist**
+
+A linear queue of targets pushed from the Desktop Agent to the Addon.
+
+* *Step 1:* Target Farmer Nishi.  
+* *Step 2:* Battle Nishi.  
+* *Step 3:* **Smart Evac**.  
+* *Step 4:* Target Mo'ruk.
+
+### **B. "Smart Evac" Protocol**
+
+When a battle ends, the Playlist calculates the fastest exit method:
+
+1. **Check Whistle:** If in a valid zone \-\> **Use Item: Flight Master's Whistle**.  
+2. **Check Hearth:** If changing continents \-\> **Use Item: Dalaran Hearthstone**.  
+3. **Fallback:** If neither available \-\> Target nearest **Flight Master**.
+
+### **C. "The Alt-Grid" (Fast Travel)**
+
+Instead of flying, the Playlist routes your **Account**.
+
+* **Scenario:** Target is in Pandaria. Main is in Dalaran. Alt \#4 is parked in Pandaria.  
+* **Instruction:** The Playlist changes from "Fly to Pandaria" to **"Log into Alt \#4."**
+
+---
+
+## **5\. The Desktop Engine ("The Brain")**
+
+### **A. Genetic Team Builder**
+
+* **Problem:** Guides suggest pets you don't own.  
+* **Solution:** The Engine scans *your* collection and runs an evolutionary algorithm. It breeds and mutates random teams against the specific Trainer's AI until it finds a composition with a **100% Win Rate**.
+
+### **B. The Strategist (Minimax Simulator)**
+
+* **Problem:** RNG (Crits/Misses) causes losses.  
+* **Solution:** Before the battle begins, the Engine simulates the fight 1,000 times. If the win rate is \<100%, it flags the team as **Unsafe** and demands a gear/breed swap.
+
+### **C. "The Graph Navigator" (Dynamic Routing)**
+
+* **Logic:** The Engine tracks your item cooldowns (Hearthstone, Whistle, Cloak).  
+* **Action:** It solves the "Traveling Salesman Problem" in real-time. If your Hearthstone is on CD, it rewrites the Playlist to prioritize local targets first.
+
+### **D. "The Instance Accountant"**
+
+* **Logic:** Tracks weekly lockouts for Pet Battle Dungeons (Deadmines, Wailing Caverns) across all alts.  
+* **Action:** Automatically queues the correct dungeon route for the specific character you are logged into.
+
+---
+
+## **6\. Strategy Language: "Tactician Syntax"**
+
+*A human-readable format generated by the Brain and executed by the Addon.*  
+**Format:** \[TRIGGER\] :: \[ACTION\]  
+**Example Strategy:**
+
+Plaintext
+
+BLOCK     :: BIG HIT (Deep Breath) \-\> Use Deflection  
+MAINTAIN  :: Sandstorm             \-\> Use Sandstorm  
+EXECUTE   :: HP \< 250              \-\> Use Crush  
+SPAM      :: Filler                \-\> Use Crush
+
+*The Desktop App compiles this into complex Lua (if/then) logic automatically.*  
+---
+
+## **7\. Hardware Integration (Legal Visuals)**
+
+### **"The Color-Coded Keypad"**
+
+Since automated inputs are banned, we optimize **manual** input via visual cues.
+
+* **Hardware:** A dedicated single-key Macropad (Spacebar) sits on your desk.  
+* **Feedback:** The Addon flashes the screen specific colors to reflect state:  
+  * **Green Glow:** Tap Key (Combat/Interaction).  
+  * **Blue Glow:** Hold Key (Manual Flying).  
+  * **Red Glow:** STOP (Error/Intervention Needed).  
+* **Result:** You can play by watching the **reflected light on your wall**, without looking at the monitor.
+
+---
+
+## **8\. The "Silent Assassin" Workflow**
+
+1. **Setup (Web Portal):** Drag "Pandaria Circuit" to Queue.  
+2. **Sync:** Desktop Agent calculates the route and pushes files to WoW.  
+3. **The Loop (In-Game):**  
+   * **Green Glow:** Tap Spacebar \-\> Target Nishi.  
+   * **Green Glow:** Tap Spacebar \-\> Auto-Run to Nishi.  
+   * **Green Glow:** Tap Spacebar \-\> Battle Nishi (Script runs).  
+   * **Green Glow:** Tap Spacebar \-\> Auto-Heal.  
+   * **Green Glow:** Tap Spacebar \-\> Target Flight Master.  
+   * **Blue Glow:** Hold Spacebar \-\> Fly to Flight Master (Point & Shoot).  
+   * **Green Glow:** Tap Spacebar \-\> Take Taxi.  
+4. **User Role:** Watch Netflix. Tap key when the wall glows Green.
