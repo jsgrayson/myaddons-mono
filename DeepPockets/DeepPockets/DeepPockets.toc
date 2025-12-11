@@ -1,0 +1,9 @@
+## Interface: 100200
+## Title: |cffDAA520Deep Pockets|r
+## Notes: Smart Inventory Sorter (BetterBags Replacement)
+## Author: You
+## Version: 0.1.0 Alpha
+## SavedVariables: DeepPocketsDB
+
+DeepPockets.xml
+DeepPockets.lua
