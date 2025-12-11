@@ -1,0 +1,28 @@
+# WoW Suite Sync - Configuration
+
+[general]
+# Upload character data every X seconds (default: 300 = 5 minutes)
+upload_interval = 300
+
+# Download recommendations every X seconds (default: 600 = 10 minutes)
+download_interval = 600
+
+# WoW installation path (auto-detected if not set)
+wow_path = 
+
+# API endpoints
+skillweaver_api = http://localhost:8001
+goblin_api = http://localhost:8000
+
+# Authentication
+auth_token = 
+
+[sync]
+# Enable real-time file watching (default: true)
+file_watching = true
+
+# Enable periodic background sync (default: true)
+periodic_sync = true
+
+# Sync while WoW is running (default: false - queues for later)
+sync_while_running = false

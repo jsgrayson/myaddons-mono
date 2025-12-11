@@ -1,0 +1,295 @@
+/* Holocron Unified Theme - WoW Epic Style */
+/* Apply to all projects: Holocron, PetWeaver, GoblinStack, SkillWeaver */
+
+:root {
+  --wow-gold: #ffd700;
+  --wow-epic: #a335ee;
+  --wow-rare: #0070dd;
+  --wow-uncommon: #1eff00;
+  --wow-legendary: #ff8000;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+  background-attachment: fixed;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Premium Hero Section */
+.hero-header {
+  background: linear-gradient(135deg, rgba(163, 53, 238, 0.15) 0%, rgba(0, 112, 221, 0.15) 100%);
+  border: 1px solid rgba(163, 53, 238, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--wow-gold);
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+               0 0 60px rgba(255, 215, 0, 0.4),
+               0 4px 10px rgba(0, 0, 0, 0.8);
+  animation: title-glow 2s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+@keyframes title-glow {
+  from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.8); }
+  to { text-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 215, 0, 0.6), 0 4px 15px rgba(0, 0, 0, 0.9); }
+}
+
+.hero-subtitle {
+  color: #d4d4d4;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.animated-border {
+  height: 3px;
+  width: 150px;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--wow-epic), var(--wow-rare), var(--wow-epic), transparent);
+  background-size: 200% 100%;
+  animation: border-flow 3s linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(163, 53, 238, 0.8);
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(145deg, rgba(30, 30, 46, 0.9) 0%, rgba(25, 25, 40, 0.9) 100%);
+  border: 1px solid rgba(163, 53, 238, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(163, 53, 238, 0.5);
+  border-color: rgba(163, 53, 238, 0.6);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+/* Navigation */
+nav, .navbar {
+  background: linear-gradient(90deg, rgba(15,15,35,0.95) 0%, rgba(30,30,50,0.95) 100%);
+  border-bottom: 2px solid var(--wow-epic);
+  box-shadow: 0 4px 15px rgba(163, 53, 238, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+nav a {
+  color: #b8b8d1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+}
+
+nav a:hover {
+  color: var(--wow-rare);
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--wow-rare);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+/* Buttons */
+.btn, button {
+  border: 2px solid var(--wow-rare);
+  background: rgba(0, 112, 221, 0.2);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before, button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 112, 221, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover, button:hover {
+  border-color: var(--wow-epic);
+  box-shadow: 0 0 20px rgba(163, 53, 238, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn:hover::before, button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Badge/Tag Styles */
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.badge.bg-success, .bg-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.badge.bg-warning, .bg-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+.badge.bg-danger, .bg-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+}
+
+.badge.bg-info, .bg-info {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+}
+
+.badge.bg-primary, .bg-primary {
+  background: linear-gradient(135deg, var(--wow-rare) 0%, #0559b8 100%) !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--wow-gold);
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--wow-epic) 0%, var(--wow-rare) 100%);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--wow-legendary) 0%, var(--wow-epic) 100%);
+}
+
+/* Form Inputs */
+input, select, textarea {
+  background-color: rgba(44, 44, 60, 0.8);
+  border: 1px solid rgba(163, 53, 238, 0.3);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  background-color: rgba(44, 44, 60, 0.9);
+  border-color: var(--wow-epic);
+  box-shadow: 0 0 15px rgba(163, 53, 238, 0.4);
+  outline: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  background: rgba(163, 53, 238, 0.2);
+  color: var(--wow-gold);
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--wow-epic);
+}
+
+table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(163, 53, 238, 0.1);
+}
+
+table tr:hover {
+  background: rgba(163, 53, 238, 0.1);
+}

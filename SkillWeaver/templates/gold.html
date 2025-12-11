@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Gold Making - SkillWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title text-success"><i class="fas fa-coins me-2"></i>Gold Making</h1>
+            <p class="hero-subtitle">Maximize your profits with AI-driven market insights.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-success bg-opacity-10 border-success mb-4">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>GoblinStack Integration Active:</strong> Real-time market data is being pulled from your local TSM
+            scan.
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Crafting Profiteer -->
+    <div class="col-md-6">
+        <div class="card bg-dark border-secondary h-100">
+            <div class="card-header border-secondary d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Crafting Opportunities</h5>
+                <button class="btn btn-sm btn-outline-light">Refresh</button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Cost</th>
+                                <th>Profit</th>
+                                <th>ROI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="text-primary">Dracothyst</span></td>
+                                <td>3,500g</td>
+                                <td class="text-success">+450g</td>
+                                <td>12%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="text-primary">Shadowed Alloy</span></td>
+                                <td>800g</td>
+                                <td class="text-success">+120g</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="text-primary">Iced Phial</span></td>
+                                <td>45g</td>
+                                <td class="text-success">+15g</td>
+                                <td>33%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flipping Sniper -->
+    <div class="col-md-6">
+        <div class="card bg-dark border-secondary h-100">
+            <div class="card-header border-secondary d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Flipping Sniper</h5>
+                <span class="badge bg-danger">Live</span>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Scanning Auction House for underpriced items...</p>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item bg-transparent text-light border-secondary">
+                        <div class="d-flex justify-content-between">
+                            <strong>Teebu's Blazing Longsword</strong>
+                            <span class="text-success">50% Market Value</span>
+                        </div>
+                        <small class="text-muted">Buy: 50,000g | Sell: 100,000g</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

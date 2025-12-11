@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Weaver Dashboard</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .card {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        textarea {
+            width: 100%;
+            height: 400px;
+            background: #1e1e1e;
+            color: #00ff00;
+            border: 1px solid #444;
+            font-family: monospace;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .status {
+            float: right;
+            padding: 5px 10px;
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .status.running {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="status running" id="status">Status: Connecting...</div>
+            <h1>Visual Weaver 🕷️</h1>
+            <p>Control Center for AI Camera Agent</p>
+        </div>
+
+        <div class="card">
+            <h2>Configuration (visual_config.json)</h2>
+            <textarea id="configEditor"></textarea>
+            <br><br>
+            <button onclick="saveConfig()">Save Configuration</button>
+        </div>
+    </div>
+
+    <script>
+        async function loadConfig() {
+            const res = await fetch('/api/config');
+            const data = await res.json();
+            document.getElementById('configEditor').value = JSON.stringify(data, null, 4);
+        }
+
+        async function saveConfig() {
+            const configStr = document.getElementById('configEditor').value;
+            try {
+                const config = JSON.parse(configStr);
+                const res = await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+                const result = await res.json();
+                alert(result.message);
+            } catch (e) {
+                alert("Invalid JSON: " + e.message);
+            }
+        }
+
+        async function checkStatus() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+                document.getElementById('status').innerText = `Status: ${data.status.toUpperCase()} (${data.fps} Hz)`;
+            } catch (e) {
+                document.getElementById('status').innerText = "Status: Offline";
+            }
+        }
+
+        loadConfig();
+        setInterval(checkStatus, 2000);
+    </script>
+</body>
+
+</html>

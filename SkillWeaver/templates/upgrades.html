@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillWeaver Upgrade Finder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            color: #00bcd4;
+        }
+
+        .container {
+            max_width: 1200px;
+            margin: 0 auto;
+        }
+
+        .controls {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        select,
+        button {
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            background: #3d3d3d;
+            color: white;
+            font-size: 16px;
+        }
+
+        button {
+            background: #00bcd4;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #00acc1;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .slot-card {
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #444;
+        }
+
+        .slot-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #aaa;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+        }
+
+        .item-row:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            color: #a335ee;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Epic color default */
+        .item-source {
+            color: #888;
+            font-size: 12px;
+        }
+
+        .item-score {
+            color: #00bcd4;
+            font-weight: bold;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 24px;
+            color: #aaa;
+            margin-top: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upgrade Finder</h1>
+
+        <div class="controls">
+            <select id="classSelect">
+                <option value="warrior">Warrior</option>
+                <option value="priest">Priest</option>
+                <option value="mage">Mage</option>
+                <option value="rogue">Rogue</option>
+                <option value="druid">Druid</option>
+                <option value="hunter">Hunter</option>
+                <option value="shaman">Shaman</option>
+                <option value="paladin">Paladin</option>
+                <option value="warlock">Warlock</option>
+                <option value="monk">Monk</option>
+                <option value="demon-hunter">Demon Hunter</option>
+                <option value="death-knight">Death Knight</option>
+                <option value="evoker">Evoker</option>
+            </select>
+
+            <select id="specSelect">
+                <!-- Populated by JS -->
+            </select>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Raid" checked> Raid</label>
+                <label><input type="checkbox" value="Dungeon" checked> Dungeon</label>
+                <label><input type="checkbox" value="Delve" checked> Delve</label>
+                <label><input type="checkbox" value="World"> World</label>
+                <label><input type="checkbox" value="PvP"> PvP</label>
+            </div>
+
+            <button onclick="findUpgrades()">Find Upgrades</button>
+        </div>
+
+        <div id="loading" class="loading">Scanning timelines... (Scraping Data)</div>
+        <div id="results" class="results-grid"></div>
+    </div>
+
+    <script>
+        const specs = {
+            "warrior": ["Arms", "Fury", "Protection"],
+            "priest": ["Shadow", "Discipline", "Holy"],
+            "mage": ["Arcane", "Fire", "Frost"],
+            "rogue": ["Assassination", "Outlaw", "Subtlety"],
+            "druid": ["Balance", "Feral", "Guardian", "Restoration"],
+            "hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+            "shaman": ["Elemental", "Enhancement", "Restoration"],
+            "paladin": ["Holy", "Protection", "Retribution"],
+            "warlock": ["Affliction", "Demonology", "Destruction"],
+            "monk": ["Brewmaster", "Mistweaver", "Windwalker"],
+            "demon-hunter": ["Havoc", "Vengeance"],
+            "death-knight": ["Blood", "Frost", "Unholy"],
+            "evoker": ["Devastation", "Preservation", "Augmentation"],
+            "special": ["Fishing", "Speed"]
+        };
+
+        const classSelect = document.getElementById('classSelect');
+        const specSelect = document.getElementById('specSelect');
+
+        function updateSpecs() {
+            const cls = classSelect.value;
+            specSelect.innerHTML = "";
+
+            // Add Special option to class select? No, separate logic.
+            // Let's add a "Special" class option for UI simplicity
+
+            const list = specs[cls] || [];
+            list.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s.toLowerCase().replace(" ", "-");
+                opt.textContent = s;
+                specSelect.appendChild(opt);
+            });
+        }
+
+        // Add "Special" to class select manually
+        const specialOpt = document.createElement('option');
+        specialOpt.value = "special";
+        specialOpt.textContent = "Special Sets";
+        classSelect.appendChild(specialOpt);
+
+        classSelect.addEventListener('change', updateSpecs);
+        updateSpecs(); // Init
+
+        async function findUpgrades() {
+            const cls = classSelect.value;
+            let spec = specSelect.value;
+
+            // Handle Special Sets
+            if (cls === "special") {
+                // spec is already "fishing" or "speed"
+                // Capitalize for API
+                spec = spec.charAt(0).toUpperCase() + spec.slice(1);
+            }
+
+            // Get Sources
+            const sources = [];
+            document.querySelectorAll('.checkbox-group input:checked').forEach(cb => {
+                sources.push(cb.value);
+            });
+
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').innerHTML = '';
+
+            try {
+                const response = await fetch('/api/upgrades', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        class: cls,
+                        spec: spec,
+                        sources: sources
+                    })
+                });
+
+                const data = await response.json();
+                renderResults(data);
+            } catch (e) {
+                alert("Error fetching upgrades: " + e);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function renderResults(data) {
+            const container = document.getElementById('results');
+            container.innerHTML = '';
+
+            // Define slot order
+            const slotOrder = ["Head", "Neck", "Shoulders", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Finger", "Trinket", "Main Hand", "Off Hand", "Two-Hand", "Weapon"];
+
+            // Merge data keys with slotOrder to handle special slots not in list
+            const allSlots = new Set([...slotOrder, ...Object.keys(data)]);
+
+            // Iterate in order
+            slotOrder.forEach(slot => {
+                if (data[slot] && data[slot].length > 0) {
+                    createSlotCard(slot, data[slot], container);
+                }
+            });
+
+            // Render remaining slots
+            Object.keys(data).forEach(slot => {
+                if (!slotOrder.includes(slot) && data[slot].length > 0) {
+                    createSlotCard(slot, data[slot], container);
+                }
+            });
+        }
+
+        function createSlotCard(slotName, items, container) {
+            const card = document.createElement('div');
+            card.className = 'slot-card';
+
+            const title = document.createElement('div');
+            title.className = 'slot-title';
+            title.textContent = slotName;
+            card.appendChild(title);
+
+            const list = document.createElement('ul');
+            list.className = 'item-list';
+
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'item-row';
+
+                const left = document.createElement('div');
+                const link = document.createElement('a');
+                link.href = `https://www.wowhead.com/item=${item.id}`;
+                link.target = "_blank";
+                link.className = 'item-name';
+                link.textContent = item.name;
+
+                const source = document.createElement('div');
+                source.className = 'item-source';
+                source.textContent = item.source;
+
+                left.appendChild(link);
+                left.appendChild(source);
+
+                const score = document.createElement('div');
+                score.className = 'item-score';
+                score.textContent = item.score; // Placeholder score
+
+                li.appendChild(left);
+                li.appendChild(score);
+                list.appendChild(li);
+            });
+
+            card.appendChild(list);
+            container.appendChild(card);
+        }
+    </script>
+</body>
+
+</html>
