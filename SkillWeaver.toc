@@ -1,0 +1,9 @@
+## Interface: 100200
+## Title: Skillweaver
+## Notes: Advanced Macro Sequence Editor (GSE Replacement)
+## Author: You
+## Version: 0.1.0 Alpha
+## SavedVariables: SkillweaverDB
+
+Skillweaver.xml
+Skillweaver.lua

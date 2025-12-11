@@ -1,0 +1,23 @@
+SkillWeaver/
+  core/
+  engine/
+  db/
+  ui/
+  talents/
+  pvp/
+  heroes/
+  sequences/
+  utils/
+  libs/
+  SkillWeaver.toc
+  README.md
+  scraper/
+     Dockerfile
+     scraper.py (or Node version)
+  sync-client/
+     main.py
+     requirements.txt
+     tests/
+  .github/
+     workflows/
+         skillweaver.yml
