@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg-base text-slate-100 font-body;
+  min-height: 100vh;
+}
+
+.page-bg {
+  @apply rounded-2xl overflow-hidden relative;
+}
+
+.page-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.page-bg-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.app-sidebar {
+  z-index: 3000 !important;
+  position: relative !important;
+}

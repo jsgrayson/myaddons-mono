@@ -1,0 +1,68 @@
+.simulator-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+}
+
+.simulator-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.simulator-layout {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+}
+
+@media (max-width: 900px) {
+  .simulator-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.simulator-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.simulator-placeholder {
+  margin-top: 10px;
+  min-height: 120px;
+  border-radius: 12px;
+  border: 1px dashed rgba(148, 163, 184, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.simulator-results-card {
+  min-height: 180px;
+}
+
+.simulator-log-card {
+  max-height: 260px;
+  overflow: hidden;
+}
+
+.simulator-log {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(30, 64, 175, 0.65);
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.78rem;
+}
+
+.simulator-log-empty {
+  text-align: center;
+  color: #6b7280;
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <defs>
+    <radialGradient id="hero" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f39c37" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#f39c37" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#050509" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="#050509"/>
+  <circle cx="256" cy="260" r="220" fill="url(#hero)"/>
+  <text x="256" y="260" text-anchor="middle" fill="#ffffff" font-size="32" font-family="system-ui">
+    PetWeaver
+  </text>
+  <text x="256" y="310" text-anchor="middle" fill="#ffcc66" font-size="18" font-family="system-ui">
+    Ember Arcane Hero
+  </text>
+</svg>

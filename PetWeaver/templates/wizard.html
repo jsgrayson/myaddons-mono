@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+
+{% block title %}Strategy Wizard - PetWeaver{% endblock %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet">
+<style>
+    .wizard-step {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .wizard-step h3 {
+        color: var(--wow-gold);
+        margin-bottom: 1rem;
+        font-family: 'Cinzel', serif;
+    }
+
+    .action-row {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border-left: 3px solid var(--wow-gold);
+    }
+
+    .wizard-nav-step {
+        padding: 0.75rem 1.5rem;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--glass-border);
+        border-radius: 6px;
+        color: var(--text-muted);
+        font-weight: 600;
+        cursor: default;
+    }
+
+    .wizard-nav-step.active {
+        background: var(--wow-gold);
+        color: #000;
+        border-color: var(--wow-gold);
+    }
+
+    .wizard-nav-step.completed {
+        border-color: var(--success);
+        color: var(--success);
+    }
+
+    .code-preview {
+        background: #1e1e1e;
+        border: 1px solid var(--glass-border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        overflow-x: auto;
+    }
+
+    .code-preview pre {
+        margin: 0;
+        color: #d4d4d4;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">⚔️ Strategy Wizard</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-magic me-2"></i>Create custom pet battle strategies step-by-step
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <!-- Wizard Navigation -->
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <div class="wizard-nav-step active" id="nav-step-1">1. Basic Info</div>
+            <div class="wizard-nav-step" id="nav-step-2">2. Actions</div>
+            <div class="wizard-nav-step" id="nav-step-3">3. Generate</div>
+        </div>
+
+        <!-- Step 1: Basic Information -->
+        <div class="wizard-step" id="step-1">
+            <h3>📝 Step 1: Basic Information</h3>
+
+            <div class="mb-3">
+                <label class="form-label text-white">Strategy Name</label>
+                <input type="text" id="strategy-name" class="form-control bg-dark text-white border-secondary"
+                    placeholder="e.g., Squirt Day Leveling - Anubisath Idol">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white">Target Encounter (Optional)</label>
+                <input type="text" id="encounter-name" class="form-control bg-dark text-white border-secondary"
+                    placeholder="e.g., Squirt">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label text-white">Number of Pets in Team</label>
+                <select id="pet-slots" class="form-select bg-dark text-white border-secondary">
+                    <option value="1">1 Pet</option>
+                    <option value="2">2 Pets</option>
+                    <option value="3" selected>3 Pets</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" onclick="nextStep(2)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+        </div>
+
+        <!-- Step 2: Define Actions -->
+        <div class="wizard-step" id="step-2" style="display: none;">
+            <h3>⚡ Step 2: Define Strategy Actions</h3>
+            <p class="text-muted mb-4">
+                Build your strategy by adding actions. Each action represents what your pet should do.
+            </p>
+
+            <div id="actions-container">
+                <!-- Actions will be added here dynamically -->
+            </div>
+
+            <button class="btn btn-outline-warning mb-4" onclick="addAction()"><i class="fas fa-plus me-2"></i>Add
+                Action</button>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-secondary" onclick="prevStep(1)"><i
+                        class="fas fa-arrow-left me-2"></i>Back</button>
+                <button class="btn btn-primary" onclick="nextStep(3)">Next <i
+                        class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+
+        <!-- Step 3: Generate Code -->
+        <div class="wizard-step" id="step-3" style="display: none;">
+            <h3>🎯 Step 3: Generated Strategy Code</h3>
+
+            <div class="code-preview mb-4">
+                <pre id="generated-code">-- Your generated code will appear here</pre>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-secondary" onclick="prevStep(2)"><i
+                        class="fas fa-arrow-left me-2"></i>Back</button>
+                <button class="btn btn-success" onclick="copyCode()"><i class="fas fa-copy me-2"></i>Copy Code</button>
+                <button class="btn btn-info text-white" onclick="downloadStrategy()"><i
+                        class="fas fa-download me-2"></i>Download .lua</button>
+                <button class="btn btn-warning text-dark" onclick="testStrategy()"><i class="fas fa-flask me-2"></i>Test
+                    Strategy</button>
+            </div>
+
+            <div id="test-results" style="display: none;">
+                <!-- Test results will appear here -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let actionCounter = 0;
+    let currentStep = 1;
+
+    // Initialize with one action
+    document.addEventListener('DOMContentLoaded', () => {
+        addAction();
+    });
+
+    function nextStep(step) {
+        // Hide current step
+        document.getElementById(`step-${currentStep}`).style.display = 'none';
+        document.getElementById(`nav-step-${currentStep}`).classList.remove('active');
+        document.getElementById(`nav-step-${currentStep}`).classList.add('completed');
+
+        // Show next step
+        document.getElementById(`step-${step}`).style.display = 'block';
+        document.getElementById(`nav-step-${step}`).classList.add('active');
+        currentStep = step;
+
+        // If step 3, generate code
+        if (step === 3) {
+            generateCode();
+        }
+    }
+
+    function prevStep(step) {
+        // Hide current step
+        document.getElementById(`step-${currentStep}`).style.display = 'none';
+        document.getElementById(`nav-step-${currentStep}`).classList.remove('active');
+
+        // Show previous step
+        document.getElementById(`step-${step}`).style.display = 'block';
+        document.getElementById(`nav-step-${step}`).classList.remove('completed');
+        document.getElementById(`nav-step-${step}`).classList.add('active');
+        currentStep = step;
+    }
+
+    function addAction() {
+        actionCounter++;
+        const container = document.getElementById('actions-container');
+        const actionHtml = `
+            <div class="action-row" id="action-${actionCounter}">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <strong class="text-white">Action ${actionCounter}</strong>
+                    <button class="btn btn-sm btn-outline-danger" onclick="removeAction(${actionCounter})"><i class="fas fa-times"></i> Remove</button>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label text-white small">Action Type</label>
+                    <select class="form-select bg-dark text-white border-secondary action-type" onchange="updateActionFields(${actionCounter})">
+                        <option value="ability">Use Ability</option>
+                        <option value="swap">Swap Pet</option>
+                        <option value="pass">Pass Turn</option>
+                        <option value="conditional">If Condition...</option>
+                    </select>
+                </div>
+                
+                <div class="action-fields-${actionCounter}">
+                    <div class="mb-3">
+                        <label class="form-label text-white small">Ability Slot (1, 2, or 3)</label>
+                        <input type="number" class="form-control bg-dark text-white border-secondary ability-slot" min="1" max="3" value="1">
+                    </div>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', actionHtml);
+    }
+
+    function removeAction(id) {
+        document.getElementById(`action-${id}`).remove();
+    }
+
+    function updateActionFields(id) {
+        const actionType = document.querySelector(`#action-${id} .action-type`).value;
+        const fieldsContainer = document.querySelector(`.action-fields-${id}`);
+
+        let fieldsHtml = '';
+
+        if (actionType === 'ability') {
+            fieldsHtml = `
+                <div class="mb-3">
+                    <label class="form-label text-white small">Ability Slot (1, 2, or 3)</label>
+                    <input type="number" class="form-control bg-dark text-white border-secondary ability-slot" min="1" max="3" value="1">
+                </div>
+            `;
+        } else if (actionType === 'swap') {
+            fieldsHtml = `
+                <div class="mb-3">
+                    <label class="form-label text-white small">Swap to Pet # (1, 2, or 3)</label>
+                    <input type="number" class="form-control bg-dark text-white border-secondary swap-pet" min="1" max="3" value="2">
+                </div>
+            `;
+        } else if (actionType === 'conditional') {
+            fieldsHtml = `
+                <div class="mb-3">
+                    <label class="form-label text-white small">Condition</label>
+                    <select class="form-select bg-dark text-white border-secondary condition-type">
+                        <option value="enemy_hp">Enemy HP < X%</option>
+                        <option value="my_hp">My HP < X%</option>
+                        <option value="round">Round >= X</option>
+                        <option value="buff_active">Buff Active</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-white small">Value</label>
+                    <input type="number" class="form-control bg-dark text-white border-secondary condition-value" min="0" max="100" value="50">
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label class="form-label text-white small">Then Use Ability</label>
+                        <input type="number" class="form-control bg-dark text-white border-secondary then-ability" min="1" max="3" value="2">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label class="form-label text-white small">Else Use Ability</label>
+                        <input type="number" class="form-control bg-dark text-white border-secondary else-ability" min="1" max="3" value="1">
+                    </div>
+                </div>
+            `;
+        }
+
+        fieldsContainer.innerHTML = fieldsHtml;
+    }
+
+    function generateCode() {
+        const strategyName = document.getElementById('strategy-name').value || 'Unnamed Strategy';
+        let code = `-- ${strategyName}\n`;
+        code += `-- Generated by PetWeaver Strategy Wizard\n\n`;
+        code += `local td = tdBattlePetScript\n\n`;
+
+        // Get all actions
+        const actions = document.querySelectorAll('.action-row');
+
+        actions.forEach((action, index) => {
+            const actionType = action.querySelector('.action-type').value;
+
+            if (actionType === 'ability') {
+                const slot = action.querySelector('.ability-slot').value;
+                code += `td.pet.useAbility(${slot})\n`;
+            } else if (actionType === 'swap') {
+                const petNum = action.querySelector('.swap-pet').value;
+                code += `td.team.swap(${petNum})\n`;
+            } else if (actionType === 'pass') {
+                code += `td.pet.pass()\n`;
+            } else if (actionType === 'conditional') {
+                const condType = action.querySelector('.condition-type').value;
+                const condValue = action.querySelector('.condition-value').value;
+                const thenAbility = action.querySelector('.then-ability').value;
+                const elseAbility = action.querySelector('.else-ability').value;
+
+                if (condType === 'enemy_hp') {
+                    code += `if td.enemy.hp() < ${condValue} then\n`;
+                    code += `  td.pet.useAbility(${thenAbility})\n`;
+                    code += `else\n`;
+                    code += `  td.pet.useAbility(${elseAbility})\n`;
+                    code += `end\n`;
+                } else if (condType === 'my_hp') {
+                    code += `if td.pet.hp() < ${condValue} then\n`;
+                    code += `  td.pet.useAbility(${thenAbility})\n`;
+                    code += `else\n`;
+                    code += `  td.pet.useAbility(${elseAbility})\n`;
+                    code += `end\n`;
+                } else if (condType === 'round') {
+                    code += `if td.round >= ${condValue} then\n`;
+                    code += `  td.pet.useAbility(${thenAbility})\n`;
+                    code += `else\n`;
+                    code += `  td.pet.useAbility(${elseAbility})\n`;
+                    code += `end\n`;
+                }
+            }
+        });
+
+        document.getElementById('generated-code').textContent = code;
+    }
+
+    function copyCode() {
+        const code = document.getElementById('generated-code').textContent;
+        navigator.clipboard.writeText(code);
+        alert('Code copied to clipboard!');
+    }
+
+    function downloadStrategy() {
+        const strategyName = document.getElementById('strategy-name').value || 'strategy';
+        const code = document.getElementById('generated-code').textContent;
+        const blob = new Blob([code], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${strategyName.replace(/\s+/g, '_')}.lua`;
+        a.click();
+    }
+
+    async function testStrategy() {
+        const resultsDiv = document.getElementById('test-results');
+        resultsDiv.style.display = 'block';
+        resultsDiv.innerHTML = '<div class="alert alert-info"><i class="fas fa-spinner fa-spin me-2"></i>Running simulation in Virtual Dojo...</div>';
+
+        // Collect actions
+        const actions = [];
+        document.querySelectorAll('.action-row').forEach(row => {
+            const type = row.querySelector('.action-type').value;
+            const action = { type: type };
+
+            if (type === 'ability') {
+                action.slot = row.querySelector('.ability-slot').value;
+            } else if (type === 'swap') {
+                action.pet = row.querySelector('.swap-pet').value;
+            } else if (type === 'conditional') {
+                action.condition_type = row.querySelector('.condition-type').value;
+                action.condition_value = row.querySelector('.condition-value').value;
+                action.then_slot = row.querySelector('.then-ability').value;
+                action.else_slot = row.querySelector('.else-ability').value;
+            }
+            actions.push(action);
+        });
+
+        try {
+            const response = await fetch('/api/simulate/wizard', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ actions: actions })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultsDiv.innerHTML = `<div class="alert alert-danger">Error: ${data.error}</div>`;
+                return;
+            }
+
+            let html = `
+                <div class="card bg-black border-secondary">
+                    <div class="card-header ${data.winner === 'player' ? 'bg-success' : 'bg-danger'} text-white">
+                        <i class="fas ${data.winner === 'player' ? 'fa-trophy' : 'fa-skull'} me-2"></i>${data.message}
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="console-output p-3" style="max-height: 300px; overflow-y: auto; font-family: monospace; color: #ccc;">
+            `;
+
+            data.log.forEach(line => {
+                html += `<div>${line}</div>`;
+            });
+
+            html += `</div></div></div>`;
+            resultsDiv.innerHTML = html;
+
+        } catch (e) {
+            resultsDiv.innerHTML = `<div class="alert alert-danger">Network Error: ${e.message}</div>`;
+        }
+    }
+</script>
+{% endblock %}

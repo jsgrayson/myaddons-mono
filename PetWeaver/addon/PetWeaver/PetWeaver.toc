@@ -1,0 +1,8 @@
+## Interface: 110000
+## Title: PetWeaver
+## Notes: Data collector for PetWeaver AI
+## Author: Antigravity
+## SavedVariables: PetWeaverSaved
+## Version: 1.0
+
+PetWeaver.lua

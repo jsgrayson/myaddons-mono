@@ -1,0 +1,4645 @@
+{
+  "expansion": "The War Within",
+  "category": "World Quests",
+  "encounters": [
+    {
+      "encounter_name": "Rock Collector",
+      "url": "https://www.wow-petguide.com/Encounter/1589/Rock_Collector",
+      "script": "",
+      "team_count": 31,
+      "scraped_at": "2025-11-21T10:37:56.904696",
+      "pet_slots": [
+        [
+          {
+            "name": "Chitterspine Deepstalker",
+            "id": 154720
+          },
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Jademist Dancer",
+            "id": 73355
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "Mirror Strider",
+            "id": 62998
+          },
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Pocket Cannon",
+            "id": 119794
+          },
+          {
+            "name": "Gahzrooki",
+            "id": 71159
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Emperor Crab",
+            "id": 65203
+          },
+          {
+            "name": "Sharpclaw",
+            "id": 174084
+          },
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Wood Frog",
+            "id": 7550
+          },
+          {
+            "name": "Left Shark",
+            "id": 94867
+          },
+          {
+            "name": "Boghopper",
+            "id": 143055
+          },
+          {
+            "name": "Snarly",
+            "id": 26050
+          }
+        ],
+        [
+          {
+            "name": "Chitterspine Deepstalker",
+            "id": 154720
+          },
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Remembered Construct",
+            "id": 220675
+          },
+          {
+            "name": "Spring Strider",
+            "id": 97559
+          },
+          {
+            "name": "Spireshell Snail",
+            "id": 154716
+          },
+          {
+            "name": "Sophic Amalgamation",
+            "id": 197089
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Water Waveling",
+            "id": 62820
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Faceless Mindlasher",
+            "id": 127952
+          },
+          {
+            "name": "Aqua Strider",
+            "id": 64633
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Puddle Terror",
+            "id": 88300
+          },
+          {
+            "name": "Emperor Crab",
+            "id": 65203
+          },
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Hermit Crab",
+            "id": 143056
+          },
+          {
+            "name": "Abyssal Slitherling",
+            "id": 154814
+          },
+          {
+            "name": "Left Shark",
+            "id": 94867
+          },
+          {
+            "name": "Microlicid",
+            "id": 184195
+          },
+          {
+            "name": "Emmah",
+            "id": 189694
+          }
+        ],
+        [
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Jademist Dancer",
+            "id": 73355
+          },
+          {
+            "name": "Bound Stream",
+            "id": 127858
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Bubbles",
+            "id": 218646
+          },
+          {
+            "name": "Eternal Strider",
+            "id": 61088
+          },
+          {
+            "name": "Muckbreath",
+            "id": 24389
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Rapana Whelk",
+            "id": 64352
+          },
+          {
+            "name": "Lovely Duckling",
+            "id": 215565
+          },
+          {
+            "name": "Puddle Terror",
+            "id": 88300
+          },
+          {
+            "name": "Legs",
+            "id": 53048
+          },
+          {
+            "name": "Twilight Clutch-Sister",
+            "id": 127857
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          },
+          {
+            "name": "Dancing Water Skimmer",
+            "id": 63847
+          },
+          {
+            "name": "Crimson Octopode",
+            "id": 148997
+          },
+          {
+            "name": "Abyssal Slitherling",
+            "id": 154814
+          },
+          {
+            "name": "Spawn of Gnathus",
+            "id": 70098
+          },
+          {
+            "name": "Tragg the Curious",
+            "id": 143195
+          },
+          {
+            "name": "Tonguelasher",
+            "id": 148990
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Tragg the Curious",
+            "id": 143195
+          }
+        ],
+        [
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Sophic Amalgamation",
+            "id": 197089
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Jademist Dancer",
+            "id": 73355
+          }
+        ],
+        [
+          {
+            "name": "Emperor Crab",
+            "id": 65203
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ],
+        [
+          {
+            "name": "Sharpclaw",
+            "id": 174084
+          },
+          {
+            "name": "Microlicid",
+            "id": 184195
+          },
+          {
+            "name": "Bubbles",
+            "id": 218646
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Abyssal Slitherling",
+            "id": 154814
+          },
+          {
+            "name": "Abyssal Slitherling",
+            "id": 154814
+          }
+        ],
+        [
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          }
+        ],
+        [
+          {
+            "name": "Chitterspine Deepstalker",
+            "id": 154720
+          },
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Puddle Terror",
+            "id": 88300
+          }
+        ],
+        [
+          {
+            "name": "Left Shark",
+            "id": 94867
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Sharpclaw",
+            "id": 174084
+          },
+          {
+            "name": "Microlicid",
+            "id": 184195
+          },
+          {
+            "name": "Tonguelasher",
+            "id": 148990
+          }
+        ],
+        [
+          {
+            "name": "Pocket Cannon",
+            "id": 119794
+          },
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Gahzrooki",
+            "id": 71159
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Legs",
+            "id": 53048
+          }
+        ],
+        [
+          {
+            "name": "Jademist Dancer",
+            "id": 73355
+          },
+          {
+            "name": "Hermit Crab",
+            "id": 143056
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Emperor Crab",
+            "id": 65203
+          },
+          {
+            "name": "Spawn of Gnathus",
+            "id": 70098
+          }
+        ],
+        [
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Chitterspine Deepstalker",
+            "id": 154720
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Left Shark",
+            "id": 94867
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Twilight Clutch-Sister",
+            "id": 127857
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Eternal Strider",
+            "id": 61088
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Remembered Construct",
+            "id": 220675
+          },
+          {
+            "name": "Twilight Clutch-Sister",
+            "id": 127857
+          }
+        ],
+        [
+          {
+            "name": "Snarly",
+            "id": 26050
+          },
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Muckbreath",
+            "id": 24389
+          }
+        ],
+        [
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "Puddle Terror",
+            "id": 88300
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Boghopper",
+            "id": 143055
+          },
+          {
+            "name": "Aqua Strider",
+            "id": 64633
+          },
+          {
+            "name": "Lovely Duckling",
+            "id": 215565
+          }
+        ],
+        [
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          }
+        ],
+        [
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Faceless Mindlasher",
+            "id": 127952
+          },
+          {
+            "name": "Bound Stream",
+            "id": 127858
+          }
+        ],
+        [
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          }
+        ],
+        [
+          {
+            "name": "Jademist Dancer",
+            "id": 73355
+          },
+          {
+            "name": "Spireshell Snail",
+            "id": 154716
+          },
+          {
+            "name": "Rapana Whelk",
+            "id": 64352
+          }
+        ],
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Emmah",
+            "id": 189694
+          },
+          {
+            "name": "Crimson Octopode",
+            "id": 148997
+          }
+        ],
+        [
+          {
+            "name": "Wood Frog",
+            "id": 7550
+          },
+          {
+            "name": "Water Waveling",
+            "id": 62820
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          }
+        ],
+        [
+          {
+            "name": "Mirror Strider",
+            "id": 62998
+          },
+          {
+            "name": "Spring Strider",
+            "id": 97559
+          },
+          {
+            "name": "Dancing Water Skimmer",
+            "id": 63847
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "Robot Rumble",
+      "url": "https://www.wow-petguide.com/Encounter/1590/Robot_Rumble",
+      "script": "",
+      "team_count": 32,
+      "scraped_at": "2025-11-21T10:38:03.356288",
+      "pet_slots": [
+        [
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Gillvanas",
+            "id": 157715
+          },
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Bloodlouse Larva",
+            "id": 173534
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Living Sandling",
+            "id": 69748
+          },
+          {
+            "name": "Buttercup",
+            "id": 185756
+          },
+          {
+            "name": "Terrible Turnip",
+            "id": 63365
+          },
+          {
+            "name": "Netherspace Abyssal",
+            "id": 71016
+          },
+          {
+            "name": "Decaying Mawrat",
+            "id": 174083
+          },
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          }
+        ],
+        [
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Unstable Tendril",
+            "id": 127954
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Fel Lasher",
+            "id": 128137
+          },
+          {
+            "name": "Ghostcap Menace",
+            "id": 222877
+          },
+          {
+            "name": "Drazkazet the Wrathful",
+            "id": 185324
+          },
+          {
+            "name": "Crimson Geode",
+            "id": 62927
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Molten Corgi",
+            "id": 84915
+          },
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          },
+          {
+            "name": "Dustite",
+            "id": 212413
+          },
+          {
+            "name": "Netherspace Abyssal",
+            "id": 71016
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Murkidan",
+            "id": 85009
+          },
+          {
+            "name": "Scurrying Mawrat",
+            "id": 179182
+          },
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          }
+        ],
+        [
+          {
+            "name": "Blossoming Ancient",
+            "id": 71488
+          },
+          {
+            "name": "Soul of the Aspects",
+            "id": 58163
+          },
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          },
+          {
+            "name": "Spinemaw Gormling",
+            "id": 174089
+          },
+          {
+            "name": "Broot",
+            "id": 98463
+          },
+          {
+            "name": "Driftling",
+            "id": 200259
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Lil Ragnaros",
+            "id": 51600
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          },
+          {
+            "name": "Shale Mosswool",
+            "id": 222778
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          },
+          {
+            "name": "Sunfire Kaliri",
+            "id": 88367
+          },
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          },
+          {
+            "name": "Corefire Imp",
+            "id": 68664
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Chitterspine Skitterling",
+            "id": 154706
+          },
+          {
+            "name": "Lil Frostwing",
+            "id": 209259
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          },
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          }
+        ],
+        [
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          }
+        ],
+        [
+          {
+            "name": "Bloodlouse Larva",
+            "id": 173534
+          },
+          {
+            "name": "Drazkazet the Wrathful",
+            "id": 185324
+          },
+          {
+            "name": "Spinemaw Gormling",
+            "id": 174089
+          }
+        ],
+        [
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Scurrying Mawrat",
+            "id": 179182
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          }
+        ],
+        [
+          {
+            "name": "Decaying Mawrat",
+            "id": 174083
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunfire Kaliri",
+            "id": 88367
+          }
+        ],
+        [
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          }
+        ],
+        [
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Crimson Geode",
+            "id": 62927
+          },
+          {
+            "name": "Lil Frostwing",
+            "id": 209259
+          }
+        ],
+        [
+          {
+            "name": "Gillvanas",
+            "id": 157715
+          },
+          {
+            "name": "Murkidan",
+            "id": 85009
+          },
+          {
+            "name": "Blossoming Ancient",
+            "id": 71488
+          }
+        ],
+        [
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Molten Corgi",
+            "id": 84915
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Corefire Imp",
+            "id": 68664
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Lil Ragnaros",
+            "id": 51600
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Chitterspine Skitterling",
+            "id": 154706
+          }
+        ],
+        [
+          {
+            "name": "Netherspace Abyssal",
+            "id": 71016
+          },
+          {
+            "name": "Netherspace Abyssal",
+            "id": 71016
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Unstable Tendril",
+            "id": 127954
+          },
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Broot",
+            "id": 98463
+          }
+        ],
+        [
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          }
+        ],
+        [
+          {
+            "name": "Decaying Mawrat",
+            "id": 174083
+          },
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Soul of the Aspects",
+            "id": 58163
+          }
+        ],
+        [
+          {
+            "name": "Buttercup",
+            "id": 185756
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Driftling",
+            "id": 200259
+          }
+        ],
+        [
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Dustite",
+            "id": 212413
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Sun Darter Hatchling",
+            "id": 61087
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          }
+        ],
+        [
+          {
+            "name": "Terrible Turnip",
+            "id": 63365
+          },
+          {
+            "name": "Ghostcap Menace",
+            "id": 222877
+          },
+          {
+            "name": "Shale Mosswool",
+            "id": 222778
+          }
+        ],
+        [
+          {
+            "name": "Living Sandling",
+            "id": 69748
+          },
+          {
+            "name": "Fel Lasher",
+            "id": 128137
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "The Power of Friendship",
+      "url": "https://www.wow-petguide.com/Encounter/1592/The_Power_of_Friendship",
+      "script": "",
+      "team_count": 30,
+      "scraped_at": "2025-11-21T10:38:10.044124",
+      "pet_slots": [
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Gorm Harrier",
+            "id": 171230
+          },
+          {
+            "name": "Poda",
+            "id": 139073
+          },
+          {
+            "name": "Gnomelia Gearheart",
+            "id": 184285
+          },
+          {
+            "name": "Sky-Bo",
+            "id": 85284
+          },
+          {
+            "name": "Crow",
+            "id": 67443
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Wind-Up Woofer",
+            "id": 234664
+          },
+          {
+            "name": "Kunchong Hatchling",
+            "id": 143820
+          },
+          {
+            "name": "Briarhorn Hatchling",
+            "id": 208624
+          },
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Ranishu Runt",
+            "id": 143197
+          },
+          {
+            "name": "Menagerie Custodian",
+            "id": 71015
+          }
+        ],
+        [
+          {
+            "name": "Alabaster Stonecharger",
+            "id": 223092
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Feline Familiar",
+            "id": 53884
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Blue Clockwork Rocket Bot",
+            "id": 40295
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Archetype of Predation",
+            "id": 182393
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Baby Ape",
+            "id": 61324
+          },
+          {
+            "name": "Flayer Youngling",
+            "id": 62555
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          },
+          {
+            "name": "Direhorn Runt",
+            "id": 70154
+          },
+          {
+            "name": "Tarachnid Ambusher",
+            "id": 182473
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Widget the Departed",
+            "id": 86067
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Violent Poultrid",
+            "id": 184189
+          }
+        ],
+        [
+          {
+            "name": "Dread Hatchling",
+            "id": 77137
+          },
+          {
+            "name": "Felspider",
+            "id": 97323
+          },
+          {
+            "name": "Bonebiter",
+            "id": 154893
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Kun-Lai Runt",
+            "id": 68846
+          },
+          {
+            "name": "Xu-Fu, Cub of Xuen",
+            "id": 71942
+          },
+          {
+            "name": "Thunder",
+            "id": 222203
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Watcher of the Huntress",
+            "id": 185621
+          },
+          {
+            "name": "Mining Monkey",
+            "id": 124589
+          },
+          {
+            "name": "Gundrak Hatchling",
+            "id": 35400
+          },
+          {
+            "name": "Lost Netherpup",
+            "id": 93142
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Mist Fox Kit",
+            "id": 97743
+          },
+          {
+            "name": "Grumpy",
+            "id": 96622
+          },
+          {
+            "name": "Baby Zandalari Raptor",
+            "id": 148517
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          },
+          {
+            "name": "Sable",
+            "id": 171568
+          },
+          {
+            "name": "Bonkers",
+            "id": 73668
+          },
+          {
+            "name": "Tarachnid Stalker",
+            "id": 182437
+          },
+          {
+            "name": "Emmigosa",
+            "id": 97207
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Kunchong Hatchling",
+            "id": 143820
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          },
+          {
+            "name": "Bonebiter",
+            "id": 154893
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Emmigosa",
+            "id": 97207
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Xu-Fu, Cub of Xuen",
+            "id": 71942
+          }
+        ],
+        [
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Emmigosa",
+            "id": 97207
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Violent Poultrid",
+            "id": 184189
+          },
+          {
+            "name": "Lost Netherpup",
+            "id": 93142
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Watcher of the Huntress",
+            "id": 185621
+          }
+        ],
+        [
+          {
+            "name": "Ranishu Runt",
+            "id": 143197
+          },
+          {
+            "name": "Flayer Youngling",
+            "id": 62555
+          },
+          {
+            "name": "Bonkers",
+            "id": 73668
+          }
+        ],
+        [
+          {
+            "name": "Gorm Harrier",
+            "id": 171230
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Sable",
+            "id": 171568
+          }
+        ],
+        [
+          {
+            "name": "Coldlight Surfrunner",
+            "id": 143821
+          },
+          {
+            "name": "Feline Familiar",
+            "id": 53884
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Thunder",
+            "id": 222203
+          }
+        ],
+        [
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Xu-Fu, Cub of Xuen",
+            "id": 71942
+          }
+        ],
+        [
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Felspider",
+            "id": 97323
+          }
+        ],
+        [
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Widget the Departed",
+            "id": 86067
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Sky-Bo",
+            "id": 85284
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Kun-Lai Runt",
+            "id": 68846
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Crow",
+            "id": 67443
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Dread Hatchling",
+            "id": 77137
+          }
+        ],
+        [
+          {
+            "name": "Menagerie Custodian",
+            "id": 71015
+          },
+          {
+            "name": "Flayer Youngling",
+            "id": 62555
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Gnomelia Gearheart",
+            "id": 184285
+          },
+          {
+            "name": "Archetype of Predation",
+            "id": 182393
+          },
+          {
+            "name": "Tarachnid Stalker",
+            "id": 182437
+          }
+        ],
+        [
+          {
+            "name": "Gnomelia Gearheart",
+            "id": 184285
+          },
+          {
+            "name": "Tarachnid Ambusher",
+            "id": 182473
+          },
+          {
+            "name": "Tarachnid Stalker",
+            "id": 182437
+          }
+        ],
+        [
+          {
+            "name": "Poda",
+            "id": 139073
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Mining Monkey",
+            "id": 124589
+          }
+        ],
+        [
+          {
+            "name": "Briarhorn Hatchling",
+            "id": 208624
+          },
+          {
+            "name": "Blue Clockwork Rocket Bot",
+            "id": 40295
+          },
+          {
+            "name": "Gundrak Hatchling",
+            "id": 35400
+          }
+        ],
+        [
+          {
+            "name": "Gorm Harrier",
+            "id": 171230
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          }
+        ],
+        [
+          {
+            "name": "Gnomelia Gearheart",
+            "id": 184285
+          },
+          {
+            "name": "Baby Ape",
+            "id": 61324
+          },
+          {
+            "name": "Baby Zandalari Raptor",
+            "id": 148517
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          }
+        ],
+        [
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Direhorn Runt",
+            "id": 70154
+          },
+          {
+            "name": "Grumpy",
+            "id": 96622
+          }
+        ],
+        [
+          {
+            "name": "Wind-Up Woofer",
+            "id": 234664
+          },
+          {
+            "name": "Alabaster Stonecharger",
+            "id": 223092
+          },
+          {
+            "name": "Mist Fox Kit",
+            "id": 97743
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "Major Malfunction",
+      "url": "https://www.wow-petguide.com/Encounter/1593/Major_Malfunction",
+      "script": "",
+      "team_count": 26,
+      "scraped_at": "2025-11-21T10:38:16.829439",
+      "pet_slots": [
+        [
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ashstone Core",
+            "id": 68666
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Bloodlouse Larva",
+            "id": 173534
+          },
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Singing Sunflower",
+            "id": 51090
+          },
+          {
+            "name": "Oonars Arm",
+            "id": 171954
+          },
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          },
+          {
+            "name": "Buttercup",
+            "id": 185756
+          },
+          {
+            "name": "Leper Rat",
+            "id": 147679
+          },
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Volatile Self-Driving Toolbox",
+            "id": 202548
+          },
+          {
+            "name": "Magma Rageling",
+            "id": 115138
+          },
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          }
+        ],
+        [
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Winters Little Helper",
+            "id": 15705
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          },
+          {
+            "name": "Arfus",
+            "id": 203463
+          },
+          {
+            "name": "Tainted Waveling",
+            "id": 71018
+          },
+          {
+            "name": "Sharpclaw",
+            "id": 174084
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          }
+        ],
+        [
+          {
+            "name": "Father Winters Helper",
+            "id": 15698
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Harbinger of Flame",
+            "id": 68665
+          },
+          {
+            "name": "Soul of the Aspects",
+            "id": 58163
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Driftling",
+            "id": 200259
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Ranishu Runt",
+            "id": 143197
+          },
+          {
+            "name": "Arctic Hare",
+            "id": 62693
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Volatile Self-Driving Toolbox",
+            "id": 202548
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Ashen Chomper",
+            "id": 173989
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Father Winters Helper",
+            "id": 15698
+          }
+        ],
+        [
+          {
+            "name": "Oonars Arm",
+            "id": 171954
+          },
+          {
+            "name": "Sharpclaw",
+            "id": 174084
+          },
+          {
+            "name": "Harbinger of Flame",
+            "id": 68665
+          }
+        ],
+        [
+          {
+            "name": "Tiny Snowman",
+            "id": 15710
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Winters Little Helper",
+            "id": 15705
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ],
+        [
+          {
+            "name": "Leper Rat",
+            "id": 147679
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Ranishu Runt",
+            "id": 143197
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Soul of the Aspects",
+            "id": 58163
+          }
+        ],
+        [
+          {
+            "name": "Singing Sunflower",
+            "id": 51090
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          },
+          {
+            "name": "Pet Bombling",
+            "id": 9656
+          }
+        ],
+        [
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "Magmashell Crawler",
+            "id": 222713
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Bloodlouse Larva",
+            "id": 173534
+          },
+          {
+            "name": "Tainted Waveling",
+            "id": 71018
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          }
+        ],
+        [
+          {
+            "name": "Buttercup",
+            "id": 185756
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Driftling",
+            "id": 200259
+          }
+        ],
+        [
+          {
+            "name": "Leper Rat",
+            "id": 147679
+          },
+          {
+            "name": "Arfus",
+            "id": 203463
+          },
+          {
+            "name": "Arctic Hare",
+            "id": 62693
+          }
+        ],
+        [
+          {
+            "name": "Dark Phoenix Hatchling",
+            "id": 47944
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          }
+        ],
+        [
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          }
+        ],
+        [
+          {
+            "name": "Ashstone Core",
+            "id": 68666
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Magma Rageling",
+            "id": 115138
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "Miniature Army",
+      "url": "https://www.wow-petguide.com/Encounter/1595/Miniature_Army",
+      "script": "",
+      "team_count": 27,
+      "scraped_at": "2025-11-21T10:38:23.597692",
+      "pet_slots": [
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Court Scribe",
+            "id": 112728
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Sprite Darter Hatchling",
+            "id": 9662
+          },
+          {
+            "name": "Infernal Pyreclaw",
+            "id": 127951
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Dusky Dredwing Pup",
+            "id": 171149
+          },
+          {
+            "name": "Legs",
+            "id": 53048
+          },
+          {
+            "name": "Amberglow Stinger",
+            "id": 150375
+          },
+          {
+            "name": "Battie",
+            "id": 173535
+          },
+          {
+            "name": "Oasis Void-Duster",
+            "id": 162499
+          },
+          {
+            "name": "Stormborne Whelpling",
+            "id": 97205
+          },
+          {
+            "name": "Albatross Hatchling",
+            "id": 149363
+          },
+          {
+            "name": "Marsh Fiddler",
+            "id": 63096
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Squibbles",
+            "id": 176662
+          },
+          {
+            "name": "Court Scribe",
+            "id": 112728
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Nexus Whelpling",
+            "id": 68845
+          },
+          {
+            "name": "Clockwork Rocket Bot",
+            "id": 24968
+          },
+          {
+            "name": "Runeforged Servitor",
+            "id": 115140
+          },
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Wind-Up Woofer",
+            "id": 234664
+          },
+          {
+            "name": "Corefire Imp",
+            "id": 68664
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Stormborne Whelpling",
+            "id": 97205
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          },
+          {
+            "name": "Pandaren Earth Spirit",
+            "id": 68468
+          },
+          {
+            "name": "Giggling Flame",
+            "id": 143809
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Blazehound",
+            "id": 127947
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Lil XT",
+            "id": 40703
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          }
+        ],
+        [
+          {
+            "name": "Albatross Hatchling",
+            "id": 149363
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Squibbles",
+            "id": 176662
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Lil XT",
+            "id": 40703
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ],
+        [
+          {
+            "name": "Infernal Pyreclaw",
+            "id": 127951
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Amberglow Stinger",
+            "id": 150375
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          }
+        ],
+        [
+          {
+            "name": "Dusky Dredwing Pup",
+            "id": 171149
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Lil XT",
+            "id": 40703
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Stormborne Whelpling",
+            "id": 97205
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          }
+        ],
+        [
+          {
+            "name": "Battie",
+            "id": 173535
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Obsidian Warwhelp",
+            "id": 208637
+          }
+        ],
+        [
+          {
+            "name": "Court Scribe",
+            "id": 112728
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Giggling Flame",
+            "id": 143809
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Court Scribe",
+            "id": 112728
+          },
+          {
+            "name": "Rotten Little Helper",
+            "id": 73741
+          }
+        ],
+        [
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          }
+        ],
+        [
+          {
+            "name": "Foulwing Buzzer",
+            "id": 172155
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          }
+        ],
+        [
+          {
+            "name": "Stormborne Whelpling",
+            "id": 97205
+          },
+          {
+            "name": "Clockwork Rocket Bot",
+            "id": 24968
+          },
+          {
+            "name": "Amalgam of Destruction",
+            "id": 127956
+          }
+        ],
+        [
+          {
+            "name": "Oasis Void-Duster",
+            "id": 162499
+          },
+          {
+            "name": "Corefire Imp",
+            "id": 68664
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Legs",
+            "id": 53048
+          },
+          {
+            "name": "Runeforged Servitor",
+            "id": 115140
+          },
+          {
+            "name": "Blazehound",
+            "id": 127947
+          }
+        ],
+        [
+          {
+            "name": "Sprite Darter Hatchling",
+            "id": 9662
+          },
+          {
+            "name": "Wind-Up Woofer",
+            "id": 234664
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Marsh Fiddler",
+            "id": 63096
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Pandaren Earth Spirit",
+            "id": 68468
+          }
+        ],
+        [
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "Nexus Whelpling",
+            "id": 68845
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "The Thing from the Swamp",
+      "url": "https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp",
+      "script": "\n\t\t\t\tClick the button to copy the script into your clipboard:\n\t\t\t   ability(Curse of Doom:218)\nability(Unholy Ascension:321)\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\nability(Flock:581)\nability(Thunderbolt:779)\nability(Breath:115)\nchange(next)\t\t\t",
+      "team_count": 19,
+      "scraped_at": "2025-11-21T10:38:30.446294",
+      "pet_slots": [
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Brilliant Glimmershell",
+            "id": 154827
+          },
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Viscidus Globule",
+            "id": 68660
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Weebomination",
+            "id": 78421
+          },
+          {
+            "name": "Muck Slug",
+            "id": 154724
+          },
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Diamond Crab",
+            "id": 192363
+          },
+          {
+            "name": "Hungry Burrower",
+            "id": 171242
+          },
+          {
+            "name": "Mr. DELVER",
+            "id": 231462
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "Shimmershell Snail",
+            "id": 62246
+          },
+          {
+            "name": "Minfernal",
+            "id": 62317
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Glimmershell Scuttler",
+            "id": 154704
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ],
+        [
+          {
+            "name": "Hydraling",
+            "id": 86879
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          },
+          {
+            "name": "Chitterspine Skitterling",
+            "id": 154706
+          },
+          {
+            "name": "Palamanther",
+            "id": 189122
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Mechanical Pandaren Dragonling",
+            "id": 64899
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Minfernal",
+            "id": 62317
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Weebomination",
+            "id": 78421
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ],
+        [
+          {
+            "name": "Mr. DELVER",
+            "id": 231462
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          }
+        ],
+        [
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          }
+        ],
+        [
+          {
+            "name": "Hungry Burrower",
+            "id": 171242
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "Fishy",
+            "id": 62829
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          }
+        ],
+        [
+          {
+            "name": "Muck Slug",
+            "id": 154724
+          },
+          {
+            "name": "Shimmershell Snail",
+            "id": 62246
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Corpselouse Larva",
+            "id": 172136
+          },
+          {
+            "name": "Golden Dragonhawk Hatchling",
+            "id": 21055
+          }
+        ],
+        [
+          {
+            "name": "Brilliant Glimmershell",
+            "id": 154827
+          },
+          {
+            "name": "Chuck",
+            "id": 26056
+          },
+          {
+            "name": "Hydraling",
+            "id": 86879
+          }
+        ],
+        [
+          {
+            "name": "Diamond Crab",
+            "id": 192363
+          },
+          {
+            "name": "Glimmershell Scuttler",
+            "id": 154704
+          },
+          {
+            "name": "Palamanther",
+            "id": 189122
+          }
+        ],
+        [
+          {
+            "name": "Unborn Valkyr",
+            "id": 71163
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Chitterspine Skitterling",
+            "id": 154706
+          }
+        ],
+        [
+          {
+            "name": "Viscidus Globule",
+            "id": 68660
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "Ziriak",
+      "url": "https://www.wow-petguide.com/Encounter/1598/Ziriak",
+      "script": "",
+      "team_count": 24,
+      "scraped_at": "2025-11-21T10:38:36.997490",
+      "pet_slots": [
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          },
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Alpine Foxling",
+            "id": 63550
+          },
+          {
+            "name": "Poda",
+            "id": 139073
+          },
+          {
+            "name": "Venus",
+            "id": 66491
+          },
+          {
+            "name": "Biletoad",
+            "id": 62815
+          },
+          {
+            "name": "Dust Bunny",
+            "id": 98506
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Hungry Burrower",
+            "id": 171242
+          },
+          {
+            "name": "Cursed Dune Watcher",
+            "id": 162007
+          },
+          {
+            "name": "Ashwing Moth",
+            "id": 73542
+          },
+          {
+            "name": "Enchanted Broom",
+            "id": 33227
+          },
+          {
+            "name": "Arctic Hare",
+            "id": 62693
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Zephyrian Prince",
+            "id": 127862
+          },
+          {
+            "name": "Faceless Mindlasher",
+            "id": 127952
+          },
+          {
+            "name": "Servant of Demidos",
+            "id": 88692
+          },
+          {
+            "name": "Tolai Hare",
+            "id": 63557
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Mechanical Axebeak",
+            "id": 79410
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Fun-Size Flarendo",
+            "id": 231454
+          },
+          {
+            "name": "Squally",
+            "id": 209681
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rascal-Bot",
+            "id": 71693
+          },
+          {
+            "name": "Nether Faerie Dragon",
+            "id": 62395
+          },
+          {
+            "name": "Empowered Manafiend",
+            "id": 98237
+          },
+          {
+            "name": "Lesser Voidcaller",
+            "id": 71021
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Mr. Grubbs",
+            "id": 50586
+          },
+          {
+            "name": "Pocket Reaver",
+            "id": 71020
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Netherspawn, Spawn of Netherspawn",
+            "id": 86081
+          },
+          {
+            "name": "Landros Lil XT",
+            "id": 50468
+          },
+          {
+            "name": "Broot",
+            "id": 98463
+          },
+          {
+            "name": "Singing Sunflower",
+            "id": 51090
+          },
+          {
+            "name": "Chip",
+            "id": 195896
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Chip",
+            "id": 195896
+          }
+        ],
+        [
+          {
+            "name": "Ashwing Moth",
+            "id": 73542
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          }
+        ],
+        [
+          {
+            "name": "Dust Bunny",
+            "id": 98506
+          },
+          {
+            "name": "Tolai Hare",
+            "id": 63557
+          },
+          {
+            "name": "Netherspawn, Spawn of Netherspawn",
+            "id": 86081
+          }
+        ],
+        [
+          {
+            "name": "Poda",
+            "id": 139073
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          }
+        ],
+        [
+          {
+            "name": "Venus",
+            "id": 66491
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Singing Sunflower",
+            "id": 51090
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "River Calf",
+            "id": 79730
+          }
+        ],
+        [
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          }
+        ],
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Sunblade Micro-Defender",
+            "id": 90212
+          },
+          {
+            "name": "Mr. Grubbs",
+            "id": 50586
+          }
+        ],
+        [
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Squally",
+            "id": 209681
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Lesser Voidcaller",
+            "id": 71021
+          }
+        ],
+        [
+          {
+            "name": "Enchanted Broom",
+            "id": 33227
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rascal-Bot",
+            "id": 71693
+          }
+        ],
+        [
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          },
+          {
+            "name": "Fun-Size Flarendo",
+            "id": 231454
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          }
+        ],
+        [
+          {
+            "name": "Alpine Foxling",
+            "id": 63550
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Nether Faerie Dragon",
+            "id": 62395
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "Anomalus",
+            "id": 161964
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Biletoad",
+            "id": 62815
+          },
+          {
+            "name": "Mechanical Axebeak",
+            "id": 79410
+          },
+          {
+            "name": "Chrominius",
+            "id": 68662
+          }
+        ],
+        [
+          {
+            "name": "Hungry Burrower",
+            "id": 171242
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Pandaren Water Spirit",
+            "id": 66950
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Broot",
+            "id": 98463
+          }
+        ],
+        [
+          {
+            "name": "Benax",
+            "id": 113136
+          },
+          {
+            "name": "Blackfuse Bombling",
+            "id": 73352
+          },
+          {
+            "name": "Mr. Grubbs",
+            "id": 50586
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Landros Lil XT",
+            "id": 50468
+          }
+        ],
+        [
+          {
+            "name": "Arctic Hare",
+            "id": 62693
+          },
+          {
+            "name": "Servant of Demidos",
+            "id": 88692
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Cursed Dune Watcher",
+            "id": 162007
+          },
+          {
+            "name": "Zephyrian Prince",
+            "id": 127862
+          },
+          {
+            "name": "Empowered Manafiend",
+            "id": 98237
+          }
+        ],
+        [
+          {
+            "name": "Rabbit",
+            "id": 61080
+          },
+          {
+            "name": "Faceless Mindlasher",
+            "id": 127952
+          },
+          {
+            "name": "Pocket Reaver",
+            "id": 71020
+          }
+        ]
+      ]
+    },
+    {
+      "encounter_name": "One Hungry Worm",
+      "url": "https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm",
+      "script": "",
+      "team_count": 19,
+      "scraped_at": "2025-11-21T10:38:43.916583",
+      "pet_slots": [
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Dusty Sporewing",
+            "id": 88415
+          },
+          {
+            "name": "Hemospore",
+            "id": 222592
+          },
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          },
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Violet Sporbit",
+            "id": 222590
+          },
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Tranquil Mechanical Yeti",
+            "id": 15699
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Volatile Self-Driving Toolbox",
+            "id": 202548
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          },
+          {
+            "name": "Violet Sporbit",
+            "id": 222590
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Rebuilt Mechanical Spider",
+            "id": 149361
+          }
+        ],
+        [
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Tranquil Mechanical Yeti",
+            "id": 15699
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Cerulean Moth",
+            "id": 88422
+          },
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          },
+          {
+            "name": "Vale Flitter",
+            "id": 97547
+          },
+          {
+            "name": "Stormwing",
+            "id": 87705
+          }
+        ]
+      ],
+      "teams_raw": [
+        [
+          {
+            "name": "Seaborne Spore",
+            "id": 86718
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Stormwing",
+            "id": 87705
+          }
+        ],
+        [
+          {
+            "name": "Boneshard",
+            "id": 115146
+          },
+          {
+            "name": "Ikky",
+            "id": 86447
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Rebuilt Mechanical Spider",
+            "id": 149361
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Vale Flitter",
+            "id": 97547
+          }
+        ],
+        [
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Darkmoon Zeppelin",
+            "id": 55367
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Timeless Mechanical Dragonling",
+            "id": 179125
+          },
+          {
+            "name": "Primal Stormling",
+            "id": 191387
+          }
+        ],
+        [
+          {
+            "name": "Tranquil Mechanical Yeti",
+            "id": 15699
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Volatile Self-Driving Toolbox",
+            "id": 202548
+          },
+          {
+            "name": "Cerulean Moth",
+            "id": 88422
+          }
+        ],
+        [
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Iron Starlette",
+            "id": 77221
+          },
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          }
+        ],
+        [
+          {
+            "name": "Baal",
+            "id": 141941
+          },
+          {
+            "name": "Baalial",
+            "id": 205637
+          },
+          {
+            "name": "Death Seeker",
+            "id": 174085
+          }
+        ],
+        [
+          {
+            "name": "Sunreaver Micro-Sentry",
+            "id": 69778
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          }
+        ],
+        [
+          {
+            "name": "Torghast Lurker",
+            "id": 173992
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          },
+          {
+            "name": "Tranquil Mechanical Yeti",
+            "id": 15699
+          }
+        ],
+        [
+          {
+            "name": "Lil Bling",
+            "id": 73011
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          },
+          {
+            "name": "Clockwork Gnome",
+            "id": 48609
+          }
+        ],
+        [
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Brilliant Spore",
+            "id": 86719
+          },
+          {
+            "name": "Zandalari Anklerender",
+            "id": 70451
+          }
+        ],
+        [
+          {
+            "name": "Hemospore",
+            "id": 222592
+          },
+          {
+            "name": "Crimson Spore",
+            "id": 86716
+          },
+          {
+            "name": "Stormwing",
+            "id": 87705
+          }
+        ],
+        [
+          {
+            "name": "Dusty Sporewing",
+            "id": 88415
+          },
+          {
+            "name": "[Unknown]",
+            "id": 0
+          },
+          {
+            "name": "Cerulean Moth",
+            "id": 88422
+          }
+        ],
+        [
+          {
+            "name": "Violet Sporbit",
+            "id": 222590
+          },
+          {
+            "name": "Violet Sporbit",
+            "id": 222590
+          },
+          {
+            "name": "Baal",
+            "id": 141941
+          }
+        ],
+        [
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          },
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          },
+          {
+            "name": "Arcane Eye",
+            "id": 68819
+          }
+        ]
+      ]
+    }
+  ],
+  "total_encounters": 8,
+  "total_teams": 208,
+  "scraped_at": "2025-11-21T10:38:45.475964"
+}

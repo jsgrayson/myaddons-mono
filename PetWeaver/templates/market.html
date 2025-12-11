@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block title %}Market Watcher - PetWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="hero-header">
+            <h1 class="hero-title">📈 Market Watcher</h1>
+            <p class="hero-subtitle">
+                <i class="fas fa-coins me-2"></i>Live tracking of Auction House deals and arbitrage opportunities
+            </p>
+            <div class="animated-border"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12 text-end">
+        <button class="btn btn-outline-light" onclick="loadDeals(); loadMissing(); loadArbitrage(); loadFeed();">
+            <i class="fas fa-sync me-2"></i>Refresh Deals
+        </button>
+    </div>
+</div>
+
+<!-- Deals Section -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h4 class="text-white mb-3"><i class="fas fa-fire text-danger me-2"></i>Active Deals (>50% Off)</h4>
+        <div class="row g-4" id="dealsContainer">
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-spinner fa-spin fa-2x text-muted mb-3"></i>
+                <p class="text-muted">Scanning Auction House...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Missing Collection Deals -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h4 class="text-white mb-3"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Missing Collection
+            Deals</h4>
+        <div class="row g-4" id="missingContainer">
+            <div class="col-12 text-center py-3 text-muted">Loading...</div>
+        </div>
+    </div>
+</div>
+
+<!-- Arbitrage Flips -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h4 class="text-white mb-3"><i class="fas fa-chart-line text-info me-2"></i>Level 1 Arbitrage Flips</h4>
+        <div class="row g-4" id="arbitrageContainer">
+            <div class="col-12 text-center py-3 text-muted">Loading...</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Market Feed -->
+    <div class="col-md-8 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+                <i class="fas fa-list-alt me-2"></i>Live Market Feed
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover mb-0 align-middle">
+                        <thead>
+                            <tr>
+                                <th class="ps-3">Pet</th>
+                                <th>Price</th>
+                                <th>Market Value</th>
+                                <th class="text-end pe-3">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedTable">
+                            <!-- Feed items -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulation Tool -->
+    <div class="col-md-4 mb-4">
+        <div class="card border-info h-100">
+            <div class="card-header bg-info text-dark">
+                <i class="fas fa-robot me-2"></i>AH Data Simulator
+            </div>
+            <div class="card-body">
+                <p class="small text-muted mb-3">Inject fake AH scan data for testing.</p>
+                <form id="simForm">
+                    <div class="mb-3">
+                        <label class="form-label text-white small">Species ID</label>
+                        <input type="number" class="form-control bg-dark text-white border-secondary" id="simSpeciesId"
+                            value="71163">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-white small">Pet Name</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" id="simPetName"
+                            value="Unborn Val'kyr">
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-6">
+                            <label class="form-label text-white small">Price (g)</label>
+                            <input type="number" class="form-control bg-dark text-white border-secondary" id="simPrice"
+                                value="5000">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label text-white small">Market (g)</label>
+                            <input type="number" class="form-control bg-dark text-white border-secondary"
+                                id="simMarketValue" value="10000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-white small">Level</label>
+                        <input type="number" class="form-control bg-dark text-white border-secondary" id="simLevel"
+                            value="25">
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="simIsDeal" checked>
+                        <label class="form-check-label text-white small" for="simIsDeal">Flag as Deal (AI)</label>
+                    </div>
+                    <button type="submit" class="btn btn-info w-100">
+                        <i class="fas fa-paper-plane me-2"></i>Post Update
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function formatGold(copper) {
+        // Assuming input is gold for simplicity in simulator, but let's handle both
+        // If < 1000000, treat as gold? Or just assume input is Gold.
+        // Let's assume input is Gold for display.
+        return parseInt(copper).toLocaleString() + 'g';
+    }
+
+    async function loadDeals() {
+        const container = document.getElementById('dealsContainer');
+        try {
+            const res = await fetch('/api/market/deals?threshold=0.5');
+            const deals = await res.json();
+
+            container.innerHTML = '';
+
+            if (deals.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted py-5">No active deals found.</div>';
+                return;
+            }
+
+            deals.forEach(deal => {
+                const html = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-start border-5 border-success bg-dark">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title text-white mb-0 text-truncate" title="${deal.name}">${deal.name}</h5>
+                                    <span class="badge bg-success">-${deal.discount}%</span>
+                                </div>
+                                <div class="text-muted small mb-3">ID: ${deal.speciesId}</div>
+                                
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="text-success fw-bold fs-5">${formatGold(deal.price)}</div>
+                                        <small class="text-muted text-decoration-line-through">${formatGold(deal.marketValue)}</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <small class="text-muted d-block">Updated</small>
+                                        <small class="text-white">${new Date(deal.lastUpdated).toLocaleTimeString()}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        } catch (e) {
+            container.innerHTML = '<div class="col-12 text-center text-danger py-5">Failed to load deals.</div>';
+        }
+    }
+
+    async function loadFeed() {
+        const res = await fetch('/api/market/data');
+        const data = await res.json();
+        const tbody = document.getElementById('feedTable');
+        tbody.innerHTML = '';
+
+        // Convert dict to array and sort by time
+        const items = Object.values(data).sort((a, b) =>
+            new Date(b.last_updated) - new Date(a.last_updated)
+        ).slice(0, 10); // Show last 10
+
+        items.forEach(item => {
+            const row = `
+                <tr>
+                    <td class="ps-3 fw-bold text-white">${item.name}</td>
+                    <td class="text-success">${formatGold(item.current_price)}</td>
+                    <td class="text-muted">${formatGold(item.history.reduce((a, b) => a + b.price, 0) / item.history.length)}</td>
+                    <td class="text-end pe-3 text-muted small">${new Date(item.last_updated).toLocaleTimeString()}</td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+
+    document.getElementById('simForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const speciesId = document.getElementById('simSpeciesId').value;
+        const petName = document.getElementById('simPetName').value;
+        const price = document.getElementById('simPrice').value;
+        const marketValue = document.getElementById('simMarketValue').value;
+        const level = document.getElementById('simLevel').value;
+        const isDeal = document.getElementById('simIsDeal').checked;
+        const discount = marketValue > 0 ? Math.round((1 - (price / marketValue)) * 100) : 0;
+
+        await fetch('/api/market/update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                speciesId,
+                petName,
+                price: parseInt(price),
+                marketValue: parseInt(marketValue),
+                discount: discount,
+                isDeal: isDeal,
+                level: parseInt(level)
+            })
+        });
+
+        loadDeals();
+        loadFeed();
+    });
+
+    async function loadMissing() {
+        const container = document.getElementById('missingContainer');
+        try {
+            const res = await fetch('/api/market/missing');
+            const deals = await res.json();
+            renderDeals(container, deals, 'warning');
+        } catch (e) { container.innerHTML = '<div class="col-12 text-center text-danger">Error</div>'; }
+    }
+
+    async function loadArbitrage() {
+        const container = document.getElementById('arbitrageContainer');
+        try {
+            const res = await fetch('/api/market/arbitrage');
+            const deals = await res.json();
+            renderDeals(container, deals, 'info');
+        } catch (e) { container.innerHTML = '<div class="col-12 text-center text-danger">Error</div>'; }
+    }
+
+    function renderDeals(container, deals, color) {
+        container.innerHTML = '';
+        if (deals.length === 0) {
+            container.innerHTML = '<div class="col-12 text-center text-muted py-3">No items found.</div>';
+            return;
+        }
+        deals.forEach(deal => {
+            const html = `
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-start border-5 border-${color} bg-dark">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title text-white mb-0 text-truncate" title="${deal.name}">${deal.name}</h5>
+                                <span class="badge bg-${color} text-dark">-${deal.discount}%</span>
+                            </div>
+                            <div class="text-muted small mb-3">Lvl ${deal.level}</div>
+                            
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div>
+                                    <div class="text-${color} fw-bold fs-5">${formatGold(deal.price)}</div>
+                                    <small class="text-muted text-decoration-line-through">${formatGold(deal.marketValue)}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += html;
+        });
+    }
+
+    // Init
+    loadDeals();
+    loadMissing();
+    loadArbitrage();
+    loadFeed();
+    // Auto refresh feed every 10s
+    setInterval(() => {
+        loadFeed();
+        loadDeals();
+        loadMissing();
+        loadArbitrage();
+    }, 10000);
+</script>
+{% endblock %}

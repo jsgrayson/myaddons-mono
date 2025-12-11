@@ -1,0 +1,71 @@
+{
+  "123": {
+    "name": "Owned Deal",
+    "history": [
+      {
+        "price": 5000,
+        "timestamp": "2025-11-27T18:51:55.715562"
+      },
+      {
+        "price": 5000,
+        "timestamp": "2025-11-27T18:51:55.906899"
+      },
+      {
+        "price": 5000,
+        "timestamp": "2025-11-27T18:51:55.931994"
+      }
+    ],
+    "current_price": 5000,
+    "market_value": 10000,
+    "discount": 50,
+    "is_deal": true,
+    "level": 25,
+    "last_updated": "2025-11-27T18:51:55.931983"
+  },
+  "456": {
+    "name": "Missing Deal",
+    "history": [
+      {
+        "price": 10000,
+        "timestamp": "2025-11-27T18:51:55.715870"
+      },
+      {
+        "price": 10000,
+        "timestamp": "2025-11-27T18:51:55.907192"
+      },
+      {
+        "price": 10000,
+        "timestamp": "2025-11-27T18:51:55.932267"
+      }
+    ],
+    "current_price": 10000,
+    "market_value": 20000,
+    "discount": 50,
+    "is_deal": true,
+    "level": 25,
+    "last_updated": "2025-11-27T18:51:55.932263"
+  },
+  "789": {
+    "name": "Lvl 1 Flip",
+    "history": [
+      {
+        "price": 100,
+        "timestamp": "2025-11-27T18:51:55.716030"
+      },
+      {
+        "price": 100,
+        "timestamp": "2025-11-27T18:51:55.907470"
+      },
+      {
+        "price": 100,
+        "timestamp": "2025-11-27T18:51:55.932532"
+      }
+    ],
+    "current_price": 100,
+    "market_value": 5000,
+    "discount": 98,
+    "is_deal": true,
+    "level": 1,
+    "last_updated": "2025-11-27T18:51:55.932518"
+  }
+}

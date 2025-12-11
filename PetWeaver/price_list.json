@@ -1,0 +1,1 @@
+[{"speciesId": 123, "price": 5000, "name": "Owned Deal", "marketValue": 10000, "discount": 50, "isDeal": true, "level": 25}, {"speciesId": 456, "price": 10000, "name": "Missing Deal", "marketValue": 20000, "discount": 50, "isDeal": true, "level": 25}, {"speciesId": 789, "price": 100, "name": "Lvl 1 Flip", "marketValue": 5000, "discount": 98, "isDeal": true, "level": 1}]

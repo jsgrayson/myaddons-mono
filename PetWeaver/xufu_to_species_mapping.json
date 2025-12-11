@@ -1,0 +1,2890 @@
+{
+  "71163": {
+    "name": "Unborn Val'kyr",
+    "species_id": 1238
+  },
+  "161964": {
+    "name": "Anomalus",
+    "species_id": 2842
+  },
+  "143195": {
+    "name": "Tragg the Curious",
+    "species_id": 2415
+  },
+  "143050": {
+    "name": "Young Sand Sifter",
+    "species_id": 2392
+  },
+  "115146": {
+    "name": "Boneshard",
+    "species_id": 1963
+  },
+  "86447": {
+    "name": "Ikky",
+    "species_id": 1532
+  },
+  "143564": {
+    "name": "Foulfeather",
+    "species_id": 2438
+  },
+  "143820": {
+    "name": "Kunchong Hatchling",
+    "species_id": 2454
+  },
+  "9656": {
+    "name": "Pet Bombling",
+    "species_id": 85
+  },
+  "154893": {
+    "name": "Bonebiter",
+    "species_id": 2719
+  },
+  "55367": {
+    "name": "Darkmoon Zeppelin",
+    "species_id": 339
+  },
+  "64899": {
+    "name": "Mechanical Pandaren Dragonling",
+    "species_id": 844
+  },
+  "86716": {
+    "name": "Crimson Spore",
+    "species_id": 1537
+  },
+  "84885": {
+    "name": "Draenei Micro Defender",
+    "species_id": 1450
+  },
+  "62317": {
+    "name": "Minfernal",
+    "species_id": 500
+  },
+  "86715": {
+    "name": "Zangar Spore",
+    "species_id": 1536
+  },
+  "99505": {
+    "name": "Knockoff Blingtron",
+    "species_id": 1806
+  },
+  "127953": {
+    "name": "Corrupted Blood",
+    "species_id": 2091
+  },
+  "77221": {
+    "name": "Iron Starlette",
+    "species_id": 1387
+  },
+  "154796": {
+    "name": "Clanking Scrapsorter",
+    "species_id": 2675
+  },
+  "202548": {
+    "name": "Volatile Self-Driving Toolbox",
+    "species_id": 3475
+  },
+  "231550": {
+    "name": "Bombshell Crab",
+    "species_id": 4656
+  },
+  "231460": {
+    "name": "Venture Companyman",
+    "species_id": 4650
+  },
+  "231463": {
+    "name": "Personal-Use Sapper",
+    "species_id": 4646
+  },
+  "154779": {
+    "name": "Motorized Croaker",
+    "species_id": 2667
+  },
+  "73352": {
+    "name": "Blackfuse Bombling",
+    "species_id": 1322
+  },
+  "143738": {
+    "name": "Lil' Siege Tower",
+    "species_id": 2443
+  },
+  "86719": {
+    "name": "Brilliant Spore",
+    "species_id": 1540
+  },
+  "119794": {
+    "name": "Pocket Cannon",
+    "species_id": 2041
+  },
+  "149361": {
+    "name": "Rebuilt Mechanical Spider",
+    "species_id": 2565
+  },
+  "154791": {
+    "name": "Scrapyard Tunneler",
+    "species_id": 2673
+  },
+  "241346": {
+    "name": "Spicy Mean-Ball",
+    "species_id": 4806
+  },
+  "143739": {
+    "name": "Lil' War Machine",
+    "species_id": 2444
+  },
+  "231462": {
+    "name": "Mr. DELVER",
+    "species_id": 4647
+  },
+  "238393": {
+    "name": "Craboom",
+    "species_id": 4759
+  },
+  "73741": {
+    "name": "Rotten Little Helper",
+    "species_id": 1349
+  },
+  "15698": {
+    "name": "Father Winter's Helper",
+    "species_id": 119
+  },
+  "15705": {
+    "name": "Winter's Little Helper",
+    "species_id": 120
+  },
+  "143041": {
+    "name": "Inland Croaker",
+    "species_id": 2382
+  },
+  "86717": {
+    "name": "Umbrafen Spore",
+    "species_id": 1538
+  },
+  "71016": {
+    "name": "Netherspace Abyssal",
+    "species_id": 1228
+  },
+  "86718": {
+    "name": "Seaborne Spore",
+    "species_id": 1539
+  },
+  "117340": {
+    "name": "Dibbler",
+    "species_id": 2001
+  },
+  "143188": {
+    "name": "Mechanical Prairie Dog",
+    "species_id": 2410
+  },
+  "222590": {
+    "name": "Violet Sporbit",
+    "species_id": 4506
+  },
+  "154798": {
+    "name": "Malfunctioning Microbot",
+    "species_id": 2676
+  },
+  "200771": {
+    "name": "Wildfire",
+    "species_id": 3448
+  },
+  "231567": {
+    "name": "Venture Bombshell",
+    "species_id": 4657
+  },
+  "231461": {
+    "name": "Steamwheedle Flunkie",
+    "species_id": 4648
+  },
+  "231458": {
+    "name": "Bilgewater Junkhauler",
+    "species_id": 4645
+  },
+  "185425": {
+    "name": "Helpful Workshop Bot",
+    "species_id": 3245
+  },
+  "113136": {
+    "name": "Benax",
+    "species_id": 1934
+  },
+  "182019": {
+    "name": "Venomous Bufonid",
+    "species_id": 3180
+  },
+  "83642": {
+    "name": "Mud Jumper",
+    "species_id": 1441
+  },
+  "69819": {
+    "name": "Swamp Croaker",
+    "species_id": 1182
+  },
+  "191387": {
+    "name": "Primal Stormling",
+    "species_id": 3348
+  },
+  "179125": {
+    "name": "Timeless Mechanical Dragonling",
+    "species_id": 3100
+  },
+  "195896": {
+    "name": "Chip",
+    "species_id": 3376
+  },
+  "88422": {
+    "name": "Cerulean Moth",
+    "species_id": 1586
+  },
+  "97547": {
+    "name": "Vale Flitter",
+    "species_id": 1737
+  },
+  "73368": {
+    "name": "Skywisp Moth",
+    "species_id": 1326
+  },
+  "88413": {
+    "name": "Crimsonwing Moth",
+    "species_id": 1589
+  },
+  "209681": {
+    "name": "Squally",
+    "species_id": 4266
+  },
+  "87705": {
+    "name": "Stormwing",
+    "species_id": 1546
+  },
+  "88415": {
+    "name": "Dusty Sporewing",
+    "species_id": 1588
+  },
+  "192259": {
+    "name": "Storm-Touched Bluefeather",
+    "species_id": 3384
+  },
+  "208637": {
+    "name": "Obsidian Warwhelp",
+    "species_id": 4261
+  },
+  "86061": {
+    "name": "Cursed Birman",
+    "species_id": 1521
+  },
+  "86067": {
+    "name": "Widget the Departed",
+    "species_id": 1523
+  },
+  "68662": {
+    "name": "Chrominius",
+    "species_id": 1152
+  },
+  "97207": {
+    "name": "Emmigosa",
+    "species_id": 1720
+  },
+  "154832": {
+    "name": "Spawn of Nalaada",
+    "species_id": 2693
+  },
+  "171229": {
+    "name": "Gorm Rootstinger",
+    "species_id": 2919
+  },
+  "205637": {
+    "name": "Baa'lial",
+    "species_id": 3580
+  },
+  "71693": {
+    "name": "Rascal-Bot",
+    "species_id": 1256
+  },
+  "90212": {
+    "name": "Sunblade Micro-Defender",
+    "species_id": 1632
+  },
+  "143811": {
+    "name": "Playful Frostkin",
+    "species_id": 2465
+  },
+  "73355": {
+    "name": "Jademist Dancer",
+    "species_id": 1333
+  },
+  "62820": {
+    "name": "Water Waveling",
+    "species_id": 535
+  },
+  "200772": {
+    "name": "Flow",
+    "species_id": 3449
+  },
+  "97128": {
+    "name": "Fledgling Warden Owl",
+    "species_id": 1716
+  },
+  "66950": {
+    "name": "Pandaren Water Spirit",
+    "species_id": 868
+  },
+  "198269": {
+    "name": "Tide Spirit",
+    "species_id": 3409
+  },
+  "97118": {
+    "name": "Long-Eared Owl",
+    "species_id": 1713
+  },
+  "148984": {
+    "name": "Shadefeather Hatchling",
+    "species_id": 2556
+  },
+  "158685": {
+    "name": "Crimson Skipper",
+    "species_id": 2794
+  },
+  "185621": {
+    "name": "Watcher of the Huntress",
+    "species_id": 3254
+  },
+  "77137": {
+    "name": "Dread Hatchling",
+    "species_id": 1386
+  },
+  "97127": {
+    "name": "Nightwatch Swooper",
+    "species_id": 1715
+  },
+  "149205": {
+    "name": "Nightwreathed Watcher",
+    "species_id": 2563
+  },
+  "173533": {
+    "name": "Sinfall Screecher",
+    "species_id": 3010
+  },
+  "97126": {
+    "name": "Northern Hawk Owl",
+    "species_id": 1714
+  },
+  "149372": {
+    "name": "Crimson Bat Pup",
+    "species_id": 2567
+  },
+  "173531": {
+    "name": "The Count",
+    "species_id": 3009
+  },
+  "203377": {
+    "name": "Ebonwing Moth",
+    "species_id": 3490
+  },
+  "62829": {
+    "name": "Fishy",
+    "species_id": 847
+  },
+  "54383": {
+    "name": "Purple Puffer",
+    "species_id": 328
+  },
+  "110666": {
+    "name": "Young Mutant Warturtle",
+    "species_id": 1912
+  },
+  "143033": {
+    "name": "Freshwater Crawler",
+    "species_id": 2374
+  },
+  "143175": {
+    "name": "Abyssal Eel",
+    "species_id": 2403
+  },
+  "143794": {
+    "name": "Scuttle",
+    "species_id": 2445
+  },
+  "55386": {
+    "name": "Sea Pony",
+    "species_id": 340
+  },
+  "189696": {
+    "name": "Patos",
+    "species_id": 3332
+  },
+  "189695": {
+    "name": "Jean's Lucky Fish",
+    "species_id": 3270
+  },
+  "189136": {
+    "name": "Wild Duckling",
+    "species_id": 3301
+  },
+  "154826": {
+    "name": "Lustrous Glimmershell",
+    "species_id": 2687
+  },
+  "204226": {
+    "name": "Crimson Swoglet",
+    "species_id": 3516
+  },
+  "222078": {
+    "name": "Wriggle",
+    "species_id": 4496
+  },
+  "231616": {
+    "name": "Tropical Frog",
+    "species_id": 4666
+  },
+  "91407": {
+    "name": "Slithershock Elver",
+    "species_id": 1655
+  },
+  "70258": {
+    "name": "Tiny Blue Carp",
+    "species_id": 1207
+  },
+  "143032": {
+    "name": "River Frog",
+    "species_id": 2373
+  },
+  "143044": {
+    "name": "Barrier Hermit",
+    "species_id": 2385
+  },
+  "143204": {
+    "name": "Freshwater Pincher",
+    "species_id": 2423
+  },
+  "144004": {
+    "name": "Bucketshell",
+    "species_id": 2479
+  },
+  "197637": {
+    "name": "Polliswog",
+    "species_id": 3404
+  },
+  "189104": {
+    "name": "Swoglet",
+    "species_id": 3282
+  },
+  "189140": {
+    "name": "Mallard Duckling",
+    "species_id": 3303
+  },
+  "154827": {
+    "name": "Brilliant Glimmershell",
+    "species_id": 2688
+  },
+  "203287": {
+    "name": "Puddlehopper",
+    "species_id": 3477
+  },
+  "222079": {
+    "name": "Skippy",
+    "species_id": 4495
+  },
+  "154828": {
+    "name": "Chitterspine Needler",
+    "species_id": 2689
+  },
+  "147585": {
+    "name": "Spawn of Krag'wa",
+    "species_id": 2528
+  },
+  "63559": {
+    "name": "Tiny Goldfish",
+    "species_id": 652
+  },
+  "112167": {
+    "name": "Lagan",
+    "species_id": 1930
+  },
+  "143199": {
+    "name": "Swamp Toad",
+    "species_id": 2419
+  },
+  "144005": {
+    "name": "Sir Snips",
+    "species_id": 2478
+  },
+  "61088": {
+    "name": "Eternal Strider",
+    "species_id": 383
+  },
+  "162518": {
+    "name": "Voidskimmer",
+    "species_id": 2865
+  },
+  "189138": {
+    "name": "Pilot",
+    "species_id": 3302
+  },
+  "189144": {
+    "name": "Plucky Duckling",
+    "species_id": 3307
+  },
+  "189694": {
+    "name": "Emmah",
+    "species_id": 3331
+  },
+  "211939": {
+    "name": "Sergeant Quackers",
+    "species_id": 4285
+  },
+  "222326": {
+    "name": "Shadowbog Hopper",
+    "species_id": 4472
+  },
+  "171230": {
+    "name": "Gorm Harrier",
+    "species_id": 2921
+  },
+  "179181": {
+    "name": "Amaranthine Stinger",
+    "species_id": 3117
+  },
+  "70451": {
+    "name": "Zandalari Anklerender",
+    "species_id": 1211
+  },
+  "69796": {
+    "name": "Zandalari Kneebiter",
+    "species_id": 1180
+  },
+  "154819": {
+    "name": "Zanj'ir Poker",
+    "species_id": 2680
+  },
+  "68845": {
+    "name": "Nexus Whelpling",
+    "species_id": 1165
+  },
+  "97205": {
+    "name": "Stormborne Whelpling",
+    "species_id": 1721
+  },
+  "143056": {
+    "name": "Hermit Crab",
+    "species_id": 2399
+  },
+  "204368": {
+    "name": "Senega",
+    "species_id": 3554
+  },
+  "98385": {
+    "name": "Erudite Manafiend",
+    "species_id": 1773
+  },
+  "71019": {
+    "name": "Coilfang Stalker",
+    "species_id": 1232
+  },
+  "98238": {
+    "name": "Empyreal Manafiend",
+    "species_id": 1765
+  },
+  "149348": {
+    "name": "Rebuilt Gorilla Bot",
+    "species_id": 2564
+  },
+  "171118": {
+    "name": "Wrathling",
+    "species_id": 2897
+  },
+  "204343": {
+    "name": "Salverun",
+    "species_id": 3545
+  },
+  "231713": {
+    "name": "Bluedoo",
+    "species_id": 4669
+  },
+  "54027": {
+    "name": "Lil' Tarecgosa",
+    "species_id": 320
+  },
+  "98236": {
+    "name": "Energized Manafiend",
+    "species_id": 1764
+  },
+  "150381": {
+    "name": "Ravenous Prideling",
+    "species_id": 2590
+  },
+  "179025": {
+    "name": "Infused Etherwyrm",
+    "species_id": 3099
+  },
+  "211942": {
+    "name": "Aura",
+    "species_id": 4286
+  },
+  "53048": {
+    "name": "Legs",
+    "species_id": 308
+  },
+  "98237": {
+    "name": "Empowered Manafiend",
+    "species_id": 1766
+  },
+  "98386": {
+    "name": "Eldritch Manafiend",
+    "species_id": 1774
+  },
+  "171666": {
+    "name": "Wild Etherwyrm",
+    "species_id": 2943
+  },
+  "219134": {
+    "name": "Pokee",
+    "species_id": 4436
+  },
+  "46898": {
+    "name": "Enchanted Lantern",
+    "species_id": 267
+  },
+  "55571": {
+    "name": "Lunar Lantern",
+    "species_id": 341
+  },
+  "55574": {
+    "name": "Festival Lantern",
+    "species_id": 342
+  },
+  "127850": {
+    "name": "Tinytron",
+    "species_id": 2078
+  },
+  "61828": {
+    "name": "Infected Squirrel",
+    "species_id": 627
+  },
+  "173851": {
+    "name": "Severs",
+    "species_id": 3028
+  },
+  "174084": {
+    "name": "Sharpclaw",
+    "species_id": 3040
+  },
+  "96404": {
+    "name": "Enchanted Torch",
+    "species_id": 1700
+  },
+  "174085": {
+    "name": "Death Seeker",
+    "species_id": 3041
+  },
+  "141941": {
+    "name": "Baa'l",
+    "species_id": 2352
+  },
+  "62178": {
+    "name": "Elfin Rabbit",
+    "species_id": 479
+  },
+  "61257": {
+    "name": "Black Rat",
+    "species_id": 398
+  },
+  "63557": {
+    "name": "Tolai Hare",
+    "species_id": 729
+  },
+  "61080": {
+    "name": "Rabbit",
+    "species_id": 378
+  },
+  "62818": {
+    "name": "Grizzly Squirrel",
+    "species_id": 647
+  },
+  "32791": {
+    "name": "Spring Rabbit",
+    "species_id": 200
+  },
+  "16549": {
+    "name": "Whiskers the Rat",
+    "species_id": 127
+  },
+  "20472": {
+    "name": "Brown Rabbit",
+    "species_id": 137
+  },
+  "54227": {
+    "name": "Nuts",
+    "species_id": 323
+  },
+  "61081": {
+    "name": "Squirrel",
+    "species_id": 379
+  },
+  "61143": {
+    "name": "Mouse",
+    "species_id": 385
+  },
+  "61167": {
+    "name": "Mountain Cottontail",
+    "species_id": 391
+  },
+  "62884": {
+    "name": "Grotto Vole",
+    "species_id": 539
+  },
+  "7560": {
+    "name": "Snowshoe Rabbit",
+    "species_id": 72
+  },
+  "61317": {
+    "name": "Long-tailed Mole",
+    "species_id": 404
+  },
+  "61323": {
+    "name": "Wharf Rat",
+    "species_id": 410
+  },
+  "61366": {
+    "name": "Rat",
+    "species_id": 417
+  },
+  "61690": {
+    "name": "Alpine Hare",
+    "species_id": 441
+  },
+  "61704": {
+    "name": "Grasslands Cottontail",
+    "species_id": 443
+  },
+  "61751": {
+    "name": "Hare",
+    "species_id": 448
+  },
+  "61757": {
+    "name": "Red-Tailed Chipmunk",
+    "species_id": 452
+  },
+  "61889": {
+    "name": "Undercity Rat",
+    "species_id": 454
+  },
+  "62189": {
+    "name": "Alpine Chipmunk",
+    "species_id": 487
+  },
+  "61168": {
+    "name": "Redridge Rat",
+    "species_id": 392
+  },
+  "62885": {
+    "name": "Carrion Rat",
+    "species_id": 540
+  },
+  "122612": {
+    "name": "Tricorne",
+    "species_id": 2057
+  },
+  "124594": {
+    "name": "Dig Rat",
+    "species_id": 2065
+  },
+  "61755": {
+    "name": "Snowshoe Hare",
+    "species_id": 640
+  },
+  "62693": {
+    "name": "Arctic Hare",
+    "species_id": 641
+  },
+  "62641": {
+    "name": "Fjord Rat",
+    "species_id": 644
+  },
+  "62954": {
+    "name": "Stormwind Rat",
+    "species_id": 675
+  },
+  "59702": {
+    "name": "Prairie Mouse",
+    "species_id": 727
+  },
+  "63558": {
+    "name": "Tolai Hare Pup",
+    "species_id": 730
+  },
+  "63957": {
+    "name": "Yakrat",
+    "species_id": 740
+  },
+  "59358": {
+    "name": "Darkmoon Rabbit",
+    "species_id": 848
+  },
+  "97294": {
+    "name": "Olivetail Hare",
+    "species_id": 1729
+  },
+  "98506": {
+    "name": "Dust Bunny",
+    "species_id": 1778
+  },
+  "62905": {
+    "name": "Highlands Mouse",
+    "species_id": 550
+  },
+  "62921": {
+    "name": "Stowaway Rat",
+    "species_id": 553
+  },
+  "189093": {
+    "name": "Pricklefury Hare",
+    "species_id": 3272
+  },
+  "188709": {
+    "name": "Shaggy",
+    "species_id": 3259
+  },
+  "203308": {
+    "name": "Stonewhisker",
+    "species_id": 3481
+  },
+  "211182": {
+    "name": "Sapnibbler",
+    "species_id": 4277
+  },
+  "212413": {
+    "name": "Dustite",
+    "species_id": 4299
+  },
+  "212417": {
+    "name": "Somnolet",
+    "species_id": 4300
+  },
+  "216179": {
+    "name": "Sarge",
+    "species_id": 4406
+  },
+  "231479": {
+    "name": "Lab Rat",
+    "species_id": 4653
+  },
+  "234071": {
+    "name": "Spotty",
+    "species_id": 4701
+  },
+  "245215": {
+    "name": "Veridian Thorntail",
+    "species_id": 4825
+  },
+  "245217": {
+    "name": "Scrappy Thorntail",
+    "species_id": 4826
+  },
+  "128156": {
+    "name": "Globe Yeti",
+    "species_id": 2114
+  },
+  "97229": {
+    "name": "Grumpling",
+    "species_id": 1725
+  },
+  "197089": {
+    "name": "Sophic Amalgamation",
+    "species_id": 3390
+  },
+  "65323": {
+    "name": "Wild Jade Hatchling",
+    "species_id": 817
+  },
+  "196666": {
+    "name": "Stormie",
+    "species_id": 3382
+  },
+  "65313": {
+    "name": "Thundering Serpent Hatchling",
+    "species_id": 802
+  },
+  "24389": {
+    "name": "Muckbreath",
+    "species_id": 164
+  },
+  "26056": {
+    "name": "Chuck",
+    "species_id": 174
+  },
+  "26050": {
+    "name": "Snarly",
+    "species_id": 173
+  },
+  "24388": {
+    "name": "Toothy",
+    "species_id": 163
+  },
+  "241416": {
+    "name": "Sa'bak's Blessed",
+    "species_id": 4796
+  },
+  "173990": {
+    "name": "Frenzied Mawrat",
+    "species_id": 3032
+  },
+  "161921": {
+    "name": "Void-Scarred Anubisath",
+    "species_id": 2833
+  },
+  "143197": {
+    "name": "Ranishu Runt",
+    "species_id": 2417
+  },
+  "113440": {
+    "name": "Squirky",
+    "species_id": 1935
+  },
+  "198987": {
+    "name": "Brrrgl",
+    "species_id": 4629
+  },
+  "68850": {
+    "name": "Emerald Proto-Whelp",
+    "species_id": 1167
+  },
+  "7545": {
+    "name": "Emerald Whelpling",
+    "species_id": 59
+  },
+  "97206": {
+    "name": "Dream Whelpling",
+    "species_id": 1722
+  },
+  "186844": {
+    "name": "Jeweled Onyx Whelpling",
+    "species_id": 3256
+  },
+  "163646": {
+    "name": "Shadowbarb Hatchling",
+    "species_id": 2872
+  },
+  "245500": {
+    "name": "Duskthief",
+    "species_id": 4842
+  },
+  "171712": {
+    "name": "Wader Chick",
+    "species_id": 2939
+  },
+  "245498": {
+    "name": "Graceful Cosmic Ray Pup",
+    "species_id": 4840
+  },
+  "245501": {
+    "name": "Sao'rhon",
+    "species_id": 4843
+  },
+  "245499": {
+    "name": "Starlight",
+    "species_id": 4841
+  },
+  "245502": {
+    "name": "Inquisitive Cosmic Ray Pup",
+    "species_id": 4844
+  },
+  "179179": {
+    "name": "Clinging Remains",
+    "species_id": 3115
+  },
+  "179220": {
+    "name": "Grappling Gauntlet",
+    "species_id": 3121
+  },
+  "90205": {
+    "name": "Fragment of Desire",
+    "species_id": 1627
+  },
+  "90203": {
+    "name": "Fragment of Anger",
+    "species_id": 1625
+  },
+  "90204": {
+    "name": "Fragment of Suffering",
+    "species_id": 1626
+  },
+  "179219": {
+    "name": "Grip of Terror",
+    "species_id": 3120
+  },
+  "173850": {
+    "name": "Hissing Deathroach",
+    "species_id": 3027
+  },
+  "173849": {
+    "name": "Tower Deathroach",
+    "species_id": 3026
+  },
+  "174082": {
+    "name": "Undying Deathroach",
+    "species_id": 3038
+  },
+  "179227": {
+    "name": "Vile Deathroach",
+    "species_id": 3124
+  },
+  "184187": {
+    "name": "Archetype of Vigilance",
+    "species_id": 3233
+  },
+  "124389": {
+    "name": "Sneaky Marmot",
+    "species_id": 2063
+  },
+  "128159": {
+    "name": "Grasping Manifestation",
+    "species_id": 2120
+  },
+  "33227": {
+    "name": "Enchanted Broom",
+    "species_id": 213
+  },
+  "115145": {
+    "name": "Creeping Tentacle",
+    "species_id": 1962
+  },
+  "161946": {
+    "name": "Eye of Corruption",
+    "species_id": 2836
+  },
+  "61703": {
+    "name": "Tiny Twister",
+    "species_id": 445
+  },
+  "179166": {
+    "name": "Gizmo",
+    "species_id": 3110
+  },
+  "62816": {
+    "name": "Stunted Shardhorn",
+    "species_id": 532
+  },
+  "247465": {
+    "name": "Unfazed Diver",
+    "species_id": 4860
+  },
+  "171702": {
+    "name": "Copperfur Kit",
+    "species_id": 2936
+  },
+  "247463": {
+    "name": "Zo'ya",
+    "species_id": 4859
+  },
+  "154777": {
+    "name": "Yellow Junkhopper",
+    "species_id": 2666
+  },
+  "181362": {
+    "name": "Bufonid Croaker",
+    "species_id": 3173
+  },
+  "182081": {
+    "name": "Archetype of Serenity",
+    "species_id": 3181
+  },
+  "115140": {
+    "name": "Runeforged Servitor",
+    "species_id": 1957
+  },
+  "15699": {
+    "name": "Tranquil Mechanical Yeti",
+    "species_id": 116
+  },
+  "68659": {
+    "name": "Anubisath Idol",
+    "species_id": 1155
+  },
+  "62526": {
+    "name": "Qiraji Guardling",
+    "species_id": 513
+  },
+  "179239": {
+    "name": "Gilded Darknight",
+    "species_id": 3130
+  },
+  "179241": {
+    "name": "Mord'al Eveningstar",
+    "species_id": 3132
+  },
+  "179240": {
+    "name": "Mawsworn Minion",
+    "species_id": 3131
+  },
+  "53884": {
+    "name": "Feline Familiar",
+    "species_id": 319
+  },
+  "62246": {
+    "name": "Shimmershell Snail",
+    "species_id": 493
+  },
+  "98446": {
+    "name": "Mudshell Conch",
+    "species_id": 1776
+  },
+  "154718": {
+    "name": "Blackchasm Crawler",
+    "species_id": 2657
+  },
+  "64352": {
+    "name": "Rapana Whelk",
+    "species_id": 743
+  },
+  "51635": {
+    "name": "Scooter the Snail",
+    "species_id": 289
+  },
+  "154836": {
+    "name": "Amethyst Softshell",
+    "species_id": 2697
+  },
+  "204325": {
+    "name": "Roseshell",
+    "species_id": 3539
+  },
+  "63001": {
+    "name": "Silkbead Snail",
+    "species_id": 568
+  },
+  "62313": {
+    "name": "Rusty Snail",
+    "species_id": 496
+  },
+  "154716": {
+    "name": "Spireshell Snail",
+    "species_id": 2653
+  },
+  "148995": {
+    "name": "Thunderscale Whelpling",
+    "species_id": 2561
+  },
+  "71942": {
+    "name": "Xu-Fu, Cub of Xuen",
+    "species_id": 1266
+  },
+  "112728": {
+    "name": "Court Scribe",
+    "species_id": 1931
+  },
+  "106181": {
+    "name": "Sunborne Val'kyr",
+    "species_id": 1885
+  },
+  "29089": {
+    "name": "Mini Tyrael",
+    "species_id": 189
+  },
+  "55356": {
+    "name": "Darkmoon Tonk",
+    "species_id": 338
+  },
+  "29147": {
+    "name": "Ghostly Skull",
+    "species_id": 190
+  },
+  "154849": {
+    "name": "Drowned Hatchling",
+    "species_id": 2710
+  },
+  "95841": {
+    "name": "Nibbles",
+    "species_id": 1691
+  },
+  "242176": {
+    "name": "Tidbit",
+    "species_id": 4801
+  },
+  "179183": {
+    "name": "Lost Limb",
+    "species_id": 3119
+  },
+  "7546": {
+    "name": "Bronze Whelpling",
+    "species_id": 1563
+  },
+  "191383": {
+    "name": "Jeweled Sapphire Whelpling",
+    "species_id": 3344
+  },
+  "16445": {
+    "name": "Terky",
+    "species_id": 1073
+  },
+  "169514": {
+    "name": "Glimr",
+    "species_id": 2888
+  },
+  "154820": {
+    "name": "Murgle",
+    "species_id": 2681
+  },
+  "15361": {
+    "name": "Murki",
+    "species_id": 1168
+  },
+  "179140": {
+    "name": "Gurgl",
+    "species_id": 3107
+  },
+  "88692": {
+    "name": "Servant of Demidos",
+    "species_id": 1601
+  },
+  "223136": {
+    "name": "Umbral Amalgam",
+    "species_id": 4544
+  },
+  "175203": {
+    "name": "Moon-Touched Netherwhelp",
+    "species_id": 3053
+  },
+  "154720": {
+    "name": "Chitterspine Deepstalker",
+    "species_id": 2658
+  },
+  "184183": {
+    "name": "Ambystan Darter",
+    "species_id": 3223
+  },
+  "182264": {
+    "name": "Archetype of Metamorphosis",
+    "species_id": 3197
+  },
+  "48609": {
+    "name": "Clockwork Gnome",
+    "species_id": 277
+  },
+  "45340": {
+    "name": "Fossilized Hatchling",
+    "species_id": 266
+  },
+  "154856": {
+    "name": "Microbot XD",
+    "species_id": 2717
+  },
+  "208636": {
+    "name": "Killbot 9000",
+    "species_id": 4260
+  },
+  "231455": {
+    "name": "Crimson Mechasaur",
+    "species_id": 4638
+  },
+  "231454": {
+    "name": "Fun-Size Flarendo",
+    "species_id": 4640
+  },
+  "171697": {
+    "name": "Purity",
+    "species_id": 2935
+  },
+  "171568": {
+    "name": "Sable",
+    "species_id": 2933
+  },
+  "127951": {
+    "name": "Infernal Pyreclaw",
+    "species_id": 2089
+  },
+  "150385": {
+    "name": "Happiness",
+    "species_id": 2591
+  },
+  "236783": {
+    "name": "Merriment",
+    "species_id": 4733
+  },
+  "107206": {
+    "name": "Zoom",
+    "species_id": 1903
+  },
+  "154838": {
+    "name": "Damplight Slug",
+    "species_id": 2699
+  },
+  "204320": {
+    "name": "Diamondshell",
+    "species_id": 3535
+  },
+  "204621": {
+    "name": "Roggy",
+    "species_id": 3557
+  },
+  "204326": {
+    "name": "Brulee",
+    "species_id": 3540
+  },
+  "127862": {
+    "name": "Zephyrian Prince",
+    "species_id": 2084
+  },
+  "189132": {
+    "name": "Echo of the Heights",
+    "species_id": 3310
+  },
+  "198273": {
+    "name": "Gale Spirit",
+    "species_id": 3412
+  },
+  "98077": {
+    "name": "Crispin",
+    "species_id": 1752
+  },
+  "115785": {
+    "name": "Direbeak Hatchling",
+    "species_id": 1975
+  },
+  "34770": {
+    "name": "Macabre Marionette",
+    "species_id": 1351
+  },
+  "65203": {
+    "name": "Emperor Crab",
+    "species_id": 746
+  },
+  "63005": {
+    "name": "Spirebound Crab",
+    "species_id": 572
+  },
+  "61312": {
+    "name": "Strand Crab",
+    "species_id": 401
+  },
+  "63097": {
+    "name": "Shore Crawler",
+    "species_id": 629
+  },
+  "61158": {
+    "name": "Shore Crab",
+    "species_id": 388
+  },
+  "33226": {
+    "name": "Strand Crawler",
+    "species_id": 211
+  },
+  "16085": {
+    "name": "Peddlefeet",
+    "species_id": 122
+  },
+  "63621": {
+    "name": "Feral Vermling",
+    "species_id": 821
+  },
+  "64632": {
+    "name": "Hopling",
+    "species_id": 835
+  },
+  "184285": {
+    "name": "Gnomelia Gearheart",
+    "species_id": 3236
+  },
+  "119040": {
+    "name": "Tylarr Gronnden",
+    "species_id": 2022
+  },
+  "94927": {
+    "name": "Crusher",
+    "species_id": 1688
+  },
+  "170421": {
+    "name": "PHA7-YNX",
+    "species_id": 2889
+  },
+  "87669": {
+    "name": "Hatespark the Tiny",
+    "species_id": 1544
+  },
+  "127857": {
+    "name": "Twilight Clutch-Sister",
+    "species_id": 2081
+  },
+  "154803": {
+    "name": "Twilight Whelpling",
+    "species_id": 2677
+  },
+  "63098": {
+    "name": "Gilnean Raven",
+    "species_id": 630
+  },
+  "67443": {
+    "name": "Crow",
+    "species_id": 1068
+  },
+  "209259": {
+    "name": "Lil' Frostwing",
+    "species_id": 4265
+  },
+  "63550": {
+    "name": "Alpine Foxling",
+    "species_id": 724
+  },
+  "62864": {
+    "name": "Arctic Fox Kit",
+    "species_id": 558
+  },
+  "63551": {
+    "name": "Alpine Foxling Kit",
+    "species_id": 725
+  },
+  "62669": {
+    "name": "Fjord Worg Pup",
+    "species_id": 529
+  },
+  "97741": {
+    "name": "Black-Footed Fox Kit",
+    "species_id": 1743
+  },
+  "97743": {
+    "name": "Mist Fox Kit",
+    "species_id": 1744
+  },
+  "232579": {
+    "name": "Specter",
+    "species_id": 4686
+  },
+  "160196": {
+    "name": "Void-Scarred Pup",
+    "species_id": 2797
+  },
+  "93142": {
+    "name": "Lost Netherpup",
+    "species_id": 1661
+  },
+  "114063": {
+    "name": "Snowfang",
+    "species_id": 1941
+  },
+  "148520": {
+    "name": "Dasher",
+    "species_id": 2538
+  },
+  "91823": {
+    "name": "Fel Pup",
+    "species_id": 1660
+  },
+  "87111": {
+    "name": "Frostwolf Pup",
+    "species_id": 1542
+  },
+  "73688": {
+    "name": "Vengeful Porcupette",
+    "species_id": 1344
+  },
+  "120830": {
+    "name": "Ban-Fu, Cub of Ban-Lu",
+    "species_id": 2047
+  },
+  "154706": {
+    "name": "Chitterspine Skitterling",
+    "species_id": 2648
+  },
+  "154894": {
+    "name": "Arachnoid Skitterbot",
+    "species_id": 2720
+  },
+  "155600": {
+    "name": "Spraybot 0D",
+    "species_id": 2753
+  },
+  "154708": {
+    "name": "Hissing Chitterspine",
+    "species_id": 2649
+  },
+  "154789": {
+    "name": "Alloyed Alleyrat",
+    "species_id": 2672
+  },
+  "139622": {
+    "name": "Lil' Tika",
+    "species_id": 2196
+  },
+  "73354": {
+    "name": "Kovok",
+    "species_id": 1334
+  },
+  "148517": {
+    "name": "Baby Zandalari Raptor",
+    "species_id": 2537
+  },
+  "70453": {
+    "name": "Zandalari Toenibbler",
+    "species_id": 1213
+  },
+  "143193": {
+    "name": "Zandalari Shinchomper",
+    "species_id": 2413
+  },
+  "80329": {
+    "name": "Lifelike Mechanical Frostboar",
+    "species_id": 1412
+  },
+  "90345": {
+    "name": "Race MiniZep",
+    "species_id": 1636
+  },
+  "128158": {
+    "name": "Fel-Afflicted Skyfin",
+    "species_id": 2119
+  },
+  "21076": {
+    "name": "Firefly",
+    "species_id": 146
+  },
+  "88575": {
+    "name": "Glowing Sporebat",
+    "species_id": 1598
+  },
+  "63850": {
+    "name": "Effervescent Glowfly",
+    "species_id": 747
+  },
+  "171240": {
+    "name": "Devouring Animite",
+    "species_id": 2922
+  },
+  "171667": {
+    "name": "Helpful Glimmerfly",
+    "species_id": 2928
+  },
+  "179131": {
+    "name": "Animite Broodling",
+    "species_id": 3102
+  },
+  "222298": {
+    "name": "Hallowed Glowfly",
+    "species_id": 4467
+  },
+  "65185": {
+    "name": "Mei Li Sparkler",
+    "species_id": 722
+  },
+  "67329": {
+    "name": "Darkmoon Glowfly",
+    "species_id": 1062
+  },
+  "88356": {
+    "name": "Sapphire Firefly",
+    "species_id": 1592
+  },
+  "128167": {
+    "name": "Skyfin Juvenile",
+    "species_id": 2134
+  },
+  "143730": {
+    "name": "Bumbles",
+    "species_id": 2442
+  },
+  "171664": {
+    "name": "Fluttering Glimmerfly",
+    "species_id": 2927
+  },
+  "179329": {
+    "name": "Wild Corpsefly",
+    "species_id": 3141
+  },
+  "222614": {
+    "name": "Azure Flickerfly",
+    "species_id": 4515
+  },
+  "143464": {
+    "name": "Dreadtick Leecher",
+    "species_id": 2431
+  },
+  "65216": {
+    "name": "Shrine Fly",
+    "species_id": 754
+  },
+  "88357": {
+    "name": "Violet Firefly",
+    "species_id": 1591
+  },
+  "128157": {
+    "name": "Docile Skyfin",
+    "species_id": 2118
+  },
+  "150375": {
+    "name": "Amberglow Stinger",
+    "species_id": 2586
+  },
+  "172155": {
+    "name": "Foulwing Buzzer",
+    "species_id": 2964
+  },
+  "171668": {
+    "name": "Vibrant Glimmerfly",
+    "species_id": 2929
+  },
+  "222615": {
+    "name": "Vibrant Glowfly",
+    "species_id": 4516
+  },
+  "222613": {
+    "name": "Fallowspark Glowfly",
+    "species_id": 4514
+  },
+  "62621": {
+    "name": "Fel Flame",
+    "species_id": 519
+  },
+  "25706": {
+    "name": "Searing Scorchling",
+    "species_id": 172
+  },
+  "16701": {
+    "name": "Spirit of Summer",
+    "species_id": 128
+  },
+  "62201": {
+    "name": "Spawn of Onyxia",
+    "species_id": 489
+  },
+  "7544": {
+    "name": "Crimson Whelpling",
+    "species_id": 58
+  },
+  "36607": {
+    "name": "Onyxian Whelpling",
+    "species_id": 243
+  },
+  "65321": {
+    "name": "Wild Crimson Hatchling",
+    "species_id": 819
+  },
+  "73011": {
+    "name": "Lil' Bling",
+    "species_id": 1320
+  },
+  "171239": {
+    "name": "Chirpy Valeshrieker",
+    "species_id": 2908
+  },
+  "115784": {
+    "name": "Snowfeather Hatchling",
+    "species_id": 1974
+  },
+  "143207": {
+    "name": "Sandstinger Wasp",
+    "species_id": 2426
+  },
+  "189160": {
+    "name": "Black Slyvern Pup",
+    "species_id": 3266
+  },
+  "22445": {
+    "name": "Miniwing",
+    "species_id": 149
+  },
+  "62906": {
+    "name": "Highlands Turkey",
+    "species_id": 645
+  },
+  "36908": {
+    "name": "Gryphon Hatchling",
+    "species_id": 245
+  },
+  "63585": {
+    "name": "Szechuan Chicken",
+    "species_id": 728
+  },
+  "30379": {
+    "name": "Westfall Chicken",
+    "species_id": 84
+  },
+  "189133": {
+    "name": "Viridescent Duck",
+    "species_id": 3309
+  },
+  "184190": {
+    "name": "Multichicken",
+    "species_id": 3226
+  },
+  "154783": {
+    "name": "Rustbolt Clucker",
+    "species_id": 2669
+  },
+  "162663": {
+    "name": "Experiment 13",
+    "species_id": 2868
+  },
+  "155829": {
+    "name": "Armored Vaultbot",
+    "species_id": 2766
+  },
+  "110826": {
+    "name": "Coastal Sandpiper",
+    "species_id": 1914
+  },
+  "65314": {
+    "name": "Jade Crane Chick",
+    "species_id": 792
+  },
+  "134406": {
+    "name": "Francois",
+    "species_id": 2165
+  },
+  "88573": {
+    "name": "Veilwatcher Hatchling",
+    "species_id": 1596
+  },
+  "7394": {
+    "name": "Ancona Chicken",
+    "species_id": 52
+  },
+  "143177": {
+    "name": "Corlain Falcon",
+    "species_id": 2405
+  },
+  "224718": {
+    "name": "Thundo",
+    "species_id": 4591
+  },
+  "143035": {
+    "name": "Valley Chicken",
+    "species_id": 2376
+  },
+  "183285": {
+    "name": "Enraged Poultrid",
+    "species_id": 3218
+  },
+  "143184": {
+    "name": "Greatwing Macaw",
+    "species_id": 2409
+  },
+  "154855": {
+    "name": "Utility Mechanoclaw",
+    "species_id": 2716
+  },
+  "32818": {
+    "name": "Plump Turkey",
+    "species_id": 201
+  },
+  "70144": {
+    "name": "Ji-Kun Hatchling",
+    "species_id": 1202
+  },
+  "62648": {
+    "name": "Turkey",
+    "species_id": 525
+  },
+  "73534": {
+    "name": "Azure Crane Chick",
+    "species_id": 1321
+  },
+  "62664": {
+    "name": "Chicken",
+    "species_id": 646
+  },
+  "62900": {
+    "name": "Wildhammer Gryphon Hatchling",
+    "species_id": 548
+  },
+  "222194": {
+    "name": "Greenlands Chicken",
+    "species_id": 4461
+  },
+  "222195": {
+    "name": "Arathi Chicken",
+    "species_id": 4460
+  },
+  "189131": {
+    "name": "Ironbeak Duck",
+    "species_id": 3300
+  },
+  "183557": {
+    "name": "Archetype of Satisfaction",
+    "species_id": 3220
+  },
+  "21063": {
+    "name": "Silver Dragonhawk Hatchling",
+    "species_id": 144
+  },
+  "15710": {
+    "name": "Tiny Snowman",
+    "species_id": 117
+  },
+  "115786": {
+    "name": "Sharptalon Hatchling",
+    "species_id": 1976
+  },
+  "115787": {
+    "name": "Bloodgazer Hatchling",
+    "species_id": 1977
+  },
+  "88225": {
+    "name": "Sentinel's Companion",
+    "species_id": 1567
+  },
+  "229890": {
+    "name": "Thrillbot 9000",
+    "species_id": 4617
+  },
+  "62395": {
+    "name": "Nether Faerie Dragon",
+    "species_id": 557
+  },
+  "143821": {
+    "name": "Coldlight Surfrunner",
+    "species_id": 2457
+  },
+  "68838": {
+    "name": "Fluxfire Feline",
+    "species_id": 1162
+  },
+  "112144": {
+    "name": "Corgnelius",
+    "species_id": 1929
+  },
+  "106283": {
+    "name": "Corgi Pup",
+    "species_id": 1890
+  },
+  "192108": {
+    "name": "Scout",
+    "species_id": 3407
+  },
+  "241150": {
+    "name": "Weechi",
+    "species_id": 4793
+  },
+  "240994": {
+    "name": "Ada the Sweetest",
+    "species_id": 4792
+  },
+  "239362": {
+    "name": "Pascal the Wonder Pup",
+    "species_id": 4761
+  },
+  "93143": {
+    "name": "Cinder Pup",
+    "species_id": 1662
+  },
+  "72160": {
+    "name": "Moon Moon",
+    "species_id": 1276
+  },
+  "71023": {
+    "name": "Tito",
+    "species_id": 1236
+  },
+  "234365": {
+    "name": "Marmaduke",
+    "species_id": 4708
+  },
+  "171247": {
+    "name": "Dodger",
+    "species_id": 2905
+  },
+  "88134": {
+    "name": "Mechanical Scorpid",
+    "species_id": 1565
+  },
+  "143796": {
+    "name": "Barnaby",
+    "species_id": 2456
+  },
+  "143045": {
+    "name": "Coastal Scuttler",
+    "species_id": 2386
+  },
+  "192363": {
+    "name": "Diamond Crab",
+    "species_id": 3361
+  },
+  "231574": {
+    "name": "Paleshell Crab",
+    "species_id": 4660
+  },
+  "154704": {
+    "name": "Glimmershell Scuttler",
+    "species_id": 2647
+  },
+  "192365": {
+    "name": "Sapphire Crab",
+    "species_id": 3362
+  },
+  "231570": {
+    "name": "Cave Crab",
+    "species_id": 4658
+  },
+  "61826": {
+    "name": "Blighthawk",
+    "species_id": 456
+  },
+  "88577": {
+    "name": "Bone Serpent",
+    "species_id": 1600
+  },
+  "97324": {
+    "name": "Spectral Spinner",
+    "species_id": 1730
+  },
+  "154814": {
+    "name": "Abyssal Slitherling",
+    "species_id": 2678
+  },
+  "115148": {
+    "name": "Blightbreath",
+    "species_id": 1965
+  },
+  "154822": {
+    "name": "Kelpfin",
+    "species_id": 2683
+  },
+  "127947": {
+    "name": "Blazehound",
+    "species_id": 2086
+  },
+  "128388": {
+    "name": "Rebellious Imp",
+    "species_id": 2135
+  },
+  "154445": {
+    "name": "Minimancer",
+    "species_id": 2638
+  },
+  "69748": {
+    "name": "Living Sandling",
+    "species_id": 1177
+  },
+  "183638": {
+    "name": "Ichabod",
+    "species_id": 3248
+  },
+  "33529": {
+    "name": "Curious Wolvar Pup",
+    "species_id": 226
+  },
+  "68664": {
+    "name": "Corefire Imp",
+    "species_id": 1149
+  },
+  "71033": {
+    "name": "Fiendish Imp",
+    "species_id": 1229
+  },
+  "171149": {
+    "name": "Dusky Dredwing Pup",
+    "species_id": 2902
+  },
+  "173535": {
+    "name": "Battie",
+    "species_id": 3011
+  },
+  "119499": {
+    "name": "Frostbrood Whelpling",
+    "species_id": 2036
+  },
+  "115136": {
+    "name": "Snobold Runt",
+    "species_id": 1953
+  },
+  "90201": {
+    "name": "Leviathan Hatchling",
+    "species_id": 1623
+  },
+  "58163": {
+    "name": "Soul of the Aspects",
+    "species_id": 347
+  },
+  "143808": {
+    "name": "Thistlebrush Bud",
+    "species_id": 2469
+  },
+  "203372": {
+    "name": "Sunglow Cobra",
+    "species_id": 3489
+  },
+  "61459": {
+    "name": "Little Black Ram",
+    "species_id": 437
+  },
+  "60649": {
+    "name": "Black Lamb",
+    "species_id": 374
+  },
+  "64248": {
+    "name": "Summit Kid",
+    "species_id": 679
+  },
+  "33200": {
+    "name": "Elwynn Lamb",
+    "species_id": 209
+  },
+  "88300": {
+    "name": "Puddle Terror",
+    "species_id": 1568
+  },
+  "212399": {
+    "name": "Kal'andu",
+    "species_id": 4297
+  },
+  "68846": {
+    "name": "Kun-Lai Runt",
+    "species_id": 1166
+  },
+  "68805": {
+    "name": "Stunted Yeti",
+    "species_id": 1158
+  },
+  "81431": {
+    "name": "Teroclaw Hatchling",
+    "species_id": 1416
+  },
+  "68654": {
+    "name": "Stitched Pup",
+    "species_id": 1146
+  },
+  "69778": {
+    "name": "Sunreaver Micro-Sentry",
+    "species_id": 1178
+  },
+  "172148": {
+    "name": "Micromancer",
+    "species_id": 2959
+  },
+  "79410": {
+    "name": "Mechanical Axebeak",
+    "species_id": 1403
+  },
+  "90206": {
+    "name": "Sister of Temptation",
+    "species_id": 1628
+  },
+  "68666": {
+    "name": "Ashstone Core",
+    "species_id": 1150
+  },
+  "86081": {
+    "name": "Netherspawn, Spawn of Netherspawn",
+    "species_id": 1524
+  },
+  "64633": {
+    "name": "Aqua Strider",
+    "species_id": 836
+  },
+  "63847": {
+    "name": "Dancing Water Skimmer",
+    "species_id": 751
+  },
+  "97559": {
+    "name": "Spring Strider",
+    "species_id": 1739
+  },
+  "62998": {
+    "name": "Mirror Strider",
+    "species_id": 566
+  },
+  "184923": {
+    "name": "E'rnee",
+    "species_id": 3237
+  },
+  "204275": {
+    "name": "Snapjaw Lurker",
+    "species_id": 3526
+  },
+  "204222": {
+    "name": "Azure Swoglet",
+    "species_id": 3513
+  },
+  "205795": {
+    "name": "Blub",
+    "species_id": 3582
+  },
+  "215565": {
+    "name": "Lovely Duckling",
+    "species_id": 4409
+  },
+  "47944": {
+    "name": "Dark Phoenix Hatchling",
+    "species_id": 270
+  },
+  "26119": {
+    "name": "Phoenix Hatchling",
+    "species_id": 175
+  },
+  "68466": {
+    "name": "Pandaren Fire Spirit",
+    "species_id": 1124
+  },
+  "63919": {
+    "name": "Leopard Tree Frog",
+    "species_id": 702
+  },
+  "62997": {
+    "name": "Jungle Darter",
+    "species_id": 565
+  },
+  "24480": {
+    "name": "Mojo",
+    "species_id": 165
+  },
+  "62185": {
+    "name": "Horny Toad",
+    "species_id": 483
+  },
+  "61368": {
+    "name": "Huge Toad",
+    "species_id": 648
+  },
+  "7549": {
+    "name": "Tree Frog",
+    "species_id": 65
+  },
+  "62312": {
+    "name": "Frog",
+    "species_id": 495
+  },
+  "61071": {
+    "name": "Small Frog",
+    "species_id": 419
+  },
+  "62370": {
+    "name": "Spotted Bell Frog",
+    "species_id": 502
+  },
+  "62815": {
+    "name": "Biletoad",
+    "species_id": 649
+  },
+  "62852": {
+    "name": "Dragonbone Hatchling",
+    "species_id": 537
+  },
+  "7387": {
+    "name": "Green Wing Macaw",
+    "species_id": 50
+  },
+  "63006": {
+    "name": "Sandy Petrel",
+    "species_id": 573
+  },
+  "62953": {
+    "name": "Sea Gull",
+    "species_id": 560
+  },
+  "61313": {
+    "name": "Parrot",
+    "species_id": 403
+  },
+  "7389": {
+    "name": "Senegal",
+    "species_id": 51
+  },
+  "7390": {
+    "name": "Cockatiel",
+    "species_id": 47
+  },
+  "7391": {
+    "name": "Hyacinth Macaw",
+    "species_id": 49
+  },
+  "32589": {
+    "name": "Tickbird Hatchling",
+    "species_id": 194
+  },
+  "32590": {
+    "name": "White Tickbird Hatchling",
+    "species_id": 195
+  },
+  "42177": {
+    "name": "Blue Mini Jouster",
+    "species_id": 259
+  },
+  "42183": {
+    "name": "Gold Mini Jouster",
+    "species_id": 260
+  },
+  "48107": {
+    "name": "Rustberg Gull",
+    "species_id": 271
+  },
+  "61171": {
+    "name": "Fledgling Buzzard",
+    "species_id": 395
+  },
+  "61322": {
+    "name": "Polly",
+    "species_id": 409
+  },
+  "62819": {
+    "name": "Imperial Eagle Chick",
+    "species_id": 534
+  },
+  "97018": {
+    "name": "Albatross Chick",
+    "species_id": 1708
+  },
+  "97076": {
+    "name": "Fledgling Kingfeather",
+    "species_id": 1709
+  },
+  "97078": {
+    "name": "Fledgling Oliveback",
+    "species_id": 1710
+  },
+  "97079": {
+    "name": "Skyhorn Nestling",
+    "species_id": 1711
+  },
+  "97080": {
+    "name": "Golden Eaglet",
+    "species_id": 1712
+  },
+  "154710": {
+    "name": "Great Sea Albatross",
+    "species_id": 2650
+  },
+  "189156": {
+    "name": "Blackfeather Nester",
+    "species_id": 3321
+  },
+  "189157": {
+    "name": "Woodbiter Piculet",
+    "species_id": 3322
+  },
+  "189158": {
+    "name": "Brightfeather",
+    "species_id": 3323
+  },
+  "251889": {
+    "name": "Fledgeling Warden's Companion",
+    "species_id": 4901
+  },
+  "7550": {
+    "name": "Wood Frog",
+    "species_id": 64
+  },
+  "63002": {
+    "name": "Garden Frog",
+    "species_id": 569
+  },
+  "61369": {
+    "name": "Toad",
+    "species_id": 420
+  },
+  "62892": {
+    "name": "Mac Frog",
+    "species_id": 542
+  },
+  "63849": {
+    "name": "Yellow-Bellied Bullfrog",
+    "species_id": 752
+  },
+  "71015": {
+    "name": "Menagerie Custodian",
+    "species_id": 1227
+  },
+  "154857": {
+    "name": "Microbot 8D",
+    "species_id": 2718
+  },
+  "229901": {
+    "name": "Chillbot 9000",
+    "species_id": 4618
+  },
+  "115144": {
+    "name": "G0-R41-0N Ultratonk",
+    "species_id": 1961
+  },
+  "62555": {
+    "name": "Flayer Youngling",
+    "species_id": 514
+  },
+  "62854": {
+    "name": "Scourged Whelpling",
+    "species_id": 538
+  },
+  "62176": {
+    "name": "Gazelle Fawn",
+    "species_id": 477
+  },
+  "110741": {
+    "name": "Gleamhoof Fawn",
+    "species_id": 1913
+  },
+  "245503": {
+    "name": "Mr. Long-Legs",
+    "species_id": 4845
+  },
+  "245506": {
+    "name": "Cerulean Lapbug",
+    "species_id": 4848
+  },
+  "7555": {
+    "name": "Hawk Owl",
+    "species_id": 67
+  },
+  "88367": {
+    "name": "Sunfire Kaliri",
+    "species_id": 1570
+  },
+  "62242": {
+    "name": "Crested Owl",
+    "species_id": 507
+  },
+  "85254": {
+    "name": "Wood Wasp",
+    "species_id": 1463
+  },
+  "88574": {
+    "name": "Kaliri Hatchling",
+    "species_id": 1597
+  },
+  "108568": {
+    "name": "Pygmy Owl",
+    "species_id": 1907
+  },
+  "147586": {
+    "name": "Child of Pa'ku",
+    "species_id": 2527
+  },
+  "171150": {
+    "name": "Crimson Dredwing Pup",
+    "species_id": 2903
+  },
+  "171567": {
+    "name": "Fledgling Teroclaw",
+    "species_id": 2926
+  },
+  "82715": {
+    "name": "Frostfur Rat",
+    "species_id": 1427
+  },
+  "61165": {
+    "name": "Fawn",
+    "species_id": 447
+  },
+  "182183": {
+    "name": "Archetype of Multiplicity",
+    "species_id": 3189
+  },
+  "245504": {
+    "name": "Heka'Tarnos, Bringer of Discord",
+    "species_id": 4846
+  },
+  "85255": {
+    "name": "Bloodsting Wasp",
+    "species_id": 1462
+  },
+  "7553": {
+    "name": "Great Horned Owl",
+    "species_id": 68
+  },
+  "88417": {
+    "name": "Royal Moth",
+    "species_id": 1587
+  },
+  "85014": {
+    "name": "Bone Wasp",
+    "species_id": 1458
+  },
+  "182840": {
+    "name": "Archetype of Malice",
+    "species_id": 3211
+  },
+  "223691": {
+    "name": "Whoopy",
+    "species_id": 4568
+  },
+  "182216": {
+    "name": "Vicious Leporid",
+    "species_id": 3190
+  },
+  "111158": {
+    "name": "Blind Rat",
+    "species_id": 1915
+  },
+  "143813": {
+    "name": "Littlehoof",
+    "species_id": 2471
+  },
+  "184194": {
+    "name": "Leaping Leporid",
+    "species_id": 3232
+  },
+  "211288": {
+    "name": "Leyhart",
+    "species_id": 4278
+  },
+  "245505": {
+    "name": "Copper Lapbug",
+    "species_id": 4847
+  },
+  "54374": {
+    "name": "Brilliant Kaliri",
+    "species_id": 325
+  },
+  "85253": {
+    "name": "Twilight Wasp",
+    "species_id": 1464
+  },
+  "85257": {
+    "name": "Amberbarb Wasp",
+    "species_id": 1465
+  },
+  "96123": {
+    "name": "Blazing Firehawk",
+    "species_id": 1693
+  },
+  "148988": {
+    "name": "Firesting Buzzer",
+    "species_id": 2557
+  },
+  "189209": {
+    "name": "Whitewhisker",
+    "species_id": 3320
+  },
+  "178216": {
+    "name": "Flawless Amethyst Baubleworm",
+    "species_id": 3097
+  },
+  "67319": {
+    "name": "Darkmoon Hatchling",
+    "species_id": 1061
+  },
+  "85710": {
+    "name": "Lovebird Hatchling",
+    "species_id": 1511
+  },
+  "96405": {
+    "name": "Enchanted Pen",
+    "species_id": 1701
+  },
+  "61877": {
+    "name": "Jade Owl",
+    "species_id": 845
+  },
+  "173508": {
+    "name": "Lost Quill",
+    "species_id": 3008
+  },
+  "127863": {
+    "name": "Drafty",
+    "species_id": 2085
+  },
+  "154841": {
+    "name": "Stormwrath",
+    "species_id": 2702
+  },
+  "200769": {
+    "name": "Vortex",
+    "species_id": 3446
+  },
+  "143812": {
+    "name": "Mischievous Zephyr",
+    "species_id": 2467
+  },
+  "183230": {
+    "name": "Mawtouched Geomental",
+    "species_id": 3215
+  },
+  "68467": {
+    "name": "Pandaren Air Spirit",
+    "species_id": 1125
+  },
+  "181615": {
+    "name": "Archetype of Animation",
+    "species_id": 3179
+  },
+  "106152": {
+    "name": "Baby Elderhorn",
+    "species_id": 1884
+  },
+  "223094": {
+    "name": "Cobalt Ramolith",
+    "species_id": 4538
+  },
+  "143160": {
+    "name": "Brutus",
+    "species_id": 2402
+  },
+  "99425": {
+    "name": "Alarm-o-Bot",
+    "species_id": 1805
+  },
+  "143142": {
+    "name": "Rooter",
+    "species_id": 2401
+  },
+  "183686": {
+    "name": "Pippin",
+    "species_id": 3243
+  },
+  "236016": {
+    "name": "Mech-Friend Maya",
+    "species_id": 4730
+  },
+  "122629": {
+    "name": "Foe Reaper 0.9",
+    "species_id": 2058
+  },
+  "147692": {
+    "name": "Alarm-O-Dog",
+    "species_id": 2533
+  },
+  "240137": {
+    "name": "Tock the Clocker Spaniel",
+    "species_id": 4762
+  },
+  "231459": {
+    "name": "Blackwater Kegmover",
+    "species_id": 4649
+  },
+  "76873": {
+    "name": "Hogs",
+    "species_id": 1384
+  },
+  "68804": {
+    "name": "Harpy Youngling",
+    "species_id": 1157
+  },
+  "99389": {
+    "name": "Thistleleaf Adventurer",
+    "species_id": 1803
+  },
+  "73532": {
+    "name": "Dandelion Frolicker",
+    "species_id": 1329
+  },
+  "198989": {
+    "name": "Thrrrdgl",
+    "species_id": 4791
+  },
+  "185606": {
+    "name": "Garrlok",
+    "species_id": 3252
+  },
+  "223316": {
+    "name": "Marrlok",
+    "species_id": 4548
+  },
+  "229846": {
+    "name": "Parrlok",
+    "species_id": 4615
+  },
+  "33530": {
+    "name": "Curious Oracle Hatchling",
+    "species_id": 225
+  },
+  "150356": {
+    "name": "Wayward Spirit",
+    "species_id": 2580
+  },
+  "154724": {
+    "name": "Muck Slug",
+    "species_id": 2660
+  },
+  "204324": {
+    "name": "Tricky",
+    "species_id": 3538
+  },
+  "154722": {
+    "name": "Trench Slug",
+    "species_id": 2659
+  },
+  "128137": {
+    "name": "Fel Lasher",
+    "species_id": 2117
+  },
+  "151780": {
+    "name": "Jingles",
+    "species_id": 2622
+  },
+  "151632": {
+    "name": "Slimy Hermit Crab",
+    "species_id": 2763
+  },
+  "151697": {
+    "name": "Slimy Eel",
+    "species_id": 2758
+  },
+  "29726": {
+    "name": "Mr. Chilly",
+    "species_id": 192
+  },
+  "32595": {
+    "name": "Pengu",
+    "species_id": 198
+  },
+  "62835": {
+    "name": "Tundra Penguin",
+    "species_id": 536
+  },
+  "151700": {
+    "name": "Slimy Otter",
+    "species_id": 2757
+  },
+  "151673": {
+    "name": "Slimy Octopode",
+    "species_id": 2760
+  },
+  "151631": {
+    "name": "Slimy Sea Slug",
+    "species_id": 2765
+  },
+  "151696": {
+    "name": "Slimy Fangtooth",
+    "species_id": 2761
+  },
+  "183772": {
+    "name": "Lightless Tormentor",
+    "species_id": 3221
+  },
+  "106232": {
+    "name": "Wyrmy Tunkins",
+    "species_id": 1887
+  },
+  "71014": {
+    "name": "Lil' Bad Wolf",
+    "species_id": 1226
+  },
+  "21010": {
+    "name": "Blue Moth",
+    "species_id": 138
+  },
+  "61314": {
+    "name": "Crimson Moth",
+    "species_id": 421
+  },
+  "21018": {
+    "name": "White Moth",
+    "species_id": 141
+  },
+  "62373": {
+    "name": "Silky Moth",
+    "species_id": 503
+  },
+  "65124": {
+    "name": "Luyu Moth",
+    "species_id": 718
+  },
+  "62916": {
+    "name": "Fungal Moth",
+    "species_id": 756
+  },
+  "62050": {
+    "name": "Grey Moth",
+    "species_id": 464
+  },
+  "21009": {
+    "name": "Red Moth",
+    "species_id": 139
+  },
+  "61370": {
+    "name": "Swamp Moth",
+    "species_id": 402
+  },
+  "62315": {
+    "name": "Tainted Moth",
+    "species_id": 498
+  },
+  "63838": {
+    "name": "Gilded Moth",
+    "species_id": 748
+  },
+  "73542": {
+    "name": "Ashwing Moth",
+    "species_id": 1324
+  },
+  "65187": {
+    "name": "Amber Moth",
+    "species_id": 732
+  },
+  "21008": {
+    "name": "Yellow Moth",
+    "species_id": 140
+  },
+  "62177": {
+    "name": "Forest Moth",
+    "species_id": 478
+  },
+  "62895": {
+    "name": "Oasis Moth",
+    "species_id": 544
+  },
+  "65215": {
+    "name": "Garden Moth",
+    "species_id": 753
+  },
+  "73543": {
+    "name": "Flamering Moth",
+    "species_id": 1325
+  },
+  "28883": {
+    "name": "Frosty",
+    "species_id": 188
+  },
+  "85872": {
+    "name": "Blazing Cindercrawler",
+    "species_id": 1517
+  },
+  "83584": {
+    "name": "Autumnal Sproutling",
+    "species_id": 1429
+  },
+  "83583": {
+    "name": "Forest Sproutling",
+    "species_id": 1430
+  },
+  "171242": {
+    "name": "Hungry Burrower",
+    "species_id": 2916
+  },
+  "99394": {
+    "name": "Fetid Waveling",
+    "species_id": 1802
+  },
+  "71018": {
+    "name": "Tainted Waveling",
+    "species_id": 1231
+  },
+  "48982": {
+    "name": "Tiny Shale Spider",
+    "species_id": 279
+  },
+  "61420": {
+    "name": "Ash Spiderling",
+    "species_id": 427
+  },
+  "63288": {
+    "name": "Amethyst Spiderling",
+    "species_id": 716
+  },
+  "61253": {
+    "name": "Dusk Spiderling",
+    "species_id": 396
+  },
+  "62191": {
+    "name": "Venomspitter Hatchling",
+    "species_id": 506
+  },
+  "65054": {
+    "name": "Feverbite Hatchling",
+    "species_id": 714
+  },
+  "222576": {
+    "name": "Fringe",
+    "species_id": 4492
+  },
+  "62922": {
+    "name": "Crimson Shale Hatchling",
+    "species_id": 554
+  },
+  "62181": {
+    "name": "Topaz Shale Hatchling",
+    "species_id": 480
+  },
+  "62186": {
+    "name": "Desert Spider",
+    "species_id": 484
+  },
+  "61327": {
+    "name": "Spider",
+    "species_id": 412
+  },
+  "61259": {
+    "name": "Widow Spiderling",
+    "species_id": 400
+  },
+  "62638": {
+    "name": "Skittering Cavern Crawler",
+    "species_id": 637
+  },
+  "97236": {
+    "name": "Burrow Spiderling",
+    "species_id": 1726
+  },
+  "62182": {
+    "name": "Amethyst Shale Hatchling",
+    "species_id": 838
+  },
+  "62915": {
+    "name": "Emerald Shale Hatchling",
+    "species_id": 837
+  },
+  "10598": {
+    "name": "Smolderweb Hatchling",
+    "species_id": 90
+  },
+  "61320": {
+    "name": "Forest Spiderling",
+    "species_id": 407
+  },
+  "62117": {
+    "name": "Twilight Spider",
+    "species_id": 470
+  },
+  "63715": {
+    "name": "Jumping Spider",
+    "species_id": 699
+  },
+  "97238": {
+    "name": "Nursery Spider",
+    "species_id": 1727
+  },
+  "61686": {
+    "name": "Tiny Bog Beast",
+    "species_id": 509
+  },
+  "68655": {
+    "name": "Mr. Bigglesworth",
+    "species_id": 1145
+  },
+  "143042": {
+    "name": "Giant Woodworm",
+    "species_id": 2383
+  },
+  "21056": {
+    "name": "Blue Dragonhawk Hatchling",
+    "species_id": 145
+  },
+  "21055": {
+    "name": "Golden Dragonhawk Hatchling",
+    "species_id": 142
+  },
+  "244145": {
+    "name": "Hopeflutter",
+    "species_id": 4811
+  },
+  "21064": {
+    "name": "Red Dragonhawk Hatchling",
+    "species_id": 143
+  },
+  "143798": {
+    "name": "Octopode Fry",
+    "species_id": 2462
+  },
+  "98463": {
+    "name": "Broot",
+    "species_id": 1777
+  },
+  "71488": {
+    "name": "Blossoming Ancient",
+    "species_id": 1248
+  },
+  "48641": {
+    "name": "Fox Kit",
+    "species_id": 278
+  },
+  "148989": {
+    "name": "Lord Woofington",
+    "species_id": 2558
+  },
+  "96622": {
+    "name": "Grumpy",
+    "species_id": 1705
+  },
+  "10259": {
+    "name": "Worg Pup",
+    "species_id": 89
+  },
+  "70098": {
+    "name": "Spawn of G'nathus",
+    "species_id": 1201
+  }
+}

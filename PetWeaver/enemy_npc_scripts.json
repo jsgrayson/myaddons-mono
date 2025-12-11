@@ -1,0 +1,3850 @@
+{
+  "generated": "2025-11-26",
+  "total_encounters": 142,
+  "npc_scripts": {
+    "Robot Rumble": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1590/Robot_Rumble",
+      "abilities": {
+        "491": {
+          "frequency": 36,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Bleeding:491)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Miniature Army": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1595/Miniature_Army",
+      "abilities": {
+        "231": {
+          "frequency": 128,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "!enemy.aura(Swarm of Flies:231).exists"
+          ]
+        },
+        "311": {
+          "frequency": 128,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "458": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Wind-Up:458).exists & enemy.hp>1000"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Swarm of Flies:231)\\n# Primary rotation ability\\nuse(Dodge:311)",
+      "total_abilities": 3
+    },
+    "The Thing from the Swamp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp",
+      "abilities": {
+        "918": {
+          "frequency": 32,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Ziriak": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1598/Ziriak",
+      "abilities": {
+        "242": {
+          "frequency": 16,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 242,
+          "ability_name": "Undead",
+          "confidence": 0.8,
+          "frequency": 8
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Undead:242) [round=2]\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 1
+    },
+    "One Hungry Worm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm",
+      "abilities": {
+        "340": {
+          "frequency": 192,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists & self.speed.fast"
+          ]
+        },
+        "271": {
+          "frequency": 192,
+          "most_common_name": "Glowing Toxin",
+          "example_conditions": [
+            "!enemy.aura(Glowing Toxin:271).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Underground:340)\\n# Applies debuff/buff\\nuse(Glowing Toxin:271)",
+      "total_abilities": 2
+    },
+    "To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1526/To_a_Land_Down_Under",
+      "abilities": {
+        "446": {
+          "frequency": 320,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "round=3 & !enemy.aura(Corrosion:446).exists",
+            "enemy.aura(Corrosion:446).exists & round=3"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 446,
+          "ability_name": "Corrosion",
+          "confidence": 1.0,
+          "frequency": 160
+        },
+        {
+          "turn": 3,
+          "ability_id": 446,
+          "ability_name": "Corrosion",
+          "confidence": 1.0,
+          "frequency": 320
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Corrosion:446) [round=2]\\nuse(Corrosion:446) [round=3]\\n# Applies debuff/buff\\nuse(Corrosion:446)",
+      "total_abilities": 1
+    },
+    "Delver Mardei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1528/Delver_Mardei",
+      "abilities": {
+        "500": {
+          "frequency": 36,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            " enemy.aura(Flame Breath:500).exists "
+          ]
+        },
+        "3568": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.is(Dustie:3568) ",
+            " enemy.is(Dustie:3568) "
+          ]
+        },
+        "245": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp>1665 & self.aura(Dragonkin:245).exists ",
+            " enemy.hp>1110 & !self.aura(Dragonkin:245).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Flame Breath:500)",
+      "total_abilities": 3
+    },
+    "Sharp as Flint": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1497/Sharp_as_Flint",
+      "abilities": {
+        "1065": {
+          "frequency": 125,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).hp<=1811 & !enemy.ability(Digest Brains:1065).usable"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Lyver": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1500/Lyver",
+      "abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "A New Vocation": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1501/A_New_Vocation",
+      "abilities": {
+        "311": {
+          "frequency": 120,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "341": {
+          "frequency": 240,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Flying:341)\\n# Primary rotation ability\\nuse(Dodge:311)",
+      "total_abilities": 2
+    },
+    "Enok the Stinky": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1502/Enok_the_Stinky",
+      "abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 0.6,
+          "frequency": 6
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=3]\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Vortex - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1506/Vortex_-_Legendary",
+      "abilities": {
+        "918": {
+          "frequency": 72,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=2]\\n# Primary rotation ability\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Vortex - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1507/Vortex_-_Epic",
+      "abilities": {
+        "542": {
+          "frequency": 48,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 24
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=2]\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Vortex - Rare": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1508/Vortex_-_Rare",
+      "abilities": {
+        "918": {
+          "frequency": 18,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(claw:918)",
+      "total_abilities": 1
+    },
+    "Storm-Touched Skitterer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1522/Storm-Touched_Skitterer",
+      "abilities": {
+        "918": {
+          "frequency": 4,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        },
+        "542": {
+          "frequency": 4,
+          "most_common_name": "flock",
+          "example_conditions": [
+            " !enemy.aura(flock:542).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(claw:918)\\n# Applies debuff/buff\\nuse(flock:542)",
+      "total_abilities": 2
+    },
+    "Wildfire - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1511/Wildfire_-_Epic",
+      "abilities": {
+        "491": {
+          "frequency": 954,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 954,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Bleeding:491)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Storm-Touched Slyvern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1523/Storm-Touched_Slyvern",
+      "abilities": {
+        "177": {
+          "frequency": 126,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "516": {
+          "frequency": 126,
+          "most_common_name": "Weakened Defenses",
+          "example_conditions": [
+            "!enemy.aura(Weakened Defenses:516).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Immolate:177)\\n# Applies debuff/buff\\nuse(Weakened Defenses:516)",
+      "total_abilities": 2
+    },
+    "Tremblor - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1515/Tremblor_-_Epic",
+      "abilities": {
+        "491": {
+          "frequency": 96,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 96,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Bleeding:491)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Storm-Touched Ohuna": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1524/Storm-Touched_Ohuna",
+      "abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "claw",
+          "example_conditions": [
+            " !enemy.aura(claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 918,
+          "ability_name": "claw",
+          "confidence": 0.6,
+          "frequency": 6
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(claw:918) [round=1]\\n# Applies debuff/buff\\nuse(claw:918)",
+      "total_abilities": 1
+    },
+    "Flow - Legendary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1518/Flow_-_Legendary",
+      "abilities": {
+        "500": {
+          "frequency": 160,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "807": {
+          "frequency": 160,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        },
+        "491": {
+          "frequency": 160,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Flame Breath:500)\\n# Applies debuff/buff\\nuse(Rabies:807)\\n# Applies debuff/buff\\nuse(Bleeding:491)",
+      "total_abilities": 3
+    },
+    "Flow - Epic": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1519/Flow_-_Epic",
+      "abilities": {
+        "807": {
+          "frequency": 144,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        },
+        "491": {
+          "frequency": 144,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Rabies:807)\\n# Applies debuff/buff\\nuse(Bleeding:491)",
+      "total_abilities": 2
+    },
+    "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/18465/Right_Twice_a_Day",
+      "abilities": {
+        "1067": {
+          "frequency": 8,
+          "most_common_name": "Forboding Curse",
+          "example_conditions": [
+            "!enemy.aura(Forboding Curse:1067).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Forboding Curse:1067)",
+      "total_abilities": 1
+    },
+    "Humanoid Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530",
+      "abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists",
+            "!enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 2,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 4,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Tough n' Cuddly:1111) [round=1]\\nuse(Tough n' Cuddly:1111) [round=2]\\nuse(Tough n' Cuddly:1111) [round=4]\\n# Primary rotation ability\\nuse(Tough n' Cuddly:1111)\\n# Primary rotation ability\\nuse(Stunned:927)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 3
+    },
+    "Dragonkin Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1534",
+      "abilities": {
+        "1111": {
+          "frequency": 180,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy(#3).active & enemy.hp<529 & enemy.aura(Tough n' Cuddly:1111).exists",
+            "enemy(#3).active & !enemy.aura(Tough n' Cuddly:1111).exists",
+            "enemy(#3).active & enemy.hp<823 & enemy.aura(Tough n' Cuddly:1111).exists & self.aura(Dragonkin:245).exists"
+          ]
+        },
+        "245": {
+          "frequency": 30,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.hp<823 & enemy.aura(Tough n' Cuddly:1111).exists & self.aura(Dragonkin:245).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 90
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Tough n' Cuddly:1111) [round=1]\\n# Primary rotation ability\\nuse(Tough n' Cuddly:1111)",
+      "total_abilities": 2
+    },
+    "Flying Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1538",
+      "abilities": {
+        "3558": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Murrey:3558) & enemy.round!~1,3 ",
+            " enemy.is(Murrey:3558) "
+          ]
+        },
+        "3559": {
+          "frequency": 75,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Clawz:3559) & self.aura(Pumped Up:296).exists "
+          ]
+        },
+        "296": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp<400 & !self.aura(Pumped Up:296).exists ",
+            " enemy.is(Clawz:3559) & self.aura(Pumped Up:296).exists "
+          ]
+        },
+        "1112": {
+          "frequency": 75,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Tough n' Cuddly:1112).duration<2 "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 4
+    },
+    "Critter Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1546",
+      "abilities": {
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "1014": {
+          "frequency": 72,
+          "most_common_name": "Blinded",
+          "example_conditions": [
+            "enemy.aura(Blinded:1014).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 108
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Tough n' Cuddly:1111) [round=1]\\n# Primary rotation ability\\nuse(Tough n' Cuddly:1111)\\n# Primary rotation ability\\nuse(Blinded:1014)",
+      "total_abilities": 2
+    },
+    "Magic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1550",
+      "abilities": {
+        "3558": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(#2).dead & !enemy(Murrey:3558).played ",
+            " enemy.is(Murrey:3558) "
+          ]
+        },
+        "1111": {
+          "frequency": 144,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            " enemy.aura(Tough n' Cuddly:1111).duration=1 & self.speed.fast ",
+            " enemy.aura(Tough n' Cuddly:1111).duration=2 & self.speed.slow "
+          ]
+        },
+        "1112": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Tough n' Cuddly:1112).usable ",
+            " enemy.ability(Tough n' Cuddly:1112).duration=4 "
+          ]
+        },
+        "3560": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.is(Bassalt:3560) "
+          ]
+        },
+        "3559": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.is(Clawz:3559) ",
+            " enemy.is(Clawz:3559) & self(#2).dead "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Tough n' Cuddly:1111)",
+      "total_abilities": 5
+    },
+    "Elemental Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1554",
+      "abilities": {
+        "3558": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Murrey:3558).active "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Beast Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1558",
+      "abilities": {
+        "3558": {
+          "frequency": 32,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Murrey:3558).hp<1242 "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Aquatic Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1562",
+      "abilities": {
+        "231": {
+          "frequency": 54,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "enemy.aura(Swarm of Flies:231).duration=5"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 231,
+          "ability_name": "Swarm of Flies",
+          "confidence": 1.0,
+          "frequency": 27
+        },
+        {
+          "turn": 6,
+          "ability_id": 231,
+          "ability_name": "Swarm of Flies",
+          "confidence": 1.0,
+          "frequency": 27
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Swarm of Flies:231) [round=2]\\nuse(Swarm of Flies:231) [round=6]\\nuse(Swarm of Flies:231)",
+      "total_abilities": 1
+    },
+    "Mechanical Battler of Zaralek Cavern": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1566",
+      "abilities": {
+        "635": {
+          "frequency": 54,
+          "most_common_name": "Minefield",
+          "example_conditions": [
+            "enemy.aura(Minefield:635).duration=7"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Minefield:635)",
+      "total_abilities": 1
+    },
+    "Explorer BezzertQuest: To a Land Down Under": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1530/To_a_Land_Down_Under",
+      "abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "1111": {
+          "frequency": 72,
+          "most_common_name": "Tough n' Cuddly",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists",
+            "!enemy.aura(Tough n' Cuddly:1111).exists"
+          ]
+        },
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.hp<1246 & enemy.aura(Tough n' Cuddly:1111).exists & enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 2,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 4,
+          "ability_id": 1111,
+          "ability_name": "Tough n' Cuddly",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Tough n' Cuddly:1111) [round=1]\\nuse(Tough n' Cuddly:1111) [round=2]\\nuse(Tough n' Cuddly:1111) [round=4]\\n# Primary rotation ability\\nuse(Tough n' Cuddly:1111)\\n# Primary rotation ability\\nuse(Stunned:927)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 3
+    },
+    "ShinmuraQuest: Are They Not Beautiful?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1531/Are_They_Not_Beautiful",
+      "abilities": {
+        "179": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Conflagrate:179).duration=4"
+          ]
+        },
+        "415": {
+          "frequency": 48,
+          "most_common_name": "Frost Shock",
+          "example_conditions": [
+            "!enemy.aura(Frost Shock:415).exists & enemy(#1).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Frost Shock:415)",
+      "total_abilities": 2
+    },
+    "Trainer OrloggQuest: Do You Even Train?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1533/Do_You_Even_Train",
+      "abilities": {
+        "3572": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Lifft:3572).aura(Underwater:830).exists"
+          ]
+        },
+        "830": {
+          "frequency": 72,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Lifft:3572).aura(Underwater:830).exists"
+          ]
+        },
+        "3571": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        },
+        "3573": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        },
+        "3130": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brul'dan:3571).dead & enemy(Swole:3573).dead & ally(Gilded Darknight:3130).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 5
+    },
+    "Illidari Masters: Sissix": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/346/Illidari_Masters:_Sissix",
+      "abilities": {
+        "296": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Pumped Up:296).exists & enemy.hpp=100"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Fight Night: AmaliaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/145/Fight_Night:_Amalia",
+      "abilities": {
+        "1355": {
+          "frequency": 8,
+          "most_common_name": "Puppies of the Flame",
+          "example_conditions": [
+            "enemy.aura(Puppies of the Flame:1355).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 5,
+          "ability_id": 1355,
+          "ability_name": "Puppies of the Flame",
+          "confidence": 0.4,
+          "frequency": 4
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Puppies of the Flame:1355) [round=5]\\n# Primary rotation ability\\nuse(Puppies of the Flame:1355)",
+      "total_abilities": 1
+    },
+    "Dazed and Confused and Adorable": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/155/Dazed_and_Confused_and_Adorable",
+      "abilities": {
+        "839": {
+          "frequency": 96,
+          "most_common_name": "Leaping",
+          "example_conditions": [
+            " enemy.aura(Leaping:839).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Leaping:839)",
+      "total_abilities": 1
+    },
+    "The Wine's Gone Bad": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/157/The_Wine's_Gone_Bad",
+      "abilities": {
+        "217": {
+          "frequency": 350,
+          "most_common_name": "Curse of Doom",
+          "example_conditions": [
+            "!enemy.aura(Curse of Doom:217).exists"
+          ]
+        },
+        "918": {
+          "frequency": 350,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Curse of Doom:217)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Training with DurianFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/160/Training_with_Durian",
+      "abilities": {
+        "245": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Dragonkin:245).exists & enemy(#2).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Only Pets Can Prevent Forest Fires": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/161/Only_Pets_Can_Prevent_Forest_Fires",
+      "abilities": {
+        "392": {
+          "frequency": 150,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Extra Plating:392).duration=2"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Meet The Maw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/162/Meet_The_Maw",
+      "abilities": {
+        "2238": {
+          "frequency": 16,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "500": {
+          "frequency": 16,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Razor Talons:2238)\\n# Applies debuff/buff\\nuse(Flame Breath:500)",
+      "total_abilities": 2
+    },
+    "Training with BreddaFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/167/Training_with_Bredda",
+      "abilities": {
+        "542": {
+          "frequency": 784,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Tiny Poacher, Tiny AnimalsFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/168/Tiny_Poacher,_Tiny_Animals",
+      "abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#3).active & enemy.aura(Stunned:927).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 927,
+          "ability_name": "Stunned",
+          "confidence": 1.0,
+          "frequency": 18
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Stunned:927) [round=4]\\n# Primary rotation ability\\nuse(Stunned:927)",
+      "total_abilities": 1
+    },
+    "Wildlife Protection Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/169/Wildlife_Protection_Force",
+      "abilities": {
+        "2238": {
+          "frequency": 40,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "446": {
+          "frequency": 40,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "enemy.aura(Corrosion:446).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 2238,
+          "ability_name": "Razor Talons",
+          "confidence": 1.0,
+          "frequency": 20
+        },
+        {
+          "turn": 2,
+          "ability_id": 2238,
+          "ability_name": "Razor Talons",
+          "confidence": 1.0,
+          "frequency": 20
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Razor Talons:2238) [round=1]\\nuse(Razor Talons:2238) [round=2]\\n# Applies debuff/buff\\nuse(Razor Talons:2238)\\n# Primary rotation ability\\nuse(Corrosion:446)",
+      "total_abilities": 2
+    },
+    "Snail Fight!Family Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/171/Snail_Fight!",
+      "abilities": {
+        "830": {
+          "frequency": 4,
+          "most_common_name": "Underwater",
+          "example_conditions": [
+            "enemy.aura(Underwater:830).exists"
+          ]
+        },
+        "543": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!self.aura(Prowl:543).exists & enemy.hpp<100 & !enemy(#2).active"
+          ]
+        },
+        "376": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Headbutt:376).usable"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 830,
+          "ability_name": "Underwater",
+          "confidence": 0.2,
+          "frequency": 2
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Underwater:830) [round=1]\\n# Primary rotation ability\\nuse(Underwater:830)",
+      "total_abilities": 3
+    },
+    "Jarrun's LadderFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/175/Jarrun's_Ladder",
+      "abilities": {
+        "242": {
+          "frequency": 32,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 242,
+          "ability_name": "Undead",
+          "confidence": 1.0,
+          "frequency": 16
+        },
+        {
+          "turn": 4,
+          "ability_id": 242,
+          "ability_name": "Undead",
+          "confidence": 1.0,
+          "frequency": 16
+        },
+        {
+          "turn": 8,
+          "ability_id": 242,
+          "ability_name": "Undead",
+          "confidence": 1.0,
+          "frequency": 16
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Undead:242) [round=3]\\nuse(Undead:242) [round=4]\\nuse(Undead:242) [round=8]\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 1
+    },
+    "Oh, Ominitron": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/176/Oh,_Ominitron",
+      "abilities": {
+        "2257": {
+          "frequency": 54,
+          "most_common_name": "Corrupted Touch",
+          "example_conditions": [
+            "!enemy.aura(Corrupted Touch:2257).exists"
+          ]
+        },
+        "2256": {
+          "frequency": 54,
+          "most_common_name": "Corrupted Ground",
+          "example_conditions": [
+            "!enemy.aura(Corrupted Ground:2256).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Corrupted Touch:2257)\\n# Applies debuff/buff\\nuse(Corrupted Ground:2256)",
+      "total_abilities": 2
+    },
+    "All Pets Go to Heaven": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/178/All_Pets_Go_to_Heaven",
+      "abilities": {
+        "218": {
+          "frequency": 162,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(bigdot:218).usable "
+          ]
+        },
+        "231": {
+          "frequency": 324,
+          "most_common_name": "frogdot",
+          "example_conditions": [
+            " !enemy.aura(frogdot:231).exists "
+          ]
+        },
+        "242": {
+          "frequency": 324,
+          "most_common_name": "undead",
+          "example_conditions": [
+            " enemy.aura(undead:242).exists "
+          ]
+        },
+        "368": {
+          "frequency": 324,
+          "most_common_name": "snaildot",
+          "example_conditions": [
+            " !enemy.aura(snaildot:368).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(frogdot:231)\\n# Primary rotation ability\\nuse(undead:242)\\n# Applies debuff/buff\\nuse(snaildot:368)",
+      "total_abilities": 4
+    },
+    "Beasts of Burden:": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Beasts_of_Burden",
+      "abilities": {
+        "639": {
+          "frequency": 4,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "enemy.aura(Toxic Smoke:639).duration!=2"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Toxic Smoke:639)",
+      "total_abilities": 1
+    },
+    "Andurs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/337/Andurs",
+      "abilities": {
+        "639": {
+          "frequency": 4,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "enemy.aura(Toxic Smoke:639).duration!=2"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Toxic Smoke:639)",
+      "total_abilities": 1
+    },
+    "ChoppedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/183/Chopped",
+      "abilities": {
+        "542": {
+          "frequency": 16,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 0.8,
+          "frequency": 8
+        },
+        {
+          "turn": 2,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 0.8,
+          "frequency": 8
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=1]\\nuse(Shattered Defenses:542) [round=2]\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "FlummoxedFamily Familiar": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/184/Flummoxed",
+      "abilities": {
+        "271": {
+          "frequency": 120,
+          "most_common_name": "Glowing Toxin",
+          "example_conditions": [
+            "!enemy.aura(Glowing Toxin:271).exists"
+          ]
+        },
+        "742": {
+          "frequency": 120,
+          "most_common_name": "Creeping Fungus",
+          "example_conditions": [
+            "!enemy.aura(Creeping Fungus:742).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Glowing Toxin:271)\\n# Applies debuff/buff\\nuse(Creeping Fungus:742)",
+      "total_abilities": 2
+    },
+    "Mana Tap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/186/Mana_Tap",
+      "abilities": {
+        "311": {
+          "frequency": 8,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:311).exists"
+          ]
+        },
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "2238": {
+          "frequency": 8,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "443": {
+          "frequency": 8,
+          "most_common_name": "Prismatic Barrier",
+          "example_conditions": [
+            "enemy.aura(Prismatic Barrier:443).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Dodge:311)\\n# Applies debuff/buff\\nuse(Flame Breath:500)\\n# Applies debuff/buff\\nuse(Razor Talons:2238)\\n# Primary rotation ability\\nuse(Prismatic Barrier:443)",
+      "total_abilities": 4
+    },
+    "Nicki Tinytech": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25093",
+      "abilities": {
+        "415": {
+          "frequency": 576,
+          "most_common_name": "Frostschock",
+          "example_conditions": [
+            "!enemy.aura(Frostschock:415).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 5,
+          "ability_id": 415,
+          "ability_name": "Frostschock",
+          "confidence": 1.0,
+          "frequency": 288
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Frostschock:415) [round=5]\\n# Applies debuff/buff\\nuse(Frostschock:415)",
+      "total_abilities": 1
+    },
+    "Burning Pandaren Spirit": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/25085",
+      "abilities": {
+        "242": {
+          "frequency": 640,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(#1).aura(Undead:242).exists & !enemy(#1).dead "
+          ]
+        },
+        "542": {
+          "frequency": 1280,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 2
+    },
+    "Nitun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/78/Nitun",
+      "abilities": {
+        "918": {
+          "frequency": 28,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 4,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "enemy.aura(Rabies:807).duration<3"
+          ]
+        },
+        "658": {
+          "frequency": 2,
+          "most_common_name": "Plagued Blood",
+          "example_conditions": [
+            " !enemy.aura(Plagued Blood:658).exists "
+          ]
+        },
+        "213": {
+          "frequency": 2,
+          "most_common_name": "Death and Decay",
+          "example_conditions": [
+            " !enemy.aura(Death and Decay:213).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)\\nuse(Rabies:807)\\n# Applies debuff/buff\\nuse(Plagued Blood:658)\\n# Applies debuff/buff\\nuse(Death and Decay:213)",
+      "total_abilities": 5
+    },
+    "Klutz's Battle Monkey": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/458/Klutz's_Battle_Monkey",
+      "abilities": {
+        "306": {
+          "frequency": 2,
+          "most_common_name": "Heridas expuestas",
+          "example_conditions": [
+            "!enemy.aura(Heridas expuestas:306).exists"
+          ]
+        },
+        "542": {
+          "frequency": 2,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists & enemy.hpp>25 "
+          ]
+        },
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast"
+          ]
+        },
+        "458": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#1).active & self.aura(Wind-Up:458).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Heridas expuestas:306)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)\\n# Primary rotation ability\\nuse(Flying:341)",
+      "total_abilities": 4
+    },
+    "Klutz's Battle Bird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/460/Klutz's_Battle_Bird",
+      "abilities": {
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Flying:341)",
+      "total_abilities": 1
+    },
+    "Klutz's Battle Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/456/Klutz's_Battle_Rat",
+      "abilities": {
+        "341": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists & self.speed.fast",
+            " enemy.aura(liftedoff:341).exists "
+          ]
+        },
+        "918": {
+          "frequency": 4,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 2,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 3
+    },
+    "\"Captain\" Klutz": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/452/\"Captain\"_Klutz",
+      "abilities": {
+        "807": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists",
+            "!enemy.aura(Rabia:807).exists"
+          ]
+        },
+        "918": {
+          "frequency": 4,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists",
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        },
+        "2112": {
+          "frequency": 2,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Applies debuff/buff\\nuse(Toxic Wound:2112)",
+      "total_abilities": 3
+    },
+    "Foe Reaper 50": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/438/Foe_Reaper_50",
+      "abilities": {
+        "177": {
+          "frequency": 2,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "502": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(#1).aura(Lanzallamas:502).exists",
+            " !enemy.aura(Flamethrower:502).exists "
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "!enemy.aura(Rabies:807).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Immolate:177)\\n# Applies debuff/buff\\nuse(Rabies:807)",
+      "total_abilities": 3
+    },
+    "Angry Geode": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/444/Angry_Geode",
+      "abilities": {
+        "435": {
+          "frequency": 22,
+          "most_common_name": "Stoneskin",
+          "example_conditions": [
+            "enemy.aura(Stoneskin:435).duration>4",
+            "enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable"
+          ]
+        },
+        "569": {
+          "frequency": 10,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable"
+          ]
+        },
+        "242": {
+          "frequency": 2,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "491": {
+          "frequency": 6,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "enemy.aura(Bleeding:491).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Stoneskin:435)\\n# Primary rotation ability\\nuse(Bleeding:491)\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 4
+    },
+    "here": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/14013/Deebs,_Tyri_and_Puzzle",
+      "abilities": {
+        "1394": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "1400": {
+          "frequency": 11,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            "enemy(Deebs:1400).hp>=500",
+            "enemy(Deebs:1400).active & enemy.hp.full"
+          ]
+        },
+        "1401": {
+          "frequency": 13,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).active & enemy(Deebs:1400).dead & enemy(Tyri:1401).dead ",
+            "enemy(Tyri:1401).active & self.hp<325",
+            "enemy(Tyri:1401).dead"
+          ]
+        },
+        "1402": {
+          "frequency": 15,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).hp <= 374 & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "242": {
+          "frequency": 3,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            "!self.aura(Undead:242).exists & enemy.round>3 & enemy(#3).active",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable "
+          ]
+        },
+        "1125": {
+          "frequency": 8,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).hp <= 374 & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            " enemy(Puzzle:1402).hp <= 374 & self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).ability(Portal:1125).usable ",
+            "enemy.hp<=500 & enemy.ability(Portal:1125).usable"
+          ]
+        },
+        "311": {
+          "frequency": 30,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " self(Weebomination:1394).aura(Undead:242).exists & enemy(Puzzle:1402).aura(Dodge:311).exists ",
+            "enemy(#3).active & enemy.aura(Dodge:311).exists",
+            " enemy(Puzzle:1402).active & enemy(Puzzle:1402).aura(Dodge:311).exists "
+          ]
+        },
+        "1122": {
+          "frequency": 10,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Greedy:1122).exists & enemy.hp>650"
+          ]
+        },
+        "256": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Call Darkness:256).usable"
+          ]
+        },
+        "1387": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable"
+          ]
+        },
+        "458": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable"
+          ]
+        },
+        "312": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).aura(Wind-Up:458).exists & enemy(#3).ability(Dodge:312).usable",
+            "enemy(#3).ability(Dodge:312).usable & enemy(#3).active & self(#1).active & self.speed.slow"
+          ]
+        },
+        "927": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.aura(Bet\u00e4ubt:927).exists",
+            "enemy(#1).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "779": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).hp<=532 & self.ability(Thunderbolt:779).usable"
+          ]
+        },
+        "2238": {
+          "frequency": 2,
+          "most_common_name": "Razor Talons",
+          "example_conditions": [
+            "!enemy.aura(Razor Talons:2238).exists"
+          ]
+        },
+        "500": {
+          "frequency": 4,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        },
+        "446": {
+          "frequency": 4,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "!enemy.aura(Corrosion:446).exists & enemy.hpp>90",
+            "enemy.aura(Corrosion:446).exists"
+          ]
+        },
+        "2420": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Accursed Hexxer:2420).hpp<70 & !enemy(Puzzle:1402).aura(Dodge:311).exists"
+          ]
+        },
+        "807": {
+          "frequency": 2,
+          "most_common_name": "Rabies",
+          "example_conditions": [
+            "enemy.aura(Rabies:807).exists & !enemy(#1).active"
+          ]
+        },
+        "1725": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#2).aura(Howl:1725).exists"
+          ]
+        },
+        "257": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & weather(Darkness:257).duration<2",
+            "self(#2).aura(Stunned:174).exists & weather(Darkness:257) & !enemy(#2).dead"
+          ]
+        },
+        "174": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(#2).aura(Stunned:174).exists & weather(Darkness:257) & !enemy(#2).dead"
+          ]
+        },
+        "185": {
+          "frequency": 1,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self.aura(Reckless Strike:185).exists & enemy(#3).active & enemy.hpp<26"
+          ]
+        },
+        "601": {
+          "frequency": 2,
+          "most_common_name": "Time Bomb",
+          "example_conditions": [
+            "enemy.aura(Time Bomb:601).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Flame Breath:500)\\n# Applies debuff/buff\\nuse(Corrosion:446)\\n# Applies debuff/buff\\nuse(Razor Talons:2238)\\n# Primary rotation ability\\nuse(Rabies:807)\\n# Primary rotation ability\\nuse(Time Bomb:601)",
+      "total_abilities": 24
+    },
+    "Crystalsnap": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1199/Crystalsnap",
+      "abilities": {
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Glurp": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1203/Glurp",
+      "abilities": {
+        "918": {
+          "frequency": 120,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "2112": {
+          "frequency": 120,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Applies debuff/buff\\nuse(Toxic Wound:2112)",
+      "total_abilities": 2
+    },
+    "Sewer Creeper": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1204/Sewer_Creeper",
+      "abilities": {
+        "918": {
+          "frequency": 100,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(#1).aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "The Countess": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1205/The_Countess",
+      "abilities": {
+        "3074": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(The Countess:3074).aura(Blistering Cold:785).duration>2",
+            "!enemy(The Countess:3074).aura(Black Claw:918).exists",
+            "enemy(The Countess:3074).hp.full"
+          ]
+        },
+        "785": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(The Countess:3074).aura(Blistering Cold:785).duration>2"
+          ]
+        },
+        "918": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy(The Countess:3074).aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 3
+    },
+    "Briarpaw": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1206/Briarpaw",
+      "abilities": {
+        "311": {
+          "frequency": 144,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            " !enemy.aura(Dodge:311).exists ",
+            " enemy.aura(Dodge:311).exists "
+          ]
+        },
+        "2422": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Quick Dodge:2422).usable & !self.aura(Decoy:333).exists & round>4 "
+          ]
+        },
+        "333": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Quick Dodge:2422).usable & !self.aura(Decoy:333).exists & round>4 "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 311,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 72
+        },
+        {
+          "turn": 8,
+          "ability_id": 311,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 72
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Dodge:311) [round=4]\\nuse(Dodge:311) [round=8]\\n# Applies debuff/buff\\nuse(Dodge:311)",
+      "total_abilities": 3
+    },
+    "Mistwing": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1208/Mistwing",
+      "abilities": {
+        "2112": {
+          "frequency": 12,
+          "most_common_name": "Toxic Wound",
+          "example_conditions": [
+            "!enemy.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 2112,
+          "ability_name": "Toxic Wound",
+          "confidence": 0.6,
+          "frequency": 6
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Toxic Wound:2112) [round=3]\\n# Applies debuff/buff\\nuse(Toxic Wound:2112)",
+      "total_abilities": 1
+    },
+    "Tiny Madness": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1146/Tiny_Madness",
+      "abilities": {
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 0.4,
+          "frequency": 4
+        },
+        {
+          "turn": 3,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 0.4,
+          "frequency": 4
+        },
+        {
+          "turn": 4,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 0.4,
+          "frequency": 4
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=2]\\nuse(Shattered Defenses:542) [round=3]\\nuse(Shattered Defenses:542) [round=4]\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Brain Tickling": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1147/Brain_Tickling",
+      "abilities": {
+        "918": {
+          "frequency": 90,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        },
+        "542": {
+          "frequency": 90,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).duration<2 "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Black Claw:918)\\nuse(Shattered Defenses:542)",
+      "total_abilities": 2
+    },
+    "Living Statues Are Tough": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1148/Living_Statues_Are_Tough",
+      "abilities": {
+        "542": {
+          "frequency": 4,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Retinus the Seeker": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1151/Retinus_the_Seeker",
+      "abilities": {
+        "918": {
+          "frequency": 32,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "I Am The One Who Whispers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1152/I_Am_The_One_Who_Whispers",
+      "abilities": {
+        "918": {
+          "frequency": 48,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Dune Buggy": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1153/Dune_Buggy",
+      "abilities": {
+        "918": {
+          "frequency": 24,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 1.0,
+          "frequency": 12
+        },
+        {
+          "turn": 2,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 1.0,
+          "frequency": 12
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=1]\\nuse(Black Claw:918) [round=2]\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Watch Where You Step": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1154/Watch_Where_You_Step",
+      "abilities": {
+        "542": {
+          "frequency": 40,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).duration<2"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/699/That's_a_Big_Carcass",
+      "abilities": {
+        "542": {
+          "frequency": 200,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 200
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=1]\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/700/Strange_Looking_Dogs",
+      "abilities": {
+        "831": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active "
+          ]
+        },
+        "2332": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active "
+          ]
+        },
+        "231": {
+          "frequency": 72,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            " !enemy.aura(Swarm of Flies:231).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Swarm of Flies:231)",
+      "total_abilities": 3
+    },
+    "Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/704/Captured_Evil",
+      "abilities": {
+        "500": {
+          "frequency": 18,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 2,
+          "ability_id": 500,
+          "ability_name": "Flame Breath",
+          "confidence": 0.9,
+          "frequency": 9
+        },
+        {
+          "turn": 3,
+          "ability_id": 500,
+          "ability_name": "Flame Breath",
+          "confidence": 0.9,
+          "frequency": 9
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Flame Breath:500) [round=2]\\nuse(Flame Breath:500) [round=3]\\n# Primary rotation ability\\nuse(Flame Breath:500)",
+      "total_abilities": 1
+    },
+    "Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/705/Sea_Creatures_Are_Weird_",
+      "abilities": {
+        "457": {
+          "frequency": 6,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(#1).active & !enemy.ability(Sweep:457).usable "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/711/Night_Horrors",
+      "abilities": {
+        "918": {
+          "frequency": 18,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " !enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/712/Crab_People",
+      "abilities": {
+        "542": {
+          "frequency": 120,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/720/Marshdwellers",
+      "abilities": {
+        "542": {
+          "frequency": 128,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/722/Pack_Leader",
+      "abilities": {
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 500,
+          "ability_name": "Flame Breath",
+          "confidence": 0.4,
+          "frequency": 4
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Flame Breath:500) [round=4]\\n# Applies debuff/buff\\nuse(Flame Breath:500)",
+      "total_abilities": 1
+    },
+    "Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/725/Desert_Survivors",
+      "abilities": {
+        "512": {
+          "frequency": 16,
+          "most_common_name": "Whirlpool",
+          "example_conditions": [
+            "enemy.aura(Whirlpool:512).duration=1",
+            "enemy.aura(Whirlpool:512).exists & enemy(#3).active"
+          ]
+        },
+        "340": {
+          "frequency": 8,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Whirlpool:512)\\n# Primary rotation ability\\nuse(Underground:340)",
+      "total_abilities": 2
+    },
+    "What Do You Mean, Mind Controlling Plants?": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/726/What_Do_You_Mean,_Mind_Controlling_Plants",
+      "abilities": {
+        "542": {
+          "frequency": 36,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 18
+        },
+        {
+          "turn": 9,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 18
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=3]\\nuse(Shattered Defenses:542) [round=9]\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Ezra Grimm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1116/Ezra_Grimm",
+      "abilities": {
+        "1048": {
+          "frequency": 24,
+          "most_common_name": "Blinding Poison",
+          "example_conditions": [
+            "self(#2).active & enemy(#3).active & enemy.hpp=100 & enemy.aura(Blinding Poison:1048).exists"
+          ]
+        },
+        "918": {
+          "frequency": 24,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 1048,
+          "ability_name": "Blinding Poison",
+          "confidence": 1.0,
+          "frequency": 12
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Blinding Poison:1048) [round=3]\\n# Primary rotation ability\\nuse(Blinding Poison:1048)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Cookie's Leftovers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/464/Cookie's_Leftovers",
+      "abilities": {
+        "491": {
+          "frequency": 36,
+          "most_common_name": "Bleeding",
+          "example_conditions": [
+            "!enemy.aura(Bleeding:491).exists"
+          ]
+        },
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 491,
+          "ability_name": "Bleeding",
+          "confidence": 1.0,
+          "frequency": 18
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Bleeding:491) [round=1]\\n# Applies debuff/buff\\nuse(Bleeding:491)\\n# Applies debuff/buff\\nuse(Black Claw:918)",
+      "total_abilities": 2
+    },
+    "Ti'un the Wanderer": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/71/Ti'un_the_Wanderer",
+      "abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            " enemy.aura(Black Claw:918).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 0.4,
+          "frequency": 4
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=1]\\n# Primary rotation ability\\nuse(Black Claw:918)",
+      "total_abilities": 1
+    },
+    "No-No": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/72/No-No",
+      "abilities": {
+        "830": {
+          "frequency": 108,
+          "most_common_name": "Underwater",
+          "example_conditions": [
+            "self(#2).active & enemy.aura(Underwater:830).exists",
+            "enemy.aura(Underwater:830).exists"
+          ]
+        },
+        "326": {
+          "frequency": 36,
+          "most_common_name": "Beaver Dam",
+          "example_conditions": [
+            "enemy.aura(Beaver Dam:326).exists"
+          ]
+        },
+        "542": {
+          "frequency": 72,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 830,
+          "ability_name": "Underwater",
+          "confidence": 1.0,
+          "frequency": 54
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Underwater:830) [round=1]\\n# Primary rotation ability\\nuse(Underwater:830)\\n# Primary rotation ability\\nuse(Shattered Defenses:542)\\n# Primary rotation ability\\nuse(Beaver Dam:326)",
+      "total_abilities": 3
+    },
+    "Ka'wi the Gorger": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/77/Ka'wi_the_Gorger",
+      "abilities": {
+        "918": {
+          "frequency": 36,
+          "most_common_name": "Garra negra",
+          "example_conditions": [
+            "!enemy.aura(Garra negra:918).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Garra negra:918)",
+      "total_abilities": 1
+    },
+    "Ashlei": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/16/Ashlei",
+      "abilities": {
+        "500": {
+          "frequency": 8,
+          "most_common_name": "Flammenatem",
+          "example_conditions": [
+            "enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active",
+            "enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists"
+          ]
+        },
+        "2238": {
+          "frequency": 8,
+          "most_common_name": "Messerkrallen",
+          "example_conditions": [
+            "enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active",
+            "enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Flammenatem:500)\\n# Primary rotation ability\\nuse(Messerkrallen:2238)",
+      "total_abilities": 2
+    },
+    "Vesharr": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/21/Vesharr",
+      "abilities": {
+        "244": {
+          "frequency": 24,
+          "most_common_name": "Mechanical",
+          "example_conditions": [
+            "enemy.aura(Mechanical:244).exists"
+          ]
+        },
+        "1420": {
+          "frequency": 24,
+          "most_common_name": "Flying Mark",
+          "example_conditions": [
+            "!enemy.aura(Flying Mark:1420).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Mechanical:244)\\n# Applies debuff/buff\\nuse(Flying Mark:1420)",
+      "total_abilities": 2
+    },
+    "Wrathion": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/38/Wrathion",
+      "abilities": {
+        "1299": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cindy:1299).active & enemy.round = 4"
+          ]
+        },
+        "1301": {
+          "frequency": 1152,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).aura(Shattered Defenses:542).exists",
+            "enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "623": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "242": {
+          "frequency": 1152,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "542": {
+          "frequency": 576,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Alex:1301).aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 242,
+          "ability_name": "Undead",
+          "confidence": 1.0,
+          "frequency": 1152
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Undead:242) [round=4]\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 5
+    },
+    "Chen Stormstout": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/39/Chen_Stormstout",
+      "abilities": {
+        "353": {
+          "frequency": 24,
+          "most_common_name": "Barrel Ready",
+          "example_conditions": [
+            " enemy.aura(Barrel Ready:353).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Barrel Ready:353)",
+      "total_abilities": 1
+    },
+    "Shademaster Kiryn": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/43/Shademaster_Kiryn",
+      "abilities": {
+        "1286": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Et\u00e9:1286).active & !self(#3).played",
+            "enemy(Et\u00e9:1286).active & enemy.round =1",
+            "enemy(Et\u00e9:1286).active & !self.aura(Peau de pierre:435).exists "
+          ]
+        },
+        "1287": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Stormoen:1287).active"
+          ]
+        },
+        "1288": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Nairn:1288).active"
+          ]
+        },
+        "311": {
+          "frequency": 24,
+          "most_common_name": "Esquive",
+          "example_conditions": [
+            "enemy.aura(Esquive:311).exists"
+          ]
+        },
+        "543": {
+          "frequency": 48,
+          "most_common_name": "R\u00f4der",
+          "example_conditions": [
+            "enemy.aura(R\u00f4der:543).exists"
+          ]
+        },
+        "435": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Et\u00e9:1286).active & !self.aura(Peau de pierre:435).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 543,
+          "ability_name": "R\u00f4der",
+          "confidence": 1.0,
+          "frequency": 48
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(R\u00f4der:543) [round=1]\\n# Primary rotation ability\\nuse(R\u00f4der:543)\\n# Primary rotation ability\\nuse(Esquive:311)",
+      "total_abilities": 6
+    },
+    "Wise Mari": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/41/Wise_Mari",
+      "abilities": {
+        "986": {
+          "frequency": 8,
+          "most_common_name": "Make it Rain",
+          "example_conditions": [
+            " enemy.aura(Make it Rain:986).duration=1 "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Make it Rain:986)",
+      "total_abilities": 1
+    },
+    "Blingtron 4000": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/42/Blingtron_4000",
+      "abilities": {
+        "177": {
+          "frequency": 2624,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists",
+            "enemy.aura(Immolate:177).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Immolate:177)",
+      "total_abilities": 1
+    },
+    "Sully \"The Pickle\" McLeary": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/45/Sully_\"The_Pickle\"_McLeary",
+      "abilities": {
+        "231": {
+          "frequency": 5040,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            " !enemy.aura(Swarm of Flies:231).exists "
+          ]
+        },
+        "242": {
+          "frequency": 5040,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            " enemy.aura(Undead:242).exists "
+          ]
+        },
+        "340": {
+          "frequency": 5040,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            " enemy.aura(Underground:340).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Swarm of Flies:231)\\n# Primary rotation ability\\nuse(Undead:242)\\n# Primary rotation ability\\nuse(Underground:340)",
+      "total_abilities": 3
+    },
+    "Dr. Ion Goldbloom": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/46/Dr._Ion_Goldbloom",
+      "abilities": {
+        "341": {
+          "frequency": 672,
+          "most_common_name": "Flying",
+          "example_conditions": [
+            "enemy.aura(Flying:341).exists"
+          ]
+        },
+        "1725": {
+          "frequency": 672,
+          "most_common_name": "Howl",
+          "example_conditions": [
+            "enemy.aura(Howl:1725).exists"
+          ]
+        },
+        "500": {
+          "frequency": 672,
+          "most_common_name": "Flame Breath",
+          "example_conditions": [
+            "!enemy.aura(Flame Breath:500).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Flying:341)\\n# Primary rotation ability\\nuse(Howl:1725)\\n# Applies debuff/buff\\nuse(Flame Breath:500)",
+      "total_abilities": 3
+    },
+    "Lorewalker Cho": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/47/Lorewalker_Cho",
+      "abilities": {
+        "658": {
+          "frequency": 72,
+          "most_common_name": "Plagued Blood",
+          "example_conditions": [
+            " !enemy.aura(Plagued Blood:658).exists "
+          ]
+        },
+        "213": {
+          "frequency": 72,
+          "most_common_name": "Death and Decay",
+          "example_conditions": [
+            " !enemy.aura(Death and Decay:213).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Plagued Blood:658)\\n# Applies debuff/buff\\nuse(Death and Decay:213)",
+      "total_abilities": 2
+    },
+    "another strategy": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/4924/Yula,_Broodling_of_Yulon",
+      "abilities": {
+        "1317": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists"
+          ]
+        },
+        "341": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "Human Resources": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729",
+      "abilities": {
+        "2233": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Fungus:2233).active"
+          ]
+        },
+        "2232": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "Fun With Flying": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/789",
+      "abilities": {
+        "542": {
+          "frequency": 40,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            " enemy.aura(Shattered Defenses:542).exists "
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 40
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=1]\\n# Primary rotation ability\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Magicians Secret": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/879",
+      "abilities": {
+        "2232": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).hp>462"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Hobbyist Aquarist": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/969",
+      "abilities": {
+        "918": {
+          "frequency": 48,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists & enemy(#2).active",
+            "!enemy.aura(Black Claw:918).exists & enemy(#1).active"
+          ]
+        },
+        "542": {
+          "frequency": 24,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 2
+    },
+    "Delia HanakoQuest: That's a Big Carcass": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/729/That's_a_Big_Carcass",
+      "abilities": {
+        "2233": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Fungus:2233).active"
+          ]
+        },
+        "2232": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Murray:2232).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "BurlyQuest: Strange Looking Dogs": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/730/Strange_Looking_Dogs",
+      "abilities": {
+        "623": {
+          "frequency": 160,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "enemy.hpp = 100 & !enemy.aura(Ice Tomb:623).exists"
+          ]
+        },
+        "242": {
+          "frequency": 160,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "!enemy.aura(Undead:242).exists & !weather(Blizzard:205)"
+          ]
+        },
+        "205": {
+          "frequency": 80,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Undead:242).exists & !weather(Blizzard:205)"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Ice Tomb:623)\\n# Applies debuff/buff\\nuse(Undead:242)",
+      "total_abilities": 3
+    },
+    "KwintQuest: Not So Bad Down Here": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/731/Not_So_Bad_Down_Here",
+      "abilities": {
+        "516": {
+          "frequency": 54,
+          "most_common_name": "Weakened Defenses",
+          "example_conditions": [
+            "enemy(#3).active & !enemy.aura(Weakened Defenses:516).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 516,
+          "ability_name": "Weakened Defenses",
+          "confidence": 1.0,
+          "frequency": 27
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Weakened Defenses:516) [round=1]\\n# Applies debuff/buff\\nuse(Weakened Defenses:516)",
+      "total_abilities": 1
+    },
+    "Leana DarkwindQuest: Captured Evil": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/734/Captured_Evil",
+      "abilities": {
+        "379": {
+          "frequency": 60,
+          "most_common_name": "Poisoned",
+          "example_conditions": [
+            "!enemy.aura(Poisoned:379).exists"
+          ]
+        },
+        "415": {
+          "frequency": 60,
+          "most_common_name": "Frost Shock",
+          "example_conditions": [
+            "!enemy.aura(Frost Shock:415).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Poisoned:379)\\n# Applies debuff/buff\\nuse(Frost Shock:415)",
+      "total_abilities": 2
+    },
+    "Ellie VernQuest: Sea Creatures Are Weird": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/735/Sea_Creatures_Are_Weird_",
+      "abilities": {
+        "242": {
+          "frequency": 240,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "623": {
+          "frequency": 120,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "enemy.hpp>95 & !enemy.aura(Ice Tomb:623).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Undead:242)\\n# Applies debuff/buff\\nuse(Ice Tomb:623)",
+      "total_abilities": 2
+    },
+    "Eddie FixitQuest: Automated Chaos": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/736/Automated_Chaos",
+      "abilities": {
+        "2204": {
+          "frequency": 2,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy(\"Fixed\" Remote Control Rocket Chicken:2204).active "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Fizzie SparkwhistleQuest: Rogue Azerite": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/740/Rogue_Azerite",
+      "abilities": {
+        "2210": {
+          "frequency": 24,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Azerite Slime:2210).active"
+          ]
+        },
+        "2212": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Azerite Elemental:2212).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "Dilbert McClintQuest: Night Horrors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/741/Night_Horrors",
+      "abilities": {
+        "1081": {
+          "frequency": 72,
+          "most_common_name": "Booby-Trapped Presents",
+          "example_conditions": [
+            "!enemy.aura(Booby-Trapped Presents:1081).exists"
+          ]
+        },
+        "2209": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Atherton:2209).aura(Underground:340).exists"
+          ]
+        },
+        "340": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Atherton:2209).aura(Underground:340).exists"
+          ]
+        },
+        "159": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1"
+          ]
+        },
+        "1049": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1"
+          ]
+        },
+        "2208": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Jennings:2208).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Booby-Trapped Presents:1081)",
+      "total_abilities": 6
+    },
+    "Captain HermesQuest: Crab People": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/742/Crab_People",
+      "abilities": {
+        "623": {
+          "frequency": 160,
+          "most_common_name": "Ice Tomb",
+          "example_conditions": [
+            "!enemy.aura(Ice Tomb:623).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Ice Tomb:623)",
+      "total_abilities": 1
+    },
+    "Talia SparkbrowQuest: Add More to the Collection": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/744/Add_More_to_the_Collection",
+      "abilities": {
+        "453": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Sandstorm:453).usable & self.speed.slow"
+          ]
+        },
+        "506": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Cocoon Strike:506).usable & self.speed.slow"
+          ]
+        },
+        "2366": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Whiplash:2366).aura(Silk Cocoon:505).exists"
+          ]
+        },
+        "505": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Whiplash:2366).aura(Silk Cocoon:505).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 4
+    },
+    "ZujaiQuest: Small Beginnings": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/745/Small_Beginnings",
+      "abilities": {
+        "233": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Frog Kiss:233).usable & !enemy.ability(Croak:932).usable"
+          ]
+        },
+        "932": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Frog Kiss:233).usable & !enemy.ability(Croak:932).usable"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "LozuQuest: Marshdwellers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/750/Marshdwellers",
+      "abilities": {
+        "506": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.ability(Cocoon Strike:506).usable"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Korval DarkbeardQuest: Accidental Dread": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/751/Accidental_Dread",
+      "abilities": {
+        "542": {
+          "frequency": 72,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 542,
+          "ability_name": "Shattered Defenses",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Shattered Defenses:542) [round=1]\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 1
+    },
+    "Grady PrettQuest: Pack Leader": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/752/Pack_Leader",
+      "abilities": {
+        "641": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(#2).dead & !enemy(#2).aura(Egg Barrage:641).exists"
+          ]
+        },
+        "231": {
+          "frequency": 54,
+          "most_common_name": "Swarm of Flies",
+          "example_conditions": [
+            "!enemy.aura(Swarm of Flies:231).exists"
+          ]
+        },
+        "242": {
+          "frequency": 54,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Swarm of Flies:231)\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 3
+    },
+    "KeeyoQuest: Keeyo's Champions of Vol'dun": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/754/Keeyo's_Champions_of_Vol'dun",
+      "abilities": {
+        "2060": {
+          "frequency": 72,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "2346": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Tikka:2346).hp<1060"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 2,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Dodge:2060) [round=1]\\nuse(Dodge:2060) [round=2]\\n# Primary rotation ability\\nuse(Dodge:2060)",
+      "total_abilities": 2
+    },
+    "KusaQuest: Desert Survivors": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/755/Desert_Survivors",
+      "abilities": {
+        "340": {
+          "frequency": 4,
+          "most_common_name": "Underground",
+          "example_conditions": [
+            "enemy.aura(Underground:340).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Underground:340)",
+      "total_abilities": 1
+    },
+    "Deathly Dragonkin": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1225",
+      "abilities": {
+        "245": {
+          "frequency": 96,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.hp<1099 & self.aura(Dragonkin:245).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "Flickering Fliers": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1240",
+      "abilities": {
+        "488": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast "
+          ]
+        },
+        "595": {
+          "frequency": 4,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 2
+    },
+    "Unholy Undead": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1255",
+      "abilities": {
+        "2349": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Toxic Fumes:2349).usable & enemy.ability(Sludge Claw:2352).usable "
+          ]
+        },
+        "2352": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Toxic Fumes:2349).usable & enemy.ability(Sludge Claw:2352).usable "
+          ]
+        },
+        "488": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & self.speed.slow "
+          ]
+        },
+        "595": {
+          "frequency": 27,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & self.speed.slow "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 4
+    },
+    "Creepy Critters": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1270",
+      "abilities": {
+        "368": {
+          "frequency": 864,
+          "most_common_name": "Acidic Goo",
+          "example_conditions": [
+            "enemy.aura(Acidic Goo:368).exists",
+            "enemy.hpp>50 & !enemy.aura(Acidic Goo:368).exists"
+          ]
+        },
+        "488": {
+          "frequency": 216,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Amplify Magic:488).usable & enemy.hp>420"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 368,
+          "ability_name": "Acidic Goo",
+          "confidence": 1.0,
+          "frequency": 432
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Acidic Goo:368) [round=3]\\n# Primary rotation ability\\nuse(Acidic Goo:368)",
+      "total_abilities": 2
+    },
+    "Aquatic Apparitions": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1330",
+      "abilities": {
+        "571": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Horn Attack:571).usable "
+          ]
+        },
+        "487": {
+          "frequency": 560,
+          "most_common_name": "Amplify Magic",
+          "example_conditions": [
+            " enemy.aura(Amplify Magic:487).exists ",
+            " weather(Blizzard:205) & !enemy.aura(Amplify Magic:487).exists "
+          ]
+        },
+        "205": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " weather(Blizzard:205) & !enemy.aura(Amplify Magic:487).exists "
+          ]
+        },
+        "488": {
+          "frequency": 140,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " enemy.ability(Amplify Magic:488).usable & self.speed.slow "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Amplify Magic:487)",
+      "total_abilities": 4
+    },
+    "Macabre Mechanicals": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1345",
+      "abilities": {
+        "2972": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Shelby:2972).active & enemy.hp <=618"
+          ]
+        },
+        "1387": {
+          "frequency": 36,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active",
+            "self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active"
+          ]
+        },
+        "2973": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active"
+          ]
+        },
+        "2974": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active"
+          ]
+        },
+        "639": {
+          "frequency": 36,
+          "most_common_name": "Toxic Smoke",
+          "example_conditions": [
+            "!enemy.aura(Toxic Smoke:639).exists"
+          ]
+        },
+        "986": {
+          "frequency": 36,
+          "most_common_name": "Make it Rain",
+          "example_conditions": [
+            "!enemy.aura(Make it Rain:986).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Toxic Smoke:639)\\n# Applies debuff/buff\\nuse(Make it Rain:986)",
+      "total_abilities": 6
+    },
+    "Caregiver MaximillianQuest: Mighty Minions of Maldraxxus": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1214/Mighty_Minions_of_Maldraxxus",
+      "abilities": {
+        "170": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Lift-Off:170).usable"
+          ]
+        },
+        "924": {
+          "frequency": 128,
+          "most_common_name": "Resilient",
+          "example_conditions": [
+            "enemy.aura(Resilient:924).duration=1"
+          ]
+        },
+        "159": {
+          "frequency": 64,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy.ability(Burrow:159).usable & enemy(#2).hp>0 & enemy(#1).active"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 924,
+          "ability_name": "Resilient",
+          "confidence": 1.0,
+          "frequency": 64
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Resilient:924) [round=3]\\nuse(Resilient:924)",
+      "total_abilities": 3
+    },
+    "Dundley StickyfingersQuest: Uncomfortably Undercover": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1216/Uncomfortably_Undercover",
+      "abilities": {
+        "2060": {
+          "frequency": 48,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "self.speed.fast & !enemy.aura(Dodge:2060).exists",
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 12,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).aura(Undead:242).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 24
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Dodge:2060) [round=3]\\n# Applies debuff/buff\\nuse(Dodge:2060)",
+      "total_abilities": 2
+    },
+    "EyegorQuest: Eyegor's Special Friends": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1219/Eyegor's_Special_Friends",
+      "abilities": {
+        "502": {
+          "frequency": 36,
+          "most_common_name": "Flamethrower",
+          "example_conditions": [
+            "!enemy.aura(Flamethrower:502).exists & self.aura(Toxic Wound:2112).exists"
+          ]
+        },
+        "2112": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "!enemy.aura(Flamethrower:502).exists & self.aura(Toxic Wound:2112).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 502,
+          "ability_name": "Flamethrower",
+          "confidence": 1.0,
+          "frequency": 36
+        },
+        {
+          "turn": 2,
+          "ability_id": 502,
+          "ability_name": "Flamethrower",
+          "confidence": 1.0,
+          "frequency": 36
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Flamethrower:502) [round=1]\\nuse(Flamethrower:502) [round=2]\\n# Applies debuff/buff\\nuse(Flamethrower:502)",
+      "total_abilities": 2
+    },
+    "GlitterdustQuest: Natural Defenders": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1222/Natural_Defenders",
+      "abilities": {
+        "927": {
+          "frequency": 36,
+          "most_common_name": "Stunned",
+          "example_conditions": [
+            "enemy(#2).active & enemy.aura(Stunned:927).exists"
+          ]
+        },
+        "507": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.ability(Moth Balls:507).usable"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 927,
+          "ability_name": "Stunned",
+          "confidence": 1.0,
+          "frequency": 18
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Stunned:927) [round=4]\\n# Primary rotation ability\\nuse(Stunned:927)",
+      "total_abilities": 2
+    },
+    "FarylQuest: Airborne Defense Force": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1223/Airborne_Defense_Force",
+      "abilities": {
+        "3005": {
+          "frequency": 48,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Brite:3005).active"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "https://www.wow-petguide.com/Strategy/11028/Mega_Bite": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/11028/Mega_Bite",
+      "abilities": {
+        "2324": {
+          "frequency": 8,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            " !enemy.ability(Stachelpanzerschale:2324).usable "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# No specific rotation detected\\n# Enemy abilities identified but usage pattern unclear",
+      "total_abilities": 1
+    },
+    "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin",
+      "abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 0.8,
+          "frequency": 8
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=4]\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 2
+    },
+    "Klick": {
+      "encounter_url": "https://www.wow-petguide.com/Strategy/10529/Lehrer_Grrglin",
+      "abilities": {
+        "918": {
+          "frequency": 8,
+          "most_common_name": "Black Claw",
+          "example_conditions": [
+            "!enemy.aura(Black Claw:918).exists"
+          ]
+        },
+        "542": {
+          "frequency": 8,
+          "most_common_name": "Shattered Defenses",
+          "example_conditions": [
+            "!enemy.aura(Shattered Defenses:542).exists"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 4,
+          "ability_id": 918,
+          "ability_name": "Black Claw",
+          "confidence": 0.8,
+          "frequency": 8
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Black Claw:918) [round=4]\\n# Applies debuff/buff\\nuse(Black Claw:918)\\n# Applies debuff/buff\\nuse(Shattered Defenses:542)",
+      "total_abilities": 2
+    },
+    "Living Sludge": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1034/Living_Sludge",
+      "abilities": {
+        "2060": {
+          "frequency": 48,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            " enemy.aura(Dodge:2060).exists "
+          ]
+        },
+        "242": {
+          "frequency": 48,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            " enemy.aura(Undead:242).exists "
+          ]
+        },
+        "2486": {
+          "frequency": 168,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(#3).active & enemy.round=1 & !enemy(Cockroach:2486).active",
+            "enemy(#2).active & enemy.round=3 & enemy(Cockroach:2486).active",
+            "enemy(Cockroach:2486).active"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 1,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 96
+        },
+        {
+          "turn": 3,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 120
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Dodge:2060) [round=1]\\nuse(Dodge:2060) [round=3]\\n# Primary rotation ability\\nuse(Dodge:2060)\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 3
+    },
+    "Living Napalm": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1035/Living_Napalm",
+      "abilities": {
+        "2060": {
+          "frequency": 250,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 250,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "2486": {
+          "frequency": 125,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cockroach:2486).active"
+          ]
+        },
+        "368": {
+          "frequency": 250,
+          "most_common_name": "Acidic Goo",
+          "example_conditions": [
+            "!enemy.aura(Acidic Goo:368).exists"
+          ]
+        },
+        "446": {
+          "frequency": 500,
+          "most_common_name": "Corrosion",
+          "example_conditions": [
+            "!enemy.aura(Corrosion:446).exists",
+            "!enemy.aura(Corrosion:446).exists & self(#1).active"
+          ]
+        },
+        "177": {
+          "frequency": 500,
+          "most_common_name": "Immolate",
+          "example_conditions": [
+            "!enemy.aura(Immolate:177).exists",
+            "enemy.aura(Immolate:177).exists"
+          ]
+        },
+        "781": {
+          "frequency": 250,
+          "most_common_name": "Creeping Ooze",
+          "example_conditions": [
+            "!enemy.aura(Creeping Ooze:781).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Corrosion:446)\\n# Applies debuff/buff\\nuse(Immolate:177)\\n# Primary rotation ability\\nuse(Dodge:2060)\\n# Primary rotation ability\\nuse(Undead:242)\\n# Applies debuff/buff\\nuse(Acidic Goo:368)\\n# Applies debuff/buff\\nuse(Creeping Ooze:781)",
+      "total_abilities": 7
+    },
+    "Living Permafrost": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1036/Living_Permafrost",
+      "abilities": {
+        "338": {
+          "frequency": 1620,
+          "most_common_name": "Webbed",
+          "example_conditions": [
+            "enemy.aura(Webbed:338).exists"
+          ]
+        },
+        "381": {
+          "frequency": 3240,
+          "most_common_name": "Brittle Webbing",
+          "example_conditions": [
+            "!enemy.aura(Brittle Webbing:381).exists",
+            "enemy.aura(Brittle Webbing:381).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Brittle Webbing:381)\\n# Primary rotation ability\\nuse(Webbed:338)",
+      "total_abilities": 2
+    },
+    "Cockroach": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1040/Cockroach",
+      "abilities": {
+        "2060": {
+          "frequency": 36,
+          "most_common_name": "Dodge",
+          "example_conditions": [
+            "enemy.aura(Dodge:2060).exists"
+          ]
+        },
+        "242": {
+          "frequency": 36,
+          "most_common_name": "Undead",
+          "example_conditions": [
+            "enemy.aura(Undead:242).exists"
+          ]
+        },
+        "2486": {
+          "frequency": 18,
+          "most_common_name": "Unknown",
+          "example_conditions": [
+            "enemy(Cockroach:2486).active"
+          ]
+        }
+      },
+      "rotation": [
+        {
+          "turn": 3,
+          "ability_id": 2060,
+          "ability_name": "Dodge",
+          "confidence": 1.0,
+          "frequency": 18
+        }
+      ],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\nuse(Dodge:2060) [round=3]\\n# Primary rotation ability\\nuse(Dodge:2060)\\n# Primary rotation ability\\nuse(Undead:242)",
+      "total_abilities": 3
+    },
+    "Bloated Leper Rat": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1043/Bloated_Leper_Rat",
+      "abilities": {
+        "512": {
+          "frequency": 8,
+          "most_common_name": "Whirlpool",
+          "example_conditions": [
+            "!enemy.aura(Whirlpool:512).exists"
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Applies debuff/buff\\nuse(Whirlpool:512)",
+      "total_abilities": 1
+    },
+    "Gnomeregan Guard Mechanostrider": {
+      "encounter_url": "https://www.wow-petguide.com/Encounter/1045/Gnomeregan_Guard_Mechanostrider",
+      "abilities": {
+        "242": {
+          "frequency": 8,
+          "most_common_name": "Untot",
+          "example_conditions": [
+            " enemy.aura(Untot:242).exists "
+          ]
+        }
+      },
+      "rotation": [],
+      "ai_script": "# Enemy AI Script (Auto-generated)\\n\\n# Primary rotation ability\\nuse(Untot:242)",
+      "total_abilities": 1
+    }
+  }
+}

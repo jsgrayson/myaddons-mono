@@ -1,0 +1,566 @@
+======================================================================
+PET BATTLE STRATEGY FINDER REPORT
+======================================================================
+Generated: 2025-11-21 13:26:38
+Ready Encounters: 271
+
+
+The War Within (8 ready):
+  ✓ Rock Collector (1 strategies)
+    https://www.wow-petguide.com/Encounter/1589/Rock_Collector
+  ✓ Robot Rumble (1 strategies)
+    https://www.wow-petguide.com/Encounter/1590/Robot_Rumble
+  ✓ The Power of Friendship (1 strategies)
+    https://www.wow-petguide.com/Encounter/1592/The_Power_of_Friendship
+  ✓ Major Malfunction (1 strategies)
+    https://www.wow-petguide.com/Encounter/1593/Major_Malfunction
+  ✓ Miniature Army (1 strategies)
+    https://www.wow-petguide.com/Encounter/1595/Miniature_Army
+  ✓ The Thing from the Swamp (1 strategies)
+    https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp
+  ✓ Ziriak (1 strategies)
+    https://www.wow-petguide.com/Encounter/1598/Ziriak
+  ✓ One Hungry Worm (1 strategies)
+    https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm
+
+Dragonflight (31 ready):
+  ✓ To a Land Down Under (1 strategies)
+    https://www.wow-petguide.com/Encounter/1526/To_a_Land_Down_Under
+  ✓ Are They Not Beautiful? (1 strategies)
+    https://www.wow-petguide.com/Encounter/1527/Are_They_Not_Beautiful
+  ✓ Delver Mardei (1 strategies)
+    https://www.wow-petguide.com/Encounter/1528/Delver_Mardei
+  ✓ Swog the Elder (1 strategies)
+    https://www.wow-petguide.com/Encounter/1366/Swog_the_Elder
+  ✓ The Terrible Three (1 strategies)
+    https://www.wow-petguide.com/Encounter/1367/The_Terrible_Three
+  ✓ Sharp as Flint (1 strategies)
+    https://www.wow-petguide.com/Encounter/1497/Sharp_as_Flint
+  ✓ Adinakon (1 strategies)
+    https://www.wow-petguide.com/Encounter/1498/Adinakon
+  ✓ Two and Two Together (1 strategies)
+    https://www.wow-petguide.com/Encounter/1369/Two_and_Two_Together
+  ✓ Eye of the Stormling (1 strategies)
+    https://www.wow-petguide.com/Encounter/1370/Eye_of_the_Stormling
+  ✓ Lyver (1 strategies)
+    https://www.wow-petguide.com/Encounter/1500/Lyver
+  ✓ The Grand Master (1 strategies)
+    https://www.wow-petguide.com/Encounter/1372/The_Grand_Master
+  ✓ Mini Manafiend Melee (1 strategies)
+    https://www.wow-petguide.com/Encounter/1373/Mini_Manafiend_Melee
+  ✓ Enok the Stinky (1 strategies)
+    https://www.wow-petguide.com/Encounter/1502/Enok_the_Stinky
+  ✓ You Have to Start Somewhere (1 strategies)
+    https://www.wow-petguide.com/Encounter/1375/You_Have_to_Start_Somewhere
+  ✓ The Oldest Dragonfly (1 strategies)
+    https://www.wow-petguide.com/Encounter/1376/The_Oldest_Dragonfly
+  ✓ They're Full of Stars! (1 strategies)
+    https://www.wow-petguide.com/Encounter/1503/They're_Full_of_Stars!
+  ✓ Storm-Touched Swoglet (1 strategies)
+    https://www.wow-petguide.com/Encounter/1521/Storm-Touched_Swoglet
+  ✓ Vortex - Legendary (1 strategies)
+    https://www.wow-petguide.com/Encounter/1506/Vortex_-_Legendary
+  ✓ Vortex - Rare (1 strategies)
+    https://www.wow-petguide.com/Encounter/1508/Vortex_-_Rare
+  ✓ Storm-Touched Skitterer (1 strategies)
+    https://www.wow-petguide.com/Encounter/1522/Storm-Touched_Skitterer
+  ✓ Wildfire - Epic (1 strategies)
+    https://www.wow-petguide.com/Encounter/1511/Wildfire_-_Epic
+  ✓ Wildfire - Rare (1 strategies)
+    https://www.wow-petguide.com/Encounter/1512/Wildfire_-_Rare
+  ✓ Storm-Touched Slyvern (1 strategies)
+    https://www.wow-petguide.com/Encounter/1523/Storm-Touched_Slyvern
+  ✓ Tremblor - Rare (1 strategies)
+    https://www.wow-petguide.com/Encounter/1516/Tremblor_-_Rare
+  ✓ Storm-Touched Ohuna (1 strategies)
+    https://www.wow-petguide.com/Encounter/1524/Storm-Touched_Ohuna
+  ✓ Flow - Legendary (1 strategies)
+    https://www.wow-petguide.com/Encounter/1518/Flow_-_Legendary
+  ✓ Flow - Rare (1 strategies)
+    https://www.wow-petguide.com/Encounter/1520/Flow_-_Rare
+  ✓ Dragonkin Battler of Zaralek Cavern (1 strategies)
+    https://www.wow-petguide.com/Encounter/1534
+  ✓ Mechanical Battler of Zaralek Cavern (1 strategies)
+    https://www.wow-petguide.com/Encounter/1566
+  ✓ ShinmuraQuest: Are They Not Beautiful? (1 strategies)
+    https://www.wow-petguide.com/Encounter/1531/Are_They_Not_Beautiful
+  ✓ Delver MardeiQuest: Delver Mardei (1 strategies)
+    https://www.wow-petguide.com/Encounter/1532/Delver_Mardei
+
+Shadowlands (62 ready):
+  ✓ Illidari Masters: Sissix (1 strategies)
+    https://www.wow-petguide.com/Encounter/346/Illidari_Masters:_Sissix
+  ✓ Illidari Masters: Madam Viciosa (1 strategies)
+    https://www.wow-petguide.com/Encounter/347/Illidari_Masters:_Madam_Viciosa
+  ✓ Illidari Masters: Nameless Mystic (1 strategies)
+    https://www.wow-petguide.com/Encounter/348/Illidari_Masters:_Nameless_Mystic
+  ✓ Fight Night: AmaliaFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/145/Fight_Night:_Amalia
+  ✓ Fight Night: Heliosus (1 strategies)
+    https://www.wow-petguide.com/Encounter/147/Fight_Night:_Heliosus
+  ✓ Fight Night: Sir GalvestonFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/148/Fight_Night:_Sir_Galveston
+  ✓ Fight Night: Rats! (1 strategies)
+    https://www.wow-petguide.com/Encounter/149/Fight_Night:_Rats!
+  ✓ Fight Night: Stitches Jr. Jr. (1 strategies)
+    https://www.wow-petguide.com/Encounter/150/Fight_Night:_Stitches_Jr._Jr.
+  ✓ Fight Night: Tiffany NelsonFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/151/Fight_Night:_Tiffany_Nelson
+  ✓ Only Pets Can Prevent Forest Fires (1 strategies)
+    https://www.wow-petguide.com/Encounter/161/Only_Pets_Can_Prevent_Forest_Fires
+  ✓ Meet The Maw (1 strategies)
+    https://www.wow-petguide.com/Encounter/162/Meet_The_Maw
+  ✓ Stand Up to Bullies (1 strategies)
+    https://www.wow-petguide.com/Encounter/163/Stand_Up_to_Bullies
+  ✓ Dealing with SatyrsFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/165/Dealing_with_Satyrs
+  ✓ Training with BreddaFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/167/Training_with_Bredda
+  ✓ Tiny Poacher, Tiny AnimalsFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/168/Tiny_Poacher,_Tiny_Animals
+  ✓ Wildlife Protection Force (1 strategies)
+    https://www.wow-petguide.com/Encounter/169/Wildlife_Protection_Force
+  ✓ Snail Fight!Family Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/171/Snail_Fight!
+  ✓ Jarrun's LadderFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/175/Jarrun's_Ladder
+  ✓ My Beast's BiddingFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/177/My_Beast's_Bidding
+  ✓ All Pets Go to Heaven (1 strategies)
+    https://www.wow-petguide.com/Encounter/178/All_Pets_Go_to_Heaven
+  ✓ Beasts of Burden: (1 strategies)
+    https://www.wow-petguide.com/Encounter/337/Beasts_of_Burden
+  ✓ Andurs (1 strategies)
+    https://www.wow-petguide.com/Encounter/337/Andurs
+  ✓ Rydyr (1 strategies)
+    https://www.wow-petguide.com/Encounter/338/Rydyr
+  ✓ FlummoxedFamily Familiar (1 strategies)
+    https://www.wow-petguide.com/Encounter/184/Flummoxed
+  ✓ Threads of Fate (1 strategies)
+    https://www.wow-petguide.com/Encounter/185/Threads_of_Fate
+  ✓ Mana Tap (1 strategies)
+    https://www.wow-petguide.com/Encounter/186/Mana_Tap
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+
+BfA (32 ready):
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+  ✓ Crystalsnap (1 strategies)
+    https://www.wow-petguide.com/Encounter/1199/Crystalsnap
+  ✓ Kostos (1 strategies)
+    https://www.wow-petguide.com/Encounter/1201/Kostos
+  ✓ Gelatinous (1 strategies)
+    https://www.wow-petguide.com/Encounter/1202/Gelatinous
+  ✓ Sewer Creeper (1 strategies)
+    https://www.wow-petguide.com/Encounter/1204/Sewer_Creeper
+  ✓ The Countess (1 strategies)
+    https://www.wow-petguide.com/Encounter/1205/The_Countess
+  ✓ Briarpaw (1 strategies)
+    https://www.wow-petguide.com/Encounter/1206/Briarpaw
+  ✓ Chittermaw (1 strategies)
+    https://www.wow-petguide.com/Encounter/1207/Chittermaw
+  ✓ Mistwing (1 strategies)
+    https://www.wow-petguide.com/Encounter/1208/Mistwing
+
+Legion (30 ready):
+  ✓ Tiny Madness (1 strategies)
+    https://www.wow-petguide.com/Encounter/1146/Tiny_Madness
+  ✓ Living Statues Are Tough (1 strategies)
+    https://www.wow-petguide.com/Encounter/1148/Living_Statues_Are_Tough
+  ✓ Retinus the Seeker (1 strategies)
+    https://www.wow-petguide.com/Encounter/1151/Retinus_the_Seeker
+  ✓ I Am The One Who Whispers (1 strategies)
+    https://www.wow-petguide.com/Encounter/1152/I_Am_The_One_Who_Whispers
+  ✓ Dune Buggy (1 strategies)
+    https://www.wow-petguide.com/Encounter/1153/Dune_Buggy
+  ✓ Watch Where You Step (1 strategies)
+    https://www.wow-petguide.com/Encounter/1154/Watch_Where_You_Step
+  ✓ Strange Looking Dogs (1 strategies)
+    https://www.wow-petguide.com/Encounter/700/Strange_Looking_Dogs
+  ✓ Unbreakable (1 strategies)
+    https://www.wow-petguide.com/Encounter/702/Unbreakable
+  ✓ Sea Creatures Are Weird (1 strategies)
+    https://www.wow-petguide.com/Encounter/705/Sea_Creatures_Are_Weird_
+  ✓ Automated Chaos (1 strategies)
+    https://www.wow-petguide.com/Encounter/706/Automated_Chaos
+  ✓ This Little Piggy Has Sharp Tusks (1 strategies)
+    https://www.wow-petguide.com/Encounter/707/This_Little_Piggy_Has_Sharp_Tusks
+  ✓ What's the Buzz? (1 strategies)
+    https://www.wow-petguide.com/Encounter/709/What's_the_Buzz
+  ✓ Rogue Azerite (1 strategies)
+    https://www.wow-petguide.com/Encounter/710/Rogue_Azerite
+  ✓ Night Horrors (1 strategies)
+    https://www.wow-petguide.com/Encounter/711/Night_Horrors
+  ✓ Add More to the Collection (1 strategies)
+    https://www.wow-petguide.com/Encounter/714/Add_More_to_the_Collection
+  ✓ Small Beginnings (1 strategies)
+    https://www.wow-petguide.com/Encounter/715/Small_Beginnings
+  ✓ You've Never Seen Jammer Upset (1 strategies)
+    https://www.wow-petguide.com/Encounter/716/You've_Never_Seen_Jammer_Upset
+  ✓ Critters are Friends, Not Food (1 strategies)
+    https://www.wow-petguide.com/Encounter/717/Critters_are_Friends,_Not_Food
+  ✓ Keeyo's Champions of Vol'dun (1 strategies)
+    https://www.wow-petguide.com/Encounter/724/Keeyo's_Champions_of_Vol'dun
+  ✓ Desert Survivors (1 strategies)
+    https://www.wow-petguide.com/Encounter/725/Desert_Survivors
+  ✓ Snakes on a Terrace (1 strategies)
+    https://www.wow-petguide.com/Encounter/727/Snakes_on_a_Terrace
+  ✓ Ezra Grimm (1 strategies)
+    https://www.wow-petguide.com/Encounter/1116/Ezra_Grimm
+  ✓ Postmaster Malown (1 strategies)
+    https://www.wow-petguide.com/Encounter/1117/Postmaster_Malown
+  ✓ Darkness (1 strategies)
+    https://www.wow-petguide.com/Encounter/1061/Darkness
+  ✓ AoE/Cleave (1 strategies)
+    https://www.wow-petguide.com/Encounter/1062/AoE/Cleave
+  ✓ Dazzling Dance (1 strategies)
+    https://www.wow-petguide.com/Encounter/1063/Dazzling_Dance
+  ✓ Sandstorm (Shielding) (1 strategies)
+    https://www.wow-petguide.com/Encounter/1065/Sandstorm_(Shielding)
+  ✓ Bleeding (1 strategies)
+    https://www.wow-petguide.com/Encounter/1119/Bleeding
+  ✓ Black Claw (1 strategies)
+    https://www.wow-petguide.com/Encounter/1120/Black_Claw
+  ✓ Using PvE Pets (1 strategies)
+    https://www.wow-petguide.com/Encounter/1070/Using_PvE_Pets
+
+Draenor (19 ready):
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Encounter/438/Foe_Reaper_50
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Encounter/444/Angry_Geode
+  ✓ Mining Monkey (1 strategies)
+    https://www.wow-petguide.com/Encounter/448/Mining_Monkey
+  ✓ "Captain" Klutz (1 strategies)
+    https://www.wow-petguide.com/Encounter/452/"Captain"_Klutz
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Encounter/456/Klutz's_Battle_Rat
+  ✓ Klutz's Battle Monkey (1 strategies)
+    https://www.wow-petguide.com/Encounter/458/Klutz's_Battle_Monkey
+  ✓ Cookie's Leftovers (1 strategies)
+    https://www.wow-petguide.com/Encounter/464/Cookie's_Leftovers
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+
+Pandaria (38 ready):
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast
+  ✓ Dos-Ryga (1 strategies)
+    https://www.wow-petguide.com/Encounter/69/Dos-Ryga
+  ✓ Kafi (1 strategies)
+    https://www.wow-petguide.com/Encounter/70/Kafi
+  ✓ Ti'un the Wanderer (1 strategies)
+    https://www.wow-petguide.com/Encounter/71/Ti'un_the_Wanderer
+  ✓ Gorespine (1 strategies)
+    https://www.wow-petguide.com/Encounter/73/Gorespine
+  ✓ Skitterer Xi'a (1 strategies)
+    https://www.wow-petguide.com/Encounter/74/Skitterer_Xi'a
+  ✓ Greyhoof (1 strategies)
+    https://www.wow-petguide.com/Encounter/75/Greyhoof
+  ✓ Lucky Yi (1 strategies)
+    https://www.wow-petguide.com/Encounter/76/Lucky_Yi
+  ✓ Ka'wi the Gorger (1 strategies)
+    https://www.wow-petguide.com/Encounter/77/Ka'wi_the_Gorger
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Encounter/78/Nitun
+  ✓ Ashlei (1 strategies)
+    https://www.wow-petguide.com/Encounter/16/Ashlei
+  ✓ Gargra (1 strategies)
+    https://www.wow-petguide.com/Encounter/18/Gargra
+  ✓ Taralune (1 strategies)
+    https://www.wow-petguide.com/Encounter/19/Taralune
+  ✓ Tarr the Terrible (1 strategies)
+    https://www.wow-petguide.com/Encounter/20/Tarr_the_Terrible
+  ✓ Vesharr (1 strategies)
+    https://www.wow-petguide.com/Encounter/21/Vesharr
+  ✓ Wrathion (1 strategies)
+    https://www.wow-petguide.com/Encounter/38/Wrathion
+  ✓ Chen Stormstout (1 strategies)
+    https://www.wow-petguide.com/Encounter/39/Chen_Stormstout
+  ✓ Shademaster Kiryn (1 strategies)
+    https://www.wow-petguide.com/Encounter/43/Shademaster_Kiryn
+  ✓ Wise Mari (1 strategies)
+    https://www.wow-petguide.com/Encounter/41/Wise_Mari
+  ✓ Blingtron 4000 (1 strategies)
+    https://www.wow-petguide.com/Encounter/42/Blingtron_4000
+  ✓ Sully "The Pickle" McLeary (1 strategies)
+    https://www.wow-petguide.com/Encounter/45/Sully_"The_Pickle"_McLeary
+  ✓ Dr. Ion Goldbloom (1 strategies)
+    https://www.wow-petguide.com/Encounter/46/Dr._Ion_Goldbloom
+  ✓ Chi-Chi, Hatchling of Chi-Ji (1 strategies)
+    https://www.wow-petguide.com/Encounter/51/Chi-Chi,_Hatchling_of_Chi-Ji
+  ✓ Zao, Calfling of Niuzao (1 strategies)
+    https://www.wow-petguide.com/Encounter/52/Zao,_Calfling_of_Niuzao
+  ✓ Xu-Fu, Cub of Xuen (1 strategies)
+    https://www.wow-petguide.com/Encounter/49/Xu-Fu,_Cub_of_Xuen
+  ✓ Yu'la, Broodling of Yu'lon (1 strategies)
+    https://www.wow-petguide.com/Encounter/50/Yu'la,_Broodling_of_Yu'lon
+  ✓ another strategy (1 strategies)
+    https://www.wow-petguide.com/Strategy/4924/Yula,_Broodling_of_Yulon
+
+Dungeons (39 ready):
+  ✓ Not Quite Dead Yet (1 strategies)
+    https://www.wow-petguide.com/Encounter/819
+  ✓ Critters With Huge Teeth (1 strategies)
+    https://www.wow-petguide.com/Encounter/849
+  ✓ Element of Success (1 strategies)
+    https://www.wow-petguide.com/Encounter/909
+  ✓ Machine Learning (1 strategies)
+    https://www.wow-petguide.com/Encounter/999
+  ✓ BurlyQuest: Strange Looking Dogs (1 strategies)
+    https://www.wow-petguide.com/Encounter/730/Strange_Looking_Dogs
+  ✓ Ellie VernQuest: Sea Creatures Are Weird (1 strategies)
+    https://www.wow-petguide.com/Encounter/735/Sea_Creatures_Are_Weird_
+  ✓ Eddie FixitQuest: Automated Chaos (1 strategies)
+    https://www.wow-petguide.com/Encounter/736/Automated_Chaos
+  ✓ Michael SkarnQuest: What's the Buzz? (1 strategies)
+    https://www.wow-petguide.com/Encounter/739/What's_the_Buzz
+  ✓ Dilbert McClintQuest: Night Horrors (1 strategies)
+    https://www.wow-petguide.com/Encounter/741/Night_Horrors
+  ✓ Captain HermesQuest: Crab People (1 strategies)
+    https://www.wow-petguide.com/Encounter/742/Crab_People
+  ✓ Talia SparkbrowQuest: Add More to the Collection (1 strategies)
+    https://www.wow-petguide.com/Encounter/744/Add_More_to_the_Collection
+  ✓ KaragaQuest: Critters are Friends, Not Food (1 strategies)
+    https://www.wow-petguide.com/Encounter/747/Critters_are_Friends,_Not_Food
+  ✓ LozuQuest: Marshdwellers (1 strategies)
+    https://www.wow-petguide.com/Encounter/750/Marshdwellers
+  ✓ KeeyoQuest: Keeyo's Champions of Vol'dun (1 strategies)
+    https://www.wow-petguide.com/Encounter/754/Keeyo's_Champions_of_Vol'dun
+  ✓ KusaQuest: Desert Survivors (1 strategies)
+    https://www.wow-petguide.com/Encounter/755/Desert_Survivors
+  ✓ SizzikQuest: Snakes on a Terrace (1 strategies)
+    https://www.wow-petguide.com/Encounter/757/Snakes_on_a_Terrace
+  ✓ Haunted Humanoids (1 strategies)
+    https://www.wow-petguide.com/Encounter/1210
+  ✓ Deathly Dragonkin (1 strategies)
+    https://www.wow-petguide.com/Encounter/1225
+  ✓ Flickering Fliers (1 strategies)
+    https://www.wow-petguide.com/Encounter/1240
+  ✓ Creepy Critters (1 strategies)
+    https://www.wow-petguide.com/Encounter/1270
+  ✓ Macabre Mechanicals (1 strategies)
+    https://www.wow-petguide.com/Encounter/1345
+  ✓ StratiosQuest: Cliffs of Bastion (1 strategies)
+    https://www.wow-petguide.com/Encounter/1210/Cliffs_of_Bastion
+  ✓ ZollaQuest: Micro Defense Force (1 strategies)
+    https://www.wow-petguide.com/Encounter/1211/Micro_Defense_Force
+  ✓ TheniaQuest: Thenia's Loyal Companions (1 strategies)
+    https://www.wow-petguide.com/Encounter/1212/Thenia's_Loyal_Companions
+  ✓ Caregiver MaximillianQuest: Mighty Minions of Maldraxxus (1 strategies)
+    https://www.wow-petguide.com/Encounter/1214/Mighty_Minions_of_Maldraxxus
+  ✓ Addius the TormentorQuest: The Mind Games of Addius (1 strategies)
+    https://www.wow-petguide.com/Encounter/1220/The_Mind_Games_of_Addius
+  ✓ FarylQuest: Airborne Defense Force (1 strategies)
+    https://www.wow-petguide.com/Encounter/1223/Airborne_Defense_Force
+  ✓ https://www.wow-petguide.com/Strategy/11028/Mega_Bite (1 strategies)
+    https://www.wow-petguide.com/Strategy/11028/Mega_Bite
+  ✓ Trainer Grrglin (1 strategies)
+    https://www.wow-petguide.com/Encounter/1359/Trainer_Grrglin
+  ✓ https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin (1 strategies)
+    https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin
+  ✓ Klick (1 strategies)
+    https://www.wow-petguide.com/Strategy/10529/Lehrer_Grrglin
+  ✓ Living Napalm (1 strategies)
+    https://www.wow-petguide.com/Encounter/1035/Living_Napalm
+  ✓ Living Permafrost (1 strategies)
+    https://www.wow-petguide.com/Encounter/1036/Living_Permafrost
+  ✓ Door Control Console (1 strategies)
+    https://www.wow-petguide.com/Encounter/1038/Door_Control_Console
+  ✓ Leper Rat (1 strategies)
+    https://www.wow-petguide.com/Encounter/1041/Leper_Rat
+  ✓ Gnomeregan Guard Mechanostrider (1 strategies)
+    https://www.wow-petguide.com/Encounter/1045/Gnomeregan_Guard_Mechanostrider
+  ✓ Gnomeregan Guard Tiger (1 strategies)
+    https://www.wow-petguide.com/Encounter/1046/Gnomeregan_Guard_Tiger
+  ✓ Gnomeregan Guard Wolf (1 strategies)
+    https://www.wow-petguide.com/Encounter/1047/Gnomeregan_Guard_Wolf
+  ✓ Pulverizer Bot Mk 6001 (1 strategies)
+    https://www.wow-petguide.com/Encounter/1049/Pulverizer_Bot_Mk_6001
+
+Misc (12 ready):
+  ✓ Fight Night: Sir Galveston (1 strategies)
+    https://www.wow-petguide.com/Strategy/5204
+  ✓ https://classic.wow-petguide.com/Encounter/2000031/]Nicki (1 strategies)
+    https://classic.wow-petguide.com/Encounter/2000031/]Nicki
+  ✓ Nicki Tinytech (1 strategies)
+    https://www.wow-petguide.com/Strategy/25093
+  ✓ Burning Pandaren Spirit (1 strategies)
+    https://www.wow-petguide.com/Strategy/25085
+  ✓ Nitun (1 strategies)
+    https://www.wow-petguide.com/Strategy/25084
+  ✓ Klutz's Battle Bird (1 strategies)
+    https://www.wow-petguide.com/Strategy/25067
+  ✓ Klutz's Battle Rat (1 strategies)
+    https://www.wow-petguide.com/Strategy/25063
+  ✓ Foe Reaper 50 (1 strategies)
+    https://www.wow-petguide.com/Strategy/25061
+  ✓ Angry Geode (1 strategies)
+    https://www.wow-petguide.com/Strategy/25060
+  ✓ Unfortunate Defias (1 strategies)
+    https://www.wow-petguide.com/Strategy/25059
+  ✓ Fight Night: Tiffany Nelson (Dragonkin) (1 strategies)
+    https://www.wow-petguide.com/Strategy/25032
+  ✓ https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast (1 strategies)
+    https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast

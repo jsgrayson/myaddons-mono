@@ -1,0 +1,3962 @@
+{
+  "The War Within": {
+    "World Quests": [
+      {
+        "encounter_name": "Robot Rumble",
+        "url": "https://www.wow-petguide.com/Encounter/1590/Robot_Rumble",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "use(Blistering Cold:786)\r\nuse(Chop:943) [!enemy.aura(Bleeding:491).exists]\r\nuse(BONESTORM!!:1762)\r\nuse(Chop:943)\r\nuse(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nuse(Flock:581)\r\nstandby\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Major Malfunction",
+        "url": "https://www.wow-petguide.com/Encounter/1593/Major_Malfunction",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ]
+            ],
+            "script": "use(Thunderbolt:779) [round=1]\r\nuse(Explode:282)\r\nuse(Call Blizzard:206)\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "The Thing from the Swamp",
+        "url": "https://www.wow-petguide.com/Encounter/1596/The_Thing_from_the_Swamp",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218)\r\nability(Unholy Ascension:321)\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Flock:581)\r\nability(Thunderbolt:779)\r\nability(Breath:115)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "One Hungry Worm",
+        "url": "https://www.wow-petguide.com/Encounter/1599/One_Hungry_Worm",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Seaborne Spore",
+                  "id": 86718
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ],
+              [
+                {
+                  "name": "Stormwing",
+                  "id": 87705
+                }
+              ]
+            ],
+            "script": "standby [enemy.aura(Underground:340).exists & self.speed.fast]\r\nuse(Glowing Toxin:270) [!enemy.aura(Glowing Toxin:271).exists]\r\nuse(Explode:282)\r\nuse(Call Lightning:204)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "The Undermine": []
+  },
+  "Dragonflight": {
+    "World Quests": [
+      {
+        "encounter_name": "Are They Not Beautiful?",
+        "url": "https://www.wow-petguide.com/Encounter/1527/Are_They_Not_Beautiful",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Cursed Birman",
+                  "id": 86061
+                }
+              ],
+              [
+                {
+                  "name": "Widget the Departed",
+                  "id": 86067
+                }
+              ],
+              [
+                {
+                  "name": "Chrominius",
+                  "id": 68662
+                }
+              ]
+            ],
+            "script": "change(#3) [enemy(#3).active & !self.aura(242).exists]\r\nuse(Prowl:536) [!enemy(#2).dead]\r\nuse(Call Darkness:256)\r\nuse(Spectral Strike:442)\r\nuse(Arcane Dash:1536)\r\nif [enemy(#3).active]\r\nuse(Howl:362)\r\nuse(Shadowmeld:2253)\r\nuse(Surge of Power:593) [!weather(Darkness:257) & self(Salverun:3545).active]\r\nuse(Surge of Power:593) [self(Chrominius:1152).active]\r\nendif\r\nuse(#1) [round>3]\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Delver Mardei",
+        "url": "https://www.wow-petguide.com/Encounter/1528/Delver_Mardei",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Emmigosa",
+                  "id": 97207
+                }
+              ],
+              [
+                {
+                  "name": "Chrominius",
+                  "id": 68662
+                }
+              ]
+            ],
+            "script": "use(Time Bomb:602)\r\nuse(Armageddon:1025) [ enemy.aura(Flame Breath:500).exists ]\r\nuse(Flame Breath:501)\r\nuse(Ice Tomb:624) [ !enemy.is(Dustie:3568) ]\r\nuse(Arcane Storm:589)\r\nuse(Breath:115)\r\nif [ enemy.is(Dustie:3568) ]\r\n    use(Howl:362) [ enemy.hp>1665 & self.aura(Dragonkin:245).exists ]\r\n    use(Howl:362) [ enemy.hp>1110 & !self.aura(Dragonkin:245).exists ]\r\n    use(Surge of Power:593)\r\nendif\r\nuse(Bite:110)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Swog the Elder",
+        "url": "https://www.wow-petguide.com/Encounter/1366/Swog_the_Elder",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Baa'lial",
+                  "id": 205637
+                }
+              ]
+            ],
+            "script": "use(2223)\r\nuse(377)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Sharp as Flint",
+        "url": "https://www.wow-petguide.com/Encounter/1497/Sharp_as_Flint",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Playful Frostkin",
+                  "id": 143811
+                }
+              ],
+              [
+                {
+                  "name": "Pandaren Water Spirit",
+                  "id": 66950
+                }
+              ],
+              [
+                {
+                  "name": "Water Waveling",
+                  "id": 62820
+                }
+              ]
+            ],
+            "script": "change(#2) [round=2]\r\nuse(Razor Talons:2237) [round~4,6]\r\nuse(Armageddon:1025) [round>6]\r\nuse(Geyser:418)\r\nif [enemy(#3).active]\r\nuse(Call Darkness:256) [enemy(#3).hp<=1811 & !enemy.ability(Digest Brains:1065).usable]\r\nuse(Call Darkness:256) [enemy(#3).hp<=1492]\r\nendif\r\nuse(Nocturnal Strike:517) [weather(Darkness:257).duration!=0]\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Adinakon",
+        "url": "https://www.wow-petguide.com/Encounter/1498/Adinakon",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Pet Bombling",
+                  "id": 9656
+                }
+              ]
+            ],
+            "script": "ability(Explode:282)\r\nability(Call Darkness:256)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Two and Two Together",
+        "url": "https://www.wow-petguide.com/Encounter/1369/Two_and_Two_Together",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "use(Time Bomb:602)\r\nuse(Armageddon:1025)\r\nuse(Explode:282) [enemy.hp.can_explode]\r\nuse(Powerball:566) [round=3]\r\nuse(Wind-Up:459)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Paws of Thunder",
+        "url": "https://www.wow-petguide.com/Encounter/1499/Paws_of_Thunder",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anomalus",
+                  "id": 161964
+                }
+              ],
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Gorm Harrier",
+                  "id": 171230
+                }
+              ]
+            ],
+            "script": "use(Toxic Fumes:2349)\r\nuse(Poison Protocol:1954)\r\nuse(Time Bomb:602)\r\nuse(Armageddon:1025)\n\r\nstandby [enemy(#2).active & enemy.hp<733 & enemy.aura(601).duration=1]\r\nif [enemy(#2).aura(927).exists]\r\nuse(Puncture Wound:1050)\r\nstandby [enemy(#2).active]\r\nendif\n\r\nuse(Impale:800)\r\nuse(Slicing Wind:420)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Lyver",
+        "url": "https://www.wow-petguide.com/Encounter/1500/Lyver",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ]
+            ],
+            "script": "use(Explode:282)\r\nuse(Black Claw:919) [ !enemy.aura(Black Claw:918).exists ]\r\nuse(Hunting Party:921)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "The Grand Master",
+        "url": "https://www.wow-petguide.com/Encounter/1372/The_Grand_Master",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ],
+              [
+                {
+                  "name": "Anomalus",
+                  "id": 161964
+                }
+              ]
+            ],
+            "script": "change(#2) [round=6]\r\nuse(Ice Tomb:624) [enemy(#1).active]\r\nuse(Call Blizzard:206) [round=2]\r\nuse(Ice Lance:413)\r\nuse(Poison Protocol:1954)\r\nuse(Void Nova:2356)\r\nuse(Corrosion:447)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Enok the Stinky",
+        "url": "https://www.wow-petguide.com/Encounter/1502/Enok_the_Stinky",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218)\r\nability(Haunt:652) [round=3]\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Flock:581)\r\nability(Hunting Party:921)\r\nability(Leap:364)\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "They're Full of Stars!",
+        "url": "https://www.wow-petguide.com/Encounter/1503/They're_Full_of_Stars!",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Cursed Birman",
+                  "id": 86061
+                }
+              ],
+              [
+                {
+                  "name": "Corrupted Blood",
+                  "id": 127953
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp.can_explode]\r\nuse(Prowl:536) [!self.aura(Undead:242).exists]\r\nuse(Call Darkness:256)\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "The Forbidden Reach": [
+      {
+        "encounter_name": "Storm-Touched Swoglet",
+        "url": "https://www.wow-petguide.com/Encounter/1521/Storm-Touched_Swoglet",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Brilliant Spore",
+                  "id": 86719
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "ability(Explode:282) [round~1,3]\r\nability(Flyby:515)\r\nability(Call Darkness:256)\r\nability(Nocturnal Strike:517)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Vortex - Legendary",
+        "url": "https://www.wow-petguide.com/Encounter/1506/Vortex_-_Legendary",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ]
+            ],
+            "script": "use(Blistering Cold:786) \r\nuse(Chop:943) [round=2] \r\nuse(BONESTORM!!:1762) \r\nchange(Ikky:1532) [self(Boneshard:1963).dead] \r\nuse(Flock:581) [enemy.aura(Black Claw:918).exists] \r\nuse(Black Claw:919)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Vortex - Rare",
+        "url": "https://www.wow-petguide.com/Encounter/1508/Vortex_-_Rare",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ]
+            ],
+            "script": "use(haunt:652)\r\nuse(claw:919) [ !enemy.aura(claw:918).exists ]\r\nuse(finisher:921)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Storm-Touched Skitterer",
+        "url": "https://www.wow-petguide.com/Encounter/1522/Storm-Touched_Skitterer",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "use(claw:919) [ !enemy.aura(claw:918).exists ]\r\nuse(flock:581) [ !enemy.aura(flock:542).exists ]\r\nuse(filler:184)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Wildfire - Epic",
+        "url": "https://www.wow-petguide.com/Encounter/1511/Wildfire_-_Epic",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ],
+              [
+                {
+                  "name": "Elfin Rabbit",
+                  "id": 62178
+                }
+              ]
+            ],
+            "script": "ability(Blistering Cold:786)\r\nability(Chop:943) [!enemy.aura(Bleeding:491).exists]\r\nability(BONESTORM!!:1762) [!self.aura(Undead:242).exists]\r\nability(Chop:943)\n\r\nability(Primal Cry:920)\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Hunting Party:921)\n\r\nability(Stampede:163)\r\nability(Scratch:119)\n\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Wildfire - Rare",
+        "url": "https://www.wow-petguide.com/Encounter/1512/Wildfire_-_Rare",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "ability(Black Claw:919) [round=1]\r\nability(Flock:581)\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Storm-Touched Ohuna",
+        "url": "https://www.wow-petguide.com/Encounter/1524/Storm-Touched_Ohuna",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "standby [ round = 1 ]\r\nuse(curse:218)\r\nuse(haunt:652)\r\nuse(claw:919) [ !enemy.aura(claw:918).exists ]\r\nuse(flock:581)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Flow - Legendary",
+        "url": "https://www.wow-petguide.com/Encounter/1518/Flow_-_Legendary",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Infected Squirrel",
+                  "id": 61828
+                }
+              ],
+              [
+                {
+                  "name": "Chuck",
+                  "id": 26056
+                }
+              ]
+            ],
+            "script": "ability(Time Bomb:602)\r\nability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]\r\nability(Armageddon:1025)\n\r\nability(Rabid Strike:666) [!enemy.aura(Rabies:807).exists]\r\nability(Corpse Explosion:663)\n\r\nability(Rip:803) [!enemy.aura(Bleeding:491).exists]\r\nability(Blood in the Water:423)\r\nability(Surge:509)\n\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Flow - Epic",
+        "url": "https://www.wow-petguide.com/Encounter/1519/Flow_-_Epic",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Infected Squirrel",
+                  "id": 61828
+                }
+              ],
+              [
+                {
+                  "name": "Chuck",
+                  "id": 26056
+                }
+              ]
+            ],
+            "script": "ability(Time Bomb:602)\r\nability(Armageddon:1025)\n\r\nability(Rabid Strike:666) [!enemy.aura(Rabies:807).exists]\r\nability(Corpse Explosion:663)\n\r\nability(Rip:803) [!enemy.aura(Bleeding:491).exists]\r\nability(Blood in the Water:423)\r\nability(Surge:509)\n\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Flow - Rare",
+        "url": "https://www.wow-petguide.com/Encounter/1520/Flow_-_Rare",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ]
+            ],
+            "script": "ability(Black Claw:919) [round=1]\r\nability(Flock:581)\r\nability(Explode:282)\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Zaralek Cavern": [
+      {
+        "encounter_name": "Mechanical Battler of Zaralek Cavern",
+        "url": "https://www.wow-petguide.com/Encounter/1566",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Runeforged Servitor",
+                  "id": 115140
+                }
+              ],
+              [
+                {
+                  "name": "Pet Bombling",
+                  "id": 9656
+                }
+              ],
+              [
+                {
+                  "name": "Tranquil Mechanical Yeti",
+                  "id": 15699
+                }
+              ]
+            ],
+            "script": "change(#2) [enemy(#2).active]\n\r\nability(Minefield:634)\r\nability(Explode:282) [enemy.aura(Minefield:635).duration=7]\r\nability(Zap:116)\n\r\nability(Jolt:908) [enemy(#2).active]\r\nability(Supercharge:208)\r\nability(Call Lightning:204)\r\nability(#1)\n\r\nstandby\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "ShinmuraQuest: Are They Not Beautiful?",
+        "url": "https://www.wow-petguide.com/Encounter/1531/Are_They_Not_Beautiful",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Grumpling",
+                  "id": 97229
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ]
+            ],
+            "script": "ability(Eggnog:835) [enemy(#3).active & enemy.ability(Conflagrate:179).duration=4]\r\nability(Gift of Winter's Veil:586)\r\nability(Frost Shock:416) [!enemy.aura(Frost Shock:415).exists & enemy(#1).active]\r\nability(Call Blizzard:206) [!weather(Blizzard:205)]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ]
+  },
+  "Shadowlands": {
+    "World Quests": [
+      {
+        "encounter_name": "Illidari Masters: Sissix",
+        "url": "https://www.wow-petguide.com/Encounter/346/Illidari_Masters:_Sissix",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Voidskimmer",
+                  "id": 162518
+                }
+              ],
+              [
+                {
+                  "name": "Feline Familiar",
+                  "id": 53884
+                }
+              ]
+            ],
+            "script": "use(Cleansing Rain:230) [round=2]\r\nuse(Water Jet:118) [self.aura(Pumped Up:296).exists & enemy.hpp=100]\r\nuse(Pump:297)\r\nuse(#1) [enemy(#2).active]\n\r\nif [enemy(#3).active]\r\nuse(Prowl:536)\r\nuse(Call Darkness:256)\r\nstandby [self(#3).hp<712 & self(#3).type=1]\r\nstandby [self(#3).hp<316 & self(#3).type=9]\r\nstandby [self(#3).hp<475 & self(#3).type!=6]\r\nstandby [self(#1).active]\r\nendif\n\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Illidari Masters: Madam Viciosa",
+        "url": "https://www.wow-petguide.com/Encounter/347/Illidari_Masters:_Madam_Viciosa",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ],
+              [
+                {
+                  "name": "Rapana Whelk",
+                  "id": 64352
+                }
+              ],
+              [
+                {
+                  "name": "Silkbead Snail",
+                  "id": 63001
+                }
+              ]
+            ],
+            "script": "standby [round=1]\r\nchange(#3) [enemy(#3).active & enemy.round=2]\r\nchange(#1) [!enemy(#1).active]\r\nuse(Acidic Goo:369) [self.round=1]\r\nuse(Dive:564) [enemy.round>5]\r\nuse(Absorb:449)\r\nuse(Decoy:334)\r\nuse(Thunderbolt:779) [enemy(#3).active]\r\nuse(Breath:115)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Illidari Masters: Nameless Mystic",
+        "url": "https://www.wow-petguide.com/Encounter/348/Illidari_Masters:_Nameless_Mystic",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ]
+            ],
+            "script": "ability(Decoy:334) [self(#1).active]\r\nability(Thunderbolt:779) [!enemy(#1).active]\r\nability(Breath:115)\r\nability(Explode:282) [enemy.hp<618]\r\nability(Missile:777)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Fight Night: AmaliaFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/145/Fight_Night:_Amalia",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Thunderscale Whelpling",
+                  "id": 148995
+                }
+              ],
+              [
+                {
+                  "name": "Malfunctioning Microbot",
+                  "id": 154798
+                }
+              ]
+            ],
+            "script": "change(#1) [self(#3).played]\r\nstandby [enemy.aura(Puppies of the Flame:1355).exists]\r\nchange(#2) [round=5]\r\nuse(Thunderbolt:779) [!enemy(#1).active]\r\nuse(Call Lightning:204)\r\nuse(Zap:116)\r\nuse(Explode:282) [enemy(#3).active]\r\nuse(Alert!:1585)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Fight Night: Heliosus",
+        "url": "https://www.wow-petguide.com/Encounter/147/Fight_Night:_Heliosus",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "ability(218)\r\nability(652)\r\nchange(#2) \r\nability(919) [self.round=1]\r\nability(581)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Fight Night: Rats!",
+        "url": "https://www.wow-petguide.com/Encounter/149/Fight_Night:_Rats!",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "ability(218)\r\nability(652)\r\nchange(#2) [self(#1).dead]\r\nability(919) [!enemy.aura(918).exists]\r\nability(581)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Fight Night: Stitches Jr. Jr.",
+        "url": "https://www.wow-petguide.com/Encounter/150/Fight_Night:_Stitches_Jr._Jr.",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Darkmoon Tonk",
+                  "id": 55356
+                }
+              ],
+              [
+                {
+                  "name": "Chrominius",
+                  "id": 68662
+                }
+              ]
+            ],
+            "script": "ability(301)\r\nchange(#2)\r\nability(362)\r\nability(593)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Fight Night: Tiffany NelsonFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/151/Fight_Night:_Tiffany_Nelson",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Xu-Fu, Cub of Xuen",
+                  "id": 71942
+                }
+              ]
+            ],
+            "script": "change(#1) [self(#3).played]\r\nchange(#2) [round=2]\r\nuse(Prowl:536) [round=3]\r\nuse(Moonfire:595) [round=4]\r\nuse(Greench's Gift:1076) [enemy(#3).active]\r\nuse(Ice Tomb:624) [enemy(#1).active]\r\nuse(Spirit Claws:974)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Meet The Maw",
+        "url": "https://www.wow-petguide.com/Encounter/162/Meet_The_Maw",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ]
+            ],
+            "script": "ability(Razor Talons:2237) [!enemy.aura(Razor Talons:2238).exists]\r\nability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]\r\nability(Armageddon:1025)\n\r\nability(Explode:282)\n\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Stand Up to Bullies",
+        "url": "https://www.wow-petguide.com/Encounter/163/Stand_Up_to_Bullies",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Clockwork Gnome",
+                  "id": 48609
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "change(#1) [self(#2).dead]\r\nuse(#1) [round=1]\r\nuse(#3) [round=2]\r\nchange(#2) [round=3]\r\nuse(Black Claw:919) [!enemy.aura(Black Claw).exists]\r\nuse(Flock:581)\r\nuse(Build Turret:710) [enemy.aura(Black Claw).exists]\r\nuse(Metal Fist:384)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Dealing with SatyrsFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/165/Dealing_with_Satyrs",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ],
+              [
+                {
+                  "name": "Fossilized Hatchling",
+                  "id": 45340
+                }
+              ]
+            ],
+            "script": "ability(Explode:282) [enemy.hp<561 & enemy(#3).active]\r\nability(Thunderbolt:779) [!enemy(#2).active]\r\nability(BONESTORM:649)\r\nability(Ancient Blessing:611) [!self.aura(Undead:242).exists & self.hpp<100]\r\nability(#1)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Training with BreddaFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/167/Training_with_Bredda",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Elfin Rabbit",
+                  "id": 62178
+                }
+              ],
+              [
+                {
+                  "name": "Snowshoe Rabbit",
+                  "id": 7560
+                }
+              ],
+              [
+                {
+                  "name": "Tolai Hare",
+                  "id": 63557
+                }
+              ]
+            ],
+            "script": "change(#3) [self(#2).played]\r\nuse(Supercharge:208) [enemy(#3).active]\r\nuse(Ion Cannon:209) [enemy(#3).active]\r\nuse(Alert!:1585) [enemy(#2).active]\r\nuse(Dodge:312)\r\nuse(Stampede:163) [enemy(#2).active]\r\nuse(Flurry:360) [enemy.aura(Shattered Defenses:542).exists]\r\nuse(Stampede:163)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Tiny Poacher, Tiny AnimalsFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/168/Tiny_Poacher,_Tiny_Animals",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "-- rng in the beginning (<0.5%)\r\nquit [enemy(#1).dead & round=4]\r\n--\r\n-- rare case: too many critical strikes Ice lance Turn4+ 5\r\nuse(Explode:282) [enemy(#1).dead & enemy(#2).dead]\r\n--\r\nuse(Explode:282) [enemy(#1).dead & enemy(#3).dead & enemy(#2).hp<561]\r\nuse(Ice Tomb:624)\r\nuse(Call Blizzard:206)\r\nuse(Ice Lance:413)\r\nuse(Thunderbolt:779) [enemy(#3).active & enemy.aura(Stunned:927).exists]\r\nuse(Breath:115)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Snail Fight!Family Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/171/Snail_Fight!",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Xu-Fu, Cub of Xuen",
+                  "id": 71942
+                }
+              ]
+            ],
+            "script": "quit [self(#2).dead]\r\nstandby [round=1]\r\nchange(#2) [!self(#2).active]\r\nchange(#3) [enemy(#1).dead & !self(#3).played]\n\r\nif [enemy(#3).active]\r\nuse(Feed:1016) [self.aura(Prowl:543).exists]\r\nstandby [enemy.aura(Underwater:830).exists]\r\nuse(Prowl:536) [self.hp>723 & self.ability(Feed:1016).duration<2]\r\nuse(Feed:1016)\r\nuse(Bite:110)\r\nendif\n\r\nuse(Prowl:536)\r\nuse(Feed:1016) [self.aura(Prowl:543).duration=1]\r\nuse(Bite:110) [!self.aura(Prowl:543).exists & enemy.hpp<100 & !enemy(#2).active]\r\nuse(Bite:110) [enemy.ability(Headbutt:376).usable]\r\nstandby",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Jarrun's LadderFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/175/Jarrun's_Ladder",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anomalus",
+                  "id": 161964
+                }
+              ],
+              [
+                {
+                  "name": "Infernal Pyreclaw",
+                  "id": 127951
+                }
+              ]
+            ],
+            "script": "if [self(#1).active]\r\nchange(#2) [round=3]\r\nchange(#2) [self(#1).dead]\r\nuse(Poison Protocol:1954)\r\nuse(Void Nova:2356) [enemy(#2).hp>95]\r\nstandby [enemy.aura(Undead:242).exists]\r\nuse(Ooze Touch:445)\r\nendif\n\r\nif [self(#2).active]\r\nstandby [enemy.aura(Undead:242).exists]\r\nchange(#3) [round=8]\r\nuse(Great Sting:1966) [round>4]\r\nuse(Cleave:1273)\r\nendif\n\r\nif [self(#3).active]\r\nchange(#1)\r\nendif",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "My Beast's BiddingFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/177/My_Beast's_Bidding",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Stormborne Whelpling",
+                  "id": 97205
+                }
+              ],
+              [
+                {
+                  "name": "Nexus Whelpling",
+                  "id": 68845
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "change(#3) [self(#2).active]\r\nuse(Arcane Storm:589)\r\nuse(Mana Surge:489)\r\nuse(Toxic Smoke:640) [enemy.hp<=390]\r\nuse(Wind-Up:459)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "All Pets Go to Heaven",
+        "url": "https://www.wow-petguide.com/Encounter/178/All_Pets_Go_to_Heaven",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mud Jumper",
+                  "id": 83642
+                }
+              ],
+              [
+                {
+                  "name": "Swamp Croaker",
+                  "id": 69819
+                }
+              ],
+              [
+                {
+                  "name": "Benax",
+                  "id": 113136
+                }
+              ]
+            ],
+            "script": "use(bubble:934) [ enemy.ability(bigdot:218).usable ]\r\nuse(frogdot:232) [ !enemy.aura(frogdot:231).exists ]\r\nuse(frogdot:232) [ enemy.aura(undead:242).exists ]\r\nuse(snaildot:369) [ !enemy.aura(snaildot:368).exists ]\r\nuse(filler:228)\r\nuse(filler:449)\r\nchange(#2) [ !self(#2).played & !self(#2).level.max ]\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Beasts of Burden:",
+        "url": "https://www.wow-petguide.com/Encounter/337/Beasts_of_Burden",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp<=620]\r\nuse(Toxic Smoke:640) [enemy.aura(Toxic Smoke:639).duration!=2]\r\nuse(Wind-Up:459)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Andurs",
+        "url": "https://www.wow-petguide.com/Encounter/337/Andurs",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp<=620]\r\nuse(Toxic Smoke:640) [enemy.aura(Toxic Smoke:639).duration!=2]\r\nuse(Wind-Up:459)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "FlummoxedFamily Familiar",
+        "url": "https://www.wow-petguide.com/Encounter/184/Flummoxed",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Seaborne Spore",
+                  "id": 86718
+                }
+              ],
+              [
+                {
+                  "name": "Violet Sporbit",
+                  "id": 222590
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ]
+            ],
+            "script": "use(Blinding Powder:1015)\r\nuse(Glowing Toxin:270) [!enemy.aura(Glowing Toxin:271).exists]\r\nuse(Creeping Fungus:743) [!enemy.aura(Creeping Fungus:742).exists]\r\nuse(Explode:282) [self(#2).active]\r\nuse(Explode:282) [self(#2).dead]\r\nchange(#2)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Threads of Fate",
+        "url": "https://www.wow-petguide.com/Encounter/185/Threads_of_Fate",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ]
+            ],
+            "script": "ability(#1) [ enemy.round~1,2 ] \r\nability(#2) [ enemy(#3).hp<556 ] \r\nability(#3) [ enemy(#3).active & enemy.hp>555 ] \r\nability(#1) \r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Mana Tap",
+        "url": "https://www.wow-petguide.com/Encounter/186/Mana_Tap",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "standby [enemy.aura(Dodge:311).exists]\r\nability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]\r\nability(Razor Talons:2237) [!enemy.aura(Razor Talons:2238).exists]\r\nability(Flame Breath:501) [enemy.aura(Prismatic Barrier:443).exists]\r\nability(Armageddon:1025) [enemy(#2).active]\r\nability(Explode:282) [enemy(#3).active & enemy.hp<470]\r\nability(Thunderbolt:779)\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Covenant Adventures": [
+      {
+        "encounter_name": "Fight Night: Sir Galveston",
+        "url": "/Strategy/5204",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Court Scribe",
+                  "id": 112728
+                }
+              ],
+              [
+                {
+                  "name": "Surger",
+                  "id": 127950
+                }
+              ]
+            ],
+            "script": "standby [ enemy.ability(Lift-Off:170).usable ]\r\nability(#3) [ enemy(#2).dead ]\r\nability(Stone Rush:621)\r\nability(#1)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "https://classic.wow-petguide.com/Encounter/2000031/]Nicki",
+        "url": "https://classic.wow-petguide.com/Encounter/2000031/]Nicki",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Celestial Dragon",
+                  "id": 40624
+                }
+              ]
+            ],
+            "script": "change(#3) [ !self(#3).played ]\r\nchange(#2) [ !self(#2).played ]\r\nchange(#2) [ self(#1).dead ]\r\nchange(#1)\r\nuse(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]\r\nuse(Ancient Blessing:611) [ self.hpp < 50 ]\r\nuse(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]\r\nuse(#1)\r\nstandby",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Nicki Tinytech",
+        "url": "/Strategy/25093",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Water Waveling",
+                  "id": 62820
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ]
+            ],
+            "script": "change(#3) [round=5]\r\nchange(next) [self.level<25]\r\nchange(next) [self.dead]\r\nuse(Geysir:418)\r\nuse(Frostschock:416) [!enemy.aura(Frostschock:415).exists]\r\nuse(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Burning Pandaren Spirit",
+        "url": "/Strategy/25085",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Macabre Marionette",
+                  "id": 34770
+                }
+              ],
+              [
+                {
+                  "name": "Emperor Crab",
+                  "id": 65203
+                }
+              ],
+              [
+                {
+                  "name": "Strand Crab",
+                  "id": 61312
+                }
+              ]
+            ],
+            "script": "quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]\r\nchange(#2) [ !self(#2).played & self(#1).dead ]\r\nchange(#3) [ self(#2).played & self(#1).dead ]\r\nability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]\r\nability(Dead Man's Party:1093)\r\nability(Surge:509) [ enemy(#2).active ]\r\nability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]\r\nability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]\r\nability(Surge:509)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Nitun",
+        "url": "/Strategy/25084",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Macabre Marionette",
+                  "id": 34770
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218)\r\nability(Haunt:652)\r\nchange(#2)\r\nability(Death and Decay:214) [self.round = 1]\r\nability(Dead Man's Party:1093)\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "The Terrible Three (Humanoid)",
+        "url": "/Strategy/25080",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Peddlefeet",
+                  "id": 16085
+                }
+              ],
+              [
+                {
+                  "name": "Feral Vermling",
+                  "id": 63621
+                }
+              ],
+              [
+                {
+                  "name": "Hopling",
+                  "id": 64632
+                }
+              ]
+            ],
+            "script": "use(Lovestruck:772) [round=4]\r\nuse(Rapid Fire:774)\r\nuse(Backflip:669) [self.speed.fast]\r\nuse(Crush:406)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Foe Reaper 50",
+        "url": "/Strategy/25061",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ]
+            ],
+            "script": "use(Explode:282)\r\nuse(Ice Age:2512)\r\nuse(Frost Nova:414)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Torghast": [],
+    "Family Exorcist": []
+  },
+  "BfA": {
+    "World Quests": [],
+    "Island Expeditions": [],
+    "Warfronts": [],
+    "Family Battler": [],
+    "Nazjatar & Mechagon": [
+      {
+        "encounter_name": "Crystalsnap",
+        "url": "https://www.wow-petguide.com/Encounter/1199/Crystalsnap",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218)\r\nability(Haunt:652)\r\nability(Flock:581) [enemy.aura(Black Claw:918).exists]\r\nability(Black Claw:919)\r\nchange(Ikky:1532)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Kostos",
+        "url": "https://www.wow-petguide.com/Encounter/1201/Kostos",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "use(Blistering Cold:786)\r\nuse(BONESTORM!!:1762)\r\nuse(Chop:943)\r\nuse(Black Claw:919) [ self.round=1 ]\r\nuse(Flock:581)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Sewer Creeper",
+        "url": "https://www.wow-petguide.com/Encounter/1204/Sewer_Creeper",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ]
+            ],
+            "script": "ability(Black Claw:919) [!enemy(#1).aura(Black Claw:918).exists]\r\nability(BONESTORM!!:1762) [round=3]\r\nability(Blistering Cold:786)\r\nability(Chop:943)\r\nstandby [self(#2).active]\r\nstandby [self(#3).active]\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "The Countess",
+        "url": "https://www.wow-petguide.com/Encounter/1205/The_Countess",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "use(Blistering Cold:786) [enemy(The Countess:3074).hp.full]\r\nuse(Chop:943) [enemy(The Countess:3074).aura(Blistering Cold:785).duration>2]\r\nchange(Ikky:1532)\r\nuse(Black Claw:919) [!enemy(The Countess:3074).aura(Black Claw:918).exists]\r\nuse(Flock:581)",
+            "status": "READY"
+          }
+        ]
+      }
+    ]
+  },
+  "Legion": {
+    "World Quests": [],
+    "Family Familiar": [
+      {
+        "encounter_name": "Tiny Madness",
+        "url": "https://www.wow-petguide.com/Encounter/1146/Tiny_Madness",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Macabre Marionette",
+                  "id": 34770
+                }
+              ]
+            ],
+            "script": "standby [round=2]\r\nability(Curse of Doom:218) [round=3]\r\nability(Haunt:652) [round=4]\r\nability(Dead Man's Party:1093) [!enemy.aura(Shattered Defenses:542).exists]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Brain Tickling",
+        "url": "https://www.wow-petguide.com/Encounter/1147/Brain_Tickling",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ],
+              [
+                {
+                  "name": "Fel Flame",
+                  "id": 62621
+                }
+              ]
+            ],
+            "script": "use(#1) [ self(#2).dead ]\r\nuse(Flock:581) [ enemy.aura(Black Claw:918).exists ]\r\nuse(Black Claw:919)\r\nuse(Conflagrate:179) [ enemy.aura(Shattered Defenses:542).duration<2 ]\r\nuse(Scorched Earth:172)\r\nuse(Flame Breath:501)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Living Statues Are Tough",
+        "url": "https://www.wow-petguide.com/Encounter/1148/Living_Statues_Are_Tough",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Macabre Marionette",
+                  "id": 34770
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218) \r\nability(Haunt:652) \r\nability(Dead Man's Party:1093) [!enemy.aura(Shattered Defenses:542).exists]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Retinus the Seeker",
+        "url": "https://www.wow-petguide.com/Encounter/1151/Retinus_the_Seeker",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp<610]\r\nuse(Flock:581) [enemy.aura(Black Claw:918).exists]\r\nuse(Black Claw:919)\r\nuse(Thunderbolt:779)\r\nuse(Missile:777)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "I Am The One Who Whispers",
+        "url": "https://www.wow-petguide.com/Encounter/1152/I_Am_The_One_Who_Whispers",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ],
+              [
+                {
+                  "name": "Spawn of Onyxia",
+                  "id": 62201
+                }
+              ]
+            ],
+            "script": "use(Flock:581) [ enemy.aura(Black Claw:918).exists ]\r\nuse(Black Claw:919)\r\nuse(Scorched Earth:172)\r\nuse(Breath:115)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Dune Buggy",
+        "url": "https://www.wow-petguide.com/Encounter/1153/Dune_Buggy",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ]
+            ],
+            "script": "ability(Blistering Cold:786) [round=1]\r\nability(BONESTORM:1762) [round>2]\r\nability(Chop:943)\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Hunting Party:921)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Watch Where You Step",
+        "url": "https://www.wow-petguide.com/Encounter/1154/Watch_Where_You_Step",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Lil' Bling",
+                  "id": 73011
+                }
+              ],
+              [
+                {
+                  "name": "Knockoff Blingtron",
+                  "id": 99505
+                }
+              ]
+            ],
+            "script": "ability(Curse of Doom:218)\r\nability(Inflation:1002) [enemy.aura(Shattered Defenses:542).duration<2]\r\nability(#1) [self(#3).active]\r\nability(#3)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Strange Looking Dogs",
+        "url": "https://www.wow-petguide.com/Encounter/700/Strange_Looking_Dogs",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Benax",
+                  "id": 113136
+                }
+              ],
+              [
+                {
+                  "name": "Mud Jumper",
+                  "id": 83642
+                }
+              ]
+            ],
+            "script": "change(#2) [ self(Iron Starlette:1387).dead & !self(#2).played ]\r\nchange(#3) [ self(Iron Starlette:1387).dead & self(#2).played ]\r\nuse(Wind-Up:459) [ !self.aura(Wind-Up:458).exists ]\r\nuse(Supercharge:208) [ !self.aura(Supercharged:207).exists ]\r\nuse(Powerball:566) [ !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active ]\r\nuse(Wind-Up:459)\r\nuse(Swarm of Flies:232) [ !enemy.aura(Swarm of Flies:231).exists ]\r\nuse(Bubble:934)\r\nuse(Tongue Lash:228)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Sea Creatures Are Weird",
+        "url": "https://www.wow-petguide.com/Encounter/705/Sea_Creatures_Are_Weird_",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "quit [ enemy(#1).active & !enemy.ability(Sweep:457).usable ]\r\nchange(#1) [ self(#3).active ]\r\nchange(#3) [ self(#1).dead ]\r\nif [ self(#1).active ]\r\n    ability(Supercharge:208) [ round~2,6 ]\r\n    ability(Wind-Up:459) [ enemy(#1).active ]\r\n    ability(Wind-Up:459) [ round>6 & self.aura(Mechanical:244).exists & self.aura(Wind-Up:458).exists ]\r\n    ability(Powerball:566)\r\nendif\r\nability(Explode:282) [ enemy(#3).active & enemy(#3).hp<561 ]\r\nability(Thunderbolt:779) [ !enemy(#2).dead & enemy(#2).hp<245 ]\r\nability(Thunderbolt:779) [ enemy(#3).active ]\r\nability(Breath:115)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Automated Chaos",
+        "url": "https://www.wow-petguide.com/Encounter/706/Automated_Chaos",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Playful Frostkin",
+                  "id": 143811
+                }
+              ],
+              [
+                {
+                  "name": "Tiny Snowman",
+                  "id": 15710
+                }
+              ]
+            ],
+            "script": "change(#3) [ enemy(#3).active ]\r\nstandby [ self(#3).active ]\r\nchange(#1) [ round = 6 ]\r\nuse(1955) [ round = 1 ]\r\nuse(118) [ round = 7 & enemy(#1).hp > 1250 ]\r\nstandby [ round = 7 ]\r\nuse(418)\r\nchange(#2)\r\nuse(206) [ round = 5 ]\r\nuse(481) [ enemy.aura(417).exists ]\r\nuse(477)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "This Little Piggy Has Sharp Tusks",
+        "url": "https://www.wow-petguide.com/Encounter/707/This_Little_Piggy_Has_Sharp_Tusks",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Lil' Bling",
+                  "id": 73011
+                }
+              ],
+              [
+                {
+                  "name": "Knockoff Blingtron",
+                  "id": 99505
+                }
+              ]
+            ],
+            "script": "change(next) [ self(#1).dead & !self(#3).played ] \r\nability(#2) [ !enemy.aura(217).exists ] \r\nability(#3) \r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Rogue Azerite",
+        "url": "https://www.wow-petguide.com/Encounter/710/Rogue_Azerite",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Pandaren Water Spirit",
+                  "id": 66950
+                }
+              ],
+              [
+                {
+                  "name": "Rapana Whelk",
+                  "id": 64352
+                }
+              ],
+              [
+                {
+                  "name": "Silkbead Snail",
+                  "id": 63001
+                }
+              ]
+            ],
+            "script": "ability(Whirlpool:513) [self(Pandaren Water Spirit:868).active]\r\nability(Dive:564) [self(Pandaren Water Spirit:868).active]\r\nability(Water Jet:118) [self(Pandaren Water Spirit:868).active]\r\nchange(#2) [self(Pandaren Water Spirit:868).dead & !self(#3).active]\r\nchange(#3)\r\nability(Shell Shield:310) [self(#3).aura(Shell Shield:309).duration <2]\r\nability(Dive:564)\r\nability(Absorb:449)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Night Horrors",
+        "url": "https://www.wow-petguide.com/Encounter/711/Night_Horrors",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Lil' Bling",
+                  "id": 73011
+                }
+              ]
+            ],
+            "script": "change(next) [ self(#1).dead & !self(#3).played ]\r\nability(Black Claw:919) [ !enemy.aura(Black Claw:918).exists ]\r\nability(Black Claw:919) [ enemy(#3).active & self.hp>366 ]\r\nability(Flock:581)\r\nability(Make it Rain:985)\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "You've Never Seen Jammer Upset",
+        "url": "https://www.wow-petguide.com/Encounter/716/You've_Never_Seen_Jammer_Upset",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "if [ self(Iron Starlette:1387).active ] \r\nability(Wind-Up:459) [ round=1 ] \r\nability(Supercharge:208) [ round=2 ] \r\nability(Wind-Up:459) [ round=3 ] \r\nability(Wind-Up:459) [ round=4 ] \r\nchange(#2) [ round=5 ] \r\nability(Wind-Up:459) [ round >= 6 ] \r\nendif \r\nchange(Iron Starlette:1387) [ self(#2).active ]",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Critters are Friends, Not Food",
+        "url": "https://www.wow-petguide.com/Encounter/717/Critters_are_Friends,_Not_Food",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anomalus",
+                  "id": 161964
+                }
+              ],
+              [
+                {
+                  "name": "Sentinel's Companion",
+                  "id": 88225
+                }
+              ]
+            ],
+            "script": "ability(Void Nova:2356)\r\nability(Poison Protocol:1954)\r\nability(Soulrush:752) [enemy(#2).active]\r\nability(Moonfire:595) [enemy(#3).active]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Keeyo's Champions of Vol'dun",
+        "url": "https://www.wow-petguide.com/Encounter/724/Keeyo's_Champions_of_Vol'dun",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Xu-Fu, Cub of Xuen",
+                  "id": 71942
+                }
+              ]
+            ],
+            "script": "change(#2) [ enemy(#1).hp<715 ]\r\nuse(Booby-Trapped Presents:1080)\r\nuse(Greench's Gift:1076)\r\nuse(Club:1079)\r\nuse(Moonfire:595) [ !weather(Moonlight:596) ]\r\nuse(Prowl:536) [ enemy(#3).active ]\r\nuse(Spirit Claws:974)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Desert Survivors",
+        "url": "https://www.wow-petguide.com/Encounter/725/Desert_Survivors",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Coldlight Surfrunner",
+                  "id": 143821
+                }
+              ],
+              [
+                {
+                  "name": "Fluxfire Feline",
+                  "id": 68838
+                }
+              ]
+            ],
+            "script": "use(Whirlpool:513)\r\nuse(Inner Vision:216) [enemy.aura(Whirlpool:512).exists & enemy(#3).active]\r\nuse(Inner Vision:216) [enemy.aura(Underground:340).exists]\r\nuse(Inner Vision:216) [enemy.aura(Whirlpool:512).duration=1]\r\nuse(Punch:111)\r\nuse(Pounce:535) [enemy(#2).active]\r\nuse(Supercharge:208)\r\nuse(Pounce:535)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Ezra Grimm",
+        "url": "https://www.wow-petguide.com/Encounter/1116/Ezra_Grimm",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Scorpid",
+                  "id": 88134
+                }
+              ],
+              [
+                {
+                  "name": "Barnaby",
+                  "id": 143796
+                }
+              ]
+            ],
+            "script": "change(#2) [self.aura(Howl:1725).exists & self(#1).active]\r\nchange(#1) [self(#2).active & enemy(#3).active & enemy.hpp=100 & enemy.aura(Blinding Poison:1048).exists]\r\nchange(#2) [self(#3).active & enemy(#3).active]\r\nchange(#3) [self(#2).active & enemy(#2).active]\r\nchange(#2) [round=3]\r\nuse(Blistering Cold:786)\r\nuse(Chop:943)\r\nuse(Blinding Poison:1049)\r\nuse(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nuse(Barbed Stinger:1369)\r\n--\r\nuse(Dodge:312) [self.aura(Elementium Bolt:605).exists]\r\nuse(Tornado Punch:1052) [enemy.hp<335]\r\nuse(Jab:219)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Broken Isles": [
+      {
+        "encounter_name": "Darkness",
+        "url": "https://www.wow-petguide.com/Encounter/1061/Darkness",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Bone Serpent",
+                  "id": 88577
+                }
+              ],
+              [
+                {
+                  "name": "Spectral Spinner",
+                  "id": 97324
+                }
+              ],
+              [
+                {
+                  "name": "Widget the Departed",
+                  "id": 86067
+                }
+              ]
+            ],
+            "script": "",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "AoE/Cleave",
+        "url": "https://www.wow-petguide.com/Encounter/1062/AoE/Cleave",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Abyssal Slitherling",
+                  "id": 154814
+                }
+              ],
+              [
+                {
+                  "name": "Blightbreath",
+                  "id": 115148
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Sandstorm (Shielding)",
+        "url": "https://www.wow-petguide.com/Encounter/1065/Sandstorm_(Shielding)",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Squirky",
+                  "id": 113440
+                }
+              ],
+              [
+                {
+                  "name": "Living Sandling",
+                  "id": 69748
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Using PvE Pets",
+        "url": "https://www.wow-petguide.com/Encounter/1070/Using_PvE_Pets",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Anubisath Idol",
+                  "id": 68659
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "",
+            "status": "READY"
+          }
+        ]
+      }
+    ]
+  },
+  "Draenor": {
+    "Garrison": [
+      {
+        "encounter_name": "Angry Geode",
+        "url": "https://www.wow-petguide.com/Encounter/444/Angry_Geode",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Puddle Terror",
+                  "id": 88300
+                }
+              ]
+            ],
+            "script": "ability(Dive:564) [enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable]\r\nability(Nature's Ward:574) [self.hpp<100 & !self.aura(Nature's Ward:820).exists]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "\"Captain\" Klutz",
+        "url": "https://www.wow-petguide.com/Encounter/452/\"Captain\"_Klutz",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "standby [ enemy.round < 3 ]\r\nability(218)\r\nability(652)\r\nchange(#2)\r\nability(919) [ !enemy.aura(918).exists ]\r\nability(581)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Klutz's Battle Rat",
+        "url": "https://www.wow-petguide.com/Encounter/456/Klutz's_Battle_Rat",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Kun-Lai Runt",
+                  "id": 68846
+                }
+              ],
+              [
+                {
+                  "name": "Stunted Yeti",
+                  "id": 68805
+                }
+              ],
+              [
+                {
+                  "name": "Teroclaw Hatchling",
+                  "id": 81431
+                }
+              ]
+            ],
+            "script": "ability(124)\r\nability(202)\r\nchange(#2)\n\r\nability(#3) [enemy.hp<618 & enemy.type !~ 3]\r\nability(#3) [enemy.hp<406 & enemy.type ~ 3]\r\nability(#2) [!self(#2).aura(820).exists]\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Klutz's Battle Monkey",
+        "url": "https://www.wow-petguide.com/Encounter/458/Klutz's_Battle_Monkey",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Tranquil Mechanical Yeti",
+                  "id": 15699
+                }
+              ],
+              [
+                {
+                  "name": "Anubisath Idol",
+                  "id": 68659
+                }
+              ]
+            ],
+            "script": "use(208) [ round=1 ]\r\nuse(204)\r\nuse(490) [ self.aura(512).duration=1 ]\r\nuse(490) [ enemy.aura(341).exists ]\r\nuse(436) [ self.aura(435).duration<=1 & enemy(#3).hp>227 ]\r\nuse(#1)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Cookie's Leftovers",
+        "url": "https://www.wow-petguide.com/Encounter/464/Cookie's_Leftovers",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Boneshard",
+                  "id": 115146
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "standby [ round=1]\r\nstandby [ self.aura(Asleep:926).exists]\r\nuse(Blistering Cold:786) [self.ability(Blistering Cold:786).usable]\r\nuse(Chop:943) [!enemy.aura(Bleeding:491).exists]\r\nuse(BONESTORM!!:1762)\r\nchange(#2) [self(#1).dead]\r\nuse(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nuse(Flock:581)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "The Menagerie": [],
+    "Tamers": []
+  },
+  "Pandaria": {
+    "Spirit Tamers": [],
+    "Beasts of Fable": [
+      {
+        "encounter_name": "Dos-Ryga",
+        "url": "https://www.wow-petguide.com/Encounter/69/Dos-Ryga",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Runeforged Servitor",
+                  "id": 115140
+                }
+              ],
+              [
+                {
+                  "name": "Stitched Pup",
+                  "id": 68654
+                }
+              ]
+            ],
+            "script": "change(#1) [self(#2).active & self.dead]\r\nchange(#2) [round=2]\r\nuse(Supercharge:208) [self.aura(Wind-Up:458).exists]\r\nuse(Wind-Up:459)\r\nuse(Howl:362) [self.aura(Undead:242).exists]\r\nuse(Diseased Bite:499)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Kafi",
+        "url": "https://www.wow-petguide.com/Encounter/70/Kafi",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Draenei Micro Defender",
+                  "id": 84885
+                }
+              ],
+              [
+                {
+                  "name": "Pet Bombling",
+                  "id": 9656
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp.can_explode]\r\nuse(282) [enemy.aura(639).exists & enemy.hp<700]\r\nuse(282) [self(#1).active & round>2]\r\nuse(Toxic Smoke:640) [!enemy.aura(639).exists]\r\nuse(Reflective Shield:1105)\r\nuse(#1)\r\nstandby\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Ti'un the Wanderer",
+        "url": "https://www.wow-petguide.com/Encounter/71/Ti'un_the_Wanderer",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "if [ self(#1).active]\r\nstandby [enemy(#1).hp.can_be_exploded]\r\nability(Black Claw:919) [ round=1 ]\r\nability(#3) [ enemy.aura(Black Claw:918).exists ]\r\nability(#1) [ !enemy.hp.can_be_exploded]\r\nendif\r\nchange(#3) [ self(#1).dead ]\r\nability(#1) [ !enemy.hp.can_be_exploded]\r\nability(Explode:282) [ enemy.hp.can_be_exploded]",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Gorespine",
+        "url": "https://www.wow-petguide.com/Encounter/73/Gorespine",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Draenei Micro Defender",
+                  "id": 84885
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ]
+            ],
+            "script": "use(Explode:282) [enemy.hp<=1250]\r\nuse(Reflective Shield:1105) [self.round=1]\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Skitterer Xi'a",
+        "url": "https://www.wow-petguide.com/Encounter/74/Skitterer_Xi'a",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Spore",
+                  "id": 86716
+                }
+              ]
+            ],
+            "script": "use(Flyby:515) [round=1]\r\nuse(Thunderbolt:779)\r\nuse(Explode:282)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Greyhoof",
+        "url": "https://www.wow-petguide.com/Encounter/75/Greyhoof",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Runeforged Servitor",
+                  "id": 115140
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ]
+            ],
+            "script": "ability(Wind-Up:459) [round=1]\r\nability(Supercharge:208) [round=2]\r\nability(Wind-Up:459) [round=3]\r\nability(Powerball:566)\r\nchange(#2) [self(#1).dead]\r\nability(Explode:282) [enemy.hp<614]\r\nability(Decoy:334)\r\nability(Missile:777)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Lucky Yi",
+        "url": "https://www.wow-petguide.com/Encounter/76/Lucky_Yi",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ]
+            ],
+            "script": "use(Hunting Party:921) [enemy.aura(918).exists]\r\nuse(Black Claw:919) [self.round=1]\r\nuse(Leap:364)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Ka'wi the Gorger",
+        "url": "https://www.wow-petguide.com/Encounter/77/Ka'wi_the_Gorger",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Zandalari Anklerender",
+                  "id": 70451
+                }
+              ],
+              [
+                {
+                  "name": "Zandalari Kneebiter",
+                  "id": 69796
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ]
+            ],
+            "script": "change(#2) [self(#1).dead]\r\nuse(Garra negra:919) [!enemy.aura(Garra negra:918).exists]\r\nuse(Bandada:581)\r\nuse(Grupo de caza:921)\r\nuse(Saltar:364)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Nitun",
+        "url": "https://www.wow-petguide.com/Encounter/78/Nitun",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Unborn Val'kyr",
+                  "id": 71163
+                }
+              ],
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Foulfeather",
+                  "id": 143564
+                }
+              ]
+            ],
+            "script": "use(Curse of Doom:218)\r\nuse(Haunt:652)\r\nuse(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nuse(Flock:581)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Tamers": [
+      {
+        "encounter_name": "Ashlei",
+        "url": "https://www.wow-petguide.com/Encounter/16/Ashlei",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Timeless Mechanical Dragonling",
+                  "id": 179125
+                }
+              ]
+            ],
+            "script": "use(Armageddon:1025) [enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active]\r\nuse(Messerkrallen:2237) [enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists]\r\nuse(Flammenatem:501)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Gargra",
+        "url": "https://www.wow-petguide.com/Encounter/18/Gargra",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Sunreaver Micro-Sentry",
+                  "id": 69778
+                }
+              ],
+              [
+                {
+                  "name": "Darkmoon Tonk",
+                  "id": 55356
+                }
+              ]
+            ],
+            "script": "change(#2) [enemy(#2).active & !self(#2).played]\r\nchange(#1) [self(#2).active]\r\nuse(Fel Immolate:901) [enemy(#3).active]\r\nuse(Supercharge:208)\r\nuse(Haywire:916)\r\nuse(Ion Cannon:209)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Taralune",
+        "url": "https://www.wow-petguide.com/Encounter/19/Taralune",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Stormborne Whelpling",
+                  "id": 97205
+                }
+              ],
+              [
+                {
+                  "name": "Nexus Whelpling",
+                  "id": 68845
+                }
+              ]
+            ],
+            "script": "if [enemy(#1).active]\r\nstandby [round=1]\r\nability(Supercharge:208) [round=3]\r\nability(Wind-Up:459)\r\nendif\n\r\nchange(#3) [self(#1).dead & !self(#3).played]\r\nchange(#2) [self(#3).active]\r\nability(Arcane Storm:589)\r\nability(Mana Surge:489)\r\nability(#2)\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Tarr the Terrible",
+        "url": "https://www.wow-petguide.com/Encounter/20/Tarr_the_Terrible",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anomalus",
+                  "id": 161964
+                }
+              ],
+              [
+                {
+                  "name": "Micromancer",
+                  "id": 172148
+                }
+              ]
+            ],
+            "script": "change(#1) [self(#2).played]\r\nchange(#2) [round=4]\r\nuse(Corrosion:447) [round=1]\r\nuse(Poison Protocol:1954)\r\nuse(Void Nova:2356)\r\nuse(Corrosion:447)\r\nuse(Raise Ally:2298)\r\nuse(Dead Man's Party:1093)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Vesharr",
+        "url": "https://www.wow-petguide.com/Encounter/21/Vesharr",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Chrominius",
+                  "id": 68662
+                }
+              ],
+              [
+                {
+                  "name": "Lil' Tarecgosa",
+                  "id": 54027
+                }
+              ],
+              [
+                {
+                  "name": "Mechanical Pandaren Dragonling",
+                  "id": 64899
+                }
+              ]
+            ],
+            "script": "ability(Arcane Explosion:299)\r\nability(Explode:282) [enemy.aura(Mechanical:244).exists]\r\nability(Thunderbolt:779) [!enemy.aura(Flying Mark:1420).exists]\r\nability(Breath:115)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Celestial Tournament": [
+      {
+        "encounter_name": "Wrathion",
+        "url": "https://www.wow-petguide.com/Encounter/38/Wrathion",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rabbit",
+                  "id": 61080
+                }
+              ],
+              [
+                {
+                  "name": "Snowshoe Rabbit",
+                  "id": 7560
+                }
+              ],
+              [
+                {
+                  "name": "Tolai Hare",
+                  "id": 63557
+                }
+              ]
+            ],
+            "script": "change(next) [self.dead]\r\nuse(Dodge:312) [self.aura(Ice Tomb:623).duration = 1]\r\nuse(Stampede:163) [enemy(Cindy:1299).active & enemy.round = 4]\r\nuse(Stampede:163) [enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists]\r\nstandby [enemy.aura(Undead:242).exists]\r\nuse(Scratch:119)\r\nuse(Crush:406) [enemy(Alex:1301).aura(Shattered Defenses:542).exists]\r\nuse(Stoneskin:436) [!self.aura(Stoneskin:435).exists]\r\nuse(Deflection:490) [self.aura(Elementium Bolt:605).duration = 1]\r\nuse(Crush:406)\r\nuse(Dead Man's Party:1093)\r\nuse(Macabre Maraca:1094)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Chen Stormstout",
+        "url": "https://www.wow-petguide.com/Encounter/39/Chen_Stormstout",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Axebeak",
+                  "id": 79410
+                }
+              ],
+              [
+                {
+                  "name": "Teroclaw Hatchling",
+                  "id": 81431
+                }
+              ]
+            ],
+            "script": "change(next) [ enemy(#2).active & !self(#3).played ]\r\nability(Decoy:334)\r\nability(Haywire:916)\r\nability(Dodge:312) [ enemy(#2).active ]\r\nability(Dodge:312) [ enemy.aura(Barrel Ready:353).exists ]\r\nability(Ravage:802) [ enemy(#2).active & enemy.hp<927 ]\r\nability(Ravage:802) [ enemy(#3).hp<619 ]\r\nability(#1)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Shademaster Kiryn",
+        "url": "https://www.wow-petguide.com/Encounter/43/Shademaster_Kiryn",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Sister of Temptation",
+                  "id": 90206
+                }
+              ],
+              [
+                {
+                  "name": "Ashstone Core",
+                  "id": 68666
+                }
+              ]
+            ],
+            "script": "change(#3) [enemy(Et\u00e9:1286).active & !self(#3).played]\r\nchange(#2) [self(#3).active]\n\r\nuse(Frapp\u00e9 par l\u2019amour:772) [enemy(Stormoen:1287).active]\n\r\nuse(Mal\u00e9diction funeste:218) [!enemy(Et\u00e9:1286).active]\r\nuse(Horion de l\u2019ombre:422) [enemy(Nairn:1288).active]\n\r\nstandby [enemy.aura(Esquive:311).exists]\r\nuse(Prison de cristal:569) [enemy.aura(R\u00f4der:543).exists]\r\nuse(Peau de pierre:436) [enemy(Et\u00e9:1286).active & !self.aura(Peau de pierre:435).exists ]\r\nuse(Peau de pierre:436) [enemy(Et\u00e9:1286).active & enemy.round =1]\r\nuse(Br\u00fblure:113)\n\r\nuse(Frapp\u00e9 par l\u2019amour:772) [enemy.aura(R\u00f4der:543).exists]\r\nuse(Horion de l\u2019ombre:422)\n\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Wise Mari",
+        "url": "https://www.wow-petguide.com/Encounter/41/Wise_Mari",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Lil' Bling",
+                  "id": 73011
+                }
+              ],
+              [
+                {
+                  "name": "Netherspawn, Spawn of Netherspawn",
+                  "id": 86081
+                }
+              ]
+            ],
+            "script": "ability(Blingtron Gift Package:989) [ enemy.aura(Make it Rain:986).duration=1 ]\r\nability(Make it Rain:985)\r\nability(Inflation:1002)\r\nability(Consume Magic:1231) [ self.aura(Whirlpool:512).exists ]\r\nability(Creeping Ooze:448)\r\nchange(#2)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Dr. Ion Goldbloom",
+        "url": "https://www.wow-petguide.com/Encounter/46/Dr._Ion_Goldbloom",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Chrominius",
+                  "id": 68662
+                }
+              ],
+              [
+                {
+                  "name": "Fel Flame",
+                  "id": 62621
+                }
+              ],
+              [
+                {
+                  "name": "Searing Scorchling",
+                  "id": 25706
+                }
+              ]
+            ],
+            "script": "use(Howl:362) [enemy.aura(Flying:341).exists]\r\nuse(Surge of Power:593) [enemy.aura(Howl:1725).exists]\r\nuse(Arcane Explosion:299)\r\nuse(Conflagrate:179) [enemy(#3).active]\r\nuse(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]\r\nuse(Scorched Earth:172)\r\nuse(Ion Cannon:209) [enemy(#3).hp<1142]\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Chi-Chi, Hatchling of Chi-Ji",
+        "url": "https://www.wow-petguide.com/Encounter/51/Chi-Chi,_Hatchling_of_Chi-Ji",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Corefire Imp",
+                  "id": 68664
+                }
+              ],
+              [
+                {
+                  "name": "Spring Rabbit",
+                  "id": 32791
+                }
+              ],
+              [
+                {
+                  "name": "Rat",
+                  "id": 61366
+                }
+              ]
+            ],
+            "script": "standby [ round=7 & self(#3).active ]\r\nuse(409) [ round=1 ]\r\nuse(592) [ round=2 ]\r\nuse(163) [ round=4 ]\r\nuse(518)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Zao, Calfling of Niuzao",
+        "url": "https://www.wow-petguide.com/Encounter/52/Zao,_Calfling_of_Niuzao",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Nuts",
+                  "id": 54227
+                }
+              ],
+              [
+                {
+                  "name": "Grizzly Squirrel",
+                  "id": 62818
+                }
+              ],
+              [
+                {
+                  "name": "Squirrel",
+                  "id": 61081
+                }
+              ]
+            ],
+            "script": "use(Nut Barrage:167) [round=1]\r\nuse(Woodchipper:411) [self(#1).active]\r\nuse(Black Claw:919) [self.round=1 & self(#2).active]\r\nuse(Hunting Party:921) [self(#2).active]\r\nuse(Leap:364) [self(#2).active]\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "another strategy",
+        "url": "https://www.wow-petguide.com/Strategy/4924/Yula,_Broodling_of_Yulon",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Puddle Terror",
+                  "id": 88300
+                }
+              ]
+            ],
+            "script": "use(Clobber:350)\r\nuse(Dive:564) [enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists]\r\nuse(Punch:111)\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ]
+  },
+  "Dungeons": {
+    "Wailing Caverns": [
+      {
+        "encounter_name": "Not Quite Dead Yet",
+        "url": "https://www.wow-petguide.com/Encounter/819",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Blighthawk",
+                  "id": 61826
+                }
+              ],
+              [
+                {
+                  "name": "Fragment of Anger",
+                  "id": 90203
+                }
+              ],
+              [
+                {
+                  "name": "Fragment of Suffering",
+                  "id": 90204
+                }
+              ]
+            ],
+            "script": "change(next) [ self.dead ] \r\nability(170) [ !self.aura(242).exists ] \r\nability(420) \r\nability(1392) [ enemy(2231).active & enemy.round = 1 ] \r\nability(752) [ enemy(2232).hp < 463 ] \r\nability(752) [ enemy(2231).active ] \r\nability(1066)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Element of Success",
+        "url": "https://www.wow-petguide.com/Encounter/909",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Drafty",
+                  "id": 127863
+                }
+              ],
+              [
+                {
+                  "name": "Zephyrian Prince",
+                  "id": 127862
+                }
+              ],
+              [
+                {
+                  "name": "Pandaren Air Spirit",
+                  "id": 68467
+                }
+              ]
+            ],
+            "script": "ability(Wind Buffet:1963) [round=2] \r\nability(Autumn Breeze:964) [round=4] \r\nability(#1) \r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Machine Learning",
+        "url": "https://www.wow-petguide.com/Encounter/999",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Sunreaver Micro-Sentry",
+                  "id": 69778
+                }
+              ],
+              [
+                {
+                  "name": "Sunblade Micro-Defender",
+                  "id": 90212
+                }
+              ]
+            ],
+            "script": "ability(Supercharge:208) [ self.aura(Wind-Up:458).exists ]\r\nability(Wind-Up:459)\r\nchange(next) [ !self.ability(Haywire:916).usable ]\r\nability(Haywire:916)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "BurlyQuest: Strange Looking Dogs",
+        "url": "https://www.wow-petguide.com/Encounter/730/Strange_Looking_Dogs",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "use(Ice Tomb:624) [enemy.hpp = 100 & !enemy.aura(Ice Tomb:623).exists]\r\nuse(Call Blizzard:206) [!enemy.aura(Undead:242).exists & !weather(Blizzard:205)]\r\nuse(#1)\n\r\nstandby\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Ellie VernQuest: Sea Creatures Are Weird",
+        "url": "https://www.wow-petguide.com/Encounter/735/Sea_Creatures_Are_Weird_",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "use(Ice Tomb:624) [enemy.aura(Undead:242).exists]\r\nstandby [enemy.aura(Undead:242).exists]\r\nuse(Ice Tomb:624) [enemy.hpp>95 & !enemy.aura(Ice Tomb:623).exists]\r\nuse(Call Blizzard:206)\r\nuse(Ice Lance:413)\r\nchange(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Eddie FixitQuest: Automated Chaos",
+        "url": "https://www.wow-petguide.com/Encounter/736/Automated_Chaos",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anubisath Idol",
+                  "id": 68659
+                }
+              ]
+            ],
+            "script": "standby [ enemy(\"Fixed\" Remote Control Rocket Chicken:2204).active ]\r\nuse(Sandstorm:453)\r\nuse(Rupture:814)\r\nuse(Crush:406)\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Dilbert McClintQuest: Night Horrors",
+        "url": "https://www.wow-petguide.com/Encounter/741/Night_Horrors",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "standby [self.aura(Blinding Poison:1048).exists]\r\nuse(Booby-Trapped Presents:1080) [!enemy.aura(Booby-Trapped Presents:1081).exists]\r\nuse(Greench's Gift:1076) [enemy(Atherton:2209).aura(Underground:340).exists]\r\nuse(Greench's Gift:1076) [enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1]\r\nuse(Greench's Gift:1076) [enemy(Jennings:2208).active]\r\nuse(Gift of Winter Veil:586)\r\nuse(Call Blizzard:206)\r\nuse(Ice Lance:413)\r\nuse(Dive Bomb:2463)\r\nuse(Arm Cannon Blast:2462)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Captain HermesQuest: Crab People",
+        "url": "https://www.wow-petguide.com/Encounter/742/Crab_People",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "use(Ice Tomb:624) [!enemy.aura(Ice Tomb:623).exists]\r\nuse(Call Blizzard:206)\r\nuse(Ice Lance:413)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "KaragaQuest: Critters are Friends, Not Food",
+        "url": "https://www.wow-petguide.com/Encounter/747/Critters_are_Friends,_Not_Food",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Anubisath Idol",
+                  "id": 68659
+                }
+              ]
+            ],
+            "script": "change(next) [ self.dead ]\r\nability(1080)\r\nability(1076)\r\nability(814) [ enemy.hp > 400 ]\r\nability(436) [ self.aura(435).duration <= 1 ]\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "LozuQuest: Marshdwellers",
+        "url": "https://www.wow-petguide.com/Encounter/750/Marshdwellers",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "ability(Ice Tomb:624) [round=1]\r\nability(Gift of Winter's Veil:586) [enemy(#2).active]\r\nability(Gift of Winter's Veil:586) [!enemy.ability(Cocoon Strike:506).usable]\r\nability(Call Blizzard:206) [!weather(Blizzard:205)]\r\nability(Ice Lance:413)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "KeeyoQuest: Keeyo's Champions of Vol'dun",
+        "url": "https://www.wow-petguide.com/Encounter/754/Keeyo's_Champions_of_Vol'dun",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ]
+            ],
+            "script": "standby [enemy.aura(Dodge:2060).exists]\r\nability(Gift of Winter's Veil:586)\r\nability(Call Blizzard:206) [round=2]\r\nability(Booby-Trapped Presents:1080) [self.round=1]\r\nability(Greench's Gift:1076) [enemy(Tikka:2346).hp<1060]\r\nability(Rampage:124)\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "KusaQuest: Desert Survivors",
+        "url": "https://www.wow-petguide.com/Encounter/755/Desert_Survivors",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Anubisath Idol",
+                  "id": 68659
+                }
+              ]
+            ],
+            "script": "use(Deflection:490) [enemy.aura(Underground:340).exists]\r\nuse(Stoneskin:436) [!self.aura(Stoneskin:435).exists]\r\nuse(Stoneskin:436) [self.aura(Stoneskin:435).duration<2]\r\nuse(Crush:406)\r\nuse(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Deadmines": [],
+    "Stratholme": [
+      {
+        "encounter_name": "Haunted Humanoids",
+        "url": "https://www.wow-petguide.com/Encounter/1210",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "change(#2) [round=2]\r\nability(Ice Tomb:624) [round=1]\r\nability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]\r\nability(Booby-Trapped Presents:1080) [self.round=1]\r\nability(Greench's Gift:1076)\r\nability(Call Blizzard:206)\r\nability(#1)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Deathly Dragonkin",
+        "url": "https://www.wow-petguide.com/Encounter/1225",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Lil' Tarecgosa",
+                  "id": 54027
+                }
+              ],
+              [
+                {
+                  "name": "Nexus Whelpling",
+                  "id": 68845
+                }
+              ],
+              [
+                {
+                  "name": "Stormborne Whelpling",
+                  "id": 97205
+                }
+              ]
+            ],
+            "script": "use(Arcane Storm:589) [ round>1 & !enemy(#2).active ]\r\nif [ enemy(#1).active ]\r\n    use(Surge of Power:593) [ enemy.hp<1099 & self.aura(Dragonkin:245).exists ]\r\n    use(Surge of Power:593) [ enemy.hp<733 ]\r\nendif\r\nuse(Surge of Power:593) [ enemy(#3).active ]\r\nuse(Arcane Blast:421)\r\nuse(Mana Surge:489)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Flickering Fliers",
+        "url": "https://www.wow-petguide.com/Encounter/1240",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Mechanical Axebeak",
+                  "id": 79410
+                }
+              ],
+              [
+                {
+                  "name": "Nightwreathed Watcher",
+                  "id": 149205
+                }
+              ]
+            ],
+            "script": "use(Decoy:334)\r\nuse(Haywire:916) [ !enemy(#1).active ]\r\nuse(Alpha Strike:504)\r\nuse(Lift-Off:170) [ enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast ]\r\nuse(Shadowmeld:2253) [ enemy(#3).active ]\r\nuse(Dark Talon:1233)\r\nstandby\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Aquatic Apparitions",
+        "url": "https://www.wow-petguide.com/Encounter/1330",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Inland Croaker",
+                  "id": 143041
+                }
+              ],
+              [
+                {
+                  "name": "Mr. Chilly",
+                  "id": 29726
+                }
+              ],
+              [
+                {
+                  "name": "Pengu",
+                  "id": 32595
+                }
+              ]
+            ],
+            "script": "use(Ice Tomb:624)\r\nuse(Call Blizzard:206)\r\nuse(Surge:509) [ enemy.ability(Horn Attack:571).usable ]\r\nuse(Surge:509) [ enemy(#2).active & enemy.hp<211 ]\r\nuse(Ice Lance:413) [ weather(Blizzard:205) & !enemy.aura(Amplify Magic:487).exists ]\r\nuse(Surge:509)\r\nuse(Phase Shift:764) [ enemy.ability(Amplify Magic:488).usable & self.speed.slow ]\r\nuse(Expunge:450) [ enemy.aura(Amplify Magic:487).exists ]\r\nuse(Ooze Touch:445)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Macabre Mechanicals",
+        "url": "https://www.wow-petguide.com/Encounter/1345",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Darkmoon Zeppelin",
+                  "id": 55367
+                }
+              ],
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Lil' Bling",
+                  "id": 73011
+                }
+              ]
+            ],
+            "script": "if [self(Darkmoon Zeppelin:339).active]\r\nuse(Explode:282) [enemy(Shelby:2972).active & enemy.hp <=618]\r\nuse(Decoy:334)\r\nuse(Missile:777)\r\nendif\r\nif [self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active]\r\nuse(Wind-Up:459)\r\nendif\r\nif [self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active]\r\nuse(Toxic Smoke:640) [!enemy.aura(Toxic Smoke:639).exists]\r\nuse(Toxic Smoke:640) [self(Iron Starlette:1387).hp<500]\r\nuse(Wind-Up:459) [self.aura(Wind-Up:458).exists]\r\nuse(Wind-Up:459)\r\nendif\r\nif [self(Lil' Bling:1320).active]\r\nuse(Blingtron Gift Package:989)\r\nuse(Make it Rain:985) [!enemy.aura(Make it Rain:986).exists]\r\nuse(Inflation:1002)\r\nendif\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "StratiosQuest: Cliffs of Bastion",
+        "url": "https://www.wow-petguide.com/Encounter/1210/Cliffs_of_Bastion",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "change(#2) [round=2]\r\nability(Ice Tomb:624) [round=1]\r\nability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]\r\nability(Booby-Trapped Presents:1080) [self.round=1]\r\nability(Greench's Gift:1076)\r\nability(Call Blizzard:206)\r\nability(#1)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "ZollaQuest: Micro Defense Force",
+        "url": "https://www.wow-petguide.com/Encounter/1211/Micro_Defense_Force",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "ability(Ice Tomb:624) [round=1]\r\nability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]\r\nability(Call Blizzard:206) [weather(Blizzard:205).duration<2]\r\nability(Ice Lance:413)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "TheniaQuest: Thenia's Loyal Companions",
+        "url": "https://www.wow-petguide.com/Encounter/1212/Thenia's_Loyal_Companions",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ]
+            ],
+            "script": "ability(Gift of Winter's Veil:586)\r\nability(Booby-Trapped Presents:1080) [enemy(#2).active]\r\nability(Call Blizzard:206) [weather(Blizzard:205).duration<2]\r\nability(Ice Lance:413)\r\nstandby\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Caregiver MaximillianQuest: Mighty Minions of Maldraxxus",
+        "url": "https://www.wow-petguide.com/Encounter/1214/Mighty_Minions_of_Maldraxxus",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "change(#2) [round=3]\r\nchange(#1) [enemy(#2).dead & enemy(#1).active]\n\r\nability(Booby-Trapped Presents:1080) [enemy(#1).hp>0]\r\nstandby [enemy(#3).active & enemy.ability(Lift-Off:170).usable]\r\nability(Greench's Gift:1076)\n\r\nability(Ice Tomb:624) [enemy.aura(Resilient:924).duration=1]\r\nability(Call Blizzard:206)\r\nability(Ice Tomb:624) [enemy.ability(Burrow:159).usable & enemy(#2).hp>0 & enemy(#1).active]\n\r\nability(Gift of Winter's Veil:586)\n\r\nability(#1)\r\nchange(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Addius the TormentorQuest: The Mind Games of Addius",
+        "url": "https://www.wow-petguide.com/Encounter/1220/The_Mind_Games_of_Addius",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Father Winter's Helper",
+                  "id": 15698
+                }
+              ],
+              [
+                {
+                  "name": "Rotten Little Helper",
+                  "id": 73741
+                }
+              ],
+              [
+                {
+                  "name": "Winter's Little Helper",
+                  "id": 15705
+                }
+              ]
+            ],
+            "script": "use(Mind Games: Health:2388)\r\nuse(Call Blizzard:206)\r\nuse(Ice Tomb:624) [ round<5 ]\r\nuse(Greench's Gift:1076)\r\nuse(Ice Lance:413)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "https://www.wow-petguide.com/Strategy/11028/Mega_Bite",
+        "url": "https://www.wow-petguide.com/Strategy/11028/Mega_Bite",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Iron Starlette",
+                  "id": 77221
+                }
+              ],
+              [
+                {
+                  "name": "Runeforged Servitor",
+                  "id": 115140
+                }
+              ]
+            ],
+            "script": "use(Aufladen:208) [ !enemy.ability(Stachelpanzerschale:2324).usable ]\r\nuse(Aufziehen:459)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Blackrock Depths": [
+      {
+        "encounter_name": "Trainer Grrglin",
+        "url": "https://www.wow-petguide.com/Encounter/1359/Trainer_Grrglin",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Blue Moth",
+                  "id": 21010
+                }
+              ],
+              [
+                {
+                  "name": "Grey Moth",
+                  "id": 62050
+                }
+              ],
+              [
+                {
+                  "name": "Amber Moth",
+                  "id": 65187
+                }
+              ]
+            ],
+            "script": "use(Cocoon Strike:506)\r\nuse(Moth Dust:508)\r\nuse(Alpha Strike:504)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin",
+        "url": "https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Corgi Pup",
+                  "id": 106283
+                }
+              ]
+            ],
+            "script": "ability(Savage Talon:1370) [enemy.round>4]\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Puppy Parade:1681) [!enemy.aura(Shattered Defenses:542).exists]\r\nability(Flock:581)\r\nability(Superbark:1357) [enemy.hp>661]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Klick",
+        "url": "https://www.wow-petguide.com/Strategy/10529/Lehrer_Grrglin",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Ikky",
+                  "id": 86447
+                }
+              ],
+              [
+                {
+                  "name": "Corgi Pup",
+                  "id": 106283
+                }
+              ]
+            ],
+            "script": "ability(Savage Talon:1370) [enemy.round>4]\r\nability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]\r\nability(Puppy Parade:1681) [!enemy.aura(Shattered Defenses:542).exists]\r\nability(Flock:581)\r\nability(Superbark:1357) [enemy.hp>661]\r\nability(#1)\r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      }
+    ],
+    "Gnomeregan": [
+      {
+        "encounter_name": "Living Permafrost",
+        "url": "https://www.wow-petguide.com/Encounter/1036/Living_Permafrost",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Leviathan Hatchling",
+                  "id": 90201
+                }
+              ],
+              [
+                {
+                  "name": "Crimson Shale Hatchling",
+                  "id": 62922
+                }
+              ],
+              [
+                {
+                  "name": "Amethyst Shale Hatchling",
+                  "id": 62182
+                }
+              ]
+            ],
+            "script": "use(Toxic Skin:1087) [round~1]\r\nuse(Toxic Skin:1087) [self.aura(Toxic Skin:1086).duration~1]\r\nuse(Whirlpool:513)\r\nuse(Water Jet:118)\r\nchange(#2) [enemy.type=10]\r\nchange(#3) [enemy.type=5]\r\nuse(Stoneskin:436) [!self.aura(Stoneskin:435).exists]\r\nuse(Stoneskin:436) [self.aura(Stoneskin:435).duration=1]\r\nuse(Leech Life:383) [enemy.aura(Webbed:338).exists]\r\nuse(Sticky Web:339)\r\nuse(Brittle Webbing:382) [!enemy.aura(Brittle Webbing:381).exists]\r\nuse(Leech Life:383) [enemy.aura(Brittle Webbing:381).exists]\r\nuse(Poison Spit:380)\r\nchange(#2)\r\nchange(#3)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Door Control Console",
+        "url": "https://www.wow-petguide.com/Encounter/1038/Door_Control_Console",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Rapana Whelk",
+                  "id": 64352
+                }
+              ],
+              [
+                {
+                  "name": "Silkbead Snail",
+                  "id": 63001
+                }
+              ],
+              [
+                {
+                  "name": "Shimmershell Snail",
+                  "id": 62246
+                }
+              ]
+            ],
+            "script": "ability(Acidic Goo:369) [ enemy.hp.full ]\r\nuse(Dive:564) [round=2] \r\nuse(Dive:564) [self.aura(Ice Tomb:623).duration=1] \r\nuse(Dive:564) [self.aura(Sewage Eruption:2063).duration=1] \r\nuse(Ooze Touch:445) \r\nchange(next)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Gnomeregan Guard Mechanostrider",
+        "url": "https://www.wow-petguide.com/Encounter/1045/Gnomeregan_Guard_Mechanostrider",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Broot",
+                  "id": 98463
+                }
+              ],
+              [
+                {
+                  "name": "Blossoming Ancient",
+                  "id": 71488
+                }
+              ]
+            ],
+            "script": "change(next) [ self.dead ]\r\nability(Photosynthese:268) [ !self.aura(Photosynthese:267).exists ]\r\nability(Sonnenlicht:404) [ !weather(Sonnenschein:403) ]\r\nability(Panzerschild:310) [ !self.aura(Panzerschild:309).exists ]\r\nstandby [ enemy.aura(Untot:242).exists ]\r\nability(#1)",
+            "status": "READY"
+          }
+        ]
+      },
+      {
+        "encounter_name": "Gnomeregan Guard Tiger",
+        "url": "https://www.wow-petguide.com/Encounter/1046/Gnomeregan_Guard_Tiger",
+        "strategies": [
+          {
+            "name": "Default Strategy",
+            "pet_slots": [
+              [
+                {
+                  "name": "Tiny Snowman",
+                  "id": 15710
+                }
+              ]
+            ],
+            "script": "if [self(Tiny Snowman:117).active]\r\nuse(Call Blizzard:206)\r\nuse(Howling Blast:120)\r\nuse(Snowball:477)\r\nchange(next)\r\nendif\n\r\nif [self(#2).active]\r\nuse(#1)\r\nchange(next)\r\nendif\n\r\nif [self(#3).active]\r\nuse(#1)\r\nendif",
+            "status": "READY"
+          }
+        ]
+      }
+    ]
+  },
+  "Misc": {
+    "Darkmoon Faire": []
+  }
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Genetic Team Builder</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ffd700;
+        }
+
+        .box {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0052a3;
+        }
+
+        #evolution-log {
+            background: #000;
+            padding: 15px;
+            height: 400px;
+            overflow-y: scroll;
+            font-family: monospace;
+            border: 1px solid #444;
+        }
+
+        .team-card {
+            background: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #ffd700;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧬 Genetic Team Builder</h1>
+
+    <div class="box">
+        <h2>Settings</h2>
+        <label>Population: <input type="number" id="pop-size" value="20"></label><br>
+        <label>Generations: <input type="number" id="generations" value="10"></label><br>
+        <label><input type="checkbox" id="my-pets-only" checked> Use Only My Pets</label><br>
+        <button onclick="startEvolution()">🚀 Start Evolution</button>
+        <button onclick="stopEvolution()">⏹ Stop</button>
+    </div>
+
+    <div class="box" id="status-box" style="display:none;">
+        <h2 id="status-text">Running...</h2>
+        <div id="evolution-log"></div>
+    </div>
+
+    <div class="box" id="results-box" style="display:none;">
+        <div id="comparison-dashboard"
+            style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #444;">
+            <h2>📊 Team Comparison</h2>
+            <div style="display: flex; gap: 20px;">
+                <!-- Win Rate Chart -->
+                <div style="flex: 1; background: #222; padding: 15px; border-radius: 5px;">
+                    <h3 style="margin-top: 0;">Win Rate</h3>
+                    <div id="chart-win-rate" style="display: flex; flex-direction: column; gap: 10px;"></div>
+                </div>
+                <!-- Speed Chart -->
+                <div style="flex: 1; background: #222; padding: 15px; border-radius: 5px;">
+                    <h3 style="margin-top: 0;">Speed (Avg Turns)</h3>
+                    <div id="chart-speed" style="display: flex; flex-direction: column; gap: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <h2>🏆 Top Teams</h2>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        let currentLogOffset = 0;
+        let pollInterval;
+
+        async function startEvolution() {
+            currentLogOffset = 0;
+            document.getElementById('status-box').style.display = 'block';
+            document.getElementById('results-box').style.display = 'none';
+            document.getElementById('evolution-log').innerHTML = '';
+
+            const response = await fetch('/api/genetic/start', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    target: 'squirt',
+                    pop_size: parseInt(document.getElementById('pop-size').value),
+                    generations: parseInt(document.getElementById('generations').value),
+                    my_pets_only: document.getElementById('my-pets-only').checked,
+                    leveling_mode: 0
+                })
+            });
+
+            if (response.ok) {
+                pollInterval = setInterval(pollStatus, 1000);
+            }
+        }
+
+        async function pollStatus() {
+            const response = await fetch('/api/genetic/status?offset=' + currentLogOffset);
+            const data = await response.json();
+
+            if (data.new_logs) {
+                const logDiv = document.getElementById('evolution-log');
+                data.new_logs.forEach(log => {
+                    logDiv.innerHTML += log + '<br>';
+                });
+                logDiv.scrollTop = logDiv.scrollHeight;
+                currentLogOffset = data.log_offset;
+            }
+
+            document.getElementById('status-text').innerText =
+                data.status + ' - Gen ' + data.generation + '/' + data.max_generations;
+
+            if (data.status === 'COMPLETED' || data.status === 'ERROR') {
+                clearInterval(pollInterval);
+                if (data.top_teams) {
+                    showResults(data.top_teams);
+                }
+            }
+        }
+
+        function showResults(teams) {
+            document.getElementById('results-box').style.display = 'block';
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            // --- Dashboard Logic ---
+            const top3 = teams.slice(0, 3);
+            const winChart = document.getElementById('chart-win-rate');
+            const speedChart = document.getElementById('chart-speed');
+            winChart.innerHTML = '';
+            speedChart.innerHTML = '';
+
+            top3.forEach((team, i) => {
+                const stats = team.stats || { win_rate: 0, avg_turns: 0, min_turns: 0, max_turns: 0 };
+                const winPct = Math.round(stats.win_rate * 100);
+                const avgTurns = stats.avg_turns ? stats.avg_turns.toFixed(1) : 'N/A';
+
+                // Win Rate Bar
+                winChart.innerHTML += `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; font-weight: bold;">#${i + 1}</div>
+                        <div style="flex: 1; background: #333; height: 20px; border-radius: 3px; overflow: hidden;">
+                            <div style="width: ${winPct}%; background: ${winPct > 80 ? '#4caf50' : '#ff9800'}; height: 100%;"></div>
+                        </div>
+                        <div style="width: 40px; text-align: right;">${winPct}%</div>
+                    </div>
+                `;
+
+                // Speed Bar (Inverse scale roughly, max 50 turns)
+                const speedWidth = Math.min(100, (stats.avg_turns / 50) * 100);
+                speedChart.innerHTML += `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; font-weight: bold;">#${i + 1}</div>
+                        <div style="flex: 1; background: #333; height: 20px; border-radius: 3px; overflow: hidden; position: relative;">
+                            <div style="width: ${speedWidth}%; background: #2196f3; height: 100%;"></div>
+                        </div>
+                        <div style="width: 80px; text-align: right; font-size: 0.9em;">
+                            ${avgTurns}T <span style="color: #888; font-size: 0.8em;">(${stats.min_turns}-${stats.max_turns})</span>
+                        </div>
+                    </div>
+                `;
+            });
+            // -----------------------
+
+            teams.forEach((team, i) => {
+                const winRate = team.stats ? Math.round(team.stats.win_rate * 100) : 0;
+                const teamString = `team:${team.pets.map(p => p.species_id).join(',')}`;
+
+                let petsHtml = '<div style="display: flex; gap: 10px; overflow-x: auto;">';
+
+                team.pets.forEach(pet => {
+                    let abilitiesHtml = '<ul style="padding-left: 15px; margin: 5px 0; font-size: 0.9em; color: #ccc;">';
+                    pet.abilities.forEach(ab => {
+                        abilitiesHtml += `<li>${ab.name} <span style="color: #888;">(${ab.power > 0 ? ab.power : '-'} / ${ab.cooldown}T)</span></li>`;
+                    });
+                    abilitiesHtml += '</ul>';
+
+                    petsHtml += `
+                        <div style="background: #222; padding: 10px; border-radius: 5px; min-width: 200px;">
+                            <div style="font-weight: bold; color: #fff;">${pet.name}</div>
+                            <div style="font-size: 0.8em; color: #aaa;">Species ID: ${pet.species_id}</div>
+                            <div style="margin: 5px 0; font-family: monospace;">
+                                <span title="Health">❤️ ${pet.stats.health}</span> | 
+                                <span title="Power">⚔️ ${pet.stats.power}</span> | 
+                                <span title="Speed">👟 ${pet.stats.speed}</span>
+                            </div>
+                            ${abilitiesHtml}
+                        </div>
+                    `;
+                });
+                petsHtml += '</div>';
+
+                resultsDiv.innerHTML += `
+                    <div class="team-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>Rank #${i + 1} - Fitness: ${Math.round(team.fitness)}</h3>
+                            <div style="font-size: 1.2em; font-weight: bold; color: ${winRate > 80 ? '#4caf50' : '#ff9800'};">
+                                ${winRate}% Win Rate
+                            </div>
+                        </div>
+                        ${petsHtml}
+                        <div style="margin-top: 10px; display: flex; gap: 10px;">
+                            <button onclick="navigator.clipboard.writeText('${teamString}')">📋 Copy Team String</button>
+                            ${team.battle_log ? `<button onclick="showReplay(${i})" style="background: #e91e63;">🎬 Watch Replay</button>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Store logs globally for replay access
+            window.teamLogs = teams.map(t => t.battle_log);
+        }
+
+        function showReplay(index) {
+            const log = window.teamLogs[index];
+            if (!log) return;
+
+            const modal = document.getElementById('replay-modal');
+            const content = document.getElementById('replay-content');
+            modal.style.display = 'block';
+
+            // Format log for display
+            // Log is a list of strings
+            content.innerHTML = log.map(line => {
+                let color = '#ccc';
+                if (line.includes('Round')) color = '#ffd700; font-weight: bold; margin-top: 10px; display: block; border-bottom: 1px solid #444;';
+                if (line.includes('dealt')) color = '#ff5252';
+                if (line.includes('healed')) color = '#4caf50';
+                if (line.includes('died')) color = '#ff0000; font-weight: bold;';
+                if (line.includes('swapped')) color = '#2196f3';
+
+                return `<div style="color: ${color}">${line}</div>`;
+            }).join('');
+        }
+
+        function closeReplay() {
+            document.getElementById('replay-modal').style.display = 'none';
+        }
+
+        async function stopEvolution() {
+            await fetch('/api/genetic/stop', { method: 'POST' });
+            clearInterval(pollInterval);
+        }
+    </script>
+
+    <!-- Replay Modal -->
+    <div id="replay-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;">
+        <div
+            style="background: #222; width: 80%; max-width: 800px; margin: 50px auto; padding: 20px; border-radius: 10px; height: 80%; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <h2>🎬 Battle Replay</h2>
+                <button onclick="closeReplay()" style="background: #444;">Close</button>
+            </div>
+            <div id="replay-content"
+                style="flex: 1; overflow-y: auto; font-family: monospace; background: #000; padding: 15px; border: 1px solid #444; line-height: 1.4;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

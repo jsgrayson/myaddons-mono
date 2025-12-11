@@ -1,0 +1,4061 @@
+REMATH EXPORT - Generated 2025-11-21 13:30:28.687827
+Total Ready: 271
+
+=== Rock Collector ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Young Sand Sifter (143050), Leveling Pet / Any
+--- TD Script ---
+use(Curse of Doom:218)
+use(Unholy Ascension:321)
+use(Poison Protocol:1954) [round=3]
+use(Void Nova:2356) [round=4]
+change(#3) [round=5]
+use(Carpnado:1287)
+use(Water Jet:118)
+use(Void Nova:2356) [self(#3).dead]
+use(Ooze Touch:445) [self(#3).dead]
+change(#2)
+-----------------
+
+==================================================
+
+=== Robot Rumble ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+use(Blistering Cold:786)
+use(Chop:943) [!enemy.aura(Bleeding:491).exists]
+use(BONESTORM!!:1762)
+use(Chop:943)
+use(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+use(Flock:581)
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== The Power of Friendship ===
+Strategy: Default Strategy
+Pets: Kunchong Hatchling (143820), Pet Bombling (9656), Leveling Pet / Any
+--- TD Script ---
+use(Poison Fang:152) [round=1]
+use(Pheromones:1063)
+use(Puncture Wound:1050)
+use(Minefield:634)
+use(Explode:282)
+use(Devour:538)
+use(Rampage:124)
+change(next)
+-----------------
+
+==================================================
+
+=== Major Malfunction ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Mechanical Pandaren Dragonling (64899), Umbrafen Spore (86717)
+--- TD Script ---
+use(Thunderbolt:779) [round=1]
+use(Explode:282)
+use(Call Blizzard:206)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Miniature Army ===
+Strategy: Default Strategy
+Pets: Benax (113136), Timeless Mechanical Dragonling (179125), Yellow-Bellied Bullfrog (63849)
+--- TD Script ---
+use(Swarm of Flies:232) [round=1]
+change(#2) [round=2]
+use(Time Bomb:602) [round=3]
+use(Armageddon:1025)
+use(Booby-Trapped Presents:1080) [round=5]
+use(Call Blizzard:206) [round=6]
+use(Ice Lance:413)
+use(#1)
+change(#3)
+-----------------
+
+==================================================
+
+=== The Thing from the Swamp ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Mechanical Pandaren Dragonling (64899), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Unholy Ascension:321)
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Flock:581)
+ability(Thunderbolt:779)
+ability(Breath:115)
+change(next)
+-----------------
+
+==================================================
+
+=== Ziriak ===
+Strategy: Default Strategy
+Pets: Primal Stormling (191387), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [enemy.aura(Undead:242).exists]
+use(Wind Buffet:1963) [enemy(#1).active]
+change(#2) [round=2]
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Quicksand:912)
+use(Sandstorm:453)
+change(#1) [enemy(#2).active]
+change(#3) [enemy(#1).active]
+-----------------
+
+==================================================
+
+=== One Hungry Worm ===
+Strategy: Default Strategy
+Pets: Seaborne Spore (86718), Squally (209681), Stormwing (87705)
+--- TD Script ---
+standby [enemy.aura(Underground:340).exists & self.speed.fast]
+use(Glowing Toxin:270) [!enemy.aura(Glowing Toxin:271).exists]
+use(Explode:282)
+use(Call Lightning:204)
+change(next)
+-----------------
+
+==================================================
+
+=== To a Land Down Under ===
+Strategy: Default Strategy
+Pets: Anomalus (161964), Cerulean Moth (88422), Dusty Sporewing (88415)
+--- TD Script ---
+standby [enemy.aura(Corrosion:446).exists & round=3]
+standby [self(#1).active & round>2]
+
+use(Poison Protocol:1954)
+use(Corrosion:447)
+use(Flame Breath:501) [round=3 & !enemy.aura(Corrosion:446).exists]
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204) [enemy(#3).active]
+use(Counterspell:308) [enemy(#2).active]
+standby [self(#3).active & enemy(#2).active & enemy.aura(601).exists]
+use(Reckless Strike:186)
+change(next)
+-----------------
+
+==================================================
+
+=== Are They Not Beautiful? ===
+Strategy: Default Strategy
+Pets: Cursed Birman (86061), Widget the Departed (86067), Chrominius (68662)
+--- TD Script ---
+change(#3) [enemy(#3).active & !self.aura(242).exists]
+use(Prowl:536) [!enemy(#2).dead]
+use(Call Darkness:256)
+use(Spectral Strike:442)
+use(Arcane Dash:1536)
+if [enemy(#3).active]
+use(Howl:362)
+use(Shadowmeld:2253)
+use(Surge of Power:593) [!weather(Darkness:257) & self(Salverun:3545).active]
+use(Surge of Power:593) [self(Chrominius:1152).active]
+endif
+use(#1) [round>3]
+change(next)
+-----------------
+
+==================================================
+
+=== Delver Mardei ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Emmigosa (97207), Chrominius (68662)
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025) [ enemy.aura(Flame Breath:500).exists ]
+use(Flame Breath:501)
+use(Ice Tomb:624) [ !enemy.is(Dustie:3568) ]
+use(Arcane Storm:589)
+use(Breath:115)
+if [ enemy.is(Dustie:3568) ]
+    use(Howl:362) [ enemy.hp>1665 & self.aura(Dragonkin:245).exists ]
+    use(Howl:362) [ enemy.hp>1110 & !self.aura(Dragonkin:245).exists ]
+    use(Surge of Power:593)
+endif
+use(Bite:110)
+change(next)
+-----------------
+
+==================================================
+
+=== Swog the Elder ===
+Strategy: Default Strategy
+Pets: Baa'lial (205637), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(2223)
+use(377)
+-----------------
+
+==================================================
+
+=== The Terrible Three ===
+Strategy: Default Strategy
+Pets: Anomalus (161964), Sunblade Micro-Defender (90212), Chrominius (68662)
+--- TD Script ---
+standby [round=5]
+use(Corrosion:447) [round=1]
+use(Void Nova:2356)
+use(Poison Protocol:1954)
+use(Corrosion:447)
+use(Armageddon:1025)
+use(Surge of Power:593) [self.aura(Dragonkin:245).exists]
+use(Bite:110)
+change(next)
+--
+-----------------
+
+==================================================
+
+=== Sharp as Flint ===
+Strategy: Default Strategy
+Pets: Playful Frostkin (143811), Water Waveling (62820), Pandaren Water Spirit (66950)
+--- TD Script ---
+change(#2) [round=2]
+use(Razor Talons:2237) [round~4,6]
+use(Armageddon:1025) [round>6]
+use(Geyser:418)
+if [enemy(#3).active]
+use(Call Darkness:256) [enemy(#3).hp<=1811 & !enemy.ability(Digest Brains:1065).usable]
+use(Call Darkness:256) [enemy(#3).hp<=1492]
+endif
+use(Nocturnal Strike:517) [weather(Darkness:257).duration!=0]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Adinakon ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Pet Bombling (9656), Iron Starlette (77221)
+--- TD Script ---
+ability(Explode:282)
+ability(Call Darkness:256)
+change(next)
+-----------------
+
+==================================================
+
+=== Two and Two Together ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Explode:282) [enemy.hp.can_explode]
+use(Powerball:566) [round=3]
+use(Wind-Up:459)
+change(next)
+-----------------
+
+==================================================
+
+=== Eye of the Stormling ===
+Strategy: Default Strategy
+Pets: Pet Bombling (9656), Scrapyard Tunneler (154791), Iron Starlette (77221)
+--- TD Script ---
+ability(Explode:282)
+ability(Pump:297)
+change(next)
+-----------------
+
+==================================================
+
+=== Lyver ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Leveling Pet / Any, Zandalari Anklerender (70451)
+--- TD Script ---
+use(Explode:282)
+use(Black Claw:919) [ !enemy.aura(Black Claw:918).exists ]
+use(Hunting Party:921)
+change(next)
+-----------------
+
+==================================================
+
+=== The Grand Master ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Winter's Little Helper (15705), Anomalus (161964)
+--- TD Script ---
+change(#2) [round=6]
+use(Ice Tomb:624) [enemy(#1).active]
+use(Call Blizzard:206) [round=2]
+use(Ice Lance:413)
+use(Poison Protocol:1954)
+use(Void Nova:2356)
+use(Corrosion:447)
+change(#3)
+-----------------
+
+==================================================
+
+=== Mini Manafiend Melee ===
+Strategy: Default Strategy
+Pets: Brilliant Spore (86719), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Blinding Powder:1015)
+use(Explode:282)
+use(Armageddon:1025) [enemy.hp<531]
+use(Razor Talons:2237) [!enemy.aura(2238).exists]
+use(Flame Breath:501)
+change(next)
+-----------------
+
+==================================================
+
+=== Enok the Stinky ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652) [round=3]
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Flock:581)
+ability(Hunting Party:921)
+ability(Leap:364)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== You Have to Start Somewhere ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Emmigosa (97207), Wild Etherwyrm (171666)
+--- TD Script ---
+change(#3) [self(#2).active]
+if [enemy(#3).active]
+use(Surge of Power:593) 
+use(Explode:282)
+endif
+use(#2) [enemy.round=2]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== The Oldest Dragonfly ===
+Strategy: Default Strategy
+Pets: Umbrafen Spore (86717), Lunar Lantern (55571), Festival Lantern (55574)
+--- TD Script ---
+change(#1) [self(#3).active]
+use(Illuminate:460)
+use(Soul Ward:751) [round=6 & self.hp<1063]
+use(Light:461) [round>2]
+use(Beam:114) [round>2]
+use(Blinding Powder:1015)
+use(Explode:282)
+change(next)
+-----------------
+
+==================================================
+
+=== They're Full of Stars! ===
+Strategy: Default Strategy
+Pets: Cursed Birman (86061), Corrupted Blood (127953), Leveling Pet / Any
+--- TD Script ---
+use(Explode:282) [enemy.hp.can_explode]
+use(Prowl:536) [!self.aura(Undead:242).exists]
+use(Call Darkness:256)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Storm-Touched Swoglet ===
+Strategy: Default Strategy
+Pets: Brilliant Spore (86719), Mechanical Pandaren Dragonling (64899), Crimson Spore (86716)
+--- TD Script ---
+ability(Explode:282) [round~1,3]
+ability(Flyby:515)
+ability(Call Darkness:256)
+ability(Nocturnal Strike:517)
+change(next)
+-----------------
+
+==================================================
+
+=== Vortex - Legendary ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Ikky (86447), Zandalari Anklerender (70451)
+--- TD Script ---
+use(Blistering Cold:786) 
+use(Chop:943) [round=2] 
+use(BONESTORM!!:1762) 
+change(Ikky:1532) [self(Boneshard:1963).dead] 
+use(Flock:581) [enemy.aura(Black Claw:918).exists] 
+use(Black Claw:919)
+-----------------
+
+==================================================
+
+=== Vortex - Rare ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Zandalari Kneebiter (69796), Leveling Pet / Any
+--- TD Script ---
+use(haunt:652)
+use(claw:919) [ !enemy.aura(claw:918).exists ]
+use(finisher:921)
+change(next)
+-----------------
+
+==================================================
+
+=== Storm-Touched Skitterer ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(claw:919) [ !enemy.aura(claw:918).exists ]
+use(flock:581) [ !enemy.aura(flock:542).exists ]
+use(filler:184)
+-----------------
+
+==================================================
+
+=== Wildfire - Epic ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Zandalari Anklerender (70451), Elfin Rabbit (62178)
+--- TD Script ---
+ability(Blistering Cold:786)
+ability(Chop:943) [!enemy.aura(Bleeding:491).exists]
+ability(BONESTORM!!:1762) [!self.aura(Undead:242).exists]
+ability(Chop:943)
+
+ability(Primal Cry:920)
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Hunting Party:921)
+
+ability(Stampede:163)
+ability(Scratch:119)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Wildfire - Rare ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Black Claw:919) [round=1]
+ability(Flock:581)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Storm-Touched Slyvern ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Grumpling (97229), Winter's Little Helper (15705)
+--- TD Script ---
+ability(Immolate:178) [!enemy.aura(Immolate:177).exists]
+ability(Flyby:515) [!enemy.aura(Weakened Defenses:516).exists]
+ability(Explode:282)
+ability(Gift of Winter's Veil:586)
+change(next)
+-----------------
+
+==================================================
+
+=== Tremblor - Rare ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Crimson Spore (86716), Umbrafen Spore (86717)
+--- TD Script ---
+ability(Black Claw:919) [round=1]
+ability(Flock:581) [round=2]
+ability(Explode:282)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Storm-Touched Ohuna ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ round = 1 ]
+use(curse:218)
+use(haunt:652)
+use(claw:919) [ !enemy.aura(claw:918).exists ]
+use(flock:581)
+change(next)
+-----------------
+
+==================================================
+
+=== Flow - Legendary ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Infected Squirrel (61828), Toothy (24388)
+--- TD Script ---
+ability(Time Bomb:602)
+ability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]
+ability(Armageddon:1025)
+
+ability(Rabid Strike:666) [!enemy.aura(Rabies:807).exists]
+ability(Corpse Explosion:663)
+
+ability(Rip:803) [!enemy.aura(Bleeding:491).exists]
+ability(Blood in the Water:423)
+ability(Surge:509)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Flow - Rare ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Umbrafen Spore (86717), Brilliant Spore (86719)
+--- TD Script ---
+ability(Black Claw:919) [round=1]
+ability(Flock:581)
+ability(Explode:282)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Dragonkin Battler of Zaralek Cavern ===
+Strategy: Default Strategy
+Pets: Emerald Proto-Whelp (68850), Stormborne Whelpling (97205), Leveling Pet / Any
+--- TD Script ---
+ability(Emerald Presence:597) [round=1]
+
+ability(Lift-Off:170) [self.aura(Whirlpool:512).duration=1]
+ability(Dragon's Call:2283)
+
+ability(Call Lightning:204) [enemy(#3).active & !enemy.aura(Tough n' Cuddly:1111).exists]
+ability(Call Lightning:204) [enemy(#3).active & enemy.hp<823 & enemy.aura(Tough n' Cuddly:1111).exists & self.aura(Dragonkin:245).exists]
+ability(Call Lightning:204) [enemy(#3).active & enemy.hp<529 & enemy.aura(Tough n' Cuddly:1111).exists]
+
+ability(Thunderbolt:779)
+
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Mechanical Battler of Zaralek Cavern ===
+Strategy: Default Strategy
+Pets: Runeforged Servitor (115140), Pet Bombling (9656), Tranquil Mechanical Yeti (15699)
+--- TD Script ---
+change(#2) [enemy(#2).active]
+
+ability(Minefield:634)
+ability(Explode:282) [enemy.aura(Minefield:635).duration=7]
+ability(Zap:116)
+
+ability(Jolt:908) [enemy(#2).active]
+ability(Supercharge:208)
+ability(Call Lightning:204)
+ability(#1)
+
+standby
+change(#1)
+-----------------
+
+==================================================
+
+=== ShinmuraQuest: Are They Not Beautiful? ===
+Strategy: Default Strategy
+Pets: Grumpling (97229), Winter's Little Helper (15705), Father Winter's Helper (15698)
+--- TD Script ---
+ability(Eggnog:835) [enemy(#3).active & enemy.ability(Conflagrate:179).duration=4]
+ability(Gift of Winter's Veil:586)
+ability(Frost Shock:416) [!enemy.aura(Frost Shock:415).exists & enemy(#1).active]
+ability(Call Blizzard:206) [!weather(Blizzard:205)]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Delver MardeiQuest: Delver Mardei ===
+Strategy: Default Strategy
+Pets: Anubisath Idol (68659), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Sandstorm:453)
+use(Rupture:814)
+use(Crush:406)
+change(next)
+-----------------
+
+==================================================
+
+=== Illidari Masters: Sissix ===
+Strategy: Default Strategy
+Pets: Voidskimmer (162518), Feline Familiar (53884), Leveling Pet / Any
+--- TD Script ---
+use(Cleansing Rain:230) [round=2]
+use(Water Jet:118) [self.aura(Pumped Up:296).exists & enemy.hpp=100]
+use(Pump:297)
+use(#1) [enemy(#2).active]
+
+if [enemy(#3).active]
+use(Prowl:536)
+use(Call Darkness:256)
+standby [self(#3).hp<712 & self(#3).type=1]
+standby [self(#3).hp<316 & self(#3).type=9]
+standby [self(#3).hp<475 & self(#3).type!=6]
+standby [self(#1).active]
+endif
+
+change(next)
+-----------------
+
+==================================================
+
+=== Illidari Masters: Madam Viciosa ===
+Strategy: Default Strategy
+Pets: Mechanical Pandaren Dragonling (64899), Rapana Whelk (64352), Silkbead Snail (63001)
+--- TD Script ---
+standby [round=1]
+change(#3) [enemy(#3).active & enemy.round=2]
+change(#1) [!enemy(#1).active]
+use(Acidic Goo:369) [self.round=1]
+use(Dive:564) [enemy.round>5]
+use(Absorb:449)
+use(Decoy:334)
+use(Thunderbolt:779) [enemy(#3).active]
+use(Breath:115)
+change(#2)
+-----------------
+
+==================================================
+
+=== Illidari Masters: Nameless Mystic ===
+Strategy: Default Strategy
+Pets: Mechanical Pandaren Dragonling (64899), Darkmoon Zeppelin (55367), Leveling Pet / Any
+--- TD Script ---
+ability(Decoy:334) [self(#1).active]
+ability(Thunderbolt:779) [!enemy(#1).active]
+ability(Breath:115)
+ability(Explode:282) [enemy.hp<618]
+ability(Missile:777)
+change(#2)
+-----------------
+
+==================================================
+
+=== Fight Night: AmaliaFamily Familiar ===
+Strategy: Default Strategy
+Pets: Thunderscale Whelpling (148995), Malfunctioning Microbot (154798), Leveling Pet / Any
+--- TD Script ---
+change(#1) [self(#3).played]
+standby [enemy.aura(Puppies of the Flame:1355).exists]
+change(#2) [round=5]
+use(Thunderbolt:779) [!enemy(#1).active]
+use(Call Lightning:204)
+use(Zap:116)
+use(Explode:282) [enemy(#3).active]
+use(Alert!:1585)
+change(#3)
+-----------------
+
+==================================================
+
+=== Fight Night: Heliosus ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(218)
+ability(652)
+change(#2) 
+ability(919) [self.round=1]
+ability(581)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir GalvestonFamily Familiar ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Sunborne Val'kyr (106181), Leveling Pet / Any
+--- TD Script ---
+change(next) [self(#1).dead & !self(#3).played]
+use(#3) [round~1]
+use(#2) [round~3]
+if [enemy.hp>246]
+use(Surge of Light:769)
+use(Holy Charge:767)
+endif
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Rats! ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(218)
+ability(652)
+change(#2) [self(#1).dead]
+ability(919) [!enemy.aura(918).exists]
+ability(581)
+-----------------
+
+==================================================
+
+=== Fight Night: Stitches Jr. Jr. ===
+Strategy: Default Strategy
+Pets: Darkmoon Tonk (55356), Chrominius (68662), Leveling Pet / Any
+--- TD Script ---
+ability(301)
+change(#2)
+ability(362)
+ability(593)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany NelsonFamily Familiar ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#1) [self(#3).played]
+change(#2) [round=2]
+use(Prowl:536) [round=3]
+use(Moonfire:595) [round=4]
+use(Greench's Gift:1076) [enemy(#3).active]
+use(Ice Tomb:624) [enemy(#1).active]
+use(Spirit Claws:974)
+change(#3)
+-----------------
+
+==================================================
+
+=== Only Pets Can Prevent Forest Fires ===
+Strategy: Default Strategy
+Pets: Voidskimmer (162518), Eternal Strider (61088), Sea Pony (55386)
+--- TD Script ---
+change(#3) [!self(#3).played & enemy(#3).hpp<100]
+change(#2) [self(#3).active]
+
+use(Water Jet:118) [round=2]
+use(Whirlpool:513)
+use(Prowl:536)
+
+use(Pump:297) [enemy(#2).active & enemy.round=1]
+use(Pump:297) [enemy.ability(Extra Plating:392).duration=2]
+use(Cleansing Rain:230) [!weather(Cleansing Rain:229)]
+use(Pump:297) [self.aura(Pumped Up:296).exists]
+
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Meet The Maw ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Crimson Spore (86716), Leveling Pet / Any
+--- TD Script ---
+ability(Razor Talons:2237) [!enemy.aura(Razor Talons:2238).exists]
+ability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]
+ability(Armageddon:1025)
+
+ability(Explode:282)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Stand Up to Bullies ===
+Strategy: Default Strategy
+Pets: Clockwork Gnome (48609), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+change(#1) [self(#2).dead]
+use(#1) [round=1]
+use(#3) [round=2]
+change(#2) [round=3]
+use(Black Claw:919) [!enemy.aura(Black Claw).exists]
+use(Flock:581)
+use(Build Turret:710) [enemy.aura(Black Claw).exists]
+use(Metal Fist:384)
+-----------------
+
+==================================================
+
+=== Dealing with SatyrsFamily Familiar ===
+Strategy: Default Strategy
+Pets: Mechanical Pandaren Dragonling (64899), Fossilized Hatchling (45340), Leveling Pet / Any
+--- TD Script ---
+ability(Explode:282) [enemy.hp<561 & enemy(#3).active]
+ability(Thunderbolt:779) [!enemy(#2).active]
+ability(BONESTORM:649)
+ability(Ancient Blessing:611) [!self.aura(Undead:242).exists & self.hpp<100]
+ability(#1)
+change(#1)
+-----------------
+
+==================================================
+
+=== Training with BreddaFamily Familiar ===
+Strategy: Default Strategy
+Pets: Elfin Rabbit (62178), Snowshoe Rabbit (7560), Tolai Hare (63557)
+--- TD Script ---
+change(#3) [self(#2).played]
+use(Supercharge:208) [enemy(#3).active]
+use(Ion Cannon:209) [enemy(#3).active]
+use(Alert!:1585) [enemy(#2).active]
+use(Dodge:312)
+use(Stampede:163) [enemy(#2).active]
+use(Flurry:360) [enemy.aura(Shattered Defenses:542).exists]
+use(Stampede:163)
+change(next)
+-----------------
+
+==================================================
+
+=== Tiny Poacher, Tiny AnimalsFamily Familiar ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Winter's Little Helper (15705), Mechanical Pandaren Dragonling (64899)
+--- TD Script ---
+-- rng in the beginning (<0.5%)
+quit [enemy(#1).dead & round=4]
+--
+-- rare case: too many critical strikes Ice lance Turn4+ 5
+use(Explode:282) [enemy(#1).dead & enemy(#2).dead]
+--
+use(Explode:282) [enemy(#1).dead & enemy(#3).dead & enemy(#2).hp<561]
+use(Ice Tomb:624)
+use(Call Blizzard:206)
+use(Ice Lance:413)
+use(Thunderbolt:779) [enemy(#3).active & enemy.aura(Stunned:927).exists]
+use(Breath:115)
+change(next)
+-----------------
+
+==================================================
+
+=== Wildlife Protection Force ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [round=1]
+change(#2) [round=2]
+
+ability(Razor Talons:2237) [!enemy.aura(Razor Talons:2238).exists]
+ability(Armageddon:1025)
+
+ability(Poison Protocol:1954) [enemy.aura(Corrosion:446).exists]
+ability(Void Nova:2356) [!self.ability(Poison Protocol:1954).usable]
+ability(Corrosion:447)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Snail Fight!Family Familiar ===
+Strategy: Default Strategy
+Pets: Xu-Fu, Cub of Xuen (71942), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+quit [self(#2).dead]
+standby [round=1]
+change(#2) [!self(#2).active]
+change(#3) [enemy(#1).dead & !self(#3).played]
+
+if [enemy(#3).active]
+use(Feed:1016) [self.aura(Prowl:543).exists]
+standby [enemy.aura(Underwater:830).exists]
+use(Prowl:536) [self.hp>723 & self.ability(Feed:1016).duration<2]
+use(Feed:1016)
+use(Bite:110)
+endif
+
+use(Prowl:536)
+use(Feed:1016) [self.aura(Prowl:543).duration=1]
+use(Bite:110) [!self.aura(Prowl:543).exists & enemy.hpp<100 & !enemy(#2).active]
+use(Bite:110) [enemy.ability(Headbutt:376).usable]
+standby
+-----------------
+
+==================================================
+
+=== Jarrun's LadderFamily Familiar ===
+Strategy: Default Strategy
+Pets: Anomalus (161964), Infernal Pyreclaw (127951), Leveling Pet / Any
+--- TD Script ---
+if [self(#1).active]
+change(#2) [round=3]
+change(#2) [self(#1).dead]
+use(Poison Protocol:1954)
+use(Void Nova:2356) [enemy(#2).hp>95]
+standby [enemy.aura(Undead:242).exists]
+use(Ooze Touch:445)
+endif
+
+if [self(#2).active]
+standby [enemy.aura(Undead:242).exists]
+change(#3) [round=8]
+use(Great Sting:1966) [round>4]
+use(Cleave:1273)
+endif
+
+if [self(#3).active]
+change(#1)
+endif
+-----------------
+
+==================================================
+
+=== My Beast's BiddingFamily Familiar ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [self(#2).active]
+use(Arcane Storm:589)
+use(Mana Surge:489)
+use(Toxic Smoke:640) [enemy.hp<=390]
+use(Wind-Up:459)
+change(next)
+-----------------
+
+==================================================
+
+=== All Pets Go to Heaven ===
+Strategy: Default Strategy
+Pets: Mud Jumper (83642), Swamp Croaker (69819), Benax (113136)
+--- TD Script ---
+use(bubble:934) [ enemy.ability(bigdot:218).usable ]
+use(frogdot:232) [ !enemy.aura(frogdot:231).exists ]
+use(frogdot:232) [ enemy.aura(undead:242).exists ]
+use(snaildot:369) [ !enemy.aura(snaildot:368).exists ]
+use(filler:228)
+use(filler:449)
+change(#2) [ !self(#2).played & !self(#2).level.max ]
+change(#3)
+-----------------
+
+==================================================
+
+=== Beasts of Burden: ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Explode:282) [enemy.hp<=620]
+use(Toxic Smoke:640) [enemy.aura(Toxic Smoke:639).duration!=2]
+use(Wind-Up:459)
+-----------------
+
+==================================================
+
+=== Andurs ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Explode:282) [enemy.hp<=620]
+use(Toxic Smoke:640) [enemy.aura(Toxic Smoke:639).duration!=2]
+use(Wind-Up:459)
+-----------------
+
+==================================================
+
+=== Rydyr ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+ability(Explode:282) [enemy.hp<1178]
+ability(#1)
+change(#2) [self(#1).dead]
+-----------------
+
+==================================================
+
+=== FlummoxedFamily Familiar ===
+Strategy: Default Strategy
+Pets: Seaborne Spore (86718), Violet Sporbit (222590), Crimson Spore (86716)
+--- TD Script ---
+use(Blinding Powder:1015)
+use(Glowing Toxin:270) [!enemy.aura(Glowing Toxin:271).exists]
+use(Creeping Fungus:743) [!enemy.aura(Creeping Fungus:742).exists]
+use(Explode:282) [self(#2).active]
+use(Explode:282) [self(#2).dead]
+change(#2)
+change(#1)
+-----------------
+
+==================================================
+
+=== Threads of Fate ===
+Strategy: Default Strategy
+Pets: Mechanical Pandaren Dragonling (64899), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(#1) [ enemy.round~1,2 ] 
+ability(#2) [ enemy(#3).hp<556 ] 
+ability(#3) [ enemy(#3).active & enemy.hp>555 ] 
+ability(#1) 
+change(#2)
+-----------------
+
+==================================================
+
+=== Mana Tap ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Mechanical Pandaren Dragonling (64899), Leveling Pet / Any
+--- TD Script ---
+standby [enemy.aura(Dodge:311).exists]
+ability(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]
+ability(Razor Talons:2237) [!enemy.aura(Razor Talons:2238).exists]
+ability(Flame Breath:501) [enemy.aura(Prismatic Barrier:443).exists]
+ability(Armageddon:1025) [enemy(#2).active]
+ability(Explode:282) [enemy(#3).active & enemy.hp<470]
+ability(Thunderbolt:779)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Crystalsnap ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+ability(Flock:581) [enemy.aura(Black Claw:918).exists]
+ability(Black Claw:919)
+change(Ikky:1532)
+-----------------
+
+==================================================
+
+=== Kostos ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+use(Blistering Cold:786)
+use(BONESTORM!!:1762)
+use(Chop:943)
+use(Black Claw:919) [ self.round=1 ]
+use(Flock:581)
+change(next)
+-----------------
+
+==================================================
+
+=== Gelatinous ===
+Strategy: Default Strategy
+Pets: Festival Lantern (55574), Lunar Lantern (55571), Iron Starlette (77221)
+--- TD Script ---
+use(Illuminate:460) [ round>2 ]
+use(Soul Ward:751) [ round>1 & enemy.hp>148 ]
+use(Beam:114) [ round!=4 ]
+use(Explode:282)
+change(next)
+-----------------
+
+==================================================
+
+=== Sewer Creeper ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Zandalari Kneebiter (69796), Zandalari Toenibbler (70453)
+--- TD Script ---
+ability(Black Claw:919) [!enemy(#1).aura(Black Claw:918).exists]
+ability(BONESTORM!!:1762) [round=3]
+ability(Blistering Cold:786)
+ability(Chop:943)
+standby [self(#2).active]
+standby [self(#3).active]
+change(next)
+-----------------
+
+==================================================
+
+=== The Countess ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+use(Blistering Cold:786) [enemy(The Countess:3074).hp.full]
+use(Chop:943) [enemy(The Countess:3074).aura(Blistering Cold:785).duration>2]
+change(Ikky:1532)
+use(Black Claw:919) [!enemy(The Countess:3074).aura(Black Claw:918).exists]
+use(Flock:581)
+-----------------
+
+==================================================
+
+=== Briarpaw ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Darkmoon Zeppelin (55367), Leveling Pet / Any
+--- TD Script ---
+if [ !enemy.aura(Dodge:311).exists ]
+    use(Missile:777) [ self.power=260 & enemy.hp<177 ]
+    use(Missile:777) [ self.power=273 & enemy.hp<185 ]
+    use(Missile:777) [ self.power=289 & enemy.hp<195 ]
+    use(Missile:777) [ self.power=325 & enemy.hp<217 ]
+endif
+if [ enemy.aura(Dodge:311).exists ]
+    change(next) [ self.aura(Decoy:333).exists & self.ability(Decoy:334).duration<6 ]
+    use(Decoy:334) [ !self.aura(Decoy:333).exists ]
+endif
+-- Delete or comment out Explode line if you want all pets alive
+use(Explode:282) [ round=8 ]
+-- Stop deleting here
+if [ enemy.ability(Quick Dodge:2422).usable & !self.aura(Decoy:333).exists & round>4 ]
+    change(#2)
+    change(#1)
+endif
+use(Missile:777) [ !enemy.aura(Dodge:311).exists ]
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Chittermaw ===
+Strategy: Default Strategy
+Pets: Fel-Afflicted Skyfin (128158), Darkmoon Glowfly (67329), Shrine Fly (65216)
+--- TD Script ---
+change(Darkmoon Zeppelin:339) [round=2]
+change(Fel-Afflicted Skyfin:2119) [round=6]
+change(Iron Starlette:1387) [round=7]
+use(Glowing Toxin:270)
+use(Decoy:334) [round=3]
+standby [round=4]
+use(Explode:282)
+-----------------
+
+==================================================
+
+=== Mistwing ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#2) [round=3]
+use(Blistering Cold:786)
+use(Chop:943)
+use(Smoke Cloud:2239)
+use(Toxic Spray:2232) [!enemy.aura(Toxic Wound:2112).exists]
+use(Flurry:360)
+change(next)
+-----------------
+
+==================================================
+
+=== Tiny Madness ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+standby [round=2]
+ability(Curse of Doom:218) [round=3]
+ability(Haunt:652) [round=4]
+ability(Dead Man's Party:1093) [!enemy.aura(Shattered Defenses:542).exists]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Living Statues Are Tough ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218) 
+ability(Haunt:652) 
+ability(Dead Man's Party:1093) [!enemy.aura(Shattered Defenses:542).exists]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Retinus the Seeker ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Explode:282) [enemy.hp<610]
+use(Flock:581) [enemy.aura(Black Claw:918).exists]
+use(Black Claw:919)
+use(Thunderbolt:779)
+use(Missile:777)
+change(next)
+-----------------
+
+==================================================
+
+=== I Am The One Who Whispers ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Flock:581) [ enemy.aura(Black Claw:918).exists ]
+use(Black Claw:919)
+use(Scorched Earth:172)
+use(Breath:115)
+change(next)
+-----------------
+
+==================================================
+
+=== Dune Buggy ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Zandalari Anklerender (70451), Leveling Pet / Any
+--- TD Script ---
+ability(Blistering Cold:786) [round=1]
+ability(BONESTORM:1762) [round>2]
+ability(Chop:943)
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Hunting Party:921)
+change(next)
+-----------------
+
+==================================================
+
+=== Watch Where You Step ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Inflation:1002) [enemy.aura(Shattered Defenses:542).duration<2]
+ability(#1) [self(#3).active]
+ability(#3)
+change(next)
+-----------------
+
+==================================================
+
+=== Strange Looking Dogs ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Benax (113136), Mud Jumper (83642)
+--- TD Script ---
+change(#2) [ self(Iron Starlette:1387).dead & !self(#2).played ]
+change(#3) [ self(Iron Starlette:1387).dead & self(#2).played ]
+use(Wind-Up:459) [ !self.aura(Wind-Up:458).exists ]
+use(Supercharge:208) [ !self.aura(Supercharged:207).exists ]
+use(Powerball:566) [ !self.aura(Speed Boost:831).exists & enemy(Pokey:2332).active ]
+use(Wind-Up:459)
+use(Swarm of Flies:232) [ !enemy.aura(Swarm of Flies:231).exists ]
+use(Bubble:934)
+use(Tongue Lash:228)
+-----------------
+
+==================================================
+
+=== Unbreakable ===
+Strategy: Default Strategy
+Pets: Clockwork Gnome (48609), Francois (134406), Knockoff Blingtron (99505)
+--- TD Script ---
+standby [self.aura(Stunned:927).exists]
+ability(#3)
+change(next)
+-----------------
+
+==================================================
+
+=== Sea Creatures Are Weird ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Mechanical Pandaren Dragonling (64899), Leveling Pet / Any
+--- TD Script ---
+quit [ enemy(#1).active & !enemy.ability(Sweep:457).usable ]
+change(#1) [ self(#3).active ]
+change(#3) [ self(#1).dead ]
+if [ self(#1).active ]
+    ability(Supercharge:208) [ round~2,6 ]
+    ability(Wind-Up:459) [ enemy(#1).active ]
+    ability(Wind-Up:459) [ round>6 & self.aura(Mechanical:244).exists & self.aura(Wind-Up:458).exists ]
+    ability(Powerball:566)
+endif
+ability(Explode:282) [ enemy(#3).active & enemy(#3).hp<561 ]
+ability(Thunderbolt:779) [ !enemy(#2).dead & enemy(#2).hp<245 ]
+ability(Thunderbolt:779) [ enemy(#3).active ]
+ability(Breath:115)
+-----------------
+
+==================================================
+
+=== Automated Chaos ===
+Strategy: Default Strategy
+Pets: Playful Frostkin (143811), Tiny Snowman (15710), Leveling Pet / Any
+--- TD Script ---
+change(#3) [ enemy(#3).active ]
+standby [ self(#3).active ]
+change(#1) [ round = 6 ]
+use(1955) [ round = 1 ]
+use(118) [ round = 7 & enemy(#1).hp > 1250 ]
+standby [ round = 7 ]
+use(418)
+change(#2)
+use(206) [ round = 5 ]
+use(481) [ enemy.aura(417).exists ]
+use(477)
+-----------------
+
+==================================================
+
+=== This Little Piggy Has Sharp Tusks ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(next) [ self(#1).dead & !self(#3).played ] 
+ability(#2) [ !enemy.aura(217).exists ] 
+ability(#3) 
+ability(#1)
+-----------------
+
+==================================================
+
+=== What's the Buzz? ===
+Strategy: Default Strategy
+Pets: Emerald Proto-Whelp (68850), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ round=1 ]
+change(#2) [ round=2 ]
+change(#3) [ round= 3 ]
+use(#3)
+use(#2)
+-----------------
+
+==================================================
+
+=== Rogue Azerite ===
+Strategy: Default Strategy
+Pets: Pandaren Water Spirit (66950), Rapana Whelk (64352), Silkbead Snail (63001)
+--- TD Script ---
+ability(Whirlpool:513) [self(Pandaren Water Spirit:868).active]
+ability(Dive:564) [self(Pandaren Water Spirit:868).active]
+ability(Water Jet:118) [self(Pandaren Water Spirit:868).active]
+change(#2) [self(Pandaren Water Spirit:868).dead & !self(#3).active]
+change(#3)
+ability(Shell Shield:310) [self(#3).aura(Shell Shield:309).duration <2]
+ability(Dive:564)
+ability(Absorb:449)
+-----------------
+
+==================================================
+
+=== Night Horrors ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Lil' Bling (73011), Leveling Pet / Any
+--- TD Script ---
+change(next) [ self(#1).dead & !self(#3).played ]
+ability(Black Claw:919) [ !enemy.aura(Black Claw:918).exists ]
+ability(Black Claw:919) [ enemy(#3).active & self.hp>366 ]
+ability(Flock:581)
+ability(Make it Rain:985)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Add More to the Collection ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Xu-Fu, Cub of Xuen (71942), Stormborne Whelpling (97205)
+--- TD Script ---
+change(#3) [enemy(#3).active]
+ability(어슬렁:536) [enemy(#2).active]
+ability(비전 폭풍:589)
+ability(부정한 희생:321)
+ability(#2)
+ability(#1) 
+change(next)
+-----------------
+
+==================================================
+
+=== Small Beginnings ===
+Strategy: Default Strategy
+Pets: Feline Familiar (53884), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ round~1,4 ]
+use(Prowl:536)
+use(Call Darkness:256)
+use(Spectral Strike:442)
+use(Nocturnal Strike:517)
+change(next)
+-----------------
+
+==================================================
+
+=== You've Never Seen Jammer Upset ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+if [ self(Iron Starlette:1387).active ] 
+ability(Wind-Up:459) [ round=1 ] 
+ability(Supercharge:208) [ round=2 ] 
+ability(Wind-Up:459) [ round=3 ] 
+ability(Wind-Up:459) [ round=4 ] 
+change(#2) [ round=5 ] 
+ability(Wind-Up:459) [ round >= 6 ] 
+endif 
+change(Iron Starlette:1387) [ self(#2).active ]
+-----------------
+
+==================================================
+
+=== Critters are Friends, Not Food ===
+Strategy: Default Strategy
+Pets: Anomalus (161964), Sentinel's Companion (88225), Leveling Pet / Any
+--- TD Script ---
+ability(Void Nova:2356)
+ability(Poison Protocol:1954)
+ability(Soulrush:752) [enemy(#2).active]
+ability(Moonfire:595) [enemy(#3).active]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Keeyo's Champions of Vol'dun ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Xu-Fu, Cub of Xuen (71942), Leveling Pet / Any
+--- TD Script ---
+change(#2) [ enemy(#1).hp<715 ]
+use(Booby-Trapped Presents:1080)
+use(Greench's Gift:1076)
+use(Club:1079)
+use(Moonfire:595) [ !weather(Moonlight:596) ]
+use(Prowl:536) [ enemy(#3).active ]
+use(Spirit Claws:974)
+-----------------
+
+==================================================
+
+=== Desert Survivors ===
+Strategy: Default Strategy
+Pets: Coldlight Surfrunner (143821), Fluxfire Feline (68838), Leveling Pet / Any
+--- TD Script ---
+use(Whirlpool:513)
+use(Inner Vision:216) [enemy.aura(Whirlpool:512).exists & enemy(#3).active]
+use(Inner Vision:216) [enemy.aura(Underground:340).exists]
+use(Inner Vision:216) [enemy.aura(Whirlpool:512).duration=1]
+use(Punch:111)
+use(Pounce:535) [enemy(#2).active]
+use(Supercharge:208)
+use(Pounce:535)
+change(next)
+-----------------
+
+==================================================
+
+=== Snakes on a Terrace ===
+Strategy: Default Strategy
+Pets: Corgnelius (112144), Copperfur Kit (171702), Alpine Foxling (63550)
+--- TD Script ---
+use(Puppy Parade:1681) [ self.round=1 ]
+use(Howl:362)
+use(Moonfire:595) [ round=4 ]
+use(Prowl:536)
+use(#1) [ !enemy(#1).active & enemy.round!=1 ]
+change(next)
+-----------------
+
+==================================================
+
+=== Ezra Grimm ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Barnaby (143796), Leveling Pet / Any
+--- TD Script ---
+change(#2) [self.aura(Howl:1725).exists & self(#1).active]
+change(#1) [self(#2).active & enemy(#3).active & enemy.hpp=100 & enemy.aura(Blinding Poison:1048).exists]
+change(#2) [self(#3).active & enemy(#3).active]
+change(#3) [self(#2).active & enemy(#2).active]
+change(#2) [round=3]
+use(Blistering Cold:786)
+use(Chop:943)
+use(Blinding Poison:1049)
+use(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+use(Barbed Stinger:1369)
+--
+use(Dodge:312) [self.aura(Elementium Bolt:605).exists]
+use(Tornado Punch:1052) [enemy.hp<335]
+use(Jab:219)
+change(#3)
+-----------------
+
+==================================================
+
+=== Postmaster Malown ===
+Strategy: Default Strategy
+Pets: Coastal Scuttler (143045), Sapphire Crab (192365), Sapphire Crab (192365)
+
+==================================================
+
+=== Darkness ===
+Strategy: Default Strategy
+Pets: Bone Serpent (88577), Spectral Spinner (97324), Widget the Departed (86067)
+
+==================================================
+
+=== AoE/Cleave ===
+Strategy: Default Strategy
+Pets: Abyssal Slitherling (154814), Blightbreath (115148), Mechanical Pandaren Dragonling (64899)
+
+==================================================
+
+=== Dazzling Dance ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Black-Footed Fox Kit (97741), Blazehound (127947)
+
+==================================================
+
+=== Sandstorm (Shielding) ===
+Strategy: Default Strategy
+Pets: Squirky (113440), Living Sandling (69748), Iron Starlette (77221)
+
+==================================================
+
+=== Bleeding ===
+Strategy: Default Strategy
+Pets: Ichabod (183638), Toothy (24388), Snarly (26050)
+
+==================================================
+
+=== Black Claw ===
+Strategy: Default Strategy
+Pets: Corefire Imp (68664), Foulfeather (143564), Leveling Pet / Any
+
+==================================================
+
+=== Using PvE Pets ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Anubisath Idol (68659), Iron Starlette (77221)
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Soul of the Aspects (58163), Mechanical Pandaren Dragonling (64899), Crimson Spore (86716)
+--- TD Script ---
+use(753) [ round=5 ]
+use(404)
+use(282)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Puddle Terror (88300), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Dive:564) [enemy.aura(Stoneskin:435).exists & enemy.ability(Crystal Prison:569).usable]
+ability(Nature's Ward:574) [self.hpp<100 & !self.aura(Nature's Ward:820).exists]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Mining Monkey ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Timeless Mechanical Dragonling (179125), Sunblade Micro-Defender (90212)
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=2]
+use(Armageddon:1025)
+use(Call Darkness:256)
+use(Nocturnal Strike:517)
+change(next)
+-----------------
+
+==================================================
+
+=== "Captain" Klutz ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.round < 3 ]
+ability(218)
+ability(652)
+change(#2)
+ability(919) [ !enemy.aura(918).exists ]
+ability(581)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Kun-Lai Runt (68846), Stunted Yeti (68805), Teroclaw Hatchling (81431)
+--- TD Script ---
+ability(124)
+ability(202)
+change(#2)
+
+ability(#3) [enemy.hp<618 & enemy.type !~ 3]
+ability(#3) [enemy.hp<406 & enemy.type ~ 3]
+ability(#2) [!self(#2).aura(820).exists]
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Monkey ===
+Strategy: Default Strategy
+Pets: Tranquil Mechanical Yeti (15699), Anubisath Idol (68659), Leveling Pet / Any
+--- TD Script ---
+use(208) [ round=1 ]
+use(204)
+use(490) [ self.aura(512).duration=1 ]
+use(490) [ enemy.aura(341).exists ]
+use(436) [ self.aura(435).duration<=1 & enemy(#3).hp>227 ]
+use(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== Cookie's Leftovers ===
+Strategy: Default Strategy
+Pets: Boneshard (115146), Ikky (86447), Leveling Pet / Any
+--- TD Script ---
+standby [ round=1]
+standby [ self.aura(Asleep:926).exists]
+use(Blistering Cold:786) [self.ability(Blistering Cold:786).usable]
+use(Chop:943) [!enemy.aura(Bleeding:491).exists]
+use(BONESTORM!!:1762)
+change(#2) [self(#1).dead]
+use(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+use(Flock:581)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+
+=== Dos-Ryga ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#1) [self(#2).active & self.dead]
+change(#2) [round=2]
+use(Supercharge:208) [self.aura(Wind-Up:458).exists]
+use(Wind-Up:459)
+use(Howl:362) [self.aura(Undead:242).exists]
+use(Diseased Bite:499)
+-----------------
+
+==================================================
+
+=== Kafi ===
+Strategy: Default Strategy
+Pets: Draenei Micro Defender (84885), Pet Bombling (9656), Leveling Pet / Any
+--- TD Script ---
+use(Explode:282) [enemy.hp.can_explode]
+use(282) [enemy.aura(639).exists & enemy.hp<700]
+use(282) [self(#1).active & round>2]
+use(Toxic Smoke:640) [!enemy.aura(639).exists]
+use(Reflective Shield:1105)
+use(#1)
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Ti'un the Wanderer ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Mechanical Pandaren Dragonling (64899), Leveling Pet / Any
+--- TD Script ---
+if [ self(#1).active]
+standby [enemy(#1).hp.can_be_exploded]
+ability(Black Claw:919) [ round=1 ]
+ability(#3) [ enemy.aura(Black Claw:918).exists ]
+ability(#1) [ !enemy.hp.can_be_exploded]
+endif
+change(#3) [ self(#1).dead ]
+ability(#1) [ !enemy.hp.can_be_exploded]
+ability(Explode:282) [ enemy.hp.can_be_exploded]
+-----------------
+
+==================================================
+
+=== Gorespine ===
+Strategy: Default Strategy
+Pets: Draenei Micro Defender (84885), Crimson Spore (86716), Pet Bombling (9656)
+--- TD Script ---
+use(Explode:282) [enemy.hp<=1250]
+use(Reflective Shield:1105) [self.round=1]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Skitterer Xi'a ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Crimson Spore (86716), Leveling Pet / Any
+--- TD Script ---
+use(Flyby:515) [round=1]
+use(Thunderbolt:779)
+use(Explode:282)
+change(next)
+-----------------
+
+==================================================
+
+=== Greyhoof ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+ability(Wind-Up:459) [round=1]
+ability(Supercharge:208) [round=2]
+ability(Wind-Up:459) [round=3]
+ability(Powerball:566)
+change(#2) [self(#1).dead]
+ability(Explode:282) [enemy.hp<614]
+ability(Decoy:334)
+ability(Missile:777)
+-----------------
+
+==================================================
+
+=== Lucky Yi ===
+Strategy: Default Strategy
+Pets: Zandalari Kneebiter (69796), Zandalari Anklerender (70451), Zandalari Anklerender (70451)
+--- TD Script ---
+use(Hunting Party:921) [enemy.aura(918).exists]
+use(Black Claw:919) [self.round=1]
+use(Leap:364)
+change(next)
+-----------------
+
+==================================================
+
+=== Ka'wi the Gorger ===
+Strategy: Default Strategy
+Pets: Zandalari Anklerender (70451), Zandalari Kneebiter (69796), Ikky (86447)
+--- TD Script ---
+change(#2) [self(#1).dead]
+use(Garra negra:919) [!enemy.aura(Garra negra:918).exists]
+use(Bandada:581)
+use(Grupo de caza:921)
+use(Saltar:364)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Curse of Doom:218)
+use(Haunt:652)
+use(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+use(Flock:581)
+change(next)
+-----------------
+
+==================================================
+
+=== Ashlei ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Armageddon:1025) [enemy.aura(Flammenatem:500).exists & enemy.aura(Messerkrallen:2238).exists & enemy(#3).active]
+use(Messerkrallen:2237) [enemy.aura(Flammenatem:500).exists & !enemy.aura(Messerkrallen:2238).exists]
+use(Flammenatem:501)
+-----------------
+
+==================================================
+
+=== Gargra ===
+Strategy: Default Strategy
+Pets: Sunreaver Micro-Sentry (69778), Darkmoon Tonk (55356), Leveling Pet / Any
+--- TD Script ---
+change(#2) [enemy(#2).active & !self(#2).played]
+change(#1) [self(#2).active]
+use(Fel Immolate:901) [enemy(#3).active]
+use(Supercharge:208)
+use(Haywire:916)
+use(Ion Cannon:209)
+change(#3)
+-----------------
+
+==================================================
+
+=== Taralune ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Stormborne Whelpling (97205), Nexus Whelpling (68845)
+--- TD Script ---
+if [enemy(#1).active]
+standby [round=1]
+ability(Supercharge:208) [round=3]
+ability(Wind-Up:459)
+endif
+
+change(#3) [self(#1).dead & !self(#3).played]
+change(#2) [self(#3).active]
+ability(Arcane Storm:589)
+ability(Mana Surge:489)
+ability(#2)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Tarr the Terrible ===
+Strategy: Default Strategy
+Pets: Anomalus (161964), Micromancer (172148), Leveling Pet / Any
+--- TD Script ---
+change(#1) [self(#2).played]
+change(#2) [round=4]
+use(Corrosion:447) [round=1]
+use(Poison Protocol:1954)
+use(Void Nova:2356)
+use(Corrosion:447)
+use(Raise Ally:2298)
+use(Dead Man's Party:1093)
+change(#3)
+-----------------
+
+==================================================
+
+=== Vesharr ===
+Strategy: Default Strategy
+Pets: Chrominius (68662), Mechanical Pandaren Dragonling (64899), Lil' Tarecgosa (54027)
+--- TD Script ---
+ability(Arcane Explosion:299)
+ability(Explode:282) [enemy.aura(Mechanical:244).exists]
+ability(Thunderbolt:779) [!enemy.aura(Flying Mark:1420).exists]
+ability(Breath:115)
+change(#2)
+-----------------
+
+==================================================
+
+=== Wrathion ===
+Strategy: Default Strategy
+Pets: Rabbit (61080), Snowshoe Rabbit (7560), Tolai Hare (63557)
+--- TD Script ---
+change(next) [self.dead]
+use(Dodge:312) [self.aura(Ice Tomb:623).duration = 1]
+use(Stampede:163) [enemy(Cindy:1299).active & enemy.round = 4]
+use(Stampede:163) [enemy(Alex:1301).active & !self.aura(Ice Tomb:623).exists]
+standby [enemy.aura(Undead:242).exists]
+use(Scratch:119)
+use(Crush:406) [enemy(Alex:1301).aura(Shattered Defenses:542).exists]
+use(Stoneskin:436) [!self.aura(Stoneskin:435).exists]
+use(Deflection:490) [self.aura(Elementium Bolt:605).duration = 1]
+use(Crush:406)
+use(Dead Man's Party:1093)
+use(Macabre Maraca:1094)
+-----------------
+
+==================================================
+
+=== Chen Stormstout ===
+Strategy: Default Strategy
+Pets: Mechanical Axebeak (79410), Teroclaw Hatchling (81431), Leveling Pet / Any
+--- TD Script ---
+change(next) [ enemy(#2).active & !self(#3).played ]
+ability(Decoy:334)
+ability(Haywire:916)
+ability(Dodge:312) [ enemy(#2).active ]
+ability(Dodge:312) [ enemy.aura(Barrel Ready:353).exists ]
+ability(Ravage:802) [ enemy(#2).active & enemy.hp<927 ]
+ability(Ravage:802) [ enemy(#3).hp<619 ]
+ability(#1)
+change(#1)
+-----------------
+
+==================================================
+
+=== Shademaster Kiryn ===
+Strategy: Default Strategy
+Pets: Sister of Temptation (90206), Ashstone Core (68666), Leveling Pet / Any
+--- TD Script ---
+change(#3) [enemy(Eté:1286).active & !self(#3).played]
+change(#2) [self(#3).active]
+
+use(Frappé par l’amour:772) [enemy(Stormoen:1287).active]
+
+use(Malédiction funeste:218) [!enemy(Eté:1286).active]
+use(Horion de l’ombre:422) [enemy(Nairn:1288).active]
+
+standby [enemy.aura(Esquive:311).exists]
+use(Prison de cristal:569) [enemy.aura(Rôder:543).exists]
+use(Peau de pierre:436) [enemy(Eté:1286).active & !self.aura(Peau de pierre:435).exists ]
+use(Peau de pierre:436) [enemy(Eté:1286).active & enemy.round =1]
+use(Brûlure:113)
+
+use(Frappé par l’amour:772) [enemy.aura(Rôder:543).exists]
+use(Horion de l’ombre:422)
+
+change(#1)
+-----------------
+
+==================================================
+
+=== Wise Mari ===
+Strategy: Default Strategy
+Pets: Lil' Bling (73011), Netherspawn, Spawn of Netherspawn (86081), Leveling Pet / Any
+--- TD Script ---
+ability(Blingtron Gift Package:989) [ enemy.aura(Make it Rain:986).duration=1 ]
+ability(Make it Rain:985)
+ability(Inflation:1002)
+ability(Consume Magic:1231) [ self.aura(Whirlpool:512).exists ]
+ability(Creeping Ooze:448)
+change(#2)
+-----------------
+
+==================================================
+
+=== Blingtron 4000 ===
+Strategy: Default Strategy
+Pets: Eternal Strider (61088), Dark Phoenix Hatchling (47944), Phoenix Hatchling (26119)
+--- TD Script ---
+ability(Pump:297) [round~1,3]
+ability(Water Jet:118)
+
+ability(Nature's Ward:574) [!self.aura(Nature's Ward:820).exists]
+ability(Hawk Eye:521) [!self.aura(Hawk Eye:520).exists]
+ability(Claw:429)
+
+ability(Conflagrate:179) [enemy.aura(Immolate:177).exists]
+ability(Immolate:178) [!enemy.aura(Immolate:177).exists]
+ability(Burn:113)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Sully "The Pickle" McLeary ===
+Strategy: Default Strategy
+Pets: Leopard Tree Frog (63919), Frog (62312), Wood Frog (7550)
+--- TD Script ---
+ability(Swarm of Flies:232) [ !enemy.aura(Swarm of Flies:231).exists ]
+ability(Healing Wave:123) [ self.hpp<75 ]
+ability(Swarm of Flies:232) [ enemy.aura(Undead:242).exists ]
+ability(Swarm of Flies:232) [ enemy.aura(Underground:340).exists ]
+ability(Tongue Lash:228)
+change(#2) [ self(#1).dead & enemy(#2).active ]
+ability(Lift-Off:170) [ enemy(#3).active ]
+ability(Thrash:202)
+change(#3)
+ability(Call Darkness:256)
+ability(Nocturnal Strike:517) [ weather(Darkness:257) ]
+ability(#1)
+-----------------
+
+==================================================
+
+=== Dr. Ion Goldbloom ===
+Strategy: Default Strategy
+Pets: Chrominius (68662), Fel Flame (62621), Searing Scorchling (25706)
+--- TD Script ---
+use(Howl:362) [enemy.aura(Flying:341).exists]
+use(Surge of Power:593) [enemy.aura(Howl:1725).exists]
+use(Arcane Explosion:299)
+use(Conflagrate:179) [enemy(#3).active]
+use(Flame Breath:501) [!enemy.aura(Flame Breath:500).exists]
+use(Scorched Earth:172)
+use(Ion Cannon:209) [enemy(#3).hp<1142]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Chi-Chi, Hatchling of Chi-Ji ===
+Strategy: Default Strategy
+Pets: Corefire Imp (68664), Tolai Hare (63557), Rat (61366)
+--- TD Script ---
+standby [ round=7 & self(#3).active ]
+use(409) [ round=1 ]
+use(592) [ round=2 ]
+use(163) [ round=4 ]
+use(518)
+change(next)
+-----------------
+
+==================================================
+
+=== Zao, Calfling of Niuzao ===
+Strategy: Default Strategy
+Pets: Nuts (54227), Zandalari Anklerender (70451), Leveling Pet / Any
+--- TD Script ---
+use(Nut Barrage:167) [round=1]
+use(Woodchipper:411) [self(#1).active]
+use(Black Claw:919) [self.round=1 & self(#2).active]
+use(Hunting Party:921) [self(#2).active]
+use(Leap:364) [self(#2).active]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Xu-Fu, Cub of Xuen ===
+Strategy: Default Strategy
+Pets: Pet Bombling (9656), Crimson Spore (86716), Seaborne Spore (86718)
+--- TD Script ---
+use(116) [ round=1 ]
+use(282)
+use(518)
+change(#2)
+-----------------
+
+==================================================
+
+=== Yu'la, Broodling of Yu'lon ===
+Strategy: Default Strategy
+Pets: Lunar Lantern (55571), Festival Lantern (55574), Seaborne Spore (86718)
+--- TD Script ---
+ability(Illuminate:460)
+ability(Explode:282)
+ability(#1) [self(#3).dead]
+change(next)
+-----------------
+
+==================================================
+
+=== another strategy ===
+Strategy: Default Strategy
+Pets: Puddle Terror (88300), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Clobber:350)
+use(Dive:564) [enemy(Yu'la, Broodling of Yu'lon:1317).aura(Flying:341).exists]
+use(Punch:111)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Not Quite Dead Yet ===
+Strategy: Default Strategy
+Pets: Blighthawk (61826), Fragment of Suffering (90204), Leveling Pet / Any
+--- TD Script ---
+change(next) [ self.dead ] 
+ability(170) [ !self.aura(242).exists ] 
+ability(420) 
+ability(1392) [ enemy(2231).active & enemy.round = 1 ] 
+ability(752) [ enemy(2232).hp < 463 ] 
+ability(752) [ enemy(2231).active ] 
+ability(1066)
+-----------------
+
+==================================================
+
+=== Critters With Huge Teeth ===
+Strategy: Default Strategy
+Pets: Lovebird Hatchling (85710), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Hawk Eye:521) [!self.aura(Hawk Eye:520).exists]
+use(Flock:581)
+use(Lovestruck:772) [enemy(#2).active & !enemy(#3).dead]
+use(Predatory Strike:518) [enemy.hp<630 & enemy(#2).active]
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Element of Success ===
+Strategy: Default Strategy
+Pets: Drafty (127863), Zephyrian Prince (127862), Pandaren Air Spirit (68467)
+--- TD Script ---
+ability(Wind Buffet:1963) [round=2] 
+ability(Autumn Breeze:964) [round=4] 
+ability(#1) 
+change(next)
+-----------------
+
+==================================================
+
+=== Machine Learning ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Rooter (143142), Sunblade Micro-Defender (90212)
+--- TD Script ---
+ability(Supercharge:208) [ self.aura(Wind-Up:458).exists ]
+ability(Wind-Up:459)
+change(next) [ !self.ability(Haywire:916).usable ]
+ability(Haywire:916)
+change(next)
+-----------------
+
+==================================================
+
+=== BurlyQuest: Strange Looking Dogs ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+use(Ice Tomb:624) [enemy.hpp = 100 & !enemy.aura(Ice Tomb:623).exists]
+use(Call Blizzard:206) [!enemy.aura(Undead:242).exists & !weather(Blizzard:205)]
+use(#1)
+
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Ellie VernQuest: Sea Creatures Are Weird ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Father Winter's Helper (15698), Winter's Little Helper (15705)
+--- TD Script ---
+use(Ice Tomb:624) [enemy.aura(Undead:242).exists]
+standby [enemy.aura(Undead:242).exists]
+use(Ice Tomb:624) [enemy.hpp>95 & !enemy.aura(Ice Tomb:623).exists]
+use(Call Blizzard:206)
+use(Ice Lance:413)
+change(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Eddie FixitQuest: Automated Chaos ===
+Strategy: Default Strategy
+Pets: Anubisath Idol (68659), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy("Fixed" Remote Control Rocket Chicken:2204).active ]
+use(Sandstorm:453)
+use(Rupture:814)
+use(Crush:406)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Michael SkarnQuest: What's the Buzz? ===
+Strategy: Default Strategy
+Pets: Anubisath Idol (68659), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Deflection:490) [round=11]
+use(Stoneskin:436) [self.aura(Stoneskin:435).duration<2]
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Dilbert McClintQuest: Night Horrors ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Father Winter's Helper (15698), Winter's Little Helper (15705)
+--- TD Script ---
+standby [self.aura(Blinding Poison:1048).exists]
+use(Booby-Trapped Presents:1080) [!enemy.aura(Booby-Trapped Presents:1081).exists]
+use(Greench's Gift:1076) [enemy(Atherton:2209).aura(Underground:340).exists]
+use(Greench's Gift:1076) [enemy.ability(Burrow:159).duration>=1 & enemy.ability(Blinding Poison:1049).duration>=1]
+use(Greench's Gift:1076) [enemy(Jennings:2208).active]
+use(Gift of Winter Veil:586)
+use(Call Blizzard:206)
+use(Ice Lance:413)
+use(Dive Bomb:2463)
+use(Arm Cannon Blast:2462)
+change(next)
+-----------------
+
+==================================================
+
+=== Captain HermesQuest: Crab People ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Father Winter's Helper (15698), Winter's Little Helper (15705)
+--- TD Script ---
+use(Ice Tomb:624) [!enemy.aura(Ice Tomb:623).exists]
+use(Call Blizzard:206)
+use(Ice Lance:413)
+change(next)
+-----------------
+
+==================================================
+
+=== Talia SparkbrowQuest: Add More to the Collection ===
+Strategy: Default Strategy
+Pets: Winter's Little Helper (15705), Father Winter's Helper (15698), Winter's Little Helper (15705)
+--- TD Script ---
+standby [enemy(#2).active & enemy.round=1 & self.speed.fast]
+ability(Deflection:490) [enemy(#2).active & enemy.round=2]
+ability(Deflection:490) [round=1]
+ability(Rampage:124)
+ability(Call Blizzard:206) [weather(Sandstorm:454)]
+ability(Call Blizzard:206) [enemy.ability(Sandstorm:453).usable & self.speed.slow]
+ability(Ice Lance:413) [enemy.ability(Cocoon Strike:506).usable & self.speed.slow]
+ability(Ice Lance:413) [enemy(Whiplash:2366).aura(Silk Cocoon:505).exists]
+ability(Gift of Winter's Veil:586) 
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== KaragaQuest: Critters are Friends, Not Food ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Anubisath Idol (68659), Leveling Pet / Any
+--- TD Script ---
+change(next) [ self.dead ]
+ability(1080)
+ability(1076)
+ability(814) [ enemy.hp > 400 ]
+ability(436) [ self.aura(435).duration <= 1 ]
+ability(#1)
+-----------------
+
+==================================================
+
+=== LozuQuest: Marshdwellers ===
+Strategy: Default Strategy
+Pets: Rotten Little Helper (73741), Father Winter's Helper (15698), Winter's Little Helper (15705)
+--- TD Script ---
+ability(Ice Tomb:624) [round=1]
+ability(Gift of Winter's Veil:586) [enemy(#2).active]
+ability(Gift of Winter's Veil:586) [!enemy.ability(Cocoon Strike:506).usable]
+ability(Call Blizzard:206) [!weather(Blizzard:205)]
+ability(Ice Lance:413)
+change(next)
+-----------------
+
+==================================================
+
+=== KeeyoQuest: Keeyo's Champions of Vol'dun ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Winter's Little Helper (15705), Rotten Little Helper (73741)
+--- TD Script ---
+standby [enemy.aura(Dodge:2060).exists]
+ability(Gift of Winter's Veil:586)
+ability(Call Blizzard:206) [round=2]
+ability(Booby-Trapped Presents:1080) [self.round=1]
+ability(Greench's Gift:1076) [enemy(Tikka:2346).hp<1060]
+ability(Rampage:124)
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== KusaQuest: Desert Survivors ===
+Strategy: Default Strategy
+Pets: Anubisath Idol (68659), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Deflection:490) [enemy.aura(Underground:340).exists]
+use(Stoneskin:436) [!self.aura(Stoneskin:435).exists]
+use(Stoneskin:436) [self.aura(Stoneskin:435).duration<2]
+use(Crush:406)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== SizzikQuest: Snakes on a Terrace ===
+Strategy: Default Strategy
+Pets: Sunborne Val'kyr (106181), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [round=1]
+ability(#1) [!enemy(#3).dead]
+ability(#3)
+-----------------
+
+==================================================
+
+=== Haunted Humanoids ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+change(#2) [round=2]
+ability(Ice Tomb:624) [round=1]
+ability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]
+ability(Booby-Trapped Presents:1080) [self.round=1]
+ability(Greench's Gift:1076)
+ability(Call Blizzard:206)
+ability(#1)
+change(#1)
+-----------------
+
+==================================================
+
+=== Deathly Dragonkin ===
+Strategy: Default Strategy
+Pets: Lil' Tarecgosa (54027), Nexus Whelpling (68845), Lil' Tarecgosa (54027)
+--- TD Script ---
+use(Arcane Storm:589) [ round>1 & !enemy(#2).active ]
+if [ enemy(#1).active ]
+    use(Surge of Power:593) [ enemy.hp<1099 & self.aura(Dragonkin:245).exists ]
+    use(Surge of Power:593) [ enemy.hp<733 ]
+endif
+use(Surge of Power:593) [ enemy(#3).active ]
+use(Arcane Blast:421)
+use(Mana Surge:489)
+change(next)
+-----------------
+
+==================================================
+
+=== Flickering Fliers ===
+Strategy: Default Strategy
+Pets: Mechanical Axebeak (79410), Nightwreathed Watcher (149205), Leveling Pet / Any
+--- TD Script ---
+use(Decoy:334)
+use(Haywire:916) [ !enemy(#1).active ]
+use(Alpha Strike:504)
+use(Lift-Off:170) [ enemy.ability(Amplify Magic:488).usable & enemy.ability(Moonfire:595).duration<2 & !self.speed.fast ]
+use(Shadowmeld:2253) [ enemy(#3).active ]
+use(Dark Talon:1233)
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Creepy Critters ===
+Strategy: Default Strategy
+Pets: Lovebird Hatchling (85710), Rapana Whelk (64352), Silkbead Snail (63001)
+--- TD Script ---
+quit [self(#2).dead & !enemy(#2).dead]
+use(Predatory Strike:518) [round=3]
+use(Quicksand:912) [enemy.aura(Acidic Goo:368).exists]
+use(Dive:564) [enemy.ability(Amplify Magic:488).usable & enemy.hp>420]
+use(Acidic Goo:369) [enemy.hpp>50 & !enemy.aura(Acidic Goo:368).exists]
+use(#1)
+use(#2)
+change(next)
+-----------------
+
+==================================================
+
+=== Macabre Mechanicals ===
+Strategy: Default Strategy
+Pets: Darkmoon Zeppelin (55367), Iron Starlette (77221), Leveling Pet / Any
+--- TD Script ---
+if [self(Darkmoon Zeppelin:339).active]
+use(Explode:282) [enemy(Shelby:2972).active & enemy.hp <=618]
+use(Decoy:334)
+use(Missile:777)
+endif
+if [self(Iron Starlette:1387).active &enemy(Tinyhoof:2973).active]
+use(Wind-Up:459)
+endif
+if [self(Iron Starlette:1387).active & enemy(Glitterwing:2974).active]
+use(Toxic Smoke:640) [!enemy.aura(Toxic Smoke:639).exists]
+use(Toxic Smoke:640) [self(Iron Starlette:1387).hp<500]
+use(Wind-Up:459) [self.aura(Wind-Up:458).exists]
+use(Wind-Up:459)
+endif
+if [self(Lil' Bling:1320).active]
+use(Blingtron Gift Package:989)
+use(Make it Rain:985) [!enemy.aura(Make it Rain:986).exists]
+use(Inflation:1002)
+endif
+change(next)
+-----------------
+
+==================================================
+
+=== StratiosQuest: Cliffs of Bastion ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+change(#2) [round=2]
+ability(Ice Tomb:624) [round=1]
+ability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]
+ability(Booby-Trapped Presents:1080) [self.round=1]
+ability(Greench's Gift:1076)
+ability(Call Blizzard:206)
+ability(#1)
+change(#1)
+-----------------
+
+==================================================
+
+=== ZollaQuest: Micro Defense Force ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+ability(Ice Tomb:624) [round=1]
+ability(Ice Tomb:624) [enemy(#3).active & enemy.round=1]
+ability(Call Blizzard:206) [weather(Blizzard:205).duration<2]
+ability(Ice Lance:413)
+change(next)
+-----------------
+
+==================================================
+
+=== TheniaQuest: Thenia's Loyal Companions ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Winter's Little Helper (15705), Rotten Little Helper (73741)
+--- TD Script ---
+ability(Gift of Winter's Veil:586)
+ability(Booby-Trapped Presents:1080) [enemy(#2).active]
+ability(Call Blizzard:206) [weather(Blizzard:205).duration<2]
+ability(Ice Lance:413)
+standby
+change(next)
+-----------------
+
+==================================================
+
+=== Caregiver MaximillianQuest: Mighty Minions of Maldraxxus ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+change(#2) [round=3]
+change(#1) [enemy(#2).dead & enemy(#1).active]
+
+ability(Booby-Trapped Presents:1080) [enemy(#1).hp>0]
+standby [enemy(#3).active & enemy.ability(Lift-Off:170).usable]
+ability(Greench's Gift:1076)
+
+ability(Ice Tomb:624) [enemy.aura(Resilient:924).duration=1]
+ability(Call Blizzard:206)
+ability(Ice Tomb:624) [enemy.ability(Burrow:159).usable & enemy(#2).hp>0 & enemy(#1).active]
+
+ability(Gift of Winter's Veil:586)
+
+ability(#1)
+change(#1)
+-----------------
+
+==================================================
+
+=== Addius the TormentorQuest: The Mind Games of Addius ===
+Strategy: Default Strategy
+Pets: Father Winter's Helper (15698), Rotten Little Helper (73741), Winter's Little Helper (15705)
+--- TD Script ---
+use(Mind Games: Health:2388)
+use(Call Blizzard:206)
+use(Ice Tomb:624) [ round<5 ]
+use(Greench's Gift:1076)
+use(Ice Lance:413)
+change(next)
+-----------------
+
+==================================================
+
+=== FarylQuest: Airborne Defense Force ===
+Strategy: Default Strategy
+Pets: Anubisath Idol (68659), Father Winter's Helper (15698), Globe Yeti (128156)
+--- TD Script ---
+use(Deflection:490)
+use(Sandstorm:453)
+use(Creeping Insanity:1760) [enemy(Brite:3005).active]
+use(Gift of Winter's Veil:586)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/11028/Mega_Bite ===
+Strategy: Default Strategy
+Pets: Iron Starlette (77221), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Aufladen:208) [ !enemy.ability(Stachelpanzerschale:2324).usable ]
+use(Aufziehen:459)
+-----------------
+
+==================================================
+
+=== Trainer Grrglin ===
+Strategy: Default Strategy
+Pets: Blue Moth (21010), Grey Moth (62050), Amber Moth (65187)
+--- TD Script ---
+use(Cocoon Strike:506)
+use(Moth Dust:508)
+use(Alpha Strike:504)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/10529/Trainer_Grrglin ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Corgi Pup (106283), Leveling Pet / Any
+--- TD Script ---
+ability(Savage Talon:1370) [enemy.round>4]
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Puppy Parade:1681) [!enemy.aura(Shattered Defenses:542).exists]
+ability(Flock:581)
+ability(Superbark:1357) [enemy.hp>661]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Klick ===
+Strategy: Default Strategy
+Pets: Ikky (86447), Corgi Pup (106283), Leveling Pet / Any
+--- TD Script ---
+ability(Savage Talon:1370) [enemy.round>4]
+ability(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+ability(Puppy Parade:1681) [!enemy.aura(Shattered Defenses:542).exists]
+ability(Flock:581)
+ability(Superbark:1357) [enemy.hp>661]
+ability(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== Living Napalm ===
+Strategy: Default Strategy
+Pets: Fel Flame (62621), Dark Phoenix Hatchling (47944), Phoenix Hatchling (26119)
+--- TD Script ---
+standby [enemy.aura(Dodge:2060).exists]
+standby [enemy.aura(Undead:242).exists]
+
+change(#3) [enemy(Cockroach:2486).active]
+
+ability(Acidic Goo:369) [!enemy.aura(Acidic Goo:368).exists]
+ability(Corrosion:447) [!enemy.aura(Corrosion:446).exists & self(#1).active]
+ability(Gnash:2322)
+
+ability(Immolate:178) [!enemy.aura(Immolate:177).exists]
+ability(Conflagrate:179) [enemy.aura(Immolate:177).exists]
+ability(Burn:113)
+
+ability(Creeping Ooze:448) [!enemy.aura(Creeping Ooze:781).exists]
+ability(Corrosion:447) [!enemy.aura(Corrosion:446).exists]
+ability(Poison Spit:380)
+
+change(next)
+-----------------
+
+==================================================
+
+=== Living Permafrost ===
+Strategy: Default Strategy
+Pets: Leviathan Hatchling (90201), Crimson Shale Hatchling (62922), Amethyst Shale Hatchling (62182)
+--- TD Script ---
+use(Toxic Skin:1087) [round~1]
+use(Toxic Skin:1087) [self.aura(Toxic Skin:1086).duration~1]
+use(Whirlpool:513)
+use(Water Jet:118)
+change(#2) [enemy.type=10]
+change(#3) [enemy.type=5]
+use(Stoneskin:436) [!self.aura(Stoneskin:435).exists]
+use(Stoneskin:436) [self.aura(Stoneskin:435).duration=1]
+use(Leech Life:383) [enemy.aura(Webbed:338).exists]
+use(Sticky Web:339)
+use(Brittle Webbing:382) [!enemy.aura(Brittle Webbing:381).exists]
+use(Leech Life:383) [enemy.aura(Brittle Webbing:381).exists]
+use(Poison Spit:380)
+change(#2)
+change(#3)
+-----------------
+
+==================================================
+
+=== Door Control Console ===
+Strategy: Default Strategy
+Pets: Rapana Whelk (64352), Silkbead Snail (63001), Shimmershell Snail (62246)
+--- TD Script ---
+ability(Acidic Goo:369) [ enemy.hp.full ]
+use(Dive:564) [round=2] 
+use(Dive:564) [self.aura(Ice Tomb:623).duration=1] 
+use(Dive:564) [self.aura(Sewage Eruption:2063).duration=1] 
+use(Ooze Touch:445) 
+change(next)
+-----------------
+
+==================================================
+
+=== Leper Rat ===
+Strategy: Default Strategy
+Pets: Coastal Scuttler (143045), Golden Dragonhawk Hatchling (21055), Sapphire Crab (192365)
+--- TD Script ---
+ability(#3) [!enemy.aura(502).exists]
+standby [enemy.aura(2060).exists] 
+standby [enemy.aura(242).exists]
+ability(2067) [enemy.aura(542).exists]
+ability(2067) [enemy(2486).active]
+ability(163)
+ability(179) [enemy.aura(502).exists]
+ability(503) [self.ability(503).strong]
+ability(#1) 
+change(next)
+-----------------
+
+==================================================
+
+=== Gnomeregan Guard Mechanostrider ===
+Strategy: Default Strategy
+Pets: Broot (98463), Blossoming Ancient (71488), Leveling Pet / Any
+--- TD Script ---
+change(next) [ self.dead ]
+ability(Photosynthese:268) [ !self.aura(Photosynthese:267).exists ]
+ability(Sonnenlicht:404) [ !weather(Sonnenschein:403) ]
+ability(Panzerschild:310) [ !self.aura(Panzerschild:309).exists ]
+standby [ enemy.aura(Untot:242).exists ]
+ability(#1)
+-----------------
+
+==================================================
+
+=== Gnomeregan Guard Tiger ===
+Strategy: Default Strategy
+Pets: Tiny Snowman (15710), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+if [self(Tiny Snowman:117).active]
+use(Call Blizzard:206)
+use(Howling Blast:120)
+use(Snowball:477)
+change(next)
+endif
+
+if [self(#2).active]
+use(#1)
+change(next)
+endif
+
+if [self(#3).active]
+use(#1)
+endif
+-----------------
+
+==================================================
+
+=== Gnomeregan Guard Wolf ===
+Strategy: Default Strategy
+Pets: Crimson Moth (61314), Blue Moth (21010), Amber Moth (65187)
+--- TD Script ---
+ability(508)
+ability(506)
+ability(504)
+change(next)
+-----------------
+
+==================================================
+
+=== Pulverizer Bot Mk 6001 ===
+Strategy: Default Strategy
+Pets: Fel Pup (91823), Alpine Foxling (63550), Alpine Foxling Kit (63551)
+--- TD Script ---
+use(Howl:362)
+use(Lightning Shield:906)
+standby
+-----------------
+
+==================================================
+
+=== Fight Night: Sir Galveston ===
+Strategy: Default Strategy
+Pets: Court Scribe (112728), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+standby [ enemy.ability(Lift-Off:170).usable ]
+ability(#3) [ enemy(#2).dead ]
+ability(Stone Rush:621)
+ability(#1)
+change(#2)
+-----------------
+
+==================================================
+
+=== https://classic.wow-petguide.com/Encounter/2000031/]Nicki ===
+Strategy: Default Strategy
+Pets: Celestial Dragon (40624), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+change(#3) [ !self(#3).played ]
+change(#2) [ !self(#2).played ]
+change(#2) [ self(#1).dead ]
+change(#1)
+use(Ancient Blessing:611) [ self.hpp < 70 & !self.aura(Dragonkin:245).exists ]
+use(Ancient Blessing:611) [ self.hpp < 50 ]
+use(Moonfire:595) [ weather(Moonlight:596).duration <= 1 ]
+use(#1)
+standby
+-----------------
+
+==================================================
+
+=== Nicki Tinytech ===
+Strategy: Default Strategy
+Pets: Water Waveling (62820), Father Winter's Helper (15698), Rotten Little Helper (73741)
+--- TD Script ---
+change(#3) [round=5]
+change(next) [self.level<25]
+change(next) [self.dead]
+use(Geysir:418)
+use(Frostschock:416) [!enemy.aura(Frostschock:415).exists]
+use(#1)
+-----------------
+
+==================================================
+
+=== Burning Pandaren Spirit ===
+Strategy: Default Strategy
+Pets: Macabre Marionette (34770), Strand Crab (61312), Shore Crab (61158)
+--- TD Script ---
+quit [ self(#1).aura(Undead:242).exists & !enemy(#1).dead ]
+change(#2) [ !self(#2).played & self(#1).dead ]
+change(#3) [ self(#2).played & self(#1).dead ]
+ability(Macabre Maraca:1094) [ enemy.aura(Shattered Defenses:542).exists ]
+ability(Dead Man's Party:1093)
+ability(Surge:509) [ enemy(#2).active ]
+ability(Shell Shield:310) [ self.aura(Shell Shield:309).duration<=1 ]
+ability(Renewing Mists:511) [ self.aura(Renewing Mists:510).duration<=1 ]
+ability(Surge:509)
+-----------------
+
+==================================================
+
+=== Nitun ===
+Strategy: Default Strategy
+Pets: Unborn Val'kyr (71163), Macabre Marionette (34770), Leveling Pet / Any
+--- TD Script ---
+ability(Curse of Doom:218)
+ability(Haunt:652)
+change(#2)
+ability(Death and Decay:214) [self.round = 1]
+ability(Dead Man's Party:1093)
+ability(#1)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Bird ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Klutz's Battle Rat ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Razor Talons:2237) [round=1]
+use(Flame Breath:501) [round=3]
+use(Armageddon:1025)
+use(Dive Bomb:2463)
+change(next)
+-----------------
+
+==================================================
+
+=== Foe Reaper 50 ===
+Strategy: Default Strategy
+Pets: Crimson Spore (86716), Darkmoon Zeppelin (55367), Iron Starlette (77221)
+--- TD Script ---
+use(Explode:282)
+use(Ice Age:2512)
+use(Frost Nova:414)
+change(next)
+-----------------
+
+==================================================
+
+=== Angry Geode ===
+Strategy: Default Strategy
+Pets: Hatespark the Tiny (87669), Twilight Whelpling (154803), Leveling Pet / Any
+--- TD Script ---
+use(Conflagrate:179)
+use(Razor Talons:2237) [self.round=1]
+if [self.round=2 & self(#2).active]
+use(Rip:803)
+use(Flame Breath:501)
+endif
+use(Armageddon:1025)
+use(Twilight Fire:1890)
+use(Twilight Meteorite:1960)
+change(next)
+-----------------
+
+==================================================
+
+=== Unfortunate Defias ===
+Strategy: Default Strategy
+Pets: Timeless Mechanical Dragonling (179125), Hatespark the Tiny (87669), Twilight Whelpling (154803)
+--- TD Script ---
+use(Rip:803) [round=2]
+use(Razor Talons:2237) [round=1]
+use(Armageddon:1025)
+use(Twilight Meteorite:1960) [self.aura(Dragonkin:245).exists]
+use(Twilight Meteorite:1960) [enemy(#2).dead & enemy(#3).hp<330]
+use(Twilight Meteorite:1960) [enemy(#3).dead & enemy(#2).hp<330]
+use(Twilight Meteorite:1960) [enemy(#2).hp<254 & enemy(#3).hp<254]
+use(Twilight Fire:1890)
+change(next)
+-----------------
+
+==================================================
+
+=== Fight Night: Tiffany Nelson (Dragonkin) ===
+Strategy: Default Strategy
+Pets: Stormborne Whelpling (97205), Leveling Pet / Any, Leveling Pet / Any
+--- TD Script ---
+use(Time Bomb:602)
+use(Armageddon:1025)
+use(Call Lightning:204)
+use(Arcane Storm:589)
+use(#1)
+change(next)
+-----------------
+
+==================================================
+
+=== https://www.wow-petguide.com/Strategy/16923/Swog_the_Elder-Beast ===
+Strategy: Default Strategy
+Pets: Alpine Foxling (63550), Fel Pup (91823), Xu-Fu, Cub of Xuen (71942)
+--- TD Script ---
+change(#3) [round=7]
+change(#2) [round~3]
+change(#1) [round~5,9]
+use(Dazzling Dance:366) [round~1,10]
+use(Vengeance:997)
+use(Howl:362)
+change(next)
+-----------------
+
+==================================================
+

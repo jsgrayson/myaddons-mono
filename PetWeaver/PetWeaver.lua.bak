@@ -1,0 +1,124 @@
+-- 1. Define Addon Namespace
+local addonName, addonTable = ...
+
+-- ============================================================================
+-- Data Handling Functions
+-- ============================================================================
+
+-- Table to hold the clean list of pets we want to display
+addonTable.petList = {}
+
+-- Function to fetch real data from the WoW API and store it in our table
+local function UpdatePetList()
+    wipe(addonTable.petList) -- Clear existing data before refreshing
+    
+    if not C_PetJournal then return end
+    
+    local numPets = C_PetJournal.GetNumPets()
+    for i = 1, numPets do
+        local petID, speciesID, owned, customName, level, favorite, isRevoked, speciesName, icon, petType, companionID, tooltip, description, isWild, canBattle, isTradeable, isUnique, obtainable = C_PetJournal.GetPetInfoByIndex(i)
+        
+        if speciesID then
+            table.insert(addonTable.petList, {
+                index = i,
+                petID = petID,
+                speciesID = speciesID,
+                name = customName or speciesName or "Unknown",
+                level = level,
+                icon = icon or "Interface\\Icons\\INV_Misc_QuestionMark",
+                owned = owned,
+                petType = petType
+            })
+        end
+    end
+    
+    -- Print debug info
+    -- print(addonName .. ": Loaded " .. #addonTable.petList .. " pets.")
+    
+    -- Trigger update if the list frame is visible
+    if PetweaverList_Update then
+        PetweaverList_Update()
+    end
+end
+
+-- ============================================================================
+-- Hybrid Scroll Frame Logic
+-- ============================================================================
+
+-- This function is called automatically by the scroll frame whenever you scroll.
+function PetweaverList_Update()
+    if not PetweaverJournalFrame or not PetweaverJournalFrame.LeftInset or not PetweaverJournalFrame.LeftInset.ListScrollFrame then return end
+
+    local scrollFrame = PetweaverJournalFrame.LeftInset.ListScrollFrame
+    local buttons = scrollFrame.buttons
+    
+    if not buttons then return end
+    
+    local offset = HybridScrollFrame_GetOffset(scrollFrame)
+    local numPets = #addonTable.petList
+
+    for i = 1, #buttons do
+        local button = buttons[i]
+        local index = offset + i
+        if index <= numPets then
+            local petData = addonTable.petList[index]
+            
+            if button.name then button.name:SetText(petData.name) end
+            if button.icon then button.icon:SetTexture(petData.icon) end
+            if button.level then button.level:SetText(petData.level) end
+            
+            button:Show()
+        else
+            button:Hide()
+        end
+    end
+    
+    local buttonHeight = scrollFrame.buttonHeight or 46
+    HybridScrollFrame_Update(scrollFrame, numPets * buttonHeight, buttonHeight)
+end
+
+-- ============================================================================
+-- Main Addon Initialization & Events
+-- ============================================================================
+
+local function OnEvent(self, event, ...)
+    if event == "PLAYER_LOGIN" then
+        -- 1. Set up title and tabs
+        if PetweaverJournalFrameTitleText then 
+            PetweaverJournalFrameTitleText:SetText("Petweaver Journal"); 
+        end
+        
+        if PetweaverJournalFrame then
+             PanelTemplates_SetNumTabs(PetweaverJournalFrame, 2);
+             PanelTemplates_SetTab(PetweaverJournalFrame, 1);
+        end
+        
+        UpdatePetList()
+        
+    elseif event == "PET_JOURNAL_LIST_UPDATE" then
+        UpdatePetList()
+    end
+end
+
+local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("PLAYER_LOGIN")
+eventFrame:RegisterEvent("PET_JOURNAL_LIST_UPDATE")
+eventFrame:SetScript("OnEvent", OnEvent)
+
+-- ============================================================================
+-- Slash Command
+-- ============================================================================
+SLASH_PETWEAVER1 = "/petweaver"
+SlashCmdList["PETWEAVER"] = function(msg)
+    if PetweaverJournalFrame then
+        if PetweaverJournalFrame:IsShown() then
+            PetweaverJournalFrame:Hide()
+            if PetweaverScriptEditorFrame then PetweaverScriptEditorFrame:Hide() end
+        else
+            PetweaverJournalFrame:Show()
+            UpdatePetList() -- Ensure list is fresh when showing
+        end
+    else
+        print("Petweaver: Frame not loaded.")
+    end
+end

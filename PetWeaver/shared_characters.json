@@ -1,0 +1,37 @@
+{
+  "characters": [
+    {
+      "guid": "0x0000000012345678",
+      "name": "Zephyrmage",
+      "realm": "Area 52",
+      "class": "Mage",
+      "level": 80,
+      "gold": 450000,
+      "pets_collected": 1428,
+      "quests_completed": 12456
+    },
+    {
+      "guid": "0x0000000087654321",
+      "name": "Thornheal",
+      "realm": "Area 52",
+      "class": "Druid",
+      "level": 80,
+      "gold": 280000,
+      "pets_collected": 1312,
+      "quests_completed": 11203
+    },
+    {
+      "guid": "0x00000000ABCDEF01",
+      "name": "Grimtank",
+      "realm": "Area 52",
+      "class": "Warrior",
+      "level": 70,
+      "gold": 125000,
+      "pets_collected": 456,
+      "quests_completed": 4521
+    }
+  ],
+  "last_sync": "2025-11-28T09:00:00Z",
+  "total_gold": 855000,
+  "total_pets": 4196
+}

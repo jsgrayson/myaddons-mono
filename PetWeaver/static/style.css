@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-border: rgba(255, 215, 0, 0.3);
+    /* Gold border */
+    --primary: #fcd34d;
+    /* Gold */
+    --primary-hover: #fbbf24;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --success: #10b981;
+    --running: #f59e0b;
+    --error: #ef4444;
+    --wow-gold: #ffd700;
+    --wow-brown: #3e2723;
+    --card-bg: rgba(20, 20, 30, 0.6);
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: url('https://wow.zamimg.com/images/wow/backgrounds/warcraft.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.85);
+    z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cinzel', serif;
+    color: var(--wow-gold);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    position: relative;
+    padding-left: 60px;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 48px;
+    height: 48px;
+    background-image: url('https://wow.zamimg.com/images/wow/icons/large/inv_misc_head_dragon_01.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    border: 2px solid var(--wow-gold);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #fff, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: var(--wow-gold);
+    background: rgba(255, 215, 0, 0.1);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+nav a.active {
+    color: var(--bg-dark);
+    background: var(--wow-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Layout & Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--wow-gold), transparent);
+    opacity: 0.5;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--wow-gold);
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--wow-gold);
+    margin: 0.5rem 0;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    font-family: 'Cinzel', serif;
+}
+
+.subtext {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--wow-gold);
+    color: #3e2723;
+    border: 1px solid #ffd700;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    text-decoration: none;
+    min-height: 44px;
+    /* Touch-friendly minimum */
+    min-width: 44px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Touch optimization */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Touchscreen devices */
+    .btn-primary,
+    button,
+    a {
+        min-height: 48px;
+        /* Larger touch target on mobile */
+        padding: 1rem 1.5rem;
+    }
+
+    nav a {
+        padding: 0.75rem 1.25rem;
+        /* Easier to tap */
+    }
+}
+
+/* Status Indicator */
+.status-indicator {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    font-family: 'Cinzel', serif;
+}
+
+.status-indicator.idle {
+    color: var(--text-muted);
+}
+
+.status-indicator.running {
+    color: var(--running);
+    border-color: var(--running);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.status-indicator.completed {
+    color: var(--success);
+    border-color: var(--success);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.status-indicator.error {
+    color: var(--error);
+    border-color: var(--error);
+}
+
+/* Calendar Specific */
+.calendar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
+    margin-top: 1rem;
+}
+
+.calendar-table th {
+    padding: 1rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--wow-gold);
+    font-family: 'Cinzel', serif;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.calendar-table td {
+    padding: 0.8rem;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    vertical-align: top;
+    height: 100px;
+    transition: all 0.2s;
+}
+
+.calendar-table td:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-table td.squirt {
+    background: rgba(147, 51, 234, 0.15);
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: inset 0 0 20px rgba(147, 51, 234, 0.1);
+}
+
+.calendar-table td.pet-week {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.calendar-table td.today {
+    border: 2px solid var(--wow-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.icon-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.5rem;
+    display: block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Strategy & List Items */
+.strategy-card,
+.recommendation-item {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+}
+
+.strategy-card:hover,
+.recommendation-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--wow-gold);
+    transform: translateX(5px);
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+}
+
+.rank {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--wow-gold);
+    margin-right: 1rem;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.rec-info {
+    flex: 1;
+}
+
+.rec-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+.rec-reason {
+    font-size: 0.9rem;
+    color: var(--success);
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.pet-badge {
+    background: rgba(0, 0, 0, 0.4);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pet-badge::before {
+    content: "🐾";
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Inputs */
+input,
+select {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--wow-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    flex: 2;
+}
+
+.search-bar select {
+    flex: 1;
+}
+
+/* Loading & Empty States */
+.loading,
+.empty {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: 'Cinzel', serif;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3e2723;
+    border: 1px solid #5d4037;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4e342e;
+}
+
+/* Utility */
+.text-gold {
+    color: var(--wow-gold);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-main);
+}
+
+/* Nav toggle for mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav#main-nav {
+        display: none;
+    }
+
+    nav#main-nav.nav-expanded {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 0.5rem 0;
+    }
+}

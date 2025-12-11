@@ -1,0 +1,337 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Button name="PetweaverListButtonTemplate" virtual="true">
+        <Size x="296" y="46"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="icon">
+                    <Size x="38" y="38"/>
+                    <Anchors>
+                        <Anchor point="LEFT" x="4" y="0"/>
+                    </Anchors>
+                </Texture>
+                <Texture parentKey="background" file="Interface\PetBattles\PetJournal">
+                    <TexCoords left="0.00195313" right="0.48632813" top="0.00390625" bottom="0.09570313"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="2" y="-2"/>
+                        <Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <FontString parentKey="name" inherits="GameFontNormal" justifyH="LEFT">
+                    <Size x="180" y="16"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeKey="$parent.icon" relativePoint="TOPRIGHT" x="10" y="-2"/>
+                    </Anchors>
+                </FontString>
+                <FontString parentKey="level" inherits="GameFontHighlightSmall" justifyH="LEFT">
+                     <Size x="180" y="16"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeKey="$parent.name" relativePoint="BOTTOMLEFT" x="0" y="-2"/>
+                    </Anchors>
+                </FontString>
+            </Layer>
+            <Layer level="OVERLAY">
+                <Texture parentKey="rarityBorder" file="Interface\PetBattles\PetJournal">
+                    <TexCoords left="0.49023438" right="0.56835938" top="0.00390625" bottom="0.08203125"/>
+                    <Size x="42" y="42"/>
+                    <Anchors>
+                        <Anchor point="CENTER" relativeKey="$parent.icon" relativePoint="CENTER"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <HighlightTexture file="Interface\PetBattles\PetJournal">
+            <TexCoords left="0.00195313" right="0.48632813" top="0.10156250" bottom="0.19335938"/>
+            <Anchors>
+                <Anchor point="TOPLEFT" x="2" y="-2"/>
+                <Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+            </Anchors>
+        </HighlightTexture>
+        <Scripts>
+            <OnClick>
+                PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                -- Pass the mouse button used (LeftButton or RightButton)
+                Petweaver_OnListButtonClicked(self, button);
+            </OnClick>
+        </Scripts>
+    </Button>
+
+    <Frame name="PetweaverJournalFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
+        <Size x="850" y="600"/>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Layers>
+            <Layer level="OVERLAY" textureSubLevel="1">
+                <Texture name="$parentPortrait" parentKey="portrait" file="Interface\Icons\tracking_wildpet">
+                    <Size x="60" y="60"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="-5" y="5"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentTab1" parentKey="PetsTab" inherits="SpellBookSkillLineTabTemplate" id="1">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-30"/>
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.tooltip = "Pets";
+                        SetClampedTextureRotation(self:GetNormalTexture(), 90); 
+                        SetClampedTextureRotation(self:GetPushedTexture(), 90);
+                        SetClampedTextureRotation(self:GetDisabledTexture(), 90);
+                        SetClampedTextureRotation(self:GetHighlightTexture(), 90);
+                    </OnLoad>
+                </Scripts>
+            </Button>
+            <Button name="$parentTab2" parentKey="TeamsTab" inherits="SpellBookSkillLineTabTemplate" id="2">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parentTab1" relativePoint="BOTTOMLEFT" x="0" y="-15"/>
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.tooltip = "Saved Teams";
+                        SetClampedTextureRotation(self:GetNormalTexture(), 90); 
+                        SetClampedTextureRotation(self:GetPushedTexture(), 90);
+                        SetClampedTextureRotation(self:GetDisabledTexture(), 90);
+                        SetClampedTextureRotation(self:GetHighlightTexture(), 90);
+                    </OnLoad>
+                </Scripts>
+            </Button>
+            <Button name="$parentTab3" parentKey="QueueTab" inherits="SpellBookSkillLineTabTemplate" id="3">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parentTab2" relativePoint="BOTTOMLEFT" x="0" y="-15"/>
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.tooltip = "Leveling Queue";
+                        SetClampedTextureRotation(self:GetNormalTexture(), 90); 
+                        SetClampedTextureRotation(self:GetPushedTexture(), 90);
+                        SetClampedTextureRotation(self:GetDisabledTexture(), 90);
+                        SetClampedTextureRotation(self:GetHighlightTexture(), 90);
+                    </OnLoad>
+                </Scripts>
+            </Button>
+
+            <Frame name="$parentLeftInset" parentKey="LeftInset" useParentLevel="true" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="4" y="-60"/>
+                    <Anchor point="BOTTOMLEFT" x="4" y="26"/>
+                </Anchors>
+                <Size x="300" y="0"/>
+                <Frames>
+                    <Frame name="$parentFilterHeader" parentKey="FilterHeader">
+                        <Size x="0" y="40"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" x="2" y="-2"/>
+                            <Anchor point="TOPRIGHT" x="-2" y="-2"/>
+                        </Anchors>
+                        <Frames>
+                             <EditBox name="$parentSearchBox" inherits="SearchBoxTemplate" autoFocus="false">
+                                <Size x="180" y="20"/>
+                                <Anchors>
+                                    <Anchor point="LEFT" x="5" y="0"/>
+                                </Anchors>
+                            </EditBox>
+                        </Frames>
+                    </Frame>
+                    
+                    <ScrollFrame name="$parentListScrollFrame" parentKey="ListScrollFrame" inherits="HybridScrollFrameTemplate">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parentFilterHeader" relativePoint="BOTTOMLEFT" x="0" y="-5"/>
+                            <Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+                        </Anchors>
+                        <Frames>
+                            <Slider name="$parentScrollBar" parentKey="scrollBar" inherits="HybridScrollBarTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-15"/>
+                                    <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="0" y="15"/>
+                                </Anchors>
+                            </Slider>
+                        </Frames>
+                    </ScrollFrame>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentRightInset" parentKey="RightInset" useParentLevel="true" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPRIGHT" x="-6" y="-60"/>
+                    <Anchor point="BOTTOMRIGHT" x="-6" y="26"/>
+                    <Anchor point="TOPLEFT" relativeTo="$parentLeftInset" relativePoint="TOPRIGHT" x="5" y="0"/>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentSelectedPetDetails" parentKey="SelectedPetDetails">
+                         <Size y="250"/>
+                         <Anchors>
+                             <Anchor point="TOPLEFT" x="2" y="-2"/>
+                             <Anchor point="TOPRIGHT" x="-2" y="-2"/>
+                         </Anchors>
+                         <PlayerModel name="$parentModelFrame" parentKey="ModelFrame" inherits="ModelTemplate">
+                            <Size x="200" y="220"/>
+                            <Anchors>
+                                <Anchor point="TOPLEFT" x="5" y="-5"/>
+                            </Anchors>
+                            <Scripts>
+                                <OnLoad>
+                                    self:SetDisplayInfo(39334);
+                                    self:SetRotation(-0.6);
+                                </OnLoad>
+                            </Scripts>
+                        </PlayerModel>
+                        <FontString parentKey="PetName" inherits="GameFontNormalHuge" justifyH="LEFT" text="Select a Pet">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativeKey="$parent.ModelFrame" relativePoint="TOPRIGHT" x="10" y="-20"/>
+                                <Anchor point="RIGHT" x="-10" y="0"/>
+                            </Anchors>
+                        </FontString>
+                        <Texture parentKey="TypeIcon">
+                            <Size x="32" y="32"/>
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativeKey="$parent.PetName" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
+                            </Anchors>
+                        </Texture>
+                        <FontString parentKey="HealthText" inherits="GameFontHighlightLarge" justifyH="LEFT" text="HP: ---">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativeKey="$parent.TypeIcon" relativePoint="BOTTOMLEFT" x="0" y="-15"/>
+                            </Anchors>
+                        </FontString>
+                        <FontString parentKey="PowerText" inherits="GameFontHighlightLarge" justifyH="LEFT" text="Power: ---">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativeKey="$parent.HealthText" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+                            </Anchors>
+                        </FontString>
+                        <FontString parentKey="SpeedText" inherits="GameFontHighlightLarge" justifyH="LEFT" text="Speed: ---">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativeKey="$parent.PowerText" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+                            </Anchors>
+                        </FontString>
+                    </Frame>
+
+                     <Texture parentKey="Divider" file="Interface\Common\UI-TooltipDivider-Transparent">
+                        <Size x="0" y="8"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parentSelectedPetDetails" relativePoint="BOTTOMLEFT" x="5" y="5"/>
+                            <Anchor point="TOPRIGHT" relativeTo="$parentSelectedPetDetails" relativePoint="BOTTOMRIGHT" x="-5" y="5"/>
+                        </Anchors>
+                    </Texture>
+
+                    <Frame name="$parentTeamLoadout" parentKey="TeamLoadout">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parentSelectedPetDetails" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
+                            <Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentSlot1" parentKey="Slot1" inherits="PetBattleSlotTemplate">
+                                <Anchors>
+                                    <Anchor point="LEFT" x="25" y="0"/>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentSlot2" parentKey="Slot2" inherits="PetBattleSlotTemplate">
+                                <Anchors>
+                                    <Anchor point="LEFT" relativeKey="$parent.Slot1" relativePoint="RIGHT" x="20" y="0"/>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentSlot3" parentKey="Slot3" inherits="PetBattleSlotTemplate">
+                                <Anchors>
+                                    <Anchor point="LEFT" relativeKey="$parent.Slot2" relativePoint="RIGHT" x="20" y="0"/>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentSaveTeamButton" parentKey="SaveTeamButton" inherits="UIPanelButtonTemplate" text="Save Team">
+                                <Size x="100" y="22"/>
+                                <Anchors>
+                                    <Anchor point="RIGHT" relativePoint="RIGHT" x="-10" y="0"/>
+                                </Anchors>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </Frame>
+            
+            <Button name="$parentOpenScriptEditorButton" inherits="UIPanelButtonTemplate" text="Open Script Editor">
+                <Size x="160" y="22"/>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$parentRightInset" point="BOTTOMRIGHT" x="0" y="-28"/>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        if PetweaverScriptEditorFrame:IsShown() then PetweaverScriptEditorFrame:Hide() else PetweaverScriptEditorFrame:Show() end
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                self:RegisterForDrag("LeftButton");
+            </OnLoad>
+            <OnDragStart>
+                self:StartMoving();
+            </OnDragStart>
+            <OnDragStop>
+                self:StopMovingOrSizing();
+            </OnDragStop>
+        </Scripts>
+    </Frame>
+
+    <Frame name="PetweaverScriptEditorFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
+        <Size x="500" y="400"/>
+        <Anchors>
+            <Anchor point="CENTER" x="200" y="50"/>
+        </Anchors>
+        <Layers>
+            <Layer level="OVERLAY" textureSubLevel="1">
+                <Texture name="$parentPortrait" parentKey="portrait" file="Interface\Icons\inv_scroll_03">
+                    <Size x="60" y="60"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="-5" y="5"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentTextContainer" useParentLevel="true" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="10" y="-60"/>
+                    <Anchor point="BOTTOMRIGHT" x="-10" y="40"/>
+                </Anchors>
+                <Frames>
+                    <ScrollFrame name="$parentScrollFrame" inherits="UIPanelScrollFrameTemplate">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" x="5" y="-5"/>
+                            <Anchor point="BOTTOMRIGHT" x="-25" y="5"/>
+                        </Anchors>
+                        <ScrollChild>
+                            <EditBox name="$parent EditBox" multiLine="true" letters="2048" autoFocus="false">
+                                <Size x="450" y="300"/>
+                                <Scripts>
+                                    <OnLoad>
+                                        self:SetFontObject(ChatFontNormal);
+                                    </OnLoad>
+                                    <OnEscapePressed> self:ClearFocus(); </OnEscapePressed>
+                                </Scripts>
+                            </EditBox>
+                        </ScrollChild>
+                    </ScrollFrame>
+                </Frames>
+            </Frame>
+             <Button name="$parentSaveButton" parentKey="SaveButton" inherits="UIPanelButtonTemplate" text="Save Script">
+                <Size x="120" y="22"/>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT" x="-15" y="10"/>
+                </Anchors>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                PetweaverScriptEditorFrameTitleText:SetText("Pet Battle Script Editor");
+                self:RegisterForDrag("LeftButton");
+            </OnLoad>
+            <OnDragStart> self:StartMoving(); </OnDragStart>
+            <OnDragStop> self:StopMovingOrSizing(); </OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>

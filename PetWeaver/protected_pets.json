@@ -1,0 +1,3680 @@
+{
+  "protected": [
+    {
+      "id": 71163,
+      "name": "Unborn Val'kyr",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 161964,
+      "name": "Anomalus",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143195,
+      "name": "Tragg the Curious",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143050,
+      "name": "Young Sand Sifter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115146,
+      "name": "Boneshard",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86447,
+      "name": "Ikky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143564,
+      "name": "Foulfeather",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143820,
+      "name": "Kunchong Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 9656,
+      "name": "Pet Bombling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154893,
+      "name": "Bonebiter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 55367,
+      "name": "Darkmoon Zeppelin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 64899,
+      "name": "Mechanical Pandaren Dragonling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86716,
+      "name": "Crimson Spore",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 84885,
+      "name": "Draenei Micro Defender",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62317,
+      "name": "Minfernal",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86715,
+      "name": "Zangar Spore",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 99505,
+      "name": "Knockoff Blingtron",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127953,
+      "name": "Corrupted Blood",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 77221,
+      "name": "Iron Starlette",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154796,
+      "name": "Clanking Scrapsorter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 202548,
+      "name": "Volatile Self-Driving Toolbox",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231550,
+      "name": "Bombshell Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231460,
+      "name": "Venture Companyman",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231463,
+      "name": "Personal-Use Sapper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154779,
+      "name": "Motorized Croaker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73352,
+      "name": "Blackfuse Bombling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143738,
+      "name": "Lil' Siege Tower",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86719,
+      "name": "Brilliant Spore",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 119794,
+      "name": "Pocket Cannon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 149361,
+      "name": "Rebuilt Mechanical Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154791,
+      "name": "Scrapyard Tunneler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 241346,
+      "name": "Spicy Mean-Ball",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143739,
+      "name": "Lil' War Machine",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231462,
+      "name": "Mr. DELVER",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 238393,
+      "name": "Craboom",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73741,
+      "name": "Rotten Little Helper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15698,
+      "name": "Father Winter's Helper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15705,
+      "name": "Winter's Little Helper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143041,
+      "name": "Inland Croaker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86717,
+      "name": "Umbrafen Spore",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71016,
+      "name": "Netherspace Abyssal",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86718,
+      "name": "Seaborne Spore",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 117340,
+      "name": "Dibbler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143188,
+      "name": "Mechanical Prairie Dog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222590,
+      "name": "Violet Sporbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154798,
+      "name": "Malfunctioning Microbot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 200771,
+      "name": "Wildfire",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231567,
+      "name": "Venture Bombshell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231461,
+      "name": "Steamwheedle Flunkie",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231458,
+      "name": "Bilgewater Junkhauler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 185425,
+      "name": "Helpful Workshop Bot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 113136,
+      "name": "Benax",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182019,
+      "name": "Venomous Bufonid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154777,
+      "name": "Yellow Junkhopper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179125,
+      "name": "Timeless Mechanical Dragonling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63849,
+      "name": "Yellow-Bellied Bullfrog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222739,
+      "name": "Troglofrog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 191387,
+      "name": "Primal Stormling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 195896,
+      "name": "Chip",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88422,
+      "name": "Cerulean Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97547,
+      "name": "Vale Flitter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73368,
+      "name": "Skywisp Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88413,
+      "name": "Crimsonwing Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 209681,
+      "name": "Squally",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 87705,
+      "name": "Stormwing",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88415,
+      "name": "Dusty Sporewing",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 192259,
+      "name": "Storm-Touched Bluefeather",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 208637,
+      "name": "Obsidian Warwhelp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86061,
+      "name": "Cursed Birman",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86067,
+      "name": "Widget the Departed",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68662,
+      "name": "Chrominius",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97207,
+      "name": "Emmigosa",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154832,
+      "name": "Spawn of Nalaada",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171229,
+      "name": "Gorm Rootstinger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 205637,
+      "name": "Baa'lial",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71693,
+      "name": "Rascal-Bot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90212,
+      "name": "Sunblade Micro-Defender",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143811,
+      "name": "Playful Frostkin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73355,
+      "name": "Jademist Dancer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62820,
+      "name": "Water Waveling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 200772,
+      "name": "Flow",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97128,
+      "name": "Fledgling Warden Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 66950,
+      "name": "Pandaren Water Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 198269,
+      "name": "Tide Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97118,
+      "name": "Long-Eared Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148984,
+      "name": "Shadefeather Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 158685,
+      "name": "Crimson Skipper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 185621,
+      "name": "Watcher of the Huntress",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 77137,
+      "name": "Dread Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97127,
+      "name": "Nightwatch Swooper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 149205,
+      "name": "Nightwreathed Watcher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173533,
+      "name": "Sinfall Screecher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97126,
+      "name": "Northern Hawk Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 149372,
+      "name": "Crimson Bat Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173531,
+      "name": "The Count",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 203377,
+      "name": "Ebonwing Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62829,
+      "name": "Fishy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 54383,
+      "name": "Purple Puffer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 110666,
+      "name": "Young Mutant Warturtle",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143033,
+      "name": "Freshwater Crawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143175,
+      "name": "Abyssal Eel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143794,
+      "name": "Scuttle",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 55386,
+      "name": "Sea Pony",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189696,
+      "name": "Patos",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189695,
+      "name": "Jean's Lucky Fish",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189136,
+      "name": "Wild Duckling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154826,
+      "name": "Lustrous Glimmershell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204226,
+      "name": "Crimson Swoglet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222078,
+      "name": "Wriggle",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231616,
+      "name": "Tropical Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 91407,
+      "name": "Slithershock Elver",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 70258,
+      "name": "Tiny Blue Carp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143032,
+      "name": "River Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143044,
+      "name": "Barrier Hermit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143204,
+      "name": "Freshwater Pincher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 144004,
+      "name": "Bucketshell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 197637,
+      "name": "Polliswog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189104,
+      "name": "Swoglet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189140,
+      "name": "Mallard Duckling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154827,
+      "name": "Brilliant Glimmershell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 203287,
+      "name": "Puddlehopper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222079,
+      "name": "Skippy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154828,
+      "name": "Chitterspine Needler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 147585,
+      "name": "Spawn of Krag'wa",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63559,
+      "name": "Tiny Goldfish",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 112167,
+      "name": "Lagan",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143199,
+      "name": "Swamp Toad",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 144005,
+      "name": "Sir Snips",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61088,
+      "name": "Eternal Strider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 162518,
+      "name": "Voidskimmer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189138,
+      "name": "Pilot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189144,
+      "name": "Plucky Duckling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189694,
+      "name": "Emmah",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 211939,
+      "name": "Sergeant Quackers",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222326,
+      "name": "Shadowbog Hopper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171230,
+      "name": "Gorm Harrier",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179181,
+      "name": "Amaranthine Stinger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 70451,
+      "name": "Zandalari Anklerender",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 69796,
+      "name": "Zandalari Kneebiter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154819,
+      "name": "Zanj'ir Poker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68845,
+      "name": "Nexus Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97205,
+      "name": "Stormborne Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143056,
+      "name": "Hermit Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204368,
+      "name": "Senega",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98385,
+      "name": "Erudite Manafiend",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71019,
+      "name": "Coilfang Stalker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98238,
+      "name": "Empyreal Manafiend",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 149348,
+      "name": "Rebuilt Gorilla Bot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171118,
+      "name": "Wrathling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204343,
+      "name": "Salverun",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231713,
+      "name": "Bluedoo",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 54027,
+      "name": "Lil' Tarecgosa",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98236,
+      "name": "Energized Manafiend",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 150381,
+      "name": "Ravenous Prideling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179025,
+      "name": "Infused Etherwyrm",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 211942,
+      "name": "Aura",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7547,
+      "name": "Azure Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 53048,
+      "name": "Legs",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98237,
+      "name": "Empowered Manafiend",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98386,
+      "name": "Eldritch Manafiend",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171666,
+      "name": "Wild Etherwyrm",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 219134,
+      "name": "Pokee",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 46898,
+      "name": "Enchanted Lantern",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 55571,
+      "name": "Lunar Lantern",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 55574,
+      "name": "Festival Lantern",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127850,
+      "name": "Tinytron",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61828,
+      "name": "Infected Squirrel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173851,
+      "name": "Severs",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 174084,
+      "name": "Sharpclaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 96404,
+      "name": "Enchanted Torch",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 174085,
+      "name": "Death Seeker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 141941,
+      "name": "Baa'l",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62178,
+      "name": "Elfin Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61257,
+      "name": "Black Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63557,
+      "name": "Tolai Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61080,
+      "name": "Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62818,
+      "name": "Grizzly Squirrel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 32791,
+      "name": "Spring Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 16549,
+      "name": "Whiskers the Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 20472,
+      "name": "Brown Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 54227,
+      "name": "Nuts",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61081,
+      "name": "Squirrel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61143,
+      "name": "Mouse",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61167,
+      "name": "Mountain Cottontail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62884,
+      "name": "Grotto Vole",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7560,
+      "name": "Snowshoe Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61317,
+      "name": "Long-tailed Mole",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61323,
+      "name": "Wharf Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61366,
+      "name": "Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61690,
+      "name": "Alpine Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61704,
+      "name": "Grasslands Cottontail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61751,
+      "name": "Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61757,
+      "name": "Red-Tailed Chipmunk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61889,
+      "name": "Undercity Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62189,
+      "name": "Alpine Chipmunk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62316,
+      "name": "Tainted Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61168,
+      "name": "Redridge Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62885,
+      "name": "Carrion Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 122612,
+      "name": "Tricorne",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 124594,
+      "name": "Dig Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61755,
+      "name": "Snowshoe Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62693,
+      "name": "Arctic Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62641,
+      "name": "Fjord Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62954,
+      "name": "Stormwind Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 59702,
+      "name": "Prairie Mouse",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63558,
+      "name": "Tolai Hare Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63957,
+      "name": "Yakrat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 59358,
+      "name": "Darkmoon Rabbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97294,
+      "name": "Olivetail Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98506,
+      "name": "Dust Bunny",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62905,
+      "name": "Highlands Mouse",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62921,
+      "name": "Stowaway Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189093,
+      "name": "Pricklefury Hare",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 188709,
+      "name": "Shaggy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 203308,
+      "name": "Stonewhisker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 211182,
+      "name": "Sapnibbler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 212413,
+      "name": "Dustite",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 212417,
+      "name": "Somnolet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 216179,
+      "name": "Sarge",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231479,
+      "name": "Lab Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 234071,
+      "name": "Spotty",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245215,
+      "name": "Veridian Thorntail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245217,
+      "name": "Scrappy Thorntail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128156,
+      "name": "Globe Yeti",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97229,
+      "name": "Grumpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 197089,
+      "name": "Sophic Amalgamation",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65323,
+      "name": "Wild Jade Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 196666,
+      "name": "Stormie",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65313,
+      "name": "Thundering Serpent Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 24389,
+      "name": "Muckbreath",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 26056,
+      "name": "Chuck",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 26050,
+      "name": "Snarly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 24388,
+      "name": "Toothy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 241416,
+      "name": "Sa'bak's Blessed",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173990,
+      "name": "Frenzied Mawrat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 161921,
+      "name": "Void-Scarred Anubisath",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143197,
+      "name": "Ranishu Runt",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 113440,
+      "name": "Squirky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 198987,
+      "name": "Brrrgl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68850,
+      "name": "Emerald Proto-Whelp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7545,
+      "name": "Emerald Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97206,
+      "name": "Dream Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 186844,
+      "name": "Jeweled Onyx Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 163646,
+      "name": "Shadowbarb Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245500,
+      "name": "Duskthief",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171712,
+      "name": "Wader Chick",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245498,
+      "name": "Graceful Cosmic Ray Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245501,
+      "name": "Sao'rhon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245499,
+      "name": "Starlight",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245502,
+      "name": "Inquisitive Cosmic Ray Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179179,
+      "name": "Clinging Remains",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179220,
+      "name": "Grappling Gauntlet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90205,
+      "name": "Fragment of Desire",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90203,
+      "name": "Fragment of Anger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90204,
+      "name": "Fragment of Suffering",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179219,
+      "name": "Grip of Terror",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173850,
+      "name": "Hissing Deathroach",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173849,
+      "name": "Tower Deathroach",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 174082,
+      "name": "Undying Deathroach",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179227,
+      "name": "Vile Deathroach",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184187,
+      "name": "Archetype of Vigilance",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 124389,
+      "name": "Sneaky Marmot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128159,
+      "name": "Grasping Manifestation",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 33227,
+      "name": "Enchanted Broom",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115145,
+      "name": "Creeping Tentacle",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 161946,
+      "name": "Eye of Corruption",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61703,
+      "name": "Tiny Twister",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179166,
+      "name": "Gizmo",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62816,
+      "name": "Stunted Shardhorn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 247465,
+      "name": "Unfazed Diver",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171702,
+      "name": "Copperfur Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 247463,
+      "name": "Zo'ya",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 181362,
+      "name": "Bufonid Croaker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182081,
+      "name": "Archetype of Serenity",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115140,
+      "name": "Runeforged Servitor",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15699,
+      "name": "Tranquil Mechanical Yeti",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68659,
+      "name": "Anubisath Idol",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62526,
+      "name": "Qiraji Guardling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179239,
+      "name": "Gilded Darknight",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179241,
+      "name": "Mord'al Eveningstar",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179240,
+      "name": "Mawsworn Minion",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 53884,
+      "name": "Feline Familiar",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62246,
+      "name": "Shimmershell Snail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98446,
+      "name": "Mudshell Conch",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154718,
+      "name": "Blackchasm Crawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 64352,
+      "name": "Rapana Whelk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 51635,
+      "name": "Scooter the Snail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154836,
+      "name": "Amethyst Softshell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204325,
+      "name": "Roseshell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63001,
+      "name": "Silkbead Snail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62313,
+      "name": "Rusty Snail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154716,
+      "name": "Spireshell Snail",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148995,
+      "name": "Thunderscale Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71942,
+      "name": "Xu-Fu, Cub of Xuen",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 112728,
+      "name": "Court Scribe",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 106181,
+      "name": "Sunborne Val'kyr",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 29089,
+      "name": "Mini Tyrael",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 55356,
+      "name": "Darkmoon Tonk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 29147,
+      "name": "Ghostly Skull",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154849,
+      "name": "Drowned Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 95841,
+      "name": "Nibbles",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 242176,
+      "name": "Tidbit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179183,
+      "name": "Lost Limb",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7546,
+      "name": "Bronze Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 191383,
+      "name": "Jeweled Sapphire Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 16445,
+      "name": "Terky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 16069,
+      "name": "Gurky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 169514,
+      "name": "Glimr",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15186,
+      "name": "Murky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154820,
+      "name": "Murgle",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15358,
+      "name": "Lurky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15361,
+      "name": "Murki",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179140,
+      "name": "Gurgl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88692,
+      "name": "Servant of Demidos",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 223136,
+      "name": "Umbral Amalgam",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 175203,
+      "name": "Moon-Touched Netherwhelp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154720,
+      "name": "Chitterspine Deepstalker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184183,
+      "name": "Ambystan Darter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182264,
+      "name": "Archetype of Metamorphosis",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 48609,
+      "name": "Clockwork Gnome",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 45340,
+      "name": "Fossilized Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154856,
+      "name": "Microbot XD",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 208636,
+      "name": "Killbot 9000",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231455,
+      "name": "Crimson Mechasaur",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231454,
+      "name": "Fun-Size Flarendo",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171697,
+      "name": "Purity",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171568,
+      "name": "Sable",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127951,
+      "name": "Infernal Pyreclaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 150385,
+      "name": "Happiness",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 236783,
+      "name": "Merriment",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 83642,
+      "name": "Mud Jumper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 107206,
+      "name": "Zoom",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154838,
+      "name": "Damplight Slug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204320,
+      "name": "Diamondshell",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204621,
+      "name": "Roggy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204326,
+      "name": "Brulee",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 69819,
+      "name": "Swamp Croaker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127862,
+      "name": "Zephyrian Prince",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189132,
+      "name": "Echo of the Heights",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 198273,
+      "name": "Gale Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98077,
+      "name": "Crispin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115785,
+      "name": "Direbeak Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182768,
+      "name": "Green Viperid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 67319,
+      "name": "Darkmoon Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127950,
+      "name": "Surger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 40624,
+      "name": "Celestial Dragon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 34770,
+      "name": "Macabre Marionette",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65203,
+      "name": "Emperor Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63005,
+      "name": "Spirebound Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61312,
+      "name": "Strand Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63097,
+      "name": "Shore Crawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61158,
+      "name": "Shore Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 33226,
+      "name": "Strand Crawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 16085,
+      "name": "Peddlefeet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63621,
+      "name": "Feral Vermling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 64632,
+      "name": "Hopling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184285,
+      "name": "Gnomelia Gearheart",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 119040,
+      "name": "Tylarr Gronnden",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 94927,
+      "name": "Crusher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 170421,
+      "name": "PHA7-YNX",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 87669,
+      "name": "Hatespark the Tiny",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63098,
+      "name": "Gilnean Raven",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 67443,
+      "name": "Crow",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 209259,
+      "name": "Lil' Frostwing",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127857,
+      "name": "Twilight Clutch-Sister",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154803,
+      "name": "Twilight Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63550,
+      "name": "Alpine Foxling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62864,
+      "name": "Arctic Fox Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63551,
+      "name": "Alpine Foxling Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62669,
+      "name": "Fjord Worg Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97741,
+      "name": "Black-Footed Fox Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97743,
+      "name": "Mist Fox Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 232579,
+      "name": "Specter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 160196,
+      "name": "Void-Scarred Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 93142,
+      "name": "Lost Netherpup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 114063,
+      "name": "Snowfang",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148520,
+      "name": "Dasher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 91823,
+      "name": "Fel Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 87111,
+      "name": "Frostwolf Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73688,
+      "name": "Vengeful Porcupette",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 120830,
+      "name": "Ban-Fu, Cub of Ban-Lu",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154706,
+      "name": "Chitterspine Skitterling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154894,
+      "name": "Arachnoid Skitterbot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 155600,
+      "name": "Spraybot 0D",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154708,
+      "name": "Hissing Chitterspine",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154789,
+      "name": "Alloyed Alleyrat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 139622,
+      "name": "Lil' Tika",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73354,
+      "name": "Kovok",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148517,
+      "name": "Baby Zandalari Raptor",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 70453,
+      "name": "Zandalari Toenibbler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143193,
+      "name": "Zandalari Shinchomper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 80329,
+      "name": "Lifelike Mechanical Frostboar",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90345,
+      "name": "Race MiniZep",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128158,
+      "name": "Fel-Afflicted Skyfin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21076,
+      "name": "Firefly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88575,
+      "name": "Glowing Sporebat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63850,
+      "name": "Effervescent Glowfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171240,
+      "name": "Devouring Animite",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171667,
+      "name": "Helpful Glimmerfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179131,
+      "name": "Animite Broodling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222298,
+      "name": "Hallowed Glowfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65185,
+      "name": "Mei Li Sparkler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 67329,
+      "name": "Darkmoon Glowfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88356,
+      "name": "Sapphire Firefly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128167,
+      "name": "Skyfin Juvenile",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143730,
+      "name": "Bumbles",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171664,
+      "name": "Fluttering Glimmerfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 179329,
+      "name": "Wild Corpsefly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222614,
+      "name": "Azure Flickerfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143464,
+      "name": "Dreadtick Leecher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65216,
+      "name": "Shrine Fly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88357,
+      "name": "Violet Firefly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128157,
+      "name": "Docile Skyfin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 150375,
+      "name": "Amberglow Stinger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 172155,
+      "name": "Foulwing Buzzer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171668,
+      "name": "Vibrant Glimmerfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222615,
+      "name": "Vibrant Glowfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222613,
+      "name": "Fallowspark Glowfly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62621,
+      "name": "Fel Flame",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 25706,
+      "name": "Searing Scorchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 16701,
+      "name": "Spirit of Summer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62201,
+      "name": "Spawn of Onyxia",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7544,
+      "name": "Crimson Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 36607,
+      "name": "Onyxian Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65321,
+      "name": "Wild Crimson Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73011,
+      "name": "Lil' Bling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7554,
+      "name": "Snowy Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171239,
+      "name": "Chirpy Valeshrieker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115784,
+      "name": "Snowfeather Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143207,
+      "name": "Sandstinger Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189160,
+      "name": "Black Slyvern Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 22445,
+      "name": "Miniwing",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62906,
+      "name": "Highlands Turkey",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 36908,
+      "name": "Gryphon Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63585,
+      "name": "Szechuan Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 30379,
+      "name": "Westfall Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189133,
+      "name": "Viridescent Duck",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184190,
+      "name": "Multichicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154783,
+      "name": "Rustbolt Clucker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 162663,
+      "name": "Experiment 13",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 155829,
+      "name": "Armored Vaultbot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 110826,
+      "name": "Coastal Sandpiper",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65314,
+      "name": "Jade Crane Chick",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 134406,
+      "name": "Francois",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88573,
+      "name": "Veilwatcher Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7394,
+      "name": "Ancona Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143177,
+      "name": "Corlain Falcon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 224718,
+      "name": "Thundo",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143035,
+      "name": "Valley Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183285,
+      "name": "Enraged Poultrid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143184,
+      "name": "Greatwing Macaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154855,
+      "name": "Utility Mechanoclaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 32818,
+      "name": "Plump Turkey",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 70144,
+      "name": "Ji-Kun Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62648,
+      "name": "Turkey",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73534,
+      "name": "Azure Crane Chick",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62664,
+      "name": "Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62900,
+      "name": "Wildhammer Gryphon Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222194,
+      "name": "Greenlands Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222195,
+      "name": "Arathi Chicken",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189131,
+      "name": "Ironbeak Duck",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183557,
+      "name": "Archetype of Satisfaction",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21063,
+      "name": "Silver Dragonhawk Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 15710,
+      "name": "Tiny Snowman",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115786,
+      "name": "Sharptalon Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115787,
+      "name": "Bloodgazer Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88225,
+      "name": "Sentinel's Companion",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 229890,
+      "name": "Thrillbot 9000",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62395,
+      "name": "Nether Faerie Dragon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 9662,
+      "name": "Sprite Darter Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143821,
+      "name": "Coldlight Surfrunner",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68838,
+      "name": "Fluxfire Feline",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 112144,
+      "name": "Corgnelius",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 106283,
+      "name": "Corgi Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 192108,
+      "name": "Scout",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 241150,
+      "name": "Weechi",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 240994,
+      "name": "Ada the Sweetest",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 239362,
+      "name": "Pascal the Wonder Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 93143,
+      "name": "Cinder Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 72160,
+      "name": "Moon Moon",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71023,
+      "name": "Tito",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 234365,
+      "name": "Marmaduke",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171247,
+      "name": "Dodger",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88134,
+      "name": "Mechanical Scorpid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143796,
+      "name": "Barnaby",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143045,
+      "name": "Coastal Scuttler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 192363,
+      "name": "Diamond Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231574,
+      "name": "Paleshell Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154704,
+      "name": "Glimmershell Scuttler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 192365,
+      "name": "Sapphire Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231570,
+      "name": "Cave Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61826,
+      "name": "Blighthawk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88577,
+      "name": "Bone Serpent",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97324,
+      "name": "Spectral Spinner",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154814,
+      "name": "Abyssal Slitherling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115148,
+      "name": "Blightbreath",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154822,
+      "name": "Kelpfin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127947,
+      "name": "Blazehound",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128388,
+      "name": "Rebellious Imp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154445,
+      "name": "Minimancer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 69748,
+      "name": "Living Sandling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183638,
+      "name": "Ichabod",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 33529,
+      "name": "Curious Wolvar Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68664,
+      "name": "Corefire Imp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71033,
+      "name": "Fiendish Imp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171149,
+      "name": "Dusky Dredwing Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173535,
+      "name": "Battie",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 119499,
+      "name": "Frostbrood Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115136,
+      "name": "Snobold Runt",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90201,
+      "name": "Leviathan Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 51090,
+      "name": "Singing Sunflower",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 58163,
+      "name": "Soul of the Aspects",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143808,
+      "name": "Thistlebrush Bud",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 203372,
+      "name": "Sunglow Cobra",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61459,
+      "name": "Little Black Ram",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 60649,
+      "name": "Black Lamb",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 64248,
+      "name": "Summit Kid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 33200,
+      "name": "Elwynn Lamb",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88300,
+      "name": "Puddle Terror",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 212399,
+      "name": "Kal'andu",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68846,
+      "name": "Kun-Lai Runt",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68805,
+      "name": "Stunted Yeti",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 81431,
+      "name": "Teroclaw Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68654,
+      "name": "Stitched Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 69778,
+      "name": "Sunreaver Micro-Sentry",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 172148,
+      "name": "Micromancer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 79410,
+      "name": "Mechanical Axebeak",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 90206,
+      "name": "Sister of Temptation",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68666,
+      "name": "Ashstone Core",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 86081,
+      "name": "Netherspawn, Spawn of Netherspawn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 64633,
+      "name": "Aqua Strider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63847,
+      "name": "Dancing Water Skimmer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97559,
+      "name": "Spring Strider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62998,
+      "name": "Mirror Strider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184923,
+      "name": "E'rnee",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204275,
+      "name": "Snapjaw Lurker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204222,
+      "name": "Azure Swoglet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 205795,
+      "name": "Blub",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 215565,
+      "name": "Lovely Duckling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 47944,
+      "name": "Dark Phoenix Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 26119,
+      "name": "Phoenix Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68466,
+      "name": "Pandaren Fire Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63919,
+      "name": "Leopard Tree Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62997,
+      "name": "Jungle Darter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 24480,
+      "name": "Mojo",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62185,
+      "name": "Horny Toad",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61368,
+      "name": "Huge Toad",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7549,
+      "name": "Tree Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 14878,
+      "name": "Jubling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62312,
+      "name": "Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61071,
+      "name": "Small Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62370,
+      "name": "Spotted Bell Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62815,
+      "name": "Biletoad",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62852,
+      "name": "Dragonbone Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7387,
+      "name": "Green Wing Macaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63006,
+      "name": "Sandy Petrel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62953,
+      "name": "Sea Gull",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61313,
+      "name": "Parrot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7389,
+      "name": "Senegal",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7390,
+      "name": "Cockatiel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7391,
+      "name": "Hyacinth Macaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 32589,
+      "name": "Tickbird Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 32590,
+      "name": "White Tickbird Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 42177,
+      "name": "Blue Mini Jouster",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 42183,
+      "name": "Gold Mini Jouster",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 48107,
+      "name": "Rustberg Gull",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61171,
+      "name": "Fledgling Buzzard",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61322,
+      "name": "Polly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62819,
+      "name": "Imperial Eagle Chick",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97018,
+      "name": "Albatross Chick",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97076,
+      "name": "Fledgling Kingfeather",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97078,
+      "name": "Fledgling Oliveback",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97079,
+      "name": "Skyhorn Nestling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97080,
+      "name": "Golden Eaglet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154710,
+      "name": "Great Sea Albatross",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189156,
+      "name": "Blackfeather Nester",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189157,
+      "name": "Woodbiter Piculet",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189158,
+      "name": "Brightfeather",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 251889,
+      "name": "Fledgeling Warden's Companion",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7550,
+      "name": "Wood Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63002,
+      "name": "Garden Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61369,
+      "name": "Toad",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62892,
+      "name": "Mac Frog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71015,
+      "name": "Menagerie Custodian",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154857,
+      "name": "Microbot 8D",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 229901,
+      "name": "Chillbot 9000",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 115144,
+      "name": "G0-R41-0N Ultratonk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62555,
+      "name": "Flayer Youngling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62854,
+      "name": "Scourged Whelpling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62176,
+      "name": "Gazelle Fawn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 110741,
+      "name": "Gleamhoof Fawn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245503,
+      "name": "Mr. Long-Legs",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245506,
+      "name": "Cerulean Lapbug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7555,
+      "name": "Hawk Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88367,
+      "name": "Sunfire Kaliri",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62242,
+      "name": "Crested Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85254,
+      "name": "Wood Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88574,
+      "name": "Kaliri Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 108568,
+      "name": "Pygmy Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 147586,
+      "name": "Child of Pa'ku",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171150,
+      "name": "Crimson Dredwing Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171567,
+      "name": "Fledgling Teroclaw",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 82715,
+      "name": "Frostfur Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61165,
+      "name": "Fawn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182183,
+      "name": "Archetype of Multiplicity",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245504,
+      "name": "Heka'Tarnos, Bringer of Discord",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85255,
+      "name": "Bloodsting Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 7553,
+      "name": "Great Horned Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 88417,
+      "name": "Royal Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85014,
+      "name": "Bone Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182840,
+      "name": "Archetype of Malice",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 223691,
+      "name": "Whoopy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 182216,
+      "name": "Vicious Leporid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 111158,
+      "name": "Blind Rat",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143813,
+      "name": "Littlehoof",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 184194,
+      "name": "Leaping Leporid",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 211288,
+      "name": "Leyhart",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 245505,
+      "name": "Copper Lapbug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 54374,
+      "name": "Brilliant Kaliri",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85253,
+      "name": "Twilight Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85257,
+      "name": "Amberbarb Wasp",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 96123,
+      "name": "Blazing Firehawk",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148988,
+      "name": "Firesting Buzzer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 189209,
+      "name": "Whitewhisker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 178216,
+      "name": "Flawless Amethyst Baubleworm",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85710,
+      "name": "Lovebird Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 96405,
+      "name": "Enchanted Pen",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61877,
+      "name": "Jade Owl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 173508,
+      "name": "Lost Quill",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 127863,
+      "name": "Drafty",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154841,
+      "name": "Stormwrath",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 200769,
+      "name": "Vortex",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143812,
+      "name": "Mischievous Zephyr",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183230,
+      "name": "Mawtouched Geomental",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68467,
+      "name": "Pandaren Air Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 181615,
+      "name": "Archetype of Animation",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 106152,
+      "name": "Baby Elderhorn",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 223094,
+      "name": "Cobalt Ramolith",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143160,
+      "name": "Brutus",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 99425,
+      "name": "Alarm-o-Bot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143142,
+      "name": "Rooter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183686,
+      "name": "Pippin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 236016,
+      "name": "Mech-Friend Maya",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 122629,
+      "name": "Foe Reaper 0.9",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 147692,
+      "name": "Alarm-O-Dog",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 240137,
+      "name": "Tock the Clocker Spaniel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 231459,
+      "name": "Blackwater Kegmover",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 76873,
+      "name": "Hogs",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68804,
+      "name": "Harpy Youngling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 99389,
+      "name": "Thistleleaf Adventurer",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73532,
+      "name": "Dandelion Frolicker",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 198989,
+      "name": "Thrrrdgl",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 185606,
+      "name": "Garrlok",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 223316,
+      "name": "Marrlok",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 229846,
+      "name": "Parrlok",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 33530,
+      "name": "Curious Oracle Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 150356,
+      "name": "Wayward Spirit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154724,
+      "name": "Muck Slug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 204324,
+      "name": "Tricky",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 154722,
+      "name": "Trench Slug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 128137,
+      "name": "Fel Lasher",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151780,
+      "name": "Jingles",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151632,
+      "name": "Slimy Hermit Crab",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151697,
+      "name": "Slimy Eel",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 29726,
+      "name": "Mr. Chilly",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 32595,
+      "name": "Pengu",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62835,
+      "name": "Tundra Penguin",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151700,
+      "name": "Slimy Otter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151673,
+      "name": "Slimy Octopode",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151631,
+      "name": "Slimy Sea Slug",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 151696,
+      "name": "Slimy Fangtooth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 183772,
+      "name": "Lightless Tormentor",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 106232,
+      "name": "Wyrmy Tunkins",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71014,
+      "name": "Lil' Bad Wolf",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21010,
+      "name": "Blue Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61314,
+      "name": "Crimson Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21018,
+      "name": "White Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62373,
+      "name": "Silky Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65124,
+      "name": "Luyu Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62916,
+      "name": "Fungal Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62050,
+      "name": "Grey Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21009,
+      "name": "Red Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61370,
+      "name": "Swamp Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62315,
+      "name": "Tainted Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63838,
+      "name": "Gilded Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73542,
+      "name": "Ashwing Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65187,
+      "name": "Amber Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21008,
+      "name": "Yellow Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62177,
+      "name": "Forest Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62895,
+      "name": "Oasis Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65215,
+      "name": "Garden Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 73543,
+      "name": "Flamering Moth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 28883,
+      "name": "Frosty",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 85872,
+      "name": "Blazing Cindercrawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 83584,
+      "name": "Autumnal Sproutling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 83583,
+      "name": "Forest Sproutling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 171242,
+      "name": "Hungry Burrower",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 99394,
+      "name": "Fetid Waveling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71018,
+      "name": "Tainted Waveling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 48982,
+      "name": "Tiny Shale Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61420,
+      "name": "Ash Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63288,
+      "name": "Amethyst Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61253,
+      "name": "Dusk Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62191,
+      "name": "Venomspitter Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 65054,
+      "name": "Feverbite Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 222576,
+      "name": "Fringe",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62922,
+      "name": "Crimson Shale Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62181,
+      "name": "Topaz Shale Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62186,
+      "name": "Desert Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61327,
+      "name": "Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61259,
+      "name": "Widow Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62638,
+      "name": "Skittering Cavern Crawler",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97236,
+      "name": "Burrow Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62182,
+      "name": "Amethyst Shale Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62915,
+      "name": "Emerald Shale Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 10598,
+      "name": "Smolderweb Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61320,
+      "name": "Forest Spiderling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 62117,
+      "name": "Twilight Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 63715,
+      "name": "Jumping Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 97238,
+      "name": "Nursery Spider",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 61686,
+      "name": "Tiny Bog Beast",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 68655,
+      "name": "Mr. Bigglesworth",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143042,
+      "name": "Giant Woodworm",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21056,
+      "name": "Blue Dragonhawk Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21055,
+      "name": "Golden Dragonhawk Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 244145,
+      "name": "Hopeflutter",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 21064,
+      "name": "Red Dragonhawk Hatchling",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 143798,
+      "name": "Octopode Fry",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 98463,
+      "name": "Broot",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 71488,
+      "name": "Blossoming Ancient",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 48641,
+      "name": "Fox Kit",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 148989,
+      "name": "Lord Woofington",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 96622,
+      "name": "Grumpy",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 10259,
+      "name": "Worg Pup",
+      "reason": "Used in strategy"
+    },
+    {
+      "id": 70098,
+      "name": "Spawn of G'nathus",
+      "reason": "Used in strategy"
+    }
+  ],
+  "generated_at": "2025-11-21T23:40:03.719306"
+}

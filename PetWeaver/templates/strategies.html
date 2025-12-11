@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Strategies - PetWeaver{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12 d-flex justify-content-between align-items-center">
+        <h2 class="text-white mb-0">Strategy Browser</h2>
+        <a href="/wizard" class="btn btn-primary">
+            <i class="fas fa-magic me-2"></i>Create New Strategy
+        </a>
+    </div>
+</div>
+
+<!-- Search & Filter -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark border-secondary text-muted"><i
+                                    class="fas fa-search"></i></span>
+                            <input type="text" id="search" class="form-control bg-dark text-white border-secondary"
+                                placeholder="Search encounters..." onkeyup="filterStrategies()">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="expansion-filter" class="form-select bg-dark text-white border-secondary"
+                            onchange="filterStrategies()">
+                            <option value="">All Expansions</option>
+                            <option value="The War Within">The War Within</option>
+                            <option value="Dragonflight">Dragonflight</option>
+                            <option value="Shadowlands">Shadowlands</option>
+                            <option value="Battle for Azeroth">Battle for Azeroth</option>
+                            <option value="Legion">Legion</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="category-filter" class="form-select bg-dark text-white border-secondary"
+                            onchange="filterStrategies()">
+                            <option value="">All Categories</option>
+                            <option value="World Quests">World Quests</option>
+                            <option value="Dungeons">Dungeons</option>
+                            <option value="Raids">Raids</option>
+                            <option value="Pet Battles">Pet Battles</option>
+                            <option value="Tamers">Tamers</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Strategy List -->
+<div class="row">
+    <div class="col-md-12">
+        <div id="strategy-list" class="row g-4">
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-spinner fa-spin fa-2x text-muted mb-3"></i>
+                <p class="text-muted">Loading strategies...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let allStrategies = [];
+
+    function loadStrategies() {
+        fetch('/api/strategies/all')
+            .then(res => res.json())
+            .then(data => {
+                allStrategies = data;
+                displayStrategies(data);
+            });
+    }
+
+    function displayStrategies(strategies) {
+        const container = document.getElementById('strategy-list');
+
+        if (strategies.length === 0) {
+            container.innerHTML = '<div class="col-12 text-center py-5"><p class="text-muted">No strategies found</p></div>';
+            return;
+        }
+
+        container.innerHTML = strategies.map(strat => `
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 strategy-card">
+                    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0 text-truncate" title="${strat.name}">${strat.name}</h5>
+                        <span class="badge bg-secondary">${strat.expansion}</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="badge bg-dark border border-secondary text-light">${strat.category}</span>
+                            <span class="text-muted small">${strat.teams.length} team(s)</span>
+                        </div>
+                        
+                        ${strat.teams.slice(0, 1).map(team => `
+                            <div class="p-2 rounded bg-black border border-secondary">
+                                <small class="text-muted d-block mb-2">Recommended Team:</small>
+                                <div class="d-flex gap-2">
+                                    ${team.pet_slots ? team.pet_slots.map(slot =>
+            slot[0] ? `<span class="badge bg-primary text-truncate" style="max-width: 80px;" title="${slot[0].name}">${slot[0].name}</span>` : '<span class="badge bg-secondary">Empty</span>'
+        ).join('') : '<small class="text-muted">Details in addon</small>'}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="card-footer bg-transparent border-top border-secondary text-end">
+                        <button class="btn btn-sm btn-outline-info">View Details</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function filterStrategies() {
+        const search = document.getElementById('search').value.toLowerCase();
+        const expansion = document.getElementById('expansion-filter').value;
+        const categoryFilter = document.getElementById('category-filter')?.value || '';
+
+        const filtered = allStrategies.filter(strat => {
+            const matchesSearch = strat.name.toLowerCase().includes(search);
+            const matchesExpansion = !expansion || strat.expansion === expansion;
+            const matchesCategory = !categoryFilter || strat.category === categoryFilter;
+            return matchesSearch && matchesExpansion && matchesCategory;
+        });
+
+        displayStrategies(filtered);
+    }
+
+    // Check URL parameters for filters
+    const urlParams = new URLSearchParams(window.location.search);
+    const expansionParam = urlParams.get('expansion');
+    const categoryParam = urlParams.get('category');
+
+    // Load on page load
+    loadStrategies();
+
+    // After strategies load, apply URL filters
+    if (expansionParam || categoryParam) {
+        setTimeout(() => {
+            if (expansionParam) {
+                document.getElementById('expansion-filter').value = expansionParam;
+            }
+            if (categoryParam && document.getElementById('category-filter')) {
+                document.getElementById('category-filter').value = categoryParam;
+            }
+            filterStrategies();
+        }, 500);
+    }
+</script>
+{% endblock %}

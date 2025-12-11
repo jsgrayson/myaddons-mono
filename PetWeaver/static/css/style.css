@@ -1,0 +1,206 @@
+/* Import a magical font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    --gold-primary: #d4af37;
+    --gold-dim: #8a7224;
+    --obsidian-dark: #0a0a0c;
+    --obsidian-light: #1a1a1d;
+    --magic-blue: #00bcd4;
+    --magic-purple: #7b1fa2;
+    --text-main: #e0e0e0;
+}
+
+body {
+    /* Fallback for bg_tile.jpg */
+    background-color: var(--obsidian-dark);
+    background-image:
+        radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%),
+        repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.03) 0px, rgba(212, 175, 55, 0.03) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.03) 0px, rgba(212, 175, 55, 0.03) 1px, transparent 1px, transparent 10px);
+    font-family: 'Lato', sans-serif;
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.brand-logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+/* The Main Dashboard Container */
+.weaver-dashboard {
+    /* Fallback for loom_frame.png */
+    background: linear-gradient(135deg, rgba(26, 26, 29, 0.95), rgba(10, 10, 12, 0.98));
+    padding: 40px;
+    border-radius: 12px;
+    /* Golden Filigree Border Effect */
+    border: 2px solid var(--gold-primary);
+    box-shadow:
+        0 0 20px rgba(0, 188, 212, 0.1),
+        inset 0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 0 4px rgba(0, 0, 0, 0.5),
+        /* Inner spacing */
+        0 0 0 6px var(--gold-dim);
+    /* Double border */
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Corner Flourishes (CSS) */
+.weaver-dashboard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.weaver-dashboard::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+/* Pet Cards */
+.pet-card {
+    /* Fallback for pet_card_bg.png */
+    background: linear-gradient(to bottom, #2d2d2d, #1f1f1f);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.pet-card::before {
+    /* Inner Velvet Texture */
+    content: "";
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--magic-blue);
+    cursor: pointer;
+    border-color: var(--magic-blue);
+}
+
+.pet-portrait {
+    width: 80%;
+    aspect-ratio: 1/1;
+    border: 3px solid #333;
+    background-color: #000;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 10px #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pet-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.pet-card:hover .pet-portrait img {
+    transform: scale(1.1);
+}
+
+/* Stats Badges */
+.badge {
+    padding: 0.5em 0.8em;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* The "Weave Team" Action Button */
+.btn-weave {
+    /* Fallback for weave_btn.png */
+    background: linear-gradient(180deg, #7b1fa2 0%, #4a148c 100%);
+    border: 2px solid var(--gold-primary);
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* Pill shape */
+    box-shadow:
+        0 0 15px rgba(123, 31, 162, 0.6),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-weave:hover {
+    background: linear-gradient(180deg, #9c27b0 0%, #6a1b9a 100%);
+    box-shadow:
+        0 0 25px rgba(123, 31, 162, 1),
+        0 0 50px rgba(123, 31, 162, 0.4);
+    text-shadow: 0 0 8px #fff;
+    transform: scale(1.05);
+}
+
+.btn-weave::after {
+    /* Glossy Sheen */
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.btn-weave:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+    border-bottom: 2px solid var(--gold-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold-primary) !important;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
