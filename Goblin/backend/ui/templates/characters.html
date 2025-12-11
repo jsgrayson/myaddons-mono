@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h3 mb-0 text-gray-800">Character Manager</h1>
+            <p class="text-muted">Manage settings and tracking for all your alts.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Character List -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Your Characters</h6>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">GoblinOne</h5>
+                                <small>Area 52</small>
+                            </div>
+                            <p class="mb-1">Level 70 Mage - Alchemy/Herbalism</p>
+                            <small>Gold: 1,250,000g</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">BankAltTwo</h5>
+                                <small>Illidan</small>
+                            </div>
+                            <p class="mb-1">Level 10 Warrior - None</p>
+                            <small>Gold: 5,400,000g</small>
+                        </a>
+                    </div>
+                    <button class="btn btn-primary btn-block mt-3">Sync Characters</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Character Settings: GoblinOne</h6>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <h6 class="heading-small text-muted mb-4">Automation Preferences</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Role</label>
+                                        <select class="form-control">
+                                            <option>Crafter</option>
+                                            <option>Gatherer</option>
+                                            <option>Banker/Flipper</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Minimum Profit Threshold</label>
+                                        <input type="text" class="form-control" value="500g">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="autoPost" checked>
+                                        <label class="custom-control-label" for="autoPost">Enable Auto-Posting
+                                            Operations</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="autoCancel" checked>
+                                        <label class="custom-control-label" for="autoCancel">Enable Cancel Scans</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <h6 class="heading-small text-muted mb-4">Inventory Management</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Keep in Bags (Gold)</label>
+                                        <input type="text" class="form-control" value="10,000g">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Mail Excess To</label>
+                                        <input type="text" class="form-control" value="BankAltTwo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-right">
+                            <button type="button" class="btn btn-success">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

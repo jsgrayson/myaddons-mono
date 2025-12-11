@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goblin AI - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🧙 Goblin AI</h1>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Dashboard</a></li>
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/groups">AI Groups</a></li>
+                <li><a href="/crafting">Crafting</a></li>
+                <li><a href="/characters">Characters</a></li>
+                <li><a href="/config">Config</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Active Opportunities</h3>
+                <p class="stat-value" id="opp-count">-</p>
+                <p class="stat-label">Profitable Flips</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Potential Profit</h3>
+                <p class="stat-value" id="total-profit">-</p>
+                <p class="stat-label">If all executed</p>
+            </div>
+            <div class="stat-card">
+                <h3>AI Groups</h3>
+                <p class="stat-value" id="group-count">-</p>
+                <p class="stat-label">Market patterns</p>
+            </div>
+            <div class="stat-card">
+                <h3>Last Scan</h3>
+                <p class="stat-value" id="last-scan">-</p>
+                <p class="stat-label">Data freshness</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>🎯 Top Flip Opportunities</h2>
+                <button class="btn-primary" onclick="refreshOpportunities()">Refresh</button>
+            </div>
+            <div class="table-container">
+                <table id="opportunities-table">
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Buy Price</th>
+                            <th>Predicted Value</th>
+                            <th>Profit</th>
+                            <th>ROI</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="opportunities-tbody">
+                        <tr>
+                            <td colspan="6" class="text-center">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📰 News Predictions</h2>
+            <div id="news-alerts"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "item_id": 171285,
+      "name": "Eternal Crystal",
+      "current_price": 850,
+      "historical_avg": 1000,
+      "volume_24h": 1250,
+      "price_trend": -15.2,
+      "last_updated": "2025-11-28T09:00:00Z"
+    },
+    {
+      "item_id": 171833,
+      "name": "Elethium Ore",
+      "current_price": 425,
+      "historical_avg": 392,
+      "volume_24h": 3400,
+      "price_trend": 8.5,
+      "last_updated": "2025-11-28T09:00:00Z"
+    },
+    {
+      "item_id": 171829,
+      "name": "Shadowghast Ingot",
+      "current_price": 1200,
+      "historical_avg": 1225,
+      "volume_24h": 890,
+      "price_trend": -2.1,
+      "last_updated": "2025-11-28T09:00:00Z"
+    }
+  ],
+  "timestamp": "2025-11-28T09:00:00Z"
+}

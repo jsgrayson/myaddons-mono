@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goblin - Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/holocron-theme.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="color: var(--wow-gold); font-weight: bold;">
+                💰 Goblin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/markets">Markets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/predictions">AI Predictions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/alerts">Alerts</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/settings">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:5001" target="_blank"
+                            style="color: var(--wow-rare);">Holocron ↗</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="hero-header">
+                    <h1 class="hero-title">⚙️ Settings</h1>
+                    <p class="hero-subtitle">
+                        <i class="fas fa-sliders-h me-2"></i>Configure your gold making preferences
+                    </p>
+                    <div class="animated-border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Region</label>
+                                <select class="form-select bg-dark text-white border-secondary">
+                                    <option>North America (US)</option>
+                                    <option>Europe (EU)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Realm</label>
+                                <input type="text" class="form-control bg-dark text-white border-secondary"
+                                    value="Area 52">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Minimum Profit Margin</label>
+                                <input type="range" class="form-range" min="0" max="100" value="15">
+                                <div class="text-end text-muted">15%</div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Save Configuration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

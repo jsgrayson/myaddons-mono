@@ -1,0 +1,26 @@
+app_name: Goblin
+environment: development
+log_level: INFO
+data_dir: /opt/goblin/data
+logs_dir: /opt/goblin/logs
+
+
+blizzard:
+  region: us
+  realm_slug: dalaran
+
+# Email notifications
+# Option 1: OAuth2 (Recommended - more secure)
+# - Download gmail_credentials.json from Google Cloud Console
+# - Run: python3 -m ml.pipeline.authorize_gmail
+# - No password needed!
+#
+# Option 2: SMTP (Fallback - requires app password)
+email:
+  smtp_server: smtp.gmail.com  # Only needed for SMTP fallback
+  smtp_port: 587
+  username: your_email@gmail.com
+  password: your_app_password  # Only needed for SMTP fallback
+  from_email: your_email@gmail.com
+  to_email: your_email@gmail.com
+

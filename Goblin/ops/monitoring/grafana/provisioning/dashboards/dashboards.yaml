@@ -1,0 +1,10 @@
+apiVersion: 1
+
+providers:
+  - name: 'Goblin Dashboards'
+    orgId: 1
+    folder: 'Goblin'
+    type: file
+    options:
+      path: /etc/grafana/provisioning/dashboards
+

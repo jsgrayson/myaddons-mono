@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Goblin AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🧙 Goblin AI</h1>
+            <ul class="nav-links">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/upload" class="active">Upload</a></li>
+                <li><a href="/groups">AI Groups</a></li>
+                <li><a href="/crafting">Crafting</a></li>
+                <li><a href="/characters">Characters</a></li>
+                <li><a href="/config">Config</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="section">
+            <h2>Upload SavedVariables</h2>
+            <p class="text-muted" style="margin-bottom: 2rem;">
+                Upload your GoblinAI.lua file from WoW SavedVariables to analyze AH data and generate recommendations.
+            </p>
+
+            <div class="upload-area" id="upload-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+                ondragleave="handleDragLeave(event)" onclick="document.getElementById('file-input').click()">
+                <input type="file" id="file-input" accept=".lua" style="display: none;"
+                    onchange="handleFileSelect(event)">
+                <div id="upload-content">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin: 0 auto 1rem; color: var(--primary);">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h3>Drop GoblinAI.lua here</h3>
+                    <p class="text-muted">or click to browse</p>
+                    <p class="text-muted" style="font-size: 0.75rem; margin-top: 1rem;">
+                        File location: WTF/Account/YOURNAME/SavedVariables/GoblinAI.lua
+                    </p>
+                </div>
+            </div>
+
+            <div id="upload-progress" style="display: none; margin-top: 2rem;">
+                <div class="loading"></div>
+                <p class="text-center text-muted">Processing auction data...</p>
+            </div>
+
+            <div id="upload-result" style="margin-top: 2rem;"></div>
+        </div>
+
+        <div class="section">
+            <h2>Download Recommendations</h2>
+            <p class="text-muted" style="margin-bottom: 1.5rem;">
+                Download AI-generated recommendations to import into your addon.
+            </p>
+            <button class="btn-primary" onclick="downloadRecommendations()">
+                Download recommendations.lua
+            </button>
+            <p class="text-muted" style="margin-top: 1rem; font-size: 0.875rem;">
+                Place in: WTF/Account/YOURNAME/SavedVariables/
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Recent Uploads</h2>
+            <table id="uploads-table">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Character</th>
+                        <th>Realm</th>
+                        <th>Items Scanned</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="uploads-tbody">
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No uploads yet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            document.getElementById('upload-area').classList.add('dragging');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            document.getElementById('upload-area').classList.remove('dragging');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            document.getElementById('upload-area').classList.remove('dragging');
+
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                uploadFile(file);
+            }
+        }
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                uploadFile(file);
+            }
+        }
+
+        async function uploadFile(file) {
+            if (!file.name.endsWith('.lua')) {
+                showError('Please upload a .lua file');
+                return;
+            }
+
+            // Show progress
+            document.getElementById('upload-content').style.display = 'none';
+            document.getElementById('upload-progress').style.display = 'block';
+            document.getElementById('upload-result').innerHTML = '';
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch(`${API_BASE}/api/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccess(result);
+                } else {
+                    showError(result.detail || 'Upload failed');
+                }
+            } catch (error) {
+                showError('Upload failed: ' + error.message);
+            } finally {
+                document.getElementById('upload-content').style.display = 'block';
+                document.getElementById('upload-progress').style.display = 'none';
+            }
+        }
+
+        function showSuccess(result) {
+            document.getElementById('upload-result').innerHTML = `
+                <div class="alert alert-buy">
+                    <strong>✅ Upload successful!</strong><br>
+                    Processed ${result.items_scanned || 0} items<br>
+                    ${result.opportunities_found || 0} opportunities found<br>
+                    <a href="/" style="color: var(--success); text-decoration: underline;">View Dashboard</a>
+                </div>
+            `;
+            loadRecentUploads();
+        }
+
+        function showError(message) {
+            document.getElementById('upload-result').innerHTML = `
+                <div class="alert" style="background: rgba(255, 68, 68, 0.1); border-color: var(--error);">
+                    <strong>❌ Error:</strong> ${message}
+                </div>
+            `;
+        }
+
+        async function downloadRecommendations() {
+            try {
+                const response = await fetch(`${API_BASE}/api/download/recommendations`);
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'GoblinAI_Recommendations.lua';
+                a.click();
+                window.URL.revokeObjectURL(url);
+            } catch (error) {
+                alert('Download failed: ' + error.message);
+            }
+        }
+
+        async function loadRecentUploads() {
+            try {
+                const response = await fetch(`${API_BASE}/api/uploads/recent`);
+                const uploads = await response.json();
+
+                const tbody = document.getElementById('uploads-tbody');
+                tbody.innerHTML = '';
+
+                if (uploads.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">No uploads yet</td></tr>';
+                    return;
+                }
+
+                uploads.forEach(upload => {
+                    const row = tbody.insertRow();
+                    row.innerHTML = `
+                        <td>${new Date(upload.timestamp).toLocaleString()}</td>
+                        <td>${upload.character || 'Unknown'}</td>
+                        <td>${upload.realm || 'Unknown'}</td>
+                        <td>${upload.items_scanned || 0}</td>
+                        <td><span style="color: var(--success);">✓</span> Processed</td>
+                    `;
+                });
+            } catch (error) {
+                console.error('Error loading uploads:', error);
+            }
+        }
+
+        // Load on page load
+        document.addEventListener('DOMContentLoaded', loadRecentUploads);
+    </script>
+</body>
+
+</html>

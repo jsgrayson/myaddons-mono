@@ -1,0 +1,1 @@
+BANK_INTERVAL = 60

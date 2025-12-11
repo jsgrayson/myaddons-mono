@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+
+  # --------------------------
+  # Prometheus Monitoring
+  # --------------------------
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: goblin-prometheus
+    volumes:
+      - ./ops/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  # --------------------------
+  # cAdvisor (Docker metrics)
+  # --------------------------
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: goblin-cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  # --------------------------
+  # Node Exporter (Host metrics)
+  # --------------------------
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: goblin-node-exporter
+    pid: host
+    network_mode: host
+    restart: unless-stopped
+
+  # --------------------------
+  # Grafana Dashboard
+  # --------------------------
+  grafana:
+    image: grafana/grafana:latest
+    container_name: goblin-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ops/monitoring/grafana:/var/lib/grafana
+      - ./ops/monitoring/grafana/provisioning:/etc/grafana/provisioning
+    restart: unless-stopped
+
