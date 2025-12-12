@@ -20,10 +20,13 @@ def get_db_connection():
     conn = psycopg2.connect(db_url)
     return conn
 
+@app.route('/api/health')
+def health_check():
+    return jsonify({"status": "ok"})
+
 @app.route('/')
 def index():
-    # Redirect to dashboard as the new home page
-    return dashboard()
+    return jsonify({"status": "Holocron backend running"})
 
 
 @app.route('/api/stats')

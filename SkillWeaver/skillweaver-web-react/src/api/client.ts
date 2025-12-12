@@ -1,6 +1,7 @@
-// src/api/client.ts
 // Types + stubbed API calls for SkillWeaver.
 // Later you (or the addon/server) will replace the internals with real HTTP / sync logic.
+
+const API_BASE = "/api";
 
 export type WowClass =
   | "WARRIOR"
@@ -140,5 +141,9 @@ export async function apiListEncounters(): Promise<EncounterSummary[]> {
       profileName: "Frost Mythic+",
       lastSeen: "2025-12-08T19:45:00Z",
     },
-  ];
-}
+// Health check
+export async function apiGetServerStatus(): Promise<{ status: string }> {
+    const res = await fetch(`${API_BASE}/health`);
+    if (!res.ok) throw new Error("Health check failed");
+    return res.json();
+  }
