@@ -1,21 +1,412 @@
+
 local addonName, addonTable = ...
+local PetWeaver = LibStub("AceAddon-3.0"):NewAddon("PetWeaver", "AceConsole-3.0", "AceEvent-3.0")
+local AceGUI = LibStub("AceGUI-3.0")
+
+-- Data Defaults
+local defaults = {
+    profile = {
+        teams = {},   -- [id] = { name="", pets={...} }
+        scripts = {}, -- [id] = { name="New Script", text="" }
+        bindings = {} -- [encounterId] = { teamId, scriptId }
+    }
+}
+
+-- Safe UI Access
+function PetWeaver:EnsureUI()
+    self.frames = self.frames or {}
+    if self.frames.journal then return end
+    
+    -- Try to find the XML frame
+    local f = _G["PetweaverJournalFrame"]
+    if not f then
+        -- XML failed to load? Create placeholder to prevent nil crashes
+        -- Ideally this shouldn't happen if TOC/XML are correct
+        f = CreateFrame("Frame", "PetweaverJournalFrame", UIParent)
+    end
+    self.frames.journal = f
+end
+
+function PetWeaver:OnInitialize()
+    self.db = LibStub("AceDB-3.0"):New("PetWeaverDB", defaults, true)
+    
+    self:RegisterChatCommand("pw", "ToggleUI")
+    self:RegisterChatCommand("petweaver", "ToggleUI")
+    
+    self:Print("PetWeaver Loaded. Type /pw to open.")
+end
+
+function PetWeaver:OnEnable()
+    self:RegisterEvent("PET_BATTLE_OPENING_START")
+end
+
+function PetWeaver:PET_BATTLE_OPENING_START()
+    local npcID = C_PetBattles.GetInfo(Enum.BattlePetOwner.Enemy, 1) -- Basic NPC check?
+    -- Better: C_PetBattles.GetForfeitPenalty() usually 0 for wild.
+    -- Need accurate NPC ID. The best is usually from GUID of unit 'pet1' or similar?
+    -- C_PetBattles.GetBattleState() ?
+    
+    -- MVP: Just bind to Zone or Name? 
+    -- Let's try to get NPC ID from C_PetBattles.
+    -- Actually, for PVE, Opponent ID 1 is the primary pet.
+    local opponentID = C_PetBattles.GetActivePet(Enum.BattlePetOwner.Enemy)
+    local speciesID = C_PetBattles.GetPetSpeciesID(Enum.BattlePetOwner.Enemy, opponentID)
+    
+    self:Print("Battle Started! Enemy Species: " .. (speciesID or "Unknown"))
+    
+    -- Checking Binding
+    local binding = self.db.profile.bindings[speciesID] -- Simple binding by SpeciesID for now
+    if binding then
+         local team = self.db.profile.teams[binding.teamId]
+         local script = self.db.profile.scripts[binding.scriptId]
+         
+         if team and script then
+             self:Print("Auto-Loading Strategy: " .. team.name)
+             -- Load Team Logic (If not already loaded? Too late to load inside battle start?)
+             -- Actually, PET_BATTLE_OPENING_START is usually too late to Change Loadout?
+             -- "Teams must be loaded BEFORE battle".
+             -- If we are IN battle, we can only run the script.
+             
+             -- Construct runtime object for Engine
+             local runtimeTeam = {
+                 name = team.name,
+                 script = script.text
+             }
+             
+             if addonTable.BattleEngine then
+                 addonTable.BattleEngine:StartBattle(runtimeTeam)
+             else
+                 self:Print("Error: BattleEngine not loaded.")
+             end
+         end
+    end
+end
 
 -- ============================================================================
--- Data & State
+-- Utility: JSON Serialization (Simple)
 -- ============================================================================
-addonTable.petScripts = {}
-addonTable.savedTeams = {}
-addonTable.levelingQueue = {} -- NEW: Stores the list of pets to level
-addonTable.petList = {}
 
-tinsert(addonTable.savedTeams, {name="Starter Team", pets={nil, nil, nil}, icon="Interface\\Icons\\inv_misc_questionmark"})
+function PetWeaver:TableToJSON(tbl)
+    local function serializeValue(val)
+        local vtype = type(val)
+        if vtype == "string" then
+            return '"' .. val:gsub('"', '\\"'):gsub('\n', '\\n') .. '"'
+        elseif vtype == "number" then
+            return tostring(val)
+        elseif vtype == "boolean" then
+            return tostring(val)
+        elseif vtype == "table" then
+            local isArray = true
+            for k, _ in pairs(val) do
+                if type(k) ~= "number" then isArray = false break end
+            end
+            if isArray then
+                local items = {}
+                for i, v in ipairs(val) do
+                    table.insert(items, serializeValue(v))
+                end
+                return "[" .. table.concat(items, ",") .. "]"
+            else
+                local items = {}
+                for k, v in pairs(val) do
+                    table.insert(items, '"' .. k .. '":' .. serializeValue(v))
+                end
+                return "{" .. table.concat(items, ",") .. "}"
+            end
+        else
+            return "null"
+        end
+    end
+    return serializeValue(tbl)
+end
 
-local selectedID = nil
-local currentTab = 1 -- 1=Pets, 2=Teams, 3=Queue
-local currentSearch = ""
+function PetWeaver:JSONToTable(str)
+    -- Basic JSON parsing (Limited, but functional for simple structures)
+    -- Use Lua's loadstring for safety? No, manual parse safer.
+    -- For MVP, just use loadstring with safeguards.
+    local fn, err = loadstring("return " .. str)
+    if fn then return fn() else error("Invalid JSON: " .. err) end
+end
 
 -- ============================================================================
--- Helpers
+-- UI Construction (AceGUI)
+-- ============================================================================
+
+function PetWeaver:ToggleUI()
+    if not self.frame then
+        self:CreateMainFrame()
+    end
+    if self.frame:IsShown() then
+        self.frame:Hide()
+    else
+        self.frame:Show()
+    end
+end
+
+function PetWeaver:CreateMainFrame()
+    local frame = AceGUI:Create("Frame")
+    frame:SetTitle("PetWeaver")
+    frame:SetStatusText("Offline-First Pet Battle Scripting")
+    frame:SetCallback("OnClose", function(widget) widget:Hide() end)
+    frame:SetLayout("Fill")
+    frame:SetWidth(800)
+    frame:SetHeight(600)
+    
+    -- Main Tabs
+    local tabGroup = AceGUI:Create("TabGroup")
+    tabGroup:SetLayout("Flow")
+    tabGroup:SetTabs({
+        {text="Teams", value="teams"},
+        {text="Scripts", value="scripts"}
+    })
+    tabGroup:SetCallback("OnGroupSelected", function(container, event, group)
+        container:ReleaseChildren()
+        if group == "teams" then
+            PetWeaver:DrawTeamsTab(container)
+        elseif group == "scripts" then
+            PetWeaver:DrawScriptsTab(container)
+        end
+    end)
+    
+    frame:AddChild(tabGroup)
+    tabGroup:SelectTab("teams")
+    
+    self.frame = frame
+end
+
+-- ============================================================================
+-- Teams Tab
+-- ============================================================================
+
+function PetWeaver:DrawTeamsTab(container)
+    local btnNew = AceGUI:Create("Button")
+    btnNew:SetText("New Team")
+    btnNew:SetWidth(200)
+    btnNew:SetCallback("OnClick", function()
+        local id = tostring(math.random(1000000))
+        self.db.profile.teams[id] = { name="New Team", pets={ {}, {}, {} } }
+        -- Refresh handled below via redraw or tree refresh hook
+        -- To keep it simple, we just re-select current tab
+        container:ReleaseChildren()
+        self:DrawTeamsTab(container) 
+    end)
+    container:AddChild(btnNew)
+
+    local tree = AceGUI:Create("TreeGroup")
+    tree:SetLayout("Flow")
+    tree:SetFullWidth(true)
+    tree:SetFullHeight(true)
+    tree:SetTreeWidth(200, false)
+    
+    local function RefreshTree()
+        local t = {}
+        for id, team in pairs(self.db.profile.teams) do
+            table.insert(t, {value=id, text=team.name})
+        end
+        table.sort(t, function(a,b) return a.text < b.text end)
+        tree:SetTree(t)
+    end
+    
+    local activeTeamId = nil
+    
+    local function DrawTeamEditor(group)
+        group:ReleaseChildren()
+        
+        if not activeTeamId then 
+            local l = AceGUI:Create("Label")
+            l:SetText("Select a team to edit.")
+            group:AddChild(l)
+            return
+        end
+        
+        local team = self.db.profile.teams[activeTeamId]
+        if not team then return end
+        
+        -- Header Actions
+        local grpHeader = AceGUI:Create("SimpleGroup")
+        grpHeader:SetLayout("Flow")
+        grpHeader:SetFullWidth(true)
+        
+        local btnLoad = AceGUI:Create("Button")
+        btnLoad:SetText("Equip Team")
+        btnLoad:SetWidth(120)
+        btnLoad:SetCallback("OnClick", function()
+            self:Print("Equipping " .. team.name)
+            for i=1,3 do
+                local p = team.pets[i]
+                if p and p.speciesId then
+                   -- Basic load logic (To be refined with proper PetID lookup)
+                   -- MVP: Just print for now, hook up C_PetJournal logic later
+                   self:Print("Slot "..i..": Species "..(p.speciesId or "None"))
+                end
+            end
+        end)
+        grpHeader:AddChild(btnLoad)
+        
+        local btnImport = AceGUI:Create("Button")
+        btnImport:SetText("Import Equipped")
+        btnImport:SetWidth(120)
+        btnImport:SetCallback("OnClick", function()
+             for i=1,3 do
+                local pid, speciesID, _, _, _, _, _, name = C_PetJournal.GetPetLoadOutInfo(i)
+                if pid then
+                    local _, _, _, _, _, _, _, _, _, _, _, displayID, _, _, modID = C_PetJournal.GetPetInfoByPetID(pid)
+                    local a1, a2, a3 = C_PetJournal.GetPetAbilityList(speciesID, true, false) 
+                    -- MVP: Just grabbing species. Abilities require slot lookup. 
+                    team.pets[i] = { speciesId = speciesID, name = name }
+                else
+                    team.pets[i] = {}
+                end
+             end
+             group:ReleaseChildren()
+             DrawTeamEditor(group) -- Redraw
+             self:Print("Imported current team.")
+        end)
+        grpHeader:AddChild(btnImport)
+        
+        local btnDel = AceGUI:Create("Button")
+        btnDel:SetText("Delete Team")
+        btnDel:SetWidth(120)
+        btnDel:SetCallback("OnClick", function()
+             self.db.profile.teams[activeTeamId] = nil
+             activeTeamId = nil
+             RefreshTree()
+             tree:SelectByValue(nil)
+        end)
+        grpHeader:AddChild(btnDel)
+        
+        -- Export Button
+        local btnExport = AceGUI:Create("Button")
+        btnExport:SetText("Export")
+        btnExport:SetWidth(100)
+        btnExport:SetCallback("OnClick", function()
+            local exportData = {
+                type = "PetWeaverTeam",
+                version = 1,
+                name = team.name,
+                pets = team.pets
+            }
+            local jsonStr = self:TableToJSON(exportData)
+            
+            -- Show popup with export string
+            local popup = AceGUI:Create("Frame")
+            popup:SetTitle("Export Team: " .. team.name)
+            popup:SetWidth(600)
+            popup:SetHeight(300)
+            popup:SetLayout("Fill")
+            popup:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
+            
+            local editBox = AceGUI:Create("MultiLineEditBox")
+            editBox:SetLabel("Copy this string:")
+            editBox:SetText(jsonStr)
+            editBox:SetNumLines(10)
+            editBox:SetFullWidth(true)
+            editBox:DisableButton(true)
+            popup:AddChild(editBox)
+        end)
+        grpHeader:AddChild(btnExport)
+        
+        -- Import Button (Team-level import to replace current)
+        local btnImportStr = AceGUI:Create("Button")
+        btnImportStr:SetText("Import String")
+        btnImportStr:SetWidth(100)
+        btnImportStr:SetCallback("OnClick", function()
+            local popup = AceGUI:Create("Frame")
+            popup:SetTitle("Import Team String")
+            popup:SetWidth(600)
+            popup:SetHeight(300)
+            popup:SetLayout("Fill")
+            popup:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
+            
+            local editBox = AceGUI:Create("MultiLineEditBox")
+            editBox:SetLabel("Paste team string:")
+            editBox:SetNumLines(10)
+            editBox:SetFullWidth(true)
+            
+            local btnConfirm = AceGUI:Create("Button")
+            btnConfirm:SetText("Import")
+            btnConfirm:SetWidth(150)
+            btnConfirm:SetCallback("OnClick", function()
+                local importStr = editBox:GetText()
+                local success, data = pcall(self.JSONToTable, self, importStr)
+                if success and data and data.type == "PetWeaverTeam" then
+                    team.name = data.name
+                    team.pets = data.pets
+                    RefreshTree()
+                    group:ReleaseChildren()
+                    DrawTeamEditor(group)
+                    self:Print("Team imported successfully!")
+                    popup:Hide()
+                else
+                    self:Print("Error: Invalid team string.")
+                end
+            end)
+            
+            popup:AddChild(editBox)
+            popup:AddChild(btnConfirm)
+        end)
+        grpHeader:AddChild(btnImportStr)
+        
+        group:AddChild(grpHeader)
+        
+        -- Name Edit
+        local nameEdit = AceGUI:Create("EditBox")
+        nameEdit:SetLabel("Team Name")
+        nameEdit:SetText(team.name)
+        nameEdit:SetWidth(300)
+        nameEdit:SetCallback("OnEnterPressed", function(widget, event, text)
+             team.name = text
+             RefreshTree()
+        end)
+        group:AddChild(nameEdit)
+        
+        -- 3 Pet Slots
+        for i=1,3 do
+            local p = team.pets[i] or {}
+            local box = AceGUI:Create("InlineGroup")
+            box:SetTitle("Slot " .. i)
+            box:SetLayout("Flow")
+            box:SetFullWidth(true)
+            
+            local sEdit = AceGUI:Create("EditBox")
+            sEdit:SetLabel("Species ID")
+            sEdit:SetText(p.speciesId or "")
+            sEdit:SetWidth(100)
+            sEdit:SetCallback("OnEnterPressed", function(w,e,t) p.speciesId = tonumber(t) end)
+            box:AddChild(sEdit)
+            
+            local nEdit = AceGUI:Create("EditBox")
+            nEdit:SetLabel("Abilities (Comma sep)")
+            nEdit:SetText(table.concat(p.abilities or {}, ","))
+            nEdit:SetWidth(200)
+            nEdit:SetCallback("OnEnterPressed", function(w,e,t) 
+                -- parse "111,222,333"
+                p.abilities = {}
+                for num in string.gmatch(t, "([^,]+)") do
+                    table.insert(p.abilities, tonumber(num))
+                end
+            end)
+            box:AddChild(nEdit)
+            
+            group:AddChild(box)
+        end
+    end
+    
+    tree:SetCallback("OnGroupSelected", function(widget, event, uniquevalue)
+        activeTeamId = uniquevalue
+        DrawTeamEditor(tree)
+    end)
+    
+    RefreshTree()
+    container:AddChild(tree)
+end
+
+
+function PetWeaver:DrawScriptsTab(container)
+    local label = AceGUI:Create("Label")
+    label:SetText("Script Authoring Coming Soon")
+    container:AddChild(label)
+end
 -- ============================================================================
 local function GetPetDetails(petID)
     if not petID then return nil end
@@ -55,7 +446,7 @@ local function UpdateTeamSlots()
     local p2 = C_PetJournal.GetPetLoadOutInfo(2)
     local p3 = C_PetJournal.GetPetLoadOutInfo(3)
 
-    local loadoutFrame = PetweaverJournalFrame.RightInset.TeamLoadout
+    local loadoutFrame = PetWeaver.frames.journal.RightInset.TeamLoadout
     local function SetSlot(btn, pid)
         if pid then
             local d = GetPetDetails(pid)
@@ -118,7 +509,7 @@ end
 -- ============================================================================
 
 local function UpdatePetCard(petID)
-    local frame = PetweaverJournalFrame.RightInset.SelectedPetDetails
+    local frame = PetWeaver.frames.journal.RightInset.SelectedPetDetails
     local speciesID, customName, level, _, _, _, _, name, icon, petType = C_PetJournal.GetPetInfoByPetID(petID)
     local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
     local rarityColor = ITEM_QUALITY_COLORS[rarity-1]
@@ -139,9 +530,10 @@ end
 -- ============================================================================
 
 local function UpdatePetData()
+    addonTable.petList = addonTable.petList or {}
     wipe(addonTable.petList)
     local _, numOwned = C_PetJournal.GetNumPets()
-    local searchLower = string.lower(currentSearch)
+    local searchLower = string.lower(currentSearch or "")
 
     for i = 1, numOwned do
         local petID, speciesID, owned, customName, level, _, _, speciesName, icon = C_PetJournal.GetPetInfoByIndex(i)
@@ -170,8 +562,12 @@ local function UpdatePetData()
 end
 
 function PetweaverList_Update()
-    local scrollFrame = PetweaverJournalFrame.LeftInset.ListScrollFrame
+    PetWeaver:EnsureUI()
+    if not PetWeaver.frames.journal or not PetWeaver.frames.journal.LeftInset then return end
+    local scrollFrame = PetWeaver.frames.journal.LeftInset.ListScrollFrame
+    if not scrollFrame then return end
     local buttons = scrollFrame.buttons
+    if not buttons then return end
     local offset = HybridScrollFrame_GetOffset(scrollFrame)
 
     -- DETERMINE DATA SOURCE
@@ -274,10 +670,10 @@ end
 
 local function SetTab(id)
     currentTab = id
-    PanelTemplates_SetTab(PetweaverJournalFrame, id)
+    PanelTemplates_SetTab(PetWeaver.frames.journal, id)
     selectedID = nil
     currentSearch = ""
-    PetweaverJournalFrame.LeftInset.FilterHeader.SearchBox:SetText("")
+    PetWeaver.frames.journal.LeftInset.FilterHeader.SearchBox:SetText("")
     UpdatePetData()
 end
 
@@ -285,29 +681,83 @@ end
 -- INIT
 -- ============================================================================
 
+local function EnsureState()
+    PetWeaverDB = PetWeaverDB or {}
+    PetWeaverDB.teams = PetWeaverDB.teams or {}
+    PetWeaverDB.queue = PetWeaverDB.queue or {}
+    PetWeaverDB.settings = PetWeaverDB.settings or { debug = false }
+    
+    addonTable.savedTeams = PetWeaverDB.teams
+    addonTable.levelingQueue = PetWeaverDB.queue
+    addonTable.petList = addonTable.petList or {}
+    
+    PetWeaver.frames = PetWeaver.frames or {}
+end
+
 local function OnEvent(self, event, ...)
-    if event == "PLAYER_LOGIN" then
+    if event == "ADDON_LOADED" then
+        local name = ...
+        if name == addonName then
+            PetWeaverDB = PetWeaverDB or {}
+            
+            -- SAFE MIGRATION (v1)
+            if not PetWeaverDB.version or PetWeaverDB.version < 1 then
+                PetWeaverDB.version = 1
+                PetWeaverDB.settings = PetWeaverDB.settings or { debug = false }
+                PetWeaverDB.teams = PetWeaverDB.teams or {}
+                PetWeaverDB.queue = PetWeaverDB.queue or {}
+                
+                -- Default Starter Team if empty
+                if #PetWeaverDB.teams == 0 then
+                    tinsert(PetWeaverDB.teams, {name="Starter Team", pets={nil, nil, nil}, icon="Interface\\Icons\\inv_misc_questionmark"})
+                end
+                print("|cff00FF00PetWeaver|r: Database Migrated to v1.")
+            else
+                -- Integrity Assurance
+                PetWeaverDB.teams = PetWeaverDB.teams or {}
+                PetWeaverDB.queue = PetWeaverDB.queue or {}
+            end
+            
+            -- Bind to Addon Table (Runtime)
+            addonTable.savedTeams = PetWeaverDB.teams
+            addonTable.levelingQueue = PetWeaverDB.queue
+            
+            print("|cff00FF00PetWeaver|r: Loaded.")
+        end
+
+    elseif event == "PLAYER_LOGIN" then
+        EnsureState() -- Critical: Ensure data tables exist
+        PetWeaver:EnsureUI() -- Critical: Ensure UI frames exist
+        
         if PetweaverJournalFrameTitleText then PetweaverJournalFrameTitleText:SetText("Petweaver Journal"); end
 
-        PetweaverJournalFrame.PetsTab:SetScript("OnClick", function() SetTab(1) end)
-        PetweaverJournalFrame.TeamsTab:SetScript("OnClick", function() SetTab(2) end)
-        PetweaverJournalFrame.QueueTab:SetScript("OnClick", function() SetTab(3) end) -- NEW TAB
-        
-        PanelTemplates_SetNumTabs(PetweaverJournalFrame, 3); -- UPDATED COUNT
-        SetTab(1)
+        local f = PetWeaver.frames.journal
+        if not f or not f.LeftInset then
+             print("|cffDAA520PetWeaver|r: UI XML minimal or missing LeftInset; skipping UI init.")
+             return
+        end
 
-        local searchBox = PetweaverJournalFrame.LeftInset.FilterHeader.SearchBox
+        if PetWeaver.frames and PetWeaver.frames.journal and PetWeaver.frames.journal.PetsTab then
+            PetWeaver.frames.journal.PetsTab:SetScript("OnClick", function() SetTab(1) end)
+            PetWeaver.frames.journal.TeamsTab:SetScript("OnClick", function() SetTab(2) end)
+            PetWeaver.frames.journal.QueueTab:SetScript("OnClick", function() SetTab(3) end) 
+            
+            PanelTemplates_SetNumTabs(PetWeaver.frames.journal, 3);
+            SetTab(1)
+        end
+
+        local searchBox = PetWeaver.frames.journal.LeftInset.FilterHeader.SearchBox
         searchBox:SetScript("OnTextChanged", function(self)
             currentSearch = self:GetText()
             UpdatePetData()
         end)
 
-        local scrollFrame = PetweaverJournalFrame.LeftInset.ListScrollFrame
-        HybridScrollFrame_CreateButtons(scrollFrame, "PetweaverListButtonTemplate")
+        local scrollFrame = PetWeaver.frames.journal.LeftInset.ListScrollFrame
+        HybridScrollFrame_CreateButtons(scrollFrame, "PetweaverListButtonTemplate", 0, 0)
         scrollFrame.update = PetweaverList_Update
         
-        if PetweaverJournalFrame.RightInset.TeamLoadout.SaveTeamButton then
-             PetweaverJournalFrame.RightInset.TeamLoadout.SaveTeamButton:SetScript("OnClick", SaveActiveTeam)
+        if PetWeaver.frames.journal.RightInset.TeamLoadout.SaveTeamButton then
+             PetWeaver.frames.journal.RightInset.TeamLoadout.SaveTeamButton:SetScript("OnClick", SaveActiveTeam)
         end
 
         UpdatePetData()
@@ -319,11 +769,49 @@ local function OnEvent(self, event, ...)
 end
 
 local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("ADDON_LOADED")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("PET_JOURNAL_LIST_UPDATE")
 eventFrame:SetScript("OnEvent", OnEvent)
 
 SLASH_PETWEAVER1 = "/petweaver"
+SLASH_PETWEAVER2 = "/pw"
 SlashCmdList["PETWEAVER"] = function(msg)
-    if PetweaverJournalFrame:IsShown() then PetweaverJournalFrame:Hide() else PetweaverJournalFrame:Show() end
+    msg = tostring(msg or "")
+    local cmd, arg = msg:lower():match("^(%S+)%s*(.*)")
+    
+    if cmd == "dump" then
+        if not PetWeaverDB then return end
+        local t = #PetWeaverDB.teams
+        local q = #PetWeaverDB.queue
+        print("PW DUMP: Teams="..t..", Queue="..q)
+        
+    elseif cmd == "sanity" then
+        if not PetWeaverDB then return end
+        local passed = true
+        if not PetWeaverDB.teams then passed = false; print("FAIL: Missing Teams table") end
+        if not PetWeaverDB.queue then passed = false; print("FAIL: Missing Queue table") end
+        
+        if passed then
+             print("|cff00FF00PW SANITY PASS|r")
+             print(string.format('SANITY_RESULT {"addon":"PetWeaver","status":"OK","checks":2,"failures":0}'))
+        else
+             print("|cffrr0000PW SANITY FAIL|r")
+             print(string.format('SANITY_RESULT {"addon":"PetWeaver","status":"FAIL","checks":2,"failures":1}'))
+        end
+        
+    elseif cmd == "resetdb" then
+        PetWeaverDB = {
+            version = 1,
+            settings = { debug = false },
+            teams = {},
+            queue = {}
+        }
+        -- Restore default
+        tinsert(PetWeaverDB.teams, {name="Starter Team", pets={nil, nil, nil}, icon="Interface\\Icons\\inv_misc_questionmark"})
+        ReloadUI()
+        
+    else
+        if PetWeaver.frames.journal:IsShown() then PetWeaver.frames.journal:Hide() else PetWeaver.frames.journal:Show() end
+    end
 end
