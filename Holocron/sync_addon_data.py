@@ -89,12 +89,15 @@ def sync_characters():
     print(f"\n📊 Total characters synced: {synced}")
 
 def sync_inventory():
-    """Sync inventory data from DeepPockets"""
-    dp_file = os.path.join(WOW_SAVED, "DeepPockets.lua")
+    """Sync inventory data from DeepPockets or DeepPocketsBB"""
+    # Priority: DeepPocketsBB (new), then DeepPockets (legacy)
+    dp_file = os.path.join(WOW_SAVED, "DeepPocketsBB.lua")
+    if not os.path.exists(dp_file):
+        dp_file = os.path.join(WOW_SAVED, "DeepPockets.lua")
     
     if not os.path.exists(dp_file):
         return
-    
+
     # TODO: Parse inventory data when bags are scanned
     # For now, just report what we have
     # Parse inventory data
@@ -236,7 +239,7 @@ def sync_sanity():
     print("\n🔍 Generating Confidence Reports...")
     
     addons = [
-        ("DeepPockets.lua", "DeepPockets"),
+        ("DeepPocketsBB.lua", "DeepPocketsBB"),
         ("PetWeaver.lua", "PetWeaver"),
         ("HolocronViewer.lua", "Holocron"),
         ("Skillweaver.lua", "SkillWeaver")

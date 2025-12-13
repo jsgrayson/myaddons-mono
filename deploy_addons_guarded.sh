@@ -41,8 +41,14 @@ deploy_addon() {
         "$src/" "$ADDONS_DIR/$dest_name/"
 }
 
-# 1. DeepPockets
+# 1. BetterBags (Disabled - Vendored into DeepPockets)
+# deploy_addon "BetterBags" "BetterBags" ""
+
+# 2. DeepPockets (BetterBags Fork)
 deploy_addon "DeepPockets" "DeepPockets" ""
+
+# 3. DeepPocketsBB (Disabled - Merged)
+# deploy_addon "DeepPocketsBB" "DeepPocketsBB" ""
 
 # 2. PetWeaver
 deploy_addon "PetWeaver" "PetWeaver" ""
@@ -75,6 +81,7 @@ echo "--------------------------------------------------------"
 echo "Deployment Complete. Verifying LIVE folders..."
 echo "If any output appears below, verification FAILED:"
 find "$ADDONS_DIR/DeepPockets" -mindepth 2 -name "*.toc" -print
+# find "$ADDONS_DIR/BetterBags" -mindepth 2 -name "*.toc" -print
 find "$ADDONS_DIR/PetWeaver" -mindepth 2 -name "*.toc" -print
 find "$ADDONS_DIR/SkillWeaver" -mindepth 2 -name "*.toc" -print
 find "$ADDONS_DIR/Holocron" -mindepth 2 -name "*.toc" -print

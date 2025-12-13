@@ -30,10 +30,33 @@ end
 function PetWeaver:OnInitialize()
     self.db = LibStub("AceDB-3.0"):New("PetWeaverDB", defaults, true)
     
-    self:RegisterChatCommand("pw", "ToggleUI")
-    self:RegisterChatCommand("petweaver", "ToggleUI")
+    self:Print("PetWeaver Loaded. Type /pw to open.")
     
     self:Print("PetWeaver Loaded. Type /pw to open.")
+end
+
+function PetWeaver:SlashHandler(msg)
+    msg = (msg or ""):lower()
+    if msg == "debug" then
+        self:DebugDump()
+    else
+        self:ToggleAceUI()
+    end
+end
+
+function PetWeaver:DebugDump()
+  local hasAce = LibStub and LibStub("AceGUI-3.0", true) ~= nil
+  local hasDB = self.db ~= nil
+  local teams = (hasDB and self.db.profile and self.db.profile.teams) and 0 or 0
+  if hasDB and self.db.profile.teams then
+      for _ in pairs(self.db.profile.teams) do teams = teams + 1 end
+  end
+  local scripts = (hasDB and self.db.profile and self.db.profile.scripts) and 0 or 0
+    if hasDB and self.db.profile.scripts then
+      for _ in pairs(self.db.profile.scripts) do scripts = scripts + 1 end
+  end
+  print(string.format("|cffDAA520PetWeaver|r DEBUG ace=%s db=%s teams=%d scripts=%d",
+    tostring(hasAce), tostring(hasDB), teams, scripts))
 end
 
 function PetWeaver:OnEnable()
@@ -132,7 +155,7 @@ end
 -- UI Construction (AceGUI)
 -- ============================================================================
 
-function PetWeaver:ToggleUI()
+function PetWeaver:ToggleAceUI()
     if not self.frame then
         self:CreateMainFrame()
     end
@@ -207,6 +230,23 @@ function PetWeaver:DrawTeamsTab(container)
         tree:SetTree(t)
     end
     
+    local function SafeSelectTree(treeObj, val)
+        if not treeObj then return end
+        -- If val is nil or empty, pick the first available team ID
+        if type(val) ~= "string" or val == "" then
+            val = nil
+            -- Find first team ID to select
+            for id, _ in pairs(self.db.profile.teams) do
+                val = id
+                break
+            end
+        end
+        -- Only select if we have a valid value
+        if val then
+            treeObj:SelectByValue(val)
+        end
+    end
+    
     local activeTeamId = nil
     
     local function DrawTeamEditor(group)
@@ -268,10 +308,19 @@ function PetWeaver:DrawTeamsTab(container)
         btnDel:SetText("Delete Team")
         btnDel:SetWidth(120)
         btnDel:SetCallback("OnClick", function()
+             -- Guard: ensure we have a valid team to delete
+             if not activeTeamId then return end
+             if not self.db or not self.db.profile or not self.db.profile.teams then return end
+             if not self.db.profile.teams[activeTeamId] then return end
+             
+             -- Delete the team
              self.db.profile.teams[activeTeamId] = nil
              activeTeamId = nil
+             -- Refresh tree and select next available
              RefreshTree()
-             tree:SelectByValue(nil)
+             SafeSelectTree(tree, nil) -- Will auto-select first available or do nothing
+             -- Redraw the editor (will show "Select a team" message)
+             DrawTeamEditor(group)
         end)
         grpHeader:AddChild(btnDel)
         
@@ -768,11 +817,12 @@ local function OnEvent(self, event, ...)
     end
 end
 
-local eventFrame = CreateFrame("Frame")
-eventFrame:RegisterEvent("ADDON_LOADED")
-eventFrame:RegisterEvent("PLAYER_LOGIN")
-eventFrame:RegisterEvent("PET_JOURNAL_LIST_UPDATE")
-eventFrame:SetScript("OnEvent", OnEvent)
+-- LEGACY CODE DISABLED
+-- local eventFrame = CreateFrame("Frame")
+-- eventFrame:RegisterEvent("ADDON_LOADED")
+-- eventFrame:RegisterEvent("PLAYER_LOGIN")
+-- eventFrame:RegisterEvent("PET_JOURNAL_LIST_UPDATE")
+-- eventFrame:SetScript("OnEvent", OnEvent)
 
 SLASH_PETWEAVER1 = "/petweaver"
 SLASH_PETWEAVER2 = "/pw"
@@ -812,6 +862,11 @@ SlashCmdList["PETWEAVER"] = function(msg)
         ReloadUI()
         
     else
-        if PetWeaver.frames.journal:IsShown() then PetWeaver.frames.journal:Hide() else PetWeaver.frames.journal:Show() end
+        -- Force Open AceGUI UI (Ignoring XML Frame compatibility for now)
+        if PetWeaver.ToggleAceUI then 
+            PetWeaver:ToggleAceUI() 
+        else
+            print("|cffDAA520PetWeaver|r: Error - ToggleAceUI not found.")
+        end
     end
 end
