@@ -2,7 +2,12 @@
 ## Title: DeepPockets (Backend)
 ## Notes: Backend-only companion for BetterBags. No UI, no bindings, no bag hooks.
 ## Author: DeepPockets Team
-## Version: 0.2.0
+## Version: 0.1.0
 ## SavedVariables: DeepPocketsDB
 ## OptionalDeps: BetterBags
+
 DeepPockets.lua
+dp_ext/migrate.lua
+dp_ext/scan.lua
+dp_ext/index.lua
+dp_ext/api.lua

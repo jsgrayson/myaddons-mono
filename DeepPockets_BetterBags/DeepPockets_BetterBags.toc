@@ -1,0 +1,8 @@
+## Interface: 110200
+## Title: DeepPockets (BetterBags Integration)
+## Notes: Adds 'New Item' badges and history data to BetterBags using DeepPockets backend.
+## Author: DeepPockets Team
+## Version: 0.1.0
+## Dependencies: BetterBags, DeepPockets
+
+Core.lua
