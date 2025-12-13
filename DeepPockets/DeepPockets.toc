@@ -1,9 +1,8 @@
-## Interface: 100200
-## Title: |cffDAA520Deep Pockets|r
-## Notes: Smart Inventory Sorter (BetterBags Replacement)
-## Author: You
-## Version: 0.1.0 Alpha
+## Interface: 110200
+## Title: DeepPockets (Backend)
+## Notes: Backend-only companion for BetterBags. No UI, no bindings, no bag hooks.
+## Author: DeepPockets Team
+## Version: 0.2.0
 ## SavedVariables: DeepPocketsDB
-
-DeepPockets.xml
+## OptionalDeps: BetterBags
 DeepPockets.lua
