@@ -7,6 +7,7 @@
 ## OptionalDeps: BetterBags
 
 DeepPockets.lua
+dp_ext/util.lua
 dp_ext/migrate.lua
 dp_ext/scan.lua
 dp_ext/index.lua

@@ -1,56 +1,36 @@
-DeepPockets.Index = DeepPockets.Index or {}
+-- dp_ext/index.lua
+local ADDON_NAME, ns = ...
+local DP = _G.DeepPockets
+DP.Index = {}
 
-local function ResolveCategory(item)
-  local itemType = item.itemType
-  local equipLoc = item.equipLoc
-
-  if equipLoc and equipLoc ~= "" and equipLoc ~= "INVTYPE_NON_EQUIP_IGNORE" then
-    return "Equipment"
-  end
-  if itemType == "Consumable" then return "Consumable" end
-  if itemType == "Trade Goods" then return "Trade Goods" end
-  if itemType == "Quest" then return "Quest" end
-  if itemType == "Gem" then return "Gem" end
-  return "Miscellaneous"
-end
-
-function DeepPockets.Index.Rebuild()
-  DeepPockets.Migrate.Ensure()
-  local db = DeepPocketsDB
-
-  db.index.by_item = {}
-  db.index.by_category = {}
-
-  for _, it in ipairs(db.inventory) do
-    local id = it.id
-    if id then
-      local entry = db.index.by_item[id]
-      if not entry then
-        entry = {
-          id = id,
-          name = it.name,
-          icon = it.icon,
-          quality = it.quality,
-          total = 0,
-          per_bag = {},
-          category = ResolveCategory(it),
-        }
-        db.index.by_item[id] = entry
-      end
-
-      entry.total = (entry.total or 0) + (it.count or 1)
-      entry.per_bag[it.bag] = (entry.per_bag[it.bag] or 0) + (it.count or 1)
-
-      local cat = entry.category or "Miscellaneous"
-      db.index.by_category[cat] = db.index.by_category[cat] or {}
-      if not entry._cat_added then
-        table.insert(db.index.by_category[cat], id)
-        entry._cat_added = true
-      end
+function DP.Index.Rebuild()
+    DP.Migrate.Ensure()
+    local db = DeepPocketsDB
+    
+    wipe(db.index.by_category)
+    wipe(db.index.by_itemID)
+    
+    for key, record in pairs(db.inventory) do
+        local cat = record.category or "Miscellaneous"
+        local itemID = record.itemID
+        
+        -- By Category
+        if not db.index.by_category[cat] then
+            db.index.by_category[cat] = {}
+        end
+        table.insert(db.index.by_category[cat], key)
+        
+        -- By ItemID
+        if itemID then
+            if not db.index.by_itemID[itemID] then
+                db.index.by_itemID[itemID] = {}
+            end
+            table.insert(db.index.by_itemID[itemID], key)
+        end
     end
-  end
-
-  for _, entry in pairs(db.index.by_item) do
-    entry._cat_added = nil
-  end
+    
+    -- Notify listeners
+    if DP.API and DP.API.NotifyListeners then
+        DP.API.NotifyListeners("INDEX_UPDATED")
+    end
 end

@@ -1,28 +1,63 @@
-DeepPockets.API = DeepPockets.API or {}
+-- dp_ext/api.lua
+local ADDON_NAME, ns = ...
+local DP = _G.DeepPockets
+DP.API = {}
 
-function DeepPockets.API.Scan()
-  local count = DeepPockets.Scanner.ScanBags()
-  DeepPockets.Index.Rebuild()
-  return count
+local listeners = {}
+
+function DP.API.NotifyListeners(event)
+    for _, fn in ipairs(listeners) do
+        pcall(fn, event)
+    end
 end
 
-function DeepPockets.API.GetDB()
-  DeepPockets.Migrate.Ensure()
-  return DeepPocketsDB
+-- Public Contract
+
+function DP.API.GetVersion()
+    return DeepPocketsDB and DeepPocketsDB.version or 0
 end
 
-function DeepPockets.API.GetTotalsByItem(itemID)
-  DeepPockets.Migrate.Ensure()
-  local by_item = DeepPocketsDB.index and DeepPocketsDB.index.by_item
-  return by_item and by_item[itemID] or nil
+function DP.API.ScanNow(opts)
+    if not DP.API.IsEnabled() then
+        return false, "disabled"
+    end
+    
+    local success, count = pcall(DP.Scanner.ScanBags)
+    if not success then return false, count end -- count is err msg here
+    
+    DP.Index.Rebuild()
+    return true, nil
 end
 
-function DeepPockets.API.GetCategory(itemID)
-  local t = DeepPockets.API.GetTotalsByItem(itemID)
-  return t and t.category or nil
+function DP.API.GetIndex()
+    DP.Migrate.Ensure()
+    return DeepPocketsDB.index
 end
 
--- Placeholder: later integrate SkillWeaver weights / Pawn-like scoring
-function DeepPockets.API.GetUpgradeScore(itemLink)
-  return nil, { reason = "not_implemented" }
+function DP.API.GetItem(itemKey)
+    DP.Migrate.Ensure()
+    return DeepPocketsDB.inventory[itemKey]
+end
+
+function DP.API.Subscribe(fn)
+    if type(fn) ~= "function" then return function() end end
+    table.insert(listeners, fn)
+    return function()
+        for i, f in ipairs(listeners) do
+            if f == fn then
+                table.remove(listeners, i)
+                break
+            end
+        end
+    end
+end
+
+function DP.API.IsEnabled()
+    DP.Migrate.Ensure()
+    return DeepPocketsDB.settings.enabled
+end
+
+function DP.API.SetEnabled(bool)
+    DP.Migrate.Ensure()
+    DeepPocketsDB.settings.enabled = bool
 end
