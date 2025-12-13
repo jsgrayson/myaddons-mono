@@ -2,50 +2,121 @@
 local addonName, addon = ...
 print("|cff00ff00HolocronViewer:|r Native Core Loaded.")
 
--- 1. SavedVariables Setup (Top Level Default)
-HolocronViewerDB = HolocronViewerDB or {
-    profile = { framePos = {"CENTER", UIParent, "CENTER", 0, 0} }
-}
+-- NOTE: Global Init removed to force ADDON_LOADED usage
 
--- 2. Event Handling
+-- ============================================================================
+-- FORMATTING
+-- ============================================================================
+local function FormatGold(amount)
+    local gold = math.floor(amount / 10000)
+    local silver = math.floor((amount % 10000) / 100)
+    local copper = amount % 100
+    return "|cffffd700" .. gold .. "g|r |cffc7c7cf" .. silver .. "s|r"
+end
+
+-- ============================================================================
+-- DATA ENGINE
+-- ============================================================================
+local function SnapshotCurrentChar()
+    if not HolocronViewerDB or not HolocronViewerDB.characters then return end
+    
+    local name = UnitName("player")
+    local realm = GetRealmName()
+    local key = name .. " - " .. realm
+    
+    local level = UnitLevel("player")
+    local gold = GetMoney()
+    local zone = GetZoneText()
+    local _, classFilename = UnitClass("player")
+    
+    HolocronViewerDB.characters[key] = {
+        name = name,
+        realm = realm,
+        class = classFilename,
+        level = level,
+        gold = gold,
+        zone = zone,
+        lastSeen = date("%Y-%m-%d %H:%M:%S")
+    }
+    -- print("|cff00ff00HolocronViewer:|r Snapshot Updated: "..key) 
+end
+
+-- ============================================================================
+-- EVENTS
+-- ============================================================================
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("ADDON_LOADED")
+eventFrame:RegisterEvent("PLAYER_MONEY")
+eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 
 eventFrame:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_LOGIN" then
-        print("|cff00ff00HolocronViewer:|r PLAYER_LOGIN. Initializing...")
+    if event == "ADDON_LOADED" and ... == addonName then
+        HolocronViewerDB = HolocronViewerDB or {}
+        
+        -- SAFE MIGRATION
+        if not HolocronViewerDB.version or HolocronViewerDB.version < 1 then
+            HolocronViewerDB.version = 1
+            HolocronViewerDB.characters = HolocronViewerDB.characters or {}
+            HolocronViewerDB.profile = HolocronViewerDB.profile or { framePos = {"CENTER", UIParent, "CENTER", 0, 0} }
+            print("|cff00ff00HolocronViewer:|r DB Migrated to v1.")
+        else
+            HolocronViewerDB.characters = HolocronViewerDB.characters or {}
+            HolocronViewerDB.profile = HolocronViewerDB.profile or { framePos = {"CENTER", UIParent, "CENTER", 0, 0} }
+        end
+        
+        SnapshotCurrentChar()
+        print("|cff00ff00HolocronViewer:|r Loaded.")
+        
+    elseif event == "PLAYER_LOGIN" then
         addon:CreateMainFrame()
-    elseif event == "ADDON_LOADED" and ... == addonName then
-        print("|cff00ff00HolocronViewer:|r ADDON_LOADED. DB Loaded.")
-        HolocronViewerDB = HolocronViewerDB or { profile = { framePos = {"CENTER", UIParent, "CENTER", 0, 0} } }
+        
+    elseif event == "PLAYER_MONEY" or event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_LEVEL_UP" then
+        SnapshotCurrentChar()
     end
 end)
 
--- 3. UI Creation
+-- ============================================================================
+-- UI Creation
+-- ============================================================================
 function addon:CreateMainFrame()
-    print("|cff00ff00HolocronViewer:|r CreateMainFrame called.")
-    if addon.Frame then 
-        print("|cff00ff00HolocronViewer:|r Frame already exists.")
-        return 
-    end
+    if addon.Frame then return end
     
-    -- Main Frame with BackdropTemplate
     local f = CreateFrame("Frame", "HolocronMainFrame", UIParent, "BackdropTemplate")
-    addon.Frame = f -- Assign IMMEDIATELY
-    print("|cff00ff00HolocronViewer:|r Frame Created: " .. tostring(f))
-    
+    addon.Frame = f
     f:SetSize(800, 600)
     
-    -- Safe SetPoint (Force CENTER for debug)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
-    print("|cff00ff00HolocronViewer:|r Point Set to CENTER.")
+    local pos = HolocronViewerDB.profile.framePos
     
-    -- Backdrop Configuration
-    if not f.SetBackdrop then
-        print("|cff00ff00HolocronViewer:|r Mixing in BackdropTemplate...")
-        Mixin(f, BackdropTemplateMixin)
+    local point, rel, relPoint, x, y = "CENTER", nil, "CENTER", 0, 0
+    if type(pos) == "table" then
+        point    = pos[1] or point
+        rel      = pos[2]
+        relPoint = pos[3] or relPoint
+        x        = tonumber(pos[4]) or x
+        y        = tonumber(pos[5]) or y
     end
+
+    local relativeTo = UIParent
+    
+    -- Guard against corrupt 'rel' being a table (fix for SetPoint wrong object type)
+    if type(rel) == "table" and not rel.GetObjectType then
+        rel = "UIParent"
+        -- Repair corrupt DB entry
+        if HolocronViewerDB and HolocronViewerDB.profile and HolocronViewerDB.profile.framePos then
+             HolocronViewerDB.profile.framePos[2] = "UIParent"
+        end
+    end
+
+    if type(rel) == "string" then
+        relativeTo = _G[rel] or UIParent
+    elseif type(rel) == "table" and rel.GetObjectType then
+        relativeTo = rel
+    end
+
+    f:ClearAllPoints()
+    f:SetPoint(point, relativeTo, relPoint, x, y)
     
     f:SetBackdrop({
         bgFile = "Interface\\Buttons\\WHITE8X8",
@@ -55,7 +126,6 @@ function addon:CreateMainFrame()
     })
     f:SetBackdropColor(0, 0, 0, 0.9)
     f:SetBackdropBorderColor(1, 1, 1, 1)
-    print("|cff00ff00HolocronViewer:|r Backdrop Set.")
     
     f:EnableMouse(true)
     f:SetMovable(true)
@@ -63,8 +133,10 @@ function addon:CreateMainFrame()
     f:SetScript("OnDragStart", function(self) self:StartMoving() end)
     f:SetScript("OnDragStop", function(self)
         self:StopMovingOrSizing()
-        local point, _, relativePoint, x, y = self:GetPoint()
-        HolocronViewerDB.profile.framePos = {point, relativePoint, x, y}
+        local point, relativeTo, relativePoint, x, y = self:GetPoint()
+        -- Always save relativeTo as string "UIParent" or similar safe global
+        -- Avoid saving the actual frame object which causes SetPoint crashes on load
+        HolocronViewerDB.profile.framePos = {point, "UIParent", relativePoint, x, y}
     end)
     
     f:Hide()
@@ -73,34 +145,60 @@ function addon:CreateMainFrame()
     f.Title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     f.Title:SetPoint("TOP", 0, -15)
     f.Title:SetText("Holocron Viewer")
-    
-    -- Content Placeholder
-    local sf = CreateFrame("ScrollFrame", nil, f, "UIPanelScrollFrameTemplate")
-    sf:SetPoint("TOPLEFT", 10, -40)
-    sf:SetPoint("BOTTOMRIGHT", -30, 10)
-    
-    local content = CreateFrame("Frame")
-    content:SetSize(750, 1000)
-    sf:SetScrollChild(content)
-    
-    local text = content:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    text:SetPoint("TOPLEFT", 10, -10)
-    text:SetText("Holocron Database:\n\n1. Item A\n2. Item B\n3. Item C\n\n(Real data connection pending...)")
-    text:SetJustifyH("LEFT")
-    
-    print("|cff00ff00HolocronViewer:|r UI Initialized Successfully.")
+
+    -- Simple Content Display (Debugging Phase)
+    f.ContentText = f:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    f.ContentText:SetPoint("CENTER", 0, 0)
+    f.ContentText:SetText("Type /holo dump to see data status.")
 end
 
--- 4. Slash Commands
+-- ============================================================================
+-- SLASH COMMANDS
+-- ============================================================================
 SLASH_HOLOCRON1 = "/holo"
 SlashCmdList["HOLOCRON"] = function(msg)
-    print("|cff00ff00HolocronViewer:|r Slash Command /holo received.")
-    if not addon.Frame then addon:CreateMainFrame() end
+    local cmd, arg = msg:lower():match("^(%S+)%s*(.*)")
     
-    if addon.Frame:IsShown() then
-        addon.Frame:Hide()
+    if cmd == "dump" then
+        if not HolocronViewerDB then return end
+        local c = 0
+        if HolocronViewerDB.characters then
+            for _ in pairs(HolocronViewerDB.characters) do c = c + 1 end
+        end
+        print("HOLO DUMP: Characters="..c)
+        
+    elseif cmd == "sanity" then
+        if not HolocronViewerDB then return end
+        local passed = true
+        if not HolocronViewerDB.characters then 
+            print("FAIL: Missing characters table")
+            passed = false 
+        end
+        
+        if passed then 
+            print("|cff00FF00HOLO SANITY PASS|r") 
+            print(string.format('SANITY_RESULT {"addon":"Holocron","status":"OK","checks":1,"failures":0}'))
+        else 
+            print("|cffrr0000HOLO SANITY FAIL|r") 
+            print(string.format('SANITY_RESULT {"addon":"Holocron","status":"FAIL","checks":1,"failures":1}'))
+        end
+        
+    elseif cmd == "resetdb" then
+        HolocronViewerDB = {
+            version = 1,
+            characters = {},
+            profile = { framePos = {"CENTER", UIParent, "CENTER", 0, 0} }
+        }
+        ReloadUI()
+        
     else
-        addon.Frame:Show()
+        -- Toggle UI
+        if not addon.Frame then addon:CreateMainFrame() end
+        if addon.Frame:IsShown() then
+            addon.Frame:Hide()
+        else
+            addon.Frame:Show()
+        end
     end
 end
 
@@ -115,13 +213,7 @@ local function CreateMinimapButton()
         tooltipText = "View inventory and character data",
         db = HolocronViewerDB.profile,
         OnLeftClick = function() 
-            if addon.Frame then
-                if addon.Frame:IsShown() then
-                    addon.Frame:Hide()
-                else
-                    addon.Frame:Show()
-                end
-            end
+            SlashCmdList["HOLOCRON"]("")
         end,
         OnRightClick = function() 
             if addon.optionsPanel then
@@ -162,7 +254,7 @@ function addon:CreateOptionsPanel()
             if addon.Frame then
                 addon.Frame:ClearAllPoints()
                 addon.Frame:SetPoint("CENTER")
-                HolocronViewerDB.profile.framePos = {"CENTER", "CENTER", 0, 0}
+                HolocronViewerDB.profile.framePos = {"CENTER", UIParent, "CENTER", 0, 0}
             end
         end
     })
@@ -170,7 +262,7 @@ function addon:CreateOptionsPanel()
     addon.optionsPanel = panel
 end
 
--- Initialize
+-- Initialize Late
 C_Timer.After(1, function()
     CreateMinimapButton()
     addon:CreateOptionsPanel()

@@ -1,0 +1,80 @@
+name: Holocron CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # --- FRONTEND CHECKS ---
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Frontend Dependencies
+      run: |
+        cd Holocron/frontend
+        npm ci
+
+    - name: Build Holocron Frontend
+      run: |
+        cd Holocron/frontend
+        npm run build
+
+    - name: Guard - DeepPockets View Existence
+      run: |
+        if [ ! -f "Holocron/frontend/components/DeepPocketsView.tsx" ]; then
+          echo "ERROR: Holocron/frontend/components/DeepPocketsView.tsx is missing!"
+          echo "Architectural Violation: DeepPockets Web View must remain inside Holocron."
+          exit 1
+        fi
+        echo "SUCCESS: DeepPockets View found in Holocron."
+
+    # --- BACKEND CHECKS ---
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Backend Dependencies
+      run: |
+        if [ -f "Holocron/requirements.txt" ]; then
+          pip install -r Holocron/requirements.txt
+        else
+          echo "WARNING: Holocron/requirements.txt not found, using generic flask install for smoke test"
+          pip install flask psycopg2-binary requests
+        fi
+
+    - name: Smoke Test Backend
+      env:
+        DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/holocron_test" # Mock for startup
+      run: |
+        # Start server in background
+        python Holocron/server.py &
+        PID=$!
+        
+        # Wait for server to start
+        echo "Waiting for server to start..."
+        sleep 10
+        
+        # Check health endpoint
+        # Trying port 5005 (Holocron default)
+        response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5005/api/health)
+        
+        if [ "$response" == "200" ]; then
+          echo "SUCCESS: Backend health check passed (200 OK)"
+        else
+          echo "ERROR: Backend health check failed with status $response"
+          kill $PID
+          exit 1
+        fi
+        
+        kill $PID

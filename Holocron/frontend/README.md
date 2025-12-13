@@ -67,9 +67,9 @@ npm run build
 
 ## Backend Integration
 
-The Vite config proxies `/api/*` requests to the Flask backend (`http://localhost:5005`).
+The Vite config proxies `/api/*` requests to the Flask backend (`http://localhost:8003`).
 
-**Example**: `fetch('/api/goblin')` → `http://localhost:5005/api/goblin`
+**Example**: `fetch('/api/goblin')` → `http://localhost:8003/api/goblin`
 
 Make sure your Flask server (`server.py`) is running on port 5005 for API calls to work.
 

@@ -1,3 +1,5 @@
+# ARCHITECTURAL BOUNDARY: See ARCHITECTURE.md
+# Holocron owns dashboard + DeepPockets view.
 import sys
 print("DEBUG: Starting server.py...", file=sys.stderr)
 import os
@@ -5,9 +7,316 @@ import json
 import psycopg2
 from collections import defaultdict
 from flask import Flask, request, jsonify, render_template
+from datetime import datetime, timezone
+
 
 app = Flask(__name__)
 
+# --- GATEWAY CONFIGURATION ---
+import requests
+SERVICE_MAP = {
+    "skillweaver": "http://localhost:3000",
+    "petweaver":   "http://localhost:5003",
+    "goblin":      "http://localhost:8001",
+    "holocron":    "http://localhost:8003", # Optional self-ref
+}
+
+
+# In-Memory Sanity State
+# Structure: val[character][addon] = { reported: {}, snapshot: {}, prev_snapshot: {}, derived: {}, updated_at: ... }
+sanity_state = defaultdict(lambda: defaultdict(dict))
+
+
+def apply_heuristics(addon, current_snap, prev_snap, reported_ts_iso):
+    """
+    Derive WARN status based on snapshot changes and staleness.
+    Returns: (status, reasons_list_of_objects)
+    """
+    reasons = [] # List of {code, message}
+    status = "OK"
+    
+    seen_codes = set()
+    def add_reason(code, msg):
+        if code not in seen_codes:
+            seen_codes.add(code)
+            reasons.append({"code": code, "message": msg})
+    
+    # 1. Staleness Check (Global)
+    try:
+        if reported_ts_iso:
+            reported_dt = datetime.fromisoformat(reported_ts_iso.replace("Z", "+00:00"))
+            age = datetime.now(timezone.utc) - reported_dt
+            if age.total_seconds() > 86400: # 24h
+                add_reason("SANITY_STALE_24H", "Report stale (>24h)")
+                status = "WARN"
+    except Exception:
+        pass # Ignore parsing errors
+
+    if not current_snap:
+        return status, reasons
+
+    # 2. Addon-Specific Checks
+    if addon == "DeepPockets":
+        inv = current_snap.get("inv_count", 0)
+        money = current_snap.get("money_copper", 0)
+        prev_inv = prev_snap.get("inv_count", 0) if prev_snap else 0
+        
+        # Zero Inventory Rule
+        if inv == 0 and prev_inv > 0:
+            add_reason("DP_INV_ZERO_AFTER_NONZERO", f"Inventory dropped to 0 (was {prev_inv})")
+            status = "WARN"
+            
+        # Massive Drop Rule (>80%)
+        elif prev_inv >= 50 and inv <= (prev_inv * 0.2):
+            add_reason("DP_INV_DROP_80", f"Inventory dropped >80% ({prev_inv} -> {inv})")
+            status = "WARN"
+            
+        # Zero Money Rule (Advisory)
+        prev_money = prev_snap.get("money_copper", 0) if prev_snap else 0
+        if money == 0 and prev_money > 0:
+            add_reason("DP_MONEY_ZERO", "Money is 0")
+            if status != "FAIL": status = "WARN"
+
+    elif addon == "PetWeaver":
+        pets = current_snap.get("owned_pet_count", 0)
+        strats = current_snap.get("strategy_count", 0)
+        if pets > 0 and strats == 0:
+            add_reason("PW_PETS_NO_STRATS", "Pets present but no strategies loaded")
+            status = "WARN"
+
+    elif addon == "SkillWeaver":
+        spec_active = current_snap.get("active_spec_present", False)
+        modules = current_snap.get("module_count", 0)
+        if spec_active and modules == 0:
+            add_reason("SW_SPEC_NO_MODULES", "Spec detected but no modules active")
+            status = "WARN"
+            
+    return status, reasons
+
+@app.route('/api/v1/sanity/report', methods=['POST'])
+def report_sanity():
+    """
+    Ingest a sanity report.
+    Payload:
+    {
+        "character": "Name-Realm",
+        "addon": "DeepPockets",
+        "status": "OK|WARN|FAIL",
+        "snapshot": { ... },   # Optional
+        "timestamp": "ISO8601"
+    }
+    """
+    try:
+        data = request.json
+        addon = data.get("addon")
+        char_name = data.get("character", "Unknown-Realm")
+        
+        if not addon:
+            return jsonify({"error": "Missing addon name"}), 400
+            
+        # Get existing state for rotation
+        current_state = sanity_state[char_name].get(addon, {})
+        
+        # Rotate Snapshot
+        new_snap = data.get("snapshot")
+        if new_snap:
+            # If we have a new snapshot, move current to prev
+            if "snapshot" in current_state:
+                current_state["prev_snapshot"] = current_state["snapshot"]
+            current_state["snapshot"] = new_snap
+            
+        # Update Reported
+        current_state["reported"] = {
+            "status": data.get("status", "OK"),
+            "timestamp": data.get("timestamp"),
+            "details": data.get("details", {})
+        }
+        current_state["updated_at"] = datetime.now(timezone.utc).isoformat()
+        
+        # Save back
+        sanity_state[char_name][addon] = current_state
+        
+        print(f"Confidence Report [{char_name}][{addon}]: {data.get('status')}")
+        return jsonify({"success": True})
+    except Exception as e:
+        print(f"Error processing sanity report: {e}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/v1/sanity/status', methods=['GET'])
+def get_sanity_status():
+    """
+    Return aggregated confidence status with derived heuristics.
+    Structure:
+    {
+        "overall": "OK|WARN|FAIL",
+        "characters": { ... }
+    }
+    """
+    response = {
+        "overall": "OK",
+        "characters": {}
+    }
+    
+    global_status_val = 0 # 0=OK, 1=WARN, 2=FAIL
+    
+    for char_name, addons in sanity_state.items():
+        char_entry = {"overall": "OK", "addons": {}}
+        char_max_val = 0
+        
+        for addon, state in addons.items():
+            reported = state.get("reported", {})
+            rep_status = reported.get("status", "OK")
+            rep_ts = reported.get("timestamp")
+            
+            # Run Derived Heuristics
+            curr_snap = state.get("snapshot")
+            prev_snap = state.get("prev_snapshot")
+            
+            der_status, reasons = apply_heuristics(addon, curr_snap, prev_snap, rep_ts)
+            
+            # Final Status Calculation
+            # Policy: FAIL > WARN > OK
+            # GUARD: A reported FAIL status MUST NOT be downgraded.
+            
+            final_status = "OK"
+            
+            if rep_status == "FAIL":
+                final_status = "FAIL"
+            elif rep_status == "WARN":
+                final_status = "WARN"
+            
+            # Only upgrade to WARN if we aren't already FAIL
+            if der_status == "WARN" and final_status != "FAIL":
+                 final_status = "WARN"
+                 
+            # Add derived reasons
+            entry = {
+                "status": final_status,
+                "reported_status": rep_status,
+                "derived_status": der_status,
+                "reasons": reasons,
+                "timestamp": rep_ts
+            }
+            
+            char_entry["addons"][addon] = entry
+            
+            # Update Char Aggregate
+            val = 2 if final_status == "FAIL" else 1 if final_status == "WARN" else 0
+            if val > char_max_val: char_max_val = val
+            
+        char_entry["overall"] = "FAIL" if char_max_val == 2 else "WARN" if char_max_val == 1 else "OK"
+        response["characters"][char_name] = char_entry
+        
+        if char_max_val > global_status_val: global_status_val = char_max_val
+
+    response["overall"] = "FAIL" if global_status_val == 2 else "WARN" if global_status_val == 1 else "OK"
+    return jsonify(response)
+
+@app.route('/api/v1/deeppockets/inventory', methods=['GET'])
+def get_deeppockets_inventory():
+    """
+    Local handler for DeepPockets inventory.
+    Reads synced JSON data and returns it.
+    """
+    try:
+        # Path to the synced file
+        json_path = os.path.join(os.path.dirname(__file__), 'synced_data', 'deeppockets_inventory.json')
+        
+        if not os.path.exists(json_path):
+            return jsonify({"error": "Inventory data not synced yet"}), 404
+            
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+            
+        return jsonify(data)
+    except Exception as e:
+        print(f"Error serving inventory: {e}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/v1/<service>/<path:subpath>', methods=['GET', 'POST', 'PUT', 'DELETE'])
+def gateway_proxy(service, subpath):
+    """
+    Central API Gateway Logic.
+    Routes /api/v1/<service>/<path> -> <SERVICE_URL>/api/<path>
+    """
+    upstream_base = SERVICE_MAP.get(service)
+    if not upstream_base:
+        return jsonify({"error": f"Service '{service}' not found"}), 404
+    
+    # Tag request for logging
+    request.upstream_service = service
+
+
+    # Construct upstream URL
+    # Incoming: /api/v1/petweaver/pets
+    # Outgoing: http://localhost:8001/api/pets
+    upstream_url = f"{upstream_base}/api/{subpath}"
+    
+    try:
+        # Forward request
+        resp = requests.request(
+            method=request.method,
+            url=upstream_url,
+            headers={k:v for k,v in request.headers if k.lower() != 'host'},
+            data=request.get_data(),
+            cookies=request.cookies,
+            allow_redirects=False,
+            timeout=30
+        )
+        
+        # Return upstream response
+        # Exclude hop-by-hop headers
+        excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
+        headers = [(name, value) for (name, value) in resp.raw.headers.items()
+                   if name.lower() not in excluded_headers]
+                   
+        return (resp.content, resp.status_code, headers)
+        
+    except requests.exceptions.RequestException as e:
+        print(f"Gateway Error [{service}]: {e}")
+        return jsonify({"error": "Upstream service unavailable"}), 502
+
+import time
+import uuid
+
+# --- MIDDLEWARE & LOGGING ---
+@app.before_request
+def start_timer():
+    request.start_time = time.time()
+    # Ensure X-Request-Id exists
+    request_id = request.headers.get('X-Request-Id')
+    if not request_id:
+        request_id = str(uuid.uuid4())
+    request.request_id = request_id
+
+@app.after_request
+def log_request(response):
+    # Calculate latency
+    latency_ms = (time.time() - request.start_time) * 1000
+    
+    # Structured Log
+    log_data = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "requestId": getattr(request, 'request_id', 'unknown'),
+        "method": request.method,
+        "path": request.path,
+        "status": response.status_code,
+        "latencyMs": round(latency_ms, 2),
+        "clientIp": request.remote_addr,
+        "userAgent": request.user_agent.string,
+    }
+    
+    # Add upstream info if available (set by gateway_proxy)
+    if hasattr(request, 'upstream_service'):
+        log_data["upstreamService"] = request.upstream_service
+        
+    print(json.dumps(log_data), file=sys.stdout)
+    
+    # Add Request-Id to response headers
+    response.headers['X-Request-Id'] = getattr(request, 'request_id', 'unknown')
+    return response
+
+# --- DB CONNECTION (Legacy/Internal) ---
 def get_db_connection():
     db_url = os.environ.get('DATABASE_URL')
     if not db_url:
@@ -20,13 +329,94 @@ def get_db_connection():
     conn = psycopg2.connect(db_url)
     return conn
 
-@app.route('/api/health')
-def health_check():
-    return jsonify({"status": "ok"})
+# --- SYSTEM HEALTH & STATUS ---
+@app.route('/readyz')
+def readyz():
+    """
+    Checks health of all upstream services.
+    Returns aggregated status.
+    """
+    results = {}
+    overall_ok = True
+    
+    for name, base_url in SERVICE_MAP.items():
+        if name == 'holocron': continue # Skip self
+        
+        start = time.time()
+        try:
+            # Determine health endpoint based on service
+            health_path = "/healthz"
+            if name in ["skillweaver", "petweaver"]:
+                health_path = "/api/status"
+            elif name == "goblin":
+                health_path = "/"
+            
+            # Short timeout is critical for health checks
+            resp = requests.get(f"{base_url}{health_path}", timeout=1.5)
+            latency = (time.time() - start) * 1000
+            
+            is_ok = resp.status_code == 200
+            results[name] = {
+                "ok": is_ok,
+                "latency_ms": round(latency, 2),
+                "status_code": resp.status_code
+            }
+            if not is_ok: overall_ok = False
+            
+        except Exception as e:
+            results[name] = {
+                "ok": False,
+                "error": str(e)
+            }
+            overall_ok = False
+            
+    status_code = 200 if overall_ok else 503
+    return jsonify({
+        "ok": overall_ok,
+        "services": results
+    }), status_code
 
-@app.route('/')
-def index():
-    return jsonify({"status": "Holocron backend running"})
+
+# --- SERVER SYSTEM ENDPOINTS ---
+@app.route('/api/v1/system/sync_status')
+def system_sync_status():
+    """
+    Returns the last time data was synced.
+    Reads from local sync_status.json written by sync_addon_data.py.
+    """
+    try:
+        with open("sync_status.json", "r") as f:
+            status = json.load(f)
+            
+        # Parse timestamp to determine staleness
+        # (MVP: Just return raw data, frontend handles calculation, or we do it here)
+        # Let's add server-side calc for consistency
+        last_synced = datetime.fromisoformat(status["last_synced_at"].replace("Z", "+00:00"))
+        now = datetime.now(timezone.utc)
+        age = (now - last_synced).total_seconds()
+        
+        # Default stale threshold: 6 hours
+        STALE_THRESHOLD = 21600 
+        status["is_stale"] = age > STALE_THRESHOLD
+        status["age_seconds"] = int(age)
+        status["stale_after_seconds"] = STALE_THRESHOLD
+        
+        response = jsonify(status)
+        response.headers['Cache-Control'] = 'no-store'
+        return response
+        
+    except FileNotFoundError:
+        # Never synced
+        return jsonify({
+            "last_synced_at": None,
+            "is_stale": True,
+            "source": "none"
+        })
+    except Exception as e:
+        print(f"Sync status error: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
 
 
 @app.route('/api/stats')
@@ -2134,6 +2524,6 @@ def api_intelligent_recommendations(character, profession):
 
 if __name__ == '__main__':
     # Start the Flask server
-    PORT = 5005
+    PORT = 8003
     print(f"Starting Holocron Server on port {PORT}...")
     app.run(host='0.0.0.0', port=PORT, debug=False)

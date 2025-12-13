@@ -5,7 +5,7 @@ local LIBRARY_NAME = "HolocronMinimap-1.0"
 local LIBRARY_VERSION = 1
 
 if not LibStub then LibStub = {} end 
-local lib = LibStub:NewLibrary and LibStub:NewLibrary(LIBRARY_NAME, LIBRARY_VERSION)
+local lib = LibStub.NewLibrary and LibStub:NewLibrary(LIBRARY_NAME, LIBRARY_VERSION)
 if not lib then
     -- Fallback if LibStub not available
     lib = {}

@@ -104,7 +104,7 @@ TalentRecommendations.Data = {
         },
         Delve = { name = "Pack Leader Delve", hero = "Pack Leader", string = "C8PAFBU0uAhOaNI6RqWjIx917NGYglxoxyAysFsNzYbGzMzMmZmZMzMYMzMzAAAAAAAAAAAAAAANDjZMzMjZGzwYYmhxwMLzgN" },
         PVP = { name = "Pack Leader PvP", hero = "Pack Leader", string = "C8PAFBU0uAhOaNI6RqWjIx917NGYglxoxyAysFsNzYbGzMzMmZmZMzMYMzMzAAAAAAAAAAAAAAANDjZMzMjZGzwYYmhxwMLzgN", pvpTalents = { "Diamond Ice", "Survival Tactics", "Mending Bandage" } }
-    }
+    },
     --========================================================--
     -- MAGE
     --========================================================--

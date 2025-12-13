@@ -1,0 +1,1021 @@
+{
+  "items": [
+    {
+      "item_id": 6948,
+      "name": "Hearthstone",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 128868,
+      "name": "Light's Wrath",
+      "count": 1,
+      "quality": 6,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 128825,
+      "name": "T'uure",
+      "count": 1,
+      "quality": 6,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 128827,
+      "name": "Xal'atath",
+      "count": 1,
+      "quality": 6,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 6532,
+      "name": "Bright Baubles",
+      "count": 2,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 243536,
+      "name": "Wastelander's Gilded Kris",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 234741,
+      "name": "Miscellaneous Mechanica",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 229334,
+      "name": "Confessor's Unshakable Halo",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 163036,
+      "name": "Polished Pet Charm",
+      "count": 161,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233479,
+      "name": "Shimmerthread Robe",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224618,
+      "name": "Earthforged Sabatons",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 21215,
+      "name": "Graccu's Mince Meat Fruitcake",
+      "count": 3,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233480,
+      "name": "Lucky-Streak Pendant",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 33154,
+      "name": "Sinister Squashling",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 201470,
+      "name": "Story of a Memorable Victory",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 242323,
+      "name": "Chowdar's Favorite Ribbon",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 242371,
+      "name": "Untethered Xy'bucha",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 174865,
+      "name": "A Tiny Winter Hat",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 202071,
+      "name": "Elemental Mote",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 194701,
+      "name": "Ominous Conch",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 229053,
+      "name": "Conch Collector's Locket",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224670,
+      "name": "Alighted Leggings",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 34068,
+      "name": "Weighted Jack-o'-Lantern",
+      "count": 14,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 248764,
+      "name": "Artisanal Blink Trap",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224590,
+      "name": "Deep-Dweller's Cowl",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 244193,
+      "name": "L00T RAID-R Mini",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 223951,
+      "name": "Earth-Encrusted Gem",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 199080,
+      "name": "Smoldering Phoenix Ash",
+      "count": 2,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 226110,
+      "name": "Elemental Fusion Bomb",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 248755,
+      "name": "Star-in-a-Jar",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 228228,
+      "name": "Strange Lump of Wax",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 211025,
+      "name": "Torchbearer's Greaves",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 229330,
+      "name": "Confessor's Unshakable Faulds",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 212493,
+      "name": "Odd Glob of Wax",
+      "count": 3,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 8827,
+      "name": "Elixir of Water Walking",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224633,
+      "name": "Arathi Greataxe",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 226107,
+      "name": "Homebrewed Blink Vial",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 237712,
+      "name": "Dying Star's Cassock",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 86143,
+      "name": "Battle Pet Bandage",
+      "count": 75,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 219920,
+      "name": "Hreka's Pot-Making Kit",
+      "count": 5,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224441,
+      "name": "Weavercloth Bandage",
+      "count": 5,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 198857,
+      "name": "Lucky Duck",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233462,
+      "name": "Scrapcoil Striders",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224625,
+      "name": "Expeditionary Spear",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 226109,
+      "name": "Squirming Swarm Sac",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 6309,
+      "name": "17 Pound Catfish",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 223287,
+      "name": "Atomized Salien Slime",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 212605,
+      "name": "The Vizier's Invitation",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 206350,
+      "name": "Radiant Remnant",
+      "count": 3,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 211041,
+      "name": "Brilliant Beacon",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 228217,
+      "name": "Design: Solid Amber",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224596,
+      "name": "Deep-Dweller's Mitts",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 228417,
+      "name": "Emergency Healthstone",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 98715,
+      "name": "Marked Flawless Battle-Stone",
+      "count": 3,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 116418,
+      "name": "Critter Battle-Training Stone",
+      "count": 6,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 192615,
+      "name": "Fluorescent Fluid",
+      "count": 3,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 192658,
+      "name": "High-Fiber Leaf",
+      "count": 2,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224589,
+      "name": "Deep-Dweller's Cincture",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 214561,
+      "name": "Verdant Seed",
+      "count": 12,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 212242,
+      "name": "Cavedweller's Delight",
+      "count": 2,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233055,
+      "name": "Corpse Cleaner",
+      "count": 2,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 128644,
+      "name": "Hallowed Wand - Wight",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 50446,
+      "name": "Toxic Wasteling",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 227693,
+      "name": "Expeditionary Blade",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 116424,
+      "name": "Aquatic Battle-Training Stone",
+      "count": 5,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233454,
+      "name": "Mechforged Sabatons",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 116429,
+      "name": "Flawless Battle-Training Stone",
+      "count": 4,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 243144,
+      "name": "Reshii Crystal Fragments",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 117356,
+      "name": "The Horseman's Sinister Slicer",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 234972,
+      "name": "Bloodwake Missive",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 248954,
+      "name": "Nether-Warped Seedling",
+      "count": 3,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233118,
+      "name": "Incontinental Takeout",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 222971,
+      "name": "Bouncer",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224629,
+      "name": "Arathi Hatchet",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 246771,
+      "name": "Radiant Echo",
+      "count": 3,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 204790,
+      "name": "Strong Sniffin' Soup for Niffen",
+      "count": 3,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 204730,
+      "name": "Grub Grub",
+      "count": 2,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 235423,
+      "name": "Expensive Gemstone Ring",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 235445,
+      "name": "Nitroclad Strap",
+      "count": 1,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233205,
+      "name": "Go-Go Juice",
+      "count": 3,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 245653,
+      "name": "Coffer Key Shard",
+      "count": 50,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 234973,
+      "name": "Pearlshell Scroll Case",
+      "count": 3,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 233062,
+      "name": "Pocket Pizza",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 231099,
+      "name": "Back-Strapped Missile",
+      "count": 2,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 211127,
+      "name": "Note from Bang Sparknozzle",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 116422,
+      "name": "Magic Battle-Training Stone",
+      "count": 5,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 73797,
+      "name": "Lump of Coal",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 17724,
+      "name": "Pattern: Green Holiday Shirt",
+      "count": 1,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 213612,
+      "name": "Viridescent Spores",
+      "count": 27,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 213611,
+      "name": "Writhing Sample",
+      "count": 5,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 223512,
+      "name": "Basically Beef",
+      "count": 38,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 211297,
+      "name": "Fractured Spark of Omens",
+      "count": 2,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 213610,
+      "name": "Crystalline Powder",
+      "count": 12,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 213613,
+      "name": "Leyline Residue",
+      "count": 7,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210814,
+      "name": "Artisan's Acuity",
+      "count": 35,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 230905,
+      "name": "Fractured Spark of Fortunes",
+      "count": 11,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210933,
+      "name": "Aqirite",
+      "count": 3,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 221756,
+      "name": "Vial of Kaheti Oils",
+      "count": 11,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 220144,
+      "name": "Roaring Anglerseeker",
+      "count": 2,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210931,
+      "name": "Bismuth",
+      "count": 2,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 221754,
+      "name": "Ringing Deeps Ingot",
+      "count": 17,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 220145,
+      "name": "Arathor Hammerfish",
+      "count": 2,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210930,
+      "name": "Bismuth",
+      "count": 25,
+      "quality": 1,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 213197,
+      "name": "Null Lotus",
+      "count": 1,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 221758,
+      "name": "Profaned Tinderbox",
+      "count": 13,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210937,
+      "name": "Ironclaw Ore",
+      "count": 2,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 221763,
+      "name": "Viridian Charmcap",
+      "count": 3,
+      "quality": 3,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210936,
+      "name": "Ironclaw Ore",
+      "count": 6,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 210934,
+      "name": "Aqirite",
+      "count": 1,
+      "quality": 2,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 224072,
+      "name": "Enchanted Runed Harbinger Crest",
+      "count": 2,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 231757,
+      "name": "Fractured Spark of Starlight",
+      "count": 4,
+      "quality": 4,
+      "category": "Miscellaneous",
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 198765,
+      "name": "Item 198765",
+      "count": 200,
+      "quality": null,
+      "category": null,
+      "location": "BAG",
+      "unit_value": 0
+    },
+    {
+      "item_id": 194820,
+      "name": "Item 194820",
+      "count": 50,
+      "quality": null,
+      "category": null,
+      "location": "BANK",
+      "unit_value": 0
+    }
+  ]
+}

@@ -16,32 +16,45 @@
                     <Anchors><Anchor point="BOTTOMRIGHT" x="-2" y="2"/></Anchors>
                 </FontString>
             </Layer>
+            <Layer level="OVERLAY">
+                <Texture parentKey="NewGlow" file="Interface\SpellActivationOverlay\IconAlert" hidden="true" alphaMode="ADD">
+                    <Size x="54" y="54"/>
+                    <Anchors><Anchor point="CENTER"/></Anchors>
+                    <TexCoords left="0.00781250" right="0.50781250" top="0.27734375" bottom="0.52734375"/>
+                </Texture>
+            </Layer>
         </Layers>
+        <NormalTexture file="Interface\Buttons\UI-Quickslot2">
+             <Size x="66" y="66"/>
+             <Anchors><Anchor point="CENTER"/></Anchors>
+        </NormalTexture>
+        <PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
         <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
-        <Scripts>
-            <OnEnter>
-                GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-                if self.bagID and self.slotID then
-                    GameTooltip:SetBagItem(self.bagID, self.slotID);
-                    GameTooltip:Show();
-                end
-            </OnEnter>
-            <OnLeave>GameTooltip:Hide();</OnLeave>
-            <OnClick>
-                if self.bagID then
-                     -- Handle standard WoW clicks (Use, Split, Link to Chat)
-                     if IsModifiedClick() then
-                         HandleModifiedItemClick(GetContainerItemLink(self.bagID, self.slotID));
-                     else
-                         UseContainerItem(self.bagID, self.slotID);
-                     end
-                end
-            </OnClick>
-        </Scripts>
+    </Button>
+
+    <Button name="DeepPocketsCategoryHeaderTemplate" virtual="true">
+        <Size x="0" y="24"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture file="Interface\DialogFrame\UI-DialogBox-Header" alpha="0.5">
+                    <Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                    <TexCoords left="0.2" right="0.8" top="0.2" bottom="0.8"/>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture parentKey="Arrow" file="Interface\Buttons\UI-PlusButton-Up">
+                    <Size x="16" y="16"/>
+                    <Anchors><Anchor point="LEFT" x="4" y="0"/></Anchors>
+                </Texture>
+                <FontString parentKey="Text" inherits="GameFontNormalLeft" justifyH="LEFT" text="Category">
+                    <Anchors><Anchor point="LEFT" relativeKey="$parent.Arrow" relativePoint="RIGHT" x="4" y="0"/></Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
     </Button>
 
     <Frame name="DeepPocketsFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
-        <Size x="500" y="500"/>
+        <Size x="850" y="600"/>
         <Anchors><Anchor point="CENTER"/></Anchors>
         <Layers>
             <Layer level="OVERLAY" textureSubLevel="1">
@@ -61,30 +74,74 @@
                         <Size x="200" y="20"/>
                         <Anchors><Anchor point="LEFT" x="10" y="0"/></Anchors>
                     </EditBox>
-                    <Button name="$parentSortButton" inherits="UIPanelButtonTemplate" text="Cleanup">
+                    <Button name="$parentTab1" parentKey="TabAll" inherits="UIPanelButtonTemplate" text="ALL">
+                        <Size x="60" y="22"/>
+                        <Anchors><Anchor point="LEFT" relativeTo="$parentSearchBox" relativePoint="RIGHT" x="20" y="0"/></Anchors>
+                    </Button>
+                    <Button name="$parentTab2" parentKey="TabBags" inherits="UIPanelButtonTemplate" text="BAGS">
+                        <Size x="60" y="22"/>
+                        <Anchors><Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT" x="5" y="0"/></Anchors>
+                    </Button>
+                    <Button name="$parentTab3" parentKey="TabReagent" inherits="UIPanelButtonTemplate" text="REAGENT">
                         <Size x="80" y="22"/>
+                        <Anchors><Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT" x="5" y="0"/></Anchors>
+                    </Button>
+                    
+                    <Button name="$parentSortButton" inherits="UIPanelButtonTemplate" text="Sort: Quality">
+                        <Size x="100" y="22"/>
                         <Anchors><Anchor point="RIGHT" x="-10" y="0"/></Anchors>
                     </Button>
                 </Frames>
             </Frame>
 
-            <Frame name="$parentInset" inherits="InsetFrameTemplate">
+            <!-- Main Grid Inset -->
+            <Frame name="$parentInset" parentKey="Inset" inherits="InsetFrameTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" x="10" y="-70"/>
-                    <Anchor point="BOTTOMRIGHT" x="-10" y="30"/>
+                    <Anchor point="BOTTOMRIGHT" x="-10" y="30"/> <!-- Initial state: full width. details hidden. -->
                 </Anchors>
                 <Frames>
                     <ScrollFrame name="$parentScroll" parentKey="Scroll" inherits="UIPanelScrollFrameTemplate">
                         <Anchors><Anchor point="TOPLEFT" x="5" y="-5"/><Anchor point="BOTTOMRIGHT" x="-25" y="5"/></Anchors>
                         <ScrollChild>
                             <Frame name="$parentChild" parentKey="Child">
-                                <Size x="450" y="500"/> </Frame>
+                                <Size x="500" y="500"/>
+                            </Frame>
                         </ScrollChild>
                     </ScrollFrame>
                 </Frames>
             </Frame>
             
-            <Frame name="$parentFooter">
+            <!-- Details Panel (Right Side) -->
+            <Frame name="$parentDetails" parentKey="Details" inherits="InsetFrameTemplate" hidden="true">
+                <Size x="250" y="0"/>
+                <Anchors>
+                    <Anchor point="TOPRIGHT" x="-10" y="-70"/>
+                    <Anchor point="BOTTOMRIGHT" x="-10" y="30"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString parentKey="Title" inherits="GameFontNormalLarge" text="Select Item" justifyH="CENTER">
+                            <Anchors><Anchor point="TOP" x="0" y="-20"/></Anchors>
+                        </FontString>
+                        <Texture parentKey="Icon">
+                            <Size x="64" y="64"/>
+                            <Anchors><Anchor point="TOP" relativeKey="$parent.Title" relativePoint="BOTTOM" x="0" y="-10"/></Anchors>
+                        </Texture>
+                        <FontString parentKey="Info" inherits="GameFontHighlight" text="" justifyH="LEFT" spacing="2">
+                            <Anchors><Anchor point="TOPLEFT" x="10" y="-120"/><Anchor point="BOTTOMRIGHT" x="-10" y="50"/></Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button parentKey="GoblinBtn" inherits="UIPanelButtonTemplate" text="View in Goblin">
+                        <Size x="120" y="22"/>
+                        <Anchors><Anchor point="BOTTOM" x="0" y="10"/></Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+            
+            <Frame name="$parentFooter" parentKey="Footer">
                 <Size x="0" y="20"/>
                 <Anchors><Anchor point="BOTTOMLEFT" x="10" y="5"/><Anchor point="BOTTOMRIGHT" x="-10" y="5"/></Anchors>
                 <Layers>
@@ -103,7 +160,7 @@
         <Scripts>
             <OnLoad>
                 self:RegisterForDrag("LeftButton"); 
-                DeepPocketsFrameTitleText:SetText("|cffDAA520Deep Pockets|r Inventory"); 
+                DeepPocketsFrameTitleText:SetText("|cffDAA520Deep Pockets|r"); 
             </OnLoad>
             <OnDragStart>self:StartMoving();</OnDragStart>
             <OnDragStop>self:StopMovingOrSizing();</OnDragStop>

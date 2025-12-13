@@ -9,9 +9,46 @@ import DeepPocketsView from './components/DeepPocketsView';
 import ScoutView from './components/ScoutView';
 import DiplomatView from './components/DiplomatView';
 import { ViewState, NavItem } from './types';
+import { DataFreshnessIndicator } from './components/DataFreshnessIndicator';
+import { SystemStatusIndicator } from './components/SystemStatusIndicator';
+import { ConfidenceBadge } from './components/common/ConfidenceBadge';
 
 export default function App() {
-    const [currentView, setCurrentView] = useState<ViewState>(ViewState.DASHBOARD);
+    // initialize from URL if present
+    const [currentView, setCurrentView] = useState<ViewState>(() => {
+        const params = new URLSearchParams(window.location.search);
+        const viewParam = params.get('view');
+        if (viewParam && Object.values(ViewState).includes(viewParam as ViewState)) {
+            return viewParam as ViewState;
+        }
+        return ViewState.DASHBOARD;
+    });
+
+    // Navigation wrapper that can also update URL if needed (optional for internal nav)
+    const handleNavigate = (view: ViewState, params?: Record<string, string>) => {
+        setCurrentView(view);
+        // If params provided, update URL
+        if (params) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('view', view);
+            Object.entries(params).forEach(([key, value]) => {
+                url.searchParams.set(key, value);
+            });
+            window.history.pushState({}, '', url.toString());
+        } else {
+            // Clean URL if just switching views without context? 
+            // For now, let's just keep it simple: local state switch unless explicitly asked to deep link elsewhere
+            // or maybe we SHOULD update URL for everything? The requirement said "Route: /goblin", implicitly suggestions pushState
+            const url = new URL(window.location.href);
+            url.searchParams.set('view', view);
+            // clear other params if switching top-level context?
+            if (view !== ViewState.GOBLIN) {
+                url.searchParams.delete('item_name');
+                url.searchParams.delete('item_id');
+            }
+            window.history.pushState({}, '', url.toString());
+        }
+    };
 
     const navItems: NavItem[] = [
         { id: ViewState.DASHBOARD, label: 'Dashboard', icon: LayoutDashboard },
@@ -36,7 +73,7 @@ export default function App() {
             case ViewState.CODEX:
                 return <CodexView />;
             case ViewState.DEEPPOCKETS:
-                return <DeepPocketsView />;
+                return <DeepPocketsView onNavigate={handleNavigate} />;
             case ViewState.SCOUT:
                 return <ScoutView />;
             case ViewState.DIPLOMAT:
@@ -131,7 +168,7 @@ export default function App() {
                         return (
                             <button
                                 key={item.id}
-                                onClick={() => setCurrentView(item.id as ViewState)}
+                                onClick={() => handleNavigate(item.id as ViewState)}
                                 className={`w-full flex items-center space-x-3 px-3 py-3 rounded border transition-all duration-200 group relative overflow-hidden ${isActive
                                     ? 'bg-gradient-to-r from-azeroth-gold/20 to-transparent border-azeroth-gold/30 text-white'
                                     : 'bg-transparent border-transparent text-slate-400 hover:text-white hover:bg-white/5 hover:border-white/10'
@@ -185,10 +222,12 @@ export default function App() {
                     </div>
 
                     <div className="flex items-center space-x-4">
+                        <SystemStatusIndicator />
                         <div className="hidden md:flex items-center space-x-2 px-3 py-1 rounded bg-black/40 border border-white/10 shadow-inner">
                             <div className="w-2 h-2 rounded-full bg-resource-health animate-pulse"></div>
                             <span className="text-[10px] font-warcraft tracking-widest text-slate-300">14ms</span>
                         </div>
+                        <DataFreshnessIndicator />
                         <button className="relative text-slate-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded group">
                             <Bell className="w-5 h-5 group-hover:animate-swing text-azeroth-gold" />
                             <span className="absolute top-1 right-1 w-2 h-2 bg-rarity-legendary rounded-full shadow-[0_0_5px_#ff8000] animate-pulse"></span>

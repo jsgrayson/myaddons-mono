@@ -11,12 +11,20 @@ export default function GoblinView() {
     const [minProfit, setMinProfit] = useState(0);
 
     useEffect(() => {
+        // Fetch Data
         fetch('/api/goblin')
             .then(res => res.json())
             .then(data => {
                 const opps = data.opportunities || [];
                 setOpportunities(opps);
-                setFilteredOpps(opps);
+                // Initial Filter from URL if present
+                const params = new URLSearchParams(window.location.search);
+                const itemName = params.get('item_name');
+                if (itemName) {
+                    setSearchTerm(decodeURIComponent(itemName));
+                    // If filtering by specific item, maybe clear min profit by default?
+                    // setMinProfit(0); // Optional UX choice
+                }
                 setSummary(data);
                 setLoading(false);
             })
@@ -163,7 +171,14 @@ export default function GoblinView() {
                     <div className="wow-card p-8 rounded border border-white/10 bg-noise text-center">
                         <p className="text-slate-500">No opportunities match your filters</p>
                         <button
-                            onClick={() => { setSearchTerm(''); setMinProfit(0); }}
+                            onClick={() => {
+                                setSearchTerm('');
+                                setMinProfit(0);
+                                // Clear URL params too
+                                const url = new URL(window.location.href);
+                                url.searchParams.delete('item_name');
+                                window.history.pushState({}, '', url.toString());
+                            }}
                             className="mt-4 text-azeroth-gold hover:underline text-sm"
                         >
                             Clear Filters

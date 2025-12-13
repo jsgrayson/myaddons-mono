@@ -56,6 +56,7 @@ function Parser.ResolveToken(token)
     if token == "chi"        then return UnitPower("player", 4) end
     if token == "combo" or token == "combo_points" then
         return UnitPower("player", Enum.PowerType.ComboPoints)
+    end
 
     --------------------------------------------------------
     -- Resource Forecasting & Deficits

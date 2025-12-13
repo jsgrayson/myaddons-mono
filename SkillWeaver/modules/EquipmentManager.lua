@@ -118,38 +118,7 @@ end
 ------------------------------------------------------------
 -- Core: Scan Bags for Best Items
 ------------------------------------------------------------
-function EquipmentManager:GetBestSet(contentType)
-    local specID = GetCurrentSpecID()
-    if not specID then return nil end
 
-    local weights = StatWeights:GetWeights(specID, contentType)
-    if not weights then 
-        print("SkillWeaver: No stat weights found for SpecID " .. specID)
-        return nil 
-    end
-
-    local bestSet = {}
-    local bestScores = {}
-
-    -- Initialize slots
-    for _, slotName in ipairs(INVENTORY_SLOTS) do
-        local slotID = GetInventorySlotInfo(slotName)
-        bestSet[slotID] = nil
-        bestScores[slotID] = 0
-    end
-
-    -- 1. Scan Equipped Items
-    for _, slotName in ipairs(INVENTORY_SLOTS) do
-        local slotID = GetInventorySlotInfo(slotName)
-        local itemLink = GetInventoryItemLink("player", slotID)
-        if itemLink then
-            local score = self:GetItemScore(itemLink, weights)
-            bestSet[slotID] = itemLink
-            bestScores[slotID] = score
-        end
-    end
-
--- Map EquipLoc (from GetItemInfo) to Inventory Slot IDs
 local EQUIP_LOC_MAP = {
     ["INVTYPE_HEAD"] = { GetInventorySlotInfo("HeadSlot") },
     ["INVTYPE_NECK"] = { GetInventorySlotInfo("NeckSlot") },

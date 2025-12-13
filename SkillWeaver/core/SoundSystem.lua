@@ -40,11 +40,36 @@ function Sounds:TrackCooldown(spellName, soundID)
 end
 
 -- Check cooldowns (called periodically)
+-- Check cooldowns (called periodically)
 function Sounds:CheckCooldowns()
     if not self.Config.cooldownReady then return end
     
     for spell, data in pairs(self.trackedCooldowns) do
-        local start, duration = GetSpellCooldown(spell)
+        local start, duration = 0, 0
+        local spellID = tonumber(spell)
+        
+        -- Resolve Name to ID if needed
+        if not spellID then
+             local sInfo = C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(spell)
+             if sInfo then 
+                spellID = sInfo.spellID 
+             else
+                -- Fallback for Classic/Era where C_Spell might not exist or behave differently?
+                -- Assuming Retail 11.0+. If GetSpellInfo global is gone, strictly depend on C_Spell
+             end
+        end
+        
+        -- Get Cooldown Info
+        if spellID and C_Spell and C_Spell.GetSpellCooldown then
+             local info = C_Spell.GetSpellCooldown(spellID)
+             if info then
+                 start = info.startTime
+                 duration = info.duration
+             end
+        elseif _G.GetSpellCooldown then
+            -- Legacy Fallback
+            start, duration = _G.GetSpellCooldown(spell)
+        end
         
         if start and duration then
             local isOnCD = (start > 0 and duration > 1.5)
