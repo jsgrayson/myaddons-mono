@@ -1,5 +1,6 @@
 ## Interface: 110200
 ## Title: DeepPockets (Backend)
+## Category: Inventory
 ## Notes: Backend-only companion for BetterBags. No UI, no bindings, no bag hooks.
 ## Author: DeepPockets Team
 ## Version: 0.1.0
@@ -7,8 +8,3 @@
 ## OptionalDeps: BetterBags
 
 DeepPockets.lua
-dp_ext/util.lua
-dp_ext/migrate.lua
-dp_ext/scan.lua
-dp_ext/index.lua
-dp_ext/api.lua
