@@ -9,4 +9,6 @@
 bridge.lua
 tooltip_guard.lua
 tooltip_trace.lua
+dp_ext/update_score.lua
+dp_ext/sanity.lua
 DeepPockets.lua
