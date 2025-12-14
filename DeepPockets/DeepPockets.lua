@@ -1,37 +1,60 @@
--- Backend-only core. Zero UI. Zero hooks. Safe with BetterBags.
-
-local ADDON_NAME = ...
 DeepPocketsDB = DeepPocketsDB or {}
 
-local f = CreateFrame("Frame")
-f:RegisterEvent("ADDON_LOADED")
+local ADDON_NAME = ...
+local VERSION = "0.1.0-backend"
 
-f:SetScript("OnEvent", function(_, _, name)
-    if name ~= ADDON_NAME then return end
+local function printPrefix(msg)
+    print("|cff4db8ffDeepPockets|r:", msg)
+end
 
-    DeepPocketsDB.version = "0.1.0-backend"
-    DeepPocketsDB.loadedAt = time()
+printPrefix("LOADED backend " .. VERSION)
 
-    print("|cff00ff00DeepPockets|r: LOADED backend 0.1.0-backend")
-end)
+-- Backend namespace only
+DeepPockets = DeepPockets or {}
+local DP = DeepPockets
+DP.version = VERSION
 
--- Minimal slash handler (backend visibility only)
+-- REQUIRED: implement the method your slash handler is trying to call.
+function DP:ToggleTooltipTrace()
+  if not DP.TooltipTrace or not DP.TooltipTrace.Toggle then
+    print("|cff55aaffDP|r TooltipTrace module missing. Check DeepPockets.toc includes tooltip_trace.lua before DeepPockets.lua")
+    return
+  end
+  DP.TooltipTrace:Toggle()
+end
+
+-- Slash commands (backend-safe, no legacy bleed)
 SLASH_DEEPPOCKETS1 = "/dp"
 SLASH_DEEPPOCKETS2 = "/dpb"
 
 SlashCmdList["DEEPPOCKETS"] = function(msg)
     msg = (msg or ""):lower()
 
-    if msg == "scan" then
-        print("|cff00ff00DeepPockets|r: scan invoked (backend stub)")
-    elseif msg == "dump" then
-        print("|cff00ff00DeepPockets|r: dump invoked (backend stub)")
-    elseif msg == "debug" then
-        print("|cff00ff00DeepPockets|r: version", DeepPocketsDB.version)
-    else
-        print("|cff00ff00DeepPockets Backend|r commands:")
-        print("  /dp scan")
-        print("  /dp dump")
-        print("  /dp debug")
+    if msg == "help" or msg == "" then
+        printPrefix("Backend-only addon")
+        print("  /dp help      - show this help")
+        print("  /dp version   - print version")
+        print("  /dp dump      - dump backend DB size")
+        print("  /dp tt        - toggle tooltip trace")
+        return
     end
+
+    if msg == "version" then
+        printPrefix("Version " .. VERSION)
+        return
+    end
+
+    if msg == "dump" then
+        local count = 0
+        for _ in pairs(DeepPocketsDB) do count = count + 1 end
+        printPrefix("DB entries: " .. count)
+        return
+    end
+    
+    if msg == "tt" or msg == "tooltip" or msg == "tooltiptrace" then
+      DP:ToggleTooltipTrace()
+      return
+    end
+
+    printPrefix("Unknown command. Use /dp help")
 end

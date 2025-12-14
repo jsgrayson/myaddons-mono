@@ -11,6 +11,8 @@ rsync -av --delete \
   --include 'DeepPockets.toc' \
   --include 'DeepPockets.lua' \
   --include 'tooltip_guard.lua' \
+  --include 'tooltip_trace.lua' \
+  --include 'bridge.lua' \
   --include 'dp_ext/***' \
   --exclude '*' \
   "$REPO/DeepPockets/"  "$WOW/DeepPockets/"

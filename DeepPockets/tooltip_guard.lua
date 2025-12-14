@@ -1,28 +1,28 @@
--- Tooltip recovery guard (ConsolePort-style disappearance fix)
+-- Purpose:
+-- Prevent tooltip disappearance (ConsolePort-style nil owners / bad clears)
+-- Safe, no hooks into BetterBags internals.
 
-local guard = CreateFrame("Frame")
-
-local function EnsureOwner(tt)
-    if not tt then return end
-    if tt:IsShown() and not tt:GetOwner() then
-        tt:SetOwner(UIParent, "ANCHOR_CURSOR")
-    end
+local function SafeSetOwner(tooltip, owner, anchor)
+    if not tooltip or not tooltip.SetOwner then return end
+    if not owner then return end
+    tooltip:SetOwner(owner, anchor or "ANCHOR_RIGHT")
 end
 
-guard:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
-guard:RegisterEvent("MODIFIER_STATE_CHANGED")
-guard:RegisterEvent("CURSOR_UPDATE")
+local function GuardTooltip(tooltip)
+    if not tooltip then return end
 
-guard:SetScript("OnEvent", function()
-    EnsureOwner(GameTooltip)
-    EnsureOwner(ItemRefTooltip)
-end)
-
--- Recover tooltip if something clears it incorrectly
-hooksecurefunc("GameTooltip_Clear", function()
-    C_Timer.After(0, function()
-        if GameTooltip and not GameTooltip:IsShown() then
-            GameTooltip:SetOwner(UIParent, "ANCHOR_CURSOR")
-        end
+    hooksecurefunc(tooltip, "Hide", function(self)
+        if self:IsForbidden() then return end
+        if self._dp_guarding then return end
+        self._dp_guarding = true
+        C_Timer.After(0, function()
+            self._dp_guarding = nil
+        end)
     end)
+end
+
+-- Apply guard to common tooltips
+C_Timer.After(0, function()
+    GuardTooltip(GameTooltip)
+    GuardTooltip(ItemRefTooltip)
 end)
