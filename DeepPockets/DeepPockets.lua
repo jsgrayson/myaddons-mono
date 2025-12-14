@@ -106,6 +106,25 @@ SlashCmdList["DEEPPOCKETS"] = function(msg)
         return
     end
 
+    if cmd == "cat" then
+        if DeepPockets.CmdCategory then
+            DeepPockets:CmdCategory(arg)
+        else
+            print("|cffff0000DeepPockets|r: category provider missing")
+        end
+        return
+    end
+
+    if cmd == "prov" then
+        DeepPockets:CmdProv(arg)
+        return
+    end
+
+    if cmd == "api" then
+        DeepPockets:API_Sanity()
+        return
+    end
+
     if cmd == "sanity" and DeepPockets.Sanity then DeepPockets:Sanity(); return end
     
     if cmd == "scan" and DeepPockets.ScanBags then

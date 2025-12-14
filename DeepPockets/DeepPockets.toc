@@ -11,4 +11,8 @@ tooltip_guard.lua
 tooltip_trace.lua
 dp_ext/update_score.lua
 dp_ext/sanity.lua
+dp_ext/category_provider.lua
+dp_ext/provenance.lua
 DeepPockets.lua
+dp_ext/api.lua
+dp_ext/bridge.lua
