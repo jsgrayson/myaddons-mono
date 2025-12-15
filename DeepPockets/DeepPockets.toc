@@ -1,18 +1,21 @@
 ## Interface: 110200
 ## Title: DeepPockets (Backend)
-## Notes: Backend-only companion for BetterBags
+## Notes: Backend-only companion for BetterBags. No UI, no bindings, no bag hooks.
 ## Author: DeepPockets Team
 ## Version: 0.1.0-backend
 ## SavedVariables: DeepPocketsDB
 ## OptionalDeps: BetterBags
 
-bridge.lua
+dp_ext/bridge.lua
+dp_ext/category_api.lua
+dp_ext/betterbags_categories.lua
+
+event_guard.lua
+scan_backend.lua
+dump_backend.lua
+sanity.lua
+
 tooltip_guard.lua
 tooltip_trace.lua
-dp_ext/update_score.lua
-dp_ext/sanity.lua
-dp_ext/category_provider.lua
-dp_ext/provenance.lua
+
 DeepPockets.lua
-dp_ext/api.lua
-dp_ext/bridge.lua
