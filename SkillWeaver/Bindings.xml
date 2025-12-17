@@ -1,0 +1,34 @@
+<Bindings>
+  <Binding name="SKILLWEAVER_ST" header="SKILLWEAVER">
+    CLICK SkillWeaver_ST:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_AOE" header="SKILLWEAVER">
+    CLICK SkillWeaver_AOE:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_HEAL" header="SKILLWEAVER">
+    CLICK SkillWeaver_HEAL:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_INT" header="SKILLWEAVER">
+    CLICK SkillWeaver_INT:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_UTIL" header="SKILLWEAVER">
+    CLICK SkillWeaver_UTIL:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_SELF" header="SKILLWEAVER">
+    CLICK SkillWeaver_SELF:LeftButton
+  </Binding>
+
+  <!-- Back-compat (your existing ones) -->
+  <Binding name="SKILLWEAVER_PRIMARY" header="SKILLWEAVER">
+    CLICK SkillWeaver_Primary:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_GROUPHEAL" header="SKILLWEAVER">
+    CLICK SkillWeaver_GroupHeal:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_TANKSAVE" header="SKILLWEAVER">
+    CLICK SkillWeaver_TankSave:LeftButton
+  </Binding>
+  <Binding name="SKILLWEAVER_SELFSAVE" header="SKILLWEAVER">
+    CLICK SkillWeaver_SelfSave:LeftButton
+  </Binding>
+</Bindings>

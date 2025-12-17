@@ -1,32 +1,63 @@
----------------------------------------------------------
--- SkillWeaver Addon Entrypoint
----------------------------------------------------------
 
-local SkillWeaver = require("skillweaver.core.SkillWeaver")
+SkillWeaver = SkillWeaver or {}
+local SW = SkillWeaver
 
----------------------------------------------------------
--- EVENT FRAME
----------------------------------------------------------
-local frame = CreateFrame("Frame")
+if SkillWeaverBackend then SkillWeaverBackend:RequestSync(SW.State:GetClassSpecKey()) end
 
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
-
----------------------------------------------------------
--- EVENT HANDLER
----------------------------------------------------------
-frame:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_LOGIN" then
-        print("|cff00ff00SkillWeaver Loaded.|r")
-
-        local currentSpecID = select(1, GetSpecializationInfo(GetSpecialization()))
-        SkillWeaver:OnSpecChanged(currentSpecID)
-
-    elseif event == "PLAYER_SPECIALIZATION_CHANGED" then
-        local unit = ...
-        if unit == "player" then
-            local newSpecID = select(1, GetSpecializationInfo(GetSpecialization()))
-            SkillWeaver:OnSpecChanged(newSpecID)
-        end
+SW._lastBackendUpdatedAt = SW._lastBackendUpdatedAt or 0
+C_Timer.NewTicker(1.0, function()
+  if not SkillWeaverBackend then return end
+  local ts = SkillWeaverCache.meta.updatedAt or 0
+  if ts > (SW._lastBackendUpdatedAt or 0) then
+    SW._lastBackendUpdatedAt = ts
+    if not InCombatLockdown() then
+      SW.Engine:RefreshAll("backend_sync")
     end
+  end
+end)
+
+SW.name = SkillWeaverL.ADDON_NAME
+SW.events = CreateFrame("Frame")
+SW.logPrefix = "|cff00d1ffSkillWeaver|r: "
+
+local function printSW(msg)
+  print(SW.logPrefix .. msg)
+end
+
+SW.print = printSW
+
+SW.events:RegisterEvent("ADDON_LOADED")
+SW.events:RegisterEvent("PLAYER_LOGIN")
+SW.events:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
+SW.events:RegisterEvent("PLAYER_ENTERING_WORLD")
+SW.events:RegisterEvent("PLAYER_REGEN_ENABLED")
+SW.events:RegisterEvent("PLAYER_REGEN_DISABLED")
+
+SW.events:SetScript("OnEvent", function(_, event, ...)
+  if event == "ADDON_LOADED" then
+    local addonName = ...
+    if addonName ~= "SkillWeaver" then return end
+    -- init done in PLAYER_LOGIN
+  elseif event == "PLAYER_LOGIN" then
+    SW.State:Init()
+    SW.SecureButtons:Init()
+    SW.Profiles:Init()
+    SW.Engine:Init()
+
+    SW.UI:Init()
+    SW.Bindings:Apply()
+    SW.Engine:RefreshAll("login")
+
+    SW.print(SkillWeaverL.READY)
+  elseif event == "PLAYER_SPECIALIZATION_CHANGED" then
+    SW.Engine:RefreshAll("spec_changed")
+  elseif event == "PLAYER_ENTERING_WORLD" then
+    SW.Engine:RefreshAll("entering_world")
+  elseif event == "PLAYER_REGEN_ENABLED" then
+    SW.State.inCombat = false
+    SW.Engine:OnCombatChanged(false)
+  elseif event == "PLAYER_REGEN_DISABLED" then
+    SW.State.inCombat = true
+    SW.Engine:OnCombatChanged(true)
+  end
 end)

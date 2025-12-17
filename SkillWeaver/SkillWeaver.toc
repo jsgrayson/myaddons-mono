@@ -1,20 +1,34 @@
-## Interface: 100200
-## Title: Skillweaver
-## Notes: Advanced Macro Sequence Editor (GSE Replacement)
+## Interface: 110000
+## Title: SkillWeaver
+## Notes: Minimal-input executor + profiles + UI + build suggestions (backend-driven)
 ## Author: You
-## Version: 0.1.0 Alpha
-## SavedVariables: SkillWeaverDB
+## Version: 0.9.0
+## SavedVariables: SkillWeaverDB, SkillWeaverCache
 
-# Libraries
-libs/Ace3/LibStub/LibStub.lua
-libs/Ace3/CallbackHandler-1.0/CallbackHandler-1.0.lua
-libs/Ace3/AceAddon-3.0/AceAddon-3.0.xml
-libs/Ace3/AceEvent-3.0/AceEvent-3.0.xml
-libs/Ace3/AceDB-3.0/AceDB-3.0.xml
-libs/Ace3/AceConsole-3.0/AceConsole-3.0.xml
-libs/Ace3/AceGUI-3.0/AceGUI-3.0.xml
-libs/Ace3/AceConfig-3.0/AceConfig-3.0.xml
+Locale/enUS.lua
 
-# Core
-Skillweaver.lua
-Skillweaver.xml
+Data/Defaults.lua
+Data/Fallbacks.lua
+Data/SpecPackLoader.lua
+Data/ClassPacks.lua
+
+Data/Classes/ALL.lua
+
+Data/LoadAll.lua
+Data/TalentSuggestions.lua
+
+Backend/Bridge.lua
+
+Core/Init.lua
+Core/State.lua
+Core/Profiles.lua
+Core/Decision.lua
+Core/Engine.lua
+Core/SecureButtons.lua
+Core/Bindings.lua
+Bindings.xml
+
+UI/Style.lua
+UI/Menu.lua
+UI/Panel.lua
+UI/Minimap.lua
