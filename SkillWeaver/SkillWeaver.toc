@@ -1,23 +1,22 @@
 ## Interface: 110000
 ## Title: SkillWeaver
-## Notes: Minimal-input executor + profiles + UI (offline)
+## Notes: Minimal-input executor + profiles + UI (offline-only)
 ## Author: You
 ## Version: 0.9.0
 ## SavedVariables: SkillWeaverDB
 
 Locale/enUS.lua
 
+Core/Init.lua
+
 Data/Defaults.lua
 Data/Fallbacks.lua
 Data/SpecPackLoader.lua
 Data/ClassPacks.lua
-
 Data/Classes/ALL.lua
-
 Data/LoadAll.lua
 Data/TalentSuggestions.lua
 
-Core/Init.lua
 Core/State.lua
 Core/Profiles.lua
 Core/Decision.lua
