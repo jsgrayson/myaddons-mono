@@ -1,0 +1,122 @@
+name: Policies CI
+
+on:
+  pull_request:
+    paths:
+      - "policies/**"
+      - "db/SpecRegistry.lua"
+      - "tools/**"
+      - "sequences/**"
+      - ".github/workflows/policies-ci.yml"
+  push:
+    branches: [ main ]
+    paths:
+      - "policies/**"
+      - "db/SpecRegistry.lua"
+      - "tools/**"
+      - ".github/workflows/policies-ci.yml"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  policies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate tools exist
+        run: |
+          ls -la tools
+          test -f tools/policy_merge_check.py
+          test -f tools/coverage_score.py
+
+      - name: Policy coverage validation (hard gate)
+        run: |
+          python tools/policy_merge_check.py --fail-on-missing --require-spender
+
+      - name: Coverage scoreboard
+        run: |
+          python tools/coverage_score.py | tee coverage.txt
+      
+      - name: Fetch main for diff
+        run: |
+          git fetch origin main:refs/remotes/origin/main
+      
+      - name: Checkout base (main) into ./base
+        run: |
+          rm -rf base
+          mkdir -p base
+          git --work-tree=base checkout origin/main -- .
+
+      - name: Write diff report
+        run: |
+          python tools/coverage_diff.py --base base --head . --out coverage_diff.md
+          cat coverage_diff.md
+
+      - name: Upload diff artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: policy-coverage-diff
+          path: coverage_diff.md
+
+      - name: Sticky comment coverage diff on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            // Prefer diff, fallback to scoreboard
+            let bodyContent = "";
+            if (fs.existsSync('coverage_diff.md')) {
+                bodyContent = fs.readFileSync('coverage_diff.md', 'utf8');
+            } else if (fs.existsSync('coverage.txt')) {
+                bodyContent = "## SkillWeaver Policy Coverage\n\n```text\n" + fs.readFileSync('coverage.txt','utf8') + "\n```";
+            } else {
+                return;
+            }
+
+            const marker = "<!-- skillweaver-policy-coverage -->";
+            const body = `${marker}\n${bodyContent}`;
+            
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find(c => (c.body || "").includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner, repo,
+                comment_id: existing.id,
+                body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number,
+                body
+              });
+            }
+
+      - name: Regression fail gate
+        run: |
+          python tools/coverage_regression_gate.py --diff coverage_diff.md --max-drop 1
+      
+      - name: Rollup report
+        run: |
+          python tools/coverage_rollup.py | tee coverage_rollup.txt
+
+      - name: Minimum score gate
+        run: |
+          python tools/coverage_min_gate.py --min-score 2

@@ -1,8 +1,0 @@
-## Interface: 110200
-## Title: DeepPocketsBB_Categories
-## Notes: DeepPockets category provider for BetterBags
-## Author: DeepPockets Team
-## Version: 0.1.0
-## OptionalDeps: BetterBags, DeepPockets
-
-DeepPocketsBB_Categories.lua
