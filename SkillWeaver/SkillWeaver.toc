@@ -7,25 +7,24 @@
 
 Locale/enUS.lua
 
-Core/Init.lua
+core/Init.lua
 
-Data/Defaults.lua
-Data/Fallbacks.lua
-Data/SpecPackLoader.lua
-Data/ClassPacks.lua
-Data/Classes/ALL.lua
-Data/LoadAll.lua
-Data/TalentSuggestions.lua
+data/Defaults.lua
+data/Fallbacks.lua
+data/SpecPackLoader.lua
+data/ClassPacks.lua
+data/Classes/ALL.lua
 
-Core/State.lua
-Core/Profiles.lua
-Core/Decision.lua
-Core/Engine.lua
-Core/SecureButtons.lua
-Core/Bindings.lua
+core/State.lua
+core/Profiles.lua
+core/Decision.lua
+core/Engine.lua
+core/SecureButtons.lua
+core/Bindings.lua
+
 Bindings.xml
 
-UI/Style.lua
-UI/Menu.lua
-UI/Panel.lua
-UI/Minimap.lua
+ui/Style.lua
+ui/Menu.lua
+ui/Panel.lua
+ui/Minimap.lua
