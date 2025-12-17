@@ -9,23 +9,7 @@ function SW.Engine:RefreshAll(reason)
   if InCombatLockdown() then return end
 
   local key = SW.State:GetClassSpecKey()
-  local ruleset = SW.State:GetRuleset()
-  local mode = SW.State:GetEffectiveMode()
-  local profile = SW.Profiles:GetActiveProfileName(key)
-
-  local rotation
-
-  -- If Midnight is available and selected, pull from backend ruleset
-  if ruleset == "MIDNIGHT" and mode == "Midnight" and SkillWeaverBackend then
-    rotation = SkillWeaverBackend:GetRotation(key, "MIDNIGHT", "Midnight", profile)
-  end
-
-  -- Otherwise, use backend TWW if connected (optional), else fall back offline
-  if not rotation and SkillWeaverBackend and SkillWeaverBackend:IsConnected() then
-    rotation = SkillWeaverBackend:GetRotation(key, "TWW", mode, profile)
-  end
-
-  if not rotation and SW.Defaults then
+  if SW.Defaults then
     rotation = SW.Defaults:GetFallbackRotation(key, mode, profile)
   end
 
@@ -34,7 +18,7 @@ function SW.Engine:RefreshAll(reason)
 
   local stMacro, aoeMacro, intMacro, utilMacro = SW.Decision:BuildButtonMacros(rotation, key)
   local healMacro = SW.Decision:BuildHealMacro(rotation)
-  local selfMacro = SW.Decision:BuildSelfMacro(rotation)
+  local selfMacro = SW.Decision:BuildSelfMacro(rotation, key)
 
   SW.SecureButtons:SetMacro("ST", stMacro)
   SW.SecureButtons:SetMacro("AOE", aoeMacro)
@@ -42,6 +26,21 @@ function SW.Engine:RefreshAll(reason)
   SW.SecureButtons:SetMacro("SELF", selfMacro)
   SW.SecureButtons:SetMacro("INT", intMacro)
   SW.SecureButtons:SetMacro("UTIL", utilMacro)
+
+
+
+  local shouldHide = SkillWeaverDB.toggles.hideEmptyButtons
+
+  local showHeal = SkillWeaverDB.toggles.showHealButton and (healMacro and healMacro ~= "")
+  local showSelf = SkillWeaverDB.toggles.showSelfButton and (selfMacro and selfMacro ~= "")
+
+  if shouldHide then
+    SW.SecureButtons:SetVisible("HEAL", showHeal)
+    SW.SecureButtons:SetVisible("SELF", showSelf)
+  else
+    SW.SecureButtons:SetVisible("HEAL", SkillWeaverDB.toggles.showHealButton)
+    SW.SecureButtons:SetVisible("SELF", SkillWeaverDB.toggles.showSelfButton)
+  end
 
   if SW.UI and SW.UI.UpdatePanel then
     SW.UI:UpdatePanel()

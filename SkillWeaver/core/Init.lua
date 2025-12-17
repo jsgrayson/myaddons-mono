@@ -2,19 +2,7 @@
 SkillWeaver = SkillWeaver or {}
 local SW = SkillWeaver
 
-if SkillWeaverBackend then SkillWeaverBackend:RequestSync(SW.State:GetClassSpecKey()) end
 
-SW._lastBackendUpdatedAt = SW._lastBackendUpdatedAt or 0
-C_Timer.NewTicker(1.0, function()
-  if not SkillWeaverBackend then return end
-  local ts = SkillWeaverCache.meta.updatedAt or 0
-  if ts > (SW._lastBackendUpdatedAt or 0) then
-    SW._lastBackendUpdatedAt = ts
-    if not InCombatLockdown() then
-      SW.Engine:RefreshAll("backend_sync")
-    end
-  end
-end)
 
 SW.name = SkillWeaverL.ADDON_NAME
 SW.events = CreateFrame("Frame")

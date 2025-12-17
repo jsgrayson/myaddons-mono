@@ -48,6 +48,12 @@ function SW.SecureButtons:SetMacro(id, macroText)
   return true
 end
 
+function SW.SecureButtons:SetVisible(id, visible)
+  local b = self.buttons[id]
+  if not b then return end
+  if visible then b:Show() else b:Hide() end
+end
+
 function SW.SecureButtons:GetButtonName(id)
   local b = self.buttons[id]
   return b and b:GetName() or nil

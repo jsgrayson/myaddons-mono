@@ -185,11 +185,6 @@ SkillWeaver.Sequences[ROGUE_SUBTLETY] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Shadow Blades", conditions = "can_cast:Shadow Blades" },
             { command = "/cast Shadow Dance", conditions = "can_cast:Shadow Dance" },
             { command = "/cast Symbols of Death", conditions = "can_cast:Symbols of Death" },
             { command = "/cast Secret Technique", conditions = "can_cast:Secret Technique" },

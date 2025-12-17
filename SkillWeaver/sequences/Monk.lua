@@ -83,11 +83,6 @@ SkillWeaver.Sequences[MONK_WINDWALKER] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Invoke Xuen, the White Tiger", conditions = "can_cast:Invoke Xuen, the White Tiger" },
             { command = "/cast Touch of Death", conditions = "can_cast:Touch of Death" },
             { command = "/cast Storm, Earth, and Fire", conditions = "can_cast:Storm, Earth, and Fire" },
             { command = "/cast Serenity", conditions = "can_cast:Serenity" },

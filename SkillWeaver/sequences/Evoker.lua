@@ -58,11 +58,6 @@ SkillWeaver.Sequences[EVOKER_DEVASTATION] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Dragonrage", conditions = "can_cast:Dragonrage" },
             { command = "/cast Tip the Scales", conditions = "can_cast:Tip the Scales" },
             { command = "/cast Deep Breath", conditions = "can_cast:Deep Breath" },
             { command = "/cast Shattering Star", conditions = "can_cast:Shattering Star" },
@@ -129,10 +124,6 @@ SkillWeaver.Sequences[EVOKER_AUGMENTATION] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            { command = "/cast Ebon Might", conditions = "can_cast:Ebon Might" },
             { command = "/cast Prescience", conditions = "can_cast:Prescience" },
             { command = "/cast Breath of Eons", conditions = "can_cast:Breath of Eons" },
             { command = "/cast Fire Breath", conditions = "can_cast:Fire Breath" },

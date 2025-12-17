@@ -98,11 +98,6 @@ SkillWeaver.Sequences[DH_HAVOC] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast The Hunt", conditions = "can_cast:The Hunt" },
             { command = "/cast Elysian Decree", conditions = "can_cast:Elysian Decree" },
             { command = "/cast Fel Barrage", conditions = "can_cast:Fel Barrage" },
             { command = "/cast Glaive Tempest", conditions = "can_cast:Glaive Tempest" },
@@ -145,11 +140,6 @@ SkillWeaver.Sequences[DH_VENGEANCE] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast The Hunt", conditions = "can_cast:The Hunt" },
             { command = "/cast Elysian Decree", conditions = "can_cast:Elysian Decree" },
             { command = "/cast Fel Devastation", conditions = "can_cast:Fel Devastation" },
             { command = "/cast Fiery Brand", conditions = "can_cast:Fiery Brand" },

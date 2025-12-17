@@ -4,7 +4,7 @@ local SW = SkillWeaver
 SW.SpecPackLoader = SW.SpecPackLoader or {}
 local Loader = SW.SpecPackLoader
 
-local MODES = { "Delves", "MythicPlus", "Raid", "PvP", "OpenWorld", "Midnight" }
+local MODES = { "Delves", "MythicPlus", "Raid", "PvP", "OpenWorld" }
 local DEFAULT_PROFILES = { "Balanced", "HighPerformance", "Safe" }
 
 local function normStepList(steps)
@@ -135,16 +135,7 @@ function Loader:LoadClassPack(data)
       for _, mode in ipairs(MODES) do
         local modeObj = specTable[mode]
 
-        -- Special Midnight format: specTable.Midnight is usually a single block, not profiles
-        if mode == "Midnight" and type(modeObj) == "table" then
-          -- store it as Midnight/Priority unless it already contains profiles
-          if modeObj.ST or modeObj.st or modeObj.type == "Priority" then
-            local rot = detectAndBuild(classSpecKey, "Midnight", "Priority", modeObj)
-            if rot then SW.Defaults:RegisterRotation(classSpecKey, "Midnight", "Priority", rot) end
-          else
-            -- if it has profiles, fall through below
-          end
-        end
+
 
         if type(modeObj) == "table" then
           -- If modeObj looks like a profile table (Balanced/Safe/HighPerformance)

@@ -1,7 +1,7 @@
 local SW = SkillWeaver
 SW.TalentSuggestions = SW.TalentSuggestions or {}
 
--- Minimal stub; backend should override with current patch builds.
+-- Minimal stub; offline profiles can provide current patch builds.
 SW.TalentSuggestions["WARRIOR_71"] = { -- Arms example
   PvE = {
     Delves = { talents = "CLASS_TREE_STRING", notes = "Low APM, strong sustain." },

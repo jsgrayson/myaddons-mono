@@ -160,11 +160,6 @@ SkillWeaver.Sequences[MAGE_FROST] = {
             steps = {}
         }
     },
-    ["Midnight"] = { -- Visual Weaver Mode
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Icy Veins", conditions = "can_cast:Icy Veins" },
             { command = "/cast Frozen Orb", conditions = "can_cast:Frozen Orb" },
             { command = "/cast Comet Storm", conditions = "can_cast:Comet Storm" },
             { command = "/cast Ray of Frost", conditions = "can_cast:Ray of Frost" },

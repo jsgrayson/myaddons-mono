@@ -198,7 +198,7 @@ function SW.Decision:BuildHealMacro(rotation)
   end
 
   rotation = rotation or {}
-  local block = rotation.HEAL -- allow backend to send HEAL block; else empty
+  local block = rotation.HEAL -- allow offline pack to provide HEAL block; else empty
 
   -- compileSteps already wraps heals for healer role and applies ground targeting
   local policy = { wrapHeals = true, wrapOffheals = false }
@@ -223,22 +223,28 @@ function SW.Decision:BuildHealMacro(rotation)
 end
 
 -- Dedicated SELF button: always casts on player only
-function SW.Decision:BuildSelfMacro(rotation)
+-- Dedicated SELF button: always casts on player only
+function SW.Decision:BuildSelfMacro(rotation, classSpecKey)
   rotation = rotation or {}
 
-  local block = rotation.SELF or rotation.UTIL or rotation.ST
-  if not block then return "" end
+  local block = rotation.SELF or rotation.UTIL
+  local steps = (block and block.steps)
 
-  if type(block.macro) == "string" and block.macro ~= "" then
+  -- If no SELF/UTIL steps provided, fall back to per-spec defaults
+  if (not steps or type(steps) ~= "table") and SW.Defaults and SW.Defaults.GetDefaultSelfSteps then
+    steps = SW.Defaults:GetDefaultSelfSteps(classSpecKey)
+  end
+
+  if block and type(block.macro) == "string" and block.macro ~= "" then
     local m = block.macro
     if not m:match("\n$") then m = m .. "\n" end
     return m
   end
 
-  if type(block.steps) ~= "table" then return "" end
+  if not steps or type(steps) ~= "table" then return "" end
 
   local lines = { "/stopcasting" }
-  for _, step in ipairs(block.steps) do
+  for _, step in ipairs(steps) do
     if step and type(step.command) == "string" then
       local spell = step.command:match("^/cast%s+(.+)$")
       if spell then

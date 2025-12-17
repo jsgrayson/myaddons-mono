@@ -38,20 +38,7 @@ function SW.UI:UpdatePanel()
   local key = SW.State:GetClassSpecKey()
   local mode = SW.State:GetMode()
 
-  local build = SkillWeaverBackend:GetBuild(key, mode)
-  if not build then
-    local sug = SW.TalentSuggestions and SW.TalentSuggestions[key]
-    local p = sug and sug.PvE and sug.PvE[mode]
-    self.panelText:SetText(p and (p.notes .. "\n\nTalents:\n" .. (p.talents or "N/A")) or "No build data yet.\nBackend not synced.")
-    return
-  end
-
-  local lines = {}
-  table.insert(lines, "Mode: " .. mode)
-  if build.notes then table.insert(lines, build.notes) end
-  if build.talents then table.insert(lines, "\nTalents:\n" .. build.talents) end
-  if build.pvpTalents then
-    table.insert(lines, "\nPvP Talents:\n- " .. table.concat(build.pvpTalents, "\n- "))
-  end
-  self.panelText:SetText(table.concat(lines, "\n"))
+  local sug = SW.TalentSuggestions and SW.TalentSuggestions[key]
+  local p = sug and sug.PvE and sug.PvE[mode]
+  self.panelText:SetText(p and (p.notes .. "\n\nTalents:\n" .. (p.talents or "N/A")) or "No build suggestions available for this mode.")
 end

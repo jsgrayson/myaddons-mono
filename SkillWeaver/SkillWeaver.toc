@@ -1,9 +1,9 @@
 ## Interface: 110000
 ## Title: SkillWeaver
-## Notes: Minimal-input executor + profiles + UI + build suggestions (backend-driven)
+## Notes: Minimal-input executor + profiles + UI (offline)
 ## Author: You
 ## Version: 0.9.0
-## SavedVariables: SkillWeaverDB, SkillWeaverCache
+## SavedVariables: SkillWeaverDB
 
 Locale/enUS.lua
 
@@ -16,8 +16,6 @@ Data/Classes/ALL.lua
 
 Data/LoadAll.lua
 Data/TalentSuggestions.lua
-
-Backend/Bridge.lua
 
 Core/Init.lua
 Core/State.lua

@@ -67,11 +67,6 @@ SkillWeaver.Sequences[WARLOCK_AFFLICTION] = {
         }
     }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Multi-DoT: Cycle if Agony is up. 
-            { command = "/cycle", conditions = "debuff:Agony" },
             
             -- Cooldowns & Talents
             { command = "/cast Summon Darkglare", conditions = "can_cast:Summon Darkglare" },
@@ -150,11 +145,6 @@ SkillWeaver.Sequences[WARLOCK_DEMONOLOGY] = {
         }
     }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Summon Demonic Tyrant", conditions = "can_cast:Summon Demonic Tyrant" },
             { command = "/cast Nether Portal", conditions = "can_cast:Nether Portal" },
             { command = "/cast Grimoire: Felguard", conditions = "can_cast:Grimoire: Felguard" },
             { command = "/cast Summon Vilefiend", conditions = "can_cast:Summon Vilefiend" },
@@ -266,11 +256,6 @@ SkillWeaver.Sequences[WARLOCK_DESTRUCTION] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Multi-DoT: Cycle if Immolate (Wither) is up.
-            { command = "/cycle", conditions = "debuff:Immolate" },
             
             -- Hero Talents (Diabolist / Hellcaller)
             { command = "/cast Ruination", conditions = "can_cast:Ruination" }, -- Diabolist Proc

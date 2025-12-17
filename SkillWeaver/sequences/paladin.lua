@@ -39,11 +39,6 @@ SkillWeaver.Sequences[PALADIN_PROT] = {
         }
     }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Sentinel", conditions = "can_cast:Sentinel" },
             { command = "/cast Eye of Tyr", conditions = "can_cast:Eye of Tyr" },
             { command = "/cast Divine Toll", conditions = "can_cast:Divine Toll" },
             { command = "/cast Bastion of Light", conditions = "can_cast:Bastion of Light" },
@@ -161,11 +156,6 @@ SkillWeaver.Sequences[PALADIN_RET] = {
         }
     }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Crusade", conditions = "can_cast:Crusade" },
             { command = "/cast Avenging Wrath", conditions = "can_cast:Avenging Wrath" },
             { command = "/cast Execution Sentence", conditions = "can_cast:Execution Sentence" },
             { command = "/cast Final Reckoning", conditions = "can_cast:Final Reckoning" },
@@ -225,11 +215,6 @@ SkillWeaver.Sequences[PALADIN_HOLY] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Avenging Wrath", conditions = "can_cast:Avenging Wrath" },
             { command = "/cast Divine Toll", conditions = "can_cast:Divine Toll" },
             { command = "/cast Tyr's Deliverance", conditions = "can_cast:Tyr's Deliverance" },
             { command = "/cast Light's Hammer", conditions = "can_cast:Light's Hammer" },

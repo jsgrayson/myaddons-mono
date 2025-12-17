@@ -32,9 +32,7 @@ function SW.UI:ToggleMenu(anchor)
     UIDropDownMenu_AddButton(info)
 
     local modes = { "Delves", "MythicPlus", "Raid", "PvP", "OpenWorld" }
-    if SkillWeaverBackend and SkillWeaverBackend:SupportsMidnight() then
-      table.insert(modes, "Midnight")
-    end
+
 
     for _, m in ipairs(modes) do
       info = UIDropDownMenu_CreateInfo()
@@ -68,8 +66,12 @@ function SW.UI:ToggleMenu(anchor)
       { k="burst", text="Burst" },
       { k="defensives", text="Defensives" },
       { k="interrupts", text="Interrupts" },
-      { k="trinkets", text="Use Trinkets" },
+      { k="useTrinkets", text="Use Trinkets" },
       { k="dpsEmergencyHeals", text="DPS Emergency Heals" },
+      { k="showHealButton", text="Show HEAL Button" },
+      { k="showSelfButton", text="Show SELF Button" },
+      { k="hideEmptyButtons", text="Hide Empty Buttons" },
+      { k="hideEmptyButtons", text="Hide Empty Buttons" },
     }
 
     for _, t in ipairs(toggles) do
@@ -82,6 +84,10 @@ function SW.UI:ToggleMenu(anchor)
       end
       UIDropDownMenu_AddButton(info)
     end
+
+
+
+
 
     -- Ground Target Mode Submenu
     info = UIDropDownMenu_CreateInfo()

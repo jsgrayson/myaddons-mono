@@ -79,10 +79,6 @@ SkillWeaver.Sequences[PRIEST_DISC] = {
             aoe = {},
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            { command = "/cast Power Word: Shield", conditions = "can_cast:Power Word: Shield" },
             { command = "/cast Penance", conditions = "can_cast:Penance" },
             { command = "/cast Shadow Mend", conditions = "can_cast:Shadow Mend" },
             { command = "/cast Purge the Wicked", conditions = "can_cast:Purge the Wicked" },
@@ -174,10 +170,6 @@ SkillWeaver.Sequences[PRIEST_HOLY] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            { command = "/cast Holy Word: Serenity", conditions = "can_cast:Holy Word: Serenity" },
             { command = "/cast Holy Word: Sanctify", conditions = "can_cast:Holy Word: Sanctify" },
             { command = "/cast Circle of Healing", conditions = "can_cast:Circle of Healing" },
             { command = "/cast Flash Heal", conditions = "can_cast:Flash Heal" },
@@ -297,11 +289,6 @@ SkillWeaver.Sequences[PRIEST_SHADOW] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Multi-DoT: Cycle if Vampiric Touch is up
-            { command = "/cycle", conditions = "debuff:Vampiric Touch" },
             
             -- Hero Talents & Cooldowns
             { command = "/cast Void Eruption", conditions = "can_cast:Void Eruption" },

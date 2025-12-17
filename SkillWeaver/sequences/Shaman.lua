@@ -96,11 +96,6 @@ SkillWeaver.Sequences[SHAMAN_ENHANCEMENT] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Feral Spirit", conditions = "can_cast:Feral Spirit" },
             { command = "/cast Primordial Wave", conditions = "can_cast:Primordial Wave" },
             { command = "/cast Doom Winds", conditions = "can_cast:Doom Winds" },
             { command = "/cast Ascendance", conditions = "can_cast:Ascendance" },

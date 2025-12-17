@@ -552,10 +552,6 @@ data["HUNTER_255"] = {
             }
         }
     },
-    Midnight = {
-        type = "Priority",
-        st = {
-            { command = "/cast Coordinated Assault", conditions = "can_cast:Coordinated Assault" },
             { command = "/cast Wildfire Bomb", conditions = "can_cast:Wildfire Bomb" },
             { command = "/cast Kill Command", conditions = "can_cast:Kill Command" },
             { command = "/cast Flanking Strike", conditions = "can_cast:Flanking Strike" },

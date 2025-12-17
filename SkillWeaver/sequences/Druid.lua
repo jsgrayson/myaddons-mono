@@ -102,11 +102,6 @@ SkillWeaver.Sequences[DRUID_BALANCE] = {
             steps = {}
         }
     },
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Multi-DoT: Cycle if both Moonfire and Sunfire are up
-            { command = "/cycle", conditions = "debuff:Moonfire and debuff:Sunfire" },
             
             -- Cooldowns & Talents
             { command = "/cast Celestial Alignment", conditions = "can_cast:Celestial Alignment" },

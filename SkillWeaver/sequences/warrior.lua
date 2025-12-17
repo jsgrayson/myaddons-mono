@@ -255,11 +255,6 @@ SkillWeaver.Sequences[WARRIOR_PROT] = {
             steps = {}
         }
     }
-    ["Midnight"] = {
-        type = "Priority",
-        st = {
-            -- Cooldowns & Talents
-            { command = "/cast Avatar", conditions = "can_cast:Avatar" },
             { command = "/cast Shield Wall", conditions = "can_cast:Shield Wall" },
             { command = "/cast Last Stand", conditions = "can_cast:Last Stand" },
             { command = "/cast Demoralizing Shout", conditions = "can_cast:Demoralizing Shout" },
