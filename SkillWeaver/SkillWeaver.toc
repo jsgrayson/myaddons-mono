@@ -22,7 +22,7 @@ core/Engine.lua
 core/SecureButtons.lua
 core/Bindings.lua
 
-Bindings.xml
+
 
 ui/Style.lua
 ui/Menu.lua
