@@ -28,8 +28,6 @@ SkillWeaverDefaults = {
     showHealButton = true,
     showSelfButton = true,
     hideEmptyButtons = true,
-
-    hideEmptyButtons = true,
   }, -- for hybrid DPS specs
 
   -- UI
@@ -137,6 +135,4 @@ function SW.Defaults:GetDefaultSelfSteps(classSpecKey)
   return steps
 end
 
-function SW.Defaults:GetDefaultAoeThreshold(classSpecKey)
-  return 3
-end
+

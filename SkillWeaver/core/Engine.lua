@@ -9,6 +9,10 @@ function SW.Engine:RefreshAll(reason)
   if InCombatLockdown() then return end
 
   local key = SW.State:GetClassSpecKey()
+  local mode = SW.State:GetMode()
+  local profile = (SW.Profiles and SW.Profiles.GetActiveProfileName) and SW.Profiles:GetActiveProfileName(key) or "Balanced"
+
+  local rotation
   if SW.Defaults then
     rotation = SW.Defaults:GetFallbackRotation(key, mode, profile)
   end

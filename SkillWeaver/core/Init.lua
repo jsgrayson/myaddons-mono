@@ -1,60 +1,43 @@
 -- core/Init.lua
+-- SkillWeaver bootstrap (offline-only)
+
+-- Always bind explicitly to the global table
 _G.SkillWeaver = _G.SkillWeaver or {}
 SkillWeaver = _G.SkillWeaver
 local SW = SkillWeaver
-print("SkillWeaver boot OK", SkillWeaver)
--- hard proof in chat (remove later)
-print("SkillWeaver boot:", type(_G.SkillWeaver), type(SkillWeaver))
-SkillWeaver = SkillWeaver or {}
-local SW = SkillWeaver
 
+-- Namespace safety
+SW.version = "0.9.0"
+SW.loaded = false
 
+-- Event frame
+local f = CreateFrame("Frame")
 
-SW.name = SkillWeaverL.ADDON_NAME
-SW.events = CreateFrame("Frame")
-SW.logPrefix = "|cff00d1ffSkillWeaver|r: "
+f:RegisterEvent("ADDON_LOADED")
+f:RegisterEvent("PLAYER_LOGIN")
+f:RegisterEvent("PLAYER_LOGOUT")
 
-local function printSW(msg)
-  print(SW.logPrefix .. msg)
-end
-
-SW.print = printSW
-
-SW.events:RegisterEvent("ADDON_LOADED")
-SW.events:RegisterEvent("PLAYER_LOGIN")
-SW.events:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
-SW.events:RegisterEvent("PLAYER_ENTERING_WORLD")
-SW.events:RegisterEvent("PLAYER_REGEN_ENABLED")
-SW.events:RegisterEvent("PLAYER_REGEN_DISABLED")
-
-SW.events:SetScript("OnEvent", function(_, event, ...)
+f:SetScript("OnEvent", function(_, event, arg1)
   if event == "ADDON_LOADED" then
-    local addonName = ...
-    if addonName ~= "SkillWeaver" then return end
-    -- init done in PLAYER_LOGIN
+    if arg1 ~= "SkillWeaver" then return end
+
+    -- SavedVariables init
+    SkillWeaverDB = SkillWeaverDB or {}
+
+    -- Mark addon namespace as live
+    SW.loaded = true
+
   elseif event == "PLAYER_LOGIN" then
-    SW.State:Init()
-    SW.SecureButtons:Init()
-    SW.Profiles:Init()
-    SW.Engine:Init()
+    -- Core systems init (order matters)
+    if SW.SecureButtons and SW.SecureButtons.Init then
+      SW.SecureButtons:Init()
+    end
 
-    SW.UI:Init()
-    SW.Bindings:Apply()
-    SW.Engine:RefreshAll("login")
+    if SW.Engine and SW.Engine.RefreshAll then
+      SW.Engine:RefreshAll("login")
+    end
 
-    SW.print(SkillWeaverL.READY)
-  elseif event == "PLAYER_SPECIALIZATION_CHANGED" then
-    SW.Engine:RefreshAll("spec_changed")
-  elseif event == "PLAYER_ENTERING_WORLD" then
-    SW.Engine:RefreshAll("entering_world")
-  elseif event == "PLAYER_REGEN_ENABLED" then
-    SW.State.inCombat = false
-    SW.Engine:OnCombatChanged(false)
-  elseif event == "PLAYER_REGEN_DISABLED" then
-    SW.State.inCombat = true
-    SW.Engine:OnCombatChanged(true)
+  elseif event == "PLAYER_LOGOUT" then
+    -- nothing required yet (reserved for future UI state save)
   end
-end)
-C_Timer.After(1, function()
-  print("SkillWeaver after 1s:", type(_G.SkillWeaver))
 end)
