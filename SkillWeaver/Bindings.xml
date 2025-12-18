@@ -1,20 +1,27 @@
-<Bindings>
-  <Binding name="SKILLWEAVER_ST" header="SKILLWEAVER">
-    CLICK SkillWeaver_ST:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_AOE" header="SKILLWEAVER">
-    CLICK SkillWeaver_AOE:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_HEAL" header="SKILLWEAVER">
-    CLICK SkillWeaver_HEAL:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_INT" header="SKILLWEAVER">
-    CLICK SkillWeaver_INT:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_UTIL" header="SKILLWEAVER">
-    CLICK SkillWeaver_UTIL:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_SELF" header="SKILLWEAVER">
-    CLICK SkillWeaver_SELF:LeftButton
-  </Binding>
-</Bindings>
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Bindings>
+    <Binding name="SKILLWEAVER_PRIMARY">
+      CLICK SkillWeaver_Primary:LeftButton
+    </Binding>
+
+    <Binding name="SKILLWEAVER_GROUPHEAL">
+      CLICK SkillWeaver_GroupHeal:LeftButton
+    </Binding>
+
+    <Binding name="SKILLWEAVER_TANKSAVE">
+      CLICK SkillWeaver_TankSave:LeftButton
+    </Binding>
+
+    <Binding name="SKILLWEAVER_SELFSAVE">
+      CLICK SkillWeaver_SelfSave:LeftButton
+    </Binding>
+
+    <Binding name="SKILLWEAVER_INT">
+      CLICK SkillWeaver_INT:LeftButton
+    </Binding>
+
+    <Binding name="SKILLWEAVER_UTIL">
+      CLICK SkillWeaver_UTIL:LeftButton
+    </Binding>
+  </Bindings>
+</Ui>

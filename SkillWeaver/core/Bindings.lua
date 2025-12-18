@@ -1,6 +1,15 @@
 local SW = SkillWeaver
 SW.Bindings = {}
 
+_G.BINDING_HEADER_SKILLWEAVER = "SkillWeaver"
+_G.BINDING_NAME_SKILLWEAVER_PRIMARY   = "Primary (ST)"
+_G.BINDING_NAME_SKILLWEAVER_GROUPHEAL = "Group Heal (AOE/Heal)"
+_G.BINDING_NAME_SKILLWEAVER_TANKSAVE  = "Tank Save (Utility)"
+_G.BINDING_NAME_SKILLWEAVER_SELFSAVE  = "Self Save"
+_G.BINDING_NAME_SKILLWEAVER_INT       = "Interrupt"
+_G.BINDING_NAME_SKILLWEAVER_UTIL      = "Utility/Misc"
+
+
 local function bindKey(key, buttonName)
   if not key or key == "" or not buttonName then return end
   SetBindingClick(key, buttonName, "LeftButton")
