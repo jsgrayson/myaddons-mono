@@ -33,6 +33,10 @@ function SW.UI:TogglePanel()
   if self.panel:IsShown() then self.panel:Hide() else self.panel:Show() end
 end
 
+function SW.UI:Toggle()
+  self:TogglePanel()
+end
+
 function SW.UI:UpdatePanel()
   if not self.panelText then return end
   local key = SW.State:GetClassSpecKey()

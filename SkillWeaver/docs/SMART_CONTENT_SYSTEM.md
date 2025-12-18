@@ -17,7 +17,7 @@ SkillWeaver automatically detects your current environment and adjusts according
 You can manually force a specific content mode via the **Smart Interface** dropdown menu (e.g., to prepare for a Raid while still in Valdrakken).
 
 ## 2. Smart Interface Panel
-The Smart Interface is your central hub for optimization. It appears automatically or can be toggled via `/sw smart`.
+The Smart Interface is your central hub for optimization. It appears automatically or can be toggled via `/skw smart`.
 
 ### Features
 - **Current Content**: Displays detected content (or your manual override).
@@ -62,7 +62,7 @@ Automatically casts group buffs (Intellect, Fortitude, Shout, MotW) when:
 Smartly manages Rebirth/Raise Ally/Soulstone.
 - **Priority**: Tank > Healer > DPS.
 - **Safety**: Checks range and resources before casting.
-- **Toggle**: Can be enabled/disabled via `/sw bres`.
+- **Toggle**: Can be enabled/disabled via `/skw bres`.
 
 ## 4. Stock Management
 Never run out of consumables again.

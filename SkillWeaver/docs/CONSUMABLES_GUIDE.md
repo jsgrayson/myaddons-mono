@@ -29,16 +29,16 @@ The tooltip will show:
 
 ### Basic Commands
 ```
-/skillweaver consumables    (or /sw cons)   - Toggle consumables ON/OFF
-/skillweaver settings       (or /sw config) - Open settings panel
-/skillweaver minimap        (or /sw minimap)- Hide/show minimap button
-/skillweaver help           (or /sw help)   - Show all commands
+/skillweaver consumables    (or /skw cons)   - Toggle consumables ON/OFF
+/skillweaver settings       (or /skw config) - Open settings panel
+/skillweaver minimap        (or /skw minimap)- Hide/show minimap button
+/skillweaver help           (or /skw help)   - Show all commands
 ```
 
 ### Quick Aliases
 ```
-/sw cons      - Toggle consumables
-/sw           - Show help
+/skw cons      - Toggle consumables
+/skw           - Show help
 ```
 
 ---
@@ -241,13 +241,13 @@ Consumables are expensive! Estimate per pull/hour:
 ## Troubleshooting
 
 ### Consumables Not Working
-1. **Check if enabled:** Left-click minimap button or `/sw cons`
+1. **Check if enabled:** Left-click minimap button or `/skw cons`
 2. **Check your bags:** Ensure you have the items
 3. **Check buffs:** May already be buffed (no duplicate application)
 4. **Check combat state:** Flasks/food/runes only work out of combat
 
 ### Minimap Button Not Visible
-1. Run `/sw minimap` to show it
+1. Run `/skw minimap` to show it
 2. Check if hidden behind other addon icons
 3. Drag it to a different position
 

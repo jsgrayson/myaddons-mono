@@ -1,34 +1,8 @@
 <Bindings>
-  <Binding name="SKILLWEAVER_ST">
-    CLICK SkillWeaver_ST:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_AOE">
-    CLICK SkillWeaver_AOE:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_HEAL">
-    CLICK SkillWeaver_HEAL:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_SELF">
-    CLICK SkillWeaver_SELF:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_INT">
-    CLICK SkillWeaver_INT:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_UTIL">
-    CLICK SkillWeaver_UTIL:LeftButton
-  </Binding>
-
-  <!-- Backward-compatible aliases -->
-  <Binding name="SKILLWEAVER_PRIMARY">
-    CLICK SkillWeaver_Primary:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_GROUPHEAL">
-    CLICK SkillWeaver_GroupHeal:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_TANKSAVE">
-    CLICK SkillWeaver_TankSave:LeftButton
-  </Binding>
-  <Binding name="SKILLWEAVER_SELFSAVE">
-    CLICK SkillWeaver_SelfSave:LeftButton
-  </Binding>
+    <Binding name="CLICK SkillWeaver_ST:LeftButton" header="SKILLWEAVER" category="ADDONS" />
+    <Binding name="CLICK SkillWeaver_AOE:LeftButton" category="ADDONS" />
+    <Binding name="CLICK SkillWeaver_HEAL:LeftButton" category="ADDONS" />
+    <Binding name="CLICK SkillWeaver_SELF:LeftButton" category="ADDONS" />
+    <Binding name="CLICK SkillWeaver_INT:LeftButton" category="ADDONS" />
+    <Binding name="CLICK SkillWeaver_UTIL:LeftButton" category="ADDONS" />
 </Bindings>

@@ -1,43 +1,60 @@
 -- core/Init.lua
--- SkillWeaver bootstrap (offline-only)
+-- Main Loader
 
--- Always bind explicitly to the global table
 _G.SkillWeaver = _G.SkillWeaver or {}
-SkillWeaver = _G.SkillWeaver
-local SW = SkillWeaver
+local SW = _G.SkillWeaver
 
--- Namespace safety
 SW.version = "0.9.0"
 SW.loaded = false
 
--- Event frame
 local f = CreateFrame("Frame")
-
 f:RegisterEvent("ADDON_LOADED")
 f:RegisterEvent("PLAYER_LOGIN")
-f:RegisterEvent("PLAYER_LOGOUT")
 
 f:SetScript("OnEvent", function(_, event, arg1)
-  if event == "ADDON_LOADED" then
-    if arg1 ~= "SkillWeaver" then return end
+    if event == "ADDON_LOADED" and arg1 == "SkillWeaver" then
+        SkillWeaverDB = SkillWeaverDB or {}
+        SW.loaded = true
 
-    -- SavedVariables init
-    SkillWeaverDB = SkillWeaverDB or {}
+    elseif event == "PLAYER_LOGIN" then
+        -- 1. Create the Secure Buttons FIRST
+        if SW.SecureButtons then
+            SW.SecureButtons:Init()
+        end
 
-    -- Mark addon namespace as live
-    SW.loaded = true
+        -- 2. Load UI
+        if SW.UI then
+            if SW.UI.InitPanel then SW.UI:InitPanel() end
+            if SW.UI.InitMinimap then SW.UI:InitMinimap() end
+        end
 
-  elseif event == "PLAYER_LOGIN" then
-    -- Core systems init (order matters)
-    if SW.SecureButtons and SW.SecureButtons.Init then
-      SW.SecureButtons:Init()
+        -- 3. Start Engine (This pushes macros to the buttons)
+        if SW.Engine and SW.Engine.RefreshAll then
+            SW.Engine:RefreshAll("login")
+        end
     end
-
-    if SW.Engine and SW.Engine.RefreshAll then
-      SW.Engine:RefreshAll("login")
-    end
-
-  elseif event == "PLAYER_LOGOUT" then
-    -- nothing required yet (reserved for future UI state save)
-  end
 end)
+
+-- Slash Commands
+SLASH_SKILLWEAVER1 = "/skillweaver"
+SLASH_SKILLWEAVER2 = "/skw"
+
+SlashCmdList.SKILLWEAVER = function(msg)
+    msg = (msg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
+    
+    if msg == "" or msg == "ui" then
+        if SW.UI and SW.UI.TogglePanel then SW.UI:TogglePanel() end
+        return
+    end
+    
+    -- Debug / Mode switching
+    if SW.State then
+        local key = SW.State:GetClassSpecKey()
+        if msg == "st" then SW.State:SetMode("ST")
+        elseif msg == "aoe" then SW.State:SetMode("AOE")
+        elseif msg == "refresh" then 
+            SW.Engine:RefreshAll("manual")
+            print("SkillWeaver: Engine Refreshed")
+        end
+    end
+end

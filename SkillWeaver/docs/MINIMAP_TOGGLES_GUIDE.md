@@ -208,20 +208,20 @@ These features are always on because they're free or essential:
 
 ### Current
 ```
-/sw consumables    - Toggle paid consumables
-/sw minimap        - Hide/show button
-/sw help           - Show commands
+/skw consumables    - Toggle paid consumables
+/skw minimap        - Hide/show button
+/skw help           - Show commands
 ```
 
 ### Planned
 ```
-/sw interrupt      - Toggle auto-interrupts
-/sw healing        - Toggle emergency ally healing
-/sw pet            - Toggle pet auto-management
-/sw utilities      - Toggle all utilities
-/sw defensive      - Set defensive mode (aggressive/balanced/defensive)
-/sw rotation       - Set rotation complexity (simple/advanced/simc)
-/sw status         - Show all current toggle states
+/skw interrupt      - Toggle auto-interrupts
+/skw healing        - Toggle emergency ally healing
+/skw pet            - Toggle pet auto-management
+/skw utilities      - Toggle all utilities
+/skw defensive      - Set defensive mode (aggressive/balanced/defensive)
+/skw rotation       - Set rotation complexity (simple/advanced/simc)
+/skw status         - Show all current toggle states
 ```
 
 ---
@@ -309,7 +309,7 @@ A: Currently globalSettings. Per-character planned for future.
 A: Minimal. Toggles just change condition checks (microseconds).
 
 **Q: Can I macro the toggles?**  
-A: Yes! Use `/sw consumables` etc. in macros.
+A: Yes! Use `/skw consumables` etc. in macros.
 
 ---
 

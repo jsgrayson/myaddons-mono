@@ -1,16 +1,10 @@
 -- core/Bindings.lua
--- Keybinding labels only (no runtime binding)
+BINDING_HEADER_SKILLWEAVER = "SkillWeaver Controls"
 
-BINDING_HEADER_SKILLWEAVER = "SkillWeaver"
-
-BINDING_NAME_SKILLWEAVER_ST   = "Single Target"
-BINDING_NAME_SKILLWEAVER_AOE  = "Area of Effect"
-BINDING_NAME_SKILLWEAVER_HEAL = "Heal (Smart)"
-BINDING_NAME_SKILLWEAVER_SELF = "Self Save"
-BINDING_NAME_SKILLWEAVER_INT  = "Interrupt"
-BINDING_NAME_SKILLWEAVER_UTIL = "Utility"
-
-BINDING_NAME_SKILLWEAVER_PRIMARY   = "Primary (Alias)"
-BINDING_NAME_SKILLWEAVER_GROUPHEAL = "Group Heal (Alias)"
-BINDING_NAME_SKILLWEAVER_TANKSAVE  = "Tank Save (Alias)"
-BINDING_NAME_SKILLWEAVER_SELFSAVE  = "Self Save (Alias)"
+-- Map the "CLICK..." command to a readable name in the menu
+_G["BINDING_NAME_CLICK SkillWeaver_ST:LeftButton"]   = "Target / Single Target"
+_G["BINDING_NAME_CLICK SkillWeaver_AOE:LeftButton"]  = "AOE / Group Heal"
+_G["BINDING_NAME_CLICK SkillWeaver_HEAL:LeftButton"] = "Smart Heal (Emergency)"
+_G["BINDING_NAME_CLICK SkillWeaver_SELF:LeftButton"] = "Self Defense / Save"
+_G["BINDING_NAME_CLICK SkillWeaver_INT:LeftButton"]  = "Interrupt"
+_G["BINDING_NAME_CLICK SkillWeaver_UTIL:LeftButton"] = "Utility / Tank Save"

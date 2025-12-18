@@ -121,27 +121,27 @@ Create macros and bind controller buttons to action bar slots:
 
 **Macro 1: Toggle Consumables**
 ```
-/sw consumables
+/skw consumables
 ```
 
 **Macro 2: Toggle Interrupts**
 ```
-/sw interrupt
+/skw interrupt
 ```
 
 **Macro 3: Toggle Healing**
 ```
-/sw healing
+/skw healing
 ```
 
 **Macro 4: Toggle Pet**
 ```
-/sw pet
+/skw pet
 ```
 
 **Macro 5: Show Status**
 ```
-/sw status
+/skw status
 ```
 
 Place these macros on your action bars, then bind controller buttons to those bar slots in ConsolePort.
@@ -176,14 +176,14 @@ R3: Settings Menu
 ## Troubleshooting
 
 ### **"Keybinds not showing in menu"**
-- Ensure SkillWeaver is loaded: `/sw help`
+- Ensure SkillWeaver is loaded: `/skw help`
 - Reload UI: `/reload`
 - Check for addon conflicts
 
 ### **"Controller button not working"**
 - Check if button is already bound to another action
 - Verify keybind was saved
-- Test with keyboard first (`/sw cons`) to confirm feature works
+- Test with keyboard first (`/skw cons`) to confirm feature works
 
 ### **"ConsolePort not detecting SkillWeaver"**
 - Update ConsolePort to latest version
@@ -253,8 +253,8 @@ SkillWeaver Status:
 
 **Test Keybinds:**
 ```
-/sw status    - Show all current states
-/sw help      - Show all commands
+/skw status    - Show all current states
+/skw help      - Show all commands
 ```
 
 **Report Issues:**

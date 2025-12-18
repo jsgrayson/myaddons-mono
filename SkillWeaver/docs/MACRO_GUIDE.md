@@ -9,7 +9,7 @@
 ### **Macro 1: Toggle Consumables**
 ```
 #showtooltip
-/sw cons
+/skw cons
 ```
 **Bind to:** Action bar slot (controller: D-Pad Up)  
 **Use:** Before boss pulls in M+/raids
@@ -19,7 +19,7 @@
 ### **Macro 2: Toggle Interrupts**
 ```
 #showtooltip
-/sw int
+/skw int
 ```
 **Bind to:** Action bar slot (controller: D-Pad Left)  
 **Use:** Disable for specific mechanics
@@ -29,7 +29,7 @@
 ### **Macro 3: Toggle Ally Healing**
 ```
 #showtooltip
-/sw heal
+/skw heal
 ```
 **Bind to:** Action bar slot (controller: D-Pad Right)  
 **Use:** Disable for pure DPS parsing
@@ -39,7 +39,7 @@
 ### **Macro 4: Toggle Pet Management**
 ```
 #showtooltip
-/sw pet
+/skw pet
 ```
 **Bind to:** Action bar slot (controller: L3)  
 **Use:** Hunter/Warlock/DK only
@@ -49,7 +49,7 @@
 ### **Macro 5: Show Status**
 ```
 #showtooltip
-/sw status
+/skw status
 ```
 **Bind to:** Action bar slot (controller: D-Pad Down)  
 **Use:** Check all current toggle states
@@ -60,34 +60,34 @@
 
 ### **Enable Consumables + Announce**
 ```
-/sw cons
+/skw cons
 /say Consumables ON - going hard!
 ```
 
 ### **Disable Consumables + Save Gold Message**
 ```
-/sw cons
+/skw cons
 /say Consumables OFF - farming mode 💰
 ```
 
 ### **Pre-Pull Consumables Check**
 ```
-/sw status
+/skw status
 /say Ready check - verify consumables!
 ```
 
 ### **Emergency Toggle Everything Off**
 ```
-/sw cons
-/sw int
-/sw heal
+/skw cons
+/skw int
+/skw heal
 /say All features disabled - manual mode
 ```
 
 ### **Conditional Toggle (with modifier)**
 ```
 #showtooltip
-/sw [mod:shift] int; [mod:ctrl] heal; cons
+/skw [mod:shift] int; [mod:ctrl] heal; cons
 ```
 **This macro:**
 - **Normal press:** Toggle consumables
@@ -100,25 +100,25 @@
 
 ### **Primary Commands**
 ```
-/sw consumables    (or /sw cons)   - Toggle paid consumables
-/sw interrupt      (or /sw int)    - Toggle auto-interrupt
-/sw healing        (or /sw heal)   - Toggle ally healing
-/sw pet                            - Toggle pet management
-/sw status                         - Show all toggle states
+/skw consumables    (or /skw cons)   - Toggle paid consumables
+/skw interrupt      (or /skw int)    - Toggle auto-interrupt
+/skw healing        (or /skw heal)   - Toggle ally healing
+/skw pet                            - Toggle pet management
+/skw status                         - Show all toggle states
 ```
 
 ### **Utility Commands**
 ```
-/sw settings       (or /sw config) - Open settings panel
-/sw minimap                        - Hide/show minimap button
-/sw help                           - Show all commands
+/skw settings       (or /skw config) - Open settings panel
+/skw minimap                        - Hide/show minimap button
+/skw help                           - Show all commands
 ```
 
 ### **Alternative Prefix**
 Both work the same:
 ```
-/skillweaver cons  = /sw cons
-/skillweaver int   = /sw int
+/skillweaver cons  = /skw cons
+/skillweaver int   = /skw int
 ```
 
 ---
@@ -132,10 +132,10 @@ Both work the same:
 **Step 3:** Bind controller buttons to those bar slots  
 
 **Example ConsolePort Setup:**
-- Action Bar 1, Slot 1 = `/sw cons` → Bind to D-Pad Up
-- Action Bar 1, Slot 2 = `/sw int` → Bind to D-Pad Left
-- Action Bar 1, Slot 3 = `/sw heal` → Bind to D-Pad Right
-- Action Bar 1, Slot 4 = `/sw status` → Bind to D-Pad Down
+- Action Bar 1, Slot 1 = `/skw cons` → Bind to D-Pad Up
+- Action Bar 1, Slot 2 = `/skw int` → Bind to D-Pad Left
+- Action Bar 1, Slot 3 = `/skw heal` → Bind to D-Pad Right
+- Action Bar 1, Slot 4 = `/skw status` → Bind to D-Pad Down
 
 ### **Option 2: Direct Keybinds (Advanced)**
 
@@ -149,7 +149,7 @@ Use WoW's built-in keybinds (no macro needed):
 ### **Use #showtooltip for Visual Feedback**
 ```
 #showtooltip
-/sw cons
+/skw cons
 ```
 Shows current action on cursor hover.
 
@@ -157,7 +157,7 @@ Shows current action on cursor hover.
 ```
 #showtooltip
 /use [combat] Healthstone
-/sw [nocombat] cons
+/skw [nocombat] cons
 ```
 **Result:**
 - In combat: Use healthstone
@@ -165,7 +165,7 @@ Shows current action on cursor hover.
 
 ### **Party/Raid Announcements**
 ```
-/sw cons
+/skw cons
 /p Consumables %t - pulling boss!
 ```
 Announces consumables state to party.
@@ -175,7 +175,7 @@ Announces consumables state to party.
 #showtooltip
 /use Healthstone
 /cast Exhilaration
-/sw status
+/skw status
 ```
 Use healthstone, pop defensive, check status.
 
@@ -184,7 +184,7 @@ Use healthstone, pop defensive, check status.
 ## Text Macro Expansion
 
 ### **Status Output Example**
-When you run `/sw status`, you get:
+When you run `/skw status`, you get:
 ```
 SkillWeaver Status:
   Always Active: Healthstones, Interrupts, Defensives
@@ -195,7 +195,7 @@ SkillWeaver Status:
 ```
 
 ### **Toggle Output Example**
-When you run `/sw cons`, you get:
+When you run `/skw cons`, you get:
 ```
 SkillWeaver: Consumables ENABLED
 ```
@@ -230,26 +230,26 @@ SkillWeaver: Consumables ENABLED
 
 ### **M+ Tyran Week (Lots of Interrupts)**
 ```
-Macro 1: /sw int    (keep interrupts ON)
-Macro 2: /sw cons   (toggle consumables for hard pulls)
+Macro 1: /skw int    (keep interrupts ON)
+Macro 2: /skw cons   (toggle consumables for hard pulls)
 ```
 
 ### **Raid Progression**
 ```
-Macro 1: /sw cons   (enable before boss, disable after)
-Macro 2: /sw status (verify all ON before pull)
+Macro 1: /skw cons   (enable before boss, disable after)
+Macro 2: /skw status (verify all ON before pull)
 ```
 
 ### **Gold Farming**
 ```
-Macro 1: /sw cons   (verify OFF to save gold)
-Macro 2: /sw int    (disable if not needed)
+Macro 1: /skw cons   (verify OFF to save gold)
+Macro 2: /skw int    (disable if not needed)
 ```
 
 ### **PvP Arena**
 ```
-Macro 1: /sw heal   (disable for pure DPS)
-Macro 2: /sw pet    (manual pet control)
+Macro 1: /skw heal   (disable for pure DPS)
+Macro 2: /skw pet    (manual pet control)
 ```
 
 ---
@@ -264,7 +264,7 @@ Macro 2: /sw pet    (manual pet control)
 ### **"No output in chat"**
 - Slash commands DO print to chat
 - Check if chat is filtered (Combat Log settings)
-- Run `/sw help` to verify addon is loaded
+- Run `/skw help` to verify addon is loaded
 
 ### **"Controller button not toggling"**
 - Verify macro is on action bar

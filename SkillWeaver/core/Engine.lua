@@ -51,3 +51,19 @@ function SW.Engine:RefreshAll(reason)
   end
 end
 
+function SW.Engine:Press(id)
+  if not SW.SecureButtons or not SW.SecureButtons.buttons then return end
+  local b = SW.SecureButtons.buttons[id]
+  if b then
+    -- Note: Clicking secure buttons via Lua might be blocked in combat
+    -- if they perform protected actions.
+    if not InCombatLockdown() then
+      b:Click()
+    else
+      -- In combat, we might need a different approach if this fails.
+      -- But following the 'canonical' Lua binding fix for now.
+      b:Click()
+    end
+  end
+end
+
