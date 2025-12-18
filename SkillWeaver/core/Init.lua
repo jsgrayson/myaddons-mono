@@ -1,4 +1,10 @@
-
+-- core/Init.lua
+_G.SkillWeaver = _G.SkillWeaver or {}
+SkillWeaver = _G.SkillWeaver
+local SW = SkillWeaver
+print("SkillWeaver boot OK", SkillWeaver)
+-- hard proof in chat (remove later)
+print("SkillWeaver boot:", type(_G.SkillWeaver), type(SkillWeaver))
 SkillWeaver = SkillWeaver or {}
 local SW = SkillWeaver
 
@@ -48,4 +54,7 @@ SW.events:SetScript("OnEvent", function(_, event, ...)
     SW.State.inCombat = true
     SW.Engine:OnCombatChanged(true)
   end
+end)
+C_Timer.After(1, function()
+  print("SkillWeaver after 1s:", type(_G.SkillWeaver))
 end)
