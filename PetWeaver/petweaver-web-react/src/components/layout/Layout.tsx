@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Minimap } from '../ui/Minimap';
 import './layout.css';
 
 const navLinks = [
@@ -38,6 +39,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <div className="app-shell">
       <aside className="app-sidebar">
+        <Minimap zoneName="Midnight Shard" />
+
         <div className="app-sidebar-header">
           <div className="app-sidebar-title">PetWeaver</div>
           <div className="app-sidebar-subtitle">Midnight shard</div>

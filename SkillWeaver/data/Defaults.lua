@@ -1,138 +1,125 @@
 SkillWeaverDB = SkillWeaverDB or {}
 
-local function deepCopy(src)
-  local t = {}
-  for k,v in pairs(src) do
-    if type(v) == "table" then t[k] = deepCopy(v) else t[k] = v end
-  end
-  return t
-end
-
+-- 1. Default Data
 SkillWeaverDefaults = {
-  version = 1,
+  version = 7,
   enabled = true,
-
-  -- Global “Mode” selection (can be overridden per spec)
-  mode = "Delves", -- "Delves" | "MythicPlus" | "Raid" | "PvP" | "OpenWorld"
-
-  -- Safety toggles (exposes & persists user preferences)
   toggles = {
-    burst = true,
-    defensives = true,
-    interrupts = true,
-    trinkets = false,
-    emergencyGroupHeals = true,
-
-    dpsEmergencyHeals = true,
-    groundTargetMode = "cursor",
-    showHealButton = true,
-    showSelfButton = true,
-    hideEmptyButtons = true,
-  }, -- for hybrid DPS specs
-
-  -- UI
-  ui = {
-    minimap = { hide = false },
-    panel = { show = true },
+    burst = true, defensives = true, interrupts = true, trinkets = false,
+    groundTargetMode = "cursor", showHealButton = true, showSelfButton = true,
+    hideEmptyButtons = false, 
   },
-
-  -- Profile selection
-  profiles = {
-    -- keyed by "CLASS_SPECID"
-    -- example: ["DEATHKNIGHT_250"] = { name="Balanced", mode="Delves" }
-  },
-
-  -- Secure button macro templates (set by engine)
-  bindings = {
-    ST = "X",
-    AOE = "C",
-    INT = "R",
-    UTIL = "T",
-    HEAL = "CTRL-X",
-    SELF = "Z",
-  },
+  ui = { minimap = { hide = false, angle = -0.785 }, panel = { show = true } },
+  charSettings = {},
+  bindingProfiles = {}, 
+  currentBindingProfile = "None",
 }
 
-if not SkillWeaverDB.version then
-  SkillWeaverDB = deepCopy(SkillWeaverDefaults)
-end
-
-
+-- Standard Profiles (Using Real Commands)
+local StandardProfiles = {
+    ["Keyboard"] = {
+        ["CLICK SkillWeaver_Button_ST:LeftButton"]   = "X",
+        ["CLICK SkillWeaver_Button_AOE:LeftButton"]  = "C",
+        ["CLICK SkillWeaver_Button_INT:LeftButton"]  = "R",
+        ["CLICK SkillWeaver_Button_UTIL:LeftButton"] = "T",
+        ["CLICK SkillWeaver_Button_HEAL:LeftButton"] = "CTRL-X",
+        ["CLICK SkillWeaver_Button_SELF:LeftButton"] = "Z"
+    },
+    ["Controller"] = {
+        ["CLICK SkillWeaver_Button_ST:LeftButton"]   = "PAD1",
+        ["CLICK SkillWeaver_Button_AOE:LeftButton"]  = "PAD2",
+        ["CLICK SkillWeaver_Button_INT:LeftButton"]  = "PADRTRIGGER",
+        ["CLICK SkillWeaver_Button_UTIL:LeftButton"] = "PADLTRIGGER",
+        ["CLICK SkillWeaver_Button_HEAL:LeftButton"] = "PAD3",
+        ["CLICK SkillWeaver_Button_SELF:LeftButton"] = "PAD4"
+    },
+    ["MMO_Mouse"] = {
+        ["CLICK SkillWeaver_Button_ST:LeftButton"]   = "NUMPAD1",
+        ["CLICK SkillWeaver_Button_AOE:LeftButton"]  = "NUMPAD2",
+        ["CLICK SkillWeaver_Button_INT:LeftButton"]  = "NUMPAD3",
+        ["CLICK SkillWeaver_Button_UTIL:LeftButton"] = "NUMPAD4",
+        ["CLICK SkillWeaver_Button_HEAL:LeftButton"] = "NUMPAD5",
+        ["CLICK SkillWeaver_Button_SELF:LeftButton"] = "NUMPAD6"
+    }
+}
 
 SkillWeaver = SkillWeaver or {}
 local SW = SkillWeaver
 SW.Defaults = SW.Defaults or {}
+SW.Defaults.registry = SW.Defaults.registry or {}
 
-SW.Defaults.SelfDefaults = {
-  -- DK
-  ["DEATHKNIGHT_250"] = { "Icebound Fortitude", "Vampiric Blood", "Rune Tap", "Anti-Magic Shell", "Death Strike" },
-  ["DEATHKNIGHT_251"] = { "Anti-Magic Shell", "Icebound Fortitude" },
-  ["DEATHKNIGHT_252"] = { "Anti-Magic Shell", "Icebound Fortitude", "Death Strike" },
+function SW.Defaults:InitDB()
+    -- FIXED: Deep Copy that handles non-table values safely
+    local function deepCopy(src)
+        if type(src) ~= "table" then return src end
+        local t = {}
+        for k,v in pairs(src) do
+            t[k] = deepCopy(v)
+        end
+        return t
+    end
 
-  -- DH
-  ["DEMONHUNTER_577"] = { "Blur", "Darkness" },
-  ["DEMONHUNTER_581"] = { "Demon Spikes", "Metamorphosis", "Fel Devastation" },
+    -- 1. Ensure DB Table
+    if not SkillWeaverDB.version then 
+        for k,v in pairs(SkillWeaverDefaults) do
+            SkillWeaverDB[k] = deepCopy(v)
+        end
+        SkillWeaverDB.version = SkillWeaverDefaults.version
+    end
 
-  -- Druid
-  ["DRUID_102"] = { "Barkskin", "Renewal" },
-  ["DRUID_103"] = { "Survival Instincts", "Barkskin" },
-  ["DRUID_104"] = { "Barkskin", "Survival Instincts", "Frenzied Regeneration", "Ironfur" },
-  ["DRUID_105"] = { "Barkskin", "Renewal" },
-
-  -- Paladin
-  ["PALADIN_65"] = { "Divine Shield", "Lay on Hands" },
-  ["PALADIN_66"] = { "Ardent Defender", "Guardian of Ancient Kings", "Divine Shield" },
-  ["PALADIN_70"] = { "Shield of Vengeance", "Divine Protection" },
-
-  -- Shaman
-  ["SHAMAN_262"] = { "Astral Shift" },
-  ["SHAMAN_263"] = { "Astral Shift" },
-  ["SHAMAN_264"] = { "Astral Shift" },
-
-  -- Warrior
-  ["WARRIOR_71"] = { "Die by the Sword", "Rallying Cry" },
-  ["WARRIOR_72"] = { "Enraged Regeneration", "Rallying Cry" },
-  ["WARRIOR_73"] = { "Shield Wall", "Last Stand", "Ignore Pain", "Shield Block" },
-
-  -- Warlock
-  ["WARLOCK_265"] = { "Unending Resolve", "Dark Pact" },
-  ["WARLOCK_266"] = { "Unending Resolve", "Dark Pact" },
-  ["WARLOCK_267"] = { "Unending Resolve", "Dark Pact" },
-
-  -- Mage
-  ["MAGE_62"] = { "Ice Block", "Alter Time" },
-  ["MAGE_63"] = { "Ice Block", "Blazing Barrier" },
-  ["MAGE_64"] = { "Ice Block", "Ice Barrier" },
-
-  -- Hunter
-  ["HUNTER_253"] = { "Exhilaration", "Survival of the Fittest" },
-  ["HUNTER_254"] = { "Exhilaration", "Survival of the Fittest" },
-  ["HUNTER_255"] = { "Exhilaration", "Survival of the Fittest" },
-
-  -- Monk
-  ["MONK_268"] = { "Fortifying Brew", "Dampen Harm", "Celestial Brew" },
-  ["MONK_269"] = { "Touch of Karma", "Fortifying Brew" },
-  ["MONK_270"] = { "Fortifying Brew" },
-
-  -- Priest
-  ["PRIEST_256"] = { "Desperate Prayer" },
-  ["PRIEST_257"] = { "Desperate Prayer" },
-  ["PRIEST_258"] = { "Dispersion", "Desperate Prayer" },
-
-  -- Evoker
-  ["EVOKER_1467"] = { "Obsidian Scales", "Renewing Blaze" },
-  ["EVOKER_1468"] = { "Obsidian Scales", "Renewing Blaze" },
-  ["EVOKER_1473"] = { "Obsidian Scales" },
-}
-
-function SW.Defaults:GetDefaultSelfSteps(classSpecKey)
-  local list = self.SelfDefaults[classSpecKey]
-  if not list then return nil end
-  local steps = {}
-  for _, spell in ipairs(list) do
-    table.insert(steps, { command = "/cast " .. spell })
-  end
-  return steps
+    -- 2. Force Enable
+    if SkillWeaverDB.enabled == nil then SkillWeaverDB.enabled = true end
+    
+    -- 3. REPAIR PROFILES
+    SkillWeaverDB.bindingProfiles = SkillWeaverDB.bindingProfiles or {}
+    for name, data in pairs(StandardProfiles) do
+        -- Inject if missing OR if outdated
+        if not SkillWeaverDB.bindingProfiles[name] or (SkillWeaverDB.version < 7) then
+            SkillWeaverDB.bindingProfiles[name] = deepCopy(data)
+        end
+    end
+    
+    SkillWeaverDB.version = SkillWeaverDefaults.version
 end
 
+-- === PUBLIC HELPERS ===
 
+function SW.Defaults:GetCharKey()
+    return UnitName("player").."-"..GetRealmName()
+end
+
+function SW.Defaults:GetCurrentBindingProfile() 
+    if not SkillWeaverDB or not SkillWeaverDB.charSettings then return "Keyboard" end
+    local s = SkillWeaverDB.charSettings[self:GetCharKey()]
+    return s and s.bindingProfile or "Keyboard"
+end
+
+function SW.Defaults:SetBindingProfile(p)
+    if not SkillWeaverDB then return end
+    local k = self:GetCharKey()
+    SkillWeaverDB.charSettings = SkillWeaverDB.charSettings or {}
+    SkillWeaverDB.charSettings[k] = SkillWeaverDB.charSettings[k] or {}
+    SkillWeaverDB.charSettings[k].bindingProfile = p
+end
+
+-- Utils
+SW.Utils = SW.Utils or {}
+function SW.Utils.DeepCopy(src)
+    if type(src) ~= "table" then return src end
+    local t = {}
+    for k,v in pairs(src) do
+        t[k] = SW.Utils.DeepCopy(v)
+    end
+    return t
+end
+
+-- Rotation Registry
+function SW.Defaults:RegisterRotation(k, m, p, r) 
+  self.registry[k] = self.registry[k] or {}; self.registry[k][m] = self.registry[k][m] or {}
+  self.registry[k][m][p] = r
+end
+
+function SW.Defaults:GetFallbackRotation(k, m, p)
+  local c = self.registry[k]; if not c then return nil end
+  return c[m] and c[m][p] or nil
+end

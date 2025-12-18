@@ -2,16 +2,13 @@
 ## Title: SkillWeaver
 ## Notes: Secure Buttons + Profiles + UI
 ## Author: You
-## Version: 0.9.1
+## Version: 0.9.7
 ## SavedVariables: SkillWeaverDB
 
 # --- LOCALE ---
 Locale/enUS.lua
 
-# --- CORE BOOTSTRAP ---
-core/Init.lua
-
-# --- DATA / STATIC ---
+# --- DATA (LOAD THIS FIRST) ---
 data/Defaults.lua
 data/Fallbacks.lua
 data/SpecPackLoader.lua
@@ -19,18 +16,18 @@ data/ClassPacks.lua
 data/TalentSuggestions.lua
 data/Classes/ALL.lua
 
-# --- LOGIC MODULES ---
+# --- CORE ---
+core/Init.lua
 core/State.lua
 core/Profiles.lua
 core/Decision.lua
 core/Engine.lua
-
-# --- SECURE INFRASTRUCTURE ---
 core/SecureButtons.lua
 core/Bindings.lua
 
-# --- UI MODULES ---
+# --- UI ---
 ui/Style.lua
+ui/TalentModal.lua
 ui/Menu.lua
 ui/Panel.lua
 ui/Minimap.lua

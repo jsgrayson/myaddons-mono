@@ -3,115 +3,162 @@ SW.UI = SW.UI or {}
 
 local menuFrame
 
-local function toggleValue(path)
-  local t = SkillWeaverDB.toggles
-  t[path] = not t[path]
-  SW.Engine:RefreshAll("toggle_changed")
-end
-
 function SW.UI:ToggleMenu(anchor)
-  if not menuFrame then
-    menuFrame = CreateFrame("Frame", "SkillWeaver_Dropdown", UIParent, "UIDropDownMenuTemplate")
-  end
-
-  local key = SW.State:GetClassSpecKey()
-  local mode = SW.State:GetMode()
-  local profile = SW.Profiles:GetActiveProfileName(key)
-
-  local function init()
-    local info = UIDropDownMenu_CreateInfo()
-
-    info.isTitle = true
-    info.text = "SkillWeaver"
-    info.notCheckable = true
-    UIDropDownMenu_AddButton(info)
-
-    info = UIDropDownMenu_CreateInfo()
-    info.text = "Mode: " .. mode
-    info.notCheckable = true
-    UIDropDownMenu_AddButton(info)
-
-    local modes = { "Delves", "MythicPlus", "Raid", "PvP", "OpenWorld" }
-
-
-    for _, m in ipairs(modes) do
-      info = UIDropDownMenu_CreateInfo()
-      info.text = "Set Mode: " .. m
-      info.notCheckable = true
-      info.func = function() SW.State:SetMode(m) end
-      UIDropDownMenu_AddButton(info)
+    if not menuFrame then
+        menuFrame = CreateFrame("Frame", "SkillWeaver_Dropdown", UIParent, "UIDropDownMenuTemplate")
     end
 
-    info = UIDropDownMenu_CreateInfo()
-    info.text = "Profile: " .. profile
-    info.notCheckable = true
-    UIDropDownMenu_AddButton(info)
+    -- The Menu Generator Function
+    local function Initialize(self, level)
+        local info = UIDropDownMenu_CreateInfo()
 
-    local profiles = { "Balanced", "HighPerformance", "Safe" }
-    for _, p in ipairs(profiles) do
-      info = UIDropDownMenu_CreateInfo()
-      info.text = "Set Profile: " .. p
-      info.notCheckable = true
-      info.func = function() SW.Profiles:SetActiveProfileName(key, p) end
-      UIDropDownMenu_AddButton(info)
+        -- TITLE
+        info.text = "SkillWeaver"
+        info.isTitle = true
+        info.notCheckable = true
+        UIDropDownMenu_AddButton(info, level)
+
+        -- SECTION 1: MODE
+        info = UIDropDownMenu_CreateInfo()
+        info.text = "Combat Mode"
+        info.isTitle = true
+        info.notCheckable = true
+        UIDropDownMenu_AddButton(info, level)
+
+        local currentMode = SW.State:GetMode()
+        local modes = { "Delves", "MythicPlus", "Raid", "PvP", "OpenWorld" }
+
+        for _, m in ipairs(modes) do
+            info = UIDropDownMenu_CreateInfo()
+            info.text = m
+            info.checked = (currentMode == m)
+            info.func = function() 
+                SW.State:SetMode(m) 
+                -- If the panel is open, update it to reflect the change
+                if SW.UI.UpdatePanel then SW.UI:UpdatePanel() end
+                CloseDropDownMenus()
+            end
+            UIDropDownMenu_AddButton(info, level)
+        end
+
+        -- SECTION 2: INPUT PROFILE
+        info = UIDropDownMenu_CreateInfo()
+        info.isTitle = true
+        info.notCheckable = true
+        info.text = "" 
+        UIDropDownMenu_AddButton(info, level) -- Spacer
+
+        info = UIDropDownMenu_CreateInfo()
+        info.text = "Input Profile"
+        info.isTitle = true
+        info.notCheckable = true
+        UIDropDownMenu_AddButton(info, level)
+
+        local profiles = { "Keyboard", "Controller", "MMO_Mouse" }
+        if SkillWeaverDB and SkillWeaverDB.bindingProfiles then
+            for k, _ in pairs(SkillWeaverDB.bindingProfiles) do
+                local found = false
+                for _, p in ipairs(profiles) do if p == k then found = true end end
+                if not found then table.insert(profiles, k) end
+            end
+        end
+
+        local currentInput = SW.Defaults and SW.Defaults.GetCurrentBindingProfile and SW.Defaults:GetCurrentBindingProfile() or "None"
+
+        for _, p in ipairs(profiles) do
+            info = UIDropDownMenu_CreateInfo()
+            info.text = p
+            info.checked = (currentInput == p)
+            info.func = function() 
+                if SW.Bindings and SW.Bindings.LoadProfile then
+                    SW.Bindings:LoadProfile(p) 
+                end
+                if SW.UI.UpdatePanel then SW.UI:UpdatePanel() end
+                CloseDropDownMenus()
+            end
+            UIDropDownMenu_AddButton(info, level)
+        end
+
+        -- Save Current Option
+        info = UIDropDownMenu_CreateInfo()
+        info.text = "|cFF00FF00+ Save Current as...|r"
+        info.notCheckable = true
+        info.func = function() 
+            StaticPopup_Show("SW_SAVE_PROFILE") 
+        end
+        UIDropDownMenu_AddButton(info, level)
+
+        -- SECTION 3: TOGGLES
+        info = UIDropDownMenu_CreateInfo()
+        info.isTitle = true
+        info.notCheckable = true
+        info.text = "" 
+        UIDropDownMenu_AddButton(info, level) -- Spacer
+
+        info = UIDropDownMenu_CreateInfo()
+        info.text = "Live Toggles"
+        info.isTitle = true
+        info.notCheckable = true
+        UIDropDownMenu_AddButton(info, level)
+
+        local toggles = {
+            { k="burst", text="Burst Mode" },
+            { k="defensives", text="Auto Defensives" },
+            { k="interrupts", text="Auto Interrupts" },
+            { k="showHealButton", text="Healer Helper" },
+        }
+
+        for _, t in ipairs(toggles) do
+            info = UIDropDownMenu_CreateInfo()
+            info.text = t.text
+            info.checked = SkillWeaverDB and SkillWeaverDB.toggles and SkillWeaverDB.toggles[t.k]
+            info.isNotRadio = true
+            info.keepShownOnClick = true
+            info.func = function()
+                if SkillWeaverDB and SkillWeaverDB.toggles then
+                    SkillWeaverDB.toggles[t.k] = not SkillWeaverDB.toggles[t.k]
+                end
+                if SW.Engine and SW.Engine.RefreshAll then
+                    SW.Engine:RefreshAll("toggle_" .. t.k)
+                end
+                if SW.UI.UpdatePanel then SW.UI:UpdatePanel() end
+            end
+            UIDropDownMenu_AddButton(info, level)
+        end
+
+        -- RELOAD UI
+        info = UIDropDownMenu_CreateInfo()
+        info.isTitle = true
+        info.notCheckable = true
+        info.text = "" 
+        UIDropDownMenu_AddButton(info, level) -- Spacer
+
+        info = UIDropDownMenu_CreateInfo()
+        info.text = "|cFFFF0000Reload UI|r"
+        info.notCheckable = true
+        info.func = ReloadUI
+        UIDropDownMenu_AddButton(info, level)
     end
 
-    info = UIDropDownMenu_CreateInfo()
-    info.isTitle = true
-    info.text = "Toggles"
-    info.notCheckable = true
-    UIDropDownMenu_AddButton(info)
-
-    local toggles = {
-      { k="burst", text="Burst" },
-      { k="defensives", text="Defensives" },
-      { k="interrupts", text="Interrupts" },
-      { k="useTrinkets", text="Use Trinkets" },
-      { k="dpsEmergencyHeals", text="DPS Emergency Heals" },
-      { k="showHealButton", text="Show HEAL Button" },
-      { k="showSelfButton", text="Show SELF Button" },
-      { k="hideEmptyButtons", text="Hide Empty Buttons" },
-      { k="hideEmptyButtons", text="Hide Empty Buttons" },
-    }
-
-    for _, t in ipairs(toggles) do
-      info = UIDropDownMenu_CreateInfo()
-      info.text = t.text
-      info.checked = SkillWeaverDB.toggles[t.k]
-      info.func = function()
-        SkillWeaverDB.toggles[t.k] = not SkillWeaverDB.toggles[t.k]
-        SW.Engine:RefreshAll("toggle_" .. t.k)
-      end
-      UIDropDownMenu_AddButton(info)
-    end
-
-
-
-
-
-    -- Ground Target Mode Submenu
-    info = UIDropDownMenu_CreateInfo()
-    info.isTitle, info.notCheckable = true, true
-    info.text = "Ground Target Mode"
-    UIDropDownMenu_AddButton(info)
-
-    for _, v in ipairs({ "cursor", "player" }) do
-      info = UIDropDownMenu_CreateInfo()
-      info.text = (v == "cursor") and "@cursor (fast)" or "@player (safe)"
-      info.checked = (SkillWeaverDB.toggles.groundTargetMode == v)
-      info.func = function()
-        SkillWeaverDB.toggles.groundTargetMode = v
-        SW.Engine:RefreshAll("ground_mode")
-      end
-      UIDropDownMenu_AddButton(info)
-    end
-
-    info = UIDropDownMenu_CreateInfo()
-    info.text = "Reload UI"
-    info.notCheckable = true
-    info.func = ReloadUI
-    UIDropDownMenu_AddButton(info)
-  end
-
-  EasyMenu(init, menuFrame, anchor, 0, 0, "MENU")
+    -- Initialize and Toggle
+    UIDropDownMenu_Initialize(menuFrame, Initialize, "MENU")
+    ToggleDropDownMenu(1, nil, menuFrame, anchor, 0, 0)
 end
+
+-- Keep the StaticPopup as is
+StaticPopupDialogs["SW_SAVE_PROFILE"] = {
+    text = "Name your Input Profile:",
+    button1 = "Save",
+    button2 = "Cancel",
+    hasEditBox = true,
+    OnAccept = function(self)
+        local text = self.editBox:GetText()
+        if SW.Bindings and SW.Bindings.SaveProfile then
+            SW.Bindings:SaveProfile(text)
+        end
+    end,
+    timeout = 0,
+    whileDead = true,
+    hideOnEscape = true,
+    preferredIndex = 3,
+}
