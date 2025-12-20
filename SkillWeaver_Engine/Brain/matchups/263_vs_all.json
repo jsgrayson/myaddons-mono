@@ -1,0 +1,29 @@
+{
+    "spec_id": 263,
+    "counters": [
+        {
+            "enemy_spec": 62,
+            "trigger": "Arcane Blast",
+            "response_slot": "slot_13",
+            "desc": "Mage Burst -> Grounding Totem (Absorb)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_13",
+            "desc": "Mage Spike -> Grounding Totem"
+        },
+        {
+            "enemy_spec": 265,
+            "trigger": "Chaos Bolt",
+            "response_slot": "slot_13",
+            "desc": "Warlock Nuke -> Grounding Totem"
+        },
+        {
+            "enemy_spec": 250,
+            "trigger": "Anti-Magic Shell",
+            "response_slot": "slot_17",
+            "desc": "DK Shell -> Spirit Walk (Kite/Freedom)"
+        }
+    ]
+}

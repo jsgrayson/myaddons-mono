@@ -1,0 +1,29 @@
+{
+    "spec_id": 258,
+    "counters": [
+        {
+            "enemy_spec": 64,
+            "trigger": "Ice Block",
+            "response_slot": "slot_13",
+            "desc": "Mage Block -> Mass Dispel (Shatter)"
+        },
+        {
+            "enemy_spec": 66,
+            "trigger": "Divine Shield",
+            "response_slot": "slot_13",
+            "desc": "Paladin Bubble -> Mass Dispel"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Divine Shield",
+            "response_slot": "slot_13",
+            "desc": "Paladin Bubble -> Mass Dispel"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Cyclone",
+            "response_slot": "slot_11",
+            "desc": "Druid CC -> Silence"
+        }
+    ]
+}

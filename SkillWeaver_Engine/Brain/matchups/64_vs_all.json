@@ -1,0 +1,29 @@
+{
+    "spec_id": 64,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_15",
+            "desc": "Warrior Spin -> Ice Block (Immune)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Shadowstep",
+            "response_slot": "slot_12",
+            "desc": "Rogue Step -> Ring of Frost (Peel)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Frozen Orb",
+            "response_slot": "slot_17",
+            "desc": "Mage Orb -> Shimmer (Escape)"
+        },
+        {
+            "enemy_spec": 577,
+            "trigger": "The Hunt",
+            "response_slot": "slot_15",
+            "desc": "DH Hunt -> Ice Block"
+        }
+    ]
+}

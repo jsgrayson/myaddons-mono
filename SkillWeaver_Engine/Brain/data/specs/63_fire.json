@@ -1,0 +1,190 @@
+{
+    "spec_id": 63,
+    "spec_name": "Fire Mage",
+    "resource_type": "mana",
+    "secondary_resource": "fire_blast_charges",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Fireball",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "stationary_check_or_shimmer",
+                "hot_streak_missing"
+            ]
+        },
+        "slot_02": {
+            "action": "Fire Blast",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "heating_up_conversion",
+                "combustion_rotation"
+            ]
+        },
+        "slot_03": {
+            "action": "Pyroblast",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "hot_streak_active"
+            ]
+        },
+        "slot_04": {
+            "action": "Phoenix Flames",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "combustion_rotation",
+                "charges_overflow"
+            ]
+        },
+        "slot_05": {
+            "action": "Combustion",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Scorch",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "target_execute_range",
+                "moving_allowed"
+            ]
+        },
+        "slot_07": {
+            "action": "Meteor",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "aoe_needed"
+            ]
+        },
+        "slot_08": {
+            "action": "Dragon's Breath",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "melee_gap_closer_stop",
+                "aoe_control"
+            ]
+        },
+        "slot_09": {
+            "action": "Flamestrike",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "hot_streak_active",
+                "aoe_needed"
+            ]
+        },
+        "slot_11": {
+            "action": "Counterspell",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Blast Wave",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "melee_range_check",
+                "knockback_needed"
+            ]
+        },
+        "slot_13": {
+            "action": "Ice Block",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "panic_immunity_needed"
+            ]
+        },
+        "slot_14": {
+            "action": "Mirror Image",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "threat_reduction_needed",
+                "mitigation_needed_minor"
+            ]
+        },
+        "slot_15": {
+            "action": "Blazing Barrier",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "shield_missing",
+                "combat_check"
+            ]
+        },
+        "slot_16": {
+            "action": "Invisibility",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "agro_drop_needed",
+                "skip_needed"
+            ]
+        },
+        "slot_17": {
+            "action": "Shimmer",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "is_moving",
+                "casting_check",
+                "gap_closer_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Alter Time",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "alter_time_safety"
+            ]
+        },
+        "slot_24": {
+            "action": "Fireblood / Berserking",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        }
+    },
+    "proc_priority": {
+        "combustion_phase": [
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_06"
+        ],
+        "normal_rotation": [
+            "slot_03",
+            "slot_02",
+            "slot_01"
+        ],
+        "mobility": [
+            "slot_17",
+            "slot_06"
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "spec_id": 65,
+    "counters": [
+        {
+            "enemy_spec": 259,
+            "trigger": "Kidney Shot",
+            "response_slot": "slot_16",
+            "desc": "Rogue Stun Tank -> Sacrifice (Prevent One-Shot)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_14",
+            "desc": "Mage Spike -> Divine Protection"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Execute",
+            "response_slot": "slot_01",
+            "desc": "Warrior Execute -> Holy Shock (Save)"
+        },
+        {
+            "enemy_spec": 577,
+            "trigger": "The Hunt",
+            "response_slot": "slot_15",
+            "desc": "DH Charge -> Divine Shield (Bubble)"
+        }
+    ]
+}

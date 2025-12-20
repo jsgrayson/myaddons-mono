@@ -1,0 +1,29 @@
+{
+    "spec_id": 102,
+    "counters": [
+        {
+            "enemy_spec": 577,
+            "trigger": "Metamorphosis",
+            "response_slot": "slot_12",
+            "desc": "DH Burst -> Typhoon (Disengage)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_12",
+            "desc": "Warrior Spin -> Typhoon (Knockback)"
+        },
+        {
+            "enemy_spec": 258,
+            "trigger": "Void Eruption",
+            "response_slot": "slot_11",
+            "desc": "Priest Burst -> Solar Beam (Silence)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Icy Veins",
+            "response_slot": "slot_11",
+            "desc": "Mage Burst -> Solar Beam"
+        }
+    ]
+}

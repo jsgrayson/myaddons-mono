@@ -1,0 +1,29 @@
+{
+    "spec_id": 104,
+    "counters": [
+        {
+            "enemy_spec": 72,
+            "trigger": "Enrage",
+            "response_slot": "slot_13",
+            "desc": "Warrior Enrage -> Soothe (Dispel)"
+        },
+        {
+            "enemy_spec": 253,
+            "trigger": "Bestial Wrath",
+            "response_slot": "slot_13",
+            "desc": "Hunter Enrage -> Soothe"
+        },
+        {
+            "enemy_spec": 250,
+            "trigger": "Icebound Fortitude",
+            "response_slot": "slot_12",
+            "desc": "DK Immunity -> Mighty Bash (Stun)"
+        },
+        {
+            "enemy_spec": 269,
+            "trigger": "Fists of Fury",
+            "response_slot": "slot_18",
+            "desc": "Monk Channel -> Typhoon (Interrupt/Knockback)"
+        }
+    ]
+}

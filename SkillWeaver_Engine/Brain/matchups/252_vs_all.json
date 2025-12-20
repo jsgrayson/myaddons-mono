@@ -1,0 +1,29 @@
+{
+    "spec_id": 252,
+    "counters": [
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_13",
+            "desc": "Mage Poly -> Dark Simulacrum (Steal)"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Hammer of Justice",
+            "response_slot": "slot_14",
+            "desc": "Paladin Stun -> AMS (Immunity)"
+        },
+        {
+            "enemy_spec": 264,
+            "trigger": "Mana Tide Totem",
+            "response_slot": "slot_24",
+            "desc": "Shaman Totem -> Chains of Ice (Snare)"
+        },
+        {
+            "enemy_spec": 257,
+            "trigger": "Void Eruption",
+            "response_slot": "slot_14",
+            "desc": "Devourer Burst -> AMS"
+        }
+    ]
+}

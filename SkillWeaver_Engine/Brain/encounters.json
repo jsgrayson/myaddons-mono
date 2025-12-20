@@ -1,0 +1,118 @@
+{
+    "Dungeons": {
+        "Stonevault": {
+            "Void_Speaker": {
+                "spell": "Arcing_Void",
+                "prio": 1000,
+                "late": 0.88,
+                "type": "Group_Wipe"
+            },
+            "Cursed_Forgeheart": {
+                "spell": "Forgemaster's_Gambit",
+                "prio": 900,
+                "late": 0.82,
+                "type": "Tank_Buster"
+            },
+            "Earthshaker": {
+                "spell": "Ground_Pound",
+                "prio": 850,
+                "late": 0.85,
+                "type": "Heavy_AOE"
+            }
+        },
+        "City_of_Threads": {
+            "Herald_of_Ansurek": {
+                "spell": "Shadows_of_Doubt",
+                "prio": 1000,
+                "late": 0.90,
+                "type": "Fear_DoT"
+            },
+            "Royal_Swarmguard": {
+                "spell": "Ravenous_Swarm",
+                "prio": 900,
+                "late": 0.85,
+                "type": "Stacking_DoT"
+            },
+            "Web-Mage": {
+                "spell": "Void_Wave",
+                "prio": 1000,
+                "late": 0.88,
+                "type": "Massive_Damage"
+            }
+        },
+        "Priory": {
+            "Devout_Follower": {
+                "spell": "Greater_Heal",
+                "prio": 1100,
+                "late": 0.92,
+                "type": "Reset_Prevention"
+            },
+            "Holy_Knight": {
+                "spell": "Holy_Radiance",
+                "prio": 950,
+                "late": 0.85,
+                "type": "AOE_Pulse"
+            },
+            "Sacred_Pyromancer": {
+                "spell": "Inner_Fire",
+                "prio": 800,
+                "late": 0.80,
+                "type": "Damage_Buff"
+            }
+        },
+        "Dawnbreaker": {
+            "Nightfall_Shadow": {
+                "spell": "Enshadow",
+                "prio": 1000,
+                "late": 0.85,
+                "type": "Heal_Block"
+            },
+            "Dark_Ritualist": {
+                "spell": "Stygian_Blast",
+                "prio": 1000,
+                "late": 0.88,
+                "type": "One-Shot"
+            }
+        }
+    },
+    "Raids": {
+        "Ulgrax": {
+            "Stalking_Shadows": {
+                "prio": 1000,
+                "late": 0.85,
+                "type": "Mechanic"
+            }
+        },
+        "Silken_Court": {
+            "Cataclysmic_Signet": {
+                "prio": 2000,
+                "late": 0.90,
+                "type": "Hard-Stop",
+                "assignment": true
+            }
+        },
+        "Queen_Ansurek": {
+            "Abyssal_Infusion": {
+                "prio": 1500,
+                "late": 0.90,
+                "type": "Stacking_Logic"
+            }
+        }
+    },
+    "Delves": {
+        "Zekvir": {
+            "Horrific_Visage": {
+                "prio": 2000,
+                "late": 0.60,
+                "type": "Hard-Stop"
+            }
+        },
+        "Kobold": {
+            "Fire_Bomb": {
+                "prio": 800,
+                "late": 0.60,
+                "type": "Survival"
+            }
+        }
+    }
+}

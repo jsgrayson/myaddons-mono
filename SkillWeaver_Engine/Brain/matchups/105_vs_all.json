@@ -1,0 +1,29 @@
+{
+    "spec_id": 105,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Avatar",
+            "response_slot": "slot_11",
+            "desc": "Warrior Burst -> Cyclone (Pause Threat)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Shadow Dance",
+            "response_slot": "slot_14",
+            "desc": "Rogue Burst -> Ironbark Target"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Avenging Wrath",
+            "response_slot": "slot_11",
+            "desc": "Paladin Wings -> Cyclone"
+        },
+        {
+            "enemy_spec": 257,
+            "trigger": "Void Eruption",
+            "response_slot": "slot_18",
+            "desc": "Devourer Burst -> Ursol's Vortex (Zone Control)"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "spec_id": 73,
+    "counters": [
+        {
+            "enemy_spec": 62,
+            "trigger": "Pyroblast",
+            "response_slot": "slot_16",
+            "desc": "Mage Nuke -> Spell Reflect (Reverse-Uno)"
+        },
+        {
+            "enemy_spec": 265,
+            "trigger": "Unstable Affliction",
+            "response_slot": "slot_16",
+            "desc": "Warlock DoT -> Spell Reflect (Prevent Application)"
+        },
+        {
+            "enemy_spec": 257,
+            "trigger": "Void Blast",
+            "response_slot": "slot_16",
+            "desc": "Devourer Blast -> Spell Reflect"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_08",
+            "desc": "Warrior Burst -> Demo Shout (20% DR)"
+        }
+    ]
+}

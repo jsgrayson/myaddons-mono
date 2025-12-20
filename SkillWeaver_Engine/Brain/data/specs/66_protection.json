@@ -1,0 +1,178 @@
+{
+    "spec_id": 66,
+    "spec_name": "Protection Paladin",
+    "resource_type": "mana",
+    "secondary_resource": "holy_power",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Blessed Hammer",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "consecration_anchor_check",
+                "holy_power_not_capped"
+            ]
+        },
+        "slot_02": {
+            "action": "Judgment",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "consecration_anchor_check",
+                "holy_power_not_capped"
+            ]
+        },
+        "slot_03": {
+            "action": "Shield of the Righteous",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "shield_of_righteousness_maintenance",
+                "consecration_anchor_check"
+            ]
+        },
+        "slot_04": {
+            "action": "Avenger's Shield",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "grand_crusader_interrupt_hold",
+                "consecration_anchor_check"
+            ]
+        },
+        "slot_05": {
+            "action": "Consecration",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "consecration_missing_or_moving"
+            ]
+        },
+        "slot_06": {
+            "action": "Hammer of Wrath",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_execute_range",
+                "consecration_anchor_check"
+            ]
+        },
+        "slot_07": {
+            "action": "Avenging Wrath",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_08": {
+            "action": "Eye of Tyr",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "eye_of_tyr_predictive",
+                "melee_range_check"
+            ]
+        },
+        "slot_09": {
+            "action": "Word of Glory",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "shining_light_free_heal"
+            ]
+        },
+        "slot_11": {
+            "action": "Rebuke",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Hammer of Justice",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "priority_stun_needed"
+            ]
+        },
+        "slot_13": {
+            "action": "Guardian of Ancient Kings",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_14": {
+            "action": "Divine Shield",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "panic_immunity_needed_taunt"
+            ]
+        },
+        "slot_15": {
+            "action": "Ardent Defender",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "cheat_death_anticipation"
+            ]
+        },
+        "slot_16": {
+            "action": "Blessing of Sacrifice",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "healer_critical_external"
+            ]
+        },
+        "slot_17": {
+            "action": "Divine Steed",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Blessing of Freedom",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "freedom_root_break"
+            ]
+        },
+        "slot_24": {
+            "action": "Arcane Torrent",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_silence_needed"
+            ]
+        }
+    },
+    "proc_priority": {
+        "tanking_loop": [
+            "slot_05",
+            "slot_03",
+            "slot_04",
+            "slot_02",
+            "slot_01"
+        ],
+        "interruption": [
+            "slot_11",
+            "slot_04",
+            "slot_24"
+        ]
+    }
+}

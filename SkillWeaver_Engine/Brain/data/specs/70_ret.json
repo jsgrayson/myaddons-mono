@@ -1,0 +1,184 @@
+{
+    "spec_id": 70,
+    "spec_name": "Retribution Paladin",
+    "resource_type": "holy_power",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Judgment",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_02": {
+            "action": "Blade of Justice",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "resource_lt_4",
+                "target_valid"
+            ]
+        },
+        "slot_03": {
+            "action": "Final Verdict",
+            "key": "F15",
+            "min_resource": 3,
+            "conditions": [
+                "resource_gte_3",
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Crusader Strike",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "resource_lt_5",
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Hammer of Wrath",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_health_lt_20_or_wings",
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Wake of Ashes",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "resource_lt_2",
+                "target_valid"
+            ]
+        },
+        "slot_07": {
+            "action": "Avenging Wrath",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned",
+                "target_valid"
+            ]
+        },
+        "slot_08": {
+            "action": "Final Reckoning",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned",
+                "target_valid"
+            ]
+        },
+        "slot_11": {
+            "action": "Rebuke",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 40,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Hammer of Justice",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_stun",
+                "target_not_dr_stun"
+            ]
+        },
+        "slot_14": {
+            "action": "Shield of Vengeance",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "survival_minor"
+            ]
+        },
+        "slot_15": {
+            "action": "Divine Shield",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "priority": 500,
+            "conditions": [
+                "survival_critical",
+                "no_forbearance"
+            ]
+        },
+        "slot_16": {
+            "action": "Blessing of Protection",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_bop",
+                "no_forbearance"
+            ]
+        },
+        "slot_18": {
+            "action": "Blessing of Sacrifice",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_sac",
+                "focus_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Cleanse Toxins",
+            "key": "Ctrl+F31",
+            "min_resource": 0,
+            "conditions": [
+                "dispel_needed"
+            ]
+        },
+        "slot_20": {
+            "action": "Flash of Light",
+            "key": "Ctrl+F32",
+            "min_resource": 0,
+            "conditions": [
+                "proc_instant_heal",
+                "health_lt_70"
+            ]
+        }
+    },
+    "proc_priority": {
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_07",
+                "resource_gte_3"
+            ],
+            "sequence": [
+                "slot_07",
+                "slot_08",
+                "slot_03"
+            ]
+        },
+        "high_priority_auras": [
+            {
+                "aura_id": 31884,
+                "slot_id": "slot_05"
+            },
+            {
+                "aura_id": 323716,
+                "slot_id": "slot_03"
+            }
+        ],
+        "mode_priorities": {
+            "DUNGEON": [
+                "slot_06",
+                "slot_03"
+            ],
+            "RAID": [
+                "slot_03",
+                "slot_05",
+                "slot_01"
+            ]
+        }
+    }
+}

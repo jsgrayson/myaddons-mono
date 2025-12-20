@@ -1,0 +1,29 @@
+{
+    "spec_id": 103,
+    "counters": [
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_01",
+            "desc": "Mage Cast -> Skull Bash (Interrupt)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Kidney Shot",
+            "response_slot": "slot_15",
+            "desc": "Rogue Stun -> Barkskin (Pre-Wall)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_17",
+            "desc": "Warrior Spin -> Stampeding Roar (Run)"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Entangling Roots",
+            "response_slot": "slot_18",
+            "desc": "Druid Root -> Dash (Shift-Break)"
+        }
+    ]
+}

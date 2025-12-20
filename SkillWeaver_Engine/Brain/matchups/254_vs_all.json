@@ -1,0 +1,35 @@
+{
+    "spec_id": 254,
+    "counters": [
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_16",
+            "desc": "Mage Spike -> Feign Death (Cancel)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Kingsbane",
+            "response_slot": "slot_14",
+            "desc": "Rogue Burst -> Turtle"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_17",
+            "desc": "War Spin -> Disengage (Outrange)"
+        },
+        {
+            "enemy_spec": 102,
+            "trigger": "Starfall",
+            "response_slot": "slot_11",
+            "desc": "Druid AoE -> Counter Shot (If cast)"
+        },
+        {
+            "enemy_spec": 260,
+            "trigger": "Adrenaline Rush",
+            "response_slot": "slot_12",
+            "desc": "Rogue Rush -> Binding Shot (Kite)"
+        }
+    ]
+}

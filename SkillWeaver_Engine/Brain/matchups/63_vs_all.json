@@ -1,0 +1,29 @@
+{
+    "spec_id": 63,
+    "counters": [
+        {
+            "enemy_spec": 72,
+            "trigger": "Recklessness",
+            "response_slot": "slot_18",
+            "desc": "Fury Burst -> Alter Time (Pre-mitigate)"
+        },
+        {
+            "enemy_spec": 253,
+            "trigger": "Bestial Wrath",
+            "response_slot": "slot_12",
+            "desc": "Hunter Pets -> Blast Wave (Knock)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadowy Duel",
+            "response_slot": "slot_13",
+            "desc": "Rogue Duel -> Ice Block"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Skull Bash",
+            "response_slot": "slot_17",
+            "desc": "Druid Charge -> Shimmer (Kite)"
+        }
+    ]
+}

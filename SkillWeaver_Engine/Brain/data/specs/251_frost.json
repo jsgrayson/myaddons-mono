@@ -1,0 +1,204 @@
+{
+    "spec_id": 251,
+    "spec_name": "Frost Death Knight",
+    "resource_type": "runic_power",
+    "secondary_resource": "runes",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Obliterate",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "killing_machine_active_or_breath_sustain",
+                "runes_gte_2"
+            ]
+        },
+        "slot_02": {
+            "action": "Howling Blast",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "rime_proc_active",
+                "rime_safe_to_consume"
+            ]
+        },
+        "slot_03": {
+            "action": "Frost Strike",
+            "key": "F15",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "breath_inactive_and_rp_high"
+            ]
+        },
+        "slot_04": {
+            "action": "Remorseless Winter",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "cooldown_ready"
+            ]
+        },
+        "slot_05": {
+            "action": "Breath of Sindragosa",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active_pool_full"
+            ]
+        },
+        "slot_06": {
+            "action": "Glacial Advance",
+            "key": "F18",
+            "min_resource": 30,
+            "conditions": [
+                "aoe_needed",
+                "breath_inactive"
+            ]
+        },
+        "slot_07": {
+            "action": "Pillar of Frost",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_08": {
+            "action": "Empower Rune Weapon",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "breath_active_rp_low",
+                "runes_empty"
+            ]
+        },
+        "slot_09": {
+            "action": "Chill Streak",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned",
+                "bounce_targets_available"
+            ]
+        },
+        "slot_11": {
+            "action": "Mind Freeze",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Death Grip",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "death_grip_safe_pull"
+            ]
+        },
+        "slot_13": {
+            "action": "Blinding Sleet",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_cc_needed",
+                "target_bursting_melee"
+            ]
+        },
+        "slot_14": {
+            "action": "Icebound Fortitude",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "survival_critical_stun"
+            ]
+        },
+        "slot_15": {
+            "action": "Anti-Magic Shell",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "survival_magic_immunity",
+                "rp_gen_soak"
+            ]
+        },
+        "slot_16": {
+            "action": "Anti-Magic Zone",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "group_damage_magic_heavy"
+            ]
+        },
+        "slot_17": {
+            "action": "Wraith Walk",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "root_break_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Death's Advance",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "knockback_immunity_needed"
+            ]
+        },
+        "slot_24": {
+            "action": "Arcane Torrent",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "breath_active_rp_critical"
+            ]
+        }
+    },
+    "proc_priority": {
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_07",
+                "resource_gte_90"
+            ],
+            "sequence": [
+                "slot_04",
+                "slot_07",
+                "slot_05",
+                "slot_01",
+                "slot_02"
+            ]
+        },
+        "breath_active": [
+            "slot_04",
+            "slot_01",
+            "slot_02",
+            "slot_08",
+            "slot_24"
+        ],
+        "mode_priorities": {
+            "DUNGEON": [
+                "slot_04",
+                "slot_06",
+                "slot_02",
+                "slot_01"
+            ],
+            "RAID": [
+                "slot_04",
+                "slot_01",
+                "slot_02",
+                "slot_03"
+            ]
+        }
+    }
+}

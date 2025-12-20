@@ -1,0 +1,41 @@
+{
+    "spec_id": 70,
+    "counters": [
+        {
+            "enemy_spec": 62,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_16",
+            "desc": "War Burst -> BoP (Physical Immunity)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_16",
+            "desc": "War Burst -> BoP (Physical Immunity)"
+        },
+        {
+            "enemy_spec": 258,
+            "trigger": "Voidform",
+            "response_slot": "slot_18",
+            "desc": "SPriest Burst -> Sac Healer (Mitigate)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Blades",
+            "response_slot": "slot_14",
+            "desc": "Rogue Burst -> Shield of Vengeance (Absorb)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_18",
+            "desc": "Poly on Healer -> Sac break CC (if pre-cast)"
+        },
+        {
+            "enemy_spec": 63,
+            "trigger": "Combustion",
+            "response_slot": "slot_15",
+            "desc": "Fire Mage Burst -> Bubble (Immunity)"
+        }
+    ]
+}

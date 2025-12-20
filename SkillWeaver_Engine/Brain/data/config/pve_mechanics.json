@@ -1,0 +1,22 @@
+{
+    "stop_attack_ids": [
+        209858,
+        36808,
+        48592,
+        116161,
+        375620,
+        322022
+    ],
+    "ground_hazards": [
+        123456
+    ],
+    "raid_boss_ids": [
+        123,
+        124,
+        125
+    ],
+    "cleave_mechanics": [
+        "mechanic_add_spawn",
+        "mechanic_stacked"
+    ]
+}

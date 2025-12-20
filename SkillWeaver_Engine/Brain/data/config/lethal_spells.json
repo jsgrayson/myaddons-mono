@@ -1,0 +1,16 @@
+[
+    118, // Polymorph (Mage)
+    33786, // Cyclone (Druid)
+    5782, // Fear (Warlock)
+    116858, // Chaos Bolt (Warlock)
+    198013, // Eye Beam (DH)
+    20066, // Repentance (Paladin)
+    605, // Mind Control (Priest)
+    32375, // Mass Dispel (Priest)
+    191634, // Stormkeeper (Shaman)
+    51514, // Hex (Shaman)
+    358385, // Landslide (Evoker)
+    370553, // Tip the Scales (Evoker)
+    187650, // Freezing Trap (Hunter - logic usually handles projectile, but catch cast too)
+    212612 // Aimed Shot (Hunter) - High Dmg
+]

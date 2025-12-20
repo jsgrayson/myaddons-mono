@@ -1,0 +1,28 @@
+{
+    "global_counters": [
+        {
+            "enemy_spec": 70,
+            "trigger": "Avenging Wrath",
+            "response_slot": "SLOT_15",
+            "desc": "Ret Wings -> Defensive"
+        },
+        {
+            "enemy_spec": 62,
+            "trigger": "Bladestorm",
+            "response_slot": "SLOT_19",
+            "desc": "Bladestorm -> Kite"
+        },
+        {
+            "enemy_spec": 258,
+            "trigger": "Void Eruption",
+            "response_slot": "SLOT_11",
+            "desc": "Void Form -> Interrupt/CC"
+        },
+        {
+            "enemy_spec": 253,
+            "trigger": "Bestial Wrath",
+            "response_slot": "SLOT_11",
+            "desc": "BW -> Stun/CC Pet"
+        }
+    ]
+}

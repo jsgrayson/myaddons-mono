@@ -1,0 +1,166 @@
+{
+    "spec_id": 257,
+    "spec_name": "Holy Priest",
+    "resource_type": "mana",
+    "secondary_resource": "none",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Flash Heal / Heal",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "serendipity_builder"
+            ]
+        },
+        "slot_02": {
+            "action": "Prayer of Mending",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_help_valid",
+                "mending_bounce_maintain"
+            ]
+        },
+        "slot_03": {
+            "action": "Holy Word: Serenity",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "serendipity_spender_single"
+            ]
+        },
+        "slot_04": {
+            "action": "Holy Word: Sanctify",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_miracle_gate"
+            ]
+        },
+        "slot_05": {
+            "action": "Apotheosis / Holy Word: Chastise",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_reset"
+            ]
+        },
+        "slot_06": {
+            "action": "Circle of Healing",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_smart_heal"
+            ]
+        },
+        "slot_07": {
+            "action": "Divine Star / Halo",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_positional_heal"
+            ]
+        },
+        "slot_08": {
+            "action": "Divine Hymn",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "raid_wide_channel_check"
+            ]
+        },
+        "slot_09": {
+            "action": "Symbol of Hope",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "mana_restore_raid"
+            ]
+        },
+        "slot_11": {
+            "action": "Psychic Scream",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "conditions": [
+                "cc_aoe_fear"
+            ]
+        },
+        "slot_12": {
+            "action": "Holy Word: Chastise (Stun)",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "stun_target"
+            ]
+        },
+        "slot_13": {
+            "action": "Fade",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "threat_drop_fade"
+            ]
+        },
+        "slot_14": {
+            "action": "Desperate Prayer",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "health_critical_self"
+            ]
+        },
+        "slot_15": {
+            "action": "Guardian Spirit",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "cheat_death_save"
+            ]
+        },
+        "slot_16": {
+            "action": "Power Infusion",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "burst_buff_ally"
+            ]
+        },
+        "slot_17": {
+            "action": "Angelic Feather",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "mobility_burst_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Leap of Faith",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "life_grip_save"
+            ]
+        },
+        "slot_24": {
+            "action": "Purify",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "dispel_needed_magic_disease"
+            ]
+        }
+    },
+    "proc_priority": {
+        "miracle_loop": [
+            "slot_03",
+            "slot_04",
+            "slot_01"
+        ],
+        "maintenance": [
+            "slot_02",
+            "slot_06"
+        ]
+    }
+}

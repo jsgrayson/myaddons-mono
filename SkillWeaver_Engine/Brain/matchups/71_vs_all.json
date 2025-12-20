@@ -1,0 +1,29 @@
+{
+    "spec_id": 71,
+    "counters": [
+        {
+            "enemy_spec": 577,
+            "trigger": "The Hunt",
+            "response_slot": "slot_15",
+            "desc": "DH Hunt -> Die by the Sword (Parry)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Kingsbane",
+            "response_slot": "slot_15",
+            "desc": "Rogue Burst -> Die by the Sword"
+        },
+        {
+            "enemy_spec": 264,
+            "trigger": "Healing Tide Totem",
+            "response_slot": "slot_13",
+            "desc": "Shaman Totem -> Storm Bolt"
+        },
+        {
+            "enemy_spec": 266,
+            "trigger": "Demonic Tyrant",
+            "response_slot": "slot_12",
+            "desc": "Warlock Burst -> Intimidating Shout (Fear Pets)"
+        }
+    ]
+}

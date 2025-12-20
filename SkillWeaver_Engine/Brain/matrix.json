@@ -1,0 +1,97 @@
+{
+    "62": {
+        "spec": "Arms Warrior",
+        "universal_map": {
+            "SLOT_01": "Mortal Strike",
+            "SLOT_02": "Overpower",
+            "SLOT_03": "Execute",
+            "SLOT_04": "Slam (Filler)",
+            "SLOT_05": "Colossus Smash",
+            "SLOT_06": "Thunder Clap",
+            "SLOT_07": "Avatar + Badge (Burst Macro)",
+            "SLOT_08": "Bladestorm",
+            "SLOT_09": "Sweeping Strikes",
+            "SLOT_10": "Racials (Orc/Troll)",
+            "SLOT_11": "Pummel",
+            "SLOT_12": "Storm Bolt",
+            "SLOT_13": "Intimidating Shout",
+            "SLOT_14": "Hamstring",
+            "SLOT_15": "Die by the Sword",
+            "SLOT_16": "Spell Reflection",
+            "SLOT_17": "Rallying Cry",
+            "SLOT_18": "Defensive Stance",
+            "SLOT_19": "Heroic Leap",
+            "SLOT_20": "Charge",
+            "SLOT_21": "Intervene",
+            "SLOT_22": "Bitter Immunity",
+            "SLOT_23": "Impending Victory",
+            "SLOT_24": "Healthstone"
+        },
+        "triggers": {
+            "lethal_cutoff": 35,
+            "rage_cap": 85
+        }
+    },
+    "70": {
+        "spec": "Retribution Paladin",
+        "universal_map": {
+            "SLOT_01": "Final Verdict",
+            "SLOT_02": "Blade of Justice",
+            "SLOT_03": "Hammer of Wrath",
+            "SLOT_04": "Judgment",
+            "SLOT_05": "Crusader Strike",
+            "SLOT_06": "Divine Storm",
+            "SLOT_07": "Avenging Wrath",
+            "SLOT_08": "Execution Sentence",
+            "SLOT_09": "Final Reckoning",
+            "SLOT_10": "Divine Toll",
+            "SLOT_11": "Rebuke",
+            "SLOT_12": "Hammer of Justice",
+            "SLOT_13": "Blinding Light",
+            "SLOT_14": "Repentance",
+            "SLOT_15": "Divine Shield",
+            "SLOT_16": "Shield of Vengeance",
+            "SLOT_17": "Blessing of Protection",
+            "SLOT_18": "Divine Protection",
+            "SLOT_19": "Blessing of Freedom",
+            "SLOT_20": "Cleanse Toxins",
+            "SLOT_21": "Intercession",
+            "SLOT_22": "Word of Glory",
+            "SLOT_23": "Lay on Hands",
+            "SLOT_24": "Healthstone"
+        }
+    },
+    "253": {
+        "spec": "Beast Mastery Hunter",
+        "universal_map": {
+            "SLOT_01": "Kill Command",
+            "SLOT_02": "Barbed Shot",
+            "SLOT_03": "Kill Shot",
+            "SLOT_04": "Cobra Shot",
+            "SLOT_05": "Multi-Shot",
+            "SLOT_06": "Explosive Shot",
+            "SLOT_07": "Bestial Wrath",
+            "SLOT_08": "Call of the Wild",
+            "SLOT_09": "Bloodshed",
+            "SLOT_10": "Racials",
+            "SLOT_11": "Counter Shot",
+            "SLOT_12": "Intimidation",
+            "SLOT_13": "Freezing Trap",
+            "SLOT_14": "Scatter Shot",
+            "SLOT_15": "Aspect of the Turtle",
+            "SLOT_16": "Survival of the Fittest",
+            "SLOT_17": "Exhilaration",
+            "SLOT_18": "Feign Death",
+            "SLOT_19": "Disengage",
+            "SLOT_20": "Tar Trap",
+            "SLOT_21": "Master's Call",
+            "SLOT_22": "Misdirection",
+            "SLOT_23": "Mend Pet",
+            "SLOT_24": "Healthstone"
+        },
+        "triggers": {
+            "pet_hp_critical": 40,
+            "frenzy_stack_maintenance": true
+        }
+    }
+}

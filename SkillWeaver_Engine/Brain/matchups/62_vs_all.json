@@ -1,0 +1,29 @@
+{
+    "spec_id": 62,
+    "counters": [
+        {
+            "enemy_spec": 105,
+            "trigger": "Tranquility",
+            "response_slot": "slot_02",
+            "desc": "Resto Druid Channel -> Missiles (Pushback Lock)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Blades",
+            "response_slot": "slot_15",
+            "desc": "Rogue Burst -> Greater Invis (Drop Target)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_18",
+            "desc": "Warrior Burst -> Alter Time"
+        },
+        {
+            "enemy_spec": 250,
+            "trigger": "Abomination Limb",
+            "response_slot": "slot_24",
+            "desc": "DK Grip -> Arcane Pulse (Slow/Knock)"
+        }
+    ]
+}

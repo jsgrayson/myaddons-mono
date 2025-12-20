@@ -1,0 +1,35 @@
+{
+    "spec_id": 72,
+    "counters": [
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Blades",
+            "response_slot": "slot_12",
+            "desc": "Rogue Burst -> Disarm"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Avenging Wrath",
+            "response_slot": "slot_12",
+            "desc": "Ret Wings -> Disarm"
+        },
+        {
+            "enemy_spec": 265,
+            "trigger": "Unstable Affliction",
+            "response_slot": "slot_13",
+            "desc": "Lock Dot -> Spell Reflection"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_13",
+            "desc": "Mage Spike -> Spell Reflection"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Mass Entanglement",
+            "response_slot": "slot_18",
+            "desc": "Druid Root -> Bloodrage (Break)"
+        }
+    ]
+}

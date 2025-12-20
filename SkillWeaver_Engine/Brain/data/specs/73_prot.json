@@ -1,0 +1,178 @@
+{
+    "spec_id": 73,
+    "spec_name": "Protection Warrior",
+    "resource_type": "rage",
+    "secondary_resource": "none",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Shield Slam",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "cooldown_ready"
+            ]
+        },
+        "slot_02": {
+            "action": "Thunder Clap",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_needed_or_rage_gen",
+                "target_in_range"
+            ]
+        },
+        "slot_03": {
+            "action": "Revenge",
+            "key": "F15",
+            "min_resource": 20,
+            "conditions": [
+                "proc_revenge_free",
+                "rage_gte_60"
+            ]
+        },
+        "slot_04": {
+            "action": "Execute",
+            "key": "F16",
+            "min_resource": 20,
+            "conditions": [
+                "target_execute_range",
+                "rage_gte_40"
+            ]
+        },
+        "slot_05": {
+            "action": "Ignor Pain",
+            "key": "F17",
+            "min_resource": 35,
+            "conditions": [
+                "mitigation_needed_minor",
+                "buff_missing_ignore_pain_cap"
+            ]
+        },
+        "slot_06": {
+            "action": "Shield Block",
+            "key": "F18",
+            "min_resource": 30,
+            "conditions": [
+                "mitigation_needed_physical",
+                "buff_missing_shield_block"
+            ]
+        },
+        "slot_07": {
+            "action": "Avatar",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned"
+            ]
+        },
+        "slot_08": {
+            "action": "Demoralizing Shout",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "tank_buster_incoming",
+                "burst_aligned"
+            ]
+        },
+        "slot_11": {
+            "action": "Pummel",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Storm Bolt",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_stun",
+                "target_not_dr_stun"
+            ]
+        },
+        "slot_13": {
+            "action": "Spell Reflection",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "spell_reflect_predictive",
+                "target_casting_magic"
+            ]
+        },
+        "slot_14": {
+            "action": "Last Stand",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "survival_critical",
+                "health_lt_30"
+            ]
+        },
+        "slot_15": {
+            "action": "Shield Wall",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "priority": 999,
+            "conditions": [
+                "survival_tank_buster",
+                "no_external_defensive"
+            ]
+        },
+        "slot_16": {
+            "action": "Impending Victory",
+            "key": "Ctrl+F28",
+            "min_resource": 10,
+            "conditions": [
+                "health_lt_70"
+            ]
+        },
+        "slot_17": {
+            "action": "Intervene",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "ally_danger_physical",
+                "target_friendly"
+            ]
+        },
+        "slot_24": {
+            "action": "Shockwave",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "priority": 500,
+            "conditions": [
+                "aoe_stun_needed",
+                "requires_aim"
+            ]
+        }
+    },
+    "proc_priority": {
+        "mitigation_priority": [
+            "slot_06",
+            "slot_05",
+            "slot_16"
+        ],
+        "rotation_priority": [
+            "slot_01",
+            "slot_02",
+            "slot_04",
+            "slot_03"
+        ],
+        "mode_priorities": {
+            "DUNGEON": [
+                "slot_02",
+                "slot_24",
+                "slot_06"
+            ],
+            "RAID": [
+                "slot_06",
+                "slot_01",
+                "slot_05"
+            ]
+        }
+    }
+}

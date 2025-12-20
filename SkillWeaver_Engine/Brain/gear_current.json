@@ -1,0 +1,16 @@
+{
+    "profile_name": "Destruction_S3_Standard",
+    "haste_percent": 28.5,
+    "gcd_base": 1.5,
+    "latency_tolerance_ms": 60,
+    "gear_list": [
+        {
+            "slot": "head",
+            "item_id": 12345
+        },
+        {
+            "slot": "weapon",
+            "item_id": 67890
+        }
+    ]
+}

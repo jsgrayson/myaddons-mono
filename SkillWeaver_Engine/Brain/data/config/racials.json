@@ -1,0 +1,50 @@
+{
+    "2": {
+        "race": "Orc",
+        "slot": "slot_07",
+        "spell_id": 33697,
+        "name": "Blood Fury"
+    },
+    "8": {
+        "race": "Troll",
+        "slot": "slot_07",
+        "spell_id": 26297,
+        "name": "Berserking"
+    },
+    "6": {
+        "race": "Tauren",
+        "slot": "slot_12",
+        "spell_id": 20549,
+        "name": "War Stomp"
+    },
+    "5": {
+        "race": "Undead",
+        "slot": "slot_24",
+        "spell_id": 7744,
+        "name": "Will of the Forsaken"
+    },
+    "10": {
+        "race": "Blood Elf",
+        "slot": "slot_12",
+        "spell_id": 202719,
+        "name": "Arcane Torrent"
+    },
+    "3": {
+        "race": "Dwarf",
+        "slot": "slot_24",
+        "spell_id": 20594,
+        "name": "Stoneform"
+    },
+    "4": {
+        "race": "Night Elf",
+        "slot": "slot_15",
+        "spell_id": 58984,
+        "name": "Shadowmeld"
+    },
+    "1": {
+        "race": "Human",
+        "slot": "slot_24",
+        "spell_id": 59752,
+        "name": "Will to Survive"
+    }
+}

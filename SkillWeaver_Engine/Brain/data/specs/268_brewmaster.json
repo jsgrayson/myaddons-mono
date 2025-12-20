@@ -1,0 +1,191 @@
+{
+    "spec_id": 268,
+    "spec_name": "Brewmaster Monk",
+    "resource_type": "energy",
+    "secondary_resource": "stagger",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Keg Smash",
+            "key": "F13",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid",
+                "keg_smash_ready"
+            ]
+        },
+        "slot_02": {
+            "action": "Tiger Palm / Spinning Crane Kick",
+            "key": "F14",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid",
+                "filler_needed"
+            ]
+        },
+        "slot_03": {
+            "action": "Blackout Kick",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "cooldown_ready"
+            ]
+        },
+        "slot_04": {
+            "action": "Purifying Brew",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "stagger_level_high_or_red",
+                "brew_charges_available"
+            ]
+        },
+        "slot_05": {
+            "action": "Celestial Brew",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "purified_chi_optimal",
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_06": {
+            "action": "Touch of Death",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_execute_range",
+                "tod_safe"
+            ]
+        },
+        "slot_07": {
+            "action": "Invoke Niuzao",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "stagger_level_high_for_damage"
+            ]
+        },
+        "slot_08": {
+            "action": "Weapons of Order",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_09": {
+            "action": "Exploding Keg",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_needed",
+                "agro_maintenance"
+            ]
+        },
+        "slot_11": {
+            "action": "Spear Hand Strike",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Grapple Weapon / Ring of Peace",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "disarm_needed",
+                "utility_placement_needed"
+            ]
+        },
+        "slot_13": {
+            "action": "Expel Harm",
+            "key": "Ctrl+F25",
+            "min_resource": 15,
+            "conditions": [
+                "health_lt_70",
+                "orbs_available"
+            ]
+        },
+        "slot_14": {
+            "action": "Fortifying Brew",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "tank_critical_survival"
+            ]
+        },
+        "slot_15": {
+            "action": "Diffuse Magic / Dampen Harm",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "magic_mitigation_needed"
+            ]
+        },
+        "slot_16": {
+            "action": "Zen Meditation",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "tank_buster_incoming",
+                "stationary_check"
+            ]
+        },
+        "slot_17": {
+            "action": "Roll / Chi Torpedo",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "charges_gte_1"
+            ]
+        },
+        "slot_18": {
+            "action": "Transcendence: Transfer",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "transcendence_panic_escape"
+            ]
+        },
+        "slot_19": {
+            "action": "Transcendence",
+            "key": "Ctrl+F31",
+            "min_resource": 0,
+            "conditions": [
+                "transcendence_missing_anchor"
+            ]
+        },
+        "slot_24": {
+            "action": "Shadowmeld / Quaking Palm",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "stagger_reset_needed",
+                "interrupt_backup"
+            ]
+        }
+    },
+    "proc_priority": {
+        "mitigation_loop": [
+            "slot_04",
+            "slot_05"
+        ],
+        "rotation_loop": [
+            "slot_01",
+            "slot_03",
+            "slot_06",
+            "slot_02"
+        ],
+        "utility_check": [
+            "slot_19",
+            "slot_18"
+        ]
+    }
+}

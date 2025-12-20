@@ -1,0 +1,29 @@
+{
+    "spec_id": 270,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_11",
+            "desc": "Warrior Burst -> Ring of Peace (Zone)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Shadow Dance",
+            "response_slot": "slot_11",
+            "desc": "Rogue Dance -> Ring of Peace"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Combustion",
+            "response_slot": "slot_15",
+            "desc": "Mage Burst -> Diffuse Magic"
+        },
+        {
+            "enemy_spec": 269,
+            "trigger": "Fists of Fury",
+            "response_slot": "slot_12",
+            "desc": "Monk Channel -> Leg Sweep"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "spec_id": 66,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Avatar",
+            "response_slot": "slot_08",
+            "desc": "Warrior Burst -> Eye of Tyr (Physical Dampen)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Symbols of Death",
+            "response_slot": "slot_08",
+            "desc": "Rogue Burst -> Eye of Tyr"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Icy Veins",
+            "response_slot": "slot_16",
+            "desc": "Mage Burst -> Sac Healer (Magic cannot be blocked well)"
+        },
+        {
+            "enemy_spec": 250,
+            "trigger": "Vampiric Blood",
+            "response_slot": "slot_12",
+            "desc": "DK Defensive -> HoJ (Control)"
+        }
+    ]
+}
