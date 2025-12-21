@@ -1,86 +1,118 @@
-import time
 import sys
+import time
 import numpy as np
-# Importing actual classes but aliasing them to match User's request variables
-from modules.vision import ScreenScanner as Vision
-from modules.logic_engine import PriorityEngine as LogicEngine
-from modules.serial_link import SerialLink as SerialBridge
+import mss
+from PIL import ImageGrab
 
 # --- CONFIGURATION ---
-# Preserving the verified Logitech Ghost Port/Baud
-SERIAL_PORT = '/dev/cu.usbmodemHIDPC1' 
-BAUD_RATE = 250000
+SCAN_RANGE = 20 # How many pixels up/down to check around the expected row
+
+def luminance_scout():
+    """
+    Uses PIL (The Sniper) to find the exact physical row of the pixels.
+    """
+    print("Scouting with PIL (Luminance Protocol)...")
+    # Grab the full retina buffer
+    screen = ImageGrab.grab(all_screens=True).convert('L') 
+    data = np.array(screen)
+    height = data.shape[0]
+    
+    # Scan the bottom 50 pixels (Physical coordinates)
+    for y in range(height - 1, height - 50, -1):
+        # Check X=0 for the White Handshake (Luminance > 200)
+        if data[y][0] > 200:
+            print(f"[LOCKED] Anchor found at Physical Y:{y}")
+            return y
+    return None
 
 def main():
-    print("--- INITIATING SKILLWEAVER ENGINE (NO BAIT MODE) ---")
+    # 1. THE SCOUT PHASE (PIL)
+    # We use PIL to find the Y-coord because we know it works for you.
+    locked_y = luminance_scout()
     
-    try:
-        bridge = SerialBridge(SERIAL_PORT, BAUD_RATE)
-        vision = Vision()
-        # Initialize Logic Engine with required args (placeholders)
-        logic = LogicEngine(bridge=bridge, matchups="matchups_vs_all.json", gear_profile="gear_current.json")
-    except Exception as e:
-        print(f"[CRITICAL] Startup Failed: {e}")
+    if not locked_y:
+        print("[FAIL] Could not find White Pixel anchor.")
         return
 
-    if not bridge.connect():
-        print("[CRITICAL] Serial Link Connection Failed.")
-        return
+    # 2. THE DRIVER PHASE (MSS)
+    # Now we switch to the fast library
+    with mss.mss() as sct:
+        # Get the primary monitor
+        monitor = sct.monitors[1] 
+        
+        # RETINA MATH CHECK
+        # PIL sees physical (e.g., 2234), MSS might see logical (1117)
+        # We need to determine the scale factor to tell MSS where to look.
+        scale_factor = locked_y / monitor["height"]
+        
+        # If scale is ~2.0, we are on Retina.
+        # MSS usually grabs the LOGICAL area but returns PHYSICAL pixels.
+        # We define a tiny capture box exactly where PIL found the pixels.
+        
+        bbox = {
+            # Default to raw Y
+            "top": locked_y, 
+            "left": 0, 
+            "width": 10, 
+            "height": 1
+        }
+        
+        print(f"[HYBRID] Switching to MSS High-Speed Loop...")
+        print(f"[DEBUG] MSS Monitor Height: {monitor['height']} | PIL Y: {locked_y}")
+        
+        # If PIL Y is ~2x MSS Height, we divide Y by 2 for the MSS coordinate system
+        if scale_factor > 1.5:
+            print("[INFO] Retina Scale Detected (2x). Adjusting MSS coordinates.")
+            bbox["top"] = int(locked_y / 2)
 
-    # 1. DELAY & CALIBRATE
-    print("\n[STAGING] FOCUS WOW NOW. CALIBRATING IN 5 SECONDS...")
-    time.sleep(5)
-    vision.calibrate() # This gets your 173 baseline
-    print(f"[ACTIVE] Baseline: {vision.target_red}. Waiting for Lethal Anchor (Pixel 16)...")
+        print(f"[LOCKED] MSS Capture Region: {bbox}")
 
-    # 2. THE LOOP
-    while True:
+        # 3. THE COMBAT LOOP
+        print(">> ENGINE ACTIVE. LISTENING FOR COMBAT DATA.")
         try:
-            # Get the data strip (80px wide)
-            # get_chameleon_pixels returns (1, 80, 4)
-            raw_matrix = vision.get_chameleon_pixels()
-            packet = raw_matrix[0] # The row
-            
-            # Check Spec ID (Pixel 0)
-            # get_spec_id expects the raw matrix or row? 
-            # In previous vision.py update, get_spec_id took (frame_row). 
-            # So we pass raw_matrix[0]. 
-            # vision.get_spec_id(packet)
-            if vision.get_spec_id(packet) == 189000:
+            while True:
+                # Capture just the tiny 10x1 strip
+                sct_img = sct.grab(bbox)
+                img = np.array(sct_img)
                 
-                # --- CHECK LETHAL ANCHOR ONLY (Pixel 16 / Index 32) ---
-                # We check if the Red channel matches the calibration (173)
-                # packet[32] is BGRA: [Blue, Green, Red, Alpha]
-                # User says: "anchor_pixel_red = packet[32][0]". 
-                # This implies User thinks Index 0 is Red. 
-                # OR user wants us to check the channel that matches the calibration target.
-                # In calibrate(), we set target_red = max(img[0,0,0], img[0,0,2]).
-                # So we should check the same channel that was calibrated?
-                # But here we just check packet[32][0]? 
-                # If MSS returns BGRA, [0] is Blue.
-                # If User's Night Shift turns screen yellow, Blue is low?
-                # I will stick to the User's explicit code: packet[32][0].
-                anchor_pixel_red = packet[32][0] # Red channel at index 32 (User specific)
+                # MSS returns BGRA. We need indices 1, 6, 8.
+                # Note: Because of Retina scaling, 1 logical pixel might = 2 physical pixels.
+                # If we asked for width 10, we might get 20 pixels back on Retina.
                 
-                # [FIX] NOISE FILTER
-                # Only trigger if the pixel is BRIGHT (meaning the Plater block is visible).
-                # Backgrounds are ~50. Signals are 255.
-                if int(anchor_pixel_red) > 150:
-                    print(f"[PRIORITY] Lethal Anchor TRIGGERED ({anchor_pixel_red}) -> Firing Finisher")
-                    bridge.send_pulse('e') # Use 'e' for Eviscerate
-                
-                # --- END CHECKS ---
-                
-            else:
-                # Silent wait if not synced
-                time.sleep(0.05)
+                # Handshake check (White Pixel at Index 0)
+                # We check the Blue channel (index 0 in BGRA) for high value
+                # Assuming index 0 pixel is still index 0 in the array
+                if img[0][0][0] > 180: # Lowered threshold slightly for MSS noise
+                    # Index 1: Spec (Red Channel is index 2 in BGRA)
+                    # We map 1 logical pixel step to likely physical index 
+                    # If Retina: Logical 0 -> Physical 0, Logical 1 -> Physical 2?
+                    # Let's try direct mapping first, but verify indexes.
+                    
+                    spec_px = img[0][1] # B, G, R, A
+                    nrg_px = img[0][6]
+                    cp_px = img[0][8]
+                    
+                    # Spec is Red (Index 2), Resources are Green (Index 1)
+                    spec_val = int((spec_px[2] / 255) * 1000)
+                    energy = nrg_px[1]
+                    cp = cp_px[1]
+                    
+                    # Print data stream for verification
+                    sys.stdout.write(f"\r Spec:{spec_val} | NRG:{energy} | CP:{cp}   ")
+                    sys.stdout.flush()
+                    
+                    # --- ROTATION LOGIC START ---
+                    if spec_val == 259: # Assassination
+                        # Example: Mutilate at < 5 CP
+                        if cp < 5:
+                            # Firing logic here
+                            pass
+                    # --- ROTATION LOGIC END ---
+                    
+                time.sleep(0.01) # ~100 FPS
                 
         except KeyboardInterrupt:
-            print("\n[SHUTDOWN] User Interrupt.")
-            sys.exit()
-        except Exception:
-            # Catch transient errors (e.g. window drag)
-            continue
+            print("\n[STOP] Engine halted.")
 
 if __name__ == "__main__":
     main()

@@ -1,84 +1,82 @@
 import mss
 import numpy as np
-import cv2
+import time
 
 class ScreenScanner:
     def __init__(self):
         self.sct = mss.mss()
-        # Monitor 1, top-left 16x1 pixel row where Chameleon.lua renders
-        self.monitor = {"top": 0, "left": 0, "width": 16, "height": 1}
+        self.SCALE = 2.0  # Retina Display (Use 1.0 for standard 1080p)
+        self.BASE_Y = 0   # Will be found by calibrate()
+        self.found_y = None
         
-        # Ghost Calibration Defaults
-        self.target_red = 173  # Default for your Mac
-        self.tolerance = 15
+        # CHANGED: Now looks for PURE WHITE (255,255,255) at Index 0
+        self.handshake_color = 255 
+        self.tolerance = 10
 
     def calibrate(self):
-        """Run this once at startup while WoW is focused."""
+        """Finds the Data Strip Y-coordinate."""
+        print("[VISION] Scanning for Data Strip (White Pixel at Index 0)...")
         with mss.mss() as sct:
-            # Grab the first pixel at Y=32
-            # We use 1x1 just to sample the baseline color
-            img = np.array(sct.grab({"top": 32, "left": 0, "width": 1, "height": 1}))
-            # Update our target based on current screen tint
-            # We take the max of Ch0 and Ch2 to handle BGRA/RGB ambiguity and Night Shift
-            self.target_red = max(img[0,0,0], img[0,0,2])
-            print(f"[CALIBRATED] New Spec ID Baseline: {self.target_red}")
-
-    def get_spec_id(self, frame_row):
-        # frame_row is the full pixel array [Physical Width]
-        pixel = frame_row[0]
-        current_red = max(pixel[0], pixel[2])
-        # Compare current pixel to our calibrated baseline
-        if abs(int(current_red) - self.target_red) <= self.tolerance:
-            return 189000
-        return 0
+            # Scan bottom 100 pixels
+            scan_h = 100
+            scan_top = sct.monitors[1]['height'] - scan_h
+            
+            monitor = {"top": scan_top, "left": 0, "width": 5, "height": scan_h}
+            img = np.array(sct.grab(monitor))
+            
+            # Scan vertical column 0
+            for y_offset, row in enumerate(img):
+                # img is BGRA. White is (255, 255, 255)
+                # Check Blue, Green, Red
+                b, g, r, a = row[0]
+                
+                # Check if all channels are bright white (>245)
+                if b > 245 and g > 245 and r > 245:
+                    self.found_y = scan_top + y_offset
+                    self.BASE_Y = self.found_y
+                    print(f"[SUCCESS] Locked on Data Strip at Y={self.BASE_Y}")
+                    return True
+        print("[FAIL] Could not find Data Strip. Check ColorProfile_Lib is running.")
+        return False
 
     def get_chameleon_pixels(self):
+        """Returns the full row of data pixels."""
+        if not self.found_y:
+            if not self.calibrate():
+                return None
+
+        # Capture 32 pixels wide
+        width = int(32 * self.SCALE)
+        monitor = {"top": self.BASE_Y, "left": 0, "width": width, "height": 1}
+        
         with mss.mss() as sct:
-            # Fixed at Y=32 based on your success scan
-            # Width 80 to cover 40 logical pixels on Retina
-            monitor = {"top": 32, "left": 0, "width": 80, "height": 1}
             img = np.array(sct.grab(monitor))
-            # This returns the raw array for the logic engine
-            return img
-
-    def detect_enemy_cast(self):
-        # Scan sub-region for enemy cast bar (defined in VISUAL_ANCHORS.md)
-        cast_region = {"top": 400, "left": 800, "width": 200, "height": 20}
-        img = np.array(self.sct.grab(cast_region))
-        # Logic to detect "Yellow/Gold" cast bar fill
-        return np.mean(img[:, :, 1]) > 180 
-
-    def get_feet_coordinates(self, nameplate_rect, screen_height):
-        """
-        Calculates the 'Ground-Plane Projection' for aiming.
-        Solves 'Nameplate Stacking' overshoot by ignoring Nameplate Y.
-        """
-        if not nameplate_rect:
-            return None
+            row_raw = img[0] # The single row
             
-        x, y, w, h = nameplate_rect
-        center_x = x + (w // 2)
+            # Extract logical pixels (skipping by SCALE)
+            pixels = []
+            for i in range(32):
+                idx = int(i * self.SCALE)
+                if idx < len(row_raw):
+                    # Convert BGRA -> RGB
+                    b, g, r, a = row_raw[idx]
+                    pixels.append((r, g, b))
+                else:
+                    pixels.append((0,0,0))
+            
+            return [pixels] # Return as a matrix (list of lists)
 
-        # GROUND TRUTH ALGORITHM
-        # 1. Use Nameplate Width (w) as proxy for Distance (Scale).
-        #    Wide = Close, Narrow = Far.
-        # 2. Map 'Distance' to a fixed Screen Y coordinate based on Calibration.
+    def get_spec_id(self, pixel_row):
+        """Decodes Pixel 1 (Red Channel) into Spec ID."""
+        # Lua sends s/1000. 
+        # Value 0-255 represents 0.0-1.0.
+        # Example: 259 (Assa) -> 0.259 -> Red ~66
+        r = pixel_row[1][0] # Index 1, Red
         
-        # Example Calibration Map (To be populated by GroundCalibrator.py):
-        # Width 150px (Close) -> Y = 800
-        # Width 100px (Mid)   -> Y = 650
-        # Width 50px (Far)    -> Y = 500
+        # Reverse math: (Red / 255) * 1000
+        spec = int((r / 255.0) * 1000)
         
-        # Simple Linear Interpolation for now:
-        # Assuming Y_Ground = Base_Horizon + (Width * Slope)
+        # Jitter correction (Assassination 259 might read 258 or 260)
+        if 250 <= spec <= 270: return 259 # Snap to Assa for now
         
-        # Default Params (Standard 1080p UI scale):
-        horizon_y = screen_height * 0.45 # Horizon line approx
-        slope = 2.5 # How much "down" the screen the feet move as target gets closer (wider)
-        
-        ground_truth_y = int(horizon_y + (w * slope))
-        
-        # Clamp to screen bottom safety
-        ground_truth_y = min(ground_truth_y, screen_height - 50)
-        
-        return (center_x, ground_truth_y)
+        return spec
