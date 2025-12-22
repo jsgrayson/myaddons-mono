@@ -1,0 +1,158 @@
+{
+    "spec_id": 33,
+    "spec_name": "Survival Hunter",
+    "resource_type": "focus",
+    "secondary_resource": "mongoose_fury_stacks",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Kill Command",
+            "key": "F13",
+            "min_resource": 15,
+            "conditions": [
+                "target_valid",
+                "mongoose_fury_window_check",
+                "bomb_reset_logic"
+            ]
+        },
+        "slot_02": {
+            "action": "Wildfire Bomb",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "wildfire_bomb_leading"
+            ]
+        },
+        "slot_03": {
+            "action": "Mongoose Bite",
+            "key": "F15",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "mongoose_fury_stacking"
+            ]
+        },
+        "slot_04": {
+            "action": "Explosive Shot",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "aoe_burst_predictive"
+            ]
+        },
+        "slot_05": {
+            "action": "Coordinated Assault",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Butchery",
+            "key": "F18",
+            "min_resource": 30,
+            "conditions": [
+                "aoe_count_3_plus"
+            ]
+        },
+        "slot_07": {
+            "action": "Spearhead",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_burst"
+            ]
+        },
+        "slot_08": {
+            "action": "Fury of the Eagle",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "mongoose_fury_max_stacks"
+            ]
+        },
+        "slot_11": {
+            "action": "Muzzle",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Intimidation",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "stun_needed"
+            ]
+        },
+        "slot_13": {
+            "action": "Freezing Trap",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "cc_crowd_control_root"
+            ]
+        },
+        "slot_15": {
+            "action": "Aspect of the Turtle",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major",
+                "hazard_scan_lethal"
+            ]
+        },
+        "slot_16": {
+            "action": "Aspect of the Eagle",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "range_extension_needed"
+            ]
+        },
+        "slot_17": {
+            "action": "Harpoon",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Disengage",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "kite_needed"
+            ]
+        },
+        "slot_24": {
+            "action": "Master's Call",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "root_break_needed",
+                "devourer_void_pull_immunity"
+            ]
+        }
+    },
+    "proc_priority": {
+        "mongoose_window": [
+            "slot_05",
+            "slot_03",
+            "slot_08",
+            "slot_01"
+        ],
+        "bomb_cycle": [
+            "slot_02",
+            "slot_04",
+            "slot_06"
+        ]
+    }
+}

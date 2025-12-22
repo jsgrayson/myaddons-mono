@@ -1,0 +1,29 @@
+{
+    "spec_id": 121,
+    "counters": [
+        {
+            "enemy_spec": 62,
+            "trigger": "Arcane Power",
+            "response_slot": "slot_15",
+            "desc": "Mage Burst -> Netherwalk (Immune)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Kidney Shot",
+            "response_slot": "slot_13",
+            "desc": "Rogue Stun -> Imprison (CC Peel)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_14",
+            "desc": "Warrior Spin -> Blur (Dodge)"
+        },
+        {
+            "enemy_spec": 266,
+            "trigger": "Hand of Gul'dan",
+            "response_slot": "slot_12",
+            "desc": "Warlock Swarm -> Chaos Nova (Stun Imps)"
+        }
+    ]
+}

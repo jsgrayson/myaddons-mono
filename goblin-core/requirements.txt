@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+psycopg2-binary
+requests
+watchdog
+slpp
+redis
+python-dotenv
+schedule

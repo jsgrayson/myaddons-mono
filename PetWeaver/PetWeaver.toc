@@ -1,20 +1,8 @@
-## Interface: 100200
-## Title: Petweaver
-## Notes: A complete replacement for the Pet Journal, combining team management and scripting.
-## Author: You
-## Version: 0.1.0 Alpha
+## Interface: 110002
+## Title: PetWeaver
+## Notes: The Ultimate Pet Battle Grimoire
+## Author: JSGrayson
 ## SavedVariables: PetWeaverDB
 
-# Libraries
-Libs/Ace3/LibStub/LibStub.lua
-Libs/Ace3/CallbackHandler-1.0/CallbackHandler-1.0.lua
-Libs/Ace3/AceAddon-3.0/AceAddon-3.0.lua
-Libs/Ace3/AceDB-3.0/AceDB-3.0.lua
-Libs/Ace3/AceGUI-3.0/AceGUI-3.0.lua
-Libs/Ace3/AceConfig-3.0/AceConfig-3.0.lua
-
-# Core
-ScriptParser.lua
-BattleEngine.lua
 PetWeaver.lua
 PetWeaver.xml

@@ -1,0 +1,29 @@
+{
+    "spec_id": 41,
+    "counters": [
+        {
+            "enemy_spec": 105,
+            "trigger": "Tranquility",
+            "response_slot": "slot_12",
+            "desc": "Druid Channel -> Blind (CC)"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Avenging Wrath",
+            "response_slot": "slot_16",
+            "desc": "Paladin Wings -> Evasion (Dodge)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_15",
+            "desc": "Mage Spike -> Cloak of Shadows"
+        },
+        {
+            "enemy_spec": 253,
+            "trigger": "Bestial Wrath",
+            "response_slot": "slot_14",
+            "desc": "Hunter Burst -> Feint (Mitigation)"
+        }
+    ]
+}

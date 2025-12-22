@@ -1,0 +1,9 @@
+## Interface: 110002
+## Title: PetGrimoire
+## Notes: Offline Pet Battle Database
+## Author: JSGrayson
+## SavedVariables: PetGrimoireDB
+
+PetGrimoire_Data.lua
+PetGrimoire.lua
+PetGrimoire.xml

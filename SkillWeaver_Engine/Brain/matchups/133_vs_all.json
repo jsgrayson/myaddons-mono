@@ -1,0 +1,17 @@
+{
+    "spec_id": 133,
+    "counters": [
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_14",
+            "desc": "Mage Spike -> Obsidian Scales"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_17",
+            "desc": "War Spin -> Hover (Kite)"
+        }
+    ]
+}

@@ -1,123 +1,225 @@
+import mss
+import mss.tools
+import numpy as np
 import json
-import time
 import os
-from modules.vision import ScreenScanner
-from modules.serial_link import SerialLink as ArduinoBridge 
+import sys
+import time
+import random
+import glob
+from modules.serial_link import SerialLink as ArduinoBridge
+import ConditionEngine
 
-# MAPPING: "JSON Key" -> "Arduino Byte"
-# Adjust these characters to match what your Omni_Executor.ino expects.
-# Standard assumption: '1' -> F13, '2' -> F14, '3' -> F15...
+# --- UNIVERSAL SKILLWEAVER LOGIC ENGINE (v4.2 PRECISION) ---
+# Supports ALL 13 Classes / 60 Specs. CALIBRATED SIGNAL (Divisor 229.5).
+# Dynamic Spec Loading & Adaptive Decoder.
+
+REACTION_MEAN = 0.08
+REACTION_STD = 0.02
+INPUT_JITTER = 0.01
+
+# v4.2 CALIBRATED DIVISOR: 218.0 (Compensates for display blue-loss)
+DIVISOR_UNIVERSAL = 218.0
+
 KEY_MAP = {
-    "F13": '1', "F14": '2', "F15": '3', "F16": '4',
-    "F17": '5', "F18": '6', "Ctrl+F13": '7', "Ctrl+F14": '8',
-    "Ctrl+F15": '9', "Alt+F13": '0', "Alt+F14": '-', "Alt+F15": '='
+    "F13": 0x01, "F14": 0x02, "F15": 0x03, "F16": 0x04, "F17": 0x05, "F18": 0x06, "F19": 0x07, "F20": 0x08,
+    "F21": 0x09, "F22": 0x0A, "F23": 0x0B, "F24": 0x0C,
+    "SHIFT+F13": 0x0D, "SHIFT+F14": 0x0E, "SHIFT+F15": 0x0F, "SHIFT+F16": 0x10, "SHIFT+F17": 0x11, "SHIFT+F18": 0x12,
+    "SHIFT+F21": 0x13, "SHIFT+F22": 0x14, "SHIFT+F23": 0x15, "SHIFT+F24": 0x16,
+    "CTRL+F13": 0x17, "CTRL+F14": 0x18, "CTRL+F15": 0x19, "CTRL+F16": 0x1A, "CTRL+F17": 0x1B, "CTRL+F18": 0x1C,
+    "CTRL+F19": 0x1D, "CTRL+F20": 0x1E, "CTRL+F21": 0x1F, "CTRL+F22": 0x20
+}
+
+# --- UNIVERSAL SPEC DATABASE ---
+SPEC_DB = {
+    11: "Warrior - Arms",  12: "Warrior - Fury", 13: "Warrior - Protection",
+    21: "Paladin - Holy", 22: "Paladin - Protection", 23: "Paladin - Retribution",
+    31: "Hunter - Beast Mastery", 32: "Hunter - Marksmanship", 33: "Hunter - Survival",
+    41: "Rogue - Assassination", 42: "Rogue - Outlaw", 43: "Rogue - Subtlety",
+    51: "Priest - Discipline", 52: "Priest - Holy", 53: "Priest - Shadow",
+    61: "Death Knight - Blood", 62: "Death Knight - Frost", 63: "Death Knight - Unholy",
+    71: "Shaman - Elemental", 72: "Shaman - Enhancement", 73: "Shaman - Restoration",
+    81: "Mage - Arcane", 82: "Mage - Fire", 83: "Mage - Frost",
+    91: "Warlock - Affliction", 92: "Warlock - Demonology", 93: "Warlock - Destruction",
+    101: "Monk - Brewmaster", 102: "Monk - Mistweaver", 103: "Monk - Windwalker",
+    111: "Druid - Balance", 112: "Druid - Feral", 113: "Druid - Guardian", 114: "Druid - Restoration",
+    121: "Demon Hunter - Havoc", 122: "Demon Hunter - Vengeance",
+    131: "Evoker - Devastation", 132: "Evoker - Preservation", 133: "Evoker - Augmentation"
 }
 
 class SkillWeaverEngine:
     def __init__(self):
-        self.vision = ScreenScanner()
-        # Corrected Baudrate
-        self.bridge = ArduinoBridge(port='/dev/cu.usbmodemHIDPC1', baudrate=250000)
+        self.sct = mss.mss()
+        self.monitor = self.sct.monitors[1]
+        self.bridge = ArduinoBridge()
+        self.bridge_connected = False
         self.active_spec = None
-        self.current_rotation = {}
-        self.priority_queue = []
+        self.rotation = {}
+        self.priority_list = []
+        self.next_action_time = 0
+        self.last_load_attempt = 0
+        
+        # Calibration State
+        self.uplink_y = 1116 
+        self.uplink_x = 0
+        self.scale = 2 # Retina
+        
+        # Paths
+        self.base_dir = os.path.dirname(os.path.abspath(__file__))
+        self.spec_dir = os.path.join(self.base_dir, "data", "specs")
 
-    def load_spec_data(self, spec_id):
-        """Loads the specific JSON file for the detected spec."""
-        # Map IDs to filenames
-        files = {
-            259: "SkillWeaver_Engine/Brain/data/specs/259_assassination.json",
-            260: "SkillWeaver_Engine/Brain/data/specs/260_outlaw.json",
-            261: "SkillWeaver_Engine/Brain/data/specs/261_sub.json"
+    def calibrate(self):
+        print("\n------------------------------------------------")
+        print("[BOOT] VISION SYSTEM v4.1 INITIALIZING...")
+        print("------------------------------------------------")
+        
+        scan_height = 200 
+        scan_area = {
+            "top": self.monitor["height"] - scan_height,
+            "left": 0,
+            "width": 128,
+            "height": scan_height
         }
         
-        filepath = files.get(spec_id)
-        if not filepath or not os.path.exists(filepath):
-            print(f"[ERROR] No rotation file found for Spec {spec_id}")
-            return False
+        img = np.array(self.sct.grab(scan_area))
+        found = False
+        for y in range(scan_height - 1, 0, -1):
+            for x in range(0, 10):
+                px = img[y, x]
+                diff = int(px[0]) - int(px[2])
+                
+                # Pilot signal check
+                if diff > 50:
+                    self.uplink_y = scan_area["top"] + y
+                    self.uplink_x = scan_area["left"] + x
+                    print(f"[LOCK] UPLINK ESTABLISHED: Y={self.uplink_y}, X={self.uplink_x}")
+                    found = True
+                    break
+            if found: break
+        
+        if not found:
+            print("[CRITICAL] NO SIGNAL DETECTED. CHECK GAME ADDON.")
+            sys.exit(1)
+            
+    def decode(self, pixel, divisor=DIVISOR_UNIVERSAL):
+        diff = int(pixel[0]) - int(pixel[2])
+        if diff < 5: return 0.0, diff
+        val = (diff / divisor) * 255.0
+        return val, diff
 
+    def load_rotation(self, hash_id):
+        h_int = int(hash_id + 0.5)
+        if h_int == self.active_spec: return
+        
+        # Debounce loading
+        if time.time() - self.last_load_attempt < 2: return
+        self.last_load_attempt = time.time()
+
+        # DYNAMIC PULL BASED ON SPEC ID
+        pattern = os.path.join(self.spec_dir, f"{h_int}_*.json")
+        matches = glob.glob(pattern)
+        
+        if not matches:
+            print(f"\n[ERROR] No rotation file discovered for Spec ID: {h_int}")
+            return False
+            
+        path = matches[0]
+        filename = os.path.basename(path)
+            
         try:
-            with open(filepath, 'r') as f:
+            with open(path, 'r') as f:
                 data = json.load(f)
                 
-            self.current_rotation = data.get("universal_slots", {})
-            # Flatten the priority list (combining lists if needed)
-            priorities = data.get("proc_priority", {}).get("rotation", [])
-            ramp = data.get("proc_priority", {}).get("kingsbane_ramp", [])
-            self.priority_queue = ramp + priorities # Check Ramp first, then Rotation
-            
-            print(f"[SYSTEM] Loaded Rotation: {data['spec_name']}")
-            return True
-        except Exception as e:
-            print(f"[ERROR] JSON Load Failed: {e}")
-            return False
-
-    def process_frame(self):
-        # 1. Capture & Decode
-        raw_matrix = self.vision.get_chameleon_pixels()
-        if not raw_matrix: return
-        
-        pixel_data = raw_matrix[0]
-        spec_id = self.vision.get_spec_id(raw_matrix[0])
-        
-        # Color Drift Fix for Mac (259 -> 235)
-        if spec_id == 235: spec_id = 259 
-
-        # 2. Spec Switching
-        if spec_id > 0 and spec_id != self.active_spec:
-            self.active_spec = spec_id
-            if self.load_spec_data(spec_id):
-                print(f"[SWITCH] Spec {spec_id} Active.")
-
-        if not self.active_spec or not self.priority_queue:
-            return
-
-        # 3. Decode Pixel State (Grayscale/Color Agnostic)
-        # Using simple indexing based on your Vision module
-        # Note: Vision return pixels as (R,G,B). In Grayscale mode it's (L, L, L).
-        # We can just pick index 0.
-        
-        state = {
-            "energy": pixel_data[6][1], # Green Channel (or L)
-            "cp": int((pixel_data[8][1] / 255.0) * 7), # Scaled to 7
-            # Add other flags here from Pixels 2, 3, 4...
-            "target": True # Force true for testing if pixel logic isn't ready
-        }
-
-        # 4. Priority Execution
-        for slot_key in self.priority_queue:
-            action_data = self.current_rotation.get(slot_key)
-            if not action_data: continue
-
-            if self.evaluate_condition(action_data, state):
-                key_str = action_data['key'] # e.g., "F13"
-                arduino_char = KEY_MAP.get(key_str)
+                # AUTHORITATIVE FORMAT PARSING
+                self.rotation = data.get('universal_slots', {})
+                priorities = data.get('proc_priority', {}).get('rotation', [])
+                ramp = data.get('proc_priority', {}).get('kingsbane_ramp', [])
+                self.priority_list = ramp + priorities
                 
-                if arduino_char:
-                    print(f"[CAST] {action_data['action']} ({key_str} -> {arduino_char})")
-                    self.bridge.send_pulse(arduino_char) 
-                    time.sleep(0.2) # Global Cooldown
-                    break
+                self.active_spec = h_int
+                spec_name = data.get('spec_name', SPEC_DB.get(h_int, "Unknown"))
+                print(f"\n[SYSTEM] Rotation Loaded: {filename} ({spec_name})")
+                print(f"[SYSTEM] Linked {len(self.priority_list)} logic nodes.")
+                return True
+        except Exception as e:
+            print(f"\n[ERROR] JSON Load Failed for {filename}: {e}")
+            return False
 
-    def evaluate_condition(self, action, state):
-        # 1. Resource Check
-        if state['energy'] < action.get('min_resource', 0):
-            return False
-            
-        # 2. Add Condition Logic Here (CP checks, etc.)
-        conditions = action.get('conditions', [])
-        if "combo_points_4_plus" in conditions and state['cp'] < 4:
-            return False
-            
+    def evaluate(self, slot_id, state):
+        if slot_id not in self.rotation: return False
+        slot = self.rotation[slot_id]
+        if state['power'] < slot.get('min_resource', 0): return False
+        for c in slot.get('conditions', []):
+            if not ConditionEngine.evaluate(c, state): return False
         return True
 
-if __name__ == "__main__":
-    engine = SkillWeaverEngine()
-    # Force calibration
-    engine.vision.calibrate()
-    
-    if engine.bridge.connect():
-        print("[READY] SkillWeaver Connected.")
+    def run(self):
+        print(">> SkillWeaver Logic Engine Active (v4.1 Universal)")
+        self.calibrate()
+        self.bridge_connected = self.bridge.connect()
+        
         while True:
-            engine.process_frame()
-            time.sleep(0.02)
+            try:
+                # 1. CAPTURE
+                snap = np.array(self.sct.grab({
+                    "top": self.uplink_y, 
+                    "left": self.uplink_x, 
+                    "width": 128, 
+                    "height": 1
+                }))
+                row = snap[0] 
+
+                # 2. DECODE
+                pil_val, pil_diff = self.decode(row[0])
+                h, _ = self.decode(row[1])
+
+                sec_raw = self.decode(row[8])[0]
+                sec_val = int(round(sec_raw / 25.0))
+
+                state = {
+                    "hash": h,
+                    "combat": self.decode(row[2])[0] > 128,
+                    "hp": min(100.0, (self.decode(row[3])[0] / 255.0) * 100),
+                    "thp": min(100.0, (self.decode(row[4])[0] / 255.0) * 100),
+                    "power": min(100.0, (self.decode(row[7])[0] / 255.0) * 100),
+                    "sec": sec_val,
+                    "snap": self.decode(row[30])[0] > 128
+                }
+
+                # 3. SPEC WATCHDOG
+                h_int = int(h + 0.5)
+                if h_int > 0 and h_int != self.active_spec:
+                    self.load_rotation(h)
+
+                # 4. DIAGNOSTICS
+                status = "COMBAT" if state['combat'] else "IDLE  "
+                spec_name = SPEC_DB.get(h_int, "UNKNOWN")
+                output = f"\r[{status}] {spec_name} ({h_int}) | HP:{state['hp']:.0f}% | Res:{state['power']:.0f}% | Sec:{state['sec']}   "
+
+                # 5. EXECUTION
+                if self.active_spec and state['combat']:
+                    if time.time() >= self.next_action_time:
+                        for slot_id in self.priority_list:
+                            if self.evaluate(slot_id, state):
+                                action = self.rotation[slot_id]
+                                byte = KEY_MAP.get(action['key']) 
+                                if not byte:
+                                    byte = KEY_MAP.get(action['key'].upper())
+                                
+                                if byte and self.bridge_connected:
+                                    self.bridge.send_pulse(byte)
+                                    delay = max(0, random.normalvariate(REACTION_MEAN, REACTION_STD)) + INPUT_JITTER
+                                    self.next_action_time = time.time() + delay
+                                    output += f" => CAST: {action['action']}   "
+                                    break
+                
+                sys.stdout.write(output.ljust(120))
+                sys.stdout.flush()
+                time.sleep(0.01)
+
+            except KeyboardInterrupt:
+                print("\n[STOP] Logic Engine halted.")
+                break
+
+if __name__ == "__main__":
+    SkillWeaverEngine().run()

@@ -45,7 +45,8 @@ class ScreenScanner:
             if not self.calibrate():
                 return None
 
-        # Capture 32 pixels wide
+        # Capture width: We need enough for 32 slots. 
+        # On Retina (Scale 2.0), capturing 32*2 = 64 pixels.
         width = int(32 * self.SCALE)
         monitor = {"top": self.BASE_Y, "left": 0, "width": width, "height": 1}
         
@@ -53,13 +54,20 @@ class ScreenScanner:
             img = np.array(sct.grab(monitor))
             row_raw = img[0] # The single row
             
-            # Extract logical pixels (skipping by SCALE)
+            # RETINA FIX: Steps by 2 to account for macOS double-pixel rendering.
+            # Normal screens use stride=1. Retina uses stride=2.
+            pixel_stride = 2 if self.SCALE > 1.5 else 1
+            
             pixels = []
+            
+            # We loop up to 32 times (or row length)
+            # This logic matches the user's request: i * stride
             for i in range(32):
-                idx = int(i * self.SCALE)
-                if idx < len(row_raw):
+                target_index = i * pixel_stride
+                
+                if target_index < len(row_raw):
                     # Convert BGRA -> RGB
-                    b, g, r, a = row_raw[idx]
+                    b, g, r, a = row_raw[target_index]
                     pixels.append((r, g, b))
                 else:
                     pixels.append((0,0,0))

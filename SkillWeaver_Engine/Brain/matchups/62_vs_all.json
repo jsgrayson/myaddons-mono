@@ -2,28 +2,34 @@
     "spec_id": 62,
     "counters": [
         {
-            "enemy_spec": 105,
-            "trigger": "Tranquility",
-            "response_slot": "slot_02",
-            "desc": "Resto Druid Channel -> Missiles (Pushback Lock)"
+            "enemy_spec": 1467,
+            "trigger": "Dragonrage",
+            "response_slot": "slot_16",
+            "desc": "Evoker Burst -> AMZ"
         },
         {
-            "enemy_spec": 261,
-            "trigger": "Shadow Blades",
+            "enemy_spec": 267,
+            "trigger": "Summon Infernal",
+            "response_slot": "slot_16",
+            "desc": "Lock Burst -> AMZ"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
             "response_slot": "slot_15",
-            "desc": "Rogue Burst -> Greater Invis (Drop Target)"
+            "desc": "Mage Spike -> AMS (Soak)"
+        },
+        {
+            "enemy_spec": 102,
+            "trigger": "Balance of All Things",
+            "response_slot": "slot_15",
+            "desc": "Boomkin Crit -> AMS"
         },
         {
             "enemy_spec": 71,
-            "trigger": "Colossus Smash",
-            "response_slot": "slot_18",
-            "desc": "Warrior Burst -> Alter Time"
-        },
-        {
-            "enemy_spec": 250,
-            "trigger": "Abomination Limb",
-            "response_slot": "slot_24",
-            "desc": "DK Grip -> Arcane Pulse (Slow/Knock)"
+            "trigger": "Bladestorm",
+            "response_slot": "slot_12",
+            "desc": "War Spin -> Death Grip (Peel)"
         }
     ]
 }

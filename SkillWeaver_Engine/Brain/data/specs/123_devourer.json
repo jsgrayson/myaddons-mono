@@ -1,0 +1,163 @@
+{
+    "spec_id": 123,
+    "spec_name": "Devourer Demon Hunter",
+    "resource_type": "fury",
+    "secondary_resource": "soul_fragments",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Consume",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "souls_starved",
+                "range_25_check"
+            ]
+        },
+        "slot_02": {
+            "action": "Reap",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "souls_overflow_risk",
+                "range_25_check"
+            ]
+        },
+        "slot_03": {
+            "action": "Void Ray",
+            "key": "F15",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "souls_high_dump",
+                "range_25_check"
+            ]
+        },
+        "slot_04": {
+            "action": "Collapsing Star",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "collapsing_star_execute"
+            ]
+        },
+        "slot_05": {
+            "action": "Void Metamorphosis",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "souls_threshold_metamorphosis"
+            ]
+        },
+        "slot_06": {
+            "action": "Spectral Sight",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "stealth_or_invis_detected"
+            ]
+        },
+        "slot_07": {
+            "action": "The Hunt",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "burst_window_active"
+            ]
+        },
+        "slot_08": {
+            "action": "Elysian Decree",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_burst_needed"
+            ]
+        },
+        "slot_11": {
+            "action": "Disrupt",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Chaos Nova",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_control_needed",
+                "melee_range_check"
+            ]
+        },
+        "slot_13": {
+            "action": "Blur",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_minor",
+                "double_cast_buffer_blur"
+            ]
+        },
+        "slot_14": {
+            "action": "Netherwalk",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "panic_immunity_needed"
+            ]
+        },
+        "slot_15": {
+            "action": "Darkness",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "raid_wide_damage_event"
+            ]
+        },
+        "slot_17": {
+            "action": "Shift",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "shift_gap_close"
+            ]
+        },
+        "slot_18": {
+            "action": "Vengeful Retreat",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "disengage_needed",
+                "double_cast_buffer_retreat"
+            ]
+        },
+        "slot_24": {
+            "action": "Spatial Rift",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "mobility_pre_plan"
+            ]
+        }
+    },
+    "proc_priority": {
+        "void_form": [
+            "slot_04",
+            "slot_03",
+            "slot_02"
+        ],
+        "normal_rotation": [
+            "slot_02",
+            "slot_01",
+            "slot_04",
+            "slot_03"
+        ]
+    }
+}

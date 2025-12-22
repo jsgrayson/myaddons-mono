@@ -1,0 +1,190 @@
+{
+    "spec_id": 91,
+    "spec_name": "Affliction Warlock",
+    "resource_type": "soul_shards",
+    "secondary_resource": "mana",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Agony",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "refresh_dot_agony"
+            ]
+        },
+        "slot_02": {
+            "action": "Corruption",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "refresh_dot_corruption"
+            ]
+        },
+        "slot_03": {
+            "action": "Unstable Affliction",
+            "key": "F15",
+            "min_resource": 1,
+            "conditions": [
+                "target_valid",
+                "refresh_dot_ua",
+                "resource_gte_1"
+            ]
+        },
+        "slot_04": {
+            "action": "Malefic Rapture",
+            "key": "F16",
+            "min_resource": 1,
+            "conditions": [
+                "target_valid",
+                "dots_active",
+                "resource_gte_1",
+                "not_moving"
+            ]
+        },
+        "slot_05": {
+            "action": "Drain Soul",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "dots_active",
+                "not_moving",
+                "channel_safe"
+            ]
+        },
+        "slot_06": {
+            "action": "Phantom Singularity",
+            "key": "F18",
+            "min_resource": 1,
+            "conditions": [
+                "target_valid",
+                "burst_window_active"
+            ]
+        },
+        "slot_07": {
+            "action": "Summon Darkglare",
+            "key": "Ctrl+F13",
+            "min_resource": 1,
+            "conditions": [
+                "burst_aligned",
+                "dots_active"
+            ]
+        },
+        "slot_08": {
+            "action": "Soul Rot",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned"
+            ]
+        },
+        "slot_11": {
+            "action": "Spell Lock",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 40,
+            "conditions": [
+                "interruptible",
+                "pet_in_range"
+            ]
+        },
+        "slot_12": {
+            "action": "Fear",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_cc",
+                "target_not_immune_fear",
+                "not_moving"
+            ]
+        },
+        "slot_13": {
+            "action": "Curse of Tongues",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "target_is_caster",
+                "debuff_missing"
+            ]
+        },
+        "slot_14": {
+            "action": "Dark Pact",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "survival_minor"
+            ]
+        },
+        "slot_15": {
+            "action": "Unending Resolve",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "priority": 500,
+            "conditions": [
+                "survival_critical",
+                "silence_incoming"
+            ]
+        },
+        "slot_16": {
+            "action": "Healthstone",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "priority": 600,
+            "conditions": [
+                "health_lt_40"
+            ]
+        },
+        "slot_17": {
+            "action": "Demonic Circle: Teleport",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_opener_needed",
+                "circle_set"
+            ]
+        },
+        "slot_24": {
+            "action": "Mortal Coil",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "priority": 700,
+            "conditions": [
+                "survival_heal_cc"
+            ]
+        }
+    },
+    "proc_priority": {
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_07",
+                "dots_active",
+                "resource_gte_3"
+            ],
+            "sequence": [
+                "slot_06",
+                "slot_08",
+                "slot_07",
+                "slot_04",
+                "slot_04",
+                "slot_04"
+            ]
+        },
+        "execute_phase": [
+            "slot_05",
+            "slot_03"
+        ],
+        "mode_priorities": {
+            "DUNGEON": [
+                "slot_06",
+                "slot_04"
+            ],
+            "RAID": [
+                "slot_01",
+                "slot_03",
+                "slot_04"
+            ]
+        }
+    }
+}

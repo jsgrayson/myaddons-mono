@@ -1,0 +1,178 @@
+{
+    "spec_id": 121,
+    "spec_name": "Havoc Demon Hunter",
+    "resource_type": "fury",
+    "secondary_resource": "none",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Chaos Strike / Annihilation",
+            "key": "F13",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid",
+                "fury_maintain"
+            ]
+        },
+        "slot_02": {
+            "action": "Blade Dance / Death Sweep",
+            "key": "F14",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid",
+                "essence_break_priority"
+            ]
+        },
+        "slot_03": {
+            "action": "Immolation Aura",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "fury_generation_needed",
+                "inertia_setup"
+            ]
+        },
+        "slot_04": {
+            "action": "Eye Beam",
+            "key": "F16",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "fury_overflow_gate_eyebeam"
+            ]
+        },
+        "slot_05": {
+            "action": "Metamorphosis",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Essence Break",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "post_blade_dance_check",
+                "demonic_window_active"
+            ]
+        },
+        "slot_07": {
+            "action": "Fel Rush",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "momentum_buff_needed",
+                "fel_rush_vector_safe"
+            ]
+        },
+        "slot_08": {
+            "action": "Vengeful Retreat",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "initiative_buff_needed",
+                "combat_engagement"
+            ]
+        },
+        "slot_09": {
+            "action": "The Hunt",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "burst_initiator",
+                "snap_threat_solo"
+            ]
+        },
+        "slot_11": {
+            "action": "Disrupt",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Chaos Nova",
+            "key": "Alt+F14",
+            "min_resource": 30,
+            "conditions": [
+                "aoe_cc_needed",
+                "threat_unstable_peel"
+            ]
+        },
+        "slot_13": {
+            "action": "Imprison",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "cc_crowd_control"
+            ]
+        },
+        "slot_14": {
+            "action": "Blur",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_avoidance"
+            ]
+        },
+        "slot_15": {
+            "action": "Netherwalk",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_immune",
+                "netherwalk_lethal_escape"
+            ]
+        },
+        "slot_16": {
+            "action": "Darkness",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "party_mitigation_raid"
+            ]
+        },
+        "slot_17": {
+            "action": "Felblade",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "fury_generation_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Sigil of Flame",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_generation_needed"
+            ]
+        },
+        "slot_24": {
+            "action": "Spectral Sight",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "stealth_detection_needed"
+            ]
+        }
+    },
+    "proc_priority": {
+        "essence_break_window": [
+            "slot_02",
+            "slot_06",
+            "slot_02",
+            "slot_01"
+        ],
+        "demonic_form": [
+            "slot_04",
+            "slot_02",
+            "slot_01"
+        ]
+    }
+}

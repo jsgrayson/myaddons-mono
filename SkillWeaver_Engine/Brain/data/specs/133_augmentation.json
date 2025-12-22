@@ -1,0 +1,117 @@
+{
+    "spec_id": 133,
+    "spec_name": "Augmentation Evoker",
+    "resource_type": "mana",
+    "secondary_resource": "essence",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Ebon Might",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "buff_missing_ebon_might",
+                "target_valid"
+            ]
+        },
+        "slot_02": {
+            "action": "Eruption",
+            "key": "F14",
+            "min_resource": 3,
+            "conditions": [
+                "target_valid",
+                "ebon_might_active",
+                "essence_gate_eruption"
+            ]
+        },
+        "slot_03": {
+            "action": "Living Flame",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "filler_needed"
+            ]
+        },
+        "slot_04": {
+            "action": "Upheaval",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "ebon_might_extension_needed"
+            ]
+        },
+        "slot_05": {
+            "action": "Breath of Eons",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "ebon_might_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Fire Breath",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "ebon_might_extension_needed"
+            ]
+        },
+        "slot_07": {
+            "action": "Blistering Scales",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "tank_buff_missing"
+            ]
+        },
+        "slot_08": {
+            "action": "Prescience",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "dps_buff_maintenance"
+            ]
+        },
+        "slot_11": {
+            "action": "Quell",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_14": {
+            "action": "Obsidian Scales",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_minor"
+            ]
+        },
+        "slot_15": {
+            "action": "Renewing Blaze",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "damage_intake_high"
+            ]
+        }
+    },
+    "proc_priority": {
+        "buff_maintenance": [
+            "slot_01",
+            "slot_08",
+            "slot_07"
+        ],
+        "rotation": [
+            "slot_02",
+            "slot_04",
+            "slot_06",
+            "slot_03"
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "spec_id": 52,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_15",
+            "desc": "Warrior Burst -> Guardian Spirit (Prevent Death)"
+        },
+        {
+            "enemy_spec": 252,
+            "trigger": "Asphyxiate",
+            "response_slot": "slot_18",
+            "desc": "DK Stun -> Leap of Faith (Pull Ally)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_03",
+            "desc": "Mage Sheep -> Holy Word: Serenity (Top Off Before CC)"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Vendetta",
+            "response_slot": "slot_15",
+            "desc": "Rogue Burst -> Guardian Spirit"
+        }
+    ]
+}

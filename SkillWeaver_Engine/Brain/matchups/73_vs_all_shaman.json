@@ -1,0 +1,29 @@
+{
+    "spec_id": 73,
+    "counters": [
+        {
+            "enemy_spec": 258,
+            "trigger": "Vampiric Touch",
+            "response_slot": "slot_05",
+            "desc": "Shadow Priest Dots -> Cloudburst (Absorb Prep)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Dance",
+            "response_slot": "slot_08",
+            "desc": "Rogue Burst -> Spirit Link (Equalize HP)"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_24",
+            "desc": "Warrior Spin -> Thunderstorm (Knockback)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_11",
+            "desc": "Mage CC -> Wind Shear (Ranged Kick)"
+        }
+    ]
+}

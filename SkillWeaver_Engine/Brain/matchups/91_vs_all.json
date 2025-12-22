@@ -1,0 +1,35 @@
+{
+    "spec_id": 91,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Avatar",
+            "response_slot": "slot_24",
+            "desc": "War Burst -> Mortal Coil (Self-Heal + CC)"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Dance",
+            "response_slot": "slot_15",
+            "desc": "Rogue Dance -> Unending Resolve (Wall)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Icy Veins",
+            "response_slot": "slot_11",
+            "desc": "Mage Burst -> Spell Lock (Kick)"
+        },
+        {
+            "enemy_spec": 70,
+            "trigger": "Avenging Wrath",
+            "response_slot": "slot_17",
+            "desc": "Ret Wings -> Port (Kite)"
+        },
+        {
+            "enemy_spec": 103,
+            "trigger": "Touch of Death",
+            "response_slot": "slot_14",
+            "desc": "Monk ToD -> Dark Pact (Absorb)"
+        }
+    ]
+}

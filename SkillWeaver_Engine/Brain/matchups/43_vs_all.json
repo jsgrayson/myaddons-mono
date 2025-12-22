@@ -1,0 +1,29 @@
+{
+    "spec_id": 43,
+    "counters": [
+        {
+            "enemy_spec": 105,
+            "trigger": "Rejuvenation",
+            "response_slot": "slot_12",
+            "desc": "Resto HoT -> Cheap Shot (Swap CC)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
+            "response_slot": "slot_15",
+            "desc": "Mage Poly -> Cloak of Shadows"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_14",
+            "desc": "Warrior Burst -> Feint"
+        },
+        {
+            "enemy_spec": 577,
+            "trigger": "Metamorphosis",
+            "response_slot": "slot_16",
+            "desc": "DH Meta -> Vanish (Reset)"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # 1. THE VAULT (Database)
+  db:
+    image: postgres:16-alpine
+    container_name: goblin_vault
+    environment:
+      POSTGRES_USER: goblin
+      POSTGRES_PASSWORD: goldcap_password
+      POSTGRES_DB: goblin_ledger
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - goblin_net
+    restart: always
+
+  # 2. THE CACHE (Speed Layer)
+  redis:
+    image: redis:alpine
+    container_name: goblin_cache
+    networks:
+      - goblin_net
+    restart: always
+
+  # 3. THE BRAIN (API Server)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goblin_brain
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://goblin:goldcap_password@db:5432/goblin_ledger
+      REDIS_URL: redis://redis:6379/0
+      BLIZZARD_CLIENT_ID: ${BLIZZARD_CLIENT_ID}
+      BLIZZARD_CLIENT_SECRET: ${BLIZZARD_CLIENT_SECRET}
+    depends_on:
+      - db
+      - redis
+    networks:
+      - goblin_net
+
+  # 4. THE UPLINK (Blizzard Data Sync)
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goblin_uplink
+    command: python -m backend.services.worker
+    environment:
+      DATABASE_URL: postgresql://goblin:goldcap_password@db:5432/goblin_ledger
+      BLIZZARD_CLIENT_ID: ${BLIZZARD_CLIENT_ID}
+      BLIZZARD_CLIENT_SECRET: ${BLIZZARD_CLIENT_SECRET}
+    depends_on:
+      - db
+    networks:
+      - goblin_net
+
+  # 5. THE EYES (File Watcher)
+  watchdog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goblin_watchdog
+    command: python -m backend.services.watchdog
+    volumes:
+      - /mnt/wow_share/_retail_/WTF:/wow_wtf:ro # READ-ONLY MOUNT
+      - ./backend:/app/backend
+    environment:
+      DATABASE_URL: postgresql://goblin:goldcap_password@db:5432/goblin_ledger
+      WOW_WTF_PATH: /wow_wtf
+    depends_on:
+      - db
+    networks:
+      - goblin_net
+
+networks:
+  goblin_net:
+    driver: bridge
+
+volumes:
+  postgres_data:

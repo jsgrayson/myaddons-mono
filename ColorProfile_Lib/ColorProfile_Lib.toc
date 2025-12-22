@@ -1,0 +1,8 @@
+## Interface: 110000
+## Title: ColorProfile_Lib
+## Notes: Library for monitor color calibration and frame-pacing analysis.
+## Author: Generic
+## Version: 1.0.4
+## SavedVariables: ColorProfileDB
+
+ColorProfile_Lib.lua

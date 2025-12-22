@@ -1,0 +1,171 @@
+{
+    "spec_id": 71,
+    "spec_name": "Elemental Shaman",
+    "resource_type": "maelstrom",
+    "secondary_resource": "none",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Lava Burst",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "lava_surge_gate"
+            ]
+        },
+        "slot_02": {
+            "action": "Lightning Bolt",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "generator_filler_check"
+            ]
+        },
+        "slot_03": {
+            "action": "Earth Shock / Ele Blast",
+            "key": "F15",
+            "min_resource": 60,
+            "conditions": [
+                "target_valid",
+                "maelstrom_dump_check"
+            ]
+        },
+        "slot_04": {
+            "action": "Flame Shock",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "pandemic_gate_flame_shock"
+            ]
+        },
+        "slot_05": {
+            "action": "Stormkeeper / Ascendance",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Chain Lightning",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_filler"
+            ]
+        },
+        "slot_07": {
+            "action": "Earthquake",
+            "key": "Ctrl+F13",
+            "min_resource": 60,
+            "conditions": [
+                "aoe_dump_check"
+            ]
+        },
+        "slot_08": {
+            "action": "Primordial Wave",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "flame_shock_spread_check"
+            ]
+        },
+        "slot_09": {
+            "action": "Liquid Magma Totem",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_dot_application"
+            ]
+        },
+        "slot_11": {
+            "action": "Wind Shear",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Thunderstorm",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "melee_peel_knockback"
+            ]
+        },
+        "slot_13": {
+            "action": "Capacitor Totem",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "stun_needed",
+                "aoe_control"
+            ]
+        },
+        "slot_14": {
+            "action": "Astral Shift",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_15": {
+            "action": "Earth Elemental",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "tank_pet_needed"
+            ]
+        },
+        "slot_16": {
+            "action": "Healing Surge",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "health_critical"
+            ]
+        },
+        "slot_17": {
+            "action": "Spiritwalker's Grace",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "movement_cast_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Ghost Wolf",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed_wolf"
+            ]
+        },
+        "slot_24": {
+            "action": "Cleanse Spirit",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "curse_dispel_needed"
+            ]
+        }
+    },
+    "proc_priority": {
+        "surge_response": [
+            "slot_01",
+            "slot_03"
+        ],
+        "rotation": [
+            "slot_08",
+            "slot_04",
+            "slot_01",
+            "slot_02"
+        ]
+    }
+}

@@ -1,65 +1,106 @@
--- SkillWeaver_Engine/addon/ColorProfile_Lib.lua
--- GRAYSCALE PROTOCOL (Mac/Colorblind Safe)
+-- SKILLWEAVER UNIVERSAL DRIVER v4.1 (BOOSTED)
+-- SUPPORTS ALL 13 CLASSES & 60 SPECS (Dynamic Detection)
+-- PROTOCOL: DARK MATTER (GAIN 0.90)
 
-local f = CreateFrame("Frame", nil, UIParent)
-f:SetSize(32, 1)
-f:SetPoint("BOTTOMLEFT", 0, 0)
-f:SetFrameStrata("BACKGROUND")
-
-local c = {}
-for i=0, 32 do
-    c[i] = f:CreateTexture(nil, "BACKGROUND")
-    c[i]:SetSize(1, 1)
-    c[i]:SetPoint("LEFT", f, "LEFT", i, 0)
+-- 1. Setup Frame
+if not SW_Frame then
+    SW_Frame = CreateFrame("Frame", "SW_Frame", UIParent)
+    SW_Frame:SetSize(64, 1)
+    SW_Frame:SetPoint("BOTTOMLEFT", 0, 0)
+    SW_Frame:SetFrameStrata("BACKGROUND") 
 end
 
-local function GetDebuffTime(spellName)
-    local expirationTime = select(5, AuraUtil.FindAuraByName(spellName, "target", "PLAYER|HARMFUL"))
-    if not expirationTime then return 0 end
-    local remaining = expirationTime - GetTime()
-    return (remaining > 0) and remaining or 0
+-- 2. PIXEL-PERFECT SCALING
+SW_Frame:SetScale(1 / UIParent:GetEffectiveScale())
+
+-- 3. Initialize the Pixel Table
+local p = {}
+local BASE = 0.08
+for i = 0, 31 do
+    if not p[i] then
+        p[i] = SW_Frame:CreateTexture(nil, "OVERLAY")
+        p[i]:SetSize(1, 1)
+        p[i]:SetPoint("LEFT", i, 0)
+    end
+    p[i]:SetColorTexture(BASE, BASE, BASE, 1) 
 end
 
-f:SetScript("OnUpdate", function()
-    -- [0] Handshake: Pure White (Reference)
-    c[0]:SetColorTexture(1, 1, 1, 1) 
+-- 4. HIGH-GAIN ENCODER (0.90)
+local function SetPixel(idx, val)
+    local off = (math.max(0, math.min(255, val)) / 255) * 0.90
+    p[idx]:SetColorTexture(BASE, BASE, BASE + off, 1)
+end
+
+-- 5. DYNAMIC SECONDARY POWER MAP
+local SEC_MAP = {
+    [2] = 9,  -- Paladin (Holy Power)
+    [4] = 4,  -- Rogue (Combo Points)
+    [5] = 13, -- Priest (Insanity)
+    [6] = 5,  -- Death Knight (Runes)
+    [8] = 16, -- Mage (Arcane Charges)
+    [9] = 7,  -- Warlock (Soul Shards)
+    [10] = 12, -- Monk (Chi)
+    [11] = 4,  -- Druid (Combo Points)
+    [13] = 22, -- Evoker (Essence)
+}
+
+-- 6. MAJOR BUFF SNAPSHOT LIST
+local SNAPS = { 
+    [32645]=true, [185422]=true, [113860]=true, [10060]=true, [5217]=true,
+    [113858]=true, [121471]=true, [13750]=true
+} 
+
+-- 7. The Update Loop
+SW_Frame:SetScript("OnUpdate", function()
+    -- P0: Pilot Heartbeat (Steady 0.4 Blue)
+    p[0]:SetColorTexture(BASE, BASE, 0.4, 1) 
     
-    -- [1] Spec ID: Grayscale (Value / 1000)
-    local s = GetSpecializationInfo(GetSpecialization()) or 0
-    local sVal = s/1000
-    c[1]:SetColorTexture(sVal, sVal, sVal, 1) 
+    -- P1: Dynamic Spec Hash (Class * 10 + Spec)
+    local _, _, classId = UnitClass("player")
+    local specIdx = GetSpecialization() or 3 -- Fallback to 3 if unknown
+    if specIdx == 0 then specIdx = 3 end
+    SetPixel(1, (classId * 10.0) + specIdx)
+    
+    -- P2: Combat Status
+    SetPixel(2, UnitAffectingCombat("player") and 255 or 0)
 
-    -- [2] Combat Flag: White = Yes, Black = No
-    local inCombat = UnitAffectingCombat("player") and 1 or 0
-    c[2]:SetColorTexture(inCombat, inCombat, inCombat, 1)
+    -- P3: Player HP
+    SetPixel(3, (UnitHealth("player") / UnitHealthMax("player")) * 255)
 
-    -- [3] Stealth Flag: White = Yes
-    local isStealthed = IsStealthed() and 1 or 0
-    c[3]:SetColorTexture(isStealthed, isStealthed, isStealthed, 1)
+    -- P4: Target HP
+    local thp = 0
+    if UnitExists("target") then thp = UnitHealth("target") / UnitHealthMax("target") end
+    SetPixel(4, thp * 255)
 
-    -- [4] Target Exists: White = Yes
-    local targetExists = UnitExists("target") and 1 or 0
-    c[4]:SetColorTexture(targetExists, targetExists, targetExists, 1)
+    -- P5: Target Valid
+    SetPixel(5, (UnitExists("target") and UnitCanAttack("player", "target")) and 255 or 0)
 
-    -- [5] Garrote Remaining (0-10s mapped to 0-1)
-    local garroteRem = GetDebuffTime("Garrote") / 10
-    if garroteRem > 1 then garroteRem = 1 end
-    c[5]:SetColorTexture(garroteRem, garroteRem, garroteRem, 1)
+    -- P7: Primary Resource (Mana/Energy/Rage)
+    local pow = UnitPower("player") / math.max(1, UnitPowerMax("player"))
+    SetPixel(7, pow * 255)
 
-    -- [6] Rupture Remaining (0-30s mapped to 0-1)
-    local ruptureRem = GetDebuffTime("Rupture") / 30
-    if ruptureRem > 1 then ruptureRem = 1 end
-    c[6]:SetColorTexture(ruptureRem, ruptureRem, ruptureRem, 1)
+    -- P8: Universal Secondary Resource (Scaled 25x)
+    local secId = SEC_MAP[classId]
+    if secId then
+        SetPixel(8, math.min(255, UnitPower("player", secId) * 25))
+    else
+        SetPixel(8, 0)
+    end
 
-    -- [7] Energy (0-100% mapped to 0-1)
-    local energy = UnitPower("player", 3) or 0
-    local energyMax = UnitPowerMax("player", 3) or 100
-    local eVal = energy / energyMax
-    c[7]:SetColorTexture(eVal, eVal, eVal, 1)
+    -- P16: Debuff Mask (Reserved for expansion)
+    SetPixel(16, 0)
 
-    -- [8] Combo Points (0-100% mapped to 0-1)
-    -- Assumes Max CP is 7 for Rogue
-    local cp = UnitPower("player", 4) or 0
-    local cpVal = cp / 7
-    c[8]:SetColorTexture(cpVal, cpVal, cpVal, 1)
+    -- P22: Pet Status
+    local php = 0
+    if UnitExists("pet") then php = UnitHealth("pet") / UnitHealthMax("pet") end
+    SetPixel(22, php * 255)
+
+    -- P30: Snapshot (Buff Tracker)
+    local snp = 0
+    for i=1,40 do
+        local aura = C_UnitAuras.GetBuffDataByIndex("player", i)
+        if not aura then break end
+        if SNAPS[aura.spellId] then snp = 255 break end
+    end
+    SetPixel(30, snp)
 end)

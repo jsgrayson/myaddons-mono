@@ -1,0 +1,185 @@
+{
+    "spec_id": 93,
+    "spec_name": "Destruction Warlock",
+    "version": "12.0.5",
+    "source_of_truth": "SkillWeaver_Desktop_App",
+    "talents": {
+        "hex_code": "BsQA... (Placeholder)",
+        "build_name": "S3_Chaos_Theory_SingleTarget"
+    },
+    "resource_type": "mana",
+    "secondary_resource": "soul_shards",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Immolate",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "pandemic_gate_immolate"
+            ]
+        },
+        "slot_02": {
+            "action": "Incinerate",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "shards_builder"
+            ]
+        },
+        "slot_03": {
+            "action": "Conflagrate",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "backdraft_generator"
+            ]
+        },
+        "slot_04": {
+            "action": "Chaos Bolt",
+            "key": "F16",
+            "min_resource": 20,
+            "conditions": [
+                "target_valid",
+                "backdraft_gate_spender"
+            ]
+        },
+        "slot_05": {
+            "action": "Summon Infernal",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Rain of Fire",
+            "key": "F18",
+            "min_resource": 30,
+            "conditions": [
+                "aoe_spender",
+                "ritual_of_ruin_proc_aoe"
+            ]
+        },
+        "slot_07": {
+            "action": "Shadowburn",
+            "key": "Ctrl+F13",
+            "min_resource": 10,
+            "conditions": [
+                "execute_range_snipe"
+            ]
+        },
+        "slot_08": {
+            "action": "Channel Demonfire",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "dot_extension_needed"
+            ]
+        },
+        "slot_09": {
+            "action": "Cataclysm",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_dot_application"
+            ]
+        },
+        "slot_10": {
+            "action": "Havoc",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "havoc_anchor_check"
+            ]
+        },
+        "slot_11": {
+            "action": "Fear",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interrupt_substitute"
+            ]
+        },
+        "slot_12": {
+            "action": "Shadowfury",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_stun_clump"
+            ]
+        },
+        "slot_13": {
+            "action": "Mortal Coil",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "self_heal_cc"
+            ]
+        },
+        "slot_14": {
+            "action": "Unending Resolve",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_pushback_immune"
+            ]
+        },
+        "slot_15": {
+            "action": "Dark Pact",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_shield_major"
+            ]
+        },
+        "slot_16": {
+            "action": "Healthstone",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "health_critical"
+            ]
+        },
+        "slot_17": {
+            "action": "Demonic Gateway",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "tactical_relocation"
+            ]
+        },
+        "slot_18": {
+            "action": "Demonic Circle: Teleport",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "hazard_escape_circle"
+            ]
+        },
+        "slot_24": {
+            "action": "Command Demon",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "pet_utility_use"
+            ]
+        }
+    },
+    "proc_priority": {
+        "havoc_window": [
+            "slot_03",
+            "slot_04",
+            "slot_07"
+        ],
+        "rotation": [
+            "slot_01",
+            "slot_03",
+            "slot_04",
+            "slot_02"
+        ]
+    }
+}

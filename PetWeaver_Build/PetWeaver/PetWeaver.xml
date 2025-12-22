@@ -1,0 +1,229 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+  <Button name="PetWeaverListButtonTemplate" virtual="true" registerForClicks="LeftButtonUp, RightButtonUp">
+    <Size x="285" y="46"/>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture parentKey="Bg" file="Interface\PetBattles\PetJournal">
+          <TexCoords left="0.00195313" right="0.56054688" top="0.00390625" bottom="0.10351563"/>
+        </Texture>
+        <Texture parentKey="Socket" file="Interface\AddOns\PetWeaver\Media\Socket">
+            <Size x="44" y="44"/>
+            <Anchors> <Anchor point="LEFT" x="4" y="0"/> </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <Texture parentKey="Icon">
+          <Size x="36" y="36"/>
+          <Anchors> <Anchor point="CENTER" relativeKey="$parent.Socket"/> </Anchors>
+        </Texture>
+        <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT">
+          <Anchors> <Anchor point="TOPLEFT" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="12" y="-2"/> </Anchors>
+        </FontString>
+        <FontString parentKey="Level" inherits="GameFontHighlightSmall" justifyH="LEFT">
+          <Anchors> <Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="12" y="2"/> </Anchors>
+        </FontString>
+      </Layer>
+      <Layer level="OVERLAY">
+         <Texture parentKey="RarityBorder" hidden="true" file="Interface\AddOns\PetWeaver\Media\Border_Rare">
+             <Size x="44" y="44"/>
+             <Anchors> <Anchor point="CENTER" relativeKey="$parent.Icon"/> </Anchors>
+         </Texture>
+      </Layer>
+    </Layers>
+    <Frames>
+        <StatusBar parentKey="XPBar" hidden="true">
+            <Size x="200" y="4"/>
+            <Anchors>
+                <Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="10" y="5"/>
+            </Anchors>
+            <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+            <BarColor r="0.4" g="0.0" b="1.0"/>
+        </StatusBar>
+    </Frames>
+    <HighlightTexture file="Interface\AddOns\PetWeaver\Media\Highlight" alphaMode="ADD"/>
+    <Scripts>
+        <OnLoad> self:RegisterForDrag("LeftButton") </OnLoad>
+        <OnDragStart> if self.petID then C_PetJournal.PickupPet(self.petID) end </OnDragStart>
+        <OnClick>
+            if button == "RightButton" then
+                 self:GetParent():GetParent():GetParent():OpenPetMenu(self, self.petID, self.speciesID)
+            else
+                 self:GetParent():GetParent():GetParent():SelectPet(self.index)
+                 PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
+            end
+        </OnClick>
+    </Scripts>
+  </Button>
+
+  <Button name="PetWeaverTabTemplate" virtual="true" inherits="CharacterFrameTabButtonTemplate">
+      <Scripts>
+          <OnClick>
+              PanelTemplates_SetTab(self:GetParent(), self:GetID())
+              self:GetParent():SetTab(self:GetID())
+              PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+          </OnClick>
+      </Scripts>
+  </Button>
+
+  <Frame name="PetWeaverFrame" parent="UIParent" toplevel="true" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplateMixin">
+    <Size x="700" y="550"/>
+    <Anchors> <Anchor point="CENTER"/> </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND" textureSubLevel="-1">
+        <Texture file="Interface\AddOns\PetWeaver\Media\Parchment" horizTile="true" vertTile="true">
+          <Anchors>
+            <Anchor point="TOPLEFT" x="5" y="-25"/>
+            <Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
+          </Anchors>
+        </Texture>
+      </Layer>
+    </Layers>
+    <Frames>
+        <Frame parentKey="ListInset" inherits="InsetFrameTemplate">
+            <Size x="305" y="450"/>
+            <Anchors> <Anchor point="TOPLEFT" x="10" y="-60"/> </Anchors>
+            <Frames>
+                <ScrollFrame parentKey="ScrollFrame" inherits="HybridScrollFrameTemplate">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="5" y="-5"/>
+                        <Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
+                    </Anchors>
+                    <Frames>
+                        <Slider parentKey="scrollBar" inherits="HybridScrollBarTemplate">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-12"/>
+                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="0" y="12"/>
+                            </Anchors>
+                        </Slider>
+                    </Frames>
+                </ScrollFrame>
+            </Frames>
+        </Frame>
+        
+        <Frame parentKey="DetailInset" inherits="InsetFrameTemplate">
+            <Size x="360" y="450"/>
+            <Anchors> <Anchor point="TOPRIGHT" x="-10" y="-60"/> </Anchors>
+            <Frames>
+                <PlayerModel parentKey="Model" inherits="ModelWithControlsTemplate">
+                    <Size x="300" y="300"/>
+                    <Anchors> <Anchor point="TOP" x="0" y="-20"/> </Anchors>
+                </PlayerModel>
+                <Button parentKey="SummonButton" inherits="MagicButtonTemplate" text="Summon">
+                    <Size x="120" y="22"/>
+                    <Anchors> <Anchor point="BOTTOM" x="0" y="20"/> </Anchors>
+                    <Scripts>
+                        <OnClick> C_PetJournal.SummonPetByGUID(self:GetParent():GetParent().selectedPetID) </OnClick>
+                    </Scripts>
+                </Button>
+            </Frames>
+        </Frame>
+
+        <Frame parentKey="TeamFrame" hidden="true" setAllPoints="true">
+            <Layers>
+                <Layer level="ARTWORK">
+                    <FontString parentKey="TargetName" inherits="GameFontNormalLarge" text="Target: None">
+                        <Anchors> <Anchor point="TOP" x="0" y="-40"/> </Anchors>
+                    </FontString>
+                </Layer>
+            </Layers>
+            <Frames>
+                <PlayerModel parentKey="Pet1Model" inherits="ModelWithControlsTemplate">
+                    <Size x="200" y="250"/>
+                    <Anchors> <Anchor point="LEFT" x="30" y="20"/> </Anchors>
+                </PlayerModel>
+                <PlayerModel parentKey="Pet2Model" inherits="ModelWithControlsTemplate">
+                    <Size x="200" y="250"/>
+                    <Anchors> <Anchor point="LEFT" relativeKey="$parent.Pet1Model" relativePoint="RIGHT" x="10" y="0"/> </Anchors>
+                </PlayerModel>
+                <PlayerModel parentKey="Pet3Model" inherits="ModelWithControlsTemplate">
+                    <Size x="200" y="250"/>
+                    <Anchors> <Anchor point="LEFT" relativeKey="$parent.Pet2Model" relativePoint="RIGHT" x="10" y="0"/> </Anchors>
+                </PlayerModel>
+                <Button parentKey="SaveTeamBtn" inherits="UIPanelButtonTemplate" text="Save Strategy for Target">
+                    <Size x="200" y="30"/>
+                    <Anchors> <Anchor point="BOTTOM" x="0" y="40"/> </Anchors>
+                    <Scripts>
+                        <OnClick> self:GetParent():GetParent():SaveCurrentTeam() </OnClick>
+                    </Scripts>
+                </Button>
+            </Frames>
+        </Frame>
+
+        <Frame parentKey="ScriptFrame" hidden="true" setAllPoints="true">
+             <Frames>
+                <ScrollFrame parentKey="Editor" inherits="InputScrollFrameTemplate">
+                    <Size x="650" y="450"/>
+                    <Anchors> <Anchor point="CENTER" y="-20"/> </Anchors>
+                    <KeyValues>
+                        <KeyValue key="instructions" value="-- Write battle logic here. Use: use(1), swap(2), if ally.hp &lt; 500 then... " type="string"/>
+                    </KeyValues>
+                </ScrollFrame>
+             </Frames>
+        </Frame>
+
+        <Button parentKey="Tab1" inherits="PetWeaverTabTemplate" id="1" text="Journal">
+            <Anchors> <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" x="20" y="-30"/> </Anchors>
+        </Button>
+        <Button parentKey="Tab2" inherits="PetWeaverTabTemplate" id="2" text="War Room">
+            <Anchors> <Anchor point="LEFT" relativeKey="$parent.Tab1" relativePoint="RIGHT" x="0" y="0"/> </Anchors>
+        </Button>
+        <Button parentKey="Tab3" inherits="PetWeaverTabTemplate" id="3" text="Scribe">
+            <Anchors> <Anchor point="LEFT" relativeKey="$parent.Tab2" relativePoint="RIGHT" x="0" y="0"/> </Anchors>
+        </Button>
+
+    </Frames>
+    <Scripts>
+      <OnLoad method="OnLoad"/>
+      <OnEvent method="OnEvent"/>
+      <OnDragStart> self:StartMoving() </OnDragStart>
+      <OnDragStop> self:StopMovingOrSizing() </OnDragStop>
+      <OnShow>
+          PanelTemplates_SetNumTabs(self, 3)
+          PanelTemplates_SetTab(self, 1)
+      </OnShow>
+    </Scripts>
+  </Frame>
+
+  <Frame name="PetWeaverCombatHUD" parent="UIParent" hidden="true" movable="true" enableMouse="true">
+    <Size x="400" y="120"/>
+    <Anchors> <Anchor point="BOTTOM" x="0" y="250"/> </Anchors>
+    <Layers>
+        <Layer level="BACKGROUND">
+             <Texture file="Interface\Tooltips\UI-Tooltip-Background">
+                 <Color r="0" g="0" b="0" a="0.7"/>
+             </Texture>
+        </Layer>
+        <Layer level="ARTWORK">
+            <FontString parentKey="PredictionText" inherits="GameFontNormalHuge" text="Awaiting Turn...">
+                <Anchors> <Anchor point="TOP" x="0" y="-20"/> </Anchors>
+                <Color r="0" g="1" b="1"/>
+            </FontString>
+        </Layer>
+    </Layers>
+    <Frames>
+        <Button parentKey="ExecuteBtn" inherits="SecureActionButtonTemplate, MagicButtonTemplate" text="EXECUTE SCRIPT MOVE" enabled="false">
+            <Size x="200" y="40"/>
+            <Anchors> <Anchor point="BOTTOM" x="0" y="15"/> </Anchors>
+            <Scripts>
+                <OnClick> PetWeaver:ExecuteNextMove() </OnClick>
+            </Scripts>
+        </Button>
+        <Button parentKey="PassBtn" inherits="UIPanelButtonTemplate" text="Pass">
+            <Size x="80" y="22"/>
+            <Anchors> <Anchor point="BOTTOMLEFT" x="10" y="10"/> </Anchors>
+            <Scripts> <OnClick> C_PetBattles.SkipTurn() </OnClick> </Scripts>
+        </Button>
+        <Button parentKey="ForfeitBtn" inherits="UIPanelButtonTemplate" text="Forfeit">
+            <Size x="80" y="22"/>
+            <Anchors> <Anchor point="BOTTOMRIGHT" x="-10" y="10"/> </Anchors>
+            <Scripts> <OnClick> C_PetBattles.ForfeitGame() </OnClick> </Scripts>
+        </Button>
+    </Frames>
+    <Scripts>
+        <OnDragStart> self:StartMoving() </OnDragStart>
+        <OnDragStop> self:StopMovingOrSizing() </OnDragStop>
+    </Scripts>
+  </Frame>
+</Ui>

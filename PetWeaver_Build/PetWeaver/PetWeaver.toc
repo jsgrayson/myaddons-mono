@@ -1,0 +1,13 @@
+## Interface: 110002
+## Title: |cff0070ddPetWeaver|r
+## Notes: The ultimate pet battle grimoire. Replaces Journal, Rematch, and PetBattleScripts.
+## Author: JSGrayson & The Architect
+## Version: 11.0.1
+## SavedVariables: PetWeaverDB
+
+Media\LoadMedia.xml
+Templates.xml
+PetWeaver_StaticDB.lua
+PetWeaver_DB.lua
+PetWeaver.lua
+PetWeaver.xml

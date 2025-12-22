@@ -1,0 +1,56 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <Button name="PetGrimoireListButtonTemplate" virtual="true">
+    <Size x="300" y="50"/>
+    <Layers>
+        <Layer level="ARTWORK">
+            <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT">
+                <Anchors><Anchor point="TOPLEFT" x="10" y="-5"/></Anchors>
+            </FontString>
+            <FontString parentKey="Note" inherits="GameFontHighlightSmall" justifyH="LEFT">
+                <Anchors><Anchor point="TOPLEFT" relativeKey="$parent.Name" relativePoint="BOTTOMLEFT" y="-2"/></Anchors>
+            </FontString>
+        </Layer>
+    </Layers>
+    <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+  </Button>
+
+  <Frame name="PetGrimoireFrame" parent="UIParent" hidden="true" inherits="PortraitFrameTemplate" movable="true" enableMouse="true">
+    <Size x="400" y="600"/>
+    <Anchors><Anchor point="CENTER"/></Anchors>
+    <Layers>
+        <Layer level="BACKGROUND">
+             <Texture file="Interface\FrameGeneral\UI-Background-Marble" horizTile="true" vertTile="true"/>
+        </Layer>
+    </Layers>
+    <Frames>
+        <Frame parentKey="List" inherits="InsetFrameTemplate">
+            <Anchors>
+                <Anchor point="TOPLEFT" x="10" y="-60"/>
+                <Anchor point="BOTTOMRIGHT" x="-10" y="10"/>
+            </Anchors>
+            <Frames>
+                <ScrollFrame parentKey="ScrollFrame" inherits="HybridScrollFrameTemplate">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="5" y="-5"/>
+                        <Anchor point="BOTTOMRIGHT" x="-25" y="5"/>
+                    </Anchors>
+                    <Frames>
+                        <Slider parentKey="scrollBar" inherits="HybridScrollBarTemplate">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-12"/>
+                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="0" y="12"/>
+                            </Anchors>
+                        </Slider>
+                    </Frames>
+                </ScrollFrame>
+            </Frames>
+        </Frame>
+    </Frames>
+    <Scripts>
+        <OnLoad>PetGrimoire:OnLoad(self)</OnLoad>
+        <OnDragStart>self:StartMoving()</OnDragStart>
+        <OnDragStop>self:StopMovingOrSizing()</OnDragStop>
+    </Scripts>
+  </Frame>
+</Ui>

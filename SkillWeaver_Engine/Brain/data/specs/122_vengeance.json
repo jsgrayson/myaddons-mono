@@ -1,0 +1,137 @@
+{
+    "spec_id": 122,
+    "spec_name": "Vengeance Demon Hunter",
+    "resource_type": "fury",
+    "secondary_resource": "soul_fragments",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Shear / Fracture",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "soul_fragments_lt_4"
+            ]
+        },
+        "slot_02": {
+            "action": "Spirit Bomb",
+            "key": "F14",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "soul_fragments_gte_4"
+            ]
+        },
+        "slot_03": {
+            "action": "Soul Cleave",
+            "key": "F15",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "fury_dump_needed",
+                "soul_fragments_lt_4"
+            ]
+        },
+        "slot_04": {
+            "action": "Immolation Aura",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_in_range",
+                "fury_generation_needed"
+            ]
+        },
+        "slot_05": {
+            "action": "Sigil of Flame",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "dot_refresh_needed"
+            ]
+        },
+        "slot_06": {
+            "action": "Fel Devastation",
+            "key": "F18",
+            "min_resource": 50,
+            "conditions": [
+                "target_valid",
+                "health_lt_70",
+                "metamorphosis_entry_ready"
+            ]
+        },
+        "slot_07": {
+            "action": "The Hunt",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_11": {
+            "action": "Disrupt",
+            "key": "F23",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_13": {
+            "action": "Demon Spikes",
+            "key": "Shift+F13",
+            "min_resource": 20,
+            "conditions": [
+                "mitigation_needed_physical",
+                "charges_gte_1"
+            ]
+        },
+        "slot_14": {
+            "action": "Fiery Brand",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major",
+                "target_debuff_missing"
+            ]
+        },
+        "slot_17": {
+            "action": "Infernal Strike",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "sigil_of_flame_proc_ready"
+            ]
+        },
+        "slot_24": {
+            "action": "Metamorphosis",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "survival_critical",
+                "panic_button"
+            ]
+        }
+    },
+    "proc_priority": {
+        "tanking_loop": [
+            "slot_02",
+            "slot_06",
+            "slot_03",
+            "slot_01"
+        ],
+        "mitigation": [
+            "slot_13",
+            "slot_14"
+        ],
+        "rotation": [
+            "slot_04",
+            "slot_05",
+            "slot_01",
+            "slot_02",
+            "slot_03"
+        ]
+    }
+}

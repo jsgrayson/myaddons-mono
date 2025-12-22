@@ -1,0 +1,17 @@
+{
+    "spec_id": 122,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_13",
+            "desc": "War Burst -> Demon Spikes"
+        },
+        {
+            "enemy_spec": 41,
+            "trigger": "Kingsbane",
+            "response_slot": "slot_24",
+            "desc": "Rogue Burst -> Meta"
+        }
+    ]
+}

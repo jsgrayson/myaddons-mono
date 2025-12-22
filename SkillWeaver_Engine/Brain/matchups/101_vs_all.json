@@ -1,0 +1,35 @@
+{
+    "spec_id": 101,
+    "counters": [
+        {
+            "enemy_spec": 71,
+            "trigger": "Colossus Smash",
+            "response_slot": "slot_12",
+            "desc": "Arms Burst -> Disarm"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_15",
+            "desc": "Mage Nuke -> Diffuse Magic"
+        },
+        {
+            "enemy_spec": 250,
+            "trigger": "Dancing Rune Weapon",
+            "response_slot": "slot_12",
+            "desc": "DK Parry -> Ring of Peace (Knock)"
+        },
+        {
+            "enemy_spec": 103,
+            "trigger": "Berserk",
+            "response_slot": "slot_14",
+            "desc": "Feral Burst -> Fortifying Brew"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Deathmark",
+            "response_slot": "slot_15",
+            "desc": "Rogue Bleeds -> Diffuse Magic (Cleanse)"
+        }
+    ]
+}

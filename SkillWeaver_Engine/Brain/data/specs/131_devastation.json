@@ -1,0 +1,165 @@
+{
+    "spec_id": 131,
+    "spec_name": "Devastation Evoker",
+    "resource_type": "mana",
+    "secondary_resource": "essence",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Living Flame / Azure Strike",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "essence_burst_proc_check"
+            ]
+        },
+        "slot_02": {
+            "action": "Disintegrate",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "essence_gate_disintegrate"
+            ]
+        },
+        "slot_03": {
+            "action": "Fire Breath",
+            "key": "F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "empower_fire_breath_gate"
+            ]
+        },
+        "slot_04": {
+            "action": "Eternity Surge",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "empower_eternity_surge_gate"
+            ]
+        },
+        "slot_05": {
+            "action": "Dragonrage",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Deep Breath",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_burst_needed",
+                "deep_breath_path_safe"
+            ]
+        },
+        "slot_07": {
+            "action": "Shattering Star",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_initiator_debuff"
+            ]
+        },
+        "slot_08": {
+            "action": "Tip the Scales",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "instant_empower_needed"
+            ]
+        },
+        "slot_11": {
+            "action": "Quell",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Landslide",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "melee_root_peel"
+            ]
+        },
+        "slot_13": {
+            "action": "Oppressing Roar",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "cc_extension_window"
+            ]
+        },
+        "slot_14": {
+            "action": "Obsidian Scales",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_minor"
+            ]
+        },
+        "slot_15": {
+            "action": "Renewing Blaze",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "damage_intake_high"
+            ]
+        },
+        "slot_16": {
+            "action": "Verdant Embrace",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "health_critical_self_heal"
+            ]
+        },
+        "slot_17": {
+            "action": "Hover",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "movement_cast_needed",
+                "hover_maintenance"
+            ]
+        },
+        "slot_18": {
+            "action": "Rescue",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "rescue_healer_peel"
+            ]
+        },
+        "slot_24": {
+            "action": "Cauterizing Flame",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "dispel_needed_bleed_curse"
+            ]
+        }
+    },
+    "proc_priority": {
+        "dragonrage_window": [
+            "slot_05",
+            "slot_07",
+            "slot_03",
+            "slot_04",
+            "slot_02"
+        ],
+        "rotation": [
+            "slot_02",
+            "slot_01"
+        ]
+    }
+}

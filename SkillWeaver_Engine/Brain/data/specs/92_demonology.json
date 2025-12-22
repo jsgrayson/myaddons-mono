@@ -1,0 +1,173 @@
+{
+    "spec_id": 92,
+    "spec_name": "Demonology Warlock",
+    "resource_type": "soul_shards",
+    "secondary_resource": "demonic_core_stacks",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Shadow Bolt / Demonbolt",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "demonic_core_check"
+            ]
+        },
+        "slot_02": {
+            "action": "Call Dreadstalkers",
+            "key": "F14",
+            "min_resource": 2,
+            "conditions": [
+                "target_valid",
+                "dreadstalkers_ready"
+            ]
+        },
+        "slot_03": {
+            "action": "Hand of Gul'dan",
+            "key": "F15",
+            "min_resource": 3,
+            "conditions": [
+                "target_valid",
+                "shard_gate_3_hog"
+            ]
+        },
+        "slot_04": {
+            "action": "Implosion",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "implosion_optimal_check"
+            ]
+        },
+        "slot_05": {
+            "action": "Summon Demonic Tyrant",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "tyrant_ramp_ready"
+            ]
+        },
+        "slot_06": {
+            "action": "Grimoire: Felguard",
+            "key": "F18",
+            "min_resource": 1,
+            "conditions": [
+                "tyrant_prep_grimoire"
+            ]
+        },
+        "slot_07": {
+            "action": "Power Siphon",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "demonic_core_starved"
+            ]
+        },
+        "slot_08": {
+            "action": "Guillotine / Bilescourge",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_burst_needed"
+            ]
+        },
+        "slot_09": {
+            "action": "Doom",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "dot_refresh_doom"
+            ]
+        },
+        "slot_11": {
+            "action": "Spell Lock / Axe Toss",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Axe Toss (Stun)",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "stun_needed",
+                "smart_threat_peel"
+            ]
+        },
+        "slot_13": {
+            "action": "Mortal Coil / Shadowfury",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "cc_crowd_control"
+            ]
+        },
+        "slot_14": {
+            "action": "Unending Resolve",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_15": {
+            "action": "Dark Pact",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "shield_needed_anticipation"
+            ]
+        },
+        "slot_16": {
+            "action": "Healthstone",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "health_critical"
+            ]
+        },
+        "slot_17": {
+            "action": "Demonic Circle: Teleport",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "hazard_escape_teleport"
+            ]
+        },
+        "slot_18": {
+            "action": "Burning Rush",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "burning_rush_throttle"
+            ]
+        },
+        "slot_20": {
+            "action": "Summon Felguard",
+            "key": "Ctrl+F33",
+            "min_resource": 1,
+            "conditions": [
+                "pet_dead_check"
+            ]
+        }
+    },
+    "proc_priority": {
+        "tyrant_setup": [
+            "slot_02",
+            "slot_06",
+            "slot_03",
+            "slot_05"
+        ],
+        "rotation": [
+            "slot_02",
+            "slot_03",
+            "slot_01"
+        ]
+    }
+}

@@ -2,28 +2,28 @@
     "spec_id": 103,
     "counters": [
         {
-            "enemy_spec": 64,
-            "trigger": "Polymorph",
-            "response_slot": "slot_01",
-            "desc": "Mage Cast -> Skull Bash (Interrupt)"
-        },
-        {
-            "enemy_spec": 261,
-            "trigger": "Kidney Shot",
-            "response_slot": "slot_15",
-            "desc": "Rogue Stun -> Barkskin (Pre-Wall)"
+            "enemy_spec": 102,
+            "trigger": "Convoke the Spirits",
+            "response_slot": "slot_12",
+            "desc": "Druid Channel -> Leg Sweep"
         },
         {
             "enemy_spec": 71,
             "trigger": "Bladestorm",
-            "response_slot": "slot_17",
-            "desc": "Warrior Spin -> Stampeding Roar (Run)"
+            "response_slot": "slot_15",
+            "desc": "Warrior Spin -> Touch of Karma"
         },
         {
-            "enemy_spec": 105,
-            "trigger": "Entangling Roots",
-            "response_slot": "slot_18",
-            "desc": "Druid Root -> Dash (Shift-Break)"
+            "enemy_spec": 64,
+            "trigger": "Greater Pyroblast",
+            "response_slot": "slot_15",
+            "desc": "Mage Nuke -> Touch of Karma"
+        },
+        {
+            "enemy_spec": 259,
+            "trigger": "Deathmark",
+            "response_slot": "slot_16",
+            "desc": "Rogue Bleeds -> Diffuse Magic (Cleanse)"
         }
     ]
 }

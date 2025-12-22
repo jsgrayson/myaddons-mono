@@ -2,28 +2,28 @@
     "spec_id": 63,
     "counters": [
         {
-            "enemy_spec": 72,
-            "trigger": "Recklessness",
-            "response_slot": "slot_18",
-            "desc": "Fury Burst -> Alter Time (Pre-mitigate)"
-        },
-        {
-            "enemy_spec": 253,
-            "trigger": "Bestial Wrath",
-            "response_slot": "slot_12",
-            "desc": "Hunter Pets -> Blast Wave (Knock)"
-        },
-        {
-            "enemy_spec": 261,
-            "trigger": "Shadowy Duel",
+            "enemy_spec": 64,
+            "trigger": "Polymorph",
             "response_slot": "slot_13",
-            "desc": "Rogue Duel -> Ice Block"
+            "desc": "Mage Poly -> Dark Simulacrum (Steal)"
         },
         {
-            "enemy_spec": 105,
-            "trigger": "Skull Bash",
-            "response_slot": "slot_17",
-            "desc": "Druid Charge -> Shimmer (Kite)"
+            "enemy_spec": 70,
+            "trigger": "Hammer of Justice",
+            "response_slot": "slot_14",
+            "desc": "Paladin Stun -> AMS (Immunity)"
+        },
+        {
+            "enemy_spec": 264,
+            "trigger": "Mana Tide Totem",
+            "response_slot": "slot_24",
+            "desc": "Shaman Totem -> Chains of Ice (Snare)"
+        },
+        {
+            "enemy_spec": 257,
+            "trigger": "Void Eruption",
+            "response_slot": "slot_14",
+            "desc": "Devourer Burst -> AMS"
         }
     ]
 }

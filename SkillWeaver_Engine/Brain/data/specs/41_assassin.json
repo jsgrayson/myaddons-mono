@@ -1,0 +1,289 @@
+{
+    "spec_id": 41,
+    "spec_name": "Assassination Rogue",
+    "resource_type": "energy",
+    "secondary_resource": "combo_points",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Garrote",
+            "key": "F13",
+            "min_resource": 45,
+            "conditions": [
+                "target_valid",
+                "pandemic_gate_garrote"
+            ]
+        },
+        "slot_02": {
+            "action": "Rupture",
+            "key": "F14",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid",
+                "pandemic_gate_rupture",
+                "combo_points_4_plus"
+            ]
+        },
+        "slot_03": {
+            "action": "Mutilate / Ambush",
+            "key": "F15",
+            "min_resource": 50,
+            "conditions": [
+                "target_valid",
+                "stealth_check_ambush",
+                "energy_pool_check"
+            ]
+        },
+        "slot_04": {
+            "action": "Envenom",
+            "key": "F16",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid",
+                "combo_points_4_plus",
+                "kingsbane_rush_mode"
+            ]
+        },
+        "slot_05": {
+            "action": "Deathmark",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Fan of Knives",
+            "key": "F18",
+            "min_resource": 35,
+            "conditions": [
+                "aoe_count_3_plus"
+            ]
+        },
+        "slot_07": {
+            "action": "Crimson Tempest",
+            "key": "F19",
+            "min_resource": 35,
+            "conditions": [
+                "aoe_finisher_check"
+            ]
+        },
+        "slot_08": {
+            "action": "Shiv",
+            "key": "F20",
+            "min_resource": 20,
+            "conditions": [
+                "enrage_dispel_needed",
+                "toxic_blade_burst"
+            ]
+        },
+        "slot_09": {
+            "action": "Shadowstep",
+            "key": "F21",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed"
+            ]
+        },
+        "slot_10": {
+            "action": "Kingsbane",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_11": {
+            "action": "Kick",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Blind",
+            "key": "F24",
+            "min_resource": 0,
+            "conditions": [
+                "healer_cc_peel"
+            ]
+        },
+        "slot_13": {
+            "action": "Kidney Shot",
+            "key": "Shift+F13",
+            "min_resource": 25,
+            "conditions": [
+                "stun_needed"
+            ]
+        },
+        "slot_14": {
+            "action": "Feint",
+            "key": "Shift+F14",
+            "min_resource": 35,
+            "conditions": [
+                "mitigation_needed_aoe"
+            ]
+        },
+        "slot_15": {
+            "action": "Cloak of Shadows",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "magic_immunity_needed"
+            ]
+        },
+        "slot_16": {
+            "action": "Evasion",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_physical"
+            ]
+        },
+        "slot_17": {
+            "action": "Sprint",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "mobility_burst_needed"
+            ]
+        },
+        "slot_18": {
+            "action": "Tricks of the Trade",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "tricks_tank_snap"
+            ]
+        },
+        "slot_21": {
+            "action": "Smoke Bomb",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "pvp_kill_window"
+            ]
+        },
+        "slot_22": {
+            "action": "Dismantle",
+            "key": "Shift+F22",
+            "min_resource": 25,
+            "conditions": [
+                "disarm_needed"
+            ]
+        },
+        "slot_23": {
+            "action": "Death from Above",
+            "key": "Shift+F23",
+            "min_resource": 25,
+            "conditions": [
+                "gap_closer_damage"
+            ]
+        },
+        "slot_24": {
+            "action": "Vanish",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": [
+                "threat_drop_vanish",
+                "stealth_reset_burst"
+            ]
+        },
+        "slot_25": {
+            "action": "Ambush",
+            "key": "Ctrl+F13",
+            "min_resource": 50,
+            "conditions": [
+                "stealth_check_ambush"
+            ]
+        },
+        "slot_26": {
+            "action": "Poisoned Knife",
+            "key": "Ctrl+F14",
+            "min_resource": 40,
+            "conditions": [
+                "ranged_pull"
+            ]
+        },
+        "slot_27": {
+            "action": "Thistle Tea",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "energy_starved"
+            ]
+        },
+        "slot_28": {
+            "action": "Cold Blood",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "big_crit_needed"
+            ]
+        },
+        "slot_29": {
+            "action": "Crimson Vial",
+            "key": "Ctrl+F17",
+            "min_resource": 20,
+            "conditions": [
+                "self_heal_needed"
+            ]
+        },
+        "slot_30": {
+            "action": "Distract",
+            "key": "Ctrl+F18",
+            "min_resource": 30,
+            "conditions": [
+                "patrol_stop"
+            ]
+        },
+        "slot_31": {
+            "action": "Sap",
+            "key": "Ctrl+F19",
+            "min_resource": 35,
+            "conditions": [
+                "cc_needed_ooc"
+            ]
+        },
+        "slot_32": {
+            "action": "Pickpocket",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "fun_detected"
+            ]
+        },
+        "slot_33": {
+            "action": "Slice and Dice",
+            "key": "Ctrl+F21",
+            "min_resource": 25,
+            "conditions": [
+                "buff_refresh"
+            ]
+        },
+        "slot_34": {
+            "action": "Shadowmeld",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "combat_drop"
+            ]
+        }
+    },
+    "proc_priority": {
+        "kingsbane_ramp": [
+            "slot_05",
+            "slot_08",
+            "slot_04"
+        ],
+        "rotation": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_25",
+            "slot_33"
+        ]
+    }
+}

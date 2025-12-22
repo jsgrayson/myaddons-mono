@@ -1,0 +1,41 @@
+{
+    "spec_id": 31,
+    "counters": [
+        {
+            "enemy_spec": 63,
+            "trigger": "Combustion",
+            "response_slot": "slot_13",
+            "desc": "Mage Bust -> Roar of Sacrifice (Crit Immune)"
+        },
+        {
+            "enemy_spec": 262,
+            "trigger": "Stormkeeper",
+            "response_slot": "slot_13",
+            "desc": "Ele Burst -> Roar of Sacrifice"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadowy Duel",
+            "response_slot": "slot_15",
+            "desc": "Rogue Duel -> Turtle (Immune)"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Icy Veins",
+            "response_slot": "slot_11",
+            "desc": "Mage Burst -> Counter Shot"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Convoke the Spirits",
+            "response_slot": "slot_11",
+            "desc": "Druid Convoke -> Counter Shot"
+        },
+        {
+            "enemy_spec": 71,
+            "trigger": "Bladestorm",
+            "response_slot": "slot_17",
+            "desc": "War Spin -> Disengage (Kite)"
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "spec_id": 43,
+    "spec_name": "Subtlety Rogue",
+    "resource_type": "energy",
+    "secondary_resource": "combo_points",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Backstab",
+            "key": "F13",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid",
+                "not_stealthed",
+                "combo_points_lt_5"
+            ]
+        },
+        "slot_02": {
+            "action": "Shadowstrike",
+            "key": "F14",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid",
+                "is_stealthed_or_dance",
+                "combo_points_lt_5"
+            ]
+        },
+        "slot_03": {
+            "action": "Eviscerate",
+            "key": "F15",
+            "min_resource": 35,
+            "conditions": [
+                "combo_points_gte_5",
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Secret Technique",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "combo_points_gte_5",
+                "target_valid",
+                "cooldown_ready"
+            ]
+        },
+        "slot_05": {
+            "action": "Rupture",
+            "key": "F17",
+            "min_resource": 25,
+            "conditions": [
+                "combo_points_gte_4",
+                "target_debuff_absent_rupture",
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Symbols of Death",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active",
+                "energy_lt_80"
+            ]
+        },
+        "slot_07": {
+            "action": "Shadow Blades",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned"
+            ]
+        },
+        "slot_08": {
+            "action": "Shadow Dance",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "burst_aligned",
+                "not_stealthed_or_dance"
+            ]
+        },
+        "slot_11": {
+            "action": "Kick",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 40,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Kidney Shot",
+            "key": "Alt+F14",
+            "min_resource": 25,
+            "conditions": [
+                "combo_points_gte_5",
+                "trigger_stun",
+                "target_not_dr_stun"
+            ]
+        },
+        "slot_13": {
+            "action": "Blind",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "trigger_cc",
+                "target_valid"
+            ]
+        },
+        "slot_14": {
+            "action": "Feint",
+            "key": "Ctrl+F26",
+            "min_resource": 35,
+            "conditions": [
+                "aoe_incoming"
+            ]
+        },
+        "slot_15": {
+            "action": "Evasion",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "priority": 500,
+            "conditions": [
+                "survival_minor"
+            ]
+        },
+        "slot_16": {
+            "action": "Cloak of Shadows",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "priority": 600,
+            "conditions": [
+                "survival_magic_critical"
+            ]
+        },
+        "slot_17": {
+            "action": "Shadowstep",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "requires_aim": false,
+            "conditions": [
+                "gap_closer_needed",
+                "target_valid",
+                "safe_vector"
+            ]
+        },
+        "slot_24": {
+            "action": "Vanish",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "priority": 999,
+            "conditions": [
+                "survival_critical",
+                "trigger_predictive_vanish"
+            ]
+        }
+    },
+    "proc_priority": {
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_08",
+                "energy_gte_80",
+                "combo_points_gte_5"
+            ],
+            "sequence": [
+                "slot_06",
+                "slot_07",
+                "slot_08",
+                "slot_02"
+            ]
+        },
+        "stealth_override": [
+            "slot_02"
+        ],
+        "mode_priorities": {
+            "DUNGEON": [
+                "slot_04",
+                "slot_05"
+            ],
+            "RAID": [
+                "slot_03",
+                "slot_05"
+            ]
+        }
+    }
+}

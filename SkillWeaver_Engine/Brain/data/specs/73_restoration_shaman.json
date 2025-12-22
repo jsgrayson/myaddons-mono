@@ -1,0 +1,171 @@
+{
+    "spec_id": 73,
+    "spec_name": "Restoration Shaman",
+    "resource_type": "mana",
+    "secondary_resource": "cloudburst_stored",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Riptide",
+            "key": "F13",
+            "min_resource": 1000,
+            "conditions": [
+                "target_valid",
+                "riptide_spread_needed"
+            ]
+        },
+        "slot_02": {
+            "action": "Healing Wave",
+            "key": "F14",
+            "min_resource": 1500,
+            "conditions": [
+                "target_valid",
+                "efficiency_heal_needed"
+            ]
+        },
+        "slot_03": {
+            "action": "Healing Surge",
+            "key": "F15",
+            "min_resource": 3000,
+            "conditions": [
+                "target_valid",
+                "emergency_heal_needed"
+            ]
+        },
+        "slot_04": {
+            "action": "Chain Heal",
+            "key": "F16",
+            "min_resource": 4000,
+            "conditions": [
+                "aoe_healing_needed_cluster"
+            ]
+        },
+        "slot_05": {
+            "action": "Cloudburst Totem",
+            "key": "F17",
+            "min_resource": 1200,
+            "conditions": [
+                "cloudburst_window_start"
+            ]
+        },
+        "slot_06": {
+            "action": "Healing Stream Totem",
+            "key": "F18",
+            "min_resource": 800,
+            "conditions": [
+                "totem_maintenance",
+                "movement_safe"
+            ]
+        },
+        "slot_07": {
+            "action": "Ascendance",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "burst_healing_critical"
+            ]
+        },
+        "slot_08": {
+            "action": "Spirit Link Totem",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "raid_damage_lethal_cluster"
+            ]
+        },
+        "slot_09": {
+            "action": "Mana Tide Totem",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "mana_restore_party"
+            ]
+        },
+        "slot_11": {
+            "action": "Wind Shear",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Capacitor Totem",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "aoe_cc_needed",
+                "cluster_check"
+            ]
+        },
+        "slot_13": {
+            "action": "Astral Shift",
+            "key": "Ctrl+F25",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_14": {
+            "action": "Earth Elemental",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "tank_buster_anticipated"
+            ]
+        },
+        "slot_15": {
+            "action": "Spiritwalker's Grace",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "mobile_casting_needed"
+            ]
+        },
+        "slot_17": {
+            "action": "Ghost Wolf",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "combat_check"
+            ]
+        },
+        "slot_18": {
+            "action": "Wind Rush Totem",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "party_mobility_needed"
+            ]
+        },
+        "slot_24": {
+            "action": "Thunderstorm",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "knockback_peel_needed"
+            ]
+        }
+    },
+    "proc_priority": {
+        "healing_loop": [
+            "slot_05",
+            "slot_01",
+            "slot_06",
+            "slot_04",
+            "slot_03"
+        ],
+        "utility": [
+            "slot_11",
+            "slot_12",
+            "slot_18"
+        ],
+        "cooldowns": [
+            "slot_08",
+            "slot_07",
+            "slot_09"
+        ]
+    }
+}

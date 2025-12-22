@@ -1,0 +1,181 @@
+{
+    "spec_id": 63,
+    "spec_name": "Unholy Death Knight",
+    "resource_type": "runic_power",
+    "secondary_resource": "runes",
+    "universal_slots": {
+        "slot_01": {
+            "action": "Festering Strike",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "wounds_needed_gate"
+            ]
+        },
+        "slot_02": {
+            "action": "Scourge Strike / Clawing Shadows",
+            "key": "F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "wound_burst_check"
+            ]
+        },
+        "slot_03": {
+            "action": "Death Coil",
+            "key": "F15",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid",
+                "sudden_doom_proc",
+                "runic_power_dump"
+            ]
+        },
+        "slot_04": {
+            "action": "Apocalypse",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "festering_wound_gate_4"
+            ]
+        },
+        "slot_05": {
+            "action": "Army of the Dead / Abom Limb",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "burst_window_active"
+            ]
+        },
+        "slot_06": {
+            "action": "Dark Transformation",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "pet_burst_needed"
+            ]
+        },
+        "slot_07": {
+            "action": "Unholy Blight",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "disease_spread_needed"
+            ]
+        },
+        "slot_08": {
+            "action": "Epidemic",
+            "key": "Ctrl+F14",
+            "min_resource": 30,
+            "conditions": [
+                "aoe_runic_dump"
+            ]
+        },
+        "slot_09": {
+            "action": "Outbreak",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "dot_refresh_plague"
+            ]
+        },
+        "slot_11": {
+            "action": "Mind Freeze",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "latency_offset_ms": 0,
+            "conditions": [
+                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Pet Kick / Asphyxiate",
+            "key": "Alt+F14",
+            "min_resource": 0,
+            "conditions": [
+                "dual_interrupt_check",
+                "stun_needed"
+            ]
+        },
+        "slot_13": {
+            "action": "Dark Simulacrum",
+            "key": "Alt+F15",
+            "min_resource": 0,
+            "conditions": [
+                "spell_steal_opportunity"
+            ]
+        },
+        "slot_14": {
+            "action": "Anti-Magic Shell",
+            "key": "Ctrl+F26",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_magic"
+            ]
+        },
+        "slot_15": {
+            "action": "Icebound Fortitude",
+            "key": "Ctrl+F27",
+            "min_resource": 0,
+            "conditions": [
+                "mitigation_needed_major"
+            ]
+        },
+        "slot_16": {
+            "action": "Death Pact",
+            "key": "Ctrl+F28",
+            "min_resource": 0,
+            "conditions": [
+                "panic_heal"
+            ]
+        },
+        "slot_17": {
+            "action": "Death's Advance",
+            "key": "Ctrl+F29",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "forced_movement_counter"
+            ]
+        },
+        "slot_18": {
+            "action": "Death Grip",
+            "key": "Ctrl+F30",
+            "min_resource": 0,
+            "conditions": [
+                "gap_closer_needed",
+                "peel_handshake"
+            ]
+        },
+        "slot_20": {
+            "action": "Raise Dead",
+            "key": "Ctrl+F33",
+            "min_resource": 0,
+            "conditions": [
+                "pet_dead_check"
+            ]
+        },
+        "slot_24": {
+            "action": "Chains of Ice",
+            "key": "Ctrl+F36",
+            "min_resource": 0,
+            "conditions": [
+                "snare_needed"
+            ]
+        }
+    },
+    "proc_priority": {
+        "apocalypse_setup": [
+            "slot_01",
+            "slot_04",
+            "slot_06"
+        ],
+        "rotation": [
+            "slot_03",
+            "slot_02"
+        ]
+    }
+}
