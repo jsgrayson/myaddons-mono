@@ -1,5 +1,4 @@
 import mss
-import mss.tools
 import numpy as np
 import json
 import os
@@ -7,224 +6,379 @@ import sys
 import time
 import random
 import glob
+import Quartz  # Required: pip install pyobjc-framework-Quartz
 from modules.serial_link import SerialLink as ArduinoBridge
-import ConditionEngine
+from modules.vision import ScreenScanner
+from ConditionEngine import ConditionEngine
+from StateEngine import StateEngine
+from HardwareConfig import get_profile
+import signal
+import threading
+import queue
 
-# --- UNIVERSAL SKILLWEAVER ENGINE (v4.2 PRECISION) ---
-# Supports ALL 13 Classes / 60 Specs. CALIBRATED SIGNAL (Divisor 229.5).
-# Dynamic Spec Loading & Adaptive Decoder.
+# Global reference for signal handling
+_ENGINE_INSTANCE = None
 
-REACTION_MEAN = 0.08
-REACTION_STD = 0.02
-INPUT_JITTER = 0.01
 
-# v4.2 CALIBRATED DIVISOR: 218.0 (Compensates for display blue-loss)
-DIVISOR_UNIVERSAL = 218.0
 
+# v6.0 QUARTZ ENGINE - NO SUDO REQUIRED
+# Uses Quartz Event Services for key suppression instead of HID
+
+# Calibration (Adjusted for ~5.5% signal loss: 218 * 0.95 ≈ 207)
+DIVISOR_UNIVERSAL = 207.0
+
+# Humanization Constants (Gaussian Distribution)
+REACTION_MEAN = 0.08  # Average reaction time (80ms)
+REACTION_STD = 0.02   # Standard Deviation (20ms)
+INPUT_JITTER = 0.01   # Base hardware jitter (10ms)
+
+# KEY_MAP: Byte codes matching Arduino firmware (ARDUINO_FIRMWARE.md)
+# 8 base keys: F13, F16-F19, HOME, END, DELETE
+# Bar 1: Base (0x01-0x08)
+# Bar 2: Shift (0x09-0x10)
+# Bar 3: Ctrl (0x11-0x18)
+# Bar 4: Alt (0x19-0x20)
 KEY_MAP = {
-    "F13": 0x01, "F14": 0x02, "F15": 0x03, "F16": 0x04, "F17": 0x05, "F18": 0x06, "F19": 0x07, "F20": 0x08,
-    "F21": 0x09, "F22": 0x0A, "F23": 0x0B, "F24": 0x0C,
-    "SHIFT+F13": 0x0D, "SHIFT+F14": 0x0E, "SHIFT+F15": 0x0F, "SHIFT+F16": 0x10, "SHIFT+F17": 0x11, "SHIFT+F18": 0x12,
-    "SHIFT+F21": 0x13, "SHIFT+F22": 0x14, "SHIFT+F23": 0x15, "SHIFT+F24": 0x16,
-    "CTRL+F13": 0x17, "CTRL+F14": 0x18, "CTRL+F15": 0x19, "CTRL+F16": 0x1A, "CTRL+F17": 0x1B, "CTRL+F18": 0x1C,
-    "CTRL+F19": 0x1D, "CTRL+F20": 0x1E, "CTRL+F21": 0x1F, "CTRL+F22": 0x20
+    # Bar 1: 0x01 - 0x08
+    "F13": 0x01, "F16": 0x02, "F17": 0x03, "F18": 0x04,
+    "F19": 0x05, "HOME": 0x06, "END": 0x07, "DELETE": 0x08,
+    
+    # Bar 2: 0x09 - 0x10
+    "SHIFT+F13": 0x09, "SHIFT+F16": 0x0A, "SHIFT+F17": 0x0B, "SHIFT+F18": 0x0C,
+    "SHIFT+F19": 0x0D, "SHIFT+HOME": 0x0E, "SHIFT+END": 0x0F, "SHIFT+DELETE": 0x10,
+    
+    # Bar 3: 0x11 - 0x18
+    "CTRL+F13": 0x11, "CTRL+F16": 0x12, "CTRL+F17": 0x13, "CTRL+F18": 0x14,
+    "CTRL+F19": 0x15, "CTRL+HOME": 0x16, "CTRL+END": 0x17, "CTRL+DELETE": 0x18,
+    
+    # Bar 4: 0x19 - 0x20
+    "ALT+F13": 0x19, "ALT+F16": 0x1A, "ALT+F17": 0x1B, "ALT+F18": 0x1C,
+    "ALT+F19": 0x1D, "ALT+HOME": 0x1E, "ALT+END": 0x1F, "ALT+DELETE": 0x20,
+    
+    "TAB": 0x21
 }
 
-# --- UNIVERSAL SPEC DATABASE ---
-SPEC_DB = {
-    11: "Warrior - Arms", 12: "Warrior - Fury", 13: "Warrior - Protection",
-    21: "Paladin - Holy", 22: "Paladin - Protection", 23: "Paladin - Retribution",
-    31: "Hunter - Beast Mastery", 32: "Hunter - Marksmanship", 33: "Hunter - Survival",
-    41: "Rogue - Assassination", 42: "Rogue - Outlaw", 43: "Rogue - Subtlety",
-    51: "Priest - Discipline", 52: "Priest - Holy", 53: "Priest - Shadow",
-    61: "Death Knight - Blood", 62: "Death Knight - Frost", 63: "Death Knight - Unholy",
-    71: "Shaman - Elemental", 72: "Shaman - Enhancement", 73: "Shaman - Restoration",
-    81: "Mage - Arcane", 82: "Mage - Fire", 83: "Mage - Frost",
-    91: "Warlock - Affliction", 92: "Warlock - Demonology", 93: "Warlock - Destruction",
-    101: "Monk - Brewmaster", 102: "Monk - Mistweaver", 103: "Monk - Windwalker",
-    111: "Druid - Balance", 112: "Druid - Feral", 113: "Druid - Guardian", 114: "Druid - Restoration",
-    121: "Demon Hunter - Havoc", 122: "Demon Hunter - Vengeance",
-    131: "Evoker - Devastation", 132: "Evoker - Preservation", 133: "Evoker - Augmentation"
-}
+
+def safe_pixel_init() -> bool:
+    """Test screen capture before starting."""
+    print(">>> [SECURITY] Testing Screen Capture...")
+    try:
+        with mss.mss() as sct:
+            sct.grab({"top": 0, "left": 0, "width": 1, "height": 1})
+            print(">>> [SECURITY] Screen Access Granted ✓")
+            return True
+    except Exception as e:
+        print(f"!!! [HALT] Screen Recording Denied: {e}")
+        print("!!! Add Terminal to System Settings > Privacy > Screen Recording")
+        return False
+
 
 class SkillWeaverEngine:
     def __init__(self):
+        profile = get_profile()
         self.sct = mss.mss()
-        self.monitor = self.sct.monitors[1]
         self.bridge = ArduinoBridge()
+        self.vision = ScreenScanner()  # Vision for ground targeting
         self.bridge_connected = False
         self.active_spec = None
         self.rotation = {}
-        self.priority_list = []
-        self.next_action_time = 0
-        self.last_load_attempt = 0
         
-        # Calibration State
-        self.uplink_y = 1116 
-        self.uplink_x = 0
-        self.scale = 2 # Retina
+        # Calibration from HardwareConfig
+        self.scale = profile["SCREEN_SCALE"]
+        self.uplink_y = profile["START_Y"]
+        self.uplink_x = profile["START_X"]
         
-        # Paths
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.spec_dir = os.path.join(self.base_dir, "data", "specs")
+        self.state_engine = StateEngine(self.base_dir)
 
-    def calibrate(self):
-        print("\n[SCAN] Searching for UNIVERSAL Stealth Signal (v4.1)...")
-        scan_height = 200 
-        scan_area = {
-            "top": self.monitor["height"] - scan_height,
-            "left": 0,
-            "width": 128,
-            "height": scan_height
-        }
-        
-        img = np.array(self.sct.grab(scan_area))
-        found = False
-        for y in range(scan_height - 1, 0, -1):
-            for x in range(0, 10):
-                px = img[y, x]
-                diff = int(px[0]) - int(px[2])
-                
-                # Pilot signal (0.4 Blue - 0.08 Red > 50 diff)
-                if diff > 50:
-                    self.uplink_y = scan_area["top"] + y
-                    self.uplink_x = scan_area["left"] + x
-                    print(f"[LOCK] UPLINK ESTABLISHED at Y={self.uplink_y}, X={self.uplink_x}")
-                    found = True
-                    break
-            if found: break
-        
-        if not found:
-            print("[CRITICAL] NO SIGNAL DETECTED. CHECK GAME ADDON.")
-            sys.exit(1)
-            
-    def decode(self, pixel, divisor=DIVISOR_UNIVERSAL):
-        diff = int(pixel[0]) - int(pixel[2])
-        if diff < 5: return 0.0, diff
-        val = (diff / divisor) * 255.0
-        return val, diff
+        # GCD / Casting State
+        self.gcd_until = 0
+        self.channel_until = 0
+        self.last_action_name = ""
+        self.last_action_name = ""
+        self.lock = threading.Lock()
 
-    def load_rotation(self, hash_id):
-        h_int = int(hash_id + 0.5)
-        if h_int == self.active_spec: return
-        
-        # Debounce loading
-        if time.time() - self.last_load_attempt < 2: return
-        self.last_load_attempt = time.time()
+        # GCD / Casting State (Using perf_counter for precision)
+        self._gcd_until = 0
+        self._channel_until = 0
 
-        # DYNAMIC PULL BASED ON SPEC ID (e.g., 41_*.json)
-        pattern = os.path.join(self.spec_dir, f"{h_int}_*.json")
-        matches = glob.glob(pattern)
-        
-        if not matches:
-            print(f"\n[ERROR] No rotation file discovered for Spec ID: {h_int}")
-            return False
-            
-        path = matches[0]
-        filename = os.path.basename(path)
-            
-        try:
-            with open(path, 'r') as f:
-                data = json.load(f)
-                
-                # AUTHORITATIVE FORMAT PARSING
-                self.rotation = data.get('universal_slots', {})
-                # Combined Rotation (Ramp + Normal)
-                priorities = data.get('proc_priority', {}).get('rotation', [])
-                ramp = data.get('proc_priority', {}).get('kingsbane_ramp', [])
-                self.priority_list = ramp + priorities
-                
-                self.active_spec = h_int
-                spec_name = data.get('spec_name', SPEC_DB.get(h_int, "Unknown"))
-                print(f"\n[SYSTEM] Rotation Active: {filename} ({spec_name})")
-                print(f"[SYSTEM] Linked {len(self.priority_list)} logic nodes.")
-                return True
-        except Exception as e:
-            print(f"\n[ERROR] JSON Load Failed for {filename}: {e}")
-            return False
+        # Execution Queue (Worker prevents blocking the Quartz callback)
+        self.cmd_queue = queue.Queue()
+        self.worker_thread = threading.Thread(target=self._execution_worker, daemon=True)
+        self.worker_thread.start()
 
-    def evaluate(self, slot_id, state):
-        if slot_id not in self.rotation: return False
-        slot = self.rotation[slot_id]
-        if state['power'] < slot.get('min_resource', 0): return False
-        for c in slot.get('conditions', []):
-            if not ConditionEngine.evaluate(c, state): return False
-        return True
-
-    def run(self):
-        print(">> SkillWeaver Engine Active (v4.1 Universal Core)")
-        self.calibrate()
-        self.bridge_connected = self.bridge.connect()
-        
+    def _execution_worker(self):
+        """Background thread to handle serial pulses and humanization."""
         while True:
             try:
-                # 1. CAPTURE
-                snap = np.array(self.sct.grab({
-                    "top": self.uplink_y, 
-                    "left": self.uplink_x, 
-                    "width": 128, 
-                    "height": 1
-                }))
-                row = snap[0]
-
-                # 2. DECODE
-                pil_val, pil_diff = self.decode(row[0])
-                h, _ = self.decode(row[1])
-
-                # v4.2: Universal Telemetry
-                sec_raw = self.decode(row[8])[0]
-                sec_val = int(round(sec_raw / 25.0))
-
-                state = {
-                    "hash": h,
-                    "combat": self.decode(row[2])[0] > 128,
-                    "hp": min(100.0, (self.decode(row[3])[0] / 255.0) * 100),
-                    "thp": min(100.0, (self.decode(row[4])[0] / 255.0) * 100),
-                    "valid": self.decode(row[5])[0] > 128,
-                    "power": min(100.0, (self.decode(row[7])[0] / 255.0) * 100),
-                    "sec": sec_val,
-                    "snap": self.decode(row[30])[0] > 128
-                }
-
-
-
-                # 3. SPEC WATCHDOG
-                h_int = int(h + 0.5)
-                if h_int > 0 and h_int != self.active_spec:
-                    self.load_rotation(h)
-
-                # 4. STATUS + DEBUG
-                status = "COMBAT" if state['combat'] else "IDLE  "
-                spec_name = SPEC_DB.get(h_int, "UNKNOWN")
-                # DEBUG: Show raw Blue/Red from Spec pixel
-                spec_pix = row[1]
-                raw_b, raw_r = int(spec_pix[0]), int(spec_pix[2])
-                output = f"\r[{status}] {spec_name} ({h_int}) | HP:{state['hp']:.0f}% | Res:{state['power']:.0f}% | B:{raw_b} R:{raw_r} Diff:{raw_b-raw_r}   "
-
-                # 5. ROTATION EXECUTION
-                if self.active_spec and state['combat']:
-                    if time.time() >= self.next_action_time:
-                        for slot_id in self.priority_list:
-                            if self.evaluate(slot_id, state):
-                                action = self.rotation[slot_id]
-                                byte = KEY_MAP.get(action['key']) 
-                                if not byte:
-                                    byte = KEY_MAP.get(action['key'].upper())
-                                
-                                if byte and self.bridge_connected:
-                                    self.bridge.send_pulse(byte)
-                                    delay = max(0, random.normalvariate(REACTION_MEAN, REACTION_STD)) + INPUT_JITTER
-                                    self.next_action_time = time.time() + delay
-                                    output += f" => CAST: {action['action']}   "
-                                    break
+                task = self.cmd_queue.get()
+                if not task: break
                 
-                sys.stdout.write(output.ljust(120))
-                sys.stdout.flush()
-                time.sleep(0.01)
+                now = time.time()
+                action = task['action']
+                byte = task['byte']
+                delay = task['delay']
+                flick_data = task.get('flick')
 
-            except KeyboardInterrupt:
-                print("\n[STOP] SkillWeaver Engine halted.")
-                break
+                # Humanized reaction wait
+                if delay > 0:
+                    time.sleep(delay)
+
+                if flick_data:
+                    dx, dy = flick_data
+                    self.bridge.send_flick(byte, dx, dy)
+                    print(f"[TX] {action} (AIMED) | dx={dx}, dy={dy}")
+                else:
+                    self.bridge.send_pulse(byte)
+                    power_val = task.get('power', 0)
+                    print(f"[TX] {action} | Res:{power_val:.0f}% | Delay:{delay*1000:.0f}ms")
+                
+                self.cmd_queue.task_done()
+            except Exception as e:
+                print(f"[ERROR] Worker Thread: {e}")
+                import traceback
+                traceback.print_exc()
+
+    def decode_px(self, data_row, idx):
+        # PROTOCOL v4: Differential math for Retina calibration
+        pos = int(idx)
+        if pos >= len(data_row): return 0.0
+        px = data_row[pos] # BGR
+        diff = max(0, int(px[0]) - int(px[2]))
+        return max(0, min(255, (diff / DIVISOR_UNIVERSAL) * 255.0))
+
+    def get_game_state(self):
+        """Vision: Triggered when '2' is pressed."""
+        
+        def capture(y):
+            # Capture more pixels to reach the Plater Anchor at P16/P32
+            snap = np.array(self.sct.grab({
+                "top": int(y), 
+                "left": int(self.uplink_x), 
+                "width": 256, 
+                "height": 1
+            }))
+            return snap[0]
+
+        row = capture(self.uplink_y)
+        
+        # HEARTBEAT RE-SYNC (P0 is the blue heartbeat anchor)
+        if self.decode_px(row, 0) < 30: # If P0 is blank, we are likely shifted
+            for offset in [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5]:
+                test_row = capture(self.uplink_y + offset)
+                if self.decode_px(test_row, 0) > 40: 
+                    row = test_row
+                    print(f"[RE-SYNC] Found heartbeat at Y offset {offset}")
+                    break
+
+        
+        state = {
+            "hash": self.decode_px(row, 1),
+            "combat": self.decode_px(row, 2) > 128,
+            "hp": min(100.0, self.decode_px(row, 3) / 255.0 * 100),
+            "thp": min(100.0, self.decode_px(row, 4) / 255.0 * 100),
+            "power": min(100.0, self.decode_px(row, 7) / 255.0 * 100),
+            "sec": int(round(self.decode_px(row, 8) / 25.0)),
+            "target_valid": self.decode_px(row, 5) > 128,
+            "range": int(self.decode_px(row, 6) / 4.25),
+            "interruptible": self.decode_px(row, 18) > 128,
+            "stealthed": self.decode_px(row, 19) > 128,
+            "nearby_enemies_count": int(self.decode_px(row, 9) / 25.0),
+            # Pure Pixel Dots
+            "dots": [self.decode_px(row, i) / 10.0 for i in range(11, 26)],
+            "target_dot_remaining": self.decode_px(row, 11) / 10.0,
+            "plater_anchor": self.decode_px(row, 16) > 200, 
+            "_raw_width": len(row),
+            "_raw_row": row
+        }
+
+        if state["hash"] < 1:
+            print(f"[DEBUG] Blind reading from Y={self.uplink_y} | Buf:{len(row)}px")
+            samples = [row[i][:3].tolist() for i in range(min(len(row), 40))]
+            print(f"[DEBUG] First 40 pixels (BGR): {samples}")
+            
+        return state
+
+    def tap_callback(self, proxy, event_type, event, refcon):
+        """Quartz Handler: Runs as User, Hears '2', and SUPPRESSES."""
+        try:
+            keycode = Quartz.CGEventGetIntegerValueField(event, Quartz.kCGKeyboardEventKeycode)
+            
+            if keycode == 19:
+                # 1. ATOMIC LOCK & GCD CHECK
+                with self.lock:
+                    now = time.perf_counter()
+                    if now < self._gcd_until:
+                        return None
+                    if now < self._channel_until:
+                        return None
+                    
+                    # PROVISIONALLY set a short busy lock to prevent 
+                    # overlapping taps while we read the screen
+                    self._gcd_until = now + 0.3 
+                
+                # SUPPRESS IMMEDIATELY
+                try:
+                    state = self.get_game_state()
+                    dots = state.get('dots', [0,0,0])
+
+                    # Log state for debugging
+                    print(f"\n[BRAIN] Spec:{state['hash']:.0f} | HP:{state['hp']:.0f}% | THP:{state['thp']:.0f}% | Anchor:{'YES' if state['plater_anchor'] else 'no'} | Target:{'VALID' if state['target_valid'] else 'absent'}")
+                    print(f"[DOTS] VT:{dots[0]:.1f}s | SWP:{dots[1]:.1f}s | DP:{dots[2]:.1f}s")
+                    
+                    if dots[0] == 0:
+                        # Extra diagnostics: Show the first 32 physical pixels
+                        row = state['_raw_row']
+                        samples = []
+                        for i in range(32):
+                            val = self.decode_px(row, i)
+                            samples.append(f"{i}:{val:.0f}")
+                        print(f"[DEBUG] physical_strip: {' | '.join(samples)}")
+                    
+                    # 1. Dynamic spec loading
+                    if int(state['hash'] + 0.5) != self.active_spec:
+                        self.load_rotation(state['hash'])
+                    
+                    # 2. CLEAVE / MULTI-DOT (If supported by spec)
+                    if self.active_spec and self.state_engine.check_cleave_snap_back(state, self.active_spec):
+                        tab_byte = KEY_MAP.get("TAB")
+                        if tab_byte:
+                            self.bridge.send_pulse(tab_byte)
+                            print("[TX] TAB (Cleave Auto-Rotate)")
+                            # Don't return, allow rotation to fire on the new target immediately
+                            time.sleep(0.1) 
+                            state = self.get_game_state()
+
+                    if self.active_spec:
+                        optimal = self.state_engine.get_optimal_action(state)
+                        
+                        if optimal and self.bridge_connected:
+                            byte = KEY_MAP.get(optimal.get('key', '').upper())
+                            if byte:
+                                with self.lock:
+                                    now = time.perf_counter()
+                                    lock_padding = random.uniform(0.05, 0.15)
+                                    
+                                    # SET REAL LOCKS
+                                    gcd_dur = 1.4 + lock_padding
+                                    self._gcd_until = now + gcd_dur
+                                    self.last_action_name = optimal.get('action', '') # Moved here
+                                    
+                                    cast_dur = (optimal.get('cast_time', 0) or optimal.get('channel_time', 0))
+                                    if cast_dur > 0:
+                                        self._channel_until = now + cast_dur + lock_padding
+                                    elif optimal.get('is_channel', False):
+                                        self._channel_until = now + 2.5 + lock_padding
+                                    else:
+                                        self._channel_until = 0
+
+                                # Queue for worker
+                                delay = max(0, random.normalvariate(REACTION_MEAN, REACTION_STD)) + INPUT_JITTER
+                                
+                                flick_data = None
+                                if optimal.get('requires_aim'):
+                                    flick_data = self.vision.get_flick_offset(state.get('range', 10))
+
+                                self.cmd_queue.put({
+                                    'action': optimal['action'],
+                                    'byte': byte,
+                                    'delay': delay,
+                                    'flick': flick_data,
+                                    'power': state['power']
+                                })
+                            else:
+                                print(f"[WARN] No key mapping for: {optimal.get('key')}")
+                                with self.lock: self._gcd_until = 0 # Reset provisional lock if no action
+                        elif not self.bridge_connected:
+                            print("[WARN] Arduino not connected")
+                            with self.lock: self._gcd_until = 0 # Reset provisional lock if no action
+                    else:
+                        if state['hash'] < 1:
+                            print(f"[WARN] Brain is blind - reading zeros. Check WoW window focus.")
+                        else:
+                            print(f"[WARN] No spec loaded for hash {state['hash']:.0f}")
+                        with self.lock: self._gcd_until = 0 # Reset provisional lock if no action
+                
+                except Exception as e:
+                    with self.lock: self._gcd_until = 0
+                    print(f"[ERROR] Logic internal failure: {e}")
+                    import traceback
+                    traceback.print_exc()
+
+                return None # ALWAYS suppress '2' once detected
+                
+        except Exception as e:
+            print(f"[ERROR] Global Callback failure: {e}")
+            
+        return event
+
+    def load_rotation(self, hash_id):
+        """Dynamic rotation loader."""
+        h_int = int(hash_id + 0.5)
+        pattern = os.path.join(self.spec_dir, f"{h_int}_*.json")
+        matches = glob.glob(pattern)
+        if matches:
+            with open(matches[0], 'r') as f:
+                data = json.load(f)
+                self.active_spec = h_int
+                self.state_engine.load_spec(h_int, data)
+                print(f"\n[SYSTEM] Spec {h_int} Loaded.")
+
+    def stop(self):
+        """Signals the Quartz loop to stop."""
+        print("\n[STOP] Stopping Quartz RunLoop...")
+        Quartz.CFRunLoopStop(Quartz.CFRunLoopGetCurrent())
+
+    def run(self):
+        global _ENGINE_INSTANCE
+        _ENGINE_INSTANCE = self
+        
+        print("\n" + "=" * 50)
+        print("    SKILLWEAVER v6.0 (QUARTZ - NO SUDO)")
+        print("=" * 50)
+        
+        self.bridge_connected = self.bridge.connect()
+        if not self.bridge_connected:
+            print("!!! [WARNING] Arduino not connected - running in monitor mode")
+        
+        # Signal Setup for Ctrl+C
+        def signal_handler(sig, frame):
+            if _ENGINE_INSTANCE:
+                _ENGINE_INSTANCE.stop()
+        
+        signal.signal(signal.SIGINT, signal_handler)
+        
+        # Create Quartz Tap (User Session, No Sudo)
+        tap = Quartz.CGEventTapCreate(
+            Quartz.kCGSessionEventTap,
+            Quartz.kCGHeadInsertEventTap,
+            Quartz.kCGEventTapOptionDefault,
+            Quartz.CGEventMaskBit(Quartz.kCGEventKeyDown),
+            self.tap_callback,
+            None
+        )
+
+        if not tap:
+            print("\n!!! [CRITICAL] Quartz Event Tap failed!")
+            print("!!! Enable these in System Settings > Privacy & Security:")
+            print("!!!   - Accessibility (for Terminal)")
+            print("!!!   - Input Monitoring (for Terminal)")
+            sys.exit(1)
+
+        loop_source = Quartz.CFMachPortCreateRunLoopSource(None, tap, 0)
+        Quartz.CFRunLoopAddSource(Quartz.CFRunLoopGetCurrent(), loop_source, Quartz.kCFRunLoopDefaultMode)
+        Quartz.CGEventTapEnable(tap, True)
+        
+        print("\n[SYSTEM] Key Suppression Active")
+        print("[SYSTEM] Press '2' to engage rotation")
+        print("[SYSTEM] Press Ctrl+C to exit\n")
+        
+        # Start Loop
+        Quartz.CFRunLoopRun()
+        print("[STOP] Engine halted.")
+
 
 if __name__ == "__main__":
-    SkillWeaverEngine().run()
+    if safe_pixel_init():
+        SkillWeaverEngine().run()

@@ -1,21 +1,19 @@
--- SKILLWEAVER UNIVERSAL DRIVER v4.1 (BOOSTED)
--- SUPPORTS ALL 13 CLASSES & 60 SPECS (Dynamic Detection)
--- PROTOCOL: DARK MATTER (GAIN 0.90)
+-- SKILLWEAVER UNIVERSAL DRIVER (BEFORE-WORK STATE)
+-- PROTOCOL: 218.0 | DOTS: BOOLEAN | SPEC: 3-FORCE
 
--- 1. Setup Frame
 if not SW_Frame then
     SW_Frame = CreateFrame("Frame", "SW_Frame", UIParent)
     SW_Frame:SetSize(64, 1)
     SW_Frame:SetPoint("BOTTOMLEFT", 0, 0)
     SW_Frame:SetFrameStrata("BACKGROUND") 
 end
-
--- 2. PIXEL-PERFECT SCALING
 SW_Frame:SetScale(1 / UIParent:GetEffectiveScale())
 
--- 3. Initialize the Pixel Table
 local p = {}
 local BASE = 0.08
+local DIV = 218 
+local FACTOR = DIV / 255
+
 for i = 0, 31 do
     if not p[i] then
         p[i] = SW_Frame:CreateTexture(nil, "OVERLAY")
@@ -25,82 +23,97 @@ for i = 0, 31 do
     p[i]:SetColorTexture(BASE, BASE, BASE, 1) 
 end
 
--- 4. HIGH-GAIN ENCODER (0.90)
 local function SetPixel(idx, val)
-    local off = (math.max(0, math.min(255, val)) / 255) * 0.90
+    if not p[idx] then return end
+    local off = (math.max(0, math.min(255, val or 0)) / 255) * FACTOR
     p[idx]:SetColorTexture(BASE, BASE, BASE + off, 1)
 end
 
--- 5. DYNAMIC SECONDARY POWER MAP
-local SEC_MAP = {
-    [2] = 9,  -- Paladin (Holy Power)
-    [4] = 4,  -- Rogue (Combo Points)
-    [5] = 13, -- Priest (Insanity)
-    [6] = 5,  -- Death Knight (Runes)
-    [8] = 16, -- Mage (Arcane Charges)
-    [9] = 7,  -- Warlock (Soul Shards)
-    [10] = 12, -- Monk (Chi)
-    [11] = 4,  -- Druid (Combo Points)
-    [13] = 22, -- Evoker (Essence)
+-- DOT MAPPING (Simple Boolean)
+local DOTS = {
+    [34914]=11, [402668]=11, -- VT
+    [589]=12, [10894]=12, -- SWP
+    [2944]=13, [402662]=13 -- DP
 }
 
--- 6. MAJOR BUFF SNAPSHOT LIST
-local SNAPS = { 
-    [32645]=true, [185422]=true, [113860]=true, [10060]=true, [5217]=true,
-    [113858]=true, [121471]=true, [13750]=true
-} 
-
--- 7. The Update Loop
 SW_Frame:SetScript("OnUpdate", function()
-    -- P0: Pilot Heartbeat (Steady 0.4 Blue)
-    p[0]:SetColorTexture(BASE, BASE, 0.4, 1) 
+    p[0]:SetColorTexture(BASE, BASE, 0.4, 1) -- Heartbeat
     
-    -- P1: Dynamic Spec Hash (Class * 10 + Spec)
-    local _, _, classId = UnitClass("player")
-    local specIdx = GetSpecialization() or 3 -- Fallback to 3 if unknown
-    if specIdx == 0 then specIdx = 3 end
-    SetPixel(1, (classId * 10.0) + specIdx)
+    local ok, err = pcall(function()
+        -- 1. SPEC ID (The Fix that worked)
+        -- If priest (5) and spec logic fails/returns 0, default to 3 (Shadow).
+        local _, _, classID = UnitClass("player")
+        local spec = GetSpecialization()
+        if classID == 5 and (not spec or spec == 0) then spec = 3 end
+        spec = spec or 1
+        
+        SetPixel(1, (classID * 10) + spec)
+        
+        -- 2. BASIC STATE
+        SetPixel(2, UnitAffectingCombat("player") and 255 or 0)
+        SetPixel(3, (UnitHealth("player") / math.max(1, UnitHealthMax("player"))) * 255)
+        
+        if UnitExists("target") then
+            SetPixel(4, (UnitHealth("target") / math.max(1, UnitHealthMax("target"))) * 255)
+            SetPixel(5, UnitCanAttack("player", "target") and 255 or 0)
+        end
+        
+        -- 3. DOTS (BOOLEAN - TWW Compatible via AuraUtil)
+        local dVals = {[11]=0, [12]=0, [13]=0}
+        if UnitExists("target") then
+            -- Use AuraUtil.ForEachAura if available (TWW), else legacy UnitAura
+            if AuraUtil and AuraUtil.ForEachAura then
+                local function CheckAura(aura)
+                    if aura.isFromPlayerOrPlayerPet then
+                        local idx = DOTS[aura.spellId]
+                        if not idx then
+                            if aura.name == "Vampiric Touch" then idx = 11
+                            elseif aura.name == "Shadow Word: Pain" then idx = 12
+                            elseif aura.name == "Devouring Plague" then idx = 13 end
+                        end
+                        if idx then dVals[idx] = 255 end
+                    end
+                end
+                AuraUtil.ForEachAura("target", "HARMFUL", nil, CheckAura, true)
+            else
+                -- Legacy API (Classic/Era)
+                for i = 1, 40 do
+                    local name, _, _, _, _, _, source, _, _, spellId = UnitAura("target", i, "HARMFUL|PLAYER")
+                    if not name then break end
+                    if source == "player" or source == "pet" then
+                        local idx = DOTS[spellId]
+                        if not idx then
+                            if name == "Vampiric Touch" then idx = 11
+                            elseif name == "Shadow Word: Pain" then idx = 12
+                            elseif name == "Devouring Plague" then idx = 13 end
+                        end
+                        if idx then dVals[idx] = 255 end
+                    end
+                end
+            end
+        end
+        SetPixel(11, dVals[11])
+        SetPixel(12, dVals[12])
+        SetPixel(13, dVals[13])
+
+        -- 4. RESOURCES
+        local pMax = UnitPowerMax("player")
+        SetPixel(7, (pMax > 0 and UnitPower("player") / pMax or 0) * 255)
+        
+        if classID == 5 then 
+            local pSec = UnitPower("player", 13) 
+            if pSec then SetPixel(8, pSec * 2.55) end
+        end
+
+        -- 5. SENSORS
+        SetPixel(17, IsKeyDown("2") and 255 or 0)
+        local _, _, _, _, _, _, _, kick = UnitCastingInfo("target")
+        SetPixel(18, (kick == false) and 255 or 0)
+        SetPixel(19, IsStealthed() and 255 or 0)
+        SetPixel(6, 40 * 4.25) -- Simplified Range (Always 40y to prevent range blocks)
+    end)
     
-    -- P2: Combat Status
-    SetPixel(2, UnitAffectingCombat("player") and 255 or 0)
-
-    -- P3: Player HP
-    SetPixel(3, (UnitHealth("player") / UnitHealthMax("player")) * 255)
-
-    -- P4: Target HP
-    local thp = 0
-    if UnitExists("target") then thp = UnitHealth("target") / UnitHealthMax("target") end
-    SetPixel(4, thp * 255)
-
-    -- P5: Target Valid
-    SetPixel(5, (UnitExists("target") and UnitCanAttack("player", "target")) and 255 or 0)
-
-    -- P7: Primary Resource (Mana/Energy/Rage)
-    local pow = UnitPower("player") / math.max(1, UnitPowerMax("player"))
-    SetPixel(7, pow * 255)
-
-    -- P8: Universal Secondary Resource (Scaled 25x)
-    local secId = SEC_MAP[classId]
-    if secId then
-        SetPixel(8, math.min(255, UnitPower("player", secId) * 25))
-    else
-        SetPixel(8, 0)
-    end
-
-    -- P16: Debuff Mask (Reserved for expansion)
-    SetPixel(16, 0)
-
-    -- P22: Pet Status
-    local php = 0
-    if UnitExists("pet") then php = UnitHealth("pet") / UnitHealthMax("pet") end
-    SetPixel(22, php * 255)
-
-    -- P30: Snapshot (Buff Tracker)
-    local snp = 0
-    for i=1,40 do
-        local aura = C_UnitAuras.GetBuffDataByIndex("player", i)
-        if not aura then break end
-        if SNAPS[aura.spellId] then snp = 255 break end
-    end
-    SetPixel(30, snp)
+    SetPixel(31, 255)
 end)
+
+print("|cff00ffccColorProfile|r: Restore Complete.")
