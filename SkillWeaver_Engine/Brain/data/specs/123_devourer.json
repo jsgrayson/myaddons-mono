@@ -3,6 +3,12 @@
     "spec_name": "Devourer Demon Hunter",
     "resource_type": "fury",
     "secondary_resource": "soul_fragments",
+    "talent_loadouts": {
+        "devourer_mythic": "CgcBxwofhuClJfC3nRoj1EXibDAWmxMzMzYmxwMAAAAAAALPwYMYGAAAAAAAAmxMMzMzMzMzMzYmNzgFtsxMzMzMzWLzMzAYYAmZWmZmmtZWmxgxA",
+        "devourer_raid": "CgcBxwofhuClJfC3nRoj1EXibDAWMmZmZmZmBzMAAAAAAAbzYMYAAAAAAAAwMmhZmZmZMzMzYmFzYsolNmZmZmZ2abmZGADDwMzyMz0sNzixMMG",
+        "devourer_delve": "CgcBxwofhuClJfC3nRoj1EXibDAWmxMzMzYmxwMAAAAAAALPwYMYGAAAAAAAAmxMMzMzMzMzMzYmNzgFtsxMzMzMzWLzMzAYYAmZWmZmmtZWmxgxA",
+        "devourer_pvp": "CgcBxwofhuClJfC3nRoj1EXibDAWmxMzMzYmxwMAAAAAAALPwYMYGAAAAAAAAmxMMzMzMzMzMzYmNzgFtsxMzMzMzWLzMzAYYAmZWmZmmtZWmxgxA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Consume",
@@ -16,7 +22,7 @@
         },
         "slot_02": {
             "action": "Reap",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid",
@@ -26,7 +32,7 @@
         },
         "slot_03": {
             "action": "Void Ray",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 30,
             "conditions": [
                 "target_valid",
@@ -36,7 +42,7 @@
         },
         "slot_04": {
             "action": "Collapsing Star",
-            "key": "F16",
+            "key": "F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid",
@@ -45,7 +51,7 @@
         },
         "slot_05": {
             "action": "Void Metamorphosis",
-            "key": "F17",
+            "key": "F19",
             "min_resource": 0,
             "conditions": [
                 "burst_window_active",
@@ -54,7 +60,7 @@
         },
         "slot_06": {
             "action": "Spectral Sight",
-            "key": "F18",
+            "key": "HOME",
             "min_resource": 0,
             "conditions": [
                 "stealth_or_invis_detected"
@@ -62,7 +68,7 @@
         },
         "slot_07": {
             "action": "The Hunt",
-            "key": "Ctrl+F13",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
                 "gap_closer_needed",
@@ -71,7 +77,7 @@
         },
         "slot_08": {
             "action": "Elysian Decree",
-            "key": "Ctrl+F14",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
                 "aoe_burst_needed"
@@ -79,7 +85,7 @@
         },
         "slot_11": {
             "action": "Disrupt",
-            "key": "Alt+F13",
+            "key": "Shift+F13",
             "min_resource": 0,
             "latency_offset_ms": 0,
             "conditions": [
@@ -89,7 +95,7 @@
         },
         "slot_12": {
             "action": "Chaos Nova",
-            "key": "Alt+F14",
+            "key": "Shift+F14",
             "min_resource": 0,
             "conditions": [
                 "aoe_control_needed",
@@ -145,6 +151,80 @@
             "conditions": [
                 "mobility_pre_plan"
             ]
+        },
+        "slot_27": {
+            "action": "Darkness",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Netherwalk",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Rain from Above",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Spectral Sight",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Sigil of Flame",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Sigil of Misery",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Sigil of Silence",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Consume Magic",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_35": {
+            "action": "Imprison",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_36": {
+            "action": "Torment",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": []
         }
     },
     "proc_priority": {

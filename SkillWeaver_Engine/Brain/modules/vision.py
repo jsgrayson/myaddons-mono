@@ -21,16 +21,21 @@ class ScreenScanner:
         # Screen dimensions (will be set on first capture)
         self.screen_width = 1920
         self.screen_height = 1080
+        self.logical_width = 960  # Assuming Retina
+        self.logical_height = 540
 
     def calibrate(self):
         """Finds the Data Strip Y-coordinate."""
         print("[VISION] Scanning for Data Strip (White Pixel at Index 0)...")
         with mss.mss() as sct:
-            # Update screen dimensions
+            # Store PHYSICAL dimensions for mss.grab() 
             self.screen_width = sct.monitors[1]['width']
             self.screen_height = sct.monitors[1]['height']
+            # Store LOGICAL dimensions for flick offset calculation
+            self.logical_width = self.screen_width / self.SCALE
+            self.logical_height = self.screen_height / self.SCALE
             
-            # Scan bottom 100 pixels
+            # Scan bottom 100 pixels (physical)
             scan_h = 100
             scan_top = self.screen_height - scan_h
             
@@ -111,6 +116,10 @@ class ScreenScanner:
             target_range: Distance to target in yards. Used to calculate feet offset.
                          Closer = larger offset, Farther = smaller offset
         """
+        # Ensure screen dimensions are calibrated
+        if not self.found_y:
+            self.calibrate()
+        
         with mss.mss() as sct:
             # Search area: center of screen, upper half (where nameplates show)
             # Typical WoW nameplate is in top 40% of screen, center 60% width
@@ -175,29 +184,26 @@ class ScreenScanner:
             center_y = int(np.mean(cluster_y))
             center_x = int(np.mean(cluster_x))
             
-            # RETINA CONVERSION: Convert physical centroid to logical offset
-            # img.shape is physical (e.g. 2160x3840), monitor is logical (e.g. 1080x1920)
+            # RETINA CONVERSION: Convert everything to logical coordinates
+            # search_left/top are physical, so convert them too
+            logical_search_left = search_left / self.SCALE
+            logical_search_top = search_top / self.SCALE
             logical_center_x = center_x / self.SCALE
             logical_center_y = center_y / self.SCALE
 
             # Convert to absolute logical screen coordinates
-            abs_x = search_left + logical_center_x
-            abs_y = search_top + logical_center_y
+            abs_x = logical_search_left + logical_center_x
+            abs_y = logical_search_top + logical_center_y
             
             # === HUMANIZATION JITTER ===
             # Add a small random offset so we don't click the exact same pixel every time
-            abs_x += random.uniform(-15.0, 15.0)
-            abs_y += random.uniform(-10.0, 10.0)
+            abs_x += random.uniform(-8.0, 8.0)
+            abs_y += random.uniform(-5.0, 5.0)
             
-            # === RANGE-BASED FEET OFFSET ===
-            # Feet offset should also be logical points
-            clamped_range = max(5, min(40, target_range))
-            feet_offset = int(350 - (clamped_range * 7.5)) / self.SCALE # Scale this too
-            feet_offset = max(25, min(175, feet_offset))  # Adjusted logical clamp
+            # No feet offset - aim directly at nameplate position
+            feet_y = abs_y
             
-            feet_y = abs_y + feet_offset
-            
-            print(f"[VISION] Locked Nameplate Logical: ({abs_x:.0f}, {feet_y:.0f}) | Physical: ({center_x}, {center_y}) | range={target_range}yd")
+            print(f"[VISION] Locked Nameplate Logical: ({abs_x:.0f}, {feet_y:.0f}) | Physical: ({center_x}, {center_y}) | range={target_range}yd | center=({self.logical_width/2:.0f},{self.logical_height/2:.0f})")
             return (abs_x, feet_y)
     
     def get_flick_offset(self, target_range: int = 10):
@@ -212,9 +218,9 @@ class ScreenScanner:
         if not target_pos:
             return None
         
-        # Use Logical screen dimensions for center
-        center_x = self.screen_width / 2
-        center_y = self.screen_height / 2
+        # Use LOGICAL screen center (target_pos is already logical from get_target_position)
+        center_x = self.logical_width / 2
+        center_y = self.logical_height / 2
         
         dx = target_pos[0] - center_x
         dy = target_pos[1] - center_y

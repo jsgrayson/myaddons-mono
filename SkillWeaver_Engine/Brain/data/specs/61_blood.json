@@ -3,167 +3,227 @@
     "spec_name": "Blood Death Knight",
     "resource_type": "runic_power",
     "secondary_resource": "runes",
+    "talent_loadouts": {
+        "blood_mythic": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA",
+        "blood_raid": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAYgBmxoxyGglBsBwMYDA",
+        "blood_delve": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA",
+        "blood_pvp": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Marrowrend",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "runes_available_2",
-                "bone_shield_critical"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Heart Strike",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "runes_available_1",
-                "bone_shield_check_ok"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Death Strike",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 40,
             "conditions": [
-                "target_valid",
-                "death_strike_heartbeat_optimal"
+                "target_valid"
             ]
         },
         "slot_04": {
             "action": "Blood Boil",
-            "key": "F16",
+            "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "aoe_needed",
-                "charges_gte_1",
-                "disease_refresh_needed"
+                "target_valid"
             ]
         },
         "slot_05": {
             "action": "Death and Decay",
-            "key": "F17",
+            "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "cleave_needed",
-                "cooldown_ready",
-                "crimson_scourge_proc"
+                "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Soul Reaper",
-            "key": "F18",
+            "action": "Vampiric Blood",
+            "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_execute_range",
-                "runes_available_1"
+                "target_valid"
             ]
         },
         "slot_07": {
             "action": "Dancing Rune Weapon",
-            "key": "Ctrl+F13",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "burst_window_active"
+                "target_valid"
             ]
         },
         "slot_08": {
             "action": "Rune Tap",
-            "key": "Ctrl+F14",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Vampiric Blood",
-            "key": "Ctrl+F15",
+            "action": "Tombstone",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "tank_critical_survival",
-                "healing_amplification_needed"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Abomination Limb",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Mind Freeze",
-            "key": "Alt+F13",
+            "action": "Empower Rune Weapon",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Asphyxiate",
-            "key": "Alt+F14",
+            "action": "Anti-Magic Shell",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "interrupt_backup",
-                "priority_stun_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Lichborne",
-            "key": "Ctrl+F25",
+            "action": "Icebound Fortitude",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "fear_break_needed",
-                "leech_needed"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Icebound Fortitude",
-            "key": "Ctrl+F26",
+            "action": "Lichborne",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "stun_break_needed",
-                "mitigation_needed_massive"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Anti-Magic Shell",
-            "key": "Ctrl+F27",
+            "action": "Raise Dead",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "magic_mitigation_needed",
-                "debuff_prevention_needed"
+                "target_valid"
             ]
         },
         "slot_16": {
             "action": "Death's Advance",
-            "key": "Ctrl+F28",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed",
-                "knockback_prevention_needed"
+                "target_valid"
             ]
         },
         "slot_17": {
             "action": "Wraith Walk",
-            "key": "Ctrl+F29",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "mobility_root_break"
+                "target_valid"
             ]
         },
         "slot_18": {
             "action": "Gorefiend's Grasp",
-            "key": "Ctrl+F30",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "gorefiend_center_pull"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Death Grip",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Dark Command",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Asphyxiate",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Anti-Magic Zone",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Control Undead",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Arcane Torrent",
-            "key": "Ctrl+F36",
+            "action": "Path of Frost",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "runic_power_deficit_restore"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Mind Freeze",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Blinding Sleet",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Dark Simulacrum",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

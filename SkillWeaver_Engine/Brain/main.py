@@ -55,7 +55,8 @@ KEY_MAP = {
     "ALT+F13": 0x19, "ALT+F16": 0x1A, "ALT+F17": 0x1B, "ALT+F18": 0x1C,
     "ALT+F19": 0x1D, "ALT+HOME": 0x1E, "ALT+END": 0x1F, "ALT+DELETE": 0x20,
     
-    "TAB": 0x21
+    "TAB": 0x21,
+    "SHIFT+TAB": 0x22
 }
 
 
@@ -189,6 +190,8 @@ class SkillWeaverEngine:
             "dots": [self.decode_px(row, i) / 10.0 for i in range(11, 26)],
             "target_dot_remaining": self.decode_px(row, 11) / 10.0,
             "plater_anchor": self.decode_px(row, 16) > 200, 
+            "enemies_missing_dots": int(self.decode_px(row, 20) / 25.0),
+            "should_tab_target": self.decode_px(row, 21) > 128,
             "_raw_width": len(row),
             "_raw_row": row
         }
@@ -209,7 +212,9 @@ class SkillWeaverEngine:
                 # 1. ATOMIC LOCK & GCD CHECK
                 with self.lock:
                     now = time.perf_counter()
+                    gcd_remaining = self._gcd_until - now
                     if now < self._gcd_until:
+                        print(f"[GCD] BLOCKED - {gcd_remaining:.2f}s remaining")
                         return None
                     if now < self._channel_until:
                         return None
@@ -217,6 +222,7 @@ class SkillWeaverEngine:
                     # PROVISIONALLY set a short busy lock to prevent 
                     # overlapping taps while we read the screen
                     self._gcd_until = now + 0.3 
+                    print(f"[GCD] ALLOWED - setting provisional lock")
                 
                 # SUPPRESS IMMEDIATELY
                 try:
@@ -226,6 +232,7 @@ class SkillWeaverEngine:
                     # Log state for debugging
                     print(f"\n[BRAIN] Spec:{state['hash']:.0f} | HP:{state['hp']:.0f}% | THP:{state['thp']:.0f}% | Anchor:{'YES' if state['plater_anchor'] else 'no'} | Target:{'VALID' if state['target_valid'] else 'absent'}")
                     print(f"[DOTS] VT:{dots[0]:.1f}s | SWP:{dots[1]:.1f}s | DP:{dots[2]:.1f}s")
+                    print(f"[CLEAVE] Missing:{state.get('enemies_missing_dots', 0)} | Plates:{int(self.decode_px(state['_raw_row'], 21) / 25)}")
                     
                     if dots[0] == 0:
                         # Extra diagnostics: Show the first 32 physical pixels
@@ -240,15 +247,13 @@ class SkillWeaverEngine:
                     if int(state['hash'] + 0.5) != self.active_spec:
                         self.load_rotation(state['hash'])
                     
-                    # 2. CLEAVE / MULTI-DOT (If supported by spec)
-                    if self.active_spec and self.state_engine.check_cleave_snap_back(state, self.active_spec):
-                        tab_byte = KEY_MAP.get("TAB")
-                        if tab_byte:
-                            self.bridge.send_pulse(tab_byte)
-                            print("[TX] TAB (Cleave Auto-Rotate)")
-                            # Don't return, allow rotation to fire on the new target immediately
-                            time.sleep(0.1) 
-                            state = self.get_game_state()
+                    # 2. CLEAVE / MULTI-DOT (DISABLED - was spamming TAB)
+                    # TODO: Re-enable when TAB logic is fixed
+                    # now_tab = time.perf_counter()
+                    # tab_ready = (now_tab - getattr(self, '_last_tab_time', 0)) > 2.0
+                    # if tab_ready and self.active_spec and self.state_engine.check_cleave_snap_back(state, self.active_spec):
+                    #     ...
+                    pass  # Cleave disabled
 
                     if self.active_spec:
                         optimal = self.state_engine.get_optimal_action(state)

@@ -3,156 +3,294 @@
     "spec_name": "Enhancement Shaman",
     "resource_type": "maelstrom",
     "secondary_resource": "maelstrom_weapon_stacks",
+    "talent_loadouts": {
+        "enhancement_mythic": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMDMzDMjtZmZegZmlZGYAAAAAAAAAA2AsZGDbkFYGGawCAmlJDMLLmxgxYmthlZmpZhlZWGzMAAjB",
+        "enhancement_raid": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMDmZGjtZmZGsNzYZYAAAAAAAAAAbA2MjhNYBmhhGsAALTzMDWWMzMzwYmZbYZmZCMMLzMAAjB",
+        "enhancement_delve": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMDMzDMjtZmZegZmlZGYAAAAAAAAAA2AsZGDbkNYGGawCAmlJDYZxMzMDzYmthlZmJLsMWGzMAAjB",
+        "enhancement_pvp": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzyMDPA2mZMzMz2MzyyAAAAAAAAAAAsALwMW0YbAMDYDAz2kZYstNGzMDzMjhlZMNbLMz2gBAYA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Stormstrike",
             "key": "F13",
             "min_resource": 30,
             "conditions": [
-                "target_valid",
-                "stormbringer_reset_check"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Lava Lash",
-            "key": "F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "flame_shock_spread_check"
-            ]
-        },
-        "slot_03": {
-            "action": "Lightning Bolt / Ele Blast",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "maelstrom_weapon_gate_5"
-            ]
-        },
-        "slot_04": {
-            "action": "Frost Shock / Ice Strike",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "hailstorm_buff_needed"
+                "target_valid"
             ]
         },
-        "slot_05": {
-            "action": "Ascendance / Feral Spirit",
+        "slot_03": {
+            "action": "Ice Strike",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "burst_window_active"
+                "target_valid"
             ]
         },
-        "slot_06": {
-            "action": "Crash Lightning",
+        "slot_04": {
+            "action": "Frost Shock",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "aoe_cleave_needed"
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Crash Lightning",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Primordial Wave",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Primordial Wave",
-            "key": "Ctrl+F13",
+            "action": "Feral Spirit",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "lightning_bolt_cleave_prep"
+                "target_valid"
             ]
         },
         "slot_08": {
             "action": "Doom Winds",
-            "key": "Ctrl+F14",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "windfury_burst_window"
+                "target_valid"
             ]
         },
         "slot_09": {
             "action": "Sundering",
-            "key": "Ctrl+F15",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "aoe_disorient_needed"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Ascendance",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Wind Shear",
-            "key": "Alt+F13",
+            "action": "Lightning Bolt",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Capacitor Totem",
-            "key": "Alt+F14",
+            "action": "Elemental Blast",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "static_field_combo"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Grounding Totem",
-            "key": "Alt+F15",
+            "action": "Astral Shift",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "grounding_totem_predictive"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Astral Shift",
-            "key": "Ctrl+F26",
+            "action": "Earth Elemental",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_15": {
             "action": "Healing Surge",
-            "key": "Ctrl+F27",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "maelstrom_instant_heal_critical"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Earth Elemental",
-            "key": "Ctrl+F28",
+            "action": "Ghost Wolf",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "tank_buster_anticipated"
+                "target_valid"
             ]
         },
         "slot_17": {
             "action": "Spirit Walk",
-            "key": "Ctrl+F29",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "spirit_walk_snare_cleanse"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Wind Rush Totem",
-            "key": "Ctrl+F30",
+            "action": "Thunderstorm",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "party_mobility_needed"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Capacitor Totem",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Earthbind Totem",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Tremor Totem",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Cleanse Spirit",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Purge",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Thunderstorm",
-            "key": "Ctrl+F36",
+            "action": "Wind Rush Totem",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "knockback_peel_needed"
+                "target_valid"
             ]
+        },
+        "slot_25": {
+            "action": "Wind Shear",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Hex",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Capacitor Totem",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Earthgrab Totem",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Wind Rush Totem",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Tremor Totem",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Ancestral Guidance",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Spirit Link Totem",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Healing Stream Totem",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Bloodlust",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_35": {
+            "action": "Astral Shift",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_36": {
+            "action": "Earth Elemental",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": []
         }
     },
     "proc_priority": {

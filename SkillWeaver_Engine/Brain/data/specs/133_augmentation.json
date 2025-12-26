@@ -3,102 +3,294 @@
     "spec_name": "Augmentation Evoker",
     "resource_type": "mana",
     "secondary_resource": "essence",
+    "talent_loadouts": {
+        "augmentation_mythic": "CEcBAAAAAAAAAAAAAAAAAAAAAgZZmtZmZGGYmlZMzMmZDAAAAAAAAzMYGGD1wMzAAAAgZmZ2GzMLjZGDzsZMYBWGDjtBwMI2wYA",
+        "augmentation_raid": "CEcBAAAAAAAAAAAAAAAAAAAAAgZZmtZmZGmBzsMjZmxMbAAAAAAAAYmBGYM1MmZGAAAAMjZ2GzMLjZGYGzAjZxCLwAzwQDsgxA",
+        "augmentation_delve": "CEcBAAAAAAAAAAAAAAAAAAAAAgZZmtZmZGGYmlZMzMmZDAAAAAAAAzMYGGD1wMzAAAAgZmZ2GzMLjZGDzsZMYBWGDjtBwMI2wYA",
+        "augmentation_pvp": "CEcBAAAAAAAAAAAAAAAAAAAAAgZZmtZmZGGYmlZMzMmZDAAAAAAAAzMYGGD1wMzAAAAgZmZ2GzMLjZGDzsZMYBWGDjtBwMI2wYA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Ebon Might",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "buff_missing_ebon_might",
                 "target_valid"
             ]
         },
         "slot_02": {
             "action": "Eruption",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 3,
             "conditions": [
-                "target_valid",
-                "ebon_might_active",
-                "essence_gate_eruption"
+                "target_valid"
             ]
         },
         "slot_03": {
-            "action": "Living Flame",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "filler_needed"
-            ]
-        },
-        "slot_04": {
-            "action": "Upheaval",
-            "key": "F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "ebon_might_extension_needed"
-            ]
-        },
-        "slot_05": {
-            "action": "Breath of Eons",
+            "action": "Prescience",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "burst_window_active",
-                "ebon_might_active"
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Breath of Eons",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Upheaval",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_06": {
             "action": "Fire Breath",
-            "key": "F18",
+            "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "ebon_might_extension_needed"
+                "target_valid"
             ]
         },
         "slot_07": {
             "action": "Blistering Scales",
-            "key": "Ctrl+F13",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "tank_buff_missing"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Prescience",
-            "key": "Ctrl+F14",
+            "action": "Living Flame",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "dps_buff_maintenance"
+                "target_valid"
+            ]
+        },
+        "slot_09": {
+            "action": "Verdant Embrace",
+            "key": "F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Emerald Blossom",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Quell",
+            "action": "Tip the Scales",
             "key": "F23",
             "min_resource": 0,
             "conditions": [
-                "interruptible",
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Time Skip",
+            "key": "F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_13": {
+            "action": "Hover",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
                 "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Obsidian Scales",
-            "key": "Shift+F14",
+            "action": "Rescue",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_minor"
+                "target_valid"
             ]
         },
         "slot_15": {
+            "action": "Obsidian Scales",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_16": {
             "action": "Renewing Blaze",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_17": {
+            "action": "Quell",
+            "key": "Ctrl+F17",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_18": {
+            "action": "Oppressing Roar",
+            "key": "Ctrl+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Wing Buffet",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Tail Swipe",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Cauterizing Flame",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Time Spiral",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Zephyr",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_24": {
+            "action": "Source of Magic",
+            "key": "Ctrl+F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Landslide",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_26": {
+            "action": "Sleep Walk",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Deep Breath",
             "key": "Shift+F15",
             "min_resource": 0,
             "conditions": [
-                "damage_intake_high"
+                "target_valid"
             ]
+        },
+        "slot_28": {
+            "action": "Dream Flight",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Zephyr",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Oppressing Roar",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Landslide",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Quell",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Cauterizing Flame",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Time Spiral",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_35": {
+            "action": "Blessing of the Bronze",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_36": {
+            "action": "Expunge",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": []
         }
     },
     "proc_priority": {

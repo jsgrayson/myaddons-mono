@@ -8,7 +8,7 @@ import time
 import random
 import glob
 from modules.serial_link import SerialLink as ArduinoBridge
-import ConditionEngine
+from ConditionEngine import ConditionEngine
 
 # --- UNIVERSAL SKILLWEAVER LOGIC ENGINE (v4.2 PRECISION) ---
 # Supports ALL 13 Classes / 60 Specs. CALIBRATED SIGNAL (Divisor 229.5).
@@ -175,6 +175,12 @@ class SkillWeaverEngine:
 
                 sec_raw = self.decode(row[8])[0]
                 sec_val = int(round(sec_raw / 25.0))
+                
+                # SENSOR WIRES
+                valid_raw, _ = self.decode(row[5])
+                range_raw, _ = self.decode(row[6])
+                kick_raw, _  = self.decode(row[11])
+                stealth_raw, _ = self.decode(row[15])
 
                 state = {
                     "hash": h,
@@ -183,6 +189,11 @@ class SkillWeaverEngine:
                     "thp": min(100.0, (self.decode(row[4])[0] / 255.0) * 100),
                     "power": min(100.0, (self.decode(row[7])[0] / 255.0) * 100),
                     "sec": sec_val,
+                    # SENSOR STATES
+                    "target_valid": valid_raw > 128,
+                    "range": range_raw,
+                    "interruptible": kick_raw > 128,
+                    "stealthed": stealth_raw > 128,
                     "snap": self.decode(row[30])[0] > 128
                 }
 
@@ -196,8 +207,8 @@ class SkillWeaverEngine:
                 spec_name = SPEC_DB.get(h_int, "UNKNOWN")
                 output = f"\r[{status}] {spec_name} ({h_int}) | HP:{state['hp']:.0f}% | Res:{state['power']:.0f}% | Sec:{state['sec']}   "
 
-                # 5. EXECUTION
-                if self.active_spec and state['combat']:
+                # 5. EXECUTION (Combat OR Target Valid for openers)
+                if self.active_spec and (state['combat'] or state['target_valid']):
                     if time.time() >= self.next_action_time:
                         for slot_id in self.priority_list:
                             if self.evaluate(slot_id, state):

@@ -3,162 +3,283 @@
     "spec_name": "Outlaw Rogue",
     "resource_type": "energy",
     "secondary_resource": "combo_points",
+    "talent_loadouts": {
+        "outlaw_mythic": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mZgZmZYGDzwMmZMzMmZmWmxsMDAAAAAA22mZmhZmxCsMLDAAAAzMDAGzmhBGYWYhWYzA",
+        "outlaw_raid": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mxMjZMmZmZYGGMjhZmZmWmxsNDAAAAAAsNzMDzMjFYZ2GAAAAmZGwAbwMGNmNAbDsYG",
+        "outlaw_delve": "CQQAAAAAAAAAAAAAAAAAAAAAAAAMwwYmZwMzYmhhZmZmZMzMtMjZZGAAAAAAstNzM8AzMswMLz2AAAAwMDwAbwMGNmNAbDsYG",
+        "outlaw_pvp": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mZgZmZYGDzwMmZMzMmZmWmxsMDAAAAAA22mZmhZmxCsMLDAAAAzMDAGzmhBGYWYhWYzA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Sinister Strike",
             "key": "F13",
             "min_resource": 45,
             "conditions": [
-                "target_valid",
-                "combo_points_lt_max"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Pistol Shot",
-            "key": "F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "opportunity_valid_no_cap"
-            ]
-        },
-        "slot_03": {
-            "action": "Between the Eyes",
-            "key": "F15",
-            "min_resource": 25,
-            "conditions": [
-                "target_valid",
-                "combo_points_gte_5",
-                "bte_off_cooldown_or_buff_missing"
-            ]
-        },
-        "slot_04": {
             "action": "Dispatch",
             "key": "F16",
             "min_resource": 35,
             "conditions": [
-                "target_valid",
-                "combo_points_gte_5"
+                "target_valid"
+            ]
+        },
+        "slot_03": {
+            "action": "Pistol Shot",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Between the Eyes",
+            "key": "F18",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Roll the Bones",
-            "key": "F17",
-            "min_resource": 25,
+            "action": "Ambush",
+            "key": "F19",
+            "min_resource": 50,
             "conditions": [
-                "rtb_reroll_needed"
+                "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Adrenaline Rush",
-            "key": "F18",
-            "min_resource": 0,
+            "action": "Blade Flurry",
+            "key": "HOME",
+            "min_resource": 15,
             "conditions": [
-                "burst_window_active"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Blade Flurry",
-            "key": "Ctrl+F13",
-            "min_resource": 15,
+            "action": "Roll the Bones",
+            "key": "END",
+            "min_resource": 25,
             "conditions": [
-                "blade_flurry_maintenance",
-                "aoe_needed"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Ghostly Strike",
-            "key": "Ctrl+F14",
-            "min_resource": 30,
+            "action": "Adrenaline Rush",
+            "key": "DELETE",
+            "min_resource": 0,
             "conditions": [
-                "burst_aligned",
-                "combo_points_lt_max"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Killing Spree",
-            "key": "Ctrl+F15",
+            "action": "Keep It Rolling",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "burst_aligned",
-                "energy_low"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Thistle Tea",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Kick",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "latency_offset_ms": 0,
+            "action": "Ghostly Strike",
+            "key": "F23",
+            "min_resource": 30,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Dismantle",
-            "key": "Alt+F14",
-            "min_resource": 25,
+            "action": "Blade Rush",
+            "key": "F24",
+            "min_resource": 0,
             "conditions": [
-                "trigger_disarm",
-                "target_bursting_physical"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Crimson Vial",
-            "key": "Ctrl+F25",
-            "min_resource": 20,
+            "action": "Killing Spree",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
             "conditions": [
-                "survival_minor"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Evasion",
-            "key": "Ctrl+F26",
+            "action": "Dreadblades",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "survival_critical_physical"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Cloak of Shadows",
-            "key": "Ctrl+F27",
+            "action": "Grappling Hook",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "survival_critical_magic"
+                "target_valid"
             ]
         },
         "slot_16": {
             "action": "Vanish",
-            "key": "Ctrl+F28",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "offensive_vanish_ambush_needed"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Grappling Hook",
-            "key": "Ctrl+F29",
-            "min_resource": 0,
+            "action": "Feint",
+            "key": "Ctrl+F17",
+            "min_resource": 35,
             "conditions": [
-                "gap_closer_needed",
-                "hook_safe_path"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Sprint",
-            "key": "Ctrl+F30",
+            "action": "Crimson Vial",
+            "key": "Ctrl+F18",
+            "min_resource": 20,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Cloak of Shadows",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed"
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Evasion",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Sprint",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Tricks of the Trade",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Stealth",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Escape Artist (Gnome)",
-            "key": "Ctrl+F36",
+            "action": "Gouge",
+            "key": "Ctrl+F24",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Kick",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
-                "root_break_needed",
-                "adrenaline_active"
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Blind",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Kidney Shot",
+            "key": "Shift+F15",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Cheap Shot",
+            "key": "Shift+F16",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Sap",
+            "key": "Shift+F17",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Distract",
+            "key": "Shift+F18",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Dismantle",
+            "key": "Shift+F19",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Smoke Bomb",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Float Like a Butterfly",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Enduring Brawler",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

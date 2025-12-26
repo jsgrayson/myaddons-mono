@@ -3,168 +3,295 @@
     "spec_name": "Unholy Death Knight",
     "resource_type": "runic_power",
     "secondary_resource": "runes",
+    "talent_loadouts": {
+        "unholy_mythic": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMzYmZmZGmxMzMTDDjxMGAAAAAAAAmZmZDzYmBAsNDzY2mZmxYGgFzihBGY2YoxCGgZAMA",
+        "unholy_raid": "CwPAAAAAAAAAAAAAAAAAAAAAAAgZGzMzMGLzYmZmphhZGzYAAAAAAAAYmZmFmZMDAY2mxMjZbmZGMDwmZxwADMbM0YBAmBwA",
+        "unholy_delve": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMzYmZmZGmxMzMTDDjxMGAAAAAAAAmZmZDzYmBAsNDzY2mZmxYGgFzihBGY2YoxCGgZAMA",
+        "unholy_pvp": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMDzYGzYZMjZmphhxYGzAAAAAAAAAzsZmZ2mZAAmhZmxMzMjZmBsZ2MMwAzGDNWYAmZAMA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Festering Strike",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "wounds_needed_gate"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Scourge Strike / Clawing Shadows",
-            "key": "F14",
+            "action": "Scourge Strike",
+            "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "wound_burst_check"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Death Coil",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 30,
             "conditions": [
-                "target_valid",
-                "sudden_doom_proc",
-                "runic_power_dump"
+                "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Apocalypse",
-            "key": "F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "festering_wound_gate_4"
-            ]
-        },
-        "slot_05": {
-            "action": "Army of the Dead / Abom Limb",
-            "key": "F17",
-            "min_resource": 0,
-            "conditions": [
-                "burst_window_active"
-            ]
-        },
-        "slot_06": {
-            "action": "Dark Transformation",
+            "action": "Outbreak",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "pet_burst_needed"
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Apocalypse",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 60.0
+        },
+        "slot_06": {
+            "action": "Dark Transformation",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
             "action": "Unholy Blight",
-            "key": "Ctrl+F13",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "disease_spread_needed"
+                "target_valid"
             ]
         },
         "slot_08": {
             "action": "Epidemic",
-            "key": "Ctrl+F14",
+            "key": "DELETE",
             "min_resource": 30,
             "conditions": [
-                "aoe_runic_dump"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Outbreak",
-            "key": "Ctrl+F15",
+            "action": "Army of the Dead",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "dot_refresh_plague"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Abomination Limb",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Mind Freeze",
-            "key": "Alt+F13",
+            "action": "Summon Gargoyle",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Pet Kick / Asphyxiate",
-            "key": "Alt+F14",
+            "action": "Defile",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "dual_interrupt_check",
-                "stun_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Dark Simulacrum",
-            "key": "Alt+F15",
+            "action": "Unholy Assault",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "spell_steal_opportunity"
+                "target_valid"
             ]
         },
         "slot_14": {
             "action": "Anti-Magic Shell",
-            "key": "Ctrl+F26",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_magic"
+                "target_valid"
             ]
         },
         "slot_15": {
             "action": "Icebound Fortitude",
-            "key": "Ctrl+F27",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Death Pact",
-            "key": "Ctrl+F28",
+            "action": "Lichborne",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "panic_heal"
+                "target_valid"
             ]
         },
         "slot_17": {
             "action": "Death's Advance",
-            "key": "Ctrl+F29",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed",
-                "forced_movement_counter"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Death Grip",
-            "key": "Ctrl+F30",
+            "action": "Wraith Walk",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed",
-                "peel_handshake"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Death Grip",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_20": {
-            "action": "Raise Dead",
-            "key": "Ctrl+F33",
+            "action": "Asphyxiate",
+            "key": "Ctrl+F20",
             "min_resource": 0,
             "conditions": [
-                "pet_dead_check"
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Anti-Magic Zone",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Raise Dead",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Sacrificial Pact",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Chains of Ice",
-            "key": "Ctrl+F36",
+            "action": "Path of Frost",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "snare_needed"
+                "target_valid"
             ]
+        },
+        "slot_25": {
+            "action": "Mind Freeze",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Gnaw",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Anti-Magic Zone",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Abomination Limb",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Raise Ally",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Lichborne",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Death and Decay",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Death Coil",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Remorseless Winter",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Control Undead",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_35": {
+            "action": "Chains of Ice",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_36": {
+            "action": "Path of Frost",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": []
         }
     },
     "proc_priority": {

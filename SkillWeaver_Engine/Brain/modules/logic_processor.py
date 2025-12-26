@@ -460,10 +460,10 @@ class LogicProcessor:
             return True
 
         if "multidot_needed" in conditions:
-            # MULTI-DOT ENGINE
+            # MULTI-DOT ENGINE: Return True if current target has DoTs and we should tab
             if self._should_tab_target(state):
-                return False 
-            return False 
+                return True  # DoTs are up on current target, time to spread
+            return False  # Need to apply DoTs to current target first
 
         # SHADOW PRIEST LOGIC
         if "refresh_dot_swp" in conditions:

@@ -1,0 +1,249 @@
+{
+    "spec_id": 81,
+    "spec_name": "Arcane Mage",
+    "resource_type": "mana",
+    "secondary_resource": "arcane_charges",
+    "talent_loadouts": {
+        "arcane_mythic": "C4DAAAAAAAAAAAAAAAAAAAAAAMzgZbGMzYmZBYmZMmmZMDAAAAAADAYmZaZ22mBAwGAAAAAAbAYMYmlZZGzMGzwMzMzYGzyYA",
+        "arcane_raid": "C4DAAAAAAAAAAAAAAAAAAAAAAYMMbzgZ8AjZxwYmhx0MjZAAAAAAYAAzMTLz2yMAA2AAAAAAAAYwMLzyMzMjxMmZmZmxMsMG",
+        "arcane_delve": "C4DAAAAAAAAAAAAAAAAAAAAAAMjBbzgZGzMLGYmhx0MjZAAAAAAYAAAgZmtlllZmYBAAAAAgNAWGDzMLzywwMzMMzMzMzYGjB",
+        "arcane_pvp": "C4DAAAAAAAAAAAAAAAAAAAAAAMYZmNzMmZMzsAegZmxYaMGDAAAAAgBAMzMtMLLzAAYDAAAAAgNAMGMzysMzMMMzYMzMzMmZZM"
+    },
+    "universal_slots": {
+        "slot_01": {
+            "action": "Arcane Blast",
+            "key": "F13",
+            "min_resource": 5000,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 0.5
+        },
+        "slot_02": {
+            "action": "Arcane Missiles",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_03": {
+            "action": "Arcane Barrage",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Arcane Orb",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Touch of the Magi",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Arcane Surge",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_07": {
+            "action": "Evocation",
+            "key": "END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_08": {
+            "action": "Presence of Mind",
+            "key": "DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_09": {
+            "action": "Radiant Spark",
+            "key": "F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Supernova",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_11": {
+            "action": "Shifting Power",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Time Warp",
+            "key": "F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_13": {
+            "action": "Ice Block",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_14": {
+            "action": "Prismatic Barrier",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_15": {
+            "action": "Greater Invisibility",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_16": {
+            "action": "Shimmer",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_17": {
+            "action": "Alter Time",
+            "key": "Ctrl+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_18": {
+            "action": "Mirror Image",
+            "key": "Ctrl+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Frost Nova",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Cone of Cold",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Dragon's Breath",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Remove Curse",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Spellsteal",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_24": {
+            "action": "Mass Barrier",
+            "key": "Ctrl+F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Counterspell",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Polymorph",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Ring of Frost",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        }
+    },
+    "proc_priority": {
+        "burn_phase": [
+            "slot_05",
+            "slot_06",
+            "slot_01",
+            "slot_02"
+        ],
+        "conserve_phase": [
+            "slot_04",
+            "slot_03",
+            "slot_01"
+        ],
+        "movement": [
+            "slot_17",
+            "slot_03",
+            "slot_04"
+        ]
+    }
+}

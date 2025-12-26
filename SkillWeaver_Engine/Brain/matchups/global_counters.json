@@ -3,26 +3,107 @@
         {
             "enemy_spec": 70,
             "trigger": "Avenging Wrath",
-            "response_slot": "SLOT_15",
+            "response_slot": "slot_15",
+            "response_type": "MAJOR_DEF",
             "desc": "Ret Wings -> Defensive"
         },
         {
-            "enemy_spec": 62,
+            "enemy_spec": 72,
             "trigger": "Bladestorm",
-            "response_slot": "SLOT_19",
+            "response_slot": "slot_17",
+            "response_type": "GAP_CLOSER",
             "desc": "Bladestorm -> Kite"
         },
         {
             "enemy_spec": 258,
             "trigger": "Void Eruption",
-            "response_slot": "SLOT_11",
+            "response_slot": "slot_11",
+            "response_type": "INTERRUPT",
             "desc": "Void Form -> Interrupt/CC"
         },
         {
             "enemy_spec": 253,
             "trigger": "Bestial Wrath",
-            "response_slot": "SLOT_11",
+            "response_slot": "slot_11",
+            "response_type": "STUN_PEEL",
             "desc": "BW -> Stun/CC Pet"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Glacial Spike",
+            "response_slot": "slot_16",
+            "response_type": "MAJOR_DEF",
+            "desc": "Glacial Spike -> Spell Reflect/Immune"
+        },
+        {
+            "enemy_spec": 267,
+            "trigger": "Chaos Bolt",
+            "response_slot": "slot_16",
+            "response_type": "MAJOR_DEF",
+            "desc": "Chaos Bolt -> Spell Reflect/Immune"
+        },
+        {
+            "enemy_spec": 0,
+            "trigger": "Polymorph",
+            "response_slot": "slot_11",
+            "response_type": "INTERRUPT",
+            "desc": "Poly -> Interrupt"
+        },
+        {
+            "enemy_spec": 0,
+            "trigger": "Cyclone",
+            "response_slot": "slot_11",
+            "response_type": "INTERRUPT",
+            "desc": "Cyclone -> Interrupt"
+        },
+        {
+            "enemy_spec": 105,
+            "trigger": "Tranquility",
+            "response_slot": "slot_12",
+            "response_type": "STUN_PEEL",
+            "desc": "Tranq -> Blind/CC"
+        },
+        {
+            "enemy_spec": 65,
+            "trigger": "Divine Shield",
+            "response_slot": "slot_13",
+            "response_type": "DISPEL",
+            "desc": "Bubble -> Mass Dispel"
+        },
+        {
+            "enemy_spec": 64,
+            "trigger": "Ice Block",
+            "response_slot": "slot_13",
+            "response_type": "DISPEL",
+            "desc": "Block -> Mass Dispel"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Dance",
+            "response_slot": "slot_15",
+            "response_type": "MAJOR_DEF",
+            "desc": "Dance -> Defensive"
+        },
+        {
+            "enemy_spec": 261,
+            "trigger": "Shadow Blades",
+            "response_slot": "slot_15",
+            "response_type": "MAJOR_DEF",
+            "desc": "Blades -> Defensive"
+        },
+        {
+            "enemy_spec": 63,
+            "trigger": "Combustion",
+            "response_slot": "slot_15",
+            "response_type": "MAJOR_DEF",
+            "desc": "Combust -> Immune/Defensive"
+        },
+        {
+            "enemy_spec": 62,
+            "trigger": "Arcane Power",
+            "response_slot": "slot_15",
+            "response_type": "MAJOR_DEF",
+            "desc": "AP -> Defensive"
         }
     ]
 }

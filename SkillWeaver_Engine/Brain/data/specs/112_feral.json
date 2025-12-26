@@ -1,0 +1,245 @@
+{
+    "spec_id": 112,
+    "spec_name": "Feral Druid",
+    "resource_type": "energy",
+    "secondary_resource": "combo_points",
+    "talent_loadouts": {
+        "feral_mythic": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbzmZWYmZmZzmZsNzMzYmBAAAAAYLY2MwMjaGzCLzMzyYGzAAAAAAADAAAAQzsMLzMbDAYBmZAYhBD",
+        "feral_raid": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxMbMmFzMmZ2mtHwYbmZGPwMDAAAAAwWwsBMzomxsMWmZGjZMDAAAAAAMAAAAANzysMzsNAgFYmZAswgB",
+        "feral_delve": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmZb2MzCzMzMbzGjtZmZmHYmBAAAAAYLY2MwMjaGzCLzMzyYGzAAAAAAADAAAAQzsMLzMbDAYBmZAYhBD",
+        "feral_pvp": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmZbWMzCzYmZb2YsMzMjZmBAAAAAYJY2AmZmaGzmZZmZ2GGGAAAAAAYgBAAAAAY2mZpZbmlNYmZAswgB"
+    },
+    "universal_slots": {
+        "slot_01": {
+            "action": "Shred",
+            "key": "F13",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_02": {
+            "action": "Rake",
+            "key": "F16",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 10.0
+        },
+        "slot_03": {
+            "action": "Rip",
+            "key": "F17",
+            "min_resource": 20,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 12.0
+        },
+        "slot_04": {
+            "action": "Ferocious Bite",
+            "key": "F18",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Thrash",
+            "key": "F19",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Brutal Slash",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_07": {
+            "action": "Tiger's Fury",
+            "key": "END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 30.0
+        },
+        "slot_08": {
+            "action": "Berserk",
+            "key": "DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 120.0
+        },
+        "slot_09": {
+            "action": "Primal Wrath",
+            "key": "F21",
+            "min_resource": 20,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Feral Frenzy",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_11": {
+            "action": "Adaptive Swarm",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Convoke the Spirits",
+            "key": "F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_13": {
+            "action": "Survival Instincts",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_14": {
+            "action": "Barkskin",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_15": {
+            "action": "Renewal",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_16": {
+            "action": "Stampeding Roar",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_17": {
+            "action": "Dash",
+            "key": "Ctrl+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_18": {
+            "action": "Wild Charge",
+            "key": "Ctrl+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Skull Bash",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_20": {
+            "action": "Mighty Bash",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Cyclone",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Maim",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Soothe",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_24": {
+            "action": "Remove Corruption",
+            "key": "Ctrl+F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Regrowth",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "predatory_swiftness"
+            ]
+        },
+        "slot_26": {
+            "action": "Entangling Roots",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "predatory_swiftness"
+            ]
+        },
+        "slot_27": {
+            "action": "Hibernate",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        }
+    },
+    "proc_priority": {
+        "execution": [
+            "slot_04",
+            "slot_03"
+        ],
+        "rotation": [
+            "slot_01",
+            "slot_06",
+            "slot_02"
+        ]
+    }
+}

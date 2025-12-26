@@ -3,150 +3,294 @@
     "spec_name": "Restoration Shaman",
     "resource_type": "mana",
     "secondary_resource": "cloudburst_stored",
+    "talent_loadouts": {
+        "restoration_shaman_mythic": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAzMzMLzsMzMjhZZsYGYD2gZspx2AYGYjZmZxiZbmZGZ2gZaMzwwYxYGMLjlZZmBAAD",
+        "restoration_shaman_raid": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAjZmZZmtZmZMWmtxihlxCsAzYTjtBwMwGjxilx2MzMTmtFzMTjZwshlZmZwYYWGDAAG",
+        "restoration_shaman_delve": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAzMjZbmtZGzYzsMWMjNLmZBGwAmFmAjFmZmNLmlZmhMbMzMNmZGDsZMDbz2wsYGAAA",
+        "restoration_shaman_pvp": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYMzMmZjBz2ysMzyMsNbmZBGwAmNmAjFmHYmNLzsNzM0MWGzMNmZYAGzMbmtx2sNGAAYA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Riptide",
             "key": "F13",
             "min_resource": 1000,
             "conditions": [
-                "target_valid",
-                "riptide_spread_needed"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Healing Wave",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 1500,
             "conditions": [
-                "target_valid",
-                "efficiency_heal_needed"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Healing Surge",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 3000,
             "conditions": [
-                "target_valid",
-                "emergency_heal_needed"
+                "target_valid"
             ]
         },
         "slot_04": {
             "action": "Chain Heal",
-            "key": "F16",
+            "key": "F18",
             "min_resource": 4000,
             "conditions": [
-                "aoe_healing_needed_cluster"
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Cloudburst Totem",
-            "key": "F17",
-            "min_resource": 1200,
+            "action": "Healing Rain",
+            "key": "F19",
+            "min_resource": 4000,
             "conditions": [
-                "cloudburst_window_start"
+                "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Healing Stream Totem",
-            "key": "F18",
-            "min_resource": 800,
+            "action": "Primordial Wave",
+            "key": "HOME",
+            "min_resource": 0,
             "conditions": [
-                "totem_maintenance",
-                "movement_safe"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Ascendance",
-            "key": "Ctrl+F13",
-            "min_resource": 0,
+            "action": "Cloudburst Totem",
+            "key": "END",
+            "min_resource": 1200,
             "conditions": [
-                "burst_healing_critical"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Spirit Link Totem",
-            "key": "Ctrl+F14",
+            "action": "Unleash Life",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "raid_damage_lethal_cluster"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Mana Tide Totem",
-            "key": "Ctrl+F15",
+            "action": "Earthen Wall Totem",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "mana_restore_party"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Spirit Link Totem",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Wind Shear",
-            "key": "Alt+F13",
+            "action": "Mana Tide Totem",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Capacitor Totem",
-            "key": "Alt+F14",
+            "action": "Ascendance",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "aoe_cc_needed",
-                "cluster_check"
+                "target_valid"
             ]
         },
         "slot_13": {
             "action": "Astral Shift",
-            "key": "Ctrl+F25",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_14": {
             "action": "Earth Elemental",
-            "key": "Ctrl+F26",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "tank_buster_anticipated"
+                "target_valid"
             ]
         },
         "slot_15": {
             "action": "Spiritwalker's Grace",
-            "key": "Ctrl+F27",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "mobile_casting_needed"
+                "target_valid"
+            ]
+        },
+        "slot_16": {
+            "action": "Ghost Wolf",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Ghost Wolf",
-            "key": "Ctrl+F29",
+            "action": "Thunderstorm",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed",
-                "combat_check"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Wind Rush Totem",
-            "key": "Ctrl+F30",
+            "action": "Capacitor Totem",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "party_mobility_needed"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Earthbind Totem",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Tremor Totem",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Purify Spirit",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Purge",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Wind Rush Totem",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Thunderstorm",
-            "key": "Ctrl+F36",
+            "action": "Nature's Swiftness",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "knockback_peel_needed"
+                "target_valid"
             ]
+        },
+        "slot_25": {
+            "action": "Wind Shear",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Hex",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Capacitor Totem",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Earthgrab Totem",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Wind Rush Totem",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Tremor Totem",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Ancestral Guidance",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Spirit Link Totem",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Healing Stream Totem",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Bloodlust",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_35": {
+            "action": "Astral Shift",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": []
+        },
+        "slot_36": {
+            "action": "Earth Elemental",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": []
         }
     },
     "proc_priority": {

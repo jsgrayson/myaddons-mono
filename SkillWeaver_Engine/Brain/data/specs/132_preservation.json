@@ -3,156 +3,227 @@
     "spec_name": "Preservation Evoker",
     "resource_type": "mana",
     "secondary_resource": "essence",
+    "talent_loadouts": {
+        "preservation_mythic": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2GDwMzYWMzMbDYAAwMjZMzMGmJGzAAAAbzMzkx2MjxYGAAGzmNWgBmhhGMWgB",
+        "preservation_raid": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZMbzghZGzixMbjZGAAgZMjhxYGhZAAAAmZmJzsNzYWmZGAMjZgFwGYGmAbwmhB",
+        "preservation_delve": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2GDwMzYWMzMbDYAAwMjZMzMGmJGzAAAAbzMzkx2MjxYGAAGzmNWgBmhhGMWgB",
+        "preservation_pvp": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAGzMz2sMwwMzwMzMbDYAAwMDzMjxwMBzAAAAmZmpZwMzsMmBAgxsZjFYgZYoBjFYA"
+    },
     "universal_slots": {
         "slot_01": {
-            "action": "Living Flame / Azure Strike",
+            "action": "Living Flame",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "essence_burst_efficient"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Echo",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_help_valid",
-                "echo_spread_gate"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Dream Breath",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "aoe_heal_needed",
-                "empower_dream_breath_gate"
+                "target_valid"
             ]
         },
         "slot_04": {
             "action": "Spiritbloom",
-            "key": "F16",
-            "min_resource": 0,
-            "conditions": [
-                "single_target_burst_heal",
-                "empower_spiritbloom_gate"
-            ]
-        },
-        "slot_05": {
-            "action": "Rewind / Emerald Communion",
-            "key": "F17",
-            "min_resource": 0,
-            "conditions": [
-                "raid_damage_reversal"
-            ]
-        },
-        "slot_06": {
-            "action": "Reversion",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "golden_hour_check"
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Reversion",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Temporal Anomaly",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Temporal Anomaly",
-            "key": "Ctrl+F13",
+            "action": "Emerald Blossom",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "shield_ramp_needed"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Dream Flight",
-            "key": "Ctrl+F14",
+            "action": "Verdant Embrace",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "aoe_mobility_heal"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Stasis",
-            "key": "Ctrl+F15",
+            "action": "Rewind",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "ramp_setup_start"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Emerald Communion",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Quell",
-            "key": "Alt+F13",
+            "action": "Dream Flight",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Landslide",
-            "key": "Alt+F14",
+            "action": "Tip the Scales",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "melee_root_peel"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Oppressing Roar",
-            "key": "Alt+F15",
+            "action": "Hover",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "cc_extension_window"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Obsidian Scales",
-            "key": "Ctrl+F26",
+            "action": "Rescue",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_minor"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Time Dilation",
-            "key": "Ctrl+F27",
+            "action": "Fire Breath",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "tank_buster_mitigation"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Verdant Embrace",
-            "key": "Ctrl+F28",
+            "action": "Disintegrate",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "emergency_mobility_heal"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Hover",
-            "key": "Ctrl+F29",
+            "action": "Obsidian Scales",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "movement_cast_needed",
-                "hover_maintenance"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Rescue",
-            "key": "Ctrl+F30",
+            "action": "Renewing Blaze",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "rescue_hazard_save"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Quell",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_20": {
+            "action": "Naturalize",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Time Dilation",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Time Spiral",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Zephyr",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Cauterizing Flame",
-            "key": "Ctrl+F36",
+            "action": "Source of Magic",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "dispel_needed_bleed_curse"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Landslide",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_26": {
+            "action": "Oppressing Roar",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Stasis",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

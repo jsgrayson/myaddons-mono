@@ -1,0 +1,246 @@
+{
+    "spec_id": 114,
+    "spec_name": "Restoration Druid",
+    "resource_type": "mana",
+    "secondary_resource": "combo_points_none",
+    "talent_loadouts": {
+        "restoration_mythic": "CkGAAAAAAAAAAAAAAAAAAAAAAsxMzYxMzMzsY2GeAGLLzstYbGAAAAAAAAAAAALDa2gpZYGMLzsMzMLzYMDAAAAAAAMAAAAAgZbmtmlZ2sxYGAzCoB",
+        "restoration_raid": "CkGAAAAAAAAAAAAAAAAAAAAAAYmZmxy2YmZsY2GeAGbbzssYbGAAAAAAAAAAAALDa2YMNzYgZZmlZmhxMzAAAAAAAADAAAAAY2mZrZZmNbMzMAGgG",
+        "restoration_delve": "CkGAAAAAAAAAAAAAAAAAAAAAAsxMzYjZmZmFz2MDGbLzYx2MAAAAAAAAAAAAWGEGmMMzMmFzyMzsNjhBAAAAAAGADAAAAAmtZ2aWmZxGYAjZxM0A",
+        "restoration_pvp": "CkGAAAAAAAAAAAAAAAAAAAAAAsZmZGbbDzM2MLDDjFstYZGAAAAAAAAAAAALzQzGjpZmZgZbmlZGMGGAAAAAYAAjBAAAAAzyMLNbzsYjxMGMzA0A"
+    },
+    "universal_slots": {
+        "slot_01": {
+            "action": "Rejuvenation",
+            "key": "F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_02": {
+            "action": "Regrowth",
+            "key": "F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_03": {
+            "action": "Lifebloom",
+            "key": "F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Wild Growth",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Swiftmend",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Efflorescence",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_07": {
+            "action": "Tranquility",
+            "key": "END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_08": {
+            "action": "Ironbark",
+            "key": "DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_09": {
+            "action": "Cenarion Ward",
+            "key": "F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Flourish",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_11": {
+            "action": "Nature's Cure",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_12": {
+            "action": "Adaptive Swarm",
+            "key": "F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_13": {
+            "action": "Barkskin",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_14": {
+            "action": "Incarnation: Tree of Life",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_15": {
+            "action": "Dash",
+            "key": "Ctrl+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_16": {
+            "action": "Stampeding Roar",
+            "key": "Ctrl+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_17": {
+            "action": "Wild Charge",
+            "key": "Ctrl+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_18": {
+            "action": "Ursol's Vortex",
+            "key": "Ctrl+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Typhoon",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Mighty Bash",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Cyclone",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Soothe",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Hibernate",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_24": {
+            "action": "Rebirth",
+            "key": "Ctrl+F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Sunfire",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 10.0
+        },
+        "slot_26": {
+            "action": "Moonfire",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 10.0
+        },
+        "slot_27": {
+            "action": "Wrath",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 0.5
+        }
+    },
+    "proc_priority": {
+        "tank_maintenance": [
+            "slot_02",
+            "slot_05",
+            "slot_15"
+        ],
+        "healing_loop": [
+            "slot_01",
+            "slot_04",
+            "slot_03",
+            "slot_06"
+        ]
+    }
+}

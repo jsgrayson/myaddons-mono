@@ -58,7 +58,8 @@ SW_Frame:SetScript("OnUpdate", function()
             SetPixel(5, UnitCanAttack("player", "target") and 255 or 0)
         end
         
-        -- 3. DOTS (BOOLEAN - TWW Compatible via AuraUtil)
+        -- 3. DOTS (DURATION - scaled to 0-255 where 255 = 25.5 seconds)
+        -- This enables pandemic refresh (recast at <4.5s remaining)
         local dVals = {[11]=0, [12]=0, [13]=0}
         if UnitExists("target") then
             -- Use AuraUtil.ForEachAura if available (TWW), else legacy UnitAura
@@ -71,14 +72,22 @@ SW_Frame:SetScript("OnUpdate", function()
                             elseif aura.name == "Shadow Word: Pain" then idx = 12
                             elseif aura.name == "Devouring Plague" then idx = 13 end
                         end
-                        if idx then dVals[idx] = 255 end
+                        if idx then
+                            -- Calculate remaining duration
+                            local remaining = 0
+                            if aura.expirationTime and aura.expirationTime > 0 then
+                                remaining = aura.expirationTime - GetTime()
+                            end
+                            -- Scale: 1 second = 10 units (max 25.5s = 255)
+                            dVals[idx] = math.max(dVals[idx], math.min(255, remaining * 10))
+                        end
                     end
                 end
                 AuraUtil.ForEachAura("target", "HARMFUL", nil, CheckAura, true)
             else
                 -- Legacy API (Classic/Era)
                 for i = 1, 40 do
-                    local name, _, _, _, _, _, source, _, _, spellId = UnitAura("target", i, "HARMFUL|PLAYER")
+                    local name, _, _, _, _, expirationTime, source, _, _, spellId = UnitAura("target", i, "HARMFUL|PLAYER")
                     if not name then break end
                     if source == "player" or source == "pet" then
                         local idx = DOTS[spellId]
@@ -87,7 +96,13 @@ SW_Frame:SetScript("OnUpdate", function()
                             elseif name == "Shadow Word: Pain" then idx = 12
                             elseif name == "Devouring Plague" then idx = 13 end
                         end
-                        if idx then dVals[idx] = 255 end
+                        if idx then
+                            local remaining = 0
+                            if expirationTime and expirationTime > 0 then
+                                remaining = expirationTime - GetTime()
+                            end
+                            dVals[idx] = math.max(dVals[idx], math.min(255, remaining * 10))
+                        end
                     end
                 end
             end
@@ -96,7 +111,43 @@ SW_Frame:SetScript("OnUpdate", function()
         SetPixel(12, dVals[12])
         SetPixel(13, dVals[13])
 
-        -- 4. RESOURCES
+        -- 4. MULTI-DOT NAMEPLATE SCAN (P20-P21)
+        local missingCount = 0
+        local totalPlates = 0
+        if C_NamePlate and C_NamePlate.GetNamePlates then
+            for _, nameplate in pairs(C_NamePlate.GetNamePlates()) do
+                local unit = nameplate.namePlateUnitToken
+                -- Only require attackable and not current target
+                if unit and UnitCanAttack("player", unit) and unit ~= "target" then
+                    totalPlates = totalPlates + 1
+                    local hasPlayerDot = false
+                    if AuraUtil and AuraUtil.ForEachAura then
+                        AuraUtil.ForEachAura(unit, "HARMFUL", nil, function(aura)
+                            if aura.isFromPlayerOrPlayerPet then
+                                hasPlayerDot = true
+                                return true
+                            end
+                        end, true)
+                    else
+                        for i = 1, 40 do
+                            local name, _, _, _, _, _, source = UnitAura(unit, i, "HARMFUL|PLAYER")
+                            if not name then break end
+                            if source == "player" or source == "pet" then
+                                hasPlayerDot = true
+                                break
+                            end
+                        end
+                    end
+                    if not hasPlayerDot then
+                        missingCount = missingCount + 1
+                    end
+                end
+            end
+        end
+        SetPixel(20, math.min(255, missingCount * 25))  -- 0-10 enemies scaled
+        SetPixel(21, totalPlates * 25)  -- Debug: total hostile nameplates visible
+
+        -- 5. RESOURCES
         local pMax = UnitPowerMax("player")
         SetPixel(7, (pMax > 0 and UnitPower("player") / pMax or 0) * 255)
         

@@ -3,156 +3,277 @@
     "spec_name": "Subtlety Rogue",
     "resource_type": "energy",
     "secondary_resource": "combo_points",
+    "talent_loadouts": {
+        "sub_mythic": "CUQAAAAAAAAAAAAAAAAAAAAAAAAM2mBAAAAAgZhxy0YGzMmZGjZYmZMMmtZxYmtNzMYmxYMzysNAAAAmZwAYMbGGYgZhFaxGM",
+        "sub_raid": "CUQAAAAAAAAAAAAAAAAAAAAAAAAM2mBAAAAAALjZWmGzsMGzYMMMzMzwY2mlZMjtZmxMzMGwysNAAAAmZwAYMbGGYgZhFaxGM",
+        "sub_delve": "CUQAAAAAAAAAAAAAAAAAAAAAAAAM2mBAAAAAgZhxy0YGzMmZGjZYmZMMmtZxYmtNzMYmxYMzysNAAAAmZwAYMbGGYgZhFaxGM",
+        "sub_pvp": "CUQAAAAAAAAAAAAAAAAAAAAAAAAMz2MAAAAAAMbjxy0MzgHYGGDmZmZmZmxsNMGLLjZGmZMGzsMGAAAAmBDLmlBGwCYZYCMLwA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Backstab",
             "key": "F13",
             "min_resource": 35,
             "conditions": [
-                "target_valid",
-                "not_stealthed",
-                "combo_points_lt_5"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Shadowstrike",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 40,
             "conditions": [
-                "target_valid",
-                "is_stealthed_or_dance",
-                "combo_points_lt_5"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Eviscerate",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 35,
             "conditions": [
-                "combo_points_gte_5",
                 "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Secret Technique",
-            "key": "F16",
-            "min_resource": 0,
-            "conditions": [
-                "combo_points_gte_5",
-                "target_valid",
-                "cooldown_ready"
-            ]
-        },
-        "slot_05": {
             "action": "Rupture",
-            "key": "F17",
+            "key": "F18",
             "min_resource": 25,
             "conditions": [
-                "combo_points_gte_4",
-                "target_debuff_absent_rupture",
+                "target_valid"
+            ],
+            "cooldown": 12.0
+        },
+        "slot_05": {
+            "action": "Shuriken Storm",
+            "key": "F19",
+            "min_resource": 35,
+            "conditions": [
                 "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Symbols of Death",
-            "key": "F18",
-            "min_resource": 0,
+            "action": "Black Powder",
+            "key": "HOME",
+            "min_resource": 35,
             "conditions": [
-                "burst_window_active",
-                "energy_lt_80"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Shadow Blades",
-            "key": "Ctrl+F13",
+            "action": "Secret Technique",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "burst_aligned"
+                "target_valid"
             ]
         },
         "slot_08": {
             "action": "Shadow Dance",
-            "key": "Ctrl+F14",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "burst_aligned",
-                "not_stealthed_or_dance"
+                "target_valid"
+            ],
+            "cooldown": 60.0
+        },
+        "slot_09": {
+            "action": "Symbols of Death",
+            "key": "F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Shadow Blades",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Kick",
-            "key": "Alt+F13",
+            "action": "Cold Blood",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 40,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Kidney Shot",
-            "key": "Alt+F14",
-            "min_resource": 25,
+            "action": "Thistle Tea",
+            "key": "F24",
+            "min_resource": 0,
             "conditions": [
-                "combo_points_gte_5",
-                "trigger_stun",
-                "target_not_dr_stun"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Blind",
-            "key": "Ctrl+F25",
+            "action": "Shadowstep",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "trigger_cc",
                 "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Feint",
-            "key": "Ctrl+F26",
-            "min_resource": 35,
+            "action": "Vanish",
+            "key": "Ctrl+F14",
+            "min_resource": 0,
             "conditions": [
-                "aoe_incoming"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Evasion",
-            "key": "Ctrl+F27",
-            "min_resource": 0,
-            "priority": 500,
+            "action": "Feint",
+            "key": "Ctrl+F15",
+            "min_resource": 35,
             "conditions": [
-                "survival_minor"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Cloak of Shadows",
-            "key": "Ctrl+F28",
-            "min_resource": 0,
-            "priority": 600,
+            "action": "Crimson Vial",
+            "key": "Ctrl+F16",
+            "min_resource": 20,
             "conditions": [
-                "survival_magic_critical"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Shadowstep",
-            "key": "Ctrl+F29",
+            "action": "Cloak of Shadows",
+            "key": "Ctrl+F17",
             "min_resource": 0,
-            "requires_aim": false,
             "conditions": [
-                "gap_closer_needed",
-                "target_valid",
-                "safe_vector"
+                "target_valid"
+            ]
+        },
+        "slot_18": {
+            "action": "Evasion",
+            "key": "Ctrl+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Sprint",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Tricks of the Trade",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Stealth",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Shuriken Toss",
+            "key": "Ctrl+F22",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Flagellation",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Vanish",
-            "key": "Ctrl+F36",
+            "action": "Goremaw's Bite",
+            "key": "Ctrl+F24",
             "min_resource": 0,
-            "priority": 999,
             "conditions": [
-                "survival_critical",
-                "trigger_predictive_vanish"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Kick",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Kidney Shot",
+            "key": "Shift+F14",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Cheap Shot",
+            "key": "Shift+F15",
+            "min_resource": 40,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Blind",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Sap",
+            "key": "Shift+F17",
+            "min_resource": 35,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Distract",
+            "key": "Shift+F18",
+            "min_resource": 30,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Smoke Bomb",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Dismantle",
+            "key": "Shift+F20",
+            "min_resource": 25,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Shadowy Duel",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

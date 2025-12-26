@@ -3,152 +3,229 @@
     "spec_name": "Holy Priest",
     "resource_type": "mana",
     "secondary_resource": "none",
+    "talent_loadouts": {
+        "holy_priest_mythic": "CEQAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAY2MMmlxMMDzYGGbzMzMAAAAYYZ2G2mZGMLMLzYmxglFYGTNLAgZWsMMbGAyYwmxMLDA",
+        "holy_priest_raid": "CEQAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAgxYMLzMDzYGmZmx2MjZAAAAwsYZ2G2mZGMLMmxMjBLbwMmaWAAzsZZY2MAkxgNjxyAA",
+        "holy_priest_delve": "CEQAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAY2MMmlxMMDzYGGbzMzMAAAAYYZ2G2mZGMLMLzYmxglFYGTNLAgZWsMMbGAyYwmxMLDA",
+        "holy_priest_pvp": "CEQAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAY2MMmlxMMDzYGGbzMzMAAAAYYZ2G2mZGMLMLzYmxglFYGTNLAgZWsMMbGAyYwmxMLDA"
+    },
     "universal_slots": {
         "slot_01": {
-            "action": "Flash Heal / Heal",
+            "action": "Heal",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "serendipity_builder"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Prayer of Mending",
-            "key": "F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_help_valid",
-                "mending_bounce_maintain"
-            ]
-        },
-        "slot_03": {
-            "action": "Holy Word: Serenity",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "serendipity_spender_single"
-            ]
-        },
-        "slot_04": {
-            "action": "Holy Word: Sanctify",
+            "action": "Flash Heal",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "aoe_miracle_gate"
+                "target_valid"
             ]
         },
-        "slot_05": {
-            "action": "Apotheosis / Holy Word: Chastise",
+        "slot_03": {
+            "action": "Prayer of Mending",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "burst_window_reset"
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Holy Word: Serenity",
+            "key": "F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Holy Word: Sanctify",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_06": {
             "action": "Circle of Healing",
-            "key": "F18",
+            "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "aoe_smart_heal"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Divine Star / Halo",
-            "key": "Ctrl+F13",
+            "action": "Prayer of Healing",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "aoe_positional_heal"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Divine Hymn",
-            "key": "Ctrl+F14",
+            "action": "Renew",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "raid_wide_channel_check"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Symbol of Hope",
-            "key": "Ctrl+F15",
+            "action": "Holy Fire",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "mana_restore_raid"
+                "target_valid"
             ]
         },
-        "slot_11": {
-            "action": "Psychic Scream",
-            "key": "Alt+F13",
+        "slot_10": {
+            "action": "Smite",
+            "key": "F22",
             "min_resource": 0,
             "conditions": [
-                "cc_aoe_fear"
+                "target_valid"
+            ],
+            "cooldown": 0.5
+        },
+        "slot_11": {
+            "action": "Holy Word: Chastise",
+            "key": "F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Holy Word: Chastise (Stun)",
-            "key": "Alt+F14",
+            "action": "Shadow Word: Death",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "stun_target"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Fade",
-            "key": "Alt+F15",
+            "action": "Divine Hymn",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "threat_drop_fade"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Desperate Prayer",
-            "key": "Ctrl+F26",
+            "action": "Guardian Spirit",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "health_critical_self"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Guardian Spirit",
-            "key": "Ctrl+F27",
+            "action": "Apotheosis",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "cheat_death_save"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Power Infusion",
-            "key": "Ctrl+F28",
+            "action": "Symbol of Hope",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "burst_buff_ally"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Angelic Feather",
-            "key": "Ctrl+F29",
+            "action": "Desperate Prayer",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "mobility_burst_needed"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Leap of Faith",
-            "key": "Ctrl+F30",
+            "action": "Power Infusion",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "life_grip_save"
+                "target_valid"
+            ],
+            "cooldown": 120.0
+        },
+        "slot_19": {
+            "action": "Mass Dispel",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Purify",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Fade",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Angelic Feather",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Leap of Faith",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Purify",
-            "key": "Ctrl+F36",
+            "action": "Halo",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "dispel_needed_magic_disease"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Psychic Scream",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Empyreal Blaze",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Dominate Mind",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

@@ -3,164 +3,316 @@
     "spec_name": "Marksmanship Hunter",
     "resource_type": "focus",
     "secondary_resource": "none",
+    "talent_loadouts": {
+        "marksmanship_mythic": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsEYWAAAAAAAAAAAAAgZMjZMzYMjMjxYmZYWGGLzgthZMW22MzMjZxMDjZmZZzwywMD",
+        "marksmanship_raid": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsFYWAAAAAAAAAAAAAgZMjZmZmhZ0MjxwMDMMLLzglxMDstZmZGziZGmZmZWWMmlBzA",
+        "marksmanship_delve": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsEYWAAAAAAAAAAAAAgZMjZMzYMjMjxYmZYWGGLzgthZMW22MzMjZxMDjZmZZzwywMD",
+        "marksmanship_pvp": "C4PAAAAAAAAAAAAAAAAAAAAAAwADsNGNWGAzC2AAAAAAAAAAAAAgZgBzMzMjMzMzMmZYMzYZbglxMzMz2mtZGDMzwMzM2WMmlhZA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Aimed Shot",
             "key": "F13",
             "min_resource": 35,
             "conditions": [
-                "target_valid",
-                "aimed_shot_safe_stationary",
-                "precise_shots_missing"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Arcane Shot / Multi-Shot",
-            "key": "F14",
-            "min_resource": 15,
-            "conditions": [
-                "target_valid",
-                "precise_shots_active_or_dump",
-                "trigger_trick_shots"
-            ]
-        },
-        "slot_03": {
             "action": "Rapid Fire",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "rapid_fire_move_safe"
-            ]
-        },
-        "slot_04": {
-            "action": "Steady Shot",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "focus_starved"
+                "target_valid"
+            ]
+        },
+        "slot_03": {
+            "action": "Arcane Shot",
+            "key": "F17",
+            "min_resource": 15,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_04": {
+            "action": "Multi-Shot",
+            "key": "F18",
+            "min_resource": 15,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Trueshot",
-            "key": "F17",
+            "action": "Steady Shot",
+            "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "burst_window_active"
-            ]
+                "target_valid"
+            ],
+            "cooldown": 0.5
         },
         "slot_06": {
             "action": "Kill Shot",
-            "key": "F18",
+            "key": "HOME",
             "min_resource": 10,
             "conditions": [
-                "target_execute_range"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Volley",
-            "key": "Ctrl+F13",
+            "action": "Trueshot",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "burst_aligned",
-                "aoe_needed"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Salvo",
-            "key": "Ctrl+F14",
+            "action": "Volley",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "aoe_needed",
-                "next_aimed_or_rapid"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Explosive Shot",
-            "key": "Ctrl+F15",
+            "action": "Salvo",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "aoe_needed",
-                "cooldown_ready"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Explosive Shot",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Counter Shot",
-            "key": "Alt+F13",
+            "action": "Chimaera Shot",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Binding Shot",
-            "key": "Alt+F14",
+            "action": "Wailing Arrow",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "aoe_cc_needed",
-                "kite_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Exhilaration",
-            "key": "Ctrl+F25",
+            "action": "Death Chakram",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "health_lt_50"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Aspect of the Turtle",
-            "key": "Ctrl+F26",
+            "action": "Binding Shot",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "survival_critical_immunity"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Survival of the Fittest",
-            "key": "Ctrl+F27",
+            "action": "Bursting Shot",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "survival_minor_mitigation"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Feign Death",
-            "key": "Ctrl+F28",
+            "action": "Scatter Shot",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "agro_drop_needed",
-                "survival_magic_cancel"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Disengage",
-            "key": "Ctrl+F29",
+            "action": "Intimidation",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "gap_opener_needed",
-                "rear_zone_safe",
-                "sweet_spot_adjustment"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Aspect of the Cheetah",
-            "key": "Ctrl+F30",
+            "action": "High Explosive Trap",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Steel Trap",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Tar Trap",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Freezing Trap",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Flare",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Misdirection",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Spatial Rift / Escape Artist",
-            "key": "Ctrl+F36",
+            "action": "Tranquilizing Shot",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "kite_needed_melee_gap"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Counter Shot",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Exhilaration",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Aspect of the Turtle",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Survival of the Fittest",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_29": {
+            "action": "Feign Death",
+            "key": "Shift+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_30": {
+            "action": "Disengage",
+            "key": "Shift+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_31": {
+            "action": "Aspect of the Cheetah",
+            "key": "Shift+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_32": {
+            "action": "Roar of Sacrifice",
+            "key": "Shift+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_33": {
+            "action": "Sniper Shot",
+            "key": "Shift+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_34": {
+            "action": "Ranger's Finesse",
+            "key": "Shift+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_35": {
+            "action": "Trueshot Aura",
+            "key": "Shift+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_36": {
+            "action": "Revive Pet",
+            "key": "Shift+F24",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_37": {
+            "action": "Mend Pet",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_38": {
+            "action": "Serpent Sting",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

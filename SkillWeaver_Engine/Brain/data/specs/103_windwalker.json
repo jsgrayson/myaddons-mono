@@ -3,161 +3,227 @@
     "spec_name": "Windwalker Monk",
     "resource_type": "energy",
     "secondary_resource": "chi",
+    "talent_loadouts": {
+        "windwalker_mythic": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYmBDzMzyMDGAAAAAAAAAAAYZZYmYmhxMgFmx2MzMMbDzglZCAglZmZMDzsNDAgllZZZ2mZmAAwA",
+        "windwalker_raid": "C0QAAAAAAAAAAAAAAAAAAAAAAMzsMAmZMLzMmZGAAAAAAAAAAAssMMiZGYGGWMzYbmZGmthZwyMBAwyMzgZG2mBAwGAYWmlmZmZBwM",
+        "windwalker_delve": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYmBDzMzyMDGAAAAAAAAAAAYZZYmYmhxMgFmx2MzMMbDzglZCAglZmZMDzsNDAgllZZZ2mZmAAwA",
+        "windwalker_pvp": "C0QAAAAAAAAAAAAAAAAAAAAAAYmlBYmhxMzYmZAAAAAAAAAAAYZZYEzMzGzsBLgtZMDzmlxMmlZCAglZmZYGmtZAAsBAmtZpZmZWAMD"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Tiger Palm",
             "key": "F13",
             "min_resource": 50,
             "conditions": [
-                "target_valid",
-                "hit_combo_gate",
-                "energy_efficient_build"
+                "target_valid"
             ]
         },
         "slot_02": {
             "action": "Blackout Kick",
-            "key": "F14",
+            "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "hit_combo_gate",
-                "chi_consumer"
+                "target_valid"
             ]
         },
         "slot_03": {
             "action": "Rising Sun Kick",
-            "key": "F15",
+            "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "hit_combo_gate",
-                "priority_spender"
+                "target_valid"
             ]
         },
         "slot_04": {
             "action": "Fists of Fury",
-            "key": "F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "hit_combo_gate",
-                "aoe_channel_guard"
-            ]
-        },
-        "slot_05": {
-            "action": "Storm, Earth, and Fire / Serenity",
-            "key": "F17",
-            "min_resource": 0,
-            "conditions": [
-                "burst_window_active"
-            ]
-        },
-        "slot_06": {
-            "action": "Spinning Crane Kick",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "aoe_builder",
-                "mark_of_the_crane_check"
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Spinning Crane Kick",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Whirling Dragon Punch",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Whirling Dragon Punch",
-            "key": "Ctrl+F13",
+            "action": "Strike of the Windlord",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "wdp_ready_check"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Strike of the Windlord",
-            "key": "Ctrl+F14",
+            "action": "Touch of Death",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "aoe_burst_needed"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Touch of Death",
-            "key": "Ctrl+F15",
+            "action": "Storm, Earth, and Fire",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "execute_range_death"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Invoke Xuen, the White Tiger",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Spear Hand Strike",
-            "key": "Alt+F13",
+            "action": "Expel Harm",
+            "key": "F23",
             "min_resource": 0,
-            "latency_offset_ms": 0,
             "conditions": [
-                "interruptible",
                 "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Leg Sweep",
-            "key": "Alt+F14",
+            "action": "Chi Burst",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "aoe_stun_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Paralysis",
-            "key": "Alt+F15",
+            "action": "Fortifying Brew",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "cc_incapacitate"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Fortifying Brew",
-            "key": "Ctrl+F26",
+            "action": "Touch of Karma",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Touch of Karma",
-            "key": "Ctrl+F27",
+            "action": "Diffuse Magic",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "mitigation_reflective"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Diffuse Magic / Dampen Harm",
-            "key": "Ctrl+F28",
+            "action": "Roll",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_magic"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Roll / Chi Torpedo",
-            "key": "Ctrl+F29",
+            "action": "Flying Serpent Kick",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed",
-                "hazard_escape_roll"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Transcendence: Transfer",
-            "key": "Ctrl+F30",
+            "action": "Transcendence",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "boss_mechanic_snapback"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Transcendence: Transfer",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Ring of Peace",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Paralysis",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Provoke",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Vivify",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
             "action": "Detox",
-            "key": "Ctrl+F36",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "dispel_needed_poison_disease"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Spear Hand Strike",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Leg Sweep",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Disable",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

@@ -3,153 +3,238 @@
     "spec_name": "Discipline Priest",
     "resource_type": "mana",
     "secondary_resource": "none",
+    "talent_loadouts": {
+        "discipline_mythic": "CAQAAAAAAAAAAAAAAAAAAAAAAAglZmZMGjxMzYmNz2MzMzMAAAAAAAAAAAzysMbDmZGMLMmxYMYhtZaMxyAzMAQAmtZbBM2sBAA",
+        "discipline_raid": "CAQAAAAAAAAAAAAAAAAAAAAAAAgNzMjHYmZMzMzYmN2mZmZmBAAAAAAAAAAYWmlZbwMzgZhxMMjBLsNTjJWGYmBACwsNbLgxmNAA",
+        "discipline_delve": "CAQAAAAAAAAAAAAAAAAAAAAAAAglZmZMGjxMzYmNz2MzMzMAAAAAAAAAAAzysMbDmZGMLMmxYMYhtZaMxyAzMAQAmtZbBM2sBAA",
+        "discipline_pvp": "CAQAAAAAAAAAAAAAAAAAAAAAAADsxMDmZMzMPwYmtZwMjZmZAAAAAAAAAAwsNLzGjZmBwsYMGDz2Gz0YilZGmZAgAMLz2CYsZDAA"
+    },
     "universal_slots": {
         "slot_01": {
             "action": "Power Word: Shield",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "atonement_application_efficient"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Power Word: Radiance / Renew",
-            "key": "F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_help_valid",
-                "atonement_spread_burst"
-            ]
-        },
-        "slot_03": {
             "action": "Penance",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "penance_offensive_valve"
-            ]
-        },
-        "slot_04": {
-            "action": "Mind Blast / Smite",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "dps_rotation_filler"
+                "target_valid"
             ]
         },
-        "slot_05": {
-            "action": "Power Word: Barrier",
+        "slot_03": {
+            "action": "Purge the Wicked",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "raid_damage_reduction_major"
+                "target_valid"
             ]
         },
-        "slot_06": {
-            "action": "Shadow Word: Death",
+        "slot_04": {
+            "action": "Smite",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "execute_range_death"
+                "target_valid"
+            ],
+            "cooldown": 0.5
+        },
+        "slot_05": {
+            "action": "Mind Blast",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 9.0
+        },
+        "slot_06": {
+            "action": "Power Word: Radiance",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Purge the Wicked / SW: Pain",
-            "key": "Ctrl+F13",
+            "action": "Flash Heal",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "pandemic_gate_dot"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Mindgames / Ultimate Penitence",
-            "key": "Ctrl+F14",
+            "action": "Shadow Covenant",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "burst_window_damage"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Rapture",
-            "key": "Ctrl+F15",
+            "action": "Mindgames",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "shield_ramp_initiator"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Shadow Word: Death",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Psychic Scream",
-            "key": "Alt+F13",
+            "action": "Halo",
+            "key": "F23",
             "min_resource": 0,
             "conditions": [
-                "melee_peel_cc"
+                "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Mass Dispel",
-            "key": "Alt+F14",
+            "action": "Power Word: Barrier",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "mass_dispel_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Fade",
-            "key": "Alt+F15",
+            "action": "Rapture",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "threat_drop_fade"
+                "target_valid"
             ]
         },
         "slot_14": {
             "action": "Pain Suppression",
-            "key": "Ctrl+F26",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_target"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Desperate Prayer",
-            "key": "Ctrl+F27",
+            "action": "Power Word: Life",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "health_critical_self"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Power Infusion",
-            "key": "Ctrl+F28",
+            "action": "Evangelism",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "burst_buff_ally"
+                "target_valid"
             ]
         },
         "slot_17": {
-            "action": "Leap of Faith",
-            "key": "Ctrl+F29",
+            "action": "Ultimate Penitence",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "life_grip_save"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Angelic Feather",
-            "key": "Ctrl+F30",
+            "action": "Desperate Prayer",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "mobility_burst_needed"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Power Infusion",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ],
+            "cooldown": 120.0
+        },
+        "slot_20": {
+            "action": "Mass Dispel",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Purify",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Fade",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Angelic Feather",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Purify",
-            "key": "Ctrl+F36",
+            "action": "Leap of Faith",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "dispel_needed_magic"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Psychic Scream",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Dispel Magic",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Void Tendrils",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Dominate Mind",
+            "key": "Shift+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },

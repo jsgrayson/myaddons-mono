@@ -3,152 +3,227 @@
     "spec_name": "Mistweaver Monk",
     "resource_type": "mana",
     "secondary_resource": "chi",
+    "talent_loadouts": {
+        "mistweaver_mythic": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBWmZZMLmtZMjNstsMbjHgtZbZZmZZhhmZmBmhZAsNzMDzGzMMLPwEAAAAgZbab2mZZ2AAAAgNA",
+        "mistweaver_raid": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxswMwGmxMzyDwmtZZmZz2sstNzsswMamZGYGmZDYbmZGmNmZwiJAAAAAAgFLzyysNzMBAAbA",
+        "mistweaver_delve": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghFLzsMmFz2MzM2w22ysNeAMbWmZWWYoZmZswMMzCw2MzMMbMzwsYCAAAAAAYxyssMLzMTAAAA",
+        "mistweaver_pvp": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghlZZsMssYbMzYzMLbLzGYZWsNzsswMaMzAzwMgZ2MmZMbWGY2mJAAAAAAgFLzyysNzMBAALA"
+    },
     "universal_slots": {
         "slot_01": {
-            "action": "Tiger Palm",
+            "action": "Soothing Mist",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "teachings_stack_builder"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Blackout Kick",
-            "key": "F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "teachings_stack_consumer"
-            ]
-        },
-        "slot_03": {
-            "action": "Rising Sun Kick",
-            "key": "F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "mist_extension_reset"
-            ]
-        },
-        "slot_04": {
-            "action": "Vivify / Enveloping Mist",
+            "action": "Vivify",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "life_line_gate"
+                "target_valid"
             ]
         },
-        "slot_05": {
-            "action": "Invoke Chi-Ji",
+        "slot_03": {
+            "action": "Enveloping Mist",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "burst_window_healing"
+                "target_valid"
             ]
         },
-        "slot_06": {
-            "action": "Soothing Mist",
+        "slot_04": {
+            "action": "Renewing Mist",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "instant_cast_prep"
+                "target_valid"
+            ]
+        },
+        "slot_05": {
+            "action": "Sheilun's Gift",
+            "key": "F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Rising Sun Kick",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Renewing Mist",
-            "key": "Ctrl+F13",
+            "action": "Tiger Palm",
+            "key": "END",
             "min_resource": 0,
             "conditions": [
-                "mist_spread_maintenance"
+                "target_valid"
             ]
         },
         "slot_08": {
-            "action": "Thunder Focus Tea",
-            "key": "Ctrl+F14",
+            "action": "Blackout Kick",
+            "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "empower_next_spell"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Revival",
-            "key": "Ctrl+F15",
+            "action": "Spinning Crane Kick",
+            "key": "F21",
             "min_resource": 0,
             "conditions": [
-                "raid_wide_dispel"
+                "target_valid"
+            ]
+        },
+        "slot_10": {
+            "action": "Life Cocoon",
+            "key": "F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_11": {
-            "action": "Ring of Peace",
-            "key": "Alt+F13",
+            "action": "Thunder Focus Tea",
+            "key": "F23",
             "min_resource": 0,
             "conditions": [
-                "threat_zoning_peel"
+                "target_valid"
             ]
         },
         "slot_12": {
-            "action": "Leg Sweep",
-            "key": "Alt+F14",
+            "action": "Mana Tea",
+            "key": "F24",
             "min_resource": 0,
             "conditions": [
-                "aoe_stun_needed"
+                "target_valid"
             ]
         },
         "slot_13": {
-            "action": "Paralysis",
-            "key": "Alt+F15",
+            "action": "Revival",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "cc_incapacitate"
+                "target_valid"
             ]
         },
         "slot_14": {
-            "action": "Fortifying Brew",
-            "key": "Ctrl+F26",
+            "action": "Invoke Yu'lon, the Jade Serpent",
+            "key": "Ctrl+F14",
             "min_resource": 0,
             "conditions": [
-                "mitigation_needed_major"
+                "target_valid"
             ]
         },
         "slot_15": {
-            "action": "Diffuse Magic",
-            "key": "Ctrl+F27",
+            "action": "Fortifying Brew",
+            "key": "Ctrl+F15",
             "min_resource": 0,
             "conditions": [
-                "mitigation_magic_cleanser"
+                "target_valid"
             ]
         },
         "slot_16": {
-            "action": "Dampen Harm",
-            "key": "Ctrl+F28",
+            "action": "Diffuse Magic",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "mitigation_physical_big_hit"
+                "target_valid"
             ]
         },
         "slot_17": {
             "action": "Roll",
-            "key": "Ctrl+F29",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "gap_closer_needed"
+                "target_valid"
             ]
         },
         "slot_18": {
-            "action": "Transcendence: Transfer",
-            "key": "Ctrl+F30",
+            "action": "Transcendence",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "fixate_break_transfer"
+                "target_valid"
+            ]
+        },
+        "slot_19": {
+            "action": "Transcendence: Transfer",
+            "key": "Ctrl+F19",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_20": {
+            "action": "Ring of Peace",
+            "key": "Ctrl+F20",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_21": {
+            "action": "Leg Sweep",
+            "key": "Ctrl+F21",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_22": {
+            "action": "Paralysis",
+            "key": "Ctrl+F22",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_23": {
+            "action": "Detox",
+            "key": "Ctrl+F23",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         },
         "slot_24": {
-            "action": "Detox",
-            "key": "Ctrl+F36",
+            "action": "Resuscitate",
+            "key": "Ctrl+F24",
             "min_resource": 0,
             "conditions": [
-                "dispel_needed"
+                "target_valid"
+            ]
+        },
+        "slot_25": {
+            "action": "Spear Hand Strike",
+            "key": "Shift+F13",
+            "min_resource": 0,
+            "conditions": [
+                "interruptible"
+            ]
+        },
+        "slot_26": {
+            "action": "Song of Chi-Ji",
+            "key": "Shift+F14",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Grapple Weapon",
+            "key": "Shift+F15",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
             ]
         }
     },
