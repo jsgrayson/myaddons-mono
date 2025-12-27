@@ -77,7 +77,7 @@
         },
         "slot_09": {
             "action": "Moonfire",
-            "key": "F22",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "refresh_dot:0"
@@ -86,7 +86,7 @@
         },
         "slot_10": {
             "action": "Sunfire",
-            "key": "F23",
+            "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
                 "refresh_dot:1"
@@ -95,7 +95,7 @@
         },
         "slot_11": {
             "action": "Stellar Flare",
-            "key": "F24",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -103,7 +103,7 @@
         },
         "slot_12": {
             "action": "Mushroom",
-            "key": "DELETE",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -111,7 +111,7 @@
         },
         "slot_13": {
             "action": "Barkskin",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -119,7 +119,7 @@
         },
         "slot_14": {
             "action": "Renewal",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -127,7 +127,7 @@
         },
         "slot_15": {
             "action": "Bear Form",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -135,7 +135,7 @@
         },
         "slot_16": {
             "action": "Dash",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -143,7 +143,7 @@
         },
         "slot_17": {
             "action": "Stampeding Roar",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -151,7 +151,7 @@
         },
         "slot_18": {
             "action": "Wild Charge",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -159,7 +159,7 @@
         },
         "slot_19": {
             "action": "Typhoon",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -167,7 +167,7 @@
         },
         "slot_20": {
             "action": "Mighty Bash",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -175,7 +175,7 @@
         },
         "slot_21": {
             "action": "Cyclone",
-            "key": "Ctrl+F21",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -183,7 +183,7 @@
         },
         "slot_22": {
             "action": "Soothe",
-            "key": "Ctrl+F22",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -191,7 +191,7 @@
         },
         "slot_23": {
             "action": "Hibernate",
-            "key": "Ctrl+F23",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -199,7 +199,7 @@
         },
         "slot_24": {
             "action": "Remove Corruption",
-            "key": "Ctrl+F24",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -207,7 +207,7 @@
         },
         "slot_25": {
             "action": "Solar Beam",
-            "key": "Shift+F13",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -215,7 +215,7 @@
         },
         "slot_26": {
             "action": "Entangling Roots",
-            "key": "Shift+F14",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -223,7 +223,7 @@
         },
         "slot_27": {
             "action": "Mass Entanglement",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -237,6 +237,21 @@
             "slot_03",
             "slot_04",
             "slot_01",
+            "slot_02"
+        ],
+        "pvp": [
+            "slot_25",
+            "slot_21",
+            "slot_19",
+            "slot_09",
+            "slot_10",
+            "slot_03"
+        ],
+        "mythic": [
+            "slot_12",
+            "slot_04",
+            "slot_10",
+            "slot_09",
             "slot_02"
         ],
         "eclipse_maintenance": [

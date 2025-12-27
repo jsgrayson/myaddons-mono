@@ -85,7 +85,7 @@
         },
         "slot_11": {
             "action": "Disrupt",
-            "key": "Shift+F13",
+            "key": "Shift+F17",
             "min_resource": 0,
             "latency_offset_ms": 0,
             "conditions": [
@@ -95,7 +95,7 @@
         },
         "slot_12": {
             "action": "Chaos Nova",
-            "key": "Shift+F14",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "aoe_control_needed",
@@ -104,7 +104,7 @@
         },
         "slot_13": {
             "action": "Blur",
-            "key": "Ctrl+F25",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "mitigation_needed_minor",
@@ -113,7 +113,7 @@
         },
         "slot_14": {
             "action": "Netherwalk",
-            "key": "Ctrl+F26",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "panic_immunity_needed"
@@ -121,7 +121,7 @@
         },
         "slot_15": {
             "action": "Darkness",
-            "key": "Ctrl+F27",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "raid_wide_damage_event"
@@ -129,7 +129,7 @@
         },
         "slot_17": {
             "action": "Shift",
-            "key": "Ctrl+F29",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "shift_gap_close"
@@ -137,7 +137,7 @@
         },
         "slot_18": {
             "action": "Vengeful Retreat",
-            "key": "Ctrl+F30",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "disengage_needed",
@@ -146,7 +146,7 @@
         },
         "slot_24": {
             "action": "Spatial Rift",
-            "key": "Ctrl+F36",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "mobility_pre_plan"
@@ -154,7 +154,7 @@
         },
         "slot_27": {
             "action": "Darkness",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -162,7 +162,7 @@
         },
         "slot_28": {
             "action": "Netherwalk",
-            "key": "Shift+F16",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -170,7 +170,7 @@
         },
         "slot_29": {
             "action": "Rain from Above",
-            "key": "Shift+F17",
+            "key": "Alt+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -178,7 +178,7 @@
         },
         "slot_30": {
             "action": "Spectral Sight",
-            "key": "Shift+F18",
+            "key": "Alt+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -186,7 +186,7 @@
         },
         "slot_31": {
             "action": "Sigil of Flame",
-            "key": "Shift+F19",
+            "key": "Alt+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -194,7 +194,7 @@
         },
         "slot_32": {
             "action": "Sigil of Misery",
-            "key": "Shift+F20",
+            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -233,6 +233,22 @@
             "slot_01",
             "slot_04",
             "slot_03"
+        ],
+        "pvp": [
+            "slot_11",
+            "slot_12",
+            "slot_35",
+            "slot_34",
+            "slot_07",
+            "slot_05",
+            "slot_02"
+        ],
+        "mythic": [
+            "slot_08",
+            "slot_04",
+            "slot_07",
+            "slot_02",
+            "slot_01"
         ]
     }
 }

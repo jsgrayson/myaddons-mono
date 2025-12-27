@@ -102,10 +102,10 @@
             SkillWeaver:ImportTalents()
           </OnClick>
           <OnEnter>
-            self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0)
+            if self.SetBackdropBorderColor then self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0) end
           </OnEnter>
           <OnLeave>
-            self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0)
+            if self.SetBackdropBorderColor then self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0) end
           </OnLeave>
         </Scripts>
       </Button>
@@ -123,10 +123,10 @@
             end
           </OnClick>
           <OnEnter>
-            self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0)
+            if self.SetBackdropBorderColor then self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0) end
           </OnEnter>
           <OnLeave>
-            self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0)
+            if self.SetBackdropBorderColor then self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0) end
           </OnLeave>
         </Scripts>
       </Button>

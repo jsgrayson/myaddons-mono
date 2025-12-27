@@ -326,6 +326,33 @@ class StateEngine:
         
         return None
     
+    def is_slot_known(self, slot_id: str, state: dict) -> bool:
+        """Check if the ability in this slot is learned (via talent bitmask from P22-P25)."""
+        # If talent masks are all 0 (addon not updated), assume all known
+        if state.get('talent_mask_1_8', 255) == 0 and state.get('talent_mask_9_16', 255) == 0:
+            return True  # Likely addon hasn't loaded yet, don't block
+        
+        try:
+            slot_num = int(slot_id.replace('slot_', '').lstrip('0') or '0')
+        except:
+            return True
+        
+        if slot_num <= 0 or slot_num > 32:
+            return True
+        
+        if slot_num <= 8:
+            mask = state.get('talent_mask_1_8', 255)
+            return bool(mask & (1 << (slot_num - 1)))
+        elif slot_num <= 16:
+            mask = state.get('talent_mask_9_16', 255)
+            return bool(mask & (1 << (slot_num - 9)))
+        elif slot_num <= 24:
+            mask = state.get('talent_mask_17_24', 255)
+            return bool(mask & (1 << (slot_num - 17)))
+        else:
+            mask = state.get('talent_mask_25_32', 255)
+            return bool(mask & (1 << (slot_num - 25)))
+    
     def check_enemy_trigger(self, trigger_name: str, state: dict) -> bool:
         """
         Check if an enemy trigger condition is active.
@@ -398,11 +425,6 @@ class StateEngine:
                     continue
                 
                 slot = slots[slot_id]
-                
-                # SKIP utility slots if they somehow got in here (Alt row)
-                slot_num = int(slot_id.replace('slot_', '').lstrip('0') or '0')
-                if slot_num >= 25:
-                    continue
 
                 # Cooldown check
                 if self.is_on_cooldown(slot_id, slot, state):
@@ -432,10 +454,6 @@ class StateEngine:
             ungated_slots = []
             
             for slot_id, slot in slots.items():
-                slot_num = int(slot_id.replace('slot_', '').lstrip('0') or '0')
-                if slot_num >= 25:
-                    continue
-                
                 conditions = slot.get('conditions', [])
                 if conditions and len(conditions) > 0:
                     gated_slots.append((slot_id, slot))
@@ -446,6 +464,7 @@ class StateEngine:
                 if self.is_on_cooldown(slot_id, slot, state):
                     continue
                 if state.get('power', 0) < slot.get('min_resource', 0):
+
                     continue
                 
                 all_pass = True

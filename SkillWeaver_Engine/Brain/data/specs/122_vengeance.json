@@ -76,7 +76,7 @@
         },
         "slot_09": {
             "action": "Fiery Brand",
-            "key": "F21",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -84,7 +84,7 @@
         },
         "slot_10": {
             "action": "Demon Spikes",
-            "key": "F22",
+            "key": "Shift+F16",
             "min_resource": 20,
             "conditions": [
                 "target_valid"
@@ -92,7 +92,7 @@
         },
         "slot_11": {
             "action": "Metamorphosis",
-            "key": "F23",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -101,7 +101,7 @@
         },
         "slot_12": {
             "action": "Soul Carver",
-            "key": "F24",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -109,7 +109,7 @@
         },
         "slot_13": {
             "action": "Infernal Strike",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -117,7 +117,7 @@
         },
         "slot_14": {
             "action": "Sigil of Silence",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -125,7 +125,7 @@
         },
         "slot_15": {
             "action": "Sigil of Misery",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -133,7 +133,7 @@
         },
         "slot_16": {
             "action": "Sigil of Chains",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -141,7 +141,7 @@
         },
         "slot_17": {
             "action": "Consume Magic",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -149,7 +149,7 @@
         },
         "slot_18": {
             "action": "Torment",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -157,7 +157,7 @@
         },
         "slot_19": {
             "action": "Throw Glaive",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -165,7 +165,7 @@
         },
         "slot_20": {
             "action": "Spectral Sight",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -173,7 +173,7 @@
         },
         "slot_21": {
             "action": "Disrupt",
-            "key": "Shift+F13",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -181,7 +181,7 @@
         },
         "slot_22": {
             "action": "Sigil of Silence",
-            "key": "Shift+F14",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -189,7 +189,7 @@
         },
         "slot_23": {
             "action": "Imprison",
-            "key": "Shift+F15",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -197,7 +197,7 @@
         },
         "slot_27": {
             "action": "Darkness",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -205,7 +205,7 @@
         },
         "slot_28": {
             "action": "Netherwalk",
-            "key": "Shift+F16",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -213,7 +213,7 @@
         },
         "slot_29": {
             "action": "Rain from Above",
-            "key": "Shift+F17",
+            "key": "Alt+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -221,7 +221,7 @@
         },
         "slot_30": {
             "action": "Spectral Sight",
-            "key": "Shift+F18",
+            "key": "Alt+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -229,7 +229,7 @@
         },
         "slot_31": {
             "action": "Sigil of Flame",
-            "key": "Shift+F19",
+            "key": "Alt+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -237,7 +237,7 @@
         },
         "slot_32": {
             "action": "Sigil of Misery",
-            "key": "Shift+F20",
+            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -271,6 +271,28 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_04",
+            "slot_05",
+            "slot_01",
+            "slot_02",
+            "slot_03"
+        ],
+        "pvp": [
+            "slot_21",
+            "slot_23",
+            "slot_14",
+            "slot_07",
+            "slot_06",
+            "slot_02"
+        ],
+        "mythic": [
+            "slot_08",
+            "slot_16",
+            "slot_06",
+            "slot_03",
+            "slot_02"
+        ],
         "tanking_loop": [
             "slot_02",
             "slot_06",
@@ -280,13 +302,6 @@
         "mitigation": [
             "slot_13",
             "slot_14"
-        ],
-        "rotation": [
-            "slot_04",
-            "slot_05",
-            "slot_01",
-            "slot_02",
-            "slot_03"
         ]
     }
 }

@@ -76,7 +76,7 @@
         },
         "slot_09": {
             "action": "Earthen Wall Totem",
-            "key": "F21",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -84,7 +84,7 @@
         },
         "slot_10": {
             "action": "Spirit Link Totem",
-            "key": "F22",
+            "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -92,7 +92,7 @@
         },
         "slot_11": {
             "action": "Mana Tide Totem",
-            "key": "F23",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -100,7 +100,7 @@
         },
         "slot_12": {
             "action": "Ascendance",
-            "key": "F24",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -108,7 +108,7 @@
         },
         "slot_13": {
             "action": "Astral Shift",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -116,7 +116,7 @@
         },
         "slot_14": {
             "action": "Earth Elemental",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -124,7 +124,7 @@
         },
         "slot_15": {
             "action": "Spiritwalker's Grace",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -132,7 +132,7 @@
         },
         "slot_16": {
             "action": "Ghost Wolf",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -140,7 +140,7 @@
         },
         "slot_17": {
             "action": "Thunderstorm",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -148,7 +148,7 @@
         },
         "slot_18": {
             "action": "Capacitor Totem",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -156,7 +156,7 @@
         },
         "slot_19": {
             "action": "Earthbind Totem",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -164,7 +164,7 @@
         },
         "slot_20": {
             "action": "Tremor Totem",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -172,7 +172,7 @@
         },
         "slot_21": {
             "action": "Purify Spirit",
-            "key": "Ctrl+F21",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -180,7 +180,7 @@
         },
         "slot_22": {
             "action": "Purge",
-            "key": "Ctrl+F22",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -188,7 +188,7 @@
         },
         "slot_23": {
             "action": "Wind Rush Totem",
-            "key": "Ctrl+F23",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -196,7 +196,7 @@
         },
         "slot_24": {
             "action": "Nature's Swiftness",
-            "key": "Ctrl+F24",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -204,7 +204,7 @@
         },
         "slot_25": {
             "action": "Wind Shear",
-            "key": "Shift+F13",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -212,7 +212,7 @@
         },
         "slot_26": {
             "action": "Hex",
-            "key": "Shift+F14",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -220,7 +220,7 @@
         },
         "slot_27": {
             "action": "Capacitor Totem",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -228,7 +228,7 @@
         },
         "slot_28": {
             "action": "Earthgrab Totem",
-            "key": "Shift+F16",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -236,7 +236,7 @@
         },
         "slot_29": {
             "action": "Wind Rush Totem",
-            "key": "Shift+F17",
+            "key": "Alt+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -244,7 +244,7 @@
         },
         "slot_30": {
             "action": "Tremor Totem",
-            "key": "Shift+F18",
+            "key": "Alt+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -252,7 +252,7 @@
         },
         "slot_31": {
             "action": "Ancestral Guidance",
-            "key": "Shift+F19",
+            "key": "Alt+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -260,7 +260,7 @@
         },
         "slot_32": {
             "action": "Spirit Link Totem",
-            "key": "Shift+F20",
+            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -299,6 +299,21 @@
             "slot_06",
             "slot_04",
             "slot_02"
+        ],
+        "pvp": [
+            "slot_25",
+            "slot_26",
+            "slot_22",
+            "slot_01",
+            "slot_03",
+            "slot_33"
+        ],
+        "mythic": [
+            "slot_12",
+            "slot_07",
+            "slot_05",
+            "slot_06",
+            "slot_01"
         ]
     }
 }

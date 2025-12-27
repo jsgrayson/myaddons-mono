@@ -77,7 +77,7 @@
         },
         "slot_09": {
             "action": "Fury of the Eagle",
-            "key": "F21",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -85,7 +85,7 @@
         },
         "slot_10": {
             "action": "Flanking Strike",
-            "key": "F22",
+            "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -93,7 +93,7 @@
         },
         "slot_11": {
             "action": "Death Chakram",
-            "key": "F23",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -101,7 +101,7 @@
         },
         "slot_12": {
             "action": "Aspect of the Eagle",
-            "key": "F24",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -109,7 +109,7 @@
         },
         "slot_13": {
             "action": "Harpoon",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -117,7 +117,7 @@
         },
         "slot_14": {
             "action": "Aspect of the Turtle",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -125,7 +125,7 @@
         },
         "slot_15": {
             "action": "Exhilaration",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -133,7 +133,7 @@
         },
         "slot_16": {
             "action": "Survival of the Fittest",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -141,7 +141,7 @@
         },
         "slot_17": {
             "action": "Feign Death",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -149,7 +149,7 @@
         },
         "slot_18": {
             "action": "Disengage",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -157,7 +157,7 @@
         },
         "slot_19": {
             "action": "Aspect of the Cheetah",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -165,7 +165,7 @@
         },
         "slot_20": {
             "action": "Mend Pet",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -173,7 +173,7 @@
         },
         "slot_21": {
             "action": "Revive Pet",
-            "key": "Ctrl+F21",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -181,7 +181,7 @@
         },
         "slot_22": {
             "action": "Misdirection",
-            "key": "Ctrl+F22",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -189,7 +189,7 @@
         },
         "slot_23": {
             "action": "Tranquilizing Shot",
-            "key": "Ctrl+F23",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -197,7 +197,7 @@
         },
         "slot_24": {
             "action": "Master's Call",
-            "key": "Ctrl+F24",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -205,7 +205,7 @@
         },
         "slot_25": {
             "action": "Muzzle",
-            "key": "Shift+F13",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -213,7 +213,7 @@
         },
         "slot_26": {
             "action": "Intimidation",
-            "key": "Shift+F14",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -221,7 +221,7 @@
         },
         "slot_27": {
             "action": "Freezing Trap",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -229,7 +229,7 @@
         },
         "slot_28": {
             "action": "Steel Trap",
-            "key": "Shift+F16",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -237,7 +237,7 @@
         },
         "slot_29": {
             "action": "Tar Trap",
-            "key": "Shift+F17",
+            "key": "Alt+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -245,7 +245,7 @@
         },
         "slot_30": {
             "action": "High Explosive Trap",
-            "key": "Shift+F18",
+            "key": "Alt+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -253,7 +253,7 @@
         },
         "slot_31": {
             "action": "Sticky Bomb",
-            "key": "Shift+F19",
+            "key": "Alt+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -261,7 +261,7 @@
         },
         "slot_32": {
             "action": "Chimaeral Sting",
-            "key": "Shift+F20",
+            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -304,8 +304,24 @@
         "rotation": [
             "slot_01",
             "slot_02",
+            "slot_11",
             "slot_03",
             "slot_10"
+        ],
+        "pvp": [
+            "slot_25",
+            "slot_26",
+            "slot_32",
+            "slot_01",
+            "slot_02",
+            "slot_10"
+        ],
+        "mythic": [
+            "slot_11",
+            "slot_09",
+            "slot_05",
+            "slot_02",
+            "slot_01"
         ],
         "execute_phase": [
             "slot_06",

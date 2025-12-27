@@ -221,12 +221,20 @@ class SkillWeaverEngine:
                      self.decode_px(row, 12) / 10.0, 
                      self.decode_px(row, 13) / 10.0],
             "target_dot_remaining": self.decode_px(row, 11) / 10.0,
-            # Proc Detection (P14 = Mind Blast reset proc)
-            "mb_reset_proc": self.decode_px(row, 14) > 128,
+            # Proc Detection (P14 = primary proc, P15 = secondary proc) - per-spec reused
+            "mb_reset_proc": self.decode_px(row, 14) > 128,  # P14: Overpower proc on Arms, Shadowy Insight on Shadow
+            "mf_insanity_proc": self.decode_px(row, 15) > 128,  # P15: Sudden Death on Arms, Surge of Insanity on Shadow
             "mode": ["raid", "mythic", "delve", "pvp"][int(min(3, self.decode_px(row, 10) / 64))], # Mode on P10
-            "plater_anchor": self.decode_px(row, 16) > 200, 
-            "enemies_missing_dots": int(self.decode_px(row, 20) / 25.0),
-            "total_hostile_plates": int(self.decode_px(row, 21) / 25.0),
+            "spell_charges": round(self.decode_px(row, 16) / 50),  # Charged ability count (P16)
+            "enemies_missing_dots": int(round(self.decode_px(row, 20) / 25.0)),
+            "total_hostile_plates": int(round(self.decode_px(row, 21) / 25.0)),
+            # Talent Bitmasks (P22-P25) - which slots have spells learned
+            "talent_mask_1_8": int(self.decode_px(row, 22)),
+            "talent_mask_9_16": int(self.decode_px(row, 23)),
+            "talent_mask_17_24": int(self.decode_px(row, 24)),
+            "talent_mask_25_32": int(self.decode_px(row, 25)),
+            # Secondary charged ability (P26) - gap closers, defensives
+            "secondary_charges": round(self.decode_px(row, 26) / 50),
             "_raw_width": len(row),
             "_raw_row": row
         }
@@ -259,7 +267,7 @@ class SkillWeaverEngine:
                     
                     # PROVISIONALLY set a short busy lock to prevent 
                     # overlapping taps while we read the screen
-                    self._gcd_until = now + 0.3 
+                    self._gcd_until = now + 0.15 
                     print(f"[GCD] ALLOWED - setting provisional lock")
                 
                 # SUPPRESS IMMEDIATELY
@@ -269,7 +277,7 @@ class SkillWeaverEngine:
 
                     # Log state for debugging
                     print(f"\n[BRAIN] Spec:{state['hash']:.0f} | HP:{state['hp']:.0f}% | THP:{state['thp']:.0f}% | Res:{state['power']:.0f}% | Sec:{state['secondary_power']}")
-                    print(f"[DOTS] VT:{dots[0]:.1f}s | SWP:{dots[1]:.1f}s | DP:{dots[2]:.1f}s")
+                    print(f"[DOTS] D1:{dots[0]:.1f}s | D2:{dots[1]:.1f}s | D3:{dots[2]:.1f}s")
                     print(f"[CLEAVE] Missing:{state.get('enemies_missing_dots', 0)} | Plates:{state.get('total_hostile_plates', 0)}")
                     
                     if dots[0] == 0:

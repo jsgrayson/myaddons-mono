@@ -11,6 +11,9 @@ class ConditionEngine:
             
         if condition_name == "combat_check":
             return state.get('combat', False)
+
+        if condition_name == "not_combat":
+            return not state.get('combat', False)
         
         if condition_name == "interruptible":
             return state.get('interruptible', False)
@@ -82,6 +85,40 @@ class ConditionEngine:
             if "not_" in condition_name:
                 return not state.get('stealthed', False)
             return state.get('stealthed', False)
+        
+        # --- RANGE CHECKS (P6 broadcasts distance in yards * 4.25) ---
+        # Range is decoded to approximate yards
+        range_val = state.get('range', 40)  # Default to max range
+        
+        if condition_name == "in_melee_range":
+            return range_val <= 8  # Melee range ~5-8 yards
+        
+        if condition_name == "out_of_melee_range":
+            return range_val > 8  # Not in melee
+        
+        if condition_name == "in_charge_range":
+            return range_val >= 8 and range_val <= 25  # Charge range 8-25 yards
+        
+        if condition_name == "in_ranged_range":
+            return range_val <= 40  # Standard caster range
+        
+        # --- CHARGE CHECKS (P16 broadcasts charges for key ability) ---
+        if condition_name == "has_charges":
+            return state.get('spell_charges', 0) > 0
+        
+        if condition_name == "no_charges":
+            return state.get('spell_charges', 0) == 0
+        
+        # --- PROC CONDITIONS (P14/P15 are per-spec procs) ---
+        if condition_name == "overpower_proc" or condition_name == "tactician_proc":
+            return state.get('mb_reset_proc', False)  # P14 is reused for Overpower proc on Arms
+        
+        if condition_name == "sudden_death":
+            return state.get('mf_insanity_proc', False)  # P15 is reused for Sudden Death on Arms
+        
+        # --- SECONDARY CHARGES (P26) ---
+        if condition_name == "has_secondary_charges":
+            return state.get('secondary_charges', 0) > 0
 
         # --- GENERIC BUFF/DEBUFF/COOLDOWN FALLBACKS ---
         # Since we lack specific auremetry pixels for buffs/debuffs/CDs in the current engine,
@@ -229,6 +266,12 @@ class ConditionEngine:
             # Check if there are 2+ enemy nameplates visible
             plates = state.get('total_hostile_plates', 1)
             return plates >= 2
+        
+        if "nearby_enemies_gte_" in condition_name:
+            try:
+                thresh = int(condition_name.split("_")[-1])
+                return state.get('nearby_enemies_count', 0) >= thresh
+            except: return True
         
         # --- COMBO POINTS / HOLY POWER ---
         # These use secondary_power which tracks combo points, holy power, chi, etc.

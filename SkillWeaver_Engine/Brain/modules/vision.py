@@ -25,44 +25,55 @@ class ScreenScanner:
         self.logical_height = 540
 
     def calibrate(self):
-        """Finds the Data Strip Y-coordinate."""
+        """Finds the Data Strip Y-coordinate with enhanced robustness."""
         print("[VISION] Scanning for Data Strip (White Pixel at Index 0)...")
         with mss.mss() as sct:
-            # Store PHYSICAL dimensions for mss.grab() 
             self.screen_width = sct.monitors[1]['width']
             self.screen_height = sct.monitors[1]['height']
             
-            # Get ACTUAL logical dimensions from Quartz (the point coordinate system)
             import Quartz
             main_display = Quartz.CGMainDisplayID()
             display_bounds = Quartz.CGDisplayBounds(main_display)
             self.logical_width = display_bounds.size.width
             self.logical_height = display_bounds.size.height
-            
-            # Calculate actual scale factor
             self.SCALE = self.screen_width / self.logical_width
-            print(f"[VISION] Screen: {self.screen_width}x{self.screen_height} physical, {self.logical_width:.0f}x{self.logical_height:.0f} logical, scale={self.SCALE:.2f}")
             
-            # Scan bottom 100 pixels (physical)
-            scan_h = 100
-            scan_top = self.screen_height - scan_h
-            
-            monitor = {"top": scan_top, "left": 0, "width": 5, "height": scan_h}
-            img = np.array(sct.grab(monitor))
-            
-            # Scan vertical column 0
-            for y_offset, row in enumerate(img):
-                # img is BGRA. White is (255, 255, 255)
-                # Check Blue, Green, Red
-                b, g, r, a = row[0]
+            # Step 1: Try HardwareConfig Hint
+            try:
+                from HardwareConfig import get_profile
+                profile = get_profile()
+                hint_y = int(profile.get("START_Y", 0) * self.SCALE)
+                hint_x = int(profile.get("START_X", 0) * self.SCALE)
                 
-                # Check if all channels are bright white (>245)
-                if b > 245 and g > 245 and r > 245:
-                    self.found_y = scan_top + y_offset
+                # Sample the hint area
+                monitor = {"top": hint_y, "left": hint_x, "width": 5, "height": 1}
+                img = np.array(sct.grab(monitor))
+                b, g, r, a = img[0][0]
+                if b > 240 and g > 240 and r > 240:
+                    self.found_y = hint_y
                     self.BASE_Y = self.found_y
-                    print(f"[SUCCESS] Locked on Data Strip at Y={self.BASE_Y}")
+                    print(f"[SUCCESS] Locked on Data Strip via Hardware Hint at Y={self.BASE_Y}")
                     return True
-        print("[FAIL] Could not find Data Strip. Check ColorProfile_Lib is running.")
+            except: pass
+
+            # Step 2: Comprehensive Scan (Bottom then Top)
+            # Scan X columns 0, 10, 20 (to avoid borders)
+            for x_check in [0, 10, 20]:
+                for region in ["bottom", "top"]:
+                    scan_h = 200
+                    scan_top = (self.screen_height - scan_h) if region == "bottom" else 0
+                    
+                    monitor = {"top": scan_top, "left": x_check, "width": 1, "height": scan_h}
+                    img = np.array(sct.grab(monitor))
+                    
+                    for y_offset, row in enumerate(img):
+                        b, g, r, a = row[0]
+                        if b > 245 and g > 245 and r > 245:
+                            self.found_y = scan_top + y_offset
+                            self.BASE_Y = self.found_y
+                            print(f"[SUCCESS] Locked on Data Strip at Y={self.BASE_Y} (x={x_check}, region={region})")
+                            return True
+        print("[FAIL] Could not find Data Strip. Ground targeting may be degraded.")
         return False
 
     def get_chameleon_pixels(self):

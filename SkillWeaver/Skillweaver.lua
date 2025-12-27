@@ -412,13 +412,29 @@ function SkillWeaver:ImportTalents()
     end
     
     -- 2. Try to Switch to Existing Profile
-    -- CONSTRUCT FULL NAME: [spec]_[mode] e.g. "shadow_raid"
+    -- CONSTRUCT FULL NAME: [spec]_[mode] e.g. "arms_mythic"
     local classFilename = select(2, UnitClass("player")):lower()
     local specPrefix = "unknown"
-    if classFilename == "priest" then
-        specPrefix = (specIndex == 3 and "shadow" or (specIndex == 2 and "holy" or "discipline"))
-    elseif classFilename == "warrior" then
-        specPrefix = (specIndex == 1 and "arms" or (specIndex == 2 and "fury" or "protection"))
+    
+    -- Full spec name mappings
+    local specNames = {
+        warrior = {"arms", "fury", "protection"},
+        paladin = {"holy", "protection", "retribution"},
+        hunter = {"beastmastery", "marksmanship", "survival"},
+        rogue = {"assassination", "outlaw", "subtlety"},
+        priest = {"discipline", "holy", "shadow"},
+        deathknight = {"blood", "frost", "unholy"},
+        shaman = {"elemental", "enhancement", "restoration"},
+        mage = {"arcane", "fire", "frost"},
+        warlock = {"affliction", "demonology", "destruction"},
+        monk = {"brewmaster", "mistweaver", "windwalker"},
+        druid = {"balance", "feral", "guardian", "restoration"},
+        demonhunter = {"havoc", "vengeance", "devourer"},
+        evoker = {"devastation", "preservation", "augmentation"},
+    }
+    
+    if specNames[classFilename] and specNames[classFilename][specIndex] then
+        specPrefix = specNames[classFilename][specIndex]
     else
         specPrefix = classFilename
     end
@@ -434,8 +450,15 @@ function SkillWeaver:ImportTalents()
             -- TRY BOTH: specific key from JSON OR constructed name
             if info and (info.name == targetConfigName or info.name == fullProfileName) then
                 print("SkillWeaver: Switching to profile: " .. info.name)
-                C_ClassTalents.LoadConfig(cid, true)
-                switched = true
+                local ok, err = pcall(function()
+                    C_ClassTalents.LoadConfig(cid, true)
+                end)
+                if ok then
+                    switched = true
+                    print("|cFF00FF00SkillWeaver: Profile loaded!|r")
+                else
+                    print("|cFFFF0000SkillWeaver: LoadConfig failed: " .. tostring(err) .. "|r")
+                end
                 break
             end
         end
@@ -443,17 +466,19 @@ function SkillWeaver:ImportTalents()
 
     -- 3. If Switch Failed -> Auto Import
     if not switched then
-        print("SkillWeaver: Auto-importing talents for '" .. fullProfileName .. "'...")
+        print("SkillWeaver: No saved profile '" .. fullProfileName .. "' found.")
+        print("|cFFFFFF00Instructions:|r")
+        print("  1. Press N to open Talents")
+        print("  2. Click the Loadout dropdown (top)")
+        print("  3. Click 'Import Loadout'")
+        print("  4. Ctrl+V to paste the string below")
+        print("|cFF00FF00Loadout string copied to popup!|r")
         
-        -- TWW API: Import the loadout string directly
-        local success = C_ClassTalents.ImportLoadout(loadoutString)
-        if success then
-            print("|cFF00FF00SkillWeaver: Talents imported successfully!|r")
-        else
-            -- Fallback to popup if auto-import fails
-            print("|cFFFFFF00SkillWeaver: Auto-import failed. Opening manual dialog...|r")
-            StaticPopup_Show("SKILLWEAVER_IMPORT_TALENTS", nil, nil, loadoutString)
-        end
+        -- Show popup with string for easy copy
+        StaticPopup_Show("SKILLWEAVER_IMPORT_TALENTS", nil, nil, loadoutString)
+        
+        -- Also open talents frame
+        local ok = pcall(function() ToggleTalentFrame() end)
     end
 end
 

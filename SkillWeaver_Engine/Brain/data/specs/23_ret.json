@@ -76,7 +76,7 @@
         },
         "slot_09": {
             "action": "Divine Toll",
-            "key": "F21",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -84,7 +84,7 @@
         },
         "slot_10": {
             "action": "Final Reckoning",
-            "key": "F22",
+            "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -92,7 +92,7 @@
         },
         "slot_11": {
             "action": "Execution Sentence",
-            "key": "F23",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -100,7 +100,7 @@
         },
         "slot_12": {
             "action": "Radiant Decree",
-            "key": "F24",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -108,7 +108,7 @@
         },
         "slot_13": {
             "action": "Shield of Vengeance",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -116,7 +116,7 @@
         },
         "slot_14": {
             "action": "Divine Protection",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -124,7 +124,7 @@
         },
         "slot_15": {
             "action": "Divine Shield",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -132,7 +132,7 @@
         },
         "slot_16": {
             "action": "Lay on Hands",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -140,7 +140,7 @@
         },
         "slot_17": {
             "action": "Flash of Light",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -148,7 +148,7 @@
         },
         "slot_18": {
             "action": "Word of Glory",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -156,7 +156,7 @@
         },
         "slot_19": {
             "action": "Blessing of Freedom",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -164,7 +164,7 @@
         },
         "slot_20": {
             "action": "Blessing of Protection",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -172,7 +172,7 @@
         },
         "slot_21": {
             "action": "Blessing of Sacrifice",
-            "key": "Ctrl+F21",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -180,7 +180,7 @@
         },
         "slot_22": {
             "action": "Cleanse Toxins",
-            "key": "Ctrl+F22",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -188,7 +188,7 @@
         },
         "slot_23": {
             "action": "Hand of Reckoning",
-            "key": "Ctrl+F23",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -196,7 +196,7 @@
         },
         "slot_24": {
             "action": "Intercession",
-            "key": "Ctrl+F24",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -204,7 +204,7 @@
         },
         "slot_25": {
             "action": "Rebuke",
-            "key": "Shift+F13",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -212,7 +212,7 @@
         },
         "slot_26": {
             "action": "Hammer of Justice",
-            "key": "Shift+F14",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -220,7 +220,7 @@
         },
         "slot_27": {
             "action": "Blinding Light",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -228,7 +228,7 @@
         },
         "slot_28": {
             "action": "Repentance",
-            "key": "Shift+F16",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -236,7 +236,7 @@
         },
         "slot_29": {
             "action": "Divine Steed",
-            "key": "Shift+F17",
+            "key": "Alt+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -244,7 +244,7 @@
         },
         "slot_30": {
             "action": "Turn Evil",
-            "key": "Shift+F18",
+            "key": "Alt+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -252,7 +252,7 @@
         },
         "slot_31": {
             "action": "Redemption",
-            "key": "Shift+F19",
+            "key": "Alt+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -260,7 +260,7 @@
         },
         "slot_32": {
             "action": "Hammer of Reckoning",
-            "key": "Shift+F13",
+            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -290,6 +290,19 @@
             "slot_01",
             "slot_04",
             "slot_07"
+        ],
+        "pvp": [
+            "slot_26",
+            "slot_03",
+            "slot_05",
+            "slot_02",
+            "slot_04"
+        ],
+        "mythic": [
+            "slot_05",
+            "slot_06",
+            "slot_02",
+            "slot_04"
         ],
         "execute_phase": [
             "slot_03",

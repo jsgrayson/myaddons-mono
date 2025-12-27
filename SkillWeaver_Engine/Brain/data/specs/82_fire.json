@@ -79,7 +79,7 @@
         },
         "slot_09": {
             "action": "Living Bomb",
-            "key": "F21",
+            "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -87,7 +87,7 @@
         },
         "slot_10": {
             "action": "Flamestrike",
-            "key": "F22",
+            "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -95,7 +95,7 @@
         },
         "slot_11": {
             "action": "Shifting Power",
-            "key": "F23",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -103,7 +103,7 @@
         },
         "slot_12": {
             "action": "Time Warp",
-            "key": "F24",
+            "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -111,7 +111,7 @@
         },
         "slot_13": {
             "action": "Ice Block",
-            "key": "Ctrl+F13",
+            "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -119,7 +119,7 @@
         },
         "slot_14": {
             "action": "Blazing Barrier",
-            "key": "Ctrl+F14",
+            "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -127,7 +127,7 @@
         },
         "slot_15": {
             "action": "Invisibility",
-            "key": "Ctrl+F15",
+            "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -135,7 +135,7 @@
         },
         "slot_16": {
             "action": "Shimmer",
-            "key": "Ctrl+F16",
+            "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -143,7 +143,7 @@
         },
         "slot_17": {
             "action": "Alter Time",
-            "key": "Ctrl+F17",
+            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -151,7 +151,7 @@
         },
         "slot_18": {
             "action": "Mirror Image",
-            "key": "Ctrl+F18",
+            "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -159,7 +159,7 @@
         },
         "slot_19": {
             "action": "Frost Nova",
-            "key": "Ctrl+F19",
+            "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -167,7 +167,7 @@
         },
         "slot_20": {
             "action": "Cone of Cold",
-            "key": "Ctrl+F20",
+            "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -175,7 +175,7 @@
         },
         "slot_21": {
             "action": "Blast Wave",
-            "key": "Ctrl+F21",
+            "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -183,7 +183,7 @@
         },
         "slot_22": {
             "action": "Remove Curse",
-            "key": "Ctrl+F22",
+            "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -191,7 +191,7 @@
         },
         "slot_23": {
             "action": "Spellsteal",
-            "key": "Ctrl+F23",
+            "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -199,7 +199,7 @@
         },
         "slot_24": {
             "action": "Mass Barrier",
-            "key": "Ctrl+F24",
+            "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -207,7 +207,7 @@
         },
         "slot_25": {
             "action": "Counterspell",
-            "key": "Shift+F13",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "interruptible"
@@ -215,7 +215,7 @@
         },
         "slot_26": {
             "action": "Polymorph",
-            "key": "Shift+F14",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -223,7 +223,7 @@
         },
         "slot_27": {
             "action": "Ring of Frost",
-            "key": "Shift+F15",
+            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -236,6 +236,21 @@
             "slot_02",
             "slot_04",
             "slot_01"
+        ],
+        "pvp": [
+            "slot_25",
+            "slot_08",
+            "slot_26",
+            "slot_06",
+            "slot_03",
+            "slot_02"
+        ],
+        "mythic": [
+            "slot_11",
+            "slot_10",
+            "slot_07",
+            "slot_06",
+            "slot_03"
         ],
         "execute_phase": [
             "slot_05",

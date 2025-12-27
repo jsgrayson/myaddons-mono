@@ -63,10 +63,11 @@ function SW.UI.Style:ApplyTheme()
     
     -- Style dropdown
     local drop = frame.ContentDropdown
-    if drop then
-        local left = _G[drop:GetName() .. "Left"]
-        local middle = _G[drop:GetName() .. "Middle"]
-        local right = _G[drop:GetName() .. "Right"]
+    if drop and drop:GetName() then
+        local dropName = drop:GetName()
+        local left = _G[dropName .. "Left"]
+        local middle = _G[dropName .. "Middle"]
+        local right = _G[dropName .. "Right"]
         
         if left then left:SetVertexColor(0.3, 0.6, 0.8, 0.8) end
         if middle then middle:SetVertexColor(0.3, 0.6, 0.8, 0.8) end

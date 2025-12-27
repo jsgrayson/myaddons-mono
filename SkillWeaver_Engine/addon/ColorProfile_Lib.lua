@@ -97,11 +97,37 @@ local SPEC_DOTS = {
         {spellIds={259491}, names={"Serpent Sting"}, pixel=11},
         {spellIds={270332, 270339}, names={"Pheromone Bomb", "Shrapnel Bomb"}, pixel=12},
     },
+    -- Arms Warrior (11)
+    [11] = {
+        {spellIds={772}, names={"Rend"}, pixel=11},
+        {spellIds={262115, 115767}, names={"Deep Wounds"}, pixel=12},
+        {spellIds={208086}, names={"Colossus Smash"}, pixel=13},
+    },
+}
+
+-- SPEC_SPELLS: Maps slot number -> spell ID for talent availability checking
+-- Used to transmit a bitmask of which abilities are actually learned
+local SPEC_SPELLS = {
+    [11] = { -- Arms Warrior
+        [1]=12294, [2]=7384, [3]=1464, [4]=5308, [5]=167105, [6]=1680, [7]=6343, [8]=845,
+        [9]=260708, [10]=46924, [11]=107574, [12]=384318, [13]=376079, [14]=228920,
+        [15]=260643, [16]=772, [17]=190456, [18]=202168, [19]=6552, [20]=107570,
+        [21]=46968, [22]=5246, [23]=23920, [24]=118038, [25]=97462, [26]=18499,
+        [27]=6544, [28]=100, [29]=3411,
+    },
+    [41] = { -- Assassination Rogue
+        [1]=1329, [2]=703, [3]=1943, [4]=32645, [5]=8676, [6]=51723, [7]=121411,
+        [8]=2098, [9]=1776, [10]=385616, [11]=79140, [12]=408, [13]=200806,
+        [14]=1856, [15]=5277, [16]=31224, [17]=36554, [18]=185311, [19]=1766,
+        [20]=2094, [21]=1784, [22]=1725, [23]=57934, [24]=57934, [25]=114014,
+        [26]=5938, [27]=2983, [28]=36554, [29]=185313,
+    },
 }
 
 -- Build reverse lookup: spellId/name -> {specId, pixel}
 local currentSpecId = 0
 local currentDotConfig = nil
+local currentSpellConfig = nil
 
 
 SW_Frame:SetScript("OnUpdate", function()
@@ -134,12 +160,13 @@ SW_Frame:SetScript("OnUpdate", function()
         if specId ~= currentSpecId then
             currentSpecId = specId
             currentDotConfig = SPEC_DOTS[specId]
+            currentSpellConfig = SPEC_SPELLS[specId]
         end
         
         local dVals = {[11]=0, [12]=0, [13]=0}
         if UnitExists("target") and currentDotConfig then
-            -- Helper function to find pixel for a given spellId/name
-            local function GetDotPixel(spellId, auraName)
+                -- Helper function to find pixel for a given spellId/name
+                local function GetDotPixel(spellId, auraName)
                 for _, dotInfo in ipairs(currentDotConfig) do
                     -- Check by spellId first
                     for _, id in ipairs(dotInfo.spellIds) do
@@ -173,9 +200,10 @@ SW_Frame:SetScript("OnUpdate", function()
             else
                 -- Legacy API (Classic/Era)
                 for i = 1, 40 do
-                    local name, _, _, _, _, expirationTime, source, _, _, spellId = UnitAura("target", i, "HARMFUL|PLAYER")
+                    local name, _, _, _, _, expirationTime, source, _, _, spellId = UnitAura("target", i, "HARMFUL")
                     if not name then break end
                     if source == "player" or source == "pet" then
+                        -- Check if this matches our config
                         local idx = GetDotPixel(spellId, name)
                         if idx then
                             local remaining = 0
@@ -188,7 +216,16 @@ SW_Frame:SetScript("OnUpdate", function()
                 end
             end
         end
+        SetPixel(11, dVals[11])
+        SetPixel(12, dVals[12])
         SetPixel(13, dVals[13])
+        
+        -- 4. TALENT AVAILABILITY BITMASK (P22-P25)
+        -- SIMPLIFIED: Always assume all spells are known to avoid API issues
+        SetPixel(22, 255)
+        SetPixel(23, 255)
+        SetPixel(24, 255)
+        SetPixel(25, 255)
         
         -- CONTENT MODE (P10)
         -- 0=Raid, 1=Mythic+, 2=Delve, 3=PvP
@@ -206,10 +243,13 @@ SW_Frame:SetScript("OnUpdate", function()
         if C_NamePlate and C_NamePlate.GetNamePlates then
             for _, nameplate in pairs(C_NamePlate.GetNamePlates()) do
                 local unit = nameplate.namePlateUnitToken
-                -- Only count: attackable, not dead, not current target
+                -- SAFE FILTER: Only count "target" OR units in combat.
+                -- This ignores far-away dummies/mobs that are not part of the fight.
+                local relevant = (unit == "target") or UnitAffectingCombat(unit)
+
                 if unit and UnitCanAttack("player", unit) 
                    and not UnitIsDead(unit)
-                   and unit ~= "target" then
+                   and relevant then
                     totalPlates = totalPlates + 1
                     local hasPlayerDot = false
                     if AuraUtil and AuraUtil.ForEachAura then
@@ -235,8 +275,11 @@ SW_Frame:SetScript("OnUpdate", function()
                 end
             end
         end
-        SetPixel(20, math.min(255, missingCount * 25))  -- 0-10 enemies scaled
-        SetPixel(21, totalPlates * 25)  -- Debug: total hostile nameplates visible
+        SetPixel(20, math.min(255, missingCount * 25))
+        SetPixel(21, totalPlates * 25)
+        
+        -- P9: Nearby Enemies for AoE threshold checks
+        SetPixel(9, math.min(255, (totalPlates + (UnitExists("target") and 1 or 0)) * 25))
 
         -- 5. RESOURCES
         -- P7: Primary Resource (Health/Mana/Focus/Rage/Energy etc.)
@@ -261,24 +304,65 @@ SW_Frame:SetScript("OnUpdate", function()
             secRes = UnitPower("player", 13) * 2.55 -- 100 Insanity = 255
         end
         SetPixel(8, secRes)
+        
+        -- 5.5 CHARGED ABILITY TRACKING (P16) - Per-spec reused
+        -- Tracks charges on key abilities (scaled: charges * 50, max 5 charges = 250)
+        -- GetSpellCharges returns: currentCharges, maxCharges, cooldownStart, cooldownDuration, chargeModRate
+        local function GetCharges(spellId)
+            local info = C_Spell and C_Spell.GetSpellCharges and C_Spell.GetSpellCharges(spellId)
+            if info then return info.currentCharges or 0 end
+            -- Fallback for older API
+            local c = GetSpellCharges(spellId)
+            return c or 0
+        end
+        
+        local charges = 0
+        if specId == 11 then -- Arms Warrior: Overpower (more important than Charge)
+            charges = GetCharges(7384) * 50
+        elseif specId == 12 then -- Fury Warrior: Raging Blow
+            charges = GetCharges(85288) * 50
+        elseif specId == 13 then -- Protection Warrior: Shield Block
+            charges = GetCharges(2565) * 50
+        elseif specId == 41 then -- Assassination Rogue: Shiv
+            charges = GetCharges(5938) * 50
+        elseif specId == 43 then -- Subtlety Rogue: Shadow Dance
+            charges = GetCharges(185313) * 50
+        elseif specId == 53 then -- Shadow Priest: Shadow Word: Death (execute)
+            charges = GetCharges(32379) * 50
+        elseif specId == 82 then -- Fire Mage: Phoenix Flames
+            charges = GetCharges(257541) * 50
+        end
+        SetPixel(16, charges)
+        
+        -- 5.6 SECONDARY CHARGED ABILITY (P26) - Gap closers, defensives, etc.
+        local charges2 = 0
+        if specId == 11 then -- Arms Warrior: Charge
+            charges2 = GetCharges(100) * 50
+        elseif specId == 12 then -- Fury Warrior: Charge
+            charges2 = GetCharges(100) * 50
+        elseif specId == 13 then -- Protection Warrior: Shield Slam (not really charges, skip)
+            charges2 = 0
+        end
+        SetPixel(26, charges2)
 
-        -- 6. PROC DETECTION (P14-P15)
-        -- P14: Mind Blast Reset Procs (Shadowy Insight ONLY - resets Mind Blast CD)
-        -- P15: Mind Flay: Insanity procs (Surge of Insanity - empowers Mind Flay)
-        local mbResetProc = false
-        local mfInsanityProc = false
+        -- 6. PROC DETECTION (P14-P15) - Per-spec reused
+        -- P14: Primary proc (Shadow Priest: Shadowy Insight, Arms: Overpower/Tactician)
+        -- P15: Secondary proc (Shadow Priest: Surge of Insanity, Arms: Sudden Death)
+        local proc1 = false
+        local proc2 = false
+        
         if specId == 53 then  -- Shadow Priest
             if AuraUtil and AuraUtil.ForEachAura then
                 AuraUtil.ForEachAura("player", "HELPFUL", nil, function(aura)
                     -- Shadowy Insight (resets Mind Blast cooldown)
                     if aura.spellId == 375981 or aura.spellId == 87160 or
                        aura.name == "Shadowy Insight" then
-                        mbResetProc = true
+                        proc1 = true
                     end
                     -- Surge of Insanity / Mind Flay: Insanity (empowers Mind Flay, not Mind Blast)
                     if aura.spellId == 391401 or aura.spellId == 407468 or
                        aura.name == "Surge of Insanity" or aura.name == "Mind Flay: Insanity" then
-                        mfInsanityProc = true
+                        proc2 = true
                     end
                 end, true)
             else
@@ -286,16 +370,29 @@ SW_Frame:SetScript("OnUpdate", function()
                     local name, _, _, _, _, _, _, _, _, spellId = UnitAura("player", i, "HELPFUL")
                     if not name then break end
                     if spellId == 375981 or name == "Shadowy Insight" then
-                        mbResetProc = true
+                        proc1 = true
                     end
                     if spellId == 391401 or name == "Surge of Insanity" then
-                        mfInsanityProc = true
+                        proc2 = true
                     end
                 end
             end
+        elseif specId == 11 then  -- Arms Warrior
+            if AuraUtil and AuraUtil.ForEachAura then
+                AuraUtil.ForEachAura("player", "HELPFUL", nil, function(aura)
+                    -- Overpower! / Tactician proc
+                    if aura.spellId == 60503 or aura.name == "Overpower!" or aura.name == "Tactician" then
+                        proc1 = true
+                    end
+                    -- Sudden Death (Execute reset)
+                    if aura.spellId == 52437 or aura.name == "Sudden Death" then
+                        proc2 = true
+                    end
+                end, true)
+            end
         end
-        SetPixel(14, mbResetProc and 255 or 0)
-        SetPixel(15, mfInsanityProc and 255 or 0)  -- For future use with Mind Flay: Insanity
+        SetPixel(14, proc1 and 255 or 0)
+        SetPixel(15, proc2 and 255 or 0)
 
         -- 7. SENSORS
         SetPixel(17, IsKeyDown("2") and 255 or 0)
@@ -308,13 +405,16 @@ SW_Frame:SetScript("OnUpdate", function()
         if UnitExists("target") and UnitCanAttack("player", "target") then
             -- Check from close to far, first TRUE sets the bracket
             -- Using common spells that most casters have (adjust per spec if needed)
-            if CheckInteractDistance("target", 3) then  -- ~10 yards (duel range)
+            local rangeSpell = "Shadow Word: Pain"
+            if classID == 4 then rangeSpell = "Garrote" end -- Rogue Range
+            
+            if CheckInteractDistance("target", 3) then  -- ~10 yards
                 range = 8
-            elseif CheckInteractDistance("target", 2) then  -- ~11 yards (trade range)
+            elseif CheckInteractDistance("target", 2) then  -- ~11 yards
                 range = 12
-            elseif CheckInteractDistance("target", 4) then  -- ~28 yards (follow range)
+            elseif CheckInteractDistance("target", 4) then  -- ~28 yards
                 range = 25
-            elseif IsSpellInRange("Shadow Word: Pain", "target") == 1 then  -- 40 yards
+            elseif IsSpellInRange(rangeSpell, "target") == 1 then  -- 40 yards
                 range = 35
             end
         end
