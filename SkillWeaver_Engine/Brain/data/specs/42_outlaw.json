@@ -2,41 +2,30 @@
     "spec_id": 42,
     "spec_name": "Outlaw Rogue",
     "resource_type": "energy",
-    "secondary_resource": "combo_points",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "outlaw_mythic": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mZgZmZYGDzwMmZMzMmZmWmxsMDAAAAAA22mZmhZmxCsMLDAAAAzMDAGzmhBGYWYhWYzA",
-        "outlaw_raid": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mxMjZMmZmZYGGMjhZmZmWmxsNDAAAAAAsNzMDzMjFYZ2GAAAAmZGwAbwMGNmNAbDsYG",
-        "outlaw_delve": "CQQAAAAAAAAAAAAAAAAAAAAAAAAMwwYmZwMzYmhhZmZmZMzMtMjZZGAAAAAAstNzM8AzMswMLz2AAAAwMDwAbwMGNmNAbDsYG",
-        "outlaw_pvp": "CQQAAAAAAAAAAAAAAAAAAAAAAAAM2mZgZmZYGDzwMmZMzMmZmWmxsMDAAAAAA22mZmhZmxCsMLDAAAAzMDAGzmhBGYWYhWYzA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Sinister Strike",
+            "action": "Adrenaline Rush,Precombat Seconds=1",
             "key": "F13",
-            "min_resource": 45,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Dispatch",
+            "action": "Roll The Bones,Precombat Seconds=1",
             "key": "F16",
-            "min_resource": 35,
+            "min_resource": 0,
             "conditions": [
-                "combo_points_gte_5"
-            ]
-        },
-        "slot_02_refresh": {
-            "action": "Dispatch",
-            "key": "F16",
-            "min_resource": 35,
-            "conditions": [
-                "combo_points_gte_5",
-                "refresh_dot:13"
+                "target_valid"
             ]
         },
         "slot_03": {
-            "action": "Pistol Shot",
+            "action": "Kick",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -44,93 +33,102 @@
             ]
         },
         "slot_04": {
-            "action": "Between the Eyes",
+            "action": "Call Action List,Name=Stealth",
             "key": "F18",
-            "min_resource": 25,
-            "conditions": [
-                "combo_points_gte_5"
-            ],
-            "cooldown": 45.0
-        },
-        "slot_05": {
-            "action": "Ambush",
-            "key": "F19",
-            "min_resource": 50,
-            "conditions": [
-                "stealth"
-            ]
-        },
-        "slot_06": {
-            "action": "Blade Flurry",
-            "key": "HOME",
-            "min_resource": 15,
+            "min_resource": 0,
             "conditions": [
                 "target_valid",
-                "multi_target"
+                "stealthed"
             ]
         },
-        "slot_07": {
-            "action": "Roll the Bones",
-            "key": "END",
-            "min_resource": 25,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_08": {
-            "action": "Adrenaline Rush",
-            "key": "DELETE",
+        "slot_05": {
+            "action": "Run Action List,Name=Finish",
+            "key": "F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
+            ]
+        },
+        "slot_06": {
+            "action": "Ambush",
+            "key": "HOME",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_audacity_up"
+            ]
+        },
+        "slot_07": {
+            "action": "Sinister Strike",
+            "key": "END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_disorienting_strikes_up",
+                "stealthed",
+                "not_stealthed"
+            ]
+        },
+        "slot_08": {
+            "action": "Pistol Shot",
+            "key": "DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_opportunity_up"
             ]
         },
         "slot_09": {
             "action": "Blade Flurry",
             "key": "Shift+F13",
-            "min_resource": 15,
+            "min_resource": 0,
             "conditions": [
                 "target_valid",
-                "two_plus_targets"
+                "cp_lte_2",
+                "aoe_gte_4",
+                "buff_adrenaline_rush_up"
             ]
         },
         "slot_10": {
-            "action": "Adrenaline Rush",
+            "action": "Coup De Grace",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 180.0
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
+            ]
         },
         "slot_11": {
-            "action": "Keep It Rolling",
+            "action": "Adrenaline Rush",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 420.0
+                "target_valid",
+                "cp_lte_2",
+                "buff_adrenaline_rush_up"
+            ]
         },
         "slot_12": {
-            "action": "Thistle Tea",
+            "action": "Ghostly Strike",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 60.0
+                "target_valid",
+                "buff_double_jeopardy_up"
+            ]
         },
         "slot_13": {
-            "action": "Grappling Hook",
+            "action": "Sprint",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "ground_target"
+                "target_valid",
+                "buff_full_momentum_up"
             ]
         },
         "slot_14": {
-            "action": "Vanish",
+            "action": "Keep It Rolling",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -138,39 +136,50 @@
             ]
         },
         "slot_15": {
-            "action": "Feint",
+            "action": "Vanish",
             "key": "Shift+END",
-            "min_resource": 35,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_adrenaline_rush_up",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_16": {
-            "action": "Crimson Vial",
+            "action": "Call Action List,Name=Vanish",
             "key": "Shift+DELETE",
-            "min_resource": 20,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_lte_2",
+                "buff_adrenaline_rush_up",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_17": {
-            "action": "Cloak of Shadows",
+            "action": "Shadowmeld",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_18": {
-            "action": "Evasion",
+            "action": "Blade Rush",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_19": {
-            "action": "Sprint",
+            "action": "Cold Blood",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -178,7 +187,7 @@
             ]
         },
         "slot_20": {
-            "action": "Tricks of the Trade",
+            "action": "Killing Spree",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -186,16 +195,16 @@
             ]
         },
         "slot_21": {
-            "action": "Stealth",
+            "action": "Between The Eyes",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "not_combat",
-                "not_stealth"
+                "target_valid",
+                "buff_ruthless_precision_up"
             ]
         },
         "slot_22": {
-            "action": "Main Gauche",
+            "action": "Dispatch",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -203,141 +212,183 @@
             ]
         },
         "slot_23": {
-            "action": "Ghostly Strike",
+            "action": "Use Item,Name=Imperfect Ascendancy Serum",
             "key": "Ctrl+END",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_24": {
-            "action": "Cold Blood",
+            "action": "Use Item,Name=Mad Queens Mandate",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 60.0
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
+            ]
         },
         "slot_25": {
-            "action": "Kick",
+            "action": "Use Item,Name=Cursed Stone Idol",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "stealthed",
+                "not_stealthed"
             ]
         },
         "slot_26": {
-            "action": "Blind",
+            "action": "Use Item,Name=Unyielding Netherprism",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_vanish_up"
             ]
         },
         "slot_27": {
-            "action": "Kidney Shot",
+            "action": "Use Item,Name=Junkmaestros Mega Magnet",
             "key": "Alt+F17",
-            "min_resource": 25,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_between_the_eyes_up"
             ]
         },
         "slot_28": {
-            "action": "Cheap Shot",
+            "action": "Use Items,Slots=Trinket1",
             "key": "Alt+F18",
-            "min_resource": 40,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Sap",
-            "key": "Alt+F19",
-            "min_resource": 35,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Distract",
-            "key": "Alt+HOME",
-            "min_resource": 30,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Dismantle",
-            "key": "Alt+END",
-            "min_resource": 25,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Smoke Bomb",
-            "key": "Alt+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Float Like a Butterfly",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Enduring Brawler",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_between_the_eyes_up"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_21",
-            "slot_04",
-            "slot_04",
-            "slot_02",
+    "priorities": {
+        "raid": [
             "slot_01",
-            "slot_03"
-        ],
-        "pvp": [
-            "slot_21",
-            "slot_27",
-            "slot_24",
-            "slot_07",
-            "slot_04",
             "slot_02",
-            "slot_01"
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_21",
-            "slot_07",
-            "slot_04",
-            "slot_02",
-            "slot_06",
-            "slot_12",
             "slot_01",
-            "slot_03"
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_08"
-            ],
-            "sequence": [
-                "slot_08",
-                "slot_07",
-                "slot_04",
-                "slot_02"
-            ]
-        }
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ]
     }
 }

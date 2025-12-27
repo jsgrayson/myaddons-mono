@@ -296,18 +296,9 @@
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_21",
-            "slot_02",
-            "slot_03",
-            "slot_04",
-            "slot_01"
-        ],
-        "pvp": [
-            "slot_21",
-            "slot_26",
-            "slot_27",
             "slot_02",
             "slot_03",
             "slot_04",
@@ -323,10 +314,21 @@
             "slot_08",
             "slot_01"
         ],
-        "kingsbane_ramp": [
-            "slot_05",
-            "slot_08",
-            "slot_04"
+        "pvp": [
+            "slot_21",
+            "slot_26",
+            "slot_27",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_01"
+        ],
+        "delve": [
+            "slot_21",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_01"
         ]
     }
 }

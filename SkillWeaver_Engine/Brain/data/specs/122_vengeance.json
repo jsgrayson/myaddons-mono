@@ -2,16 +2,14 @@
     "spec_id": 122,
     "spec_name": "Vengeance Demon Hunter",
     "resource_type": "fury",
-    "secondary_resource": "soul_fragments",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "vengeance_mythic": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMmZMMjMzMYYmZbmxYsNDzMjZwY2mZmtZmhZYGAAAAglZxMGmFmGYmxM2A",
-        "vengeance_raid": "CUkAAAAAAAAAAAAAAAAAAAAAAAAmZMzMjxMjMzMGDjZbmBjtZMzDMjZGmZMzYzMjZGmBAAAAYZWMjhZjpBmZgN",
-        "vengeance_delve": "CUkAAAAAAAAAAAAAAAAAAAAAAAAmZMmZMMjMzMYYGbzMmZsNDzMjZwY2mZmNzMmZYGAAAAglZxMGmFmGYmhxG",
-        "vengeance_pvp": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMmZMMjMzMYYmZbmxYsNDzMjZwY2mZmtZmhZYGAAAAglZxMGmFmGYmxM2A"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Fracture",
+            "action": "Sigil Of Flame",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,47 +17,49 @@
             ]
         },
         "slot_02": {
-            "action": "Soul Cleave",
+            "action": "Immolation Aura",
             "key": "F16",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_03": {
-            "action": "Spirit Bomb",
+            "action": "Variable,Name=Num Spawnable Souls,Op=Max,Value=1",
             "key": "F17",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Immolation Aura",
+            "action": "Variable,Name=Num Spawnable Souls,Op=Max,Value=2",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_metamorphosis_up"
             ]
         },
         "slot_05": {
-            "action": "Sigil of Flame",
+            "action": "Variable,Name=Num Spawnable Souls,Op=Max,Value=3",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_metamorphosis_up"
             ]
         },
         "slot_06": {
-            "action": "Fel Devastation",
+            "action": "Variable,Name=Num Spawnable Souls,Op=Add,Value=1",
             "key": "HOME",
-            "min_resource": 50,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_07": {
-            "action": "The Hunt",
+            "action": "Auto Attack",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -67,7 +67,7 @@
             ]
         },
         "slot_08": {
-            "action": "Elysian Decree",
+            "action": "Disrupt",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -75,7 +75,7 @@
             ]
         },
         "slot_09": {
-            "action": "Fiery Brand",
+            "action": "Infernal Strike",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -83,24 +83,24 @@
             ]
         },
         "slot_10": {
-            "action": "Demon Spikes",
+            "action": "Demon Spikes,Use Off Gcd=1",
             "key": "Shift+F16",
-            "min_resource": 20,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_demon_spikes_up"
             ]
         },
         "slot_11": {
-            "action": "Metamorphosis",
+            "action": "Run Action List,Name=Ar",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_12": {
-            "action": "Soul Carver",
+            "action": "Run Action List,Name=Fs",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -108,200 +108,269 @@
             ]
         },
         "slot_13": {
-            "action": "Infernal Strike",
+            "action": "Use Item,Slot=Trinket1",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_metamorphosis_up"
             ]
         },
         "slot_14": {
-            "action": "Sigil of Silence",
+            "action": "Use Item,Slot=Trinket2",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_metamorphosis_up"
             ]
         },
         "slot_15": {
-            "action": "Sigil of Misery",
+            "action": "Use Item,Name=Tome Of Lights Devotion",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_inner_resilience_up"
             ]
         },
         "slot_16": {
-            "action": "Sigil of Chains",
+            "action": "Potion,Use Off Gcd=1",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_rending_strike_up"
             ]
         },
         "slot_17": {
-            "action": "Consume Magic",
+            "action": "Call Action List,Name=Externals",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_rending_strike_up"
             ]
         },
         "slot_18": {
-            "action": "Torment",
+            "action": "Metamorphosis,Use Off Gcd=1",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_metamorphosis_up"
             ]
         },
         "slot_19": {
-            "action": "Throw Glaive",
+            "action": "Fel Devastation,Use Off Gcd=1",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_rending_strike_up"
             ]
         },
         "slot_20": {
-            "action": "Spectral Sight",
+            "action": "Soul Cleave",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_rending_strike_up"
             ]
         },
         "slot_21": {
-            "action": "Disrupt",
+            "action": "Shear",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_glaive_flurry_up"
             ]
         },
         "slot_22": {
-            "action": "Sigil of Silence",
+            "action": "Reavers Glaive",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_rending_strike_up"
             ]
         },
         "slot_23": {
-            "action": "Imprison",
+            "action": "The Hunt",
             "key": "Ctrl+END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_reavers_glaive_up"
+            ]
+        },
+        "slot_24": {
+            "action": "Fiery Brand",
+            "key": "Ctrl+DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "dot_fiery_brand_ticking"
+            ]
+        },
+        "slot_25": {
+            "action": "Soul Carver",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "dot_fiery_brand_ticking"
+            ]
+        },
+        "slot_26": {
+            "action": "Sigil Of Spite",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_27": {
-            "action": "Darkness",
+            "action": "Bulk Extraction",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_3"
             ]
         },
         "slot_28": {
-            "action": "Netherwalk",
+            "action": "Spirit Bomb",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_12"
             ]
-        },
-        "slot_29": {
-            "action": "Rain from Above",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Spectral Sight",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Sigil of Flame",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Sigil of Misery",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Sigil of Silence",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Consume Magic",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_35": {
-            "action": "Imprison",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_36": {
-            "action": "Torment",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_04",
-            "slot_05",
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_03"
-        ],
-        "pvp": [
-            "slot_21",
-            "slot_23",
-            "slot_14",
-            "slot_07",
+            "slot_03",
+            "slot_04",
+            "slot_05",
             "slot_06",
-            "slot_02"
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_08",
-            "slot_16",
-            "slot_06",
-            "slot_03",
-            "slot_02"
-        ],
-        "tanking_loop": [
+            "slot_01",
             "slot_02",
-            "slot_06",
             "slot_03",
-            "slot_01"
-        ],
-        "mitigation": [
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
             "slot_13",
-            "slot_14"
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

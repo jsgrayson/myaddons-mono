@@ -3,23 +3,21 @@
     "spec_name": "Marksmanship Hunter",
     "resource_type": "focus",
     "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "marksmanship_mythic": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsEYWAAAAAAAAAAAAAgZMjZMzYMjMjxYmZYWGGLzgthZMW22MzMjZxMDjZmZZzwywMD",
-        "marksmanship_raid": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsFYWAAAAAAAAAAAAAgZMjZmZmhZ0MjxwMDMMLLzglxMDstZmZGziZGmZmZWWMmlBzA",
-        "marksmanship_delve": "C4PAAAAAAAAAAAAAAAAAAAAAAYMbDMgBMbsEYWAAAAAAAAAAAAAgZMjZMzYMjMjxYmZYWGGLzgthZMW22MzMjZxMDjZmZZzwywMD",
-        "marksmanship_pvp": "C4PAAAAAAAAAAAAAAAAAAAAAAwADsNGNWGAzC2AAAAAAAAAAAAAgZgBzMzMjMzMzMmZYMzYZbglxMzMz2mtZGDMzwMzM2WMmlhZA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Aimed Shot",
+            "action": "Summon Pet",
             "key": "F13",
-            "min_resource": 35,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Rapid Fire",
+            "action": "Aimed Shot",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,40 +25,39 @@
             ]
         },
         "slot_03": {
-            "action": "Arcane Shot",
+            "action": "Steady Shot",
             "key": "F17",
-            "min_resource": 15,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Multi-Shot",
+            "action": "Auto Shot",
             "key": "F18",
-            "min_resource": 15,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Steady Shot",
+            "action": "Call Action List,Name=Drtrickshots",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 0.5
+            ]
         },
         "slot_06": {
-            "action": "Kill Shot",
+            "action": "Call Action List,Name=Senttrickshots",
             "key": "HOME",
-            "min_resource": 10,
+            "min_resource": 0,
             "conditions": [
-                "execute_range"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Trueshot",
+            "action": "Call Action List,Name=Drcleave",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -68,7 +65,7 @@
             ]
         },
         "slot_08": {
-            "action": "Volley",
+            "action": "Call Action List,Name=Sentcleave",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -76,7 +73,7 @@
             ]
         },
         "slot_09": {
-            "action": "Salvo",
+            "action": "Call Action List,Name=Drst",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -84,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Explosive Shot",
+            "action": "Call Action List,Name=Sentst",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -92,7 +89,7 @@
             ]
         },
         "slot_11": {
-            "action": "Chimaera Shot",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -100,7 +97,7 @@
             ]
         },
         "slot_12": {
-            "action": "Wailing Arrow",
+            "action": "Use Items,Check Existing=0,Slots=Trinket1:Trinket2",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -108,7 +105,7 @@
             ]
         },
         "slot_13": {
-            "action": "Death Chakram",
+            "action": "Volley",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -116,7 +113,7 @@
             ]
         },
         "slot_14": {
-            "action": "Binding Shot",
+            "action": "Explosive Shot",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -124,23 +121,25 @@
             ]
         },
         "slot_15": {
-            "action": "Bursting Shot",
+            "action": "Trueshot",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_bulletstorm_up"
             ]
         },
         "slot_16": {
-            "action": "Scatter Shot",
+            "action": "Black Arrow",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_17": {
-            "action": "Intimidation",
+            "action": "Rapid Fire",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -148,23 +147,25 @@
             ]
         },
         "slot_18": {
-            "action": "High Explosive Trap",
+            "action": "Arcane Shot",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_19": {
-            "action": "Steel Trap",
+            "action": "Kill Shot",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_20": {
-            "action": "Tar Trap",
+            "action": "Wait,Sec=0.05",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -172,189 +173,184 @@
             ]
         },
         "slot_21": {
-            "action": "Freezing Trap",
+            "action": "Kill Shot,Target If=Max:Debuff.Spotters Mark.Down|Action.Aimed Shot.In Flight To Target|Max Prio Damage",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_22": {
-            "action": "Flare",
+            "action": "Multishot,Target If=Max:Debuff.Spotters Mark.Down|Action.Aimed Shot.In Flight To Target|Max Prio Damage",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_23": {
-            "action": "Misdirection",
+            "action": "Arcane Shot,Target If=Max:Debuff.Spotters Mark.Down|Action.Aimed Shot.In Flight To Target|Max Prio Damage",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_24": {
-            "action": "Tranquilizing Shot",
+            "action": "Aimed Shot,Target If=Max:Debuff.Spotters Mark.Up",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_spotters_mark_up"
             ]
         },
         "slot_25": {
-            "action": "Counter Shot",
+            "action": "Aimed Shot,Target If=Max:Debuff.Spotters Mark.Up|Max Prio Damage",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_spotters_mark_up"
             ]
         },
         "slot_26": {
-            "action": "Exhilaration",
+            "action": "Multishot,Target If=Max:Debuff.Spotters Mark.Down|Action.Aimed Shot.In Flight To Target",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_precise_shots_up"
             ]
         },
         "slot_27": {
-            "action": "Aspect of the Turtle",
+            "action": "Multishot",
             "key": "Alt+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_28": {
-            "action": "Survival of the Fittest",
-            "key": "Alt+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Feign Death",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Disengage",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Aspect of the Cheetah",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Roar of Sacrifice",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Sniper Shot",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Ranger's Finesse",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_35": {
-            "action": "Trueshot Aura",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_36": {
-            "action": "Revive Pet",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_37": {
-            "action": "Mend Pet",
-            "key": "Shift+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_38": {
-            "action": "Serpent Sting",
-            "key": "Shift+F14",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_13",
             "slot_03",
-            "slot_05"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_33",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
             "slot_21",
-            "slot_30",
-            "slot_01",
-            "slot_02"
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27"
         ],
         "mythic": [
-            "slot_09",
-            "slot_08",
-            "slot_10",
-            "slot_02",
-            "slot_04",
-            "slot_01"
-        ],
-        "execute_phase": [
-            "slot_06",
             "slot_01",
-            "slot_02"
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07"
-            ],
-            "sequence": [
-                "slot_07",
-                "slot_01",
-                "slot_01",
-                "slot_02"
-            ]
-        }
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27"
+        ]
     }
 }

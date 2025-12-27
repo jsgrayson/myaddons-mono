@@ -316,6 +316,16 @@ SW_Frame:SetScript("OnUpdate", function()
         end
         SetPixel(8, secRes)
         
+        -- P17: Group Size for mode detection (solo vs group)
+        -- 0 = solo, 10-50 = party (2-5), 100-400 = raid (10-40)
+        local groupSize = GetNumGroupMembers() or 0
+        if groupSize == 0 then groupSize = 1 end -- Solo player
+        SetPixel(17, math.min(255, groupSize * 10))
+        
+        -- P18: PvP Active Flag (255 = PvP flagged, 0 = not)
+        local isPvP = UnitIsPVP("player") or IsActiveBattlefieldArena() or C_PvP.IsPVPMap()
+        SetPixel(18, isPvP and 255 or 0)
+        
         -- 5.5 CHARGED ABILITY TRACKING (P16) - Per-spec reused
         -- Tracks charges on key abilities (scaled: charges * 50, max 5 charges = 250)
         -- GetSpellCharges returns: currentCharges, maxCharges, cooldownStart, cooldownDuration, chargeModRate
@@ -388,6 +398,21 @@ SW_Frame:SetScript("OnUpdate", function()
                     end
                 end
             end
+        elseif specId == 13 then -- Protection Warrior
+            -- P14: Shield Slam Ready (Cooldown check for Strategist resets)
+            local start, duration = GetSpellCooldown(23922) -- Shield Slam ID
+            if duration == 0 then
+                proc1 = true
+            end
+            
+            -- P15: Revenge! (Free Revenge proc)
+            if AuraUtil and AuraUtil.ForEachAura then
+                AuraUtil.ForEachAura("player", "HELPFUL", nil, function(aura)
+                    if aura.spellId == 5302 or aura.name == "Revenge!" then
+                        proc2 = true
+                    end
+                end, true)
+            end
         elseif specId == 11 or specId == 12 then  -- Arms(11) or Fury(12) Warrior
             if AuraUtil and AuraUtil.ForEachAura then
                 AuraUtil.ForEachAura("player", "HELPFUL", nil, function(aura)
@@ -405,10 +430,10 @@ SW_Frame:SetScript("OnUpdate", function()
         SetPixel(14, proc1 and 255 or 0)
         SetPixel(15, proc2 and 255 or 0)
 
-        -- 7. SENSORS
-        SetPixel(17, IsKeyDown("2") and 255 or 0)
+        -- 7. SENSORS (moved to P27/P28 to avoid conflict with P17=group_size, P18=pvp)
+        SetPixel(27, IsKeyDown("2") and 255 or 0)
         local _, _, _, _, _, _, _, kick = UnitCastingInfo("target")
-        SetPixel(18, (kick == false) and 255 or 0)
+        SetPixel(28, (kick == false) and 255 or 0)
         SetPixel(19, IsStealthed() and 255 or 0)
         -- 8. RANGE DETECTION (P6) - Dynamic range for ground-targeting offset
         -- Uses spell range checks to bracket distance

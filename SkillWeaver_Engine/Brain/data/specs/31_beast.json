@@ -1,7 +1,7 @@
 {
-    "spec_id": 83,
-    "spec_name": "Frost Mage",
-    "resource_type": "mana",
+    "spec_id": 31,
+    "spec_name": "Beast Mastery Hunter",
+    "resource_type": "focus",
     "secondary_resource": "none",
     "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
@@ -9,7 +9,7 @@
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Arcane Intellect",
+            "action": "Summon Pet",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -17,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Variable,Name=Treacherous Transmitter Precombat Cast,Value=12",
+            "action": "Auto Shot",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -25,7 +25,7 @@
             ]
         },
         "slot_03": {
-            "action": "Blizzard",
+            "action": "Call Action List,Name=Drst",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -33,7 +33,7 @@
             ]
         },
         "slot_04": {
-            "action": "Frostbolt",
+            "action": "Call Action List,Name=Drcleave",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -41,7 +41,7 @@
             ]
         },
         "slot_05": {
-            "action": "Counterspell",
+            "action": "Call Action List,Name=St",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -49,7 +49,7 @@
             ]
         },
         "slot_06": {
-            "action": "Run Action List,Name=Ff Aoe",
+            "action": "Call Action List,Name=Cleave",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -57,15 +57,16 @@
             ]
         },
         "slot_07": {
-            "action": "Run Action List,Name=Ss Aoe",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_call_of_the_wild_up"
             ]
         },
         "slot_08": {
-            "action": "Run Action List,Name=Ff Cleave",
+            "action": "Bestial Wrath",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -73,7 +74,7 @@
             ]
         },
         "slot_09": {
-            "action": "Run Action List,Name=Ss Cleave",
+            "action": "Barbed Shot,Target If=Min:Dot.Barbed Shot.Remains",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -81,7 +82,7 @@
             ]
         },
         "slot_10": {
-            "action": "Run Action List,Name=Ff St Boltspam",
+            "action": "Bloodshed",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -89,7 +90,7 @@
             ]
         },
         "slot_11": {
-            "action": "Run Action List,Name=Ff St",
+            "action": "Multishot",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -97,7 +98,7 @@
             ]
         },
         "slot_12": {
-            "action": "Flurry",
+            "action": "Call Of The Wild",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -105,7 +106,7 @@
             ]
         },
         "slot_13": {
-            "action": "Icy Veins",
+            "action": "Explosive Shot",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -113,7 +114,7 @@
             ]
         },
         "slot_14": {
-            "action": "Use Item,Name=Treacherous Transmitter",
+            "action": "Kill Command",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -121,7 +122,7 @@
             ]
         },
         "slot_15": {
-            "action": "Use Item,Name=Spymasters Web",
+            "action": "Cobra Shot",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -129,7 +130,7 @@
             ]
         },
         "slot_16": {
-            "action": "Use Item,Name=Sunblood Amethyst",
+            "action": "Kill Shot",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -137,7 +138,7 @@
             ]
         },
         "slot_17": {
-            "action": "Use Item,Name=Lily Of The Eternal Weave",
+            "action": "Barbed Shot",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -145,7 +146,7 @@
             ]
         },
         "slot_18": {
-            "action": "Use Item,Name=Funhouse Lens",
+            "action": "Variable,Name=Quiver Variable,Op=Set,Value=0",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -153,7 +154,7 @@
             ]
         },
         "slot_19": {
-            "action": "Use Item,Name=Mereldars Toll",
+            "action": "Variable,Name=Quiver Variable,Op=Set,Value=1",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -161,72 +162,26 @@
             ]
         },
         "slot_20": {
-            "action": "Use Item,Name=House Of Cards",
+            "action": "Variable,Name=Bw Variable,Op=Set,Value=0",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_bestial_wrath_up"
             ]
         },
         "slot_21": {
-            "action": "Use Item,Name=Quickwick Candlestick",
+            "action": "Variable,Name=Bw Variable,Op=Set,Value=1",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_bestial_wrath_up"
             ]
         },
         "slot_22": {
-            "action": "Use Item,Name=Imperfect Ascendancy Serum",
+            "action": "Use Items,Check Existing=0,Slots=Trinket1:Trinket2",
             "key": "Ctrl+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_23": {
-            "action": "Use Item,Name=Burst Of Knowledge",
-            "key": "Ctrl+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_24": {
-            "action": "Use Item,Name=Ratfang Toxin",
-            "key": "Ctrl+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_25": {
-            "action": "Use Item,Name=Neural Synapse Enhancer",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_26": {
-            "action": "Frozen Orb",
-            "key": "Alt+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_27": {
-            "action": "Invoke External Buff,Name=Power Infusion",
-            "key": "Alt+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_28": {
-            "action": "Invoke External Buff,Name=Blessing Of Summer",
-            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -256,13 +211,7 @@
             "slot_19",
             "slot_20",
             "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_22"
         ],
         "mythic": [
             "slot_01",
@@ -286,13 +235,7 @@
             "slot_19",
             "slot_20",
             "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_22"
         ],
         "delve": [
             "slot_01",
@@ -316,13 +259,7 @@
             "slot_19",
             "slot_20",
             "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_22"
         ],
         "pvp": [
             "slot_01",
@@ -346,13 +283,7 @@
             "slot_19",
             "slot_20",
             "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_22"
         ]
     }
 }

@@ -293,22 +293,14 @@
             "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_07",
             "slot_08",
             "slot_01",
             "slot_06",
             "slot_02",
             "slot_12"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_09",
-            "slot_07",
-            "slot_15",
-            "slot_12",
-            "slot_01"
         ],
         "mythic": [
             "slot_05",
@@ -318,15 +310,21 @@
             "slot_12",
             "slot_01"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07"
-            ],
-            "sequence": [
-                "slot_07",
-                "slot_08",
-                "slot_01"
-            ]
-        }
+        "pvp": [
+            "slot_25",
+            "slot_09",
+            "slot_07",
+            "slot_15",
+            "slot_12",
+            "slot_01"
+        ],
+        "delve": [
+            "slot_07",
+            "slot_08",
+            "slot_01",
+            "slot_06",
+            "slot_02",
+            "slot_12"
+        ]
     }
 }

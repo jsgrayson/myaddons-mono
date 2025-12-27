@@ -230,6 +230,8 @@ class SkillWeaverEngine:
             "spell_charges": round(self.decode_px(row, 16) / 50),  # Charged ability count (P16)
             "enemies_missing_dots": int(round(self.decode_px(row, 20) / 25.0)),
             "total_hostile_plates": int(round(self.decode_px(row, 21) / 25.0)),
+            "group_size": int(round(self.decode_px(row, 17) / 10.0)),  # P17: Group size (solo=1, party=2-5, raid=10-40)
+            "pvp_active": self.decode_px(row, 18) > 128,  # P18: PvP flag (arena/bg/flagged)
             # Talent Bitmasks (P22-P25) - which slots have spells learned
             "talent_mask_1_8": int(self.decode_px(row, 22)),
             "talent_mask_9_16": int(self.decode_px(row, 23)),
@@ -328,7 +330,11 @@ class SkillWeaverEngine:
                                     # Allow Spell Queueing: Unlock early so next key hits 400ms queue window
                                     gcd_dur = 1.1 + lock_padding
                                     self._gcd_until = now + gcd_dur
-                                    self.last_action_name = optimal.get('action', '') # Moved here
+                                    self.last_action_name = optimal.get('action', '')
+                                    
+                                    # MARK COOLDOWN AFTER GCD CONFIRMS CAST SUCCESS
+                                    # This ensures cooldown only tracked if spell actually cast
+                                    self.state_engine.mark_slot_used(optimal.get('slot_id'), optimal)
                                     
                                     cast_dur = (optimal.get('cast_time', 0) or optimal.get('channel_time', 0))
                                     if cast_dur > 0:
@@ -381,6 +387,14 @@ class SkillWeaverEngine:
     def load_rotation(self, hash_id):
         """Dynamic rotation loader."""
         h_int = int(hash_id + 0.5)
+        
+        # SPEC_ALIASES: Handle ID drift from display signal loss
+        # Detected ID → Actual JSON ID
+        SPEC_ALIASES = {
+            14: 13,  # Prot Warrior: Detected as 14, loads 13_prot.json
+        }
+        h_int = SPEC_ALIASES.get(h_int, h_int)
+        
         pattern = os.path.join(self.spec_dir, f"{h_int}_*.json")
         matches = glob.glob(pattern)
         if matches:

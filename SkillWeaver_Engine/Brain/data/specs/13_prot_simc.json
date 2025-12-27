@@ -120,16 +120,6 @@
             ],
             "cooldown": 1.5
         },
-        "slot_05": {
-            "action": "Ignore Pain",
-            "key": "F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "rage_gte_60"
-            ],
-            "cooldown": 1.0
-        },
         "slot_02": {
             "action": "Thunder Clap",
             "key": "F16",
@@ -194,18 +184,6 @@
             "slot_04",
             "slot_03",
             "slot_01"
-        ],
-        "delve": [
-            "slot_06",
-            "slot_10",
-            "slot_09",
-            "slot_05",
-            "slot_16",
-            "slot_01",
-            "slot_04",
-            "slot_02",
-            "slot_03",
-            "slot_07"
         ],
         "raid": [
             "slot_16",

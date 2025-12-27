@@ -2,16 +2,14 @@
     "spec_id": 22,
     "spec_name": "Protection Paladin",
     "resource_type": "mana",
-    "secondary_resource": "holy_power",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "protection_mythic": "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYZmZMzMLbzYGzsMmxAAAMAAAAAAA0WzMDDmhxMmt2AAGYAMw2AAAAAmZWWWabmxiZwAADDjB",
-        "protection_raid": "CIEAAAAAAAAAAAAAAAAAAAAAAsZMYWGLzMzMzMLbzYmZmtxMGAAgBAAAAAAg2amZWMMzwYG2aDAYgBwAbDAAAAYmZZbptZGLMAAwMMG",
-        "protection_delve": "CIEAAAAAAAAAAAAAAAAAAAAAAsNmZYWGLMzMzMLbzMzYGMjBAAYAAAAAAAotmZGGMDjZmZrNAYMwAYgtBAAYmptZZ2mBAYzMAGghhxA",
-        "protection_pvp": "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYZmZMzMLbzYGzsMmxAAAMAAAAAAA0WzMDDmhxMmt2AAGYAMw2AAAAAmZWWWabmxiZwAADDjB"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Blessed Hammer",
+            "action": "Rite Of Sanctification",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Judgment",
+            "action": "Rite Of Adjuration",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,15 +25,15 @@
             ]
         },
         "slot_03": {
-            "action": "Shield of the Righteous",
+            "action": "Devotion Aura",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "holy_power_gte_3"
+                "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Avenger's Shield",
+            "action": "Consecration",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -43,7 +41,7 @@
             ]
         },
         "slot_05": {
-            "action": "Consecration",
+            "action": "Variable,Name=Trinket Sync Slot,Value=1",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -51,15 +49,15 @@
             ]
         },
         "slot_06": {
-            "action": "Hammer of Wrath",
+            "action": "Variable,Name=Trinket Sync Slot,Value=2",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "execute_range_or_proc"
+                "target_valid"
             ]
         },
         "slot_07": {
-            "action": "Word of Glory",
+            "action": "Auto Attack",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -72,11 +70,10 @@
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_09": {
-            "action": "Eye of Tyr",
+            "action": "Moment Of Glory",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -88,23 +85,26 @@
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_3"
             ]
         },
         "slot_11": {
-            "action": "Bastion of Light",
+            "action": "Bastion Of Light",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_avenging_wrath_up"
             ]
         },
         "slot_12": {
-            "action": "Moment of Glory",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_avenging_wrath_up"
             ]
         },
         "slot_13": {
@@ -116,7 +116,7 @@
             ]
         },
         "slot_14": {
-            "action": "Guardian of Ancient Kings",
+            "action": "Judgment,Target If=Min:Debuff.Judgment.Remains",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -124,15 +124,16 @@
             ]
         },
         "slot_15": {
-            "action": "Divine Shield",
+            "action": "Hammer Of Light",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_blessing_of_dawn_up"
             ]
         },
         "slot_16": {
-            "action": "Lay on Hands",
+            "action": "Eye Of Tyr",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -140,15 +141,16 @@
             ]
         },
         "slot_17": {
-            "action": "Blessing of Sacrifice",
+            "action": "Shield Of The Righteous",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_hammer_of_light_ready_up"
             ]
         },
         "slot_18": {
-            "action": "Blessing of Protection",
+            "action": "Holy Armaments",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -156,7 +158,7 @@
             ]
         },
         "slot_19": {
-            "action": "Blessing of Freedom",
+            "action": "Blessed Hammer",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -164,31 +166,35 @@
             ]
         },
         "slot_20": {
-            "action": "Cleanse Toxins",
+            "action": "Avengers Shield",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_3",
+                "buff_bulwark_of_righteous_fury_up"
             ]
         },
         "slot_21": {
-            "action": "Flash of Light",
+            "action": "Hammer Of The Righteous",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_blessed_assurance_up"
             ]
         },
         "slot_22": {
-            "action": "Hand of Reckoning",
+            "action": "Crusader Strike",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_blessed_assurance_up"
             ]
         },
         "slot_23": {
-            "action": "Sentinel",
+            "action": "Hammer Of Wrath",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -196,7 +202,7 @@
             ]
         },
         "slot_24": {
-            "action": "Intercession",
+            "action": "Judgment",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -204,23 +210,25 @@
             ]
         },
         "slot_25": {
-            "action": "Rebuke",
+            "action": "Word Of Glory",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_shining_light_free_up"
             ]
         },
         "slot_26": {
-            "action": "Hammer of Justice",
+            "action": "Use Item,Name=Tome Of Lights Devotion",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_inner_resilience_up"
             ]
         },
         "slot_27": {
-            "action": "Blinding Light",
+            "action": "Use Item,Name=Unyielding Netherprism",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -228,80 +236,135 @@
             ]
         },
         "slot_28": {
-            "action": "Divine Steed",
+            "action": "Use Items,Slots=Trinket1",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Turn Evil",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Redemption",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Steed of Glory",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Shield of Virtue",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Hallowed Ground",
-            "key": "Shift+F15",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_avenging_wrath_up"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_04",
-            "slot_02",
+    "priorities": {
+        "raid": [
             "slot_01",
-            "slot_03",
-            "slot_05"
-        ],
-        "pvp": [
-            "slot_26",
-            "slot_06",
-            "slot_04",
             "slot_02",
-            "slot_03"
-        ],
-        "mythic": [
+            "slot_03",
             "slot_04",
             "slot_05",
-            "slot_09",
-            "slot_03",
-            "slot_02"
-        ],
-        "execute_phase": [
             "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "mythic": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
             "slot_04",
-            "slot_02"
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_17",
+            "slot_20",
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_18",
+            "slot_19",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

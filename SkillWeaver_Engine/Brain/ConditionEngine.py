@@ -243,6 +243,11 @@ class ConditionEngine:
                    state.get('sudden_death_proc', False) or \
                    state.get('avenging_wrath_active', False)
         
+        if condition_name == "can_afford_revenge":
+            # Prot Warrior: Rage >= 20 OR Revenge! proc (P15)
+            # P15 is mapped to 'mf_insanity_proc' in StateEngine
+            return state.get('power', 0) >= 20 or state.get('mf_insanity_proc', False)
+        
         # --- VOIDFORM (Shadow Priest) ---
         if condition_name == "voidform_active":
             # TODO: Need addon pixel for Voidform buff
@@ -263,6 +268,105 @@ class ConditionEngine:
         # --- INTERRUPT TIMING ---
         if condition_name == "interruptible_late_stage":
             return state.get('interruptible', False)
+        
+        # =============================================================================
+        # SIMC APL CONDITIONS (Auto-generated from SimC parser)
+        # =============================================================================
+        
+        # --- RAGE LESS THAN (Protection Warrior) ---
+        if "_lte_" in condition_name and "rage" in condition_name:
+            try:
+                thresh = int(condition_name.split("_")[-1])
+                return state.get('power', 0) <= thresh
+            except:
+                return True
+        
+        # --- AOE TARGET COUNTS (From plate count P20/P21) ---
+        if "aoe_gte_" in condition_name:
+            try:
+                thresh = int(condition_name.split("_")[-1])
+                # P21 is plate count (number of enemies with nameplates visible)
+                plates = state.get('nameplates', 1)
+                return plates >= thresh
+            except:
+                return True
+        
+        if "aoe_lte_" in condition_name:
+            try:
+                thresh = int(condition_name.split("_")[-1])
+                plates = state.get('nameplates', 1)
+                return plates <= thresh
+            except:
+                return True
+        
+        # --- COMBAT START (First 0.5s of combat) ---
+        if condition_name == "combat_start":
+            # True at pull moment - TODO: Track combat duration in StateEngine
+            # For now, always false after initial press (let Charge work via other means)
+            return not state.get('combat', False)
+        
+        # --- SHIELD BLOCK EXPIRING (Prot Warrior) ---
+        if condition_name == "shield_block_expiring":
+            # TODO: Track Shield Block buff duration via P16 or pixel
+            # For now, return True if we have charges (maintain uptime)
+            return state.get('spell_charges', 0) > 0
+        
+        # --- REND / DEEP WOUNDS EXPIRING (Arms/Prot) ---
+        if condition_name == "rend_expiring" or condition_name == "rend_expiring_soon":
+            # Use DoT slot 0 for tracking (P11)
+            dots = state.get('dots', [0.0])
+            if len(dots) > 0:
+                return dots[0] <= 2.0  # Pandemic ~30% of base duration
+            return True
+        
+        # --- BUFF STATE CONDITIONS (SimC buff.X.up / buff.X.down) ---
+        # These default to reasonable assumptions since we don't track all buffs
+        
+        if condition_name == "avatar_active":
+            # TODO: Track via buff pixel
+            return False  # Conservative: don't block other cooldowns
+        
+        if condition_name == "avatar_not_active":
+            return True  # Assume available
+        
+        if condition_name == "thunder_blast_not_active":
+            return True  # Let it cast Avatar freely
+        
+        if condition_name == "thunder_blast_low_stacks":
+            return True  # Default to allowing Thunder Blast usage
+        
+        if condition_name == "thunder_blast_max_stacks":
+            # P15 could track Thunder Blast stacks if mapped
+            return state.get('mf_insanity_proc', False)  # Reuse proc pixel
+        
+        if condition_name == "violent_outburst_proc" or condition_name == "violent_outburst_not_active":
+            return True  # Default allow
+        
+        if condition_name == "colossal_might_ready":
+            # For Demolish talent - check secondary power or proc
+            return state.get('secondary_power', 0) >= 3
+        
+        if condition_name == "burst_of_power_ready":
+            return state.get('mb_reset_proc', False)  # P14
+        
+        if condition_name == "burst_of_power_low":
+            return not state.get('mb_reset_proc', False)
+        
+        if condition_name == "free_revenge_proc":
+            # Revenge! buff tracked on P15
+            return state.get('mf_insanity_proc', False)
+        
+        if condition_name == "sudden_death_proc":
+            # Same as Warrior P15
+            return state.get('mf_insanity_proc', False)
+        
+        if condition_name == "not_execute_range":
+            # Target HP > 20%
+            return state.get('thp', 100) >= 20
+        
+        if condition_name == "not_execute_range_massacre":
+            # Target HP > 35% (Massacre talent)
+            return state.get('thp', 100) >= 35
         
         # --- MULTI-TARGET / AOE ---
         if condition_name == "multi_target":

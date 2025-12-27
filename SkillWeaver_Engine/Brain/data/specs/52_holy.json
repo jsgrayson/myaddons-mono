@@ -1,6 +1,6 @@
 {
-    "spec_id": 83,
-    "spec_name": "Frost Mage",
+    "spec_id": 52,
+    "spec_name": "Holy Priest",
     "resource_type": "mana",
     "secondary_resource": "none",
     "generated_from": "SimC APL (thewarwithin)",
@@ -9,23 +9,25 @@
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Arcane Intellect",
+            "action": "Holy Fire,Cycle Targets=1,Target If=Min:Dot.Holy Fire.Remains",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_empyreal_blaze_up"
             ]
         },
         "slot_02": {
-            "action": "Variable,Name=Treacherous Transmitter Precombat Cast,Value=12",
+            "action": "Shadow Word Pain",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_divine_favor_chastise_up"
             ]
         },
         "slot_03": {
-            "action": "Blizzard",
+            "action": "Call Action List,Name=Divine Favor Chastise Prep",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -33,15 +35,16 @@
             ]
         },
         "slot_04": {
-            "action": "Frostbolt",
+            "action": "Run Action List,Name=Divine Favor Chastise Active",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_divine_favor_chastise_up"
             ]
         },
         "slot_05": {
-            "action": "Counterspell",
+            "action": "Run Action List,Name=Divine Favor Filler",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -49,7 +52,7 @@
             ]
         },
         "slot_06": {
-            "action": "Run Action List,Name=Ff Aoe",
+            "action": "Run Action List,Name=Divine Image",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -57,7 +60,7 @@
             ]
         },
         "slot_07": {
-            "action": "Run Action List,Name=Ss Aoe",
+            "action": "Apotheosis",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -65,7 +68,7 @@
             ]
         },
         "slot_08": {
-            "action": "Run Action List,Name=Ff Cleave",
+            "action": "Empyreal Blaze",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -73,47 +76,52 @@
             ]
         },
         "slot_09": {
-            "action": "Run Action List,Name=Ss Cleave",
+            "action": "Divine Word",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_empyreal_blaze_up"
             ]
         },
         "slot_10": {
-            "action": "Run Action List,Name=Ff St Boltspam",
+            "action": "Holy Word Chastise",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_divine_word_up"
             ]
         },
         "slot_11": {
-            "action": "Run Action List,Name=Ff St",
+            "action": "Halo",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_2"
             ]
         },
         "slot_12": {
-            "action": "Flurry",
+            "action": "Divine Star",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_2"
             ]
         },
         "slot_13": {
-            "action": "Icy Veins",
+            "action": "Holy Nova",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_2"
             ]
         },
         "slot_14": {
-            "action": "Use Item,Name=Treacherous Transmitter",
+            "action": "Shadow Word Death",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -121,15 +129,16 @@
             ]
         },
         "slot_15": {
-            "action": "Use Item,Name=Spymasters Web",
+            "action": "Smite,Cycle Targets=1,Target If=Min:Dot.Holy Fire.Remains",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "aoe_gte_2"
             ]
         },
         "slot_16": {
-            "action": "Use Item,Name=Sunblood Amethyst",
+            "action": "Smite",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -137,7 +146,7 @@
             ]
         },
         "slot_17": {
-            "action": "Use Item,Name=Lily Of The Eternal Weave",
+            "action": "Holy Word Sanctify",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -145,7 +154,7 @@
             ]
         },
         "slot_18": {
-            "action": "Use Item,Name=Funhouse Lens",
+            "action": "Holy Word Serenity",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -153,7 +162,7 @@
             ]
         },
         "slot_19": {
-            "action": "Use Item,Name=Mereldars Toll",
+            "action": "Shadowfiend",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -161,72 +170,8 @@
             ]
         },
         "slot_20": {
-            "action": "Use Item,Name=House Of Cards",
+            "action": "Power Infusion",
             "key": "Ctrl+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_21": {
-            "action": "Use Item,Name=Quickwick Candlestick",
-            "key": "Ctrl+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_22": {
-            "action": "Use Item,Name=Imperfect Ascendancy Serum",
-            "key": "Ctrl+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_23": {
-            "action": "Use Item,Name=Burst Of Knowledge",
-            "key": "Ctrl+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_24": {
-            "action": "Use Item,Name=Ratfang Toxin",
-            "key": "Ctrl+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_25": {
-            "action": "Use Item,Name=Neural Synapse Enhancer",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_26": {
-            "action": "Frozen Orb",
-            "key": "Alt+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_27": {
-            "action": "Invoke External Buff,Name=Power Infusion",
-            "key": "Alt+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_28": {
-            "action": "Invoke External Buff,Name=Blessing Of Summer",
-            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -254,15 +199,7 @@
             "slot_17",
             "slot_18",
             "slot_19",
-            "slot_20",
-            "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_20"
         ],
         "mythic": [
             "slot_01",
@@ -284,15 +221,7 @@
             "slot_17",
             "slot_18",
             "slot_19",
-            "slot_20",
-            "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_20"
         ],
         "delve": [
             "slot_01",
@@ -314,15 +243,7 @@
             "slot_17",
             "slot_18",
             "slot_19",
-            "slot_20",
-            "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_20"
         ],
         "pvp": [
             "slot_01",
@@ -344,15 +265,7 @@
             "slot_17",
             "slot_18",
             "slot_19",
-            "slot_20",
-            "slot_21",
-            "slot_22",
-            "slot_23",
-            "slot_24",
-            "slot_25",
-            "slot_26",
-            "slot_27",
-            "slot_28"
+            "slot_20"
         ]
     }
 }

@@ -1,58 +1,55 @@
 {
     "spec_id": 91,
     "spec_name": "Affliction Warlock",
-    "resource_type": "soul_shards",
-    "secondary_resource": "mana",
+    "resource_type": "mana",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "affliction_mythic": "CkQAAAAAAAAAAAAAAAAAAAAAAAzMzMzMjYWMMmNzMDzyAAAAmZMzyMjxyMzMLmxMDAYGLwAziRjZAMbglZAAAAAAAAwMsA",
-        "affliction_raid": "CkQAAAAAAAAAAAAAAAAAAAAAAAzMzMzMjYWMwsNzMDzyAAAAmZmZWMzMWmZmZDmZAAzYBGYWMaMDgZDsMDAAAAAAAAmxsB",
-        "affliction_delve": "CkQAAAAAAAAAAAAAAAAAAAAAAAzMzMzMjYWMMmNzMDzyAAAAmZMzyMjxyMzMLmxMDAYGLwAziRjZAMLglZAAAAAAAAwMsA",
-        "affliction_pvp": "CkQAAAAAAAAAAAAAAAAAAAAAAAzMzMzMjYWMMmNzMDzyAAAAmZMzyMjxyMzMLmxMDAYGLwAziRjZAMbglZAAAAAAAAwMsA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Agony",
+            "action": "Summon Pet",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot:0"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_02": {
-            "action": "Corruption",
+            "action": "Grimoire Of Sacrifice",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot:1"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_03": {
-            "action": "Unstable Affliction",
+            "action": "Seed Of Corruption",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot:2"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_04": {
-            "action": "Malefic Rapture",
+            "action": "Haunt",
             "key": "F18",
-            "min_resource": 10,
+            "min_resource": 0,
             "conditions": [
-                "shards_gte_1"
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Drain Soul",
+            "action": "Call Action List,Name=Cleave",
             "key": "F19",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid"
+            ]
         },
         "slot_06": {
-            "action": "Phantom Singularity",
+            "action": "Call Action List,Name=Aoe",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -60,16 +57,15 @@
             ]
         },
         "slot_07": {
-            "action": "Summon Darkglare",
+            "action": "Agony",
             "key": "END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_08": {
-            "action": "Soul Rot",
+            "action": "Unstable Affliction",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -77,7 +73,7 @@
             ]
         },
         "slot_09": {
-            "action": "Seed of Corruption",
+            "action": "Wither",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -85,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Haunt",
+            "action": "Corruption",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -93,7 +89,7 @@
             ]
         },
         "slot_11": {
-            "action": "Mortal Coil",
+            "action": "Drain Soul",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -101,7 +97,7 @@
             ]
         },
         "slot_12": {
-            "action": "Howl of Terror",
+            "action": "Shadow Bolt",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -109,7 +105,7 @@
             ]
         },
         "slot_13": {
-            "action": "Unending Resolve",
+            "action": "Vile Taint",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -117,7 +113,7 @@
             ]
         },
         "slot_14": {
-            "action": "Dark Pact",
+            "action": "Phantom Singularity",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -125,7 +121,7 @@
             ]
         },
         "slot_15": {
-            "action": "Healthstone",
+            "action": "Soul Rot",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -133,7 +129,7 @@
             ]
         },
         "slot_16": {
-            "action": "Demonic Circle: Teleport",
+            "action": "Summon Darkglare",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -141,7 +137,7 @@
             ]
         },
         "slot_17": {
-            "action": "Demonic Gateway",
+            "action": "Malevolence",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -149,7 +145,7 @@
             ]
         },
         "slot_18": {
-            "action": "Curse of Tongues",
+            "action": "Malefic Rapture",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -157,7 +153,7 @@
             ]
         },
         "slot_19": {
-            "action": "Curse of Weakness",
+            "action": "Oblivion",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -165,7 +161,7 @@
             ]
         },
         "slot_20": {
-            "action": "Curse of Exhaustion",
+            "action": "Cycling Variable",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -173,7 +169,7 @@
             ]
         },
         "slot_21": {
-            "action": "Fear",
+            "action": "Agony,Target If=(!(Debuff.Haunt.Remains|Dot.Seed Of Corruption.Remains)&Refreshable)",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -181,7 +177,7 @@
             ]
         },
         "slot_22": {
-            "action": "Banish",
+            "action": "Agony,Cycle Targets=1,Max Cycle Targets=5",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -189,7 +185,7 @@
             ]
         },
         "slot_23": {
-            "action": "Create Healthstone",
+            "action": "Agony,Cycle Targets=1,Max Cycle Targets=3",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -197,7 +193,7 @@
             ]
         },
         "slot_24": {
-            "action": "Soulstone",
+            "action": "Agony,Target If=Min:Remains",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -205,15 +201,15 @@
             ]
         },
         "slot_25": {
-            "action": "Command Demon",
+            "action": "Wither,Target If=Min:(Remains*(Remains>0))",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid"
             ]
         },
         "slot_26": {
-            "action": "Shadowfury",
+            "action": "Corruption,Target If=Min:(Remains*(Remains>0))",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
@@ -221,7 +217,7 @@
             ]
         },
         "slot_27": {
-            "action": "Demonic Circle",
+            "action": "Drain Soul,Interrupt If=Cooldown.Vile Taint.Ready,Interrupt Global=1",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -229,111 +225,134 @@
             ]
         },
         "slot_28": {
-            "action": "Howl of Terror",
+            "action": "Wither,Target If=Min:Remains",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
-        },
-        "slot_29": {
-            "action": "Dark Pact",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Mortal Coil",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Soulburn",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Soul Rot",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Summon Infernal",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Soulstone",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_35": {
-            "action": "Create Healthstone",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_36": {
-            "action": "Banish",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
             "slot_03",
-            "slot_10",
             "slot_04",
-            "slot_05"
-        ],
-        "pvp": [
-            "slot_30",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
             "slot_25",
-            "slot_01",
-            "slot_03",
-            "slot_04"
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_09",
             "slot_01",
             "slot_02",
-            "slot_10",
-            "slot_04"
-        ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07",
-                "shards_gte_3"
-            ],
-            "sequence": [
-                "slot_06",
-                "slot_08",
-                "slot_07",
-                "slot_04"
-            ]
-        },
-        "execute_phase": [
+            "slot_03",
+            "slot_04",
             "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
             "slot_01",
-            "slot_03"
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

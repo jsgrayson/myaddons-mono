@@ -1,26 +1,23 @@
 {
     "spec_id": 92,
     "spec_name": "Demonology Warlock",
-    "resource_type": "soul_shards",
-    "secondary_resource": "demonic_core_stacks",
+    "resource_type": "mana",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "demonology_mythic": "CoQAAAAAAAAAAAAAAAAAAAAAAAmZmZmZEzmhxsZmZY2GAAAAAAAAAAzAGzYYBGYZYhGWYMmx2YmtZMzMjxMGmZmZmZwMAAA",
-        "demonology_raid": "CoQAAAAAAAAAAAAAAAAAAAAAAAmZmZmZEzmBmtZmZY2GAAAAAAAAAAzAGzYYBGYZYhGWYGzw2MzsMjZmZMmxwMzYMMzMAAA",
-        "demonology_delve": "CoQAAAAAAAAAAAAAAAAAAAAAAAmZmZmZEzmBmtZmZY2GAAAAAAAAAAzAGzYYBGYZYhGWYGzw2MzsMjZmZMmxwMzYMMzMAAA",
-        "demonology_pvp": "CoQAAAAAAAAAAAAAAAAAAAAAAAmZmZmZEzmBmtZmZY2GAAAAAAAAAAzAGzYYBGYZYhGWYGzw2MzsMjZmZMmxwMzYMMzMAAA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Shadow Bolt",
+            "action": "Summon Pet",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 0.5
+            ]
         },
         "slot_02": {
-            "action": "Hand of Gul'dan",
+            "action": "Power Siphon",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -28,15 +25,16 @@
             ]
         },
         "slot_03": {
-            "action": "Call Dreadstalkers",
+            "action": "Demonbolt",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_power_siphon_up"
             ]
         },
         "slot_04": {
-            "action": "Implosion",
+            "action": "Shadow Bolt",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -44,7 +42,7 @@
             ]
         },
         "slot_05": {
-            "action": "Summon Demonic Tyrant",
+            "action": "Call Action List,Name=Racials",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -52,7 +50,7 @@
             ]
         },
         "slot_06": {
-            "action": "Grimoire: Felguard",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -60,7 +58,7 @@
             ]
         },
         "slot_07": {
-            "action": "Power Siphon",
+            "action": "Hand Of Guldan",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -68,7 +66,7 @@
             ]
         },
         "slot_08": {
-            "action": "Demonic Strength",
+            "action": "Summon Demonic Tyrant",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -76,7 +74,7 @@
             ]
         },
         "slot_09": {
-            "action": "Bilescourge Bombers",
+            "action": "Grimoire Felguard",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -84,7 +82,7 @@
             ]
         },
         "slot_10": {
-            "action": "Doom",
+            "action": "Summon Vilefiend",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -92,7 +90,7 @@
             ]
         },
         "slot_11": {
-            "action": "Mortal Coil",
+            "action": "Call Dreadstalkers",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -100,7 +98,7 @@
             ]
         },
         "slot_12": {
-            "action": "Demonbolt",
+            "action": "Demonbolt,Target If=Min:Debuff.Doom.Remains",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -108,7 +106,7 @@
             ]
         },
         "slot_13": {
-            "action": "Unending Resolve",
+            "action": "Demonic Strength",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -116,7 +114,7 @@
             ]
         },
         "slot_14": {
-            "action": "Dark Pact",
+            "action": "Bilescourge Bombers",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -124,7 +122,7 @@
             ]
         },
         "slot_15": {
-            "action": "Healthstone",
+            "action": "Implosion",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -132,7 +130,7 @@
             ]
         },
         "slot_16": {
-            "action": "Demonic Circle: Teleport",
+            "action": "Ruination",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -140,7 +138,7 @@
             ]
         },
         "slot_17": {
-            "action": "Demonic Gateway",
+            "action": "Demonbolt,Target If=(!Debuff.Doom.Up)",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -148,7 +146,7 @@
             ]
         },
         "slot_18": {
-            "action": "Burning Rush",
+            "action": "Infernal Bolt",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -156,7 +154,7 @@
             ]
         },
         "slot_19": {
-            "action": "Curse of Tongues",
+            "action": "Use Item,Use Off Gcd=1,Slot=Trinket1",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -164,7 +162,7 @@
             ]
         },
         "slot_20": {
-            "action": "Curse of Weakness",
+            "action": "Use Item,Use Off Gcd=1,Slot=Trinket2",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -172,7 +170,7 @@
             ]
         },
         "slot_21": {
-            "action": "Curse of Exhaustion",
+            "action": "Use Item,Use Off Gcd=1,Name=Spymasters Web",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -180,7 +178,7 @@
             ]
         },
         "slot_22": {
-            "action": "Fear",
+            "action": "Use Item,Use Off Gcd=1,Name=Imperfect Ascendancy Serum",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -188,7 +186,7 @@
             ]
         },
         "slot_23": {
-            "action": "Create Healthstone",
+            "action": "Use Item,Name=Mirror Of Fractured Tomorrows",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -196,7 +194,7 @@
             ]
         },
         "slot_24": {
-            "action": "Soulstone",
+            "action": "Use Item,Slot=Trinket1",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -204,15 +202,15 @@
             ]
         },
         "slot_25": {
-            "action": "Command Demon",
+            "action": "Use Item,Slot=Trinket2",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid"
             ]
         },
         "slot_26": {
-            "action": "Axe Toss",
+            "action": "Use Item,Use Off Gcd=1,Slot=Main Hand,Name=Neural Synapse Enhancer",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
@@ -220,45 +218,143 @@
             ]
         },
         "slot_27": {
-            "action": "Shadowfury",
+            "action": "Variable,Name=In Opener,Op=Set,Value=0",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
+        },
+        "slot_28": {
+            "action": "Variable,Name=Imp Despawn,Op=Set,Value=2*Spell Haste*6+0.58+Time",
+            "key": "Alt+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_dreadstalkers_up"
+            ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_03",
-            "slot_06",
-            "slot_08",
+    "priorities": {
+        "raid": [
+            "slot_01",
             "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
             "slot_12",
-            "slot_01"
-        ],
-        "pvp": [
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
             "slot_25",
             "slot_26",
-            "slot_11",
-            "slot_03",
-            "slot_06",
-            "slot_05",
-            "slot_02"
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_09",
-            "slot_04",
-            "slot_03",
-            "slot_06",
-            "slot_05",
-            "slot_02"
-        ],
-        "tyrant_setup": [
+            "slot_01",
             "slot_02",
-            "slot_06",
             "slot_03",
-            "slot_05"
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

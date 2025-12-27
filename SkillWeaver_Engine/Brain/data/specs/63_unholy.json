@@ -2,58 +2,54 @@
     "spec_id": 63,
     "spec_name": "Unholy Death Knight",
     "resource_type": "runic_power",
-    "secondary_resource": "runes",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "unholy_mythic": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMzYmZmZGmxMzMTDDjxMGAAAAAAAAmZmZDzYmBAsNDzY2mZmxYGgFzihBGY2YoxCGgZAMA",
-        "unholy_raid": "CwPAAAAAAAAAAAAAAAAAAAAAAAgZGzMzMGLzYmZmphhZGzYAAAAAAAAYmZmFmZMDAY2mxMjZbmZGMDwmZxwADMbM0YBAmBwA",
-        "unholy_delve": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMzYmZmZGmxMzMTDDjxMGAAAAAAAAmZmZDzYmBAsNDzY2mZmxYGgFzihBGY2YoxCGgZAMA",
-        "unholy_pvp": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMDzYGzYZMjZmphhxYGzAAAAAAAAAzsZmZ2mZAAmhZmxMzMjZmBsZ2MMwAzGDNWYAmZAMA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Festering Strike",
+            "action": "Raise Dead",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "wounds_lt_4"
+                "target_valid"
             ]
         },
         "slot_02": {
-            "action": "Scourge Strike",
+            "action": "Army Of The Dead",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "wound_on_target"
+                "target_valid"
             ]
         },
         "slot_03": {
-            "action": "Death Coil",
+            "action": "Auto Attack",
             "key": "F17",
-            "min_resource": 60,
+            "min_resource": 0,
             "conditions": [
-                "runic_power_high_or_proc"
+                "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Outbreak",
+            "action": "Call Action List,Name=San Trinkets",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot:0"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_05": {
-            "action": "Apocalypse",
+            "action": "Call Action List,Name=Trinkets",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "wounds_gte_4"
-            ],
-            "cooldown": 60.0
+                "target_valid"
+            ]
         },
         "slot_06": {
-            "action": "Dark Transformation",
+            "action": "Call Action List,Name=Cds Aoe San",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -61,7 +57,7 @@
             ]
         },
         "slot_07": {
-            "action": "Unholy Blight",
+            "action": "Call Action List,Name=Cds Aoe",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -69,15 +65,15 @@
             ]
         },
         "slot_08": {
-            "action": "Epidemic",
+            "action": "Call Action List,Name=Cds Cleave San",
             "key": "DELETE",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Army of the Dead",
+            "action": "Call Action List,Name=Cds San",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -85,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Abomination Limb",
+            "action": "Call Action List,Name=Cds",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -93,7 +89,7 @@
             ]
         },
         "slot_11": {
-            "action": "Summon Gargoyle",
+            "action": "Call Action List,Name=Cleave",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -101,39 +97,43 @@
             ]
         },
         "slot_12": {
-            "action": "Defile",
+            "action": "Call Action List,Name=Aoe Setup",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_legion_of_souls_up"
             ]
         },
         "slot_13": {
-            "action": "Unholy Assault",
+            "action": "Call Action List,Name=Aoe Burst",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_death_and_decay_up"
             ]
         },
         "slot_14": {
-            "action": "Anti-Magic Shell",
+            "action": "Call Action List,Name=Aoe",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_death_and_decay_up"
             ]
         },
         "slot_15": {
-            "action": "Icebound Fortitude",
+            "action": "Run Action List,Name=San Fishing",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_gift_of_the_sanlayn_up"
             ]
         },
         "slot_16": {
-            "action": "Lichborne",
+            "action": "Call Action List,Name=San St",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -141,7 +141,7 @@
             ]
         },
         "slot_17": {
-            "action": "Death's Advance",
+            "action": "Call Action List,Name=St",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -149,7 +149,7 @@
             ]
         },
         "slot_18": {
-            "action": "Wraith Walk",
+            "action": "Festering Strike",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -157,31 +157,34 @@
             ]
         },
         "slot_19": {
-            "action": "Death Grip",
+            "action": "Death Coil,Target If=Min:Debuff.Rotten Touch.Remains*(Buff.Sudden Doom.React&Talent.Rotten Touch)",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_gift_of_the_sanlayn_up"
             ]
         },
         "slot_20": {
-            "action": "Asphyxiate",
+            "action": "Epidemic",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_gift_of_the_sanlayn_up"
             ]
         },
         "slot_21": {
-            "action": "Anti-Magic Zone",
+            "action": "Scourge Strike,Target If=Max:Debuff.Festering Wound.Stack",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_death_and_decay_up"
             ]
         },
         "slot_22": {
-            "action": "Raise Dead",
+            "action": "Scourge Strike",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -189,7 +192,7 @@
             ]
         },
         "slot_23": {
-            "action": "Sacrificial Pact",
+            "action": "Festering Strike,Target If=Max:Debuff.Festering Wound.Stack",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -197,7 +200,7 @@
             ]
         },
         "slot_24": {
-            "action": "Path of Frost",
+            "action": "Festering Strike,Target If=Min:Debuff.Festering Wound.Stack",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -205,23 +208,25 @@
             ]
         },
         "slot_25": {
-            "action": "Mind Freeze",
+            "action": "Death And Decay",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_festering_scythe_up"
             ]
         },
         "slot_26": {
-            "action": "Gnaw",
+            "action": "Any Dnd",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_festering_scythe_up"
             ]
         },
         "slot_27": {
-            "action": "Anti-Magic Zone",
+            "action": "Dark Transformation",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -229,100 +234,135 @@
             ]
         },
         "slot_28": {
-            "action": "Abomination Limb",
+            "action": "Unholy Assault",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dark_transformation_up"
             ]
-        },
-        "slot_29": {
-            "action": "Raise Ally",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Lichborne",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Death and Decay",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Death Coil",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Remorseless Winter",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Control Undead",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_35": {
-            "action": "Chains of Ice",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_36": {
-            "action": "Path of Frost",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_04",
-            "slot_06",
-            "slot_05",
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_03"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_35",
-            "slot_10",
-            "slot_06",
+            "slot_03",
+            "slot_04",
             "slot_05",
-            "slot_03"
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_08",
-            "slot_10",
-            "slot_06",
-            "slot_05",
-            "slot_02"
-        ],
-        "apocalypse_setup": [
             "slot_01",
+            "slot_02",
+            "slot_03",
             "slot_04",
-            "slot_06"
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

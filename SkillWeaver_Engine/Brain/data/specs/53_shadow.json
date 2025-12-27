@@ -3,241 +3,367 @@
     "spec_name": "Shadow Priest",
     "resource_type": "insanity",
     "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "shadow_mythic": "CIQAAAAAAAAAAAAAAAAAAAAAAMDmZAAAAAAAAAAAAYM2YMzMLbbMzYmZmZZwsxMzMjZjBGjhZxsN1MDWgZmBACwsNbLgZjFAbzA",
-        "shadow_raid": "CIQAAAAAAAAAAAAAAAAAAAAAAMMMGAAAAAAAAAAAAjxygZmZbZjZmZmZmZZwsxMzMjZjBGjhZxsN1MDWwMAzsZZY2MAkxYBA2GA",
-        "shadow_delve": "CIQAAAAAAAAAAAAAAAAAAAAAAMDmZAAAAAAAAAAAAYM2YMzMLbbMzYmZmZZwsxMzMjZjBGjhZxsN1MDWgZmBACwsNbLgZjFAbzA",
-        "shadow_pvp": "CIQAAAAAAAAAAAAAAAAAAAAAAADPAAAAAAAAAAAAAD2Mz2MjllFzMzMzYmtBzGzMzwsxsgxMDWWmF1MDgZmZAgAMbzyCY2YDwyMzA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Vampiric Touch",
+            "action": "Shadowform",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot_vt"
-            ],
-            "cooldown": 1.5,
-            "cast_time": 1.5
+                "target_valid",
+                "buff_shadowform_up"
+            ]
         },
         "slot_02": {
-            "action": "Shadow Word: Pain",
+            "action": "Halo",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "refresh_dot_swp"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_03": {
-            "action": "Devouring Plague",
+            "action": "Shadow Crash",
             "key": "F17",
-            "min_resource": 50,
-            "cooldown": 1.5,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Mind Blast",
+            "action": "Vampiric Touch",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 9.0,
-            "cast_time": 1.5
+            ]
         },
         "slot_05": {
-            "action": "Mind Flay",
+            "action": "Call Action List,Name=Aoe",
             "key": "F19",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid"
+            ]
         },
         "slot_06": {
-            "action": "Shadow Word: Death",
+            "action": "Vampiric Touch,Target If=Refreshable&Target.Time To Die>=18&(Dot.Vampiric Touch.Ticking|!Variable.Dots Up)",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_hp_lt_35"
+                "target_valid",
+                "buff_entropic_rift_up"
             ]
         },
         "slot_07": {
-            "action": "Void Eruption",
+            "action": "Variable,Name=Is Vt Possible,Op=Set,Value=1,Target If=Max:(Target.Time To Die*Dot.Vampiric Touch.Refreshable)",
             "key": "END",
-            "min_resource": 90,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_08": {
-            "action": "Void Bolt",
+            "action": "Variable,Name=Holding Crash,Op=Set,Value=(Variable.Max Vts-Active Dot.Vampiric Touch)<4&Raid Event.Adds.In>15|Raid Event.Adds.In<10&Raid Event.Adds.Count>(Variable.Max Vts-Active Dot.Vampiric Touch)",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "voidform_active"
+                "target_valid"
             ]
         },
         "slot_09": {
-            "action": "Shadow Crash",
+            "action": "Cancel Buff,Name=Power Infusion",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "multi_target"
-            ],
-            "cooldown": 15.0,
-            "requires_aim": true
+                "target_valid"
+            ]
         },
         "slot_10": {
-            "action": "Mindgames",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 45.0
+                "target_valid",
+                "buff_voidform_up"
+            ]
         },
         "slot_11": {
-            "action": "Halo",
+            "action": "Invoke External Buff,Name=Bloodlust",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 40.0
+                "target_valid",
+                "buff_power_infusion_up"
+            ]
         },
         "slot_12": {
-            "action": "Power Infusion",
+            "action": "Flash Heal",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "burst_aligned"
-            ],
-            "cooldown": 120.0
+                "target_valid",
+                "buff_oathbound_up"
+            ]
         },
         "slot_13": {
-            "action": "Dispersion",
+            "action": "Power Infusion",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "survival_critical"
+                "target_valid",
+                "buff_voidform_up"
             ]
         },
         "slot_14": {
-            "action": "Desperate Prayer",
+            "action": "Void Eruption",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "survival_critical"
+                "target_valid",
+                "buff_mind_devourer_up"
             ]
         },
         "slot_15": {
-            "action": "Vampiric Embrace",
+            "action": "Dark Ascension",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_16": {
-            "action": "Silence",
+            "action": "Desperate Prayer",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
-                "interruptible_late_stage"
-            ],
-            "cooldown": 45.0
+                "target_valid",
+                "health_lte_75"
+            ]
         },
         "slot_17": {
-            "action": "Psychic Scream",
+            "action": "Divine Star",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 30.0
+            ]
         },
         "slot_18": {
-            "action": "Psychic Horror",
+            "action": "Holy Nova",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 45.0
+            ]
         },
         "slot_19": {
-            "action": "Mass Dispel",
+            "action": "Variable,Name=Dots Up,Op=Set,Value=Active Dot.Vampiric Touch=Active Enemies|Action.Shadow Crash.In Flight",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 45.0
+            ]
         },
         "slot_20": {
-            "action": "Purify Disease",
+            "action": "Call Action List,Name=Cds",
             "key": "Ctrl+F18",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid"
+            ]
         },
         "slot_21": {
-            "action": "Fade",
+            "action": "Mindbender",
             "key": "Ctrl+F19",
             "min_resource": 0,
-            "conditions": [],
-            "cooldown": 30.0
+            "conditions": [
+                "target_valid",
+                "dot_shadow_word_pain_ticking"
+            ]
         },
         "slot_22": {
-            "action": "Power Word: Shield",
+            "action": "Shadow Word Death,Target If=Max:(Target.Health.Pct<=20)*100+Dot.Devouring Plague.Ticking",
             "key": "Ctrl+HOME",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid"
+            ]
         },
         "slot_23": {
-            "action": "Flash Heal",
+            "action": "Void Blast,Target If=Max:(Dot.Devouring Plague.Remains*1000+Target.Time To Die)",
             "key": "Ctrl+END",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid"
+            ]
         },
         "slot_24": {
-            "action": "Leap of Faith",
+            "action": "Devouring Plague,Target If=Max:Target.Time To Die*(Dot.Devouring Plague.Remains<=Gcd.Max|Variable.Dr Force Prio|!Talent.Distorted Reality&Variable.Me Force Prio)",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
-            "conditions": []
+            "conditions": [
+                "target_valid",
+                "buff_voidform_up"
+            ]
+        },
+        "slot_25": {
+            "action": "Void Bolt,Target If=Max:Target.Time To Die",
+            "key": "Alt+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_26": {
+            "action": "Void Torrent,Target If=Max:(Dot.Devouring Plague.Remains*1000+Target.Time To Die)",
+            "key": "Alt+F16",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_27": {
+            "action": "Void Volley",
+            "key": "Alt+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_entropic_rift_up"
+            ]
+        },
+        "slot_28": {
+            "action": "Mind Flay Insanity",
+            "key": "Alt+F18",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_08",
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_04",
             "slot_03",
-            "slot_09"
-        ],
-        "pvp": [
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
             "slot_16",
+            "slot_17",
             "slot_18",
-            "slot_01",
-            "slot_03",
-            "slot_04",
-            "slot_08"
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_09",
             "slot_01",
             "slot_02",
             "slot_03",
-            "slot_04"
-        ],
-        "execute_phase": [
+            "slot_04",
+            "slot_05",
             "slot_06",
+            "slot_07",
             "slot_08",
-            "slot_04"
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

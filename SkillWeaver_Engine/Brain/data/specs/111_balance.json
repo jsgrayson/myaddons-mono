@@ -105,6 +105,7 @@
             "action": "Mushroom",
             "key": "Shift+F18",
             "min_resource": 0,
+            "requires_aim": true,
             "conditions": [
                 "target_valid"
             ]
@@ -230,12 +231,31 @@
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_09",
             "slot_10",
+            "slot_05",
+            "slot_06",
             "slot_03",
+            "slot_07",
+            "slot_01",
+            "slot_02"
+        ],
+        "mythic": [
+            "slot_10",
+            "slot_09",
             "slot_04",
+            "slot_12",
+            "slot_05",
+            "slot_02",
+            "slot_01"
+        ],
+        "delve": [
+            "slot_09",
+            "slot_10",
+            "slot_05",
+            "slot_03",
             "slot_01",
             "slot_02"
         ],
@@ -246,19 +266,6 @@
             "slot_09",
             "slot_10",
             "slot_03"
-        ],
-        "mythic": [
-            "slot_12",
-            "slot_04",
-            "slot_10",
-            "slot_09",
-            "slot_02"
-        ],
-        "eclipse_maintenance": [
-            "slot_06",
-            "slot_07",
-            "slot_01",
-            "slot_02"
         ]
     }
 }

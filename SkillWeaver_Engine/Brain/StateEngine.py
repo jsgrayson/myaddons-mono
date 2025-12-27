@@ -48,18 +48,64 @@ MOBILITY_TOOLS = {
     62: "slot_17",   # Arcane Mage - Shimmer
     63: "slot_17",   # Fire Mage - Shimmer
     64: "slot_17",   # Frost Mage - Shimmer
+}
+
+# =============================================================================
+# KNOWN COOLDOWNS - Auto-detect major CDs by ability name
+# These cooldowns are applied even if not defined in JSON
+# =============================================================================
+KNOWN_COOLDOWNS = {
+    # Major DPS Cooldowns (2-3 min)
+    "celestial alignment": 180, "incarnation": 180, "convoke the spirits": 120,
+    "avatar": 90, "recklessness": 90, "colossus smash": 45, "warbreaker": 45,
+    "avenging wrath": 120, "crusade": 120,
+    "vendetta": 120, "shadow blades": 120, "shadow dance": 60,
+    "combustion": 120, "icy veins": 180, "arcane power": 120,
+    "metamorphosis": 180, "the hunt": 90,
+    "summon infernal": 180, "summon demonic tyrant": 90,
+    "feral frenzy": 45, "berserk": 180, "tigers fury": 30,
+    "pillar of frost": 60, "empower rune weapon": 120, "abomination limb": 120,
+    "dark ascension": 60, "void eruption": 120,
+    "storm earth and fire": 90, "invoke xuen": 120,
+    "fury of elune": 60, "force of nature": 60,
+    "ascendance": 180, "primordial wave": 45, "stormkeeper": 60,
+    "bestial wrath": 90, "trueshot": 120, "coordinated assault": 120,
+    
+    # Major Defensive Cooldowns (1-3 min)
+    "barkskin": 60, "survival instincts": 180, "ironbark": 60,
+    "shield wall": 240, "last stand": 180, "demoralizing shout": 45,
+    "divine shield": 300, "guardian of ancient kings": 300, "ardent defender": 120,
+    "icebound fortitude": 180, "anti magic shell": 60, "vampiric blood": 90,
+    "fortifying brew": 180, "dampen harm": 120, "diffuse magic": 90,
+    "cloak of shadows": 120, "evasion": 120, "vanish": 120,
+    "blur": 60, "darkness": 180, "netherwalk": 180,
+    "astral shift": 90, "spirit link totem": 180,
+    "desperate prayer": 90, "fade": 30, "dispersion": 120,
+    "ice block": 240, "greater invisibility": 120, "mirror image": 120,
+    "unending resolve": 180, "dark pact": 60,
+    
+    # Offensive Cooldowns (30-60s)
+    "new moon": 20, "touch of death": 180, "spear hand strike": 15,
+    "marked for death": 60, "shiv": 25,
+    
+    # Utility with meaningful CDs
+    "solar beam": 60, "mighty bash": 60, "typhoon": 30,
+    "heroic leap": 45, "charge": 20, "intervene": 30,
+    "death grip": 25, "gorefiends grasp": 120,
+    "ring of peace": 45, "leg sweep": 60,
+}
+
+# Additional MOBILITY_TOOLS entries
+MOBILITY_TOOLS.update({
     93: "slot_18",   # Destruction - Demonic Circle
     91: "slot_18",   # Affliction - Demonic Circle
     92: "slot_18",   # Demonology - Demonic Circle
-    73: "slot_15",   # Resto Shaman - Spiritwalker's Grace
-    71: "slot_15",   # Elemental - Spiritwalker's Grace
-    72: "slot_15",   # Enhancement - Spiritwalker's Grace
     131: "slot_17",  # Devastation Evoker - Hover
     132: "slot_17",  # Preservation Evoker - Hover
     133: "slot_17",  # Augmentation Evoker - Hover
     102: "slot_17",  # Balance Druid - (none, pivot to instants)
     32: "slot_17",   # Marksmanship - (none, pivot to instants)
-}
+})
 
 # Instant-cast alternatives when moving (spec_id -> filler_slot -> instant_slot)
 INSTANT_ALTERNATIVES = {
@@ -88,6 +134,66 @@ ATOMIC_SEQUENCES = {
         "slot_06": ["slot_06", "slot_05", "slot_02", "slot_01"],  # Colossus Smash push
     },
 }
+
+# =============================================================================
+# MAJOR COOLDOWNS - Per-spec CD pooling groups
+# These CDs should fire TOGETHER when burst window is good
+# Format: spec_id -> list of slot_ids that are major CDs
+# =============================================================================
+MAJOR_COOLDOWNS = {
+    # Balance Druid
+    111: ["slot_05", "slot_06", "slot_08"],  # Celestial Alignment, Force of Nature, Convoke
+    # Shadow Priest
+    53: ["slot_05", "slot_06"],  # Dark Ascension, Power Infusion
+    # Fire Mage
+    82: ["slot_05", "slot_06"],  # Combustion, Mirror Image
+    # Ret Paladin
+    23: ["slot_05", "slot_06"],  # Avenging Wrath, Wake of Ashes
+    # Fury Warrior
+    12: ["slot_05", "slot_06"],  # Recklessness, Avatar
+    # Arms Warrior
+    11: ["slot_05", "slot_06", "slot_07"],  # Colossus Smash, Avatar, Warbreaker
+    # Havoc DH
+    121: ["slot_05", "slot_06"],  # Metamorphosis, The Hunt
+    # Assassination Rogue
+    41: ["slot_05", "slot_06"],  # Vendetta, Deathmark
+    # Subtlety Rogue
+    43: ["slot_05", "slot_06", "slot_28"],  # Shadow Blades, Secret Technique, Shadow Dance
+    # Windwalker Monk
+    103: ["slot_05", "slot_06"],  # Storm, Earth and Fire, Invoke Xuen
+    # Devastation Evoker
+    131: ["slot_05", "slot_06"],  # Dragonrage, Fire Breath
+    # Elemental Shaman
+    71: ["slot_05", "slot_06"],  # Ascendance, Stormkeeper
+    # Marksmanship Hunter
+    32: ["slot_05", "slot_06"],  # Trueshot, Volley
+    # BM Hunter
+    31: ["slot_05", "slot_06"],  # Bestial Wrath, Call of the Wild
+    # Affliction Warlock
+    91: ["slot_05", "slot_06"],  # Summon Darkglare, Dark Soul
+    # Demonology Warlock
+    92: ["slot_05", "slot_06"],  # Summon Demonic Tyrant, Nether Portal
+    # Destruction Warlock
+    93: ["slot_05", "slot_06"],  # Summon Infernal, Dark Soul
+    # Unholy DK
+    63: ["slot_05", "slot_06"],  # Unholy Assault, Apocalypse
+    # Frost DK
+    62: ["slot_05", "slot_06"],  # Pillar of Frost, Empower Rune Weapon
+    # Arcane Mage
+    81: ["slot_05", "slot_06"],  # Arcane Power, Touch of the Magi
+    # Frost Mage
+    83: ["slot_05", "slot_06"],  # Icy Veins, Frozen Orb
+    # Feral Druid
+    112: ["slot_05", "slot_06"],  # Berserk, Tiger's Fury
+    # Enhancement Shaman
+    72: ["slot_05", "slot_06"],  # Feral Spirit, Ascendance
+    # Survival Hunter
+    33: ["slot_05", "slot_06"],  # Coordinated Assault, Spearhead
+}
+
+# Burst window requirements
+BURST_MIN_TARGET_HP = 40  # Don't burst if target below this %
+BURST_MIN_CDS_READY = 1   # At least this many CDs ready to trigger burst (1 = any CD ready)
 
 # DR Thresholds: Block high-cost stuns if target DR is active
 DR_STUN_SLOTS = ["slot_12", "slot_13"]  # HoJ, Kidney Shot
@@ -157,9 +263,13 @@ class StateEngine:
             if slot_id == "slot_04" and state.get('mb_reset_proc', False):
                 return False  # Proc active = not on cooldown
         
-        # Get the cooldown from the CURRENT slot data (not cached)
-        # This allows cooldowns to be modified without restarting
+        # Get cooldown: First check JSON, then fallback to KNOWN_COOLDOWNS by ability name
         cd_duration = slot.get('cooldown', 0)
+        if cd_duration <= 0:
+            # Try to get cooldown from KNOWN_COOLDOWNS by ability name
+            action_name = slot.get('action', '').lower()
+            cd_duration = KNOWN_COOLDOWNS.get(action_name, 0)
+        
         if cd_duration <= 0:
             return False  # No cooldown = always ready
             
@@ -169,10 +279,53 @@ class StateEngine:
     
     def mark_slot_used(self, slot_id: str, slot: dict):
         """Mark a slot as used, starting its cooldown."""
-        # Only track if slot has a cooldown defined
+        # Get cooldown: First check JSON, then fallback to KNOWN_COOLDOWNS
         cd = slot.get('cooldown', 0)
+        if cd <= 0:
+            action_name = slot.get('action', '').lower()
+            cd = KNOWN_COOLDOWNS.get(action_name, 0)
+        
         if cd > 0:
             self.slot_cooldowns[slot_id] = (time.time(), cd)
+    
+    def is_major_cd(self, slot_id: str, spec_id: int) -> bool:
+        """Check if this slot is a major cooldown for this spec."""
+        major_cds = MAJOR_COOLDOWNS.get(spec_id, [])
+        return slot_id in major_cds
+    
+    def is_burst_window_good(self, slot_id: str, slot: dict, state: dict) -> bool:
+        """
+        Smart CD timing: Only use major CDs when burst conditions are good.
+        Returns True if CD should be used, False if should be saved.
+        """
+        spec_id = int(state.get('hash', 0))
+        
+        # If not a major CD, always allow
+        if not self.is_major_cd(slot_id, spec_id):
+            return True
+        
+        # Check 1: Target HP - don't waste CDs on dying targets
+        target_hp = state.get('thp', 100)
+        if target_hp < BURST_MIN_TARGET_HP:
+            return False  # Target too low, save CDs
+        
+        # Check 2: Count how many major CDs are ready
+        slots = self.spec_data.get('universal_slots', {})
+        major_cds = MAJOR_COOLDOWNS.get(spec_id, [])
+        ready_count = 0
+        
+        for cd_slot_id in major_cds:
+            if cd_slot_id in slots:
+                cd_slot = slots[cd_slot_id]
+                if not self.is_on_cooldown(cd_slot_id, cd_slot, state):
+                    ready_count += 1
+        
+        # Only burst if enough CDs are ready
+        if ready_count >= BURST_MIN_CDS_READY:
+            print(f"[BURST] {ready_count} CDs ready, target at {target_hp:.0f}% - BURSTING!")
+            return True
+        
+        return False  # Not enough CDs ready
     
     def _load_global_counters(self):
         """Load counters that apply to all specs."""
@@ -403,21 +556,45 @@ class StateEngine:
         
         # ============================================
         # TIER 2: ROTATION LAYER (Priority List)
-        # Check for execute phase or mode-specific rotations
-        proc_priority = self.spec_data.get('proc_priority', {})
+        # Auto-detect mode from game state, then use priority list
+        priorities = self.spec_data.get('priorities', {})
         target_hp = state.get('thp', 100)
-        mode = state.get('mode', 'raid').lower() # Default to raid
+        
+        # AUTO-DETECT MODE:
+        # - mythic: 3+ hostile nameplates (M+ trash)
+        # - raid: Single-target or 1-2 targets (boss fight)
+        # - delve: Solo (no group) and low hostile count
+        # - pvp: PvP flag active (arena/bg)
+        plates = state.get('total_hostile_plates', 1)
+        is_pvp = state.get('pvp_active', False)
+        group_size = state.get('group_size', 1)
+        
+        if is_pvp:
+            mode = 'pvp'
+        elif group_size <= 1 and plates <= 2:
+            mode = 'delve'
+        elif plates >= 3:
+            mode = 'mythic'  # M+ AoE mode
+        else:
+            mode = 'raid'    # Single-target default
         
         rotation_order = []
-        if target_hp < 35 and 'execute_phase' in proc_priority:
-            rotation_order = proc_priority.get('execute_phase', [])
+        if target_hp < 35 and 'execute_phase' in priorities:
+            rotation_order = priorities.get('execute_phase', [])
         
-        # If no execute rotation, try mode-specific rotation
+        # If no execute rotation, use mode-specific priority list
         if not rotation_order:
-            if mode in proc_priority:
-                rotation_order = proc_priority.get(mode, [])
-            else:
-                rotation_order = proc_priority.get('rotation', [])
+            if mode in priorities:
+                rotation_order = priorities.get(mode, [])
+            elif 'raid' in priorities:
+                # Fallback to raid if mode not found
+                rotation_order = priorities.get('raid', [])
+                mode = 'raid (fallback)'
+        
+        # Debug: Log mode detection (throttled in production)
+        if rotation_order and not getattr(self, '_last_mode_log', None) != mode:
+            self._last_mode_log = mode
+            print(f"[MODE] {mode.upper()} | Plates:{plates} | Group:{group_size}")
         
         if rotation_order:
             for slot_id in rotation_order:
@@ -428,6 +605,10 @@ class StateEngine:
 
                 # Cooldown check
                 if self.is_on_cooldown(slot_id, slot, state):
+                    continue
+                
+                # Burst window check for major CDs (smart timing)
+                if not self.is_burst_window_good(slot_id, slot, state):
                     continue
                 
                 # Resource check
@@ -443,7 +624,6 @@ class StateEngine:
                         break
                 
                 if all_pass:
-                    self.mark_slot_used(slot_id, slot)
                     return {'slot_id': slot_id, **slot}
         
         # ============================================
@@ -474,7 +654,6 @@ class StateEngine:
                         break
                 
                 if all_pass:
-                    self.mark_slot_used(slot_id, slot)
                     return {'slot_id': slot_id, **slot}
             
             # Tier 3 Fallback
@@ -482,7 +661,6 @@ class StateEngine:
                 if self.is_on_cooldown(slot_id, slot, state):
                     continue
                 if state.get('power', 0) >= slot.get('min_resource', 0):
-                    self.mark_slot_used(slot_id, slot)
                     return {'slot_id': slot_id, **slot}
         
         return None
@@ -815,8 +993,18 @@ class StateEngine:
         LEAP 4: Dynamic Cleave - Auto-tab to spread and MAINTAIN DoTs on multiple targets.
         Returns True if should send Tab to switch targets.
         """
-        # Multi-dot specs
-        dot_specs = {41, 91, 11, 53, 112}  # Assassination, Affliction, Feral, Shadow Priest, Feral Druid
+        # Multi-dot specs (should spread DoTs across multiple targets)
+        dot_specs = {
+            41,   # Assassination Rogue
+            91,   # Affliction Warlock
+            93,   # Destruction Warlock (Immolate)
+            11,   # Arms Warrior (Rend, Deep Wounds)
+            53,   # Shadow Priest
+            111,  # Balance Druid (Moonfire, Sunfire)
+            112,  # Feral Druid
+            71,   # Elemental Shaman (Flame Shock)
+            72,   # Enhancement Shaman (Flame Shock)
+        }
         if spec_id not in dot_specs:
             return False
         
@@ -830,27 +1018,44 @@ class StateEngine:
         missing = state.get('enemies_missing_dots', 0)
         target_hp = state.get('thp', 100)
         
-        # Don't TAB if we're the only target or no multi-target situation
+        # Don't TAB if we're the only target
         if total_plates == 0:
             return False
         
-        # SMART FOCUS: Only apply when there's 1 other target (boss + add scenario)
-        # In larger packs (2+), always spread DoTs
-        if total_plates == 1:
-            # Single other target - apply focus logic
-            # Don't TAB if target HP is very high (just pulled) or low (burning)
-            if target_hp > 90 or (0 < target_hp < 30):
-                return False
+        # For 2+ targets, always spread DoTs (no focus restriction)
+        # Only block if target is about to die
+        if target_hp < 10:
+            return False  # Don't TAB away from almost-dead target
             
         # Don't TAB if our DoTs need refreshing on current target first
-        DOT_HEALTHY_THRESHOLD = 12.0  # Must have at least 12s before we can TAB away
-        if vt_remaining < DOT_HEALTHY_THRESHOLD or swp_remaining < DOT_HEALTHY_THRESHOLD:
+        # Per-spec DoT thresholds and counts
+        DOT_THRESHOLDS = {
+            111: (4.0, 2),   # Balance Druid: 4s, needs both Moonfire + Sunfire
+            53:  (6.0, 2),   # Shadow Priest: 6s, needs both VT + SWP
+            91:  (8.0, 3),   # Affliction: 8s, needs all 3 DoTs
+            41:  (5.0, 2),   # Assassination: 5s, Rupture + Garrote
+            112: (4.0, 2),   # Feral: 4s, Rake + Rip
+            71:  (3.0, 1),   # Elemental: 3s, just Flame Shock
+            72:  (3.0, 1),   # Enhancement: 3s, just Flame Shock
+            93:  (4.0, 1),   # Destruction: 4s, just Immolate
+            11:  (5.0, 1),   # Arms: 5s, Deep Wounds/Rend
+        }
+        threshold, dot_count = DOT_THRESHOLDS.get(spec_id, (6.0, 1))
+        
+        # Check DoTs are healthy before spreading
+        dots_healthy = True
+        for i in range(min(dot_count, len(dots))):
+            if dots[i] < threshold:
+                dots_healthy = False
+                break
+        
+        if not dots_healthy:
             return False
         
         # ONLY TAB if enemies are missing DoTs - spread them
         # Do NOT TAB for "maintenance" cycling - that loses focus on main target
         if missing > 0:
-            print(f">>> [CLEAVE] {missing} enemies missing DoTs | VT:{vt_remaining:.0f}s SWP:{swp_remaining:.0f}s - TAB to SPREAD")
+            print(f">>> [CLEAVE] {missing} enemies missing DoTs | D1:{dots[0]:.0f}s D2:{dots[1]:.0f}s - TAB to SPREAD")
             return True
         
         # All enemies have DoTs - stay on main target, don't cycle away

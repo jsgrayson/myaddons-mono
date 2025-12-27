@@ -1,7 +1,7 @@
 {
-    "spec_id": 83,
-    "spec_name": "Frost Mage",
-    "resource_type": "mana",
+    "spec_id": 43,
+    "spec_name": "Subtlety Rogue",
+    "resource_type": "energy",
     "secondary_resource": "none",
     "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
@@ -9,7 +9,7 @@
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Arcane Intellect",
+            "action": "Variable,Name=Trinket Sync Slot,Value=1",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -17,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Variable,Name=Treacherous Transmitter Precombat Cast,Value=12",
+            "action": "Variable,Name=Trinket Sync Slot,Value=2",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -25,7 +25,7 @@
             ]
         },
         "slot_03": {
-            "action": "Blizzard",
+            "action": "Call Action List,Name=Stealth Cds",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -33,15 +33,17 @@
             ]
         },
         "slot_04": {
-            "action": "Frostbolt",
+            "action": "Call Action List,Name=Finish",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_gte_6",
+                "buff_darkest_night_up"
             ]
         },
         "slot_05": {
-            "action": "Counterspell",
+            "action": "Call Action List,Name=Fill",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -49,55 +51,62 @@
             ]
         },
         "slot_06": {
-            "action": "Run Action List,Name=Ff Aoe",
+            "action": "Cold Blood",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_gte_6",
+                "buff_shadow_dance_up"
             ]
         },
         "slot_07": {
-            "action": "Run Action List,Name=Ss Aoe",
+            "action": "Symbols Of Death",
             "key": "END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_flagellation_buff_up"
             ]
         },
         "slot_08": {
-            "action": "Run Action List,Name=Ff Cleave",
+            "action": "Shadow Blades",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_dance_up"
             ]
         },
         "slot_09": {
-            "action": "Run Action List,Name=Ss Cleave",
+            "action": "Thistle Tea",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_thistle_tea_up"
             ]
         },
         "slot_10": {
-            "action": "Run Action List,Name=Ff St Boltspam",
+            "action": "Flagellation",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_gte_5"
             ]
         },
         "slot_11": {
-            "action": "Run Action List,Name=Ff St",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_dance_up"
             ]
         },
         "slot_12": {
-            "action": "Flurry",
+            "action": "Use Item,Name=Treacherous Transmitter",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -105,79 +114,92 @@
             ]
         },
         "slot_13": {
-            "action": "Icy Veins",
+            "action": "Use Item,Name=Imperfect Ascendancy Serum,Use Off Gcd=1",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_flagellation_buff_up",
+                "dot_rupture_ticking"
             ]
         },
         "slot_14": {
-            "action": "Use Item,Name=Treacherous Transmitter",
+            "action": "Use Item,Name=Mad Queens Mandate",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_lingering_darkness_up"
             ]
         },
         "slot_15": {
-            "action": "Use Item,Name=Spymasters Web",
+            "action": "Use Item,Name=Cursed Stone Idol,Use Off Gcd=1",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_flagellation_buff_up"
             ]
         },
         "slot_16": {
-            "action": "Use Item,Name=Sunblood Amethyst",
+            "action": "Use Item,Name=Unyielding Netherprism,Use Off Gcd=1",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_blades_up"
             ]
         },
         "slot_17": {
-            "action": "Use Item,Name=Lily Of The Eternal Weave",
+            "action": "Use Items,Slots=Trinket1",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_blades_up"
             ]
         },
         "slot_18": {
-            "action": "Use Item,Name=Funhouse Lens",
+            "action": "Use Items,Slots=Trinket2",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_blades_up"
             ]
         },
         "slot_19": {
-            "action": "Use Item,Name=Mereldars Toll",
+            "action": "Shadow Dance",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_shadow_blades_up"
             ]
         },
         "slot_20": {
-            "action": "Use Item,Name=House Of Cards",
+            "action": "Vanish",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_lte_3",
+                "energy_gte_40",
+                "buff_subterfuge_up"
             ]
         },
         "slot_21": {
-            "action": "Use Item,Name=Quickwick Candlestick",
+            "action": "Shadowmeld",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "cp_deficit_gte_3",
+                "energy_gte_40"
             ]
         },
         "slot_22": {
-            "action": "Use Item,Name=Imperfect Ascendancy Serum",
+            "action": "Secret Technique",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -185,15 +207,17 @@
             ]
         },
         "slot_23": {
-            "action": "Use Item,Name=Burst Of Knowledge",
+            "action": "Rupture",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_flagellation_buff_up",
+                "dot_rupture_ticking"
             ]
         },
         "slot_24": {
-            "action": "Use Item,Name=Ratfang Toxin",
+            "action": "Rupture,Cycle Targets=1",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -201,23 +225,25 @@
             ]
         },
         "slot_25": {
-            "action": "Use Item,Name=Neural Synapse Enhancer",
+            "action": "Coup De Grace",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_fazed_up"
             ]
         },
         "slot_26": {
-            "action": "Frozen Orb",
+            "action": "Black Powder",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_darkest_night_up"
             ]
         },
         "slot_27": {
-            "action": "Invoke External Buff,Name=Power Infusion",
+            "action": "Eviscerate",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -225,11 +251,12 @@
             ]
         },
         "slot_28": {
-            "action": "Invoke External Buff,Name=Blessing Of Summer",
+            "action": "Shuriken Tornado",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_tww3_trickster_4pc_up"
             ]
         }
     },

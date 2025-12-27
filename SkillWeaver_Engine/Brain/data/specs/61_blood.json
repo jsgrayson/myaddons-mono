@@ -2,16 +2,14 @@
     "spec_id": 61,
     "spec_name": "Blood Death Knight",
     "resource_type": "runic_power",
-    "secondary_resource": "runes",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "blood_mythic": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA",
-        "blood_raid": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAYgBmxoxyGglBsBwMYDA",
-        "blood_delve": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA",
-        "blood_pvp": "CoPAAAAAAAAAAAAAAAAAAAAAAwwYmZGzYmZGmxMzMNDDzMmxAAAAAzMzMzMzMzmZmxAAAYmZmBAAAM22GYALgthJwwCAzgNA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Marrowrend",
+            "action": "Deaths Caress",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Heart Strike",
+            "action": "Auto Attack",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,15 +25,16 @@
             ]
         },
         "slot_03": {
-            "action": "Death Strike",
+            "action": "Use Item,Name=Tome Of Lights Devotion",
             "key": "F17",
-            "min_resource": 40,
+            "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_inner_resilience_up"
             ]
         },
         "slot_04": {
-            "action": "Blood Boil",
+            "action": "Use Item,Name=Unyielding Netherprism",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -43,15 +42,16 @@
             ]
         },
         "slot_05": {
-            "action": "Death and Decay",
+            "action": "Vampiric Blood",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_vampiric_blood_up"
             ]
         },
         "slot_06": {
-            "action": "Vampiric Blood",
+            "action": "Run Action List,Name=Deathbringer",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -59,15 +59,16 @@
             ]
         },
         "slot_07": {
-            "action": "Dancing Rune Weapon",
+            "action": "Run Action List,Name=San Drw",
             "key": "END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dancing_rune_weapon_up"
             ]
         },
         "slot_08": {
-            "action": "Rune Tap",
+            "action": "Run Action List,Name=Sanlayn",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -75,7 +76,7 @@
             ]
         },
         "slot_09": {
-            "action": "Tombstone",
+            "action": "Raise Dead",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -83,7 +84,7 @@
             ]
         },
         "slot_10": {
-            "action": "Abomination Limb",
+            "action": "Blood Tap",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -91,15 +92,16 @@
             ]
         },
         "slot_11": {
-            "action": "Empower Rune Weapon",
+            "action": "Death Strike",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_coagulopathy_up"
             ]
         },
         "slot_12": {
-            "action": "Anti-Magic Shell",
+            "action": "Dancing Rune Weapon",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -107,7 +109,7 @@
             ]
         },
         "slot_13": {
-            "action": "Icebound Fortitude",
+            "action": "Rune Tap",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -115,7 +117,7 @@
             ]
         },
         "slot_14": {
-            "action": "Lichborne",
+            "action": "Bonestorm",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -123,15 +125,16 @@
             ]
         },
         "slot_15": {
-            "action": "Raise Dead",
+            "action": "Soul Reaper",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_reaper_of_souls_up"
             ]
         },
         "slot_16": {
-            "action": "Death's Advance",
+            "action": "Reapers Mark",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -139,31 +142,35 @@
             ]
         },
         "slot_17": {
-            "action": "Wraith Walk",
+            "action": "Blood Boil",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dancing_rune_weapon_up"
             ]
         },
         "slot_18": {
-            "action": "Gorefiend's Grasp",
+            "action": "Death And Decay",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_death_and_decay_up"
             ]
         },
         "slot_19": {
-            "action": "Death Grip",
+            "action": "Marrowrend",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_exterminate_up",
+                "dot_bonestorm_ticking"
             ]
         },
         "slot_20": {
-            "action": "Dark Command",
+            "action": "Tombstone",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -171,15 +178,16 @@
             ]
         },
         "slot_21": {
-            "action": "Asphyxiate",
+            "action": "Blooddrinker",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dancing_rune_weapon_up"
             ]
         },
         "slot_22": {
-            "action": "Anti-Magic Zone",
+            "action": "Consumption",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -187,7 +195,7 @@
             ]
         },
         "slot_23": {
-            "action": "Control Undead",
+            "action": "Heart Strike",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -195,57 +203,118 @@
             ]
         },
         "slot_24": {
-            "action": "Path of Frost",
+            "action": "Any Dnd",
             "key": "Ctrl+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_25": {
-            "action": "Mind Freeze",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "interruptible"
-            ]
-        },
-        "slot_26": {
-            "action": "Blinding Sleet",
-            "key": "Alt+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_27": {
-            "action": "Dark Simulacrum",
-            "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_04",
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
             "slot_03",
-            "slot_05"
-        ],
-        "pvp": [
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
             "slot_19",
+            "slot_20",
             "slot_21",
-            "slot_03",
-            "slot_01"
+            "slot_22",
+            "slot_23",
+            "slot_24"
         ],
         "mythic": [
-            "slot_10",
-            "slot_18",
+            "slot_01",
+            "slot_02",
+            "slot_03",
             "slot_04",
-            "slot_03"
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24"
         ]
     }
 }

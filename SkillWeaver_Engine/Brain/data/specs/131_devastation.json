@@ -1,17 +1,15 @@
 {
     "spec_id": 131,
     "spec_name": "Devastation Evoker",
-    "resource_type": "mana",
-    "secondary_resource": "essence",
+    "resource_type": "essence",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "devastation_mythic": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGzYmxsMzYmBMYMTzYmJz2YZwMDjZ2mBMjZ2YmZbMDmBmxMwGYBMDTgFwywA",
-        "devastation_raid": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGzMMzsYGzMgBjZaGzMZMWGzMzw8AzsNDYGzsxMz2YGMDMjZgNwCYGmALglhB",
-        "devastation_delve": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGzYmxsMzYmBMYMTzYmJz2YZwMDjZ2mBMjZ2YmZbMDmBmxMwGYBMDTgFwywA",
-        "devastation_pvp": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGzYmxsMzYmBMYMTzYmJz2YZwMDjZ2mBMjZ2YmZbMDmBmxMwGYBMDTgFwywA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Living Flame",
+            "action": "Variable,Name=Trinket Priority,Op=Setif",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Disintegrate",
+            "action": "Variable,Name=Trinket Priority,Op=Set,Value=Trinket.1.Is.Signet Of The Priory+2*Trinket.2.Is.Signet Of The Priory",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,7 +25,7 @@
             ]
         },
         "slot_03": {
-            "action": "Fire Breath",
+            "action": "Variable,Name=Can Use Empower,Value=1,Default=1",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -35,7 +33,7 @@
             ]
         },
         "slot_04": {
-            "action": "Eternity Surge",
+            "action": "Verdant Embrace",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -43,7 +41,7 @@
             ]
         },
         "slot_05": {
-            "action": "Dragonrage",
+            "action": "Hover",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -51,7 +49,7 @@
             ]
         },
         "slot_06": {
-            "action": "Deep Breath",
+            "action": "Firestorm",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -59,7 +57,7 @@
             ]
         },
         "slot_07": {
-            "action": "Shattering Star",
+            "action": "Living Flame",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -67,31 +65,34 @@
             ]
         },
         "slot_08": {
-            "action": "Tip the Scales",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dragonrage_up"
             ]
         },
         "slot_09": {
-            "action": "Hover",
+            "action": "Variable,Name=Pool For Id",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_essence_burst_up"
             ]
         },
         "slot_10": {
-            "action": "Verdant Embrace",
+            "action": "Variable,Name=Can Extend Dr",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dragonrage_up"
             ]
         },
         "slot_11": {
-            "action": "Emerald Blossom",
+            "action": "Variable,Name=Can Use Empower,Op=Set,Value=Cooldown.Dragonrage.Remains>=Gcd.Max*Variable.Dr Prep Time",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -99,7 +100,7 @@
             ]
         },
         "slot_12": {
-            "action": "Wing Buffet",
+            "action": "Quell,Use Off Gcd=1",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -107,7 +108,7 @@
             ]
         },
         "slot_13": {
-            "action": "Obsidian Scales",
+            "action": "Run Action List,Name=Aoe",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -115,15 +116,16 @@
             ]
         },
         "slot_14": {
-            "action": "Renewing Blaze",
+            "action": "Hover,Use Off Gcd=1",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_hover_up"
             ]
         },
         "slot_15": {
-            "action": "Rescue",
+            "action": "Shattering Star,Target If=Max:Target.Health.Pct",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -131,23 +133,24 @@
             ]
         },
         "slot_16": {
-            "action": "Quell",
+            "action": "Deep Breath",
             "key": "Shift+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "interruptible"
-            ]
-        },
-        "slot_17": {
-            "action": "Oppressing Roar",
-            "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
+        "slot_17": {
+            "action": "Tip The Scales,Use Off Gcd=1",
+            "key": "Ctrl+F13",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_dragonrage_up"
+            ]
+        },
         "slot_18": {
-            "action": "Tail Swipe",
+            "action": "Fire Breath,Target If=Max:Target.Health.Pct,Empower To=4",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -155,7 +158,7 @@
             ]
         },
         "slot_19": {
-            "action": "Unravel",
+            "action": "Fire Breath,Target If=Max:Target.Health.Pct,Empower To=2",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -163,7 +166,7 @@
             ]
         },
         "slot_20": {
-            "action": "Cauterizing Flame",
+            "action": "Dragonrage,Target If=Max:Target.Time To Die",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -171,15 +174,16 @@
             ]
         },
         "slot_21": {
-            "action": "Expunge",
+            "action": "Call Action List,Name=Es",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_dragonrage_up"
             ]
         },
         "slot_22": {
-            "action": "Time Spiral",
+            "action": "Engulf",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -187,7 +191,7 @@
             ]
         },
         "slot_23": {
-            "action": "Zephyr",
+            "action": "Pyre,Target If=Max:Target.Health.Pct",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -195,31 +199,34 @@
             ]
         },
         "slot_24": {
-            "action": "Source of Magic",
+            "action": "Disintegrate,Target If=Min:Debuff.Bombardments.Remains",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_mass_disintegrate_stacks_up"
             ]
         },
         "slot_25": {
-            "action": "Landslide",
+            "action": "Living Flame,Target If=Max:Target.Health.Pct",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_burnout_up"
             ]
         },
         "slot_26": {
-            "action": "Sleep Walk",
+            "action": "Disintegrate,Target If=Max:Target.Health.Pct,Chain=1,Early Chain If=Evoker.Use Early Chaining&Ticks>=2&(Raid Event.Movement.In>2|Buff.Hover.Up),Interrupt If=Evoker.Use Clipping&Buff.Dragonrage.Up&Ticks>=2&(Raid Event.Movement.In>2|Buff.Hover.Up)",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_hover_up"
             ]
         },
         "slot_27": {
-            "action": "Deep Breath",
+            "action": "Azure Strike",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -227,100 +234,134 @@
             ]
         },
         "slot_28": {
-            "action": "Dream Flight",
+            "action": "Eternity Surge,Empower To=1,Target If=Max:Target.Health.Pct",
             "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
-        },
-        "slot_29": {
-            "action": "Zephyr",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Oppressing Roar",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Landslide",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Quell",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Cauterizing Flame",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Time Spiral",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_35": {
-            "action": "Blessing of the Bronze",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": []
-        },
-        "slot_36": {
-            "action": "Expunge",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
+            "slot_01",
+            "slot_02",
             "slot_03",
             "slot_04",
-            "slot_07",
-            "slot_02",
-            "slot_01"
-        ],
-        "pvp": [
-            "slot_16",
-            "slot_26",
+            "slot_05",
             "slot_06",
             "slot_07",
-            "slot_03",
-            "slot_02"
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_06",
+            "slot_01",
+            "slot_02",
             "slot_03",
             "slot_04",
-            "slot_02"
-        ],
-        "dragonrage_window": [
             "slot_05",
+            "slot_06",
             "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
             "slot_03",
             "slot_04",
-            "slot_02"
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

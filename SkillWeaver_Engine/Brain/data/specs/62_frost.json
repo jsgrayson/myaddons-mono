@@ -1,17 +1,15 @@
 {
-    "spec_id": 21,
-    "spec_name": "Holy Paladin",
-    "resource_type": "mana",
-    "secondary_resource": "holy_power",
+    "spec_id": 62,
+    "spec_name": "Frost Death Knight",
+    "resource_type": "runic_power",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "holy_mythic": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYAAzAAAMAbjZmZmxMjFjZxMsMDmZbz0WjZMjZmhBmtMAgBAbAbMLzMmZZ2mZmtGAAAgFAD2MwMMA",
-        "holy_raid": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYAAzAAAAYbmZmxMmZwMzyMDLzgZ22MtFzYGzMDDMbZAADYwGwGzyMmZWmtZmZrBAAAYBAsZYYMDA",
-        "holy_delve": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYAAzAAAMAbjZmZmxMjFjZxMsMDmZbz0WjZMjZmhBmtMAgBAbAbMLzMmZZ2mZmtGAAAgFAD2MwMMA",
-        "holy_pvp": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYAADAAgBYZMzMmxMzyyMsMG2MGmtNTLNmZxwMDDYLDAYAwGwGzyMjBAAAmZW2WaZmhNAMWMDzMmhB"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Holy Shock",
+            "action": "Auto Attack",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Judgment / Crusader Strike",
+            "action": "Run Action List,Name=Aoe",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,23 +25,23 @@
             ]
         },
         "slot_03": {
-            "action": "Word of Glory / Light of Dawn",
+            "action": "Potion,Use Off Gcd=1",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "holy_power_gte_3"
+                "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Hammer of Wrath",
+            "action": "Remorseless Winter",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "execute_range_or_proc"
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Avenging Wrath (Wings)",
+            "action": "Frostwyrms Fury",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -51,7 +49,7 @@
             ]
         },
         "slot_06": {
-            "action": "Flash of Light",
+            "action": "Pillar Of Frost",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -59,23 +57,25 @@
             ]
         },
         "slot_07": {
-            "action": "Holy Light",
+            "action": "Breath Of Sindragosa,Use Off Gcd=1",
             "key": "END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_breath_of_sindragosa_up"
             ]
         },
         "slot_08": {
-            "action": "Shield of the Righteous",
+            "action": "Reapers Mark,Target If=First:Debuff.Reapers Mark Debuff.Down",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_pillar_of_frost_up"
             ]
         },
         "slot_09": {
-            "action": "Barrier of Faith",
+            "action": "Raise Dead",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -83,15 +83,16 @@
             ]
         },
         "slot_10": {
-            "action": "Divine Toll",
+            "action": "Soul Reaper",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_reaper_of_souls_up"
             ]
         },
         "slot_11": {
-            "action": "Daybreak",
+            "action": "Empower Rune Weapon,Use Off Gcd=1",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
@@ -99,7 +100,7 @@
             ]
         },
         "slot_12": {
-            "action": "Tyr's Deliverance",
+            "action": "Mind Freeze",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -107,7 +108,7 @@
             ]
         },
         "slot_13": {
-            "action": "Beacon of Virtue / Faith",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -115,7 +116,7 @@
             ]
         },
         "slot_14": {
-            "action": "Divine Prism",
+            "action": "Antimagic Shell",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -123,7 +124,7 @@
             ]
         },
         "slot_15": {
-            "action": "Light's Hammer",
+            "action": "Blood Fury,Use Off Gcd=1",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -131,7 +132,7 @@
             ]
         },
         "slot_16": {
-            "action": "Aura Mastery",
+            "action": "Berserking,Use Off Gcd=1",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -139,7 +140,7 @@
             ]
         },
         "slot_17": {
-            "action": "Divine Protection",
+            "action": "Ancestral Call,Use Off Gcd=1",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -147,7 +148,7 @@
             ]
         },
         "slot_18": {
-            "action": "Divine Shield",
+            "action": "Fireblood,Use Off Gcd=1",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -155,7 +156,7 @@
             ]
         },
         "slot_19": {
-            "action": "Blessing of Sacrifice",
+            "action": "Obliterate",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -163,7 +164,7 @@
             ]
         },
         "slot_20": {
-            "action": "Blessing of Freedom",
+            "action": "Howling Blast",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -171,7 +172,7 @@
             ]
         },
         "slot_21": {
-            "action": "Blessing of Protection",
+            "action": "Frost Strike,Target If=Max:(Talent.Shattering Blade&Debuff.Razorice.React=5)",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -179,7 +180,7 @@
             ]
         },
         "slot_22": {
-            "action": "Cleanse",
+            "action": "Frost Strike",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -187,7 +188,7 @@
             ]
         },
         "slot_23": {
-            "action": "Lay on Hands",
+            "action": "Frostscythe",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -195,7 +196,7 @@
             ]
         },
         "slot_24": {
-            "action": "Intercession",
+            "action": "Obliterate,Target If=Max:(Hero Tree.Rider Of The Apocalypse&Debuff.Chains Of Ice Trollbane Slow.React)",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -203,15 +204,15 @@
             ]
         },
         "slot_25": {
-            "action": "Rebuke",
+            "action": "Glacial Advance",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid"
             ]
         },
         "slot_26": {
-            "action": "Hammer of Justice",
+            "action": "Use Item,Name=Unyielding Netherprism",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
@@ -219,7 +220,7 @@
             ]
         },
         "slot_27": {
-            "action": "Blinding Light / Repentance",
+            "action": "Use Item,Slot=Trinket1",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
@@ -227,80 +228,8 @@
             ]
         },
         "slot_28": {
-            "action": "Divine Steed",
+            "action": "Use Item,Slot=Trinket2",
             "key": "Alt+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Consecration",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Absolution",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Redemption",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Turn Evil",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Beacon of Light",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Beacon of Faith",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_35": {
-            "action": "Blessed Hands",
-            "key": "Shift+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_36": {
-            "action": "Cleanse the Weak",
-            "key": "Shift+F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_37": {
-            "action": "Avenging Light",
-            "key": "Shift+F15",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
@@ -312,27 +241,121 @@
             "slot_01",
             "slot_02",
             "slot_03",
-            "slot_06"
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
             "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
             "slot_10",
             "slot_11",
-            "slot_03",
-            "slot_02"
-        ],
-        "pvp": [
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
             "slot_26",
             "slot_27",
-            "slot_01",
-            "slot_04",
-            "slot_03"
+            "slot_28"
         ],
         "delve": [
             "slot_01",
             "slot_02",
             "slot_03",
-            "slot_06"
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

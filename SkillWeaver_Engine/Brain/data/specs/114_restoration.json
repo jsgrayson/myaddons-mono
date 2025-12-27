@@ -230,12 +230,19 @@
             "cooldown": 0.5
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_03",
             "slot_01",
             "slot_04",
             "slot_05"
+        ],
+        "mythic": [
+            "slot_12",
+            "slot_06",
+            "slot_04",
+            "slot_01",
+            "slot_25"
         ],
         "pvp": [
             "slot_21",
@@ -245,12 +252,11 @@
             "slot_25",
             "slot_26"
         ],
-        "mythic": [
-            "slot_12",
-            "slot_06",
-            "slot_04",
+        "delve": [
+            "slot_03",
             "slot_01",
-            "slot_25"
+            "slot_04",
+            "slot_05"
         ]
     }
 }

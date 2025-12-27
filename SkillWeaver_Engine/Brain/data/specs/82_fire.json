@@ -2,26 +2,22 @@
     "spec_id": 82,
     "spec_name": "Fire Mage",
     "resource_type": "mana",
-    "secondary_resource": "fire_blast_charges",
-    "execute_threshold": 30,
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "fire_mythic": "C8DAAAAAAAAAAAAAAAAAAAAAAMzgZbGMzYmZxAjZMNmZMDAAAAAADAYmZaZWWmBAYzYGMmZMzYWMLjhZGmZbGLzsMMAAAAAAA",
-        "fire_raid": "C8DAAAAAAAAAAAAAAAAAAAAAAYMMbzgZ8AjZxwYmhpxMjZAAAAAAYAAzMTLzyyMAAbGzgxMjZGziZZMMzwMbzwMLDDAAAAAAA",
-        "fire_delve": "C8DAAAAAAAAAAAAAAAAAAAAAAMzgZbGMzYmZxAjZMNmZMDAAAAAADAYmZaZWWmBAYzYGMmZMzYWMLjhZGmZbGLzsMMAAAAAAA",
-        "fire_pvp": "C8DAAAAAAAAAAAAAAAAAAAAAAMYZmNzMmZMzsMgZmx0YMGDAAAAAgBAMzMtMLLzAAsZMDGmxYMbmtxMmZYmtZsMzyYMAAAAAAA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Fireball",
+            "action": "Arcane Intellect",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 0.5
+            ]
         },
         "slot_02": {
-            "action": "Fire Blast",
+            "action": "Variable,Name=Ff Combustion Flamestrike",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -29,15 +25,15 @@
             ]
         },
         "slot_03": {
-            "action": "Pyroblast",
+            "action": "Variable,Name=Ff Filler Flamestrike",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "proc_hot_streak"
+                "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Phoenix Flames",
+            "action": "Variable,Name=Sf Combustion Flamestrike",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -45,24 +41,23 @@
             ]
         },
         "slot_05": {
-            "action": "Scorch",
+            "action": "Variable,Name=Sf Filler Flamestrike",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "execute_range"
+                "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Combustion",
+            "action": "Variable,Name=Treacherous Transmitter Precombat Cast,Value=12",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 120.0
+            ]
         },
         "slot_07": {
-            "action": "Meteor",
+            "action": "Mirror Image",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -70,7 +65,7 @@
             ]
         },
         "slot_08": {
-            "action": "Dragon's Breath",
+            "action": "Frostfire Bolt",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -78,7 +73,7 @@
             ]
         },
         "slot_09": {
-            "action": "Living Bomb",
+            "action": "Combustion",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -86,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Flamestrike",
+            "action": "Pyroblast",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -94,31 +89,34 @@
             ]
         },
         "slot_11": {
-            "action": "Shifting Power",
+            "action": "Call Action List,Name=Cds",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_hot_streak_up"
             ]
         },
         "slot_12": {
-            "action": "Time Warp",
+            "action": "Run Action List,Name=Ff Combustion",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_combustion_up"
             ]
         },
         "slot_13": {
-            "action": "Ice Block",
+            "action": "Run Action List,Name=Sf Combustion",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_hyperthermia_up"
             ]
         },
         "slot_14": {
-            "action": "Blazing Barrier",
+            "action": "Run Action List,Name=Ff Filler",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -126,7 +124,7 @@
             ]
         },
         "slot_15": {
-            "action": "Invisibility",
+            "action": "Use Item,Name=Arazs Ritual Forge",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -134,7 +132,7 @@
             ]
         },
         "slot_16": {
-            "action": "Shimmer",
+            "action": "Use Item,Name=Neural Synapse Enhancer",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -142,7 +140,7 @@
             ]
         },
         "slot_17": {
-            "action": "Alter Time",
+            "action": "Use Item,Effect Name=Gladiators Badge",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -150,7 +148,7 @@
             ]
         },
         "slot_18": {
-            "action": "Mirror Image",
+            "action": "Use Item,Name=Signet Of The Priory",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -158,7 +156,7 @@
             ]
         },
         "slot_19": {
-            "action": "Frost Nova",
+            "action": "Use Item,Name=Sunblood Amethyst",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -166,7 +164,7 @@
             ]
         },
         "slot_20": {
-            "action": "Cone of Cold",
+            "action": "Use Item,Name=Lily Of The Eternal Weave",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -174,7 +172,7 @@
             ]
         },
         "slot_21": {
-            "action": "Blast Wave",
+            "action": "Use Item,Name=Funhouse Lens",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -182,7 +180,7 @@
             ]
         },
         "slot_22": {
-            "action": "Remove Curse",
+            "action": "Use Item,Name=Mereldars Toll",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -190,7 +188,7 @@
             ]
         },
         "slot_23": {
-            "action": "Spellsteal",
+            "action": "Use Item,Name=Flarendos Pilot Light",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -198,7 +196,7 @@
             ]
         },
         "slot_24": {
-            "action": "Mass Barrier",
+            "action": "Use Item,Name=House Of Cards",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -206,15 +204,15 @@
             ]
         },
         "slot_25": {
-            "action": "Counterspell",
+            "action": "Use Item,Name=Soulletting Ruby",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid"
             ]
         },
         "slot_26": {
-            "action": "Polymorph",
+            "action": "Use Item,Name=Quickwick Candlestick",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
@@ -222,46 +220,142 @@
             ]
         },
         "slot_27": {
-            "action": "Ring of Frost",
+            "action": "Use Item,Name=Hyperthread Wristwraps",
             "key": "Alt+F17",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid"
+            ]
+        },
+        "slot_28": {
+            "action": "Invoke External Buff,Name=Power Infusion",
+            "key": "Alt+F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_03",
+    "priorities": {
+        "raid": [
+            "slot_01",
             "slot_02",
-            "slot_04",
-            "slot_01"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_08",
-            "slot_26",
-            "slot_06",
             "slot_03",
-            "slot_02"
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
         "mythic": [
-            "slot_11",
-            "slot_10",
-            "slot_07",
-            "slot_06",
-            "slot_03"
-        ],
-        "execute_phase": [
-            "slot_05",
-            "slot_03",
-            "slot_02"
-        ],
-        "combustion_phase": [
-            "slot_06",
+            "slot_01",
             "slot_02",
             "slot_03",
-            "slot_04"
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ]
     }
 }

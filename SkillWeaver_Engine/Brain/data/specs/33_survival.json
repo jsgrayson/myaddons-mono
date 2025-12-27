@@ -2,25 +2,22 @@
     "spec_id": 33,
     "spec_name": "Survival Hunter",
     "resource_type": "focus",
-    "secondary_resource": "mongoose_fury_stacks",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "survival_mythic": "C8PAAAAAAAAAAAAAAAAAAAAAAMGYglxoxyAY2AbzMWmZmZmZYMzMzYMGzMmFAAAAAAgmxMmxMzwMYYMMzwsMMLLzgNAAAAAYAA",
-        "survival_raid": "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGawyMzsMjZmxMzYMMGmZmZMbDAAAAAAoZMjZMzMMDzwYYmhxwstMD2AAAAAgBAA",
-        "survival_delve": "C8PAAAAAAAAAAAAAAAAAAAAAAMGYglxoxyAY2AbzMWmZmZmZYMzMzYMGzMmFAAAAAAgmxMmxMzwMYYMMzwsMMLLzgNAAAAAYAA",
-        "survival_pvp": "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGawyMzsMzMzMGMzMjZYMmZmZDAAAAAAoZgZYmZmBGzMzMzMMmZssNwCAAAAAMAA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Kill Command",
+            "action": "Summon Pet",
             "key": "F13",
-            "min_resource": 15,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 6.0
+            ]
         },
         "slot_02": {
-            "action": "Wildfire Bomb",
+            "action": "Auto Attack",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -28,15 +25,15 @@
             ]
         },
         "slot_03": {
-            "action": "Mongoose Bite",
+            "action": "Call Action List,Name=Plst",
             "key": "F17",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_04": {
-            "action": "Explosive Shot",
+            "action": "Call Action List,Name=Plcleave",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -44,31 +41,32 @@
             ]
         },
         "slot_05": {
-            "action": "Butchery",
+            "action": "Call Action List,Name=Sentst",
             "key": "F19",
-            "min_resource": 30,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_06": {
-            "action": "Kill Shot",
+            "action": "Call Action List,Name=Sentcleave",
             "key": "HOME",
-            "min_resource": 0,
-            "conditions": [
-                "execute_range"
-            ]
-        },
-        "slot_07": {
-            "action": "Coordinated Assault",
-            "key": "END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
+        "slot_07": {
+            "action": "Invoke External Buff,Name=Power Infusion",
+            "key": "END",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_coordinated_assault_up"
+            ]
+        },
         "slot_08": {
-            "action": "Spearhead",
+            "action": "Harpoon",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -76,7 +74,7 @@
             ]
         },
         "slot_09": {
-            "action": "Fury of the Eagle",
+            "action": "Muzzle",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -84,23 +82,25 @@
             ]
         },
         "slot_10": {
-            "action": "Flanking Strike",
+            "action": "Use Item,Use Off Gcd=1,Slot=Trinket1",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_coordinated_assault_up"
             ]
         },
         "slot_11": {
-            "action": "Death Chakram",
+            "action": "Use Item,Use Off Gcd=1,Slot=Trinket2",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_coordinated_assault_up"
             ]
         },
         "slot_12": {
-            "action": "Aspect of the Eagle",
+            "action": "Aspect Of The Eagle",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -108,7 +108,7 @@
             ]
         },
         "slot_13": {
-            "action": "Harpoon",
+            "action": "Spearhead",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -116,15 +116,16 @@
             ]
         },
         "slot_14": {
-            "action": "Aspect of the Turtle",
+            "action": "Kill Command",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_relentless_primal_ferocity_up"
             ]
         },
         "slot_15": {
-            "action": "Exhilaration",
+            "action": "Fury Of The Eagle",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -132,7 +133,7 @@
             ]
         },
         "slot_16": {
-            "action": "Survival of the Fittest",
+            "action": "Wildfire Bomb",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -140,7 +141,7 @@
             ]
         },
         "slot_17": {
-            "action": "Feign Death",
+            "action": "Explosive Shot",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -148,15 +149,16 @@
             ]
         },
         "slot_18": {
-            "action": "Disengage",
+            "action": "Raptor Bite,Target If=Max:Dot.Serpent Sting.Remains",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_strike_it_rich_up"
             ]
         },
         "slot_19": {
-            "action": "Aspect of the Cheetah",
+            "action": "Flanking Strike",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -164,7 +166,7 @@
             ]
         },
         "slot_20": {
-            "action": "Mend Pet",
+            "action": "Butchery",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -172,7 +174,7 @@
             ]
         },
         "slot_21": {
-            "action": "Revive Pet",
+            "action": "Coordinated Assault",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -180,7 +182,7 @@
             ]
         },
         "slot_22": {
-            "action": "Misdirection",
+            "action": "Kill Shot",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
@@ -188,7 +190,7 @@
             ]
         },
         "slot_23": {
-            "action": "Tranquilizing Shot",
+            "action": "Raptor Bite,Target If=Min:Dot.Serpent Sting.Remains",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -196,7 +198,7 @@
             ]
         },
         "slot_24": {
-            "action": "Master's Call",
+            "action": "Raptor Bite",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -204,140 +206,135 @@
             ]
         },
         "slot_25": {
-            "action": "Muzzle",
+            "action": "Mongoose Bite",
             "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_coordinated_assault_up"
             ]
         },
         "slot_26": {
-            "action": "Intimidation",
+            "action": "Use Items,Slots=Trinket1:Trinket2",
             "key": "Alt+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_27": {
-            "action": "Freezing Trap",
-            "key": "Alt+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_28": {
-            "action": "Steel Trap",
-            "key": "Alt+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Tar Trap",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "High Explosive Trap",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Sticky Bomb",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Chimaeral Sting",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "Diamond Ice",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Roar of Sacrifice",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_35": {
-            "action": "Interlope",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_36": {
-            "action": "Flare",
-            "key": "Shift+F24",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_11",
             "slot_03",
-            "slot_10"
-        ],
-        "pvp": [
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
             "slot_25",
-            "slot_26",
-            "slot_32",
-            "slot_01",
-            "slot_02",
-            "slot_10"
+            "slot_26"
         ],
         "mythic": [
-            "slot_11",
-            "slot_09",
-            "slot_05",
-            "slot_02",
-            "slot_01"
-        ],
-        "execute_phase": [
-            "slot_06",
             "slot_01",
-            "slot_03"
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07"
-            ],
-            "sequence": [
-                "slot_07",
-                "slot_08",
-                "slot_03",
-                "slot_01"
-            ]
-        }
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
+        ]
     }
 }

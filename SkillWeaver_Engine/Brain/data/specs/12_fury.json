@@ -2,97 +2,87 @@
     "spec_id": 12,
     "spec_name": "Fury Warrior",
     "resource_type": "rage",
-    "secondary_resource": "enrage_state",
-    "execute_threshold": 35,
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "fury_mythic": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQjBmNzMMjBzswMzMzMMDzstNzYmZWAmZmxMjlhhZmZAAAQM22GYBMgZYCMDbA",
-        "fury_raid": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQjhZmNzMMjBzswMzMmhZYmttxYmZWwMmZmxMzsMM8AmZAAAQM22GYBMgZYCMYDA",
-        "fury_delve": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMaMwsMmhxyAzCzMzMzMjhZW2mZMzMbYmZGDzMzywgZMAAAIMwGssY0YGAzCMWAA",
-        "fury_pvp": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQjZMzYMzGjxYmFmZMGYMzstNzMzMzGMmxwMjlhZGzMDAAACDsBLbGNmBwshZsAA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Bloodthirst",
+            "action": "Berserker Stance",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 4.5
+            ]
         },
         "slot_02": {
-            "action": "Raging Blow",
+            "action": "Recklessness",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid",
-                "has_charges"
-            ],
-            "cooldown": 1.5
+                "target_valid"
+            ]
         },
         "slot_03": {
-            "action": "Rampage",
+            "action": "Avatar",
             "key": "F17",
-            "min_resource": 80,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 1.5
+            ]
         },
         "slot_04": {
-            "action": "Execute",
+            "action": "Auto Attack",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "execute_range_or_proc"
+                "target_valid"
             ]
         },
         "slot_05": {
-            "action": "Whirlwind",
+            "action": "Charge",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 1.5
+            ]
         },
         "slot_06": {
-            "action": "Onslaught",
+            "action": "Heroic Leap",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 12.0
+            ]
         },
         "slot_07": {
-            "action": "Odyn's Fury",
+            "action": "Pummel",
             "key": "END",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 45.0
+            ]
         },
         "slot_08": {
-            "action": "Ravager",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 90.0
+                "target_valid",
+                "buff_avatar_up"
+            ]
         },
         "slot_09": {
-            "action": "Slam",
+            "action": "Run Action List,Name=Slayer",
             "key": "Shift+F13",
-            "min_resource": 20,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_10": {
-            "action": "Bloodinblood",
+            "action": "Run Action List,Name=Thane",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -100,34 +90,34 @@
             ]
         },
         "slot_11": {
-            "action": "Avatar",
+            "action": "Execute",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 90.0
+                "target_valid",
+                "buff_ashen_juggernaut_up"
+            ]
         },
         "slot_12": {
-            "action": "Recklessness",
+            "action": "Thunderous Roar",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 90.0
+                "target_valid",
+                "buff_enrage_up"
+            ]
         },
         "slot_13": {
-            "action": "Thunderous Roar",
+            "action": "Champions Spear",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 90.0
+                "target_valid",
+                "buff_avatar_up"
+            ]
         },
         "slot_14": {
-            "action": "Spear of Bastion",
+            "action": "Odyns Fury",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -135,15 +125,16 @@
             ]
         },
         "slot_15": {
-            "action": "Shockwave",
+            "action": "Bladestorm",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_enrage_up"
             ]
         },
         "slot_16": {
-            "action": "Storm Bolt",
+            "action": "Whirlwind",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -151,55 +142,60 @@
             ]
         },
         "slot_17": {
-            "action": "Pummel",
+            "action": "Onslaught",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
-                "interruptible"
+                "target_valid",
+                "buff_brutal_finish_up"
             ]
         },
         "slot_18": {
-            "action": "Impending Victory",
+            "action": "Rampage",
             "key": "Ctrl+F16",
-            "min_resource": 10,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
         "slot_19": {
-            "action": "Rallying Cry",
+            "action": "Crushing Blow",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_brutal_finish_up"
             ]
         },
         "slot_20": {
-            "action": "Enraged Regeneration",
+            "action": "Bloodbath",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_enrage_up"
             ]
         },
         "slot_21": {
-            "action": "Spell Reflection",
+            "action": "Raging Blow",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_brutal_finish_up"
             ]
         },
         "slot_22": {
-            "action": "Intimidating Shout",
+            "action": "Bloodthirst",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_brutal_finish_up"
             ]
         },
         "slot_23": {
-            "action": "Berserker Rage",
+            "action": "Wrecking Throw",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -207,26 +203,24 @@
             ]
         },
         "slot_24": {
-            "action": "Heroic Leap",
+            "action": "Storm Bolt",
             "key": "Ctrl+DELETE",
+            "min_resource": 0,
+            "conditions": [
+                "target_valid",
+                "buff_bladestorm_up"
+            ]
+        },
+        "slot_25": {
+            "action": "Ravager",
+            "key": "Alt+F13",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
-        "slot_25": {
-            "action": "Charge",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid",
-                "in_charge_range",
-                "has_secondary_charges"
-            ],
-            "cooldown": 1.5
-        },
         "slot_26": {
-            "action": "Intervene",
+            "action": "Thunder Clap",
             "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
@@ -234,150 +228,143 @@
             ]
         },
         "slot_27": {
-            "action": "Battle Shout",
+            "action": "Thunder Blast",
             "key": "Alt+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_enrage_up"
             ]
         },
         "slot_28": {
-            "action": "Heroic Throw",
+            "action": "Use Item,Name=Cursed Stone Idol",
             "key": "Alt+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_29": {
-            "action": "Piercing Howl",
-            "key": "Alt+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_30": {
-            "action": "Shattering Throw",
-            "key": "Alt+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_31": {
-            "action": "Sharpen Blade",
-            "key": "Alt+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_32": {
-            "action": "Disarm",
-            "key": "Alt+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_33": {
-            "action": "War Banner",
-            "key": "Shift+F21",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_34": {
-            "action": "Bloodrage",
-            "key": "Shift+F22",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_35": {
-            "action": "Death Wish",
-            "key": "Shift+F23",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_36": {
-            "action": "Slaughterhouse",
-            "key": "Shift+F24",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_37": {
-            "action": "Enduring Rage",
-            "key": "Shift+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_38": {
-            "action": "Master and Commander",
-            "key": "Shift+F14",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_39": {
-            "action": "Bitter Immunity",
-            "key": "Shift+F15",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_03",
+    "priorities": {
+        "raid": [
             "slot_01",
             "slot_02",
-            "slot_06"
-        ],
-        "pvp": [
-            "slot_17",
-            "slot_16",
-            "slot_36",
             "slot_03",
             "slot_04",
-            "slot_01"
-        ],
-        "mythic": [
-            "slot_25",
-            "slot_12",
-            "slot_11",
-            "slot_13",
+            "slot_05",
+            "slot_06",
             "slot_07",
             "slot_08",
-            "slot_03",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "mythic": [
             "slot_01",
             "slot_02",
+            "slot_03",
             "slot_04",
+            "slot_05",
             "slot_06",
-            "slot_05"
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07",
-                "rage_gte_80"
-            ],
-            "sequence": [
-                "slot_07",
-                "slot_03",
-                "slot_08",
-                "slot_02"
-            ]
-        }
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26",
+            "slot_27",
+            "slot_28"
+        ]
     }
 }

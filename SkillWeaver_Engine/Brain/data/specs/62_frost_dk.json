@@ -295,18 +295,10 @@
             "conditions": []
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
             "slot_02",
             "slot_04",
-            "slot_01",
-            "slot_03"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_35",
-            "slot_19",
-            "slot_09",
             "slot_01",
             "slot_03"
         ],
@@ -317,16 +309,19 @@
             "slot_04",
             "slot_01"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_05"
-            ],
-            "sequence": [
-                "slot_05",
-                "slot_06",
-                "slot_04",
-                "slot_01"
-            ]
-        }
+        "pvp": [
+            "slot_25",
+            "slot_35",
+            "slot_19",
+            "slot_09",
+            "slot_01",
+            "slot_03"
+        ],
+        "delve": [
+            "slot_02",
+            "slot_04",
+            "slot_01",
+            "slot_03"
+        ]
     }
 }

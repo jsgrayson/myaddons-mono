@@ -2,25 +2,22 @@
     "spec_id": 81,
     "spec_name": "Arcane Mage",
     "resource_type": "mana",
-    "secondary_resource": "arcane_charges",
+    "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "arcane_mythic": "C4DAAAAAAAAAAAAAAAAAAAAAAMzgZbGMzYmZBYmZMmmZMDAAAAAADAYmZaZ22mBAwGAAAAAAbAYMYmlZZGzMGzwMzMzYGzyYA",
-        "arcane_raid": "C4DAAAAAAAAAAAAAAAAAAAAAAYMMbzgZ8AjZxwYmhx0MjZAAAAAAYAAzMTLz2yMAA2AAAAAAAAYwMLzyMzMjxMmZmZmxMsMG",
-        "arcane_delve": "C4DAAAAAAAAAAAAAAAAAAAAAAMjBbzgZGzMLGYmhx0MjZAAAAAAYAAAgZmtlllZmYBAAAAAgNAWGDzMLzywwMzMMzMzMzYGjB",
-        "arcane_pvp": "C4DAAAAAAAAAAAAAAAAAAAAAAMYZmNzMmZMzsAegZmxYaMGDAAAAAgBAMzMtMLLzAAYDAAAAAgNAMGMzysMzMMMzYMzMzMmZZM"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Arcane Blast",
+            "action": "Arcane Intellect",
             "key": "F13",
-            "min_resource": 5000,
+            "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 0.5
+            ]
         },
         "slot_02": {
-            "action": "Arcane Missiles",
+            "action": "Variable,Name=Soul Cd,Op=Set,Value=1",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -28,7 +25,7 @@
             ]
         },
         "slot_03": {
-            "action": "Arcane Barrage",
+            "action": "Variable,Name=Aoe Target Count,Op=Set,Value=9",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -36,7 +33,7 @@
             ]
         },
         "slot_04": {
-            "action": "Arcane Orb",
+            "action": "Mirror Image",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
@@ -44,7 +41,7 @@
             ]
         },
         "slot_05": {
-            "action": "Touch of the Magi",
+            "action": "Arcane Blast",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
@@ -52,7 +49,7 @@
             ]
         },
         "slot_06": {
-            "action": "Arcane Surge",
+            "action": "Evocation",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -60,7 +57,7 @@
             ]
         },
         "slot_07": {
-            "action": "Evocation",
+            "action": "Arcane Surge",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -68,7 +65,7 @@
             ]
         },
         "slot_08": {
-            "action": "Presence of Mind",
+            "action": "Counterspell",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -76,7 +73,7 @@
             ]
         },
         "slot_09": {
-            "action": "Radiant Spark",
+            "action": "Invoke External Buff,Name=Power Infusion",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -84,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Supernova",
+            "action": "Invoke External Buff,Name=Blessing Of Autumn",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -92,15 +89,16 @@
             ]
         },
         "slot_11": {
-            "action": "Shifting Power",
+            "action": "Variable,Name=Opener,Op=Set",
             "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_touch_of_the_magi_up"
             ]
         },
         "slot_12": {
-            "action": "Time Warp",
+            "action": "Arcane Barrage",
             "key": "Shift+F18",
             "min_resource": 0,
             "conditions": [
@@ -108,7 +106,7 @@
             ]
         },
         "slot_13": {
-            "action": "Ice Block",
+            "action": "Call Action List,Name=Cd Opener",
             "key": "Shift+F19",
             "min_resource": 0,
             "conditions": [
@@ -116,7 +114,7 @@
             ]
         },
         "slot_14": {
-            "action": "Prismatic Barrier",
+            "action": "Call Action List,Name=Cd Opener Soul",
             "key": "Shift+HOME",
             "min_resource": 0,
             "conditions": [
@@ -124,7 +122,7 @@
             ]
         },
         "slot_15": {
-            "action": "Greater Invisibility",
+            "action": "Call Action List,Name=Sunfury",
             "key": "Shift+END",
             "min_resource": 0,
             "conditions": [
@@ -132,7 +130,7 @@
             ]
         },
         "slot_16": {
-            "action": "Shimmer",
+            "action": "Call Action List,Name=Spellslinger",
             "key": "Shift+DELETE",
             "min_resource": 0,
             "conditions": [
@@ -140,7 +138,7 @@
             ]
         },
         "slot_17": {
-            "action": "Alter Time",
+            "action": "Touch Of The Magi,Use Off Gcd=1",
             "key": "Ctrl+F13",
             "min_resource": 0,
             "conditions": [
@@ -148,7 +146,7 @@
             ]
         },
         "slot_18": {
-            "action": "Mirror Image",
+            "action": "Wait,Sec=0.05",
             "key": "Ctrl+F16",
             "min_resource": 0,
             "conditions": [
@@ -156,7 +154,7 @@
             ]
         },
         "slot_19": {
-            "action": "Frost Nova",
+            "action": "Arcane Orb",
             "key": "Ctrl+F17",
             "min_resource": 0,
             "conditions": [
@@ -164,7 +162,7 @@
             ]
         },
         "slot_20": {
-            "action": "Cone of Cold",
+            "action": "Arcane Missiles",
             "key": "Ctrl+F18",
             "min_resource": 0,
             "conditions": [
@@ -172,7 +170,7 @@
             ]
         },
         "slot_21": {
-            "action": "Dragon's Breath",
+            "action": "Touch Of The Magi",
             "key": "Ctrl+F19",
             "min_resource": 0,
             "conditions": [
@@ -180,15 +178,16 @@
             ]
         },
         "slot_22": {
-            "action": "Remove Curse",
+            "action": "Shifting Power",
             "key": "Ctrl+HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_arcane_surge_up"
             ]
         },
         "slot_23": {
-            "action": "Spellsteal",
+            "action": "Cancel Buff,Name=Presence Of Mind,Use Off Gcd=1",
             "key": "Ctrl+END",
             "min_resource": 0,
             "conditions": [
@@ -196,71 +195,143 @@
             ]
         },
         "slot_24": {
-            "action": "Mass Barrier",
+            "action": "Presence Of Mind",
             "key": "Ctrl+DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "buff_nether_precision_up"
             ]
         },
         "slot_25": {
-            "action": "Counterspell",
+            "action": "Supernova",
             "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "interruptible"
-            ]
-        },
-        "slot_26": {
-            "action": "Polymorph",
-            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         },
-        "slot_27": {
-            "action": "Ring of Frost",
-            "key": "Alt+F17",
+        "slot_26": {
+            "action": "Arcane Explosion",
+            "key": "Alt+F16",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
+    "priorities": {
+        "raid": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
             "slot_04",
             "slot_05",
-            "slot_02",
-            "slot_01",
-            "slot_03"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_26",
             "slot_06",
-            "slot_05",
-            "slot_02",
-            "slot_01"
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
         ],
         "mythic": [
-            "slot_11",
+            "slot_01",
+            "slot_02",
+            "slot_03",
             "slot_04",
             "slot_05",
             "slot_06",
-            "slot_03"
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
         ],
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_06"
-            ],
-            "sequence": [
-                "slot_05",
-                "slot_06",
-                "slot_01",
-                "slot_03"
-            ]
-        }
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11",
+            "slot_12",
+            "slot_13",
+            "slot_14",
+            "slot_15",
+            "slot_16",
+            "slot_17",
+            "slot_18",
+            "slot_19",
+            "slot_20",
+            "slot_21",
+            "slot_22",
+            "slot_23",
+            "slot_24",
+            "slot_25",
+            "slot_26"
+        ]
     }
 }

@@ -3,15 +3,13 @@
     "spec_name": "Discipline Priest",
     "resource_type": "mana",
     "secondary_resource": "none",
+    "generated_from": "SimC APL (thewarwithin)",
     "talent_loadouts": {
-        "discipline_mythic": "CAQAAAAAAAAAAAAAAAAAAAAAAAglZmZMGjxMzYmNz2MzMzMAAAAAAAAAAAzysMbDmZGMLMmxYMYhtZaMxyAzMAQAmtZbBM2sBAA",
-        "discipline_raid": "CAQAAAAAAAAAAAAAAAAAAAAAAAgNzMjHYmZMzMzYmN2mZmZmBAAAAAAAAAAYWmlZbwMzgZhxMMjBLsNTjJWGYmBACwsNbLgxmNAA",
-        "discipline_delve": "CAQAAAAAAAAAAAAAAAAAAAAAAAglZmZMGjxMzYmNz2MzMzMAAAAAAAAAAAzysMbDmZGMLMmxYMYhtZaMxyAzMAQAmtZbBM2sBAA",
-        "discipline_pvp": "CAQAAAAAAAAAAAAAAAAAAAAAAADsxMDmZMzMPwYmtZwMjZmZAAAAAAAAAAwsNLzGjZmBwsYMGDz2Gz0YilZGmZAgAMLz2CYsZDAA"
+        "default": {}
     },
     "universal_slots": {
         "slot_01": {
-            "action": "Power Word: Shield",
+            "action": "Smite",
             "key": "F13",
             "min_resource": 0,
             "conditions": [
@@ -19,7 +17,7 @@
             ]
         },
         "slot_02": {
-            "action": "Penance",
+            "action": "Purge The Wicked",
             "key": "F16",
             "min_resource": 0,
             "conditions": [
@@ -27,7 +25,7 @@
             ]
         },
         "slot_03": {
-            "action": "Purge the Wicked",
+            "action": "Shadow Word Pain",
             "key": "F17",
             "min_resource": 0,
             "conditions": [
@@ -35,25 +33,23 @@
             ]
         },
         "slot_04": {
-            "action": "Smite",
+            "action": "Shadow Word Death",
             "key": "F18",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 0.5
+            ]
         },
         "slot_05": {
-            "action": "Mind Blast",
+            "action": "Penance",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
-            ],
-            "cooldown": 9.0
+            ]
         },
         "slot_06": {
-            "action": "Power Word: Radiance",
+            "action": "Mind Blast",
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
@@ -61,7 +57,7 @@
             ]
         },
         "slot_07": {
-            "action": "Flash Heal",
+            "action": "Halo",
             "key": "END",
             "min_resource": 0,
             "conditions": [
@@ -69,7 +65,7 @@
             ]
         },
         "slot_08": {
-            "action": "Shadow Covenant",
+            "action": "Divine Star",
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
@@ -77,7 +73,7 @@
             ]
         },
         "slot_09": {
-            "action": "Mindgames",
+            "action": "Shadowfiend",
             "key": "Shift+F13",
             "min_resource": 0,
             "conditions": [
@@ -85,7 +81,7 @@
             ]
         },
         "slot_10": {
-            "action": "Shadow Word: Death",
+            "action": "Mindbender",
             "key": "Shift+F16",
             "min_resource": 0,
             "conditions": [
@@ -93,172 +89,66 @@
             ]
         },
         "slot_11": {
-            "action": "Halo",
-            "key": "Shift+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_12": {
-            "action": "Power Word: Barrier",
-            "key": "Shift+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_13": {
-            "action": "Rapture",
-            "key": "Shift+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_14": {
-            "action": "Pain Suppression",
-            "key": "Shift+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_15": {
-            "action": "Power Word: Life",
-            "key": "Shift+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_16": {
-            "action": "Evangelism",
-            "key": "Shift+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_17": {
-            "action": "Ultimate Penitence",
-            "key": "Ctrl+F13",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_18": {
-            "action": "Desperate Prayer",
-            "key": "Ctrl+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_19": {
             "action": "Power Infusion",
-            "key": "Ctrl+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 120.0
-        },
-        "slot_20": {
-            "action": "Mass Dispel",
-            "key": "Ctrl+F18",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_21": {
-            "action": "Purify",
-            "key": "Ctrl+F19",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_22": {
-            "action": "Fade",
-            "key": "Ctrl+HOME",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_23": {
-            "action": "Angelic Feather",
-            "key": "Ctrl+END",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_24": {
-            "action": "Leap of Faith",
-            "key": "Ctrl+DELETE",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_25": {
-            "action": "Psychic Scream",
-            "key": "Alt+F13",
-            "min_resource": 0,
-            "conditions": [
-                "interruptible"
-            ]
-        },
-        "slot_26": {
-            "action": "Dispel Magic",
-            "key": "Alt+F16",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_27": {
-            "action": "Void Tendrils",
-            "key": "Alt+F17",
-            "min_resource": 0,
-            "conditions": [
-                "target_valid"
-            ]
-        },
-        "slot_28": {
-            "action": "Dominate Mind",
-            "key": "Alt+F18",
+            "key": "Shift+F17",
             "min_resource": 0,
             "conditions": [
                 "target_valid"
             ]
         }
     },
-    "proc_priority": {
-        "rotation": [
-            "slot_03",
-            "slot_02",
-            "slot_05",
-            "slot_04"
-        ],
-        "pvp": [
-            "slot_25",
-            "slot_26",
-            "slot_20",
-            "slot_02",
+    "priorities": {
+        "raid": [
             "slot_01",
-            "slot_03"
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11"
         ],
         "mythic": [
-            "slot_11",
-            "slot_06",
+            "slot_01",
             "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
             "slot_09",
-            "slot_03"
+            "slot_10",
+            "slot_11"
+        ],
+        "delve": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11"
+        ],
+        "pvp": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_05",
+            "slot_06",
+            "slot_07",
+            "slot_08",
+            "slot_09",
+            "slot_10",
+            "slot_11"
         ]
     }
 }
