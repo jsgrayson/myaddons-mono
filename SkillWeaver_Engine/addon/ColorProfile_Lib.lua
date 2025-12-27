@@ -351,8 +351,8 @@ SW_Frame:SetScript("OnUpdate", function()
             charges2 = GetCharges(100) * 50
         elseif specId == 12 then -- Fury Warrior: Charge
             charges2 = GetCharges(100) * 50
-        elseif specId == 13 then -- Protection Warrior: Shield Slam (not really charges, skip)
-            charges2 = 0
+        elseif specId == 13 then -- Protection Warrior: Charge
+            charges2 = GetCharges(100) * 50
         end
         SetPixel(26, charges2)
 
