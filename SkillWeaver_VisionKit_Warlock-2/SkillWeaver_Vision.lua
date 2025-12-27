@@ -41,8 +41,8 @@ f:SetScript("OnUpdate", function()
 
     -- 1: SPEC HASH
     local _, _, classID = UnitClass("player")
-    local specID = GetSpecialization() or 0
-    SetPixel(1, (classID * 10) + specID)
+    local specIndex = GetSpecialization() or 1
+    SetPixel(1, (classID * 10) + specIndex)
 
     -- 2: COMBAT
     SetPixel(2, UnitAffectingCombat("player") and 255 or 0)
@@ -68,11 +68,13 @@ f:SetScript("OnUpdate", function()
 
     -- 16: DEBUFF MASK (Root/Snare/Scatter)
     local debuffState = 0
-    for i=1,40 do
-        local _, _, _, _, _, _, _, _, _, id = UnitDebuff("player", i)
-        if not id then break end
-        if id == 339 then debuffState = bit.bor(debuffState, 1) end -- Root example
-        if id == 213691 then debuffState = bit.bor(debuffState, 4) end -- Scatter
+    if C_UnitAuras then
+        for i=1,40 do
+            local aura = C_UnitAuras.GetAuraDataByIndex("player", i, "HARMFUL")
+            if not aura then break end
+            if aura.spellId == 339 then debuffState = bit.bor(debuffState, 1) end -- Root example
+            if aura.spellId == 213691 then debuffState = bit.bor(debuffState, 4) end -- Scatter
+        end
     end
     SetPixel(16, debuffState * 10)
 
@@ -85,10 +87,12 @@ f:SetScript("OnUpdate", function()
 
     -- 30: SNAPSHOT (DoT Power)
     local snap = 0
-    for i=1,40 do
-        local _, _, _, _, _, _, _, _, _, id = UnitBuff("player", i)
-        if not id then break end
-        if SNAP_BUFFS[id] then snap = 255 break end
+    if C_UnitAuras then
+        for i=1,40 do
+            local aura = C_UnitAuras.GetAuraDataByIndex("player", i, "HELPFUL")
+            if not aura then break end
+            if SNAP_BUFFS[aura.spellId] then snap = 255 break end
+        end
     end
     SetPixel(30, snap)
 

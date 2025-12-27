@@ -228,19 +228,12 @@
         }
     },
     "proc_priority": {
-        "heartbeat_loop": [
-            "slot_03"
-        ],
-        "mitigation_loop": [
-            "slot_01",
-            "slot_08",
-            "slot_15"
-        ],
-        "rotation_loop": [
-            "slot_05",
+        "rotation": [
             "slot_04",
+            "slot_01",
             "slot_02",
-            "slot_06"
+            "slot_03",
+            "slot_05"
         ]
     }
 }

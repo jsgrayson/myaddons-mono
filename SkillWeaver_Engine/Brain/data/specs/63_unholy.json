@@ -15,7 +15,7 @@
             "key": "F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "wounds_lt_4"
             ]
         },
         "slot_02": {
@@ -23,15 +23,15 @@
             "key": "F16",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "wound_on_target"
             ]
         },
         "slot_03": {
             "action": "Death Coil",
             "key": "F17",
-            "min_resource": 30,
+            "min_resource": 60,
             "conditions": [
-                "target_valid"
+                "runic_power_high_or_proc"
             ]
         },
         "slot_04": {
@@ -39,15 +39,16 @@
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
-            ]
+                "refresh_dot:0"
+            ],
+            "cooldown": 1.5
         },
         "slot_05": {
             "action": "Apocalypse",
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "wounds_gte_4"
             ],
             "cooldown": 60.0
         },
@@ -295,14 +296,17 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_04",
+            "slot_01",
+            "slot_05",
+            "slot_02",
+            "slot_03"
+        ],
         "apocalypse_setup": [
             "slot_01",
             "slot_04",
             "slot_06"
-        ],
-        "rotation": [
-            "slot_03",
-            "slot_02"
         ]
     }
 }

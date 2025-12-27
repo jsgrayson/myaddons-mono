@@ -294,15 +294,27 @@
         }
     },
     "proc_priority": {
-        "storm_loop": [
+        "rotation": [
             "slot_01",
-            "slot_03",
-            "slot_02"
-        ],
-        "aoe": [
             "slot_06",
+            "slot_02",
+            "slot_03",
+            "slot_11"
+        ],
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_07"
+            ],
+            "sequence": [
+                "slot_07",
+                "slot_08",
+                "slot_01"
+            ]
+        },
+        "aoe": [
+            "slot_05",
             "slot_09",
-            "slot_03"
+            "slot_01"
         ]
     }
 }

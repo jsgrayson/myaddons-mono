@@ -271,16 +271,25 @@
         }
     },
     "proc_priority": {
-        "essence_break_window": [
+        "rotation": [
+            "slot_03",
             "slot_02",
-            "slot_06",
-            "slot_02",
-            "slot_01"
-        ],
-        "demonic_form": [
             "slot_04",
-            "slot_02",
-            "slot_01"
-        ]
+            "slot_06",
+            "slot_01",
+            "slot_08"
+        ],
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_05"
+            ],
+            "sequence": [
+                "slot_05",
+                "slot_04",
+                "slot_06",
+                "slot_02",
+                "slot_01"
+            ]
+        }
     }
 }

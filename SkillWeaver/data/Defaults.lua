@@ -59,12 +59,16 @@ function SW.Defaults:InitDB()
         return t
     end
 
-    -- 1. Ensure DB Table
+    -- 1. Ensure DB Table and Version
     if not SkillWeaverDB.version then 
-        for k,v in pairs(SkillWeaverDefaults) do
+        SkillWeaverDB.version = SkillWeaverDefaults.version
+    end
+
+    -- Preserve existing data (synced via Python) while adding defaults
+    for k,v in pairs(SkillWeaverDefaults) do
+        if SkillWeaverDB[k] == nil then
             SkillWeaverDB[k] = deepCopy(v)
         end
-        SkillWeaverDB.version = SkillWeaverDefaults.version
     end
 
     -- 2. Force Enable

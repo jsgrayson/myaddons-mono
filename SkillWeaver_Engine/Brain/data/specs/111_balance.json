@@ -80,18 +80,18 @@
             "key": "F22",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "refresh_dot:0"
             ],
-            "cooldown": 10.0
+            "cooldown": 1.5
         },
         "slot_10": {
             "action": "Sunfire",
             "key": "F23",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "refresh_dot:1"
             ],
-            "cooldown": 10.0
+            "cooldown": 1.5
         },
         "slot_11": {
             "action": "Stellar Flare",
@@ -231,16 +231,19 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_09",
+            "slot_10",
+            "slot_03",
+            "slot_04",
+            "slot_01",
+            "slot_02"
+        ],
         "eclipse_maintenance": [
             "slot_06",
             "slot_07",
             "slot_01",
             "slot_02"
-        ],
-        "rotation": [
-            "slot_04",
-            "slot_03",
-            "slot_01"
         ]
     }
 }

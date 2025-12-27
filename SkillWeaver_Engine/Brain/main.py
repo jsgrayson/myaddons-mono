@@ -103,6 +103,7 @@ class SkillWeaverEngine:
         # GCD / Casting State (Using perf_counter for precision)
         self._gcd_until = 0
         self._channel_until = 0
+        self._last_gcd_log = 0  # Rate limit GCD blocked messages
 
         # Execution Queue (Worker prevents blocking the Quartz callback)
         self.cmd_queue = queue.Queue()
@@ -127,9 +128,37 @@ class SkillWeaverEngine:
                     time.sleep(delay)
 
                 if flick_data:
-                    dx, dy = flick_data
-                    self.bridge.send_flick(byte, dx, dy)
-                    print(f"[TX] {action} (AIMED) | dx={dx}, dy={dy}")
+                    target_x, target_y = flick_data  # Absolute target position
+                    
+                    import Quartz
+                    from Quartz import CGEventCreateMouseEvent, CGEventPost, kCGEventMouseMoved, kCGEventLeftMouseDown, kCGEventLeftMouseUp, kCGHIDEventTap, CGPoint
+                    
+                    # Get current position for return
+                    cursor_loc = Quartz.CGEventGetLocation(Quartz.CGEventCreate(None))
+                    orig_x, orig_y = cursor_loc.x, cursor_loc.y
+                    
+                    # Create and post mouse move event to target position
+                    move_event = CGEventCreateMouseEvent(None, kCGEventMouseMoved, CGPoint(target_x, target_y), 0)
+                    CGEventPost(kCGHIDEventTap, move_event)
+                    time.sleep(0.03)
+                    
+                    # Send spell key via Arduino (activates reticle)
+                    self.bridge.send_pulse(byte)
+                    time.sleep(0.10)  # Wait for reticle to appear
+                    
+                    # Click at target position using Quartz events
+                    click_down = CGEventCreateMouseEvent(None, kCGEventLeftMouseDown, CGPoint(target_x, target_y), 0)
+                    click_up = CGEventCreateMouseEvent(None, kCGEventLeftMouseUp, CGPoint(target_x, target_y), 0)
+                    CGEventPost(kCGHIDEventTap, click_down)
+                    time.sleep(0.02)
+                    CGEventPost(kCGHIDEventTap, click_up)
+                    time.sleep(0.03)
+                    
+                    # Return cursor to original position
+                    return_event = CGEventCreateMouseEvent(None, kCGEventMouseMoved, CGPoint(orig_x, orig_y), 0)
+                    CGEventPost(kCGHIDEventTap, return_event)
+                    
+                    print(f"[TX] {action} (AIMED) | Warped to ({target_x:.0f}, {target_y:.0f})")
                 else:
                     self.bridge.send_pulse(byte)
                     power_val = task.get('power', 0)
@@ -180,18 +209,24 @@ class SkillWeaverEngine:
             "hp": min(100.0, self.decode_px(row, 3) / 255.0 * 100),
             "thp": min(100.0, self.decode_px(row, 4) / 255.0 * 100),
             "power": min(100.0, self.decode_px(row, 7) / 255.0 * 100),
-            "sec": int(round(self.decode_px(row, 8) / 25.0)),
+            "secondary_power": int(round(self.decode_px(row, 8) / 25.0)),
+            "sec": int(round(self.decode_px(row, 8) / 25.0)), # Keep for backwards compat
             "target_valid": self.decode_px(row, 5) > 128,
             "range": int(self.decode_px(row, 6) / 4.25),
             "interruptible": self.decode_px(row, 18) > 128,
             "stealthed": self.decode_px(row, 19) > 128,
             "nearby_enemies_count": int(self.decode_px(row, 9) / 25.0),
-            # Pure Pixel Dots
-            "dots": [self.decode_px(row, i) / 10.0 for i in range(11, 26)],
+            # Pure Pixel Dots (P11=DoT0, P12=DoT1, P13=DoT2) - scaled by 10
+            "dots": [self.decode_px(row, 11) / 10.0, 
+                     self.decode_px(row, 12) / 10.0, 
+                     self.decode_px(row, 13) / 10.0],
             "target_dot_remaining": self.decode_px(row, 11) / 10.0,
+            # Proc Detection (P14 = Mind Blast reset proc)
+            "mb_reset_proc": self.decode_px(row, 14) > 128,
+            "mode": ["raid", "mythic", "delve", "pvp"][int(min(3, self.decode_px(row, 10) / 64))], # Mode on P10
             "plater_anchor": self.decode_px(row, 16) > 200, 
             "enemies_missing_dots": int(self.decode_px(row, 20) / 25.0),
-            "should_tab_target": self.decode_px(row, 21) > 128,
+            "total_hostile_plates": int(self.decode_px(row, 21) / 25.0),
             "_raw_width": len(row),
             "_raw_row": row
         }
@@ -214,7 +249,10 @@ class SkillWeaverEngine:
                     now = time.perf_counter()
                     gcd_remaining = self._gcd_until - now
                     if now < self._gcd_until:
-                        print(f"[GCD] BLOCKED - {gcd_remaining:.2f}s remaining")
+                        # Rate limit: only log every 500ms
+                        if now - self._last_gcd_log > 0.5:
+                            print(f"[GCD] BLOCKED - {gcd_remaining:.2f}s remaining")
+                            self._last_gcd_log = now
                         return None
                     if now < self._channel_until:
                         return None
@@ -230,9 +268,9 @@ class SkillWeaverEngine:
                     dots = state.get('dots', [0,0,0])
 
                     # Log state for debugging
-                    print(f"\n[BRAIN] Spec:{state['hash']:.0f} | HP:{state['hp']:.0f}% | THP:{state['thp']:.0f}% | Anchor:{'YES' if state['plater_anchor'] else 'no'} | Target:{'VALID' if state['target_valid'] else 'absent'}")
+                    print(f"\n[BRAIN] Spec:{state['hash']:.0f} | HP:{state['hp']:.0f}% | THP:{state['thp']:.0f}% | Res:{state['power']:.0f}% | Sec:{state['secondary_power']}")
                     print(f"[DOTS] VT:{dots[0]:.1f}s | SWP:{dots[1]:.1f}s | DP:{dots[2]:.1f}s")
-                    print(f"[CLEAVE] Missing:{state.get('enemies_missing_dots', 0)} | Plates:{int(self.decode_px(state['_raw_row'], 21) / 25)}")
+                    print(f"[CLEAVE] Missing:{state.get('enemies_missing_dots', 0)} | Plates:{state.get('total_hostile_plates', 0)}")
                     
                     if dots[0] == 0:
                         # Extra diagnostics: Show the first 32 physical pixels
@@ -247,13 +285,24 @@ class SkillWeaverEngine:
                     if int(state['hash'] + 0.5) != self.active_spec:
                         self.load_rotation(state['hash'])
                     
-                    # 2. CLEAVE / MULTI-DOT (DISABLED - was spamming TAB)
-                    # TODO: Re-enable when TAB logic is fixed
-                    # now_tab = time.perf_counter()
-                    # tab_ready = (now_tab - getattr(self, '_last_tab_time', 0)) > 2.0
-                    # if tab_ready and self.active_spec and self.state_engine.check_cleave_snap_back(state, self.active_spec):
-                    #     ...
-                    pass  # Cleave disabled
+                    # 2. CLEAVE / MULTI-DOT (RE-ENABLED with 3s cooldown)
+                    # Only TAB if enemies are missing DoTs and current target is healthy
+                    TAB_COOLDOWN = 3.0  # seconds
+                    now_tab = time.perf_counter()
+                    tab_ready = (now_tab - getattr(self, '_last_tab_time', 0)) > TAB_COOLDOWN
+                    
+                    if tab_ready and self.active_spec and self.bridge_connected:
+                        if self.state_engine.check_cleave_snap_back(state, self.active_spec):
+                            # Send TAB
+                            tab_byte = KEY_MAP.get('TAB')
+                            if tab_byte:
+                                self._last_tab_time = now_tab
+                                self.bridge.send_pulse(tab_byte)
+                                print(f"[CLEAVE] TAB sent - next press will DoT new target")
+                                # Reset GCD lock so next keypress re-reads fresh state
+                                with self.lock:
+                                    self._gcd_until = 0
+                                return None  # Exit callback - next keypress will read new target
 
                     if self.active_spec:
                         optimal = self.state_engine.get_optimal_action(state)

@@ -23,7 +23,7 @@
             "key": "F16",
             "min_resource": 35,
             "conditions": [
-                "target_valid"
+                "combo_points_gte_5"
             ]
         },
         "slot_03": {
@@ -39,15 +39,16 @@
             "key": "F18",
             "min_resource": 25,
             "conditions": [
-                "target_valid"
-            ]
+                "combo_points_gte_5"
+            ],
+            "cooldown": 45.0
         },
         "slot_05": {
             "action": "Ambush",
             "key": "F19",
             "min_resource": 50,
             "conditions": [
-                "target_valid"
+                "stealth"
             ]
         },
         "slot_06": {
@@ -284,40 +285,22 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_07",
+            "slot_04",
+            "slot_02",
+            "slot_01",
+            "slot_03"
+        ],
         "burst_window": {
             "factors": [
-                "cooldown_ready_slot_06",
-                "energy_lt_max"
+                "cooldown_ready_slot_08"
             ],
             "sequence": [
-                "slot_05",
-                "slot_06",
                 "slot_08",
                 "slot_07",
-                "slot_09",
-                "slot_03",
-                "slot_04"
-            ]
-        },
-        "opportunity_proc": [
-            "slot_02",
-            "slot_01"
-        ],
-        "mode_priorities": {
-            "DUNGEON": [
-                "slot_07",
-                "slot_05",
-                "slot_03",
                 "slot_04",
                 "slot_02"
-            ],
-            "RAID": [
-                "slot_05",
-                "slot_03",
-                "slot_04",
-                "slot_02",
-                "slot_08",
-                "slot_01"
             ]
         }
     }

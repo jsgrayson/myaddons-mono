@@ -45,7 +45,7 @@
             "conditions": [
                 "target_valid"
             ],
-            "cooldown": 3.0,
+            "cooldown": 9.0,
             "cast_time": 1.5
         },
         "slot_05": {
@@ -84,9 +84,10 @@
             "key": "SHIFT+F13",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "target_valid",
+                "multi_target"
             ],
-            "cooldown": 30.0,
+            "cooldown": 15.0,
             "requires_aim": true
         },
         "slot_10": {
@@ -216,8 +217,17 @@
             "slot_04"
         ],
         "rotation": [
+            "slot_08",
+            "slot_06",
+            "slot_09",
+            "slot_04",
             "slot_01",
-            "slot_02",
+            "slot_03",
+            "slot_05"
+        ],
+        "execute_phase": [
+            "slot_06",
+            "slot_08",
             "slot_04",
             "slot_03",
             "slot_05"

@@ -23,25 +23,26 @@
             "key": "F16",
             "min_resource": 35,
             "conditions": [
-                "target_valid"
+                "refresh_dot:0"
             ],
-            "cooldown": 10.0
+            "cooldown": 1.5
         },
         "slot_03": {
             "action": "Rip",
             "key": "F17",
             "min_resource": 20,
             "conditions": [
-                "target_valid"
+                "refresh_dot:1",
+                "combo_points_gte_4"
             ],
-            "cooldown": 12.0
+            "cooldown": 1.5
         },
         "slot_04": {
             "action": "Ferocious Bite",
             "key": "F18",
             "min_resource": 25,
             "conditions": [
-                "target_valid"
+                "combo_points_gte_5"
             ]
         },
         "slot_05": {
@@ -232,14 +233,16 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_01",
+            "slot_06"
+        ],
         "execution": [
             "slot_04",
             "slot_03"
-        ],
-        "rotation": [
-            "slot_01",
-            "slot_06",
-            "slot_02"
         ]
     }
 }

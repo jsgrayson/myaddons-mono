@@ -3,6 +3,7 @@
     "spec_name": "Fury Warrior",
     "resource_type": "rage",
     "secondary_resource": "enrage_state",
+    "execute_threshold": 35,
     "talent_loadouts": {
         "fury_mythic": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQjBmNzMMjBzswMzMzMMDzstNzYmZWAmZmxMjlhhZmZAAAQM22GYBMgZYCMDbA",
         "fury_raid": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQjhZmNzMMjBzswMzMmhZYmttxYmZWwMmZmxMzsMM8AmZAAAQM22GYBMgZYCMYDA",
@@ -39,7 +40,7 @@
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "execute_range"
             ]
         },
         "slot_05": {

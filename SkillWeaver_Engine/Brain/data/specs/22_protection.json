@@ -31,7 +31,7 @@
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "holy_power_gte_3"
             ]
         },
         "slot_04": {
@@ -55,7 +55,7 @@
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "execute_range_or_proc"
             ]
         },
         "slot_07": {
@@ -277,17 +277,17 @@
         }
     },
     "proc_priority": {
-        "tanking_loop": [
-            "slot_05",
-            "slot_03",
+        "rotation": [
             "slot_04",
             "slot_02",
-            "slot_01"
+            "slot_01",
+            "slot_03",
+            "slot_05"
         ],
-        "interruption": [
-            "slot_11",
+        "execute_phase": [
+            "slot_06",
             "slot_04",
-            "slot_24"
+            "slot_02"
         ]
     }
 }

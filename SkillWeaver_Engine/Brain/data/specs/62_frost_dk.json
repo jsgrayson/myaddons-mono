@@ -296,38 +296,21 @@
         }
     },
     "proc_priority": {
-        "burst_window": {
-            "factors": [
-                "cooldown_ready_slot_07",
-                "resource_gte_90"
-            ],
-            "sequence": [
-                "slot_04",
-                "slot_07",
-                "slot_05",
-                "slot_01",
-                "slot_02"
-            ]
-        },
-        "breath_active": [
+        "rotation": [
+            "slot_02",
             "slot_04",
             "slot_01",
-            "slot_02",
-            "slot_08",
-            "slot_24"
+            "slot_03"
         ],
-        "mode_priorities": {
-            "DUNGEON": [
-                "slot_04",
-                "slot_06",
-                "slot_02",
-                "slot_01"
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_05"
             ],
-            "RAID": [
+            "sequence": [
+                "slot_05",
+                "slot_06",
                 "slot_04",
-                "slot_01",
-                "slot_02",
-                "slot_03"
+                "slot_01"
             ]
         }
     }

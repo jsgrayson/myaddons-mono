@@ -5,29 +5,31 @@
 ## Version: 0.9.7
 ## SavedVariables: SkillWeaverDB
 
-# --- LOCALE ---
-Locale/enUS.lua
-
-# --- DATA (LOAD THIS FIRST) ---
-data/Defaults.lua
-data/Fallbacks.lua
-data/SpecPackLoader.lua
-data/ClassPacks.lua
-data/TalentSuggestions.lua
-data/Classes/ALL.lua
-
-# --- CORE ---
+# Core Initialization
 core/Init.lua
+data/Defaults.lua
+
+# Data & Suggestions
+data/TalentSuggestions.lua
+data/ClassPacks.lua
+data/SpecPackLoader.lua
+data/Fallbacks.lua
+data/SpecRotations.lua
+
+# Core Modules
 core/State.lua
 core/Profiles.lua
+core/Bindings.lua
+core/SecureButtons.lua
 core/Decision.lua
 core/Engine.lua
-core/SecureButtons.lua
-core/Bindings.lua
+core/TalentLoader.lua
 
-# --- UI ---
+# UI Components
 ui/Style.lua
-ui/TalentModal.lua
-ui/Menu.lua
 ui/Panel.lua
-ui/Minimap.lua
+ui/TalentModal.lua
+
+# Main Addon Logic
+Skillweaver.lua
+Skillweaver.xml

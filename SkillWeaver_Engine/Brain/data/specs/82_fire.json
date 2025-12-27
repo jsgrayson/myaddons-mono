@@ -3,6 +3,7 @@
     "spec_name": "Fire Mage",
     "resource_type": "mana",
     "secondary_resource": "fire_blast_charges",
+    "execute_threshold": 30,
     "talent_loadouts": {
         "fire_mythic": "C8DAAAAAAAAAAAAAAAAAAAAAAMzgZbGMzYmZxAjZMNmZMDAAAAAADAYmZaZWWmBAYzYGMmZMzYWMLjhZGmZbGLzsMMAAAAAAA",
         "fire_raid": "C8DAAAAAAAAAAAAAAAAAAAAAAYMMbzgZ8AjZxwYmhpxMjZAAAAAAYAAzMTLzyyMAAbGzgxMjZGziZZMMzwMbzwMLDDAAAAAAA",
@@ -32,7 +33,7 @@
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "proc_hot_streak"
             ]
         },
         "slot_04": {
@@ -48,7 +49,7 @@
             "key": "F19",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "execute_range"
             ]
         },
         "slot_06": {
@@ -230,20 +231,22 @@
         }
     },
     "proc_priority": {
-        "combustion_phase": [
-            "slot_02",
+        "rotation": [
             "slot_03",
+            "slot_02",
             "slot_04",
-            "slot_06"
-        ],
-        "normal_rotation": [
-            "slot_03",
-            "slot_02",
             "slot_01"
         ],
-        "mobility": [
-            "slot_17",
-            "slot_06"
+        "execute_phase": [
+            "slot_05",
+            "slot_03",
+            "slot_02"
+        ],
+        "combustion_phase": [
+            "slot_06",
+            "slot_02",
+            "slot_03",
+            "slot_04"
         ]
     }
 }

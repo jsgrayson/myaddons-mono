@@ -228,12 +228,7 @@
         }
     },
     "proc_priority": {
-        "void_form": [
-            "slot_04",
-            "slot_03",
-            "slot_02"
-        ],
-        "normal_rotation": [
+        "rotation": [
             "slot_02",
             "slot_01",
             "slot_04",

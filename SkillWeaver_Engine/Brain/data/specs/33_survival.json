@@ -56,7 +56,7 @@
             "key": "HOME",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "execute_range"
             ]
         },
         "slot_07": {
@@ -301,16 +301,27 @@
         }
     },
     "proc_priority": {
-        "mongoose_window": [
-            "slot_05",
-            "slot_03",
-            "slot_08",
-            "slot_01"
-        ],
-        "bomb_cycle": [
+        "rotation": [
+            "slot_01",
             "slot_02",
-            "slot_04",
-            "slot_06"
-        ]
+            "slot_03",
+            "slot_10"
+        ],
+        "execute_phase": [
+            "slot_06",
+            "slot_01",
+            "slot_03"
+        ],
+        "burst_window": {
+            "factors": [
+                "cooldown_ready_slot_07"
+            ],
+            "sequence": [
+                "slot_07",
+                "slot_08",
+                "slot_03",
+                "slot_01"
+            ]
+        }
     }
 }

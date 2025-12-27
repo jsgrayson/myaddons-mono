@@ -228,19 +228,12 @@
         }
     },
     "proc_priority": {
-        "mitigation_loop": [
-            "slot_04",
-            "slot_05"
-        ],
-        "rotation_loop": [
+        "rotation": [
             "slot_01",
             "slot_03",
             "slot_06",
-            "slot_02"
-        ],
-        "utility_check": [
-            "slot_19",
-            "slot_18"
+            "slot_02",
+            "slot_08"
         ]
     }
 }

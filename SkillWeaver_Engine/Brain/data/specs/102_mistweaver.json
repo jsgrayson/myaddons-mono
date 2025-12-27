@@ -39,7 +39,7 @@
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "refresh_hot:0"
             ]
         },
         "slot_05": {
@@ -71,7 +71,7 @@
             "key": "DELETE",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "teachings_stacks_high"
             ]
         },
         "slot_09": {
@@ -228,15 +228,31 @@
         }
     },
     "proc_priority": {
-        "fistweaving": [
-            "slot_03",
-            "slot_02",
-            "slot_01"
-        ],
-        "healing": [
+        "rotation": [
+            "slot_06",
+            "slot_08",
             "slot_07",
-            "slot_04",
-            "slot_06"
-        ]
+            "slot_04"
+        ],
+        "mode_rotations": {
+            "DUNGEON": [
+                "slot_06",
+                "slot_08",
+                "slot_07",
+                "slot_09"
+            ],
+            "DELVE": [
+                "slot_06",
+                "slot_08",
+                "slot_07",
+                "slot_09"
+            ],
+            "RAID": [
+                "slot_04",
+                "slot_02",
+                "slot_03",
+                "slot_06"
+            ]
+        }
     }
 }

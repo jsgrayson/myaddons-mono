@@ -23,7 +23,7 @@
             "key": "F16",
             "min_resource": 40,
             "conditions": [
-                "target_valid"
+                "stealth"
             ]
         },
         "slot_03": {
@@ -31,7 +31,7 @@
             "key": "F17",
             "min_resource": 35,
             "conditions": [
-                "target_valid"
+                "combo_points_gte_5"
             ]
         },
         "slot_04": {
@@ -39,9 +39,9 @@
             "key": "F18",
             "min_resource": 25,
             "conditions": [
-                "target_valid"
-            ],
-            "cooldown": 12.0
+                "refresh_dot:0",
+                "combo_points_gte_5"
+            ]
         },
         "slot_05": {
             "action": "Shuriken Storm",
@@ -278,30 +278,21 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_02",
+            "slot_04",
+            "slot_03",
+            "slot_01"
+        ],
         "burst_window": {
             "factors": [
-                "cooldown_ready_slot_08",
-                "energy_gte_80",
-                "combo_points_gte_5"
+                "cooldown_ready_slot_08"
             ],
             "sequence": [
-                "slot_06",
-                "slot_07",
                 "slot_08",
-                "slot_02"
-            ]
-        },
-        "stealth_override": [
-            "slot_02"
-        ],
-        "mode_priorities": {
-            "DUNGEON": [
-                "slot_04",
-                "slot_05"
-            ],
-            "RAID": [
-                "slot_03",
-                "slot_05"
+                "slot_09",
+                "slot_02",
+                "slot_03"
             ]
         }
     }

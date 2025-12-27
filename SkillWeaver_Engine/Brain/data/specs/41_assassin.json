@@ -23,25 +23,26 @@
             "key": "F16",
             "min_resource": 45,
             "conditions": [
-                "target_valid"
+                "refresh_dot:0"
             ],
-            "cooldown": 15.0
+            "cooldown": 1.5
         },
         "slot_03": {
             "action": "Rupture",
             "key": "F17",
             "min_resource": 25,
             "conditions": [
-                "target_valid"
+                "refresh_dot:1",
+                "combo_points_gte_4"
             ],
-            "cooldown": 12.0
+            "cooldown": 1.5
         },
         "slot_04": {
             "action": "Envenom",
             "key": "F18",
             "min_resource": 35,
             "conditions": [
-                "target_valid"
+                "combo_points_gte_4"
             ]
         },
         "slot_05": {
@@ -49,7 +50,7 @@
             "key": "F19",
             "min_resource": 50,
             "conditions": [
-                "target_valid"
+                "stealth"
             ]
         },
         "slot_06": {
@@ -278,18 +279,17 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_02",
+            "slot_03",
+            "slot_04",
+            "slot_01",
+            "slot_05"
+        ],
         "kingsbane_ramp": [
             "slot_05",
             "slot_08",
             "slot_04"
-        ],
-        "rotation": [
-            "slot_01",
-            "slot_02",
-            "slot_03",
-            "slot_04",
-            "slot_25",
-            "slot_33"
         ]
     }
 }

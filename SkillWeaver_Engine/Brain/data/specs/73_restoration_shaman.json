@@ -294,22 +294,11 @@
         }
     },
     "proc_priority": {
-        "healing_loop": [
-            "slot_05",
+        "rotation": [
             "slot_01",
             "slot_06",
             "slot_04",
-            "slot_03"
-        ],
-        "utility": [
-            "slot_11",
-            "slot_12",
-            "slot_18"
-        ],
-        "cooldowns": [
-            "slot_08",
-            "slot_07",
-            "slot_09"
+            "slot_02"
         ]
     }
 }

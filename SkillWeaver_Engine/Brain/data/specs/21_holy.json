@@ -31,7 +31,7 @@
             "key": "F17",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "holy_power_gte_3"
             ]
         },
         "slot_04": {
@@ -39,7 +39,7 @@
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "target_valid"
+                "execute_range_or_proc"
             ]
         },
         "slot_05": {
@@ -308,17 +308,11 @@
         }
     },
     "proc_priority": {
-        "glimmer_rotation": [
-            "slot_08",
-            "slot_07",
+        "rotation": [
             "slot_01",
+            "slot_02",
             "slot_03",
-            "slot_02"
-        ],
-        "healing": [
-            "slot_01",
-            "slot_06",
-            "slot_02"
+            "slot_06"
         ]
     }
 }

@@ -50,7 +50,7 @@
             "key": "F19",
             "min_resource": 10,
             "conditions": [
-                "target_valid"
+                "execute_range"
             ]
         },
         "slot_06": {
@@ -335,33 +335,25 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_02",
+            "slot_01",
+            "slot_03"
+        ],
+        "execute_phase": [
+            "slot_05",
+            "slot_02",
+            "slot_01"
+        ],
         "burst_window": {
             "factors": [
-                "cooldown_ready_slot_06",
-                "cooldown_ready_slot_07"
+                "cooldown_ready_slot_06"
             ],
             "sequence": [
                 "slot_06",
                 "slot_07",
                 "slot_02",
-                "slot_01",
                 "slot_01"
-            ]
-        },
-        "execute_phase": [
-            "slot_04",
-            "slot_01"
-        ],
-        "mode_priorities": {
-            "DUNGEON": [
-                "slot_05",
-                "slot_02",
-                "slot_01"
-            ],
-            "RAID": [
-                "slot_02",
-                "slot_01",
-                "slot_03"
             ]
         }
     }

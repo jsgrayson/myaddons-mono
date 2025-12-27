@@ -3,6 +3,7 @@ _G.SkillWeaver = _G.SkillWeaver or {}
 local SW = _G.SkillWeaver
 
 SW.version = "0.9.7" 
+print("|cFFFFFF00[SkillWeaver] Core Loading...|r")
 SW.loaded = false
 
 local f = CreateFrame("Frame")
@@ -66,23 +67,39 @@ SlashCmdList.SKILLWEAVER = function(msg)
     local cmd, arg = msg:match("^(%S*)%s*(.-)$")
     cmd = cmd:lower()
     
-    if cmd == "save" then
+    if cmd == "bars" or cmd == "populate" or cmd == "fixbars" or cmd == "fix" then
+        if SkillWeaver.PopulateBars then 
+            SkillWeaver:PopulateBars() 
+        elseif SkillWeaver.RestoreBars then
+            SkillWeaver:RestoreBars()
+        else
+            print("SkillWeaver Error: PopulateBars function not found!")
+        end
+    elseif cmd == "save" then
         if SW.Bindings and SW.Bindings.SaveProfile then
             SW.Bindings:SaveProfile(arg)
         end
-    elseif cmd == "load" then
-        if SW.Bindings and SW.Bindings.LoadProfile then
-            SW.Bindings:SaveProfile(arg)
-        end
     elseif cmd == "ui" or cmd == "" then
-        if SW.UI and SW.UI.TogglePanel then SW.UI:TogglePanel() end
+        if SkillWeaverFrame then
+            if SkillWeaverFrame:IsShown() then
+                SkillWeaverFrame:Hide()
+            else
+                SkillWeaverFrame:Show()
+            end
+        else
+            print("SkillWeaver Error: SkillWeaverFrame not found!")
+        end
     elseif cmd == "reload" then
         ReloadUI()
     elseif cmd == "debug" then
         print("SW Debug:")
         print("- Enabled:", SkillWeaverDB and SkillWeaverDB.enabled)
         print("- Mode:", SW.State and SW.State:GetMode())
-        print("- ClassKey:", SW.State and SW.State:GetClassSpecKey())
-        print("- Current Profile:", SW.Defaults and SW.Defaults:GetCurrentBindingProfile())
+    elseif cmd == "help" then
+        print("|cFFFFFF00SkillWeaver Commands:|r")
+        print("  /sw bars - Populate action bars with spells")
+        print("  /sw ui - Toggle UI")
+        print("  /sw debug - Show debug info")
+        print("  /sw reload - Reload UI")
     end
 end

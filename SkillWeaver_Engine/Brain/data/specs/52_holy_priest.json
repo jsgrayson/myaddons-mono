@@ -230,14 +230,11 @@
         }
     },
     "proc_priority": {
-        "miracle_loop": [
+        "rotation": [
             "slot_03",
             "slot_04",
-            "slot_01"
-        ],
-        "maintenance": [
-            "slot_02",
-            "slot_06"
+            "slot_09",
+            "slot_10"
         ]
     }
 }

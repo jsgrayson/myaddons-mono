@@ -239,15 +239,11 @@
         }
     },
     "proc_priority": {
-        "ramp": [
-            "slot_09",
-            "slot_02",
-            "slot_01"
-        ],
-        "damage_valve": [
+        "rotation": [
             "slot_03",
-            "slot_04",
-            "slot_07"
+            "slot_02",
+            "slot_05",
+            "slot_04"
         ]
     }
 }

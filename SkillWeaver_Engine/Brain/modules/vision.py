@@ -31,9 +31,17 @@ class ScreenScanner:
             # Store PHYSICAL dimensions for mss.grab() 
             self.screen_width = sct.monitors[1]['width']
             self.screen_height = sct.monitors[1]['height']
-            # Store LOGICAL dimensions for flick offset calculation
-            self.logical_width = self.screen_width / self.SCALE
-            self.logical_height = self.screen_height / self.SCALE
+            
+            # Get ACTUAL logical dimensions from Quartz (the point coordinate system)
+            import Quartz
+            main_display = Quartz.CGMainDisplayID()
+            display_bounds = Quartz.CGDisplayBounds(main_display)
+            self.logical_width = display_bounds.size.width
+            self.logical_height = display_bounds.size.height
+            
+            # Calculate actual scale factor
+            self.SCALE = self.screen_width / self.logical_width
+            print(f"[VISION] Screen: {self.screen_width}x{self.screen_height} physical, {self.logical_width:.0f}x{self.logical_height:.0f} logical, scale={self.SCALE:.2f}")
             
             # Scan bottom 100 pixels (physical)
             scan_h = 100
@@ -160,29 +168,81 @@ class ScreenScanner:
             if len(target_coords[0]) == 0:
                 return None
             
-            # Find the red pixel closest to the screen center (the absolute center of the capture area)
-            # Search area center in local coords
+            # === SIMPLE CLUSTER DETECTION (no scipy) ===
+            # Find distinct horizontal bands of red pixels (nameplates are horizontal bars)
+            # Group by Y position with tolerance
+            
+            target_ys = target_coords[0]
+            target_xs = target_coords[1]
+            
+            # Find unique Y bands (nameplates are ~10-20px tall)
+            unique_bands = []
+            sorted_ys = np.sort(np.unique(target_ys))
+            
+            current_band_start = sorted_ys[0] if len(sorted_ys) > 0 else 0
+            for y in sorted_ys:
+                if y - current_band_start > 25:  # New band if gap > 25px
+                    unique_bands.append(current_band_start)
+                    current_band_start = y
+            unique_bands.append(current_band_start)
+            
+            # For each band, find the centroid and check for glow
+            best_glow_score = 0
+            best_center = None
             search_center_y = img.shape[0] // 2
             search_center_x = img.shape[1] // 2
+            closest_dist = float('inf')
+            fallback_center = None
             
-            # Calculate distances to center for all target pixels
-            dists = (target_coords[0] - search_center_y)**2 + (target_coords[1] - search_center_x)**2
-            best_idx = np.argmin(dists)
+            for band_y in unique_bands:
+                # Get all pixels in this Y band (±15px)
+                band_mask = (target_ys >= band_y - 15) & (target_ys <= band_y + 25)
+                band_xs = target_xs[band_mask]
+                band_ys = target_ys[band_mask]
+                
+                if len(band_xs) < 10:  # Skip tiny clusters
+                    continue
+                
+                # Centroid of this nameplate
+                center_x = int(np.mean(band_xs))
+                center_y = int(np.mean(band_ys))
+                
+                # Check for glow around this nameplate
+                glow_margin = 15
+                glow_min_y = max(0, center_y - glow_margin - 10)
+                glow_max_y = min(img.shape[0], center_y + glow_margin + 10)
+                glow_min_x = max(0, center_x - 80)  # Nameplates are wide
+                glow_max_x = min(img.shape[1], center_x + 80)
+                
+                glow_region = img[glow_min_y:glow_max_y, glow_min_x:glow_max_x]
+                
+                # Glow is bright (R+G+B > 650) - target indicator is white/yellow
+                if glow_region.size > 0:
+                    brightness = glow_region[:,:,0].astype(int) + glow_region[:,:,1].astype(int) + glow_region[:,:,2].astype(int)
+                    glow_pixels = np.sum(brightness > 650)
+                else:
+                    glow_pixels = 0
+                
+                # Track best glow score
+                if glow_pixels > best_glow_score:
+                    best_glow_score = glow_pixels
+                    best_center = (center_x, center_y)
+                
+                # Track closest to center as fallback
+                dist = (center_y - search_center_y)**2 + (center_x - search_center_x)**2
+                if dist < closest_dist:
+                    closest_dist = dist
+                    fallback_center = (center_x, center_y)
             
-            # Seed point for the best cluster
-            seed_y = target_coords[0][best_idx]
-            seed_x = target_coords[1][best_idx]
-            
-            # Find all target pixels within a small radius (e.g. 80px width of a nameplate)
-            # This isolates the specific nameplate we're targeting
-            cluster_mask = (abs(target_coords[0] - seed_y) < 20) & (abs(target_coords[1] - seed_x) < 60)
-            
-            cluster_y = target_coords[0][cluster_mask]
-            cluster_x = target_coords[1][cluster_mask]
-            
-            # Centroid of the specific nameplate (Physical Pixels)
-            center_y = int(np.mean(cluster_y))
-            center_x = int(np.mean(cluster_x))
+            # Use glow-detected if significant, otherwise center-nearest
+            if best_glow_score > 100 and best_center:
+                center_x, center_y = best_center
+            elif fallback_center:
+                center_x, center_y = fallback_center
+            else:
+                # Last resort: overall centroid
+                center_x = int(np.mean(target_xs))
+                center_y = int(np.mean(target_ys))
             
             # RETINA CONVERSION: Convert everything to logical coordinates
             # search_left/top are physical, so convert them too
@@ -197,19 +257,45 @@ class ScreenScanner:
             
             # === HUMANIZATION JITTER ===
             # Add a small random offset so we don't click the exact same pixel every time
-            abs_x += random.uniform(-8.0, 8.0)
-            abs_y += random.uniform(-5.0, 5.0)
+            # Wider jitter for anti-detection (worth the occasional miss)
+            abs_x += random.uniform(-5.0, 5.0)
+            abs_y += random.uniform(-3.0, 3.0)
             
-            # No feet offset - aim directly at nameplate position
-            feet_y = abs_y
+            # === DYNAMIC FEET OFFSET CALCULATION ===
+            # The offset from nameplate to feet depends on camera angle and distance:
+            # - Nameplate HIGH on screen (small Y, close target) = BIG offset needed
+            # - Nameplate LOW on screen (large Y, far target) = SMALL offset needed
+            #
+            # Screen center is roughly where camera points. Targets above center are close,
+            # targets below center are far.
+            screen_center_y = self.logical_height / 2
             
-            print(f"[VISION] Locked Nameplate Logical: ({abs_x:.0f}, {feet_y:.0f}) | Physical: ({center_x}, {center_y}) | range={target_range}yd | center=({self.logical_width/2:.0f},{self.logical_height/2:.0f})")
+            # How far above/below center is the nameplate?
+            # Negative = above center (close), Positive = below center (far)
+            relative_y = abs_y - screen_center_y
+            
+            # Base offset for nameplate at center
+            BASE_OFFSET = 60
+            
+            # Scale factor: each 100px above center adds 30px offset
+            # Each 100px below center subtracts 20px offset
+            if relative_y < 0:  # Close target (above center)
+                feet_offset = BASE_OFFSET + abs(relative_y) * 0.3
+            else:  # Far target (below center)
+                feet_offset = BASE_OFFSET - relative_y * 0.2
+            
+            # Clamp to reasonable range
+            feet_offset = max(30, min(120, feet_offset))
+            
+            feet_y = abs_y + feet_offset  # ADD to aim DOWN
+            
+            print(f"[VISION] Locked Nameplate Logical: ({abs_x:.0f}, {abs_y:.0f}) | FeetOffset: {feet_offset:.0f}px | feet_y={feet_y:.0f} | center=({self.logical_width/2:.0f},{self.logical_height/2:.0f})")
             return (abs_x, feet_y)
     
     def get_flick_offset(self, target_range: int = 10):
         """
-        Returns (dx, dy) offset from screen center to target position.
-        Uses target_range to calculate dynamic feet offset.
+        Returns absolute (x, y) target position for ground-targeted spells.
+        Uses Quartz warp now, so we just return the target position.
         
         Args:
             target_range: Distance to target in yards (from addon pixel data)
@@ -218,12 +304,7 @@ class ScreenScanner:
         if not target_pos:
             return None
         
-        # Use LOGICAL screen center (target_pos is already logical from get_target_position)
-        center_x = self.logical_width / 2
-        center_y = self.logical_height / 2
+        print(f"[VISION] Target at ({target_pos[0]:.0f}, {target_pos[1]:.0f})")
         
-        dx = target_pos[0] - center_x
-        dy = target_pos[1] - center_y
-        
-        return (dx, dy)
+        return target_pos  # Return absolute position, not offset
 

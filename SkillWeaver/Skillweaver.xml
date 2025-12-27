@@ -1,99 +1,155 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 
-  <Frame name="SkillWeaverFrame" parent="UIParent" toplevel="true" movable="true" enableMouse="true" hidden="true" inherits="PortraitFrameTemplate">
-    <Size x="600" y="500"/>
+  <Frame name="SkillWeaverFrame" parent="UIParent" toplevel="true" movable="true" enableMouse="true" hidden="true" inherits="BackdropTemplate">
+    <Size x="280" y="180"/>
     <Anchors>
       <Anchor point="CENTER"/>
     </Anchors>
     
     <Layers>
+      <!-- Dark slate background -->
       <Layer level="BACKGROUND">
-        <Texture file="Interface\FrameGeneral\UI-Background-Marble" horizTile="true" vertTile="true">
-          <Anchors>
-            <Anchor point="TOPLEFT" x="5" y="-25"/>
-            <Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
-          </Anchors>
+        <Texture parentKey="Bg" setAllPoints="true">
+          <Color r="0.08" g="0.08" b="0.12" a="0.95"/>
         </Texture>
+      </Layer>
+      
+      <!-- Arcane glow border effect (inner) -->
+      <Layer level="BORDER">
+        <Texture parentKey="GlowTop">
+          <Size x="280" y="2"/>
+          <Anchors><Anchor point="TOP" x="0" y="0"/></Anchors>
+          <Color r="0.2" g="0.7" b="0.9" a="0.8"/>
+        </Texture>
+        <Texture parentKey="GlowBottom">
+          <Size x="280" y="2"/>
+          <Anchors><Anchor point="BOTTOM" x="0" y="0"/></Anchors>
+          <Color r="0.2" g="0.7" b="0.9" a="0.6"/>
+        </Texture>
+        <Texture parentKey="GlowLeft">
+          <Size x="2" y="180"/>
+          <Anchors><Anchor point="LEFT" x="0" y="0"/></Anchors>
+          <Color r="0.2" g="0.7" b="0.9" a="0.7"/>
+        </Texture>
+        <Texture parentKey="GlowRight">
+          <Size x="2" y="180"/>
+          <Anchors><Anchor point="RIGHT" x="0" y="0"/></Anchors>
+          <Color r="0.2" g="0.7" b="0.9" a="0.7"/>
+        </Texture>
+      </Layer>
+
+      <!-- Corner rune accents -->
+      <Layer level="ARTWORK">
+        <Texture parentKey="RuneTL" file="Interface\SPELLBOOK\Spellbook-Icon">
+          <Size x="24" y="24"/>
+          <Anchors><Anchor point="TOPLEFT" x="6" y="-6"/></Anchors>
+          <Color r="0.3" g="0.8" b="1.0" a="0.5"/>
+        </Texture>
+        <Texture parentKey="RuneTR" file="Interface\SPELLBOOK\Spellbook-Icon">
+          <Size x="24" y="24"/>
+          <Anchors><Anchor point="TOPRIGHT" x="-6" y="-6"/></Anchors>
+          <Color r="0.3" g="0.8" b="1.0" a="0.5"/>
+        </Texture>
+      </Layer>
+      
+      <!-- Title with arcane glow -->
+      <Layer level="OVERLAY">
+        <FontString parentKey="Title" inherits="GameFontNormalLarge" text="SkillWeaver" justifyH="CENTER">
+          <Anchors>
+            <Anchor point="TOP" x="0" y="-14"/>
+          </Anchors>
+          <Color r="0.4" g="0.85" b="1.0"/>
+          <Shadow>
+            <Offset x="0" y="0"/>
+            <Color r="0.2" g="0.6" b="0.9" a="0.8"/>
+          </Shadow>
+        </FontString>
+        
+        <!-- Subtitle / Status -->
+        <FontString parentKey="StatusText" inherits="GameFontHighlightSmall" text="Arcane Rotation Engine" justifyH="CENTER">
+          <Anchors>
+            <Anchor point="BOTTOM" x="0" y="12"/>
+          </Anchors>
+          <Color r="0.5" g="0.5" b="0.6"/>
+        </FontString>
       </Layer>
     </Layers>
 
     <Frames>
-        <Frame parentKey="ListFrame" inherits="InsetFrameTemplate">
-            <Anchors>
-                <Anchor point="TOPLEFT" x="10" y="-60"/>
-                <Anchor point="BOTTOMRIGHT" x="-10" y="30"/>
-            </Anchors>
-            <Layers>
-                <Layer level="ARTWORK">
-                    <FontString inherits="GameFontNormalLarge" text="Pet Journal (Coming Soon)">
-                        <Anchors><Anchor point="CENTER"/></Anchors>
-                    </FontString>
-                </Layer>
-            </Layers>
-        </Frame>
+      <!-- Close Button -->
+      <Button parentKey="CloseButton" inherits="UIPanelCloseButton">
+        <Anchors>
+          <Anchor point="TOPRIGHT" x="-2" y="-2"/>
+        </Anchors>
+      </Button>
 
-        <Frame parentKey="TeamFrame" hidden="true" inherits="InsetFrameTemplate">
-            <Anchors>
-                <Anchor point="TOPLEFT" x="10" y="-60"/>
-                <Anchor point="BOTTOMRIGHT" x="-10" y="30"/>
-            </Anchors>
-            <Layers>
-                <Layer level="ARTWORK">
-                    <FontString inherits="GameFontNormalLarge" text="War Room (Teams)">
-                        <Anchors><Anchor point="CENTER"/></Anchors>
-                    </FontString>
-                </Layer>
-            </Layers>
-        </Frame>
+      <!-- Content Dropdown -->
+      <Frame parentKey="ContentDropdown" inherits="UIDropDownMenuTemplate">
+        <Anchors>
+          <Anchor point="TOP" x="0" y="-38"/>
+        </Anchors>
+      </Frame>
 
-        <Frame parentKey="ScriptFrame" hidden="true" inherits="InsetFrameTemplate">
-            <Anchors>
-                <Anchor point="TOPLEFT" x="10" y="-60"/>
-                <Anchor point="BOTTOMRIGHT" x="-10" y="30"/>
-            </Anchors>
-            <Layers>
-                <Layer level="ARTWORK">
-                    <FontString inherits="GameFontNormalLarge" text="Script Editor">
-                        <Anchors><Anchor point="CENTER"/></Anchors>
-                    </FontString>
-                </Layer>
-            </Layers>
-        </Frame>
+      <!-- Import Talents Button (Styled) -->
+      <Button parentKey="ImportButton" inherits="UIPanelButtonTemplate" text="Import Talents">
+        <Size x="220" y="28"/>
+        <Anchors>
+          <Anchor point="TOP" relativeKey="$parent.ContentDropdown" relativePoint="BOTTOM" x="0" y="-4"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            SkillWeaver:ImportTalents()
+          </OnClick>
+          <OnEnter>
+            self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0)
+          </OnEnter>
+          <OnLeave>
+            self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0)
+          </OnLeave>
+        </Scripts>
+      </Button>
 
-        <Button parentKey="Tab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="Journal">
-            <Anchors> <Anchor point="BOTTOMLEFT" x="10" y="-30"/> </Anchors>
-            <Scripts>
-                <OnClick>
-                    PanelTemplates_SetTab(self:GetParent(), 1)
-                    SkillWeaver:SetTab(1)
-                </OnClick>
-            </Scripts>
-        </Button>
-        <Button parentKey="Tab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="Teams">
-            <Anchors> <Anchor point="LEFT" relativeKey="$parent.Tab1" relativePoint="RIGHT" x="-16" y="0"/> </Anchors>
-            <Scripts>
-                <OnClick>
-                    PanelTemplates_SetTab(self:GetParent(), 2)
-                    SkillWeaver:SetTab(2)
-                </OnClick>
-            </Scripts>
-        </Button>
-        <Button parentKey="Tab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="Scripts">
-            <Anchors> <Anchor point="LEFT" relativeKey="$parent.Tab2" relativePoint="RIGHT" x="-16" y="0"/> </Anchors>
-            <Scripts>
-                <OnClick>
-                    PanelTemplates_SetTab(self:GetParent(), 3)
-                    SkillWeaver:SetTab(3)
-                </OnClick>
-            </Scripts>
-        </Button>
+      <!-- Populate Bars Button (Styled) -->
+      <Button parentKey="PopulateButton" inherits="UIPanelButtonTemplate" text="Populate Bars">
+        <Size x="220" y="28"/>
+        <Anchors>
+          <Anchor point="TOP" relativeKey="$parent.ImportButton" relativePoint="BOTTOM" x="0" y="-6"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            if SkillWeaver.PopulateBars then
+              SkillWeaver:PopulateBars()
+            end
+          </OnClick>
+          <OnEnter>
+            self:SetBackdropBorderColor(0.3, 0.85, 1.0, 1.0)
+          </OnEnter>
+          <OnLeave>
+            self:SetBackdropBorderColor(0.4, 0.4, 0.4, 1.0)
+          </OnLeave>
+        </Scripts>
+      </Button>
     </Frames>
 
     <Scripts>
-        <OnLoad> SkillWeaver:OnLoad(self) </OnLoad>
-        <OnDragStart> self:StartMoving() </OnDragStart>
-        <OnDragStop> self:StopMovingOrSizing() </OnDragStop>
+      <OnLoad> 
+        SkillWeaver:OnLoad(self) 
+        self:RegisterForDrag("LeftButton")
+        self:SetBackdrop({
+          bgFile = "Interface\\Buttons\\WHITE8X8",
+          edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+          tile = false,
+          edgeSize = 14, 
+          insets = { left = 3, right = 3, top = 3, bottom = 3 }
+        })
+        self:SetBackdropColor(0.06, 0.06, 0.1, 0.97)
+        self:SetBackdropBorderColor(0.25, 0.65, 0.85, 0.9)
+      </OnLoad>
+      <OnDragStart> self:StartMoving() </OnDragStart>
+      <OnDragStop> self:StopMovingOrSizing() </OnDragStop>
+      <OnShow> PlaySound(SOUNDKIT.IG_SPELLBOOK_OPEN) </OnShow>
+      <OnHide> PlaySound(SOUNDKIT.IG_SPELLBOOK_CLOSE) </OnHide>
     </Scripts>
   </Frame>
 </Ui>

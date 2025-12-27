@@ -58,7 +58,7 @@ class SerialLink:
         else:
             print("[SERIAL ERROR] Serial port not open!")
 
-    def send_flick(self, slot_id: int, dx: int, dy: int):
+    def send_flick(self, slot_id: int, dx: int, dy: int, scale: float = 2.0):
         """
         Send 0xFD flick command for ground-targeted spells.
         
@@ -74,6 +74,7 @@ class SerialLink:
             slot_id: The slot byte (0x01-0x30) for the spell
             dx: Horizontal offset from screen center (can be negative)
             dy: Vertical offset from screen center (can be negative)
+            scale: Screen scale factor (2.0 for Retina, 1.0 for standard)
         """
         if not self.ser or not self.ser.is_open:
             print("[SERIAL ERROR] Serial port not open for flick!")
@@ -81,6 +82,7 @@ class SerialLink:
         
         # Convert signed int16 to two bytes (big-endian)
         # Clamp to int16 range (cast to int first to handle floats)
+        # NOTE: On macOS, HID mouse moves appear to be in logical units already
         dx = max(-32768, min(32767, int(dx)))
         dy = max(-32768, min(32767, int(dy)))
         

@@ -56,7 +56,7 @@
             "key": "HOME",
             "min_resource": 10,
             "conditions": [
-                "target_valid"
+                "execute_range"
             ]
         },
         "slot_07": {
@@ -317,41 +317,26 @@
         }
     },
     "proc_priority": {
+        "rotation": [
+            "slot_01",
+            "slot_02",
+            "slot_03",
+            "slot_05"
+        ],
+        "execute_phase": [
+            "slot_06",
+            "slot_01",
+            "slot_02"
+        ],
         "burst_window": {
             "factors": [
-                "cooldown_ready_slot_05",
-                "focus_gte_50"
+                "cooldown_ready_slot_07"
             ],
             "sequence": [
-                "slot_05",
                 "slot_07",
-                "slot_03",
                 "slot_01",
                 "slot_01",
                 "slot_02"
-            ]
-        },
-        "aoe_trick_shots": [
-            "slot_02",
-            "slot_01",
-            "slot_03"
-        ],
-        "mode_priorities": {
-            "DUNGEON": [
-                "slot_05",
-                "slot_09",
-                "slot_07",
-                "slot_03",
-                "slot_01",
-                "slot_02"
-            ],
-            "RAID": [
-                "slot_05",
-                "slot_06",
-                "slot_01",
-                "slot_03",
-                "slot_02",
-                "slot_04"
             ]
         }
     }

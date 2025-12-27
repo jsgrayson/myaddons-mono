@@ -146,20 +146,33 @@ class StateEngine:
         # Load global counters
         self._load_global_counters()
     
-    def is_on_cooldown(self, slot_id: str, slot: dict) -> bool:
-        """Check if a slot is on cooldown."""
+    def is_on_cooldown(self, slot_id: str, slot: dict, state: dict = None) -> bool:
+        """Check if a slot is on cooldown. Respects proc-based resets."""
         if slot_id not in self.slot_cooldowns:
             return False
         
-        last_cast, cd_duration = self.slot_cooldowns[slot_id]
+        # Check for proc-based cooldown resets
+        if state:
+            # Mind Blast (slot_04) - reset by Shadowy Insight / Surge of Insanity
+            if slot_id == "slot_04" and state.get('mb_reset_proc', False):
+                return False  # Proc active = not on cooldown
+        
+        # Get the cooldown from the CURRENT slot data (not cached)
+        # This allows cooldowns to be modified without restarting
+        cd_duration = slot.get('cooldown', 0)
+        if cd_duration <= 0:
+            return False  # No cooldown = always ready
+            
+        last_cast, _ = self.slot_cooldowns[slot_id]
         elapsed = time.time() - last_cast
         return elapsed < cd_duration
     
     def mark_slot_used(self, slot_id: str, slot: dict):
         """Mark a slot as used, starting its cooldown."""
-        # Use slot's cooldown if specified, otherwise GCD
-        cd = slot.get('cooldown', self.DEFAULT_GCD)
-        self.slot_cooldowns[slot_id] = (time.time(), cd)
+        # Only track if slot has a cooldown defined
+        cd = slot.get('cooldown', 0)
+        if cd > 0:
+            self.slot_cooldowns[slot_id] = (time.time(), cd)
     
     def _load_global_counters(self):
         """Load counters that apply to all specs."""
@@ -363,9 +376,21 @@ class StateEngine:
         
         # ============================================
         # TIER 2: ROTATION LAYER (Priority List)
-        # ============================================
-        # Use the spec-defined rotation order if available
-        rotation_order = self.spec_data.get('proc_priority', {}).get('rotation', [])
+        # Check for execute phase or mode-specific rotations
+        proc_priority = self.spec_data.get('proc_priority', {})
+        target_hp = state.get('thp', 100)
+        mode = state.get('mode', 'raid').lower() # Default to raid
+        
+        rotation_order = []
+        if target_hp < 35 and 'execute_phase' in proc_priority:
+            rotation_order = proc_priority.get('execute_phase', [])
+        
+        # If no execute rotation, try mode-specific rotation
+        if not rotation_order:
+            if mode in proc_priority:
+                rotation_order = proc_priority.get(mode, [])
+            else:
+                rotation_order = proc_priority.get('rotation', [])
         
         if rotation_order:
             for slot_id in rotation_order:
@@ -380,7 +405,7 @@ class StateEngine:
                     continue
 
                 # Cooldown check
-                if self.is_on_cooldown(slot_id, slot):
+                if self.is_on_cooldown(slot_id, slot, state):
                     continue
                 
                 # Resource check
@@ -418,7 +443,7 @@ class StateEngine:
                     ungated_slots.append((slot_id, slot))
             
             for slot_id, slot in gated_slots:
-                if self.is_on_cooldown(slot_id, slot):
+                if self.is_on_cooldown(slot_id, slot, state):
                     continue
                 if state.get('power', 0) < slot.get('min_resource', 0):
                     continue
@@ -435,7 +460,7 @@ class StateEngine:
             
             # Tier 3 Fallback
             for slot_id, slot in ungated_slots:
-                if self.is_on_cooldown(slot_id, slot):
+                if self.is_on_cooldown(slot_id, slot, state):
                     continue
                 if state.get('power', 0) >= slot.get('min_resource', 0):
                     self.mark_slot_used(slot_id, slot)
@@ -768,30 +793,48 @@ class StateEngine:
     
     def check_cleave_snap_back(self, state: dict, spec_id: int) -> bool:
         """
-        LEAP 4: Dynamic Cleave - Auto-tab to spread DoTs.
+        LEAP 4: Dynamic Cleave - Auto-tab to spread and MAINTAIN DoTs on multiple targets.
         Returns True if should send Tab to switch targets.
         """
         # Multi-dot specs
-        dot_specs = {41, 91, 11, 53}  # Assassination, Affliction, Feral, Shadow Priest
+        dot_specs = {41, 91, 11, 53, 112}  # Assassination, Affliction, Feral, Shadow Priest, Feral Druid
         if spec_id not in dot_specs:
             return False
         
-        # Check nameplate scan: enemies visible without player DoTs
-        missing = state.get('enemies_missing_dots', 0)
-        if missing == 0:
-            return False
-        
-        # Get individual DoT states for Shadow Priest
+        # Get DoT states
         dots = state.get('dots', [0, 0, 0])
         vt_remaining = dots[0] if len(dots) > 0 else 0
         swp_remaining = dots[1] if len(dots) > 1 else 0
         
-        # Only TAB if BOTH maintenance dots are healthy on current target
-        # This prevents TABbing before we finish dotting the current target
-        if vt_remaining > 10 and swp_remaining > 10:
-            print(f">>> [CLEAVE] {missing} enemies missing DoTs | VT:{vt_remaining:.0f}s SWP:{swp_remaining:.0f}s - TAB TARGET")
+        # How many other targets are visible?
+        total_plates = state.get('total_hostile_plates', 0)
+        missing = state.get('enemies_missing_dots', 0)
+        target_hp = state.get('thp', 100)
+        
+        # Don't TAB if we're the only target or no multi-target situation
+        if total_plates == 0:
+            return False
+        
+        # SMART FOCUS: Only apply when there's 1 other target (boss + add scenario)
+        # In larger packs (2+), always spread DoTs
+        if total_plates == 1:
+            # Single other target - apply focus logic
+            # Don't TAB if target HP is very high (just pulled) or low (burning)
+            if target_hp > 90 or (0 < target_hp < 30):
+                return False
+            
+        # Don't TAB if our DoTs need refreshing on current target first
+        DOT_HEALTHY_THRESHOLD = 12.0  # Must have at least 12s before we can TAB away
+        if vt_remaining < DOT_HEALTHY_THRESHOLD or swp_remaining < DOT_HEALTHY_THRESHOLD:
+            return False
+        
+        # ONLY TAB if enemies are missing DoTs - spread them
+        # Do NOT TAB for "maintenance" cycling - that loses focus on main target
+        if missing > 0:
+            print(f">>> [CLEAVE] {missing} enemies missing DoTs | VT:{vt_remaining:.0f}s SWP:{swp_remaining:.0f}s - TAB to SPREAD")
             return True
         
+        # All enemies have DoTs - stay on main target, don't cycle away
         return False
     
     # ==========================================================================
