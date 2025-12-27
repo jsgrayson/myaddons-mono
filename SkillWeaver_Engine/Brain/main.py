@@ -217,13 +217,15 @@ class SkillWeaverEngine:
             "stealthed": self.decode_px(row, 19) > 128,
             "nearby_enemies_count": int(self.decode_px(row, 9) / 25.0),
             # Pure Pixel Dots (P11=DoT0, P12=DoT1, P13=DoT2) - scaled by 10
+            "thp": self.decode_px(row, 6) / 2.55,  # Target Health %
+            "power": self.decode_px(row, 7) / 2.55, # Resource %
             "dots": [self.decode_px(row, 11) / 10.0, 
                      self.decode_px(row, 12) / 10.0, 
                      self.decode_px(row, 13) / 10.0],
             "target_dot_remaining": self.decode_px(row, 11) / 10.0,
             # Proc Detection (P14 = primary proc, P15 = secondary proc) - per-spec reused
-            "mb_reset_proc": self.decode_px(row, 14) > 128,  # P14: Overpower proc on Arms, Shadowy Insight on Shadow
-            "mf_insanity_proc": self.decode_px(row, 15) > 128,  # P15: Sudden Death on Arms, Surge of Insanity on Shadow
+            "mb_reset_proc": self.decode_px(row, 14) > 128,  # P14: Overpower(Arms) / Shadowy Insight(Shadow)
+            "sudden_death_proc": self.decode_px(row, 15) > 128,  # P15: Sudden Death (Arms/Fury) / Surge of Insanity (Shadow)
             "mode": ["raid", "mythic", "delve", "pvp"][int(min(3, self.decode_px(row, 10) / 64))], # Mode on P10
             "spell_charges": round(self.decode_px(row, 16) / 50),  # Charged ability count (P16)
             "enemies_missing_dots": int(round(self.decode_px(row, 20) / 25.0)),
@@ -323,7 +325,8 @@ class SkillWeaverEngine:
                                     lock_padding = random.uniform(0.05, 0.15)
                                     
                                     # SET REAL LOCKS
-                                    gcd_dur = 1.4 + lock_padding
+                                    # Allow Spell Queueing: Unlock early so next key hits 400ms queue window
+                                    gcd_dur = 1.1 + lock_padding
                                     self._gcd_until = now + gcd_dur
                                     self.last_action_name = optimal.get('action', '') # Moved here
                                     

@@ -283,8 +283,19 @@ SW_Frame:SetScript("OnUpdate", function()
 
         -- 5. RESOURCES
         -- P7: Primary Resource (Health/Mana/Focus/Rage/Energy etc.)
+        -- P7: Primary Resource
+        -- If Mana (Type 0), use Percentage (0-255 representing 0-100%).
+        -- If Rage/Energy/Focus/etc, use Raw Value (capped at 255).
+        local pType, pToken = UnitPowerType("player")
+        local pCur = UnitPower("player")
         local pMax = UnitPowerMax("player")
-        SetPixel(7, (pMax > 0 and UnitPower("player") / pMax or 0) * 255)
+        
+        if pType == 0 then -- Mana
+            SetPixel(7, (pMax > 0 and pCur / pMax or 0) * 255)
+        else -- Rage, Focus, Energy, Runic Power (Use 0-100 scale, cap at 255)
+            -- 100 Resource = 255 Pixel. 50 Resource = 127 Pixel.
+            SetPixel(7, math.min(255, pCur * 2.55))
+        end
         
         -- P8: Secondary Resource (Combo Points, Holy Power, Chi, Soul Shards, Arcane Charges, Essence)
         local secRes = 0
@@ -377,15 +388,15 @@ SW_Frame:SetScript("OnUpdate", function()
                     end
                 end
             end
-        elseif specId == 11 then  -- Arms Warrior
+        elseif specId == 11 or specId == 12 then  -- Arms(11) or Fury(12) Warrior
             if AuraUtil and AuraUtil.ForEachAura then
                 AuraUtil.ForEachAura("player", "HELPFUL", nil, function(aura)
-                    -- Overpower! / Tactician proc
-                    if aura.spellId == 60503 or aura.name == "Overpower!" or aura.name == "Tactician" then
+                    -- Overpower! / Tactician proc (Arms only)
+                    if specId == 11 and (aura.spellId == 60503 or aura.name == "Overpower!" or aura.name == "Tactician") then
                         proc1 = true
                     end
-                    -- Sudden Death (Execute reset)
-                    if aura.spellId == 52437 or aura.name == "Sudden Death" then
+                    -- Sudden Death (Execute reset) - Arms ID: 52437, Fury ID: 280776
+                    if aura.spellId == 52437 or aura.spellId == 280776 or aura.name == "Sudden Death" then
                         proc2 = true
                     end
                 end, true)

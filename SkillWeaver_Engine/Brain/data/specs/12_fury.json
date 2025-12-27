@@ -44,7 +44,7 @@
             "key": "F18",
             "min_resource": 0,
             "conditions": [
-                "execute_range"
+                "execute_range_or_proc"
             ]
         },
         "slot_05": {
@@ -360,10 +360,10 @@
             "slot_13",
             "slot_07",
             "slot_08",
-            "slot_04",
             "slot_03",
             "slot_01",
             "slot_02",
+            "slot_04",
             "slot_06",
             "slot_05"
         ],
@@ -378,11 +378,6 @@
                 "slot_08",
                 "slot_02"
             ]
-        },
-        "execute_phase": [
-            "slot_04",
-            "slot_03",
-            "slot_01"
-        ]
+        }
     }
 }

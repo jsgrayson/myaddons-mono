@@ -237,8 +237,11 @@ class ConditionEngine:
         # --- EXECUTE OR PROC (e.g., Paladin Hammer of Wrath with Avenging Wrath) ---
         if condition_name == "execute_range_or_proc":
             threshold = state.get('execute_threshold', 20)
-            # Either in execute range OR has avenging wrath active (checked via buff tracking)
-            return state.get('thp', 100) < threshold or state.get('avenging_wrath_active', False)
+            # Either in execute range OR has sudden death proc (P15)
+            # OR has avenging wrath active (Ret Paladin)
+            return (state.get('thp', 100) < threshold) or \
+                   state.get('sudden_death_proc', False) or \
+                   state.get('avenging_wrath_active', False)
         
         # --- VOIDFORM (Shadow Priest) ---
         if condition_name == "voidform_active":
